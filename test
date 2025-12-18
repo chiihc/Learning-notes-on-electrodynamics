@@ -1,0 +1,10 @@
+\begin{align*}
+    &r^2\int_{0}^{2\pi}\dif \phi\int_{0}^{\frac{\pi}{6}}(4r\sin^2\theta
+    +r\dfrac{1}{\cos^2\theta})\sin\theta
+    \dif \theta\\
+    =&2\pi r^3\int_{0}^{\frac{\pi}{6}}(4\sin^2\theta
+    +\dfrac{1}{\cos^2\theta})\dif \theta\\
+    =&2\pi r^3\left.(2\theta-\sin2\theta+\tan\theta)\right|_{0}^{\frac{\pi}{6}}\\
+    =&2\pi r^3(\frac{\pi}{3}-\frac{\sqrt{3}}{2}+\frac{\sqrt{3}}{2})\\
+    =&2\pi r^3\frac{\pi}{3}
+\end{align*}
