@@ -1,0 +1,515 @@
+\cleardoublepage
+
+\section{静电学}
+\subsection{电场}
+\mysssec{库仑定律}
+设一个静止点电荷$q$距检验电荷$Q$的距离为$r$, 那么它作用在$Q$上的力是
+\begin{equation}
+    \boldsymbol{F}=\frac{1}{4\pi\varepsilon_0}\frac{qQ}{r^3}\boldsymbol{r}
+\end{equation}
+常数$\varepsilon_0$称为真空介电常数, $\varepsilon_0=8.85\times10^{-12}\ \rm{\dfrac{C^2}{N\cdot m^2}}$
+\mysssec{电场}
+\begin{equation}
+    \boldsymbol{E}\equiv\frac{\boldsymbol{F}}{Q}=\frac{1}{4\pi\varepsilon_0}\frac{q}{r^3}\boldsymbol{r}
+\end{equation}
+\mysssec{电场强度通量}
+$\boldsymbol{\Phi }_E$为电场强度通量
+\begin{equation}
+    \boldsymbol{\Phi }_E\equiv\iint_S\boldsymbol{E}\cdot\dif \boldsymbol{S}
+\end{equation}
+\mysssec{高斯定理}
+$\rho$为电荷密度
+\begin{equation}
+    \boldsymbol{\nabla}\cdot\boldsymbol{E}=\frac{1}{\varepsilon_0}\rho
+\end{equation}
+\mysssec{两个带点为$q$的电荷, 相距$d$放置, 求垂直于连线中点且距离为$x_2$处的电场, 如果把一个换成$-q$会怎样?当$y>>d$时会怎样?}
+\begin{align*}
+    \frac{1}{4\pi\varepsilon_0}\frac{q}{r^3}\boldsymbol r_1
+    +\frac{1}{4\pi\varepsilon_0}\frac{q}{r^3}\boldsymbol r_2
+    &=2\frac{1}{4\pi\varepsilon_0}\frac{q}{r^3}x_2\boldsymbol{e}_2\\
+    &=\frac{1}{2\pi\varepsilon_0}\frac{qx_2}{r^3}\boldsymbol{e}_2\\
+    &=\dfrac{1}{2\pi\varepsilon_0}\dfrac{qx_2}{(x_2^2+\dfrac{d^2}{4})^\frac{3}{2}}\boldsymbol{e}_2\\
+\end{align*}
+\begin{align*}
+    \frac{1}{4\pi\varepsilon_0}\frac{q}{r^3}\boldsymbol r_1
+    +\frac{1}{4\pi\varepsilon_0}\frac{q}{r^3}\boldsymbol r_2
+    &=2\frac{1}{4\pi\varepsilon_0}\frac{q}{r^3}\frac{d}{2}\boldsymbol{e}_1\\
+    &=\frac{1}{4\pi\varepsilon_0}\frac{qd}{r^3}\boldsymbol{e}_1\\
+    &\approx\frac{1}{4\pi\varepsilon_0}\frac{qd}{x_2^3}\boldsymbol{e}_1
+\end{align*}
+\mysssec{一个长度为$2L$的细杆均匀带电, 电荷线密度为$\lambda $, 求垂直于杆且与杆中心距离为$x_2$处的电场}
+\begin{align*}
+    \int_{-L}^L\frac{1}{4\pi\varepsilon_0}\frac{\lambda}{r^3}\boldsymbol{r}\dif x
+    &=\int_{-L}^L\frac{1}{4\pi\varepsilon_0}\frac{\lambda}{r^3}{x_2\boldsymbol e_2}\dif x\\&
+    =\frac{\lambda}{4\pi\varepsilon_0}\boldsymbol e_2\int_{-L}^L\frac{x_2}{r^3}\dif x\\&
+    =\frac{\lambda}{4\pi\varepsilon_0}\boldsymbol e_2\int_{-L}^L\frac{x_2}{(x^2+x_2^2)^\frac{3}{2}}\dif x\\&
+    \xlongequal{x=x_2\tan\theta}\frac{\lambda}{4\pi\varepsilon_0}\boldsymbol e_2\int_{-\arctan \frac{L}{x_2}}^{\arctan \frac{L}{x_2}}\frac{x_2}{(x_2^2\tan\theta^2+x_2^2)^\frac{3}{2}}\dif x_2\tan\theta\\&
+    =\frac{\lambda}{4\pi\varepsilon_0}\boldsymbol e_2\int_{-\arctan \frac{L}{x_2}}^{\arctan \frac{L}{x_2}}\frac{x_2^2\cos^3\theta}{x_2^3\cos^2\theta}\dif\theta\\&
+    =\frac{\lambda}{4\pi\varepsilon_0}\boldsymbol e_2\int_{-\arctan \frac{L}{x_2}}^{\arctan \frac{L}{x_2}}\frac{\cos\theta}{x_2^2}\dif \theta\\&
+    =\frac{\lambda}{4\pi\varepsilon_0}\boldsymbol e_2\left.\frac{\sin\theta}{x_2}\right|_{-\arctan \frac{L}{x_2}}^{\arctan \frac{L}{x_2}}\\&
+    =\frac{\lambda}{2\pi\varepsilon_0x_2}\boldsymbol e_2\frac{L}{\sqrt{L^2+x_2^2}}
+\end{align*}
+\mysssec{一个长度为$L$的细杆均匀带电, 电荷线密度为$\lambda $, 求杆一端上方距杆$y$处的电场}
+\begin{align*}
+    \int_{0}^{L}\frac{\lambda \boldsymbol e_{y}}{4\pi\varepsilon_0 r^2}\dif x_2
+    &=\int_{0}^{L}\frac{\lambda \boldsymbol e_{y}}{4\pi\varepsilon_0 (x_2+y)^2}\dif x_2\\&
+    =-\left.\frac{\lambda \boldsymbol e_{y}}{4\pi\varepsilon_0 (x_2+y)}\right|_{0}^{L}\\&
+    =\frac{\lambda \boldsymbol e_{y}}{4\pi\varepsilon_0 (L+y)}-\frac{\lambda \boldsymbol e_{y}}{4\pi\varepsilon_0 y}\\&
+    =\frac{\lambda \boldsymbol e_{y}L}{4\pi\varepsilon_0 (L+y)y}
+\end{align*}
+\mysssec{一个边长为$2L$的正方形线框均匀带电, 电荷线密度为$\lambda $, 求线框中心上方距$x_3$处的电场}
+\begin{align*}
+    4\frac{\lambda}{2\pi\varepsilon_0\sqrt{L^2+x_3^2}}\boldsymbol e_3\frac{L}{2\sqrt{2L^2+x_3^2}}\frac{x_3}{x_3\sqrt{L^2+x_3^2}^2}
+    =\frac{\lambda}{\pi\varepsilon_0\sqrt{2L^2+x_3^2}}\boldsymbol e_3\frac{2Lx_3}{{L^2+x_3^2}}
+\end{align*}
+\mysssec{一个半径为$r$的圆线框均匀带电, 电荷线密度为$\lambda $, 求线框中心上方距$x_3$处的电场}
+\begin{align*}
+    2\pi r\frac{\lambda}{4\pi\varepsilon_0}\boldsymbol e_3\frac{x_3}{\sqrt{x_3^2+r^2}}
+    =\frac{\lambda}{2\varepsilon_0}\boldsymbol e_3\frac{x_3r}{\sqrt{x_3^2+r^2}^3}
+\end{align*}
+\mysssec{一个半径为$r$的圆片均匀带电, 电荷面密度为$\sigma  $, 求圆片中心上方距$x_3$处的电场}
+\begin{align*}
+    \int_0^r\frac{\sigma}{2\varepsilon_0}\boldsymbol e_3\frac{x_3x_1}{\sqrt{x_3^2+x_1^2}^3}\dif x_1&
+    =-\left.\frac{\sigma }{2\varepsilon_0}\boldsymbol e_3\frac{x_3}{\sqrt{x_3^2+x_1^2}}\right|_0^r\\&
+    =\frac{\sigma }{2\varepsilon_0}\boldsymbol e_3\frac{x_3}{\sqrt{x_3^2}}
+    -\frac{\sigma }{2\varepsilon_0}\boldsymbol e_3\frac{x_3}{\sqrt{x_3^2+r^2}}\\&
+    =\frac{\sigma }{2\varepsilon_0}\boldsymbol e_3
+    -\frac{\sigma }{2\varepsilon_0}\boldsymbol e_3\frac{x_3}{\sqrt{x_3^2+r^2}}
+\end{align*}
+\mysssec{一个半径为$r$的球面均匀带电, 电荷面密度为$\sigma  $, 求圆球上方距$d$处的电场(分$d>r$和$d<r$讨论)}
+\begin{align*}
+    \int_{\pi}^{0}\frac{\sigma}{2\varepsilon_0}\boldsymbol e_3\frac{(x_3+d)\sqrt{x_1^2+x_2^2}}{\sqrt{(x_3+d)^2+x_1^2+x_2^2}^3}\dif r\phi
+    &=\int_{\pi}^{0}\frac{\sigma}{2\varepsilon_0}\boldsymbol e_3\frac{(r\cos\phi+d)\sqrt{x_1^2+x_2^2}}{\sqrt{(r\cos\phi+d)^2+x_1^2+x_2^2}^3}\dif r\phi\\
+    &=\int_{\pi}^{0}\frac{\sigma}{2\varepsilon_0}\boldsymbol e_3\frac{(r\cos\phi+d)r\sin\phi}{\sqrt{r^2+2rd\cos\phi+d^2}^3}\dif r\phi\\
+    &=\int_{0}^{\pi}\frac{\sigma}{2\varepsilon_0}\boldsymbol e_3\frac{(r\cos\phi+d)r^2\sin\phi}{\sqrt{r^2+2rd\cos\phi+d^2}^3}\dif \phi\\
+    % &\xlongequal{u=r^2+2rd\cos\phi+d^2}\int_{0}^{\pi}\frac{\sigma r}{4\varepsilon_0d}\boldsymbol e_3\frac{d-r\cos\phi}{\sqrt{u}^3}\dif u\\
+    % &=\int_{0}^{\pi}\frac{\sigma r}{2\varepsilon_0}\boldsymbol e_3\frac{u^2+d^2-r^2}{\sqrt{u}^3}\dif u\\
+\end{align*}
+\mysssec{在某个区域电场可以写为$\boldsymbol{E}=kr^3\boldsymbol{e_r}$, 求电荷密度和包含在半径为$R$, 球心在原点的闭合球面内的总电荷}
+\begin{align*}
+    \rho=\varepsilon_0\boldsymbol{\nabla}\cdot\boldsymbol{E}
+    =\varepsilon_0\frac{1}{sr}\dfrac{\partial srE_r}{\partial r}
+    =\varepsilon_0\frac{1}{sr}\dfrac{\partial srr^3}{\partial r}
+    =\varepsilon_0\frac{1}{sr}{5sr^4}
+    =5\varepsilon_0{r^3}k
+\end{align*}
+\begin{align*}
+    4\pi\int_{0}^{R}5\varepsilon_0{r^3}\dif r=5\pi\varepsilon_0{R^4}k
+\end{align*}
+\subsection{电势}
+\subsubsection{定义}
+\begin{equation}
+    V(\boldsymbol{r})\equiv-\int_{O}^{r}\boldsymbol{E}\cdot\dif\boldsymbol{l}
+\end{equation}
+其中$O$为预先设置的标准参考点, 通常为无限远处
+\mysssec{一个半径为$R$的均匀带电球体, 总电荷为$q$, 求电势$V(\boldsymbol{r})$}
+$r\ge R$:
+\begin{align*}
+    \int_{r}^{\infty}\dfrac{q }{4\pi\varepsilon_0x^2}\dif x=
+    \left.-\dfrac{q }{4\pi\varepsilon_0x}\right|_{r}^{\infty}
+    =\dfrac{q }{4\pi\varepsilon_0r}
+\end{align*}
+
+$r<R$:
+\begin{align*}
+    \dfrac{q }{4\pi\varepsilon_0R}+\int_{r}^{R}\dfrac{q }{4\pi\varepsilon_0x^2}\frac{x^3}{R^3}\dif x
+    &=\dfrac{q }{4\pi\varepsilon_0R}+\left.\dfrac{qx^2}{4\pi\varepsilon_0R^3}\right|_{r}^{R}\\
+    &=\dfrac{q }{4\pi\varepsilon_0R}
+    +\dfrac{qR^2}{4\pi\varepsilon_0R^3}
+    -\dfrac{qr^2}{4\pi\varepsilon_0R^3}\\
+    &=\dfrac{q }{2\pi\varepsilon_0R}-\dfrac{qr^2}{4\pi\varepsilon_0R^3}
+\end{align*}
+\mysssec{一条均匀带电的无限长直线, 电荷线密度为$\lambda$, 求电势$V(\boldsymbol{r})$}
+\begin{align*}
+    V=\int_r^\infty\frac{\lambda}{2\pi r}\dif x=
+    \left.\frac{\lambda}{2\pi}\ln(x)\right|_r^\infty
+    =\frac{1}{2\pi}\ln(r)
+\end{align*}
+\mysssec{一个长度为$2L$的细杆均匀带电, 电荷线密度为$\lambda $, 求垂直于杆且与杆中心距离为$h$处的电势}
+\begin{align*}
+    V&=\int_{h}^{\infty}\frac{\lambda}{4\pi\varepsilon_0}\frac{2L}{x_2\sqrt{L^2+x_2^2}}\dif x_2\\
+    &=-\left.\frac{\lambda}{2\pi\varepsilon_0}\ln\left(\frac{\sqrt{x^2+L^2}+L}{x}\right)\right|_{h}^{\infty}
+    \\
+&=\frac{\lambda}{2\pi\varepsilon_0}\ln\left(\frac{\sqrt{h^2+L^2}+L}{h}\right)
+\end{align*}
+\mysssec{一个半径为$r$的圆片均匀带电, 电荷面密度为$\sigma  $, 求圆片中心上方距$h$处的电势}
+\begin{align*}
+    V&=\int_{h}^{\infty}\left(\frac{\sigma }{2\varepsilon_0}
+    -\frac{\sigma }{2\varepsilon_0}\frac{x_3}{\sqrt{x_3^2+r^2}}\right)\dif x_3\\
+    &=\left.\frac{\sigma }{2\varepsilon_0}x_3
+    -\frac{\sigma }{2\varepsilon_0}{\sqrt{x_3^2+r^2}}\right|_{h}^{\infty}\\
+    &=-\left.\frac{\sigma }{2\varepsilon_0}\frac{r^2}{x_3+\sqrt{x_3^2+r^2}}\right|_{h}^{\infty}\\
+    &=\frac{\sigma }{2\varepsilon_0}\frac{r^2}{h+\sqrt{h^2+r^2}}
+\end{align*}
+\mysssec{一个半径为$r$的圆线框均匀带电, 电荷线密度为$\lambda $, 求线框中心上方距$h$处的电势}
+\begin{align*}
+    V=\int_{h}^{\infty}\frac{\lambda}{2\varepsilon_0}\frac{x_3r}{\sqrt{x_3^2+r^2}^3}\dif x_3
+    =\left.-\frac{\lambda r}{2\varepsilon_0}\frac{1}{\sqrt{x_3^2+r^2}}\right|_{h}^{\infty}
+    =\frac{\lambda r}{2\varepsilon_0}\frac{1}{\sqrt{h^2+r^2}}
+\end{align*}
+\mysssec{一个尖角向下的圆锥体均匀带电, 电荷面密度为$\sigma  $, 圆锥高度等于半径为$h$, 求$z=h$处的电势}
+\begin{align*}
+    V&=\int_{-h}^{0}\frac{\lambda (h+x_3)}{2\varepsilon_0}\frac{1}{\sqrt{(h-x_3)^2+(h+x_3)^2}}\dif x_3\\
+    &=\int_{-h}^{0}\frac{\lambda (h+x_3)}{2\varepsilon_0}\frac{1}{\sqrt{2h^2+2x_3^2}}\dif x_3\\
+    &=\frac{\lambda }{2\sqrt{2}\varepsilon_0}\int_{-h}^{0}\frac{h}{\sqrt{h^2+x_3^2}}+\frac{x_3}{\sqrt{h^2+x_3^2}}\dif x_3\\
+    &=\left.h\ln\left({x_3}+{\sqrt{h^2+x_3^2}}\right)+\sqrt{h^2+x_3^2}\right|_{-h}^{0}\frac{\lambda }{2\sqrt{2}\varepsilon_0}\\
+    &=\left[h\ln\left({\sqrt{h^2}}\right)
+    +\sqrt{h^2}
+    -h\ln\left({-h}+{\sqrt{2h^2}}\right)
+    -\sqrt{2h^2}\right]\frac{\lambda }{2\sqrt{2}\varepsilon_0}\\
+    &=\left[h\ln\left(\frac{1}{\sqrt{2}-1}\right)
+    +h
+    -\sqrt{2}h\right]\frac{\lambda }{2\sqrt{2}\varepsilon_0}\\
+    &=\left[1
+    -\sqrt{2}
+    -\ln\left({\sqrt{2}-1}\right)\right]\frac{\lambda h}{2\sqrt{2}\varepsilon_0}
+\end{align*}
+\mysssec{一个半径为$r$的圆柱均匀带电, 电荷体密度为$\rho  $, 求圆柱中心上方距$h$处的电势}
+\begin{align*}
+    V&=\int_{-h}^{0}\frac{\rho}{2\varepsilon_0}\frac{r^2}{h+x_3+\sqrt{(h+x_3)^2+r^2}}\dif x_3\\
+    &\xlongequal{u=h+x_3}\int_{0}^{h}\frac{\rho}{2\varepsilon_0}\frac{r^2}{u+\sqrt{u^2+r^2}}\dif u\\
+    &=\int_{0}^{h}\frac{\rho r^2}{2\varepsilon_0}\frac{\sqrt{u^2+r^2}-u}{r^2}\dif u\\
+    &=\frac{\rho}{2\varepsilon_0}\int_{0}^{h}{\sqrt{u^2+r^2}-u}\dif u\\
+    &=\left.{u\sqrt{u^2+r^2}
+    +r^2\ln\left(u+\sqrt{u^2+r^2}\right)
+    -u^2}\right|_{0}^{h}\frac{\rho}{4\varepsilon_0}\\
+    &=\left[{h\sqrt{h^2+r^2}
+    +r^2\ln\left(h+\sqrt{h^2+r^2}\right)
+    -h^2}
+    -r^2\ln {r}\right]\frac{\rho}{4\varepsilon_0}
+\end{align*}
+\subsection{静电场的能量}
+\mysssec{离散电荷体系的静电能}
+
+考虑由 $N$ 个点电荷 $q_i$ 构成的静电体系。将电荷从无穷远逐个缓慢搬运到其最终位置, 
+外力所做的总功即为体系的静电能。
+
+设在放置第 $i$ 个电荷时, 其余电荷已就位, 则该电荷所处位置的当前电势为
+\[
+\varphi_i
+=
+\sum_{j=1}^{i-1}
+\frac{1}{4\pi\varepsilon_0}
+\frac{q_j}{|\boldsymbol r_i-\boldsymbol r_j|}.
+\]
+
+因此, 体系的总静电能为
+\[
+U
+=
+\sum_{i=1}^{N}\sum_{j=1}^{i-1}
+\frac{1}{4\pi\varepsilon_0}
+\frac{q_i q_j}{|\boldsymbol r_i-\boldsymbol r_j|}.
+\]
+
+注意到相互作用能在指标交换下满足
+$U_{ij}=U_{ji}$, 
+而对所有 $i\neq j$ 的求和中每一对指标被计数两次, 故可将上式对称化为
+\[
+U
+=
+\frac12
+\sum_{\substack{i,j=1\\ i\neq j}}^{N}
+\frac{1}{4\pi\varepsilon_0}
+\frac{q_i q_j}{|\boldsymbol r_i-\boldsymbol r_j|}
+=
+\frac12 q_i \varphi_i.
+\]
+
+
+\mysssec{连续电荷分布的能量表达式}
+对离散情形的自然推广给出
+\[
+U
+=
+\frac{1}{2}\iiint \rho\varphi\dif V.
+\]
+
+\mysssec{场能量}
+
+静电势满足泊松方程
+\[
+\nabla^2 \varphi = -\frac{\rho}{\varepsilon_0}.
+\]
+
+将其代入能量表达式, 得
+\[
+U
+=
+-\frac{\varepsilon_0}{2}\iiint \varphi\,\nabla^2\varphi\,\dif V.
+\]
+
+对右端积分作分部积分。注意到
+\[
+\nabla\cdot(\varphi\nabla\varphi)
+=
+(\nabla\varphi)^2 + \varphi\nabla^2\varphi,
+\]
+于是
+\[
+\varphi\nabla^2\varphi
+=
+\nabla\cdot(\varphi\nabla\varphi)
+-
+(\nabla\varphi)^2.
+\]
+
+代入得
+\[
+U
+=
+-\frac{\varepsilon_0}{2}
+\left[
+\iiint \nabla\cdot(\varphi\nabla\varphi)\,\dif V
+-
+\iiint (\nabla\varphi)^2\,\dif V
+\right].
+\]
+
+当 $r\to\infty$ 时, 
+\[
+\varphi(\boldsymbol r)\sim \frac{1}{r},\qquad
+\nabla\varphi\sim \frac{1}{r^2}.
+\]
+
+因此
+\[
+\varphi\nabla\varphi \sim \frac{1}{r^3},
+\]
+对应的无穷远处曲面积分
+\[
+\oiint \varphi\nabla\varphi\cdot\dif\boldsymbol S\to0
+\]
+
+\[
+U
+=
+\frac{\varepsilon_0}{2}\iiint (\nabla\varphi)^2\,\dif V.
+\]
+
+\[
+U=\frac{\varepsilon_0}{2}\iiint E^2\,\dif V
+\]
+\mysssec{电场能量密度}
+这表明：静电能可以视为分布在空间中的电场所携带的能量。
+
+由此自然引入电场的能量密度
+\[
+\boxed{
+u
+\equiv
+\frac{\varepsilon_0}{2}\boldsymbol E^2
+}
+\]
+\mysssec{考虑两个同心球面, 半径分别为$a$和$b$, 内球面带有电荷$q$ , 外球面带有电荷$-q$, 求总能量}
+\begin{align*}
+    U&=\frac{\varepsilon_0}{2}\iiint E^2\dif V
+    =\frac{\varepsilon_04\pi}{2}\int_a^b \left(\frac{q}{4\pi\varepsilon_0r^2}\right)^2r^2\dif r
+    =\int_a^b \frac{q^2}{8\pi\varepsilon_0r^2}\dif r
+    =\frac{q^2}{8\pi\varepsilon_0}\left(\frac{1}{b}-\frac{1}{a}\right)
+\end{align*}
+\subsection{导体}
+\mysssec{导体内部电场为零}
+若导体内部存在非零电场, 则自由电荷将在电场作用下持续运动, 
+与静电平衡的假设矛盾。
+因此, 导体内部必须满足
+\[
+\boldsymbol E = -\boldsymbol{\nabla}\varphi = \boldsymbol 0.
+\]
+
+\mysssec{导体内部体电荷密度为零}
+\[
+\boldsymbol{\nabla}\cdot\boldsymbol E = \frac{\rho}{\varepsilon_0},
+\]
+结合 $\boldsymbol E=\boldsymbol 0$,
+\[
+\rho = 0 \qquad (\text{导体内部}).
+\]
+\mysssec{净电荷只能分布在导体表面}
+
+既然导体内部体电荷密度为零, 
+而导体整体可能带有净电荷, 
+则这些电荷只能分布在导体的表面上。
+\mysssec{导体是等势体}
+由 $\boldsymbol E = -\boldsymbol{\nabla}\varphi$ 以及
+导体内部 $\boldsymbol E=\boldsymbol 0$, 
+可知导体内部电势处处相同
+\mysssec{导体表面外侧电场垂直于表面}
+
+考虑导体表面上一点的切向电场分量。
+若存在非零切向分量, 
+则自由电荷将在表面沿切向运动, 
+从而破坏静电平衡。
+
+因此, 导体表面外侧的电场只能沿法向：
+\[
+\boldsymbol E_\parallel = 0
+\]
+\mysssec{空腔中含点电荷的球形导体}
+
+设一不带电的球形导体，半径为 $R$，中心位于原点，其内部挖去一任意形状的空腔。
+在空腔内某处放置一点电荷 $q$。求球外区域的电场分布。
+
+导体处于静电平衡时，金属内部电场为零，因而导体整体为等势体。
+取一紧贴导体内壁、位于金属内部的高斯面，由高斯定律可得
+\[
+\oint \boldsymbol E\cdot \dif \boldsymbol a = 0,
+\]
+故内壁所感应的总电荷必为 $-q$。
+又由于导体整体不带电，外表面所带电荷总量为 $+q$。
+
+\medskip
+
+关键在于确定外表面电荷的分布形式。
+注意到：在所有满足
+\[
+\boldsymbol E = 0 \quad (\text{导体内部}), \qquad 
+\varphi = \text{常数} \quad (\text{导体表面})
+\]
+的允许电荷分布中，实际的静电平衡态对应于体系总静电能的极小值。
+
+\medskip
+
+球外区域不含自由电荷，其电势完全由外表面电荷分布决定。
+若外表面电荷分布破坏球对称性，则球外电场中将出现非径向分量，
+从而在保持总电荷为 $q$ 的约束下增加电场能
+\[
+U=\frac{\varepsilon_0}{2}\int E^2\,\dif V.
+\]
+因此，能量极小所对应的电荷分布必然保持球对称性。
+
+\medskip
+
+由此可知，外表面电荷在球面上均匀分布，
+其产生的球外电场与位于球心的点电荷 $q$ 完全相同。
+因此，球外任意一点处的电场为
+\[
+\boldsymbol E(\boldsymbol r)
+=
+\frac{1}{4\pi\varepsilon_0}\frac{q}{r^2}\,{\boldsymbol e_r},
+\qquad r>R.
+\]
+
+\medskip
+
+可见，空腔的形状以及点电荷在腔内的具体位置，
+均不影响球外区域的电场分布。
+
+\mysssec{一个半径为R的金属球, 带有电荷$q$, 这个金属球又被一个厚的同心金属球壳所包围(球壳内径为$a$, 外径为$b$)。\\
+(a)分别求出R, a, b球面上的电荷面密度$\sigma$。\\
+(b)求出球心处的电势, 选无限远处为参考点。\\
+(c)现在球壳的外表面接地, 电势能为零。(a)和(b)所得结果改变为什么?}
+
+(a):
+\begin{align*}
+    \sigma_R&=\frac{q}{4\pi R^2}\\
+    \sigma_a&=\frac{q}{4\pi a^2}\\
+    \sigma_b&=\frac{q}{4\pi b^2}
+\end{align*}
+
+(b):
+\begin{align*}
+    V=\int_{b}^{\infty}\frac{q}{4\pi\varepsilon_0 r}\dif r
+    +\int_{R}^{a}\frac{q}{4\pi\varepsilon_0 r}\dif r
+    =\frac{q}{4\pi\varepsilon_0 }\ln \left(\frac{bR}{a}\right)
+\end{align*}
+
+(c):
+\begin{align*}
+    \sigma_R&=\frac{q}{4\pi R^2}\\
+    \sigma_a&=\frac{q}{4\pi a^2}\\
+    \sigma_b&=0\\
+    V&=\frac{q}{4\pi\varepsilon_0 }\ln \left(\frac{R}{a}\right)
+\end{align*}
+\mysssec{一个半径为$R$的导体球体, 其内部有两个半径分别为a和b的圆形空洞, 在$a$空洞的中心放有点电荷$q$, 在$b$空洞的中心放有点电荷q。\\
+(a)求出电荷面密度$\sigma_a$, $\sigma_b$和$\sigma_R$。\\
+(b)导体外面的电场是什么?\\
+(c)每个空洞内的电场是什么?\\
+(d)$q_a$和$q_b$受到的力是什么?\\
+(e)如果让第三个电荷$q$靠近导体，上面所得结果哪一个会发生变化?}
+(a):
+\begin{align*}
+    \sigma_R&=\frac{2q}{4\pi R^2}\\
+    \sigma_a&=\frac{q}{4\pi a^2}\\
+    \sigma_b&=\frac{q}{4\pi b^2}
+\end{align*}
+
+(b):
+\begin{align*}
+    \boldsymbol{E}=\frac{2q\boldsymbol{r}}{4\pi\varepsilon_0 r^3}
+\end{align*}
+
+(c):
+\begin{align*}
+    \boldsymbol{E_a}&=\frac{q\boldsymbol{r}}{4\pi\varepsilon_0 r^3}\\
+    \boldsymbol{E_b}&=\frac{q\boldsymbol{r}}{4\pi\varepsilon_0 r^3}
+\end{align*}
+
+(d):0
+
+(e): $\sigma_R, b$
+
+\subsection{电容}
+\begin{equation}
+    C\equiv\frac{Q}{V}
+\end{equation}
+\begin{equation}
+    W=\int_{0}^{Q}\left(\frac{q}{C}\right)\dif q=\frac{Q^2}{2C}
+\end{equation}
+\mysssec{两个同轴金属管壳，半径分别为$a$和$b$，求出单位长度的电容。}
+\begin{align*}
+    V&=\int_{a}^{b}\frac{Q}{2\varepsilon_0 r}\dif r\\
+    &=\frac{Q}{2\varepsilon_0}\ln\left(\frac{b}{a}\right)\\
+    C&=\frac{Q}{V}\\
+    &=\frac{2\varepsilon_0}{\ln\left(\dfrac{b}{a}\right)}
+\end{align*}
+\subsection{习题}
+\mysssec{一个均匀带电、边长为$2a$的正方形面，电荷面密度为$\sigma$。
+求出距中心高度为$z$处的电场。}
+\begin{align*}
+    &\int_{0}^{a}\frac{\sigma}{\pi\varepsilon_0\sqrt{2L^2+z^2}}\boldsymbol e_3\frac{2Lz}{{L^2+z^2}}\dif L\\
+    \xlongequal{2L^2=z^2\tan^2\theta}&\int_{0}^{\arctan\frac{a}{\sqrt{2}z}}\frac{\sigma}{\pi\varepsilon_0\sqrt{z^2\tan^2\theta+z^2}}\boldsymbol e_3\frac{2z\tan\theta z}{{z^2\tan^2\theta+2z^2}}\dif z\tan\theta\\
+    =&\int_{0}^{\arctan\frac{\sqrt{2}a}{z}}\frac{\sigma\cos\theta}{\pi\varepsilon_0z\cos^2\theta}\boldsymbol e_3\frac{2z\tan\theta z}{{z^2\tan^2\theta+2z^2}}\dif z\theta\\
+    =&\int_{0}^{\arctan\frac{\sqrt{2}a}{z}}\frac{\sigma}{\pi\varepsilon_0\cos\theta}\boldsymbol e_3\frac{2\tan\theta}{{\tan^2\theta+2}}\dif \theta\\
+    =&\int_{0}^{\arctan\frac{\sqrt{2}a}{z}}\frac{2\sigma}{\pi\varepsilon_0 }\boldsymbol e_3\frac{\tan\theta}{{\tan^2\theta\cos\theta+2\cos\theta}}\dif \theta\\
+    =&\int_{0}^{\arctan\frac{\sqrt{2}a}{z}}\frac{2\sigma}{\pi\varepsilon_0 }\boldsymbol e_3\frac{\sin\theta}{{\sin^2\theta+2\cos^2\theta}}\dif \theta\\
+    =&-\int_{0}^{\arctan\frac{\sqrt{2}a}{z}}\frac{2\sigma}{\pi\varepsilon_0 }\boldsymbol e_3\frac{1}{{1+\cos^2\theta}}\dif \cos\theta\\
+    =&-\left.\frac{2\sigma}{\pi\varepsilon_0 }\boldsymbol e_3\arctan\cos\theta\right|_{0}^{\arctan\frac{\sqrt{2}a}{z}}\\
+    =&\frac{2\sigma}{\pi\varepsilon_0 }\boldsymbol e_3\left(\frac{\pi}{4}-\arctan\frac{z}{\sqrt{2a^2+z^2}}\right)\\
+\end{align*}
+\mysssec{已知电场$\boldsymbol{E}=\dfrac{A\boldsymbol{e}_r+B\sin\theta\cos\phi\boldsymbol{e}_\phi}{r}$, 求电荷密度}
+\begin{align*}
+    \boldsymbol{\nabla}\cdot\boldsymbol{E}=
+    &=\frac{1}{sr}\dfrac{\partial srE_r}{\partial r}
+    +\frac{1}{s}\dfrac{\partial E_{\phi}}{\partial \phi}\\
+    &=\frac{1}{sr}\dfrac{\partial sA}{\partial r}
+    +\frac{1}{sr}\dfrac{\partial B\sin\theta\cos\phi}{\partial \phi}\\
+    &=\frac{A}{r^2}-\frac{1}{r^2}{B\sin\phi}\\
+\end{align*}
+\mysssec{一个均匀带电球体，求出南半球与北半球之间的净相互作用力}
+\begin{align*}
+    E_z&=E_r\cos\theta
+    =\frac{\rho\cos\theta}{4\pi\varepsilon_0r^2}\frac{4\pi r^3}{3}
+    =\frac{\rho\cos\theta r}{3\varepsilon_0}\\
+    F&=\int_{0}^{R}\dif r\int_{0}^{2\pi}\dif \phi\int_{0}^{\frac{\pi}{2}}r^2\sin\theta \rho E_z\dif\theta\\
+    &=\int_{0}^{R}\dif r\int_{0}^{2\pi}\dif \phi\int_{0}^{\frac{\pi}{2}}r^3\sin\theta \rho\frac{\rho\cos\theta}{3\varepsilon_0}\dif\theta\\
+    &=\pi\int_{0}^{R}r^3\dif r\int_{0}^{\frac{\pi}{2}}\sin\theta \rho^2\frac{2\cos\theta}{3\varepsilon_0}\dif\theta\\
+    &=\pi R^4\int_{0}^{\frac{\pi}{2}}\sin\theta \rho^2\frac{\cos\theta}{6\varepsilon_0}\dif\theta\\
+    &=\pi R^4\int_{0}^{\frac{\pi}{2}}\rho^2\frac{\sin2\theta}{24\varepsilon_0}\dif2\theta\\
+    &=-\left.\rho^2R^4\pi\frac{\cos2\theta}{24\varepsilon_0}\right|_{0}^{\frac{\pi}{2}}\\
+    &=\frac{\rho^2R^4\pi}{12\varepsilon_0}
+\end{align*}
+\mysssec{一个半径为$R$的倒置半球面均匀带电，电荷面密度为$\sigma$。求出北极与球心处的电势差}
+\begin{align*}
+    V_{\text{圆片}}&=\frac{\sigma }{2\varepsilon_0}\frac{r^2}{h+\sqrt{h^2+r^2}}\\
+    V_{\text{半球北极}}&=\int_{0}^{2\pi}\dif\varphi\int_{0}^{\frac{\pi}{2}}\frac{\sigma R\sin\theta}{2\varepsilon_0}\frac{1}{\sqrt{R^2\left(1-\cos\theta\right)^2+R^2\sin^2\theta}}R^2\sin\theta\dif\theta\\
+    &=2\pi\int_{0}^{\frac{\pi}{2}}\frac{\sigma \sin^2\theta}{2\varepsilon_0}\frac{1}{\sqrt{\left(1-\cos\theta\right)^2+\sin^2\theta}}R^2\dif\theta\\
+    &=2\pi\int_{0}^{\frac{\pi}{2}}\frac{\sigma \sin^2\theta}{2\varepsilon_0}\frac{1}{\sqrt{2-2\cos\theta}}R^2\dif\theta\\
+    &=2\pi\int_{0}^{\frac{\pi}{2}}\dfrac{\sigma 4\sin^2\dfrac{\theta}{2}\cos^2\dfrac{\theta}{2}}{2\sqrt{2}\varepsilon_0}\dfrac{1}{\sqrt{1-\cos^2\dfrac{\theta}{2}+\sin^2\dfrac{\theta}{2}}}R^2\dif\theta\\
+    &=2\pi\int_{0}^{\frac{\pi}{2}}\dfrac{\sqrt{2}\sigma \sin^2\dfrac{\theta}{2}\cos^2\dfrac{\theta}{2}}{\varepsilon_0}\dfrac{1}{\sqrt{2\sin^2\dfrac{\theta}{2}}}R^2\dif\theta\\
+    &=2\pi\int_{0}^{\frac{\pi}{2}}\dfrac{\sigma \sin\dfrac{\theta}{2}\cos^2\dfrac{\theta}{2}}{\varepsilon_0}R^2\dif\theta\\
+    &=-4\pi\int_{0}^{\frac{\pi}{2}}\dfrac{\sigma \cos^2\dfrac{\theta}{2}}{\varepsilon_0}R^2\dif\cos\dfrac{\theta}{2}\\
+    &=-4\pi\left.\dfrac{\sigma \cos^3\dfrac{\theta}{2}}{2\varepsilon_0}R^2\right|_{0}^{\frac{\pi}{2}}\\
+    &=4\pi\dfrac{\sigma}{2\varepsilon_0}R^2
+    -4\pi\dfrac{\sqrt{2}\sigma}{8\varepsilon_0}R^2\\
+\end{align*}

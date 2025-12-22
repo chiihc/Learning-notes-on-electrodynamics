@@ -11,7 +11,7 @@
 \usepackage{esint}
 \usepackage{extarrows}
 \numberwithin{equation}{section}
-\def\dif{\mathinner{\mathrm{d}}\hphantom{\mskip-\thinmuskip}}
+\newcommand{\dif}{\mathinner{\mathrm{d}}\hphantom{\mskip-\thinmuskip}}
 
 \title{电动力学}
 \author{池灵泽}
@@ -24,4 +24,5 @@
 \begin{document}
 \include{chapters/chap0}
 \include{chapters/chap1}
+\include{chapters/chap2}
 \end{document}

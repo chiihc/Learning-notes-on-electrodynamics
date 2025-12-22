@@ -29,3 +29,7 @@
 \contentsline {subsection}{\numberline {2.1}电场}{25}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}电势}{27}{subsection.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.1}定义}{27}{subsubsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.3}静电场的能量}{29}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}导体}{31}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}电容}{33}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}习题}{34}{subsection.2.6}%
