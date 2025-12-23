@@ -1,10 +1,14 @@
 \begin{align*}
-    &r^2\int_{0}^{2\pi}\dif \phi\int_{0}^{\frac{\pi}{6}}(4r\sin^2\theta
-    +r\dfrac{1}{\cos^2\theta})\sin\theta
-    \dif \theta\\
-    =&2\pi r^3\int_{0}^{\frac{\pi}{6}}(4\sin^2\theta
-    +\dfrac{1}{\cos^2\theta})\dif \theta\\
-    =&2\pi r^3\left.(2\theta-\sin2\theta+\tan\theta)\right|_{0}^{\frac{\pi}{6}}\\
-    =&2\pi r^3(\frac{\pi}{3}-\frac{\sqrt{3}}{2}+\frac{\sqrt{3}}{2})\\
-    =&2\pi r^3\frac{\pi}{3}
+    V_{+\lambda}&=-\frac{\lambda}{2\pi\varepsilon_0}\ln\left|\boldsymbol{r}-d\boldsymbol{e}_1\right|\\
+    V_{-\lambda}&=\frac{\lambda}{2\pi\varepsilon_0}\ln\left|\boldsymbol{r}+d\boldsymbol{e}_1\right|\\
+    V&=-\frac{\lambda}{2\pi\varepsilon_0}\ln\left|\boldsymbol{r}-d\boldsymbol{e}_1\right|
+    +\frac{\lambda}{2\pi\varepsilon_0}\ln\left|\boldsymbol{r}+d\boldsymbol{e}_1\right|\\
+    &=\frac{\lambda}{4\pi\varepsilon_0}\ln\left[\frac{(x_1+d)^2+x_2^2}{(x_1-d)^2+x_2^2}\right]\\
+\end{align*}
+\begin{align*}
+    (x_1+d)^2+x_2^2&=k\left[(x_1-d)^2+x_2^2\right]\\
+    x_1^2+2x_1d+d^2+x_2^2&=kx_1^2-2kx_1d+kd^2+kx_2^2\\
+    0&=(k-1)x_1^2-2(k+1)x_1d+(k-1)d^2+(k-1)x_2^2\\
+    0&\xlongequal{u=\frac{k+1}{k-1}}x_1^2-2ux_1d+d^2+x_2^2\\
+    u^2-d^2&=(x_1-u)^2+x_2^2
 \end{align*}
