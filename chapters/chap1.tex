@@ -489,7 +489,7 @@ $\Delta\tau=h_1h_2h_3\,\Delta u_1\Delta u_2\Delta u_3$
 仅留下外边界 $\partial V$ 的通量。令分割尺寸趋于零, 
 通量和体积和分别趋于各自积分, 故得到
 \begin{equation}
-\iiint_V (\boldsymbol{\nabla} \cdot \boldsymbol{a})  \dif V
+\iiint_V (\boldsymbol{\nabla} \cdot \boldsymbol{a})  \dif\tau
 = \iint_{\partial V} \boldsymbol{a} \cdot \dif \boldsymbol{S}
 \end{equation}
 \subsubsection{斯托克斯定理}
@@ -538,7 +538,7 @@ $\Delta\tau=h_1h_2h_3\,\Delta u_1\Delta u_2\Delta u_3$
 \end{equation}
 其体积元为
 \begin{equation}
-    \dif V=s\dif s\dif \phi\dif{x}_3
+    \dif\tau=s\dif s\dif \phi\dif{x}_3
 \end{equation}
 梯度
 \begin{align}
@@ -619,7 +619,7 @@ $\Delta\tau=h_1h_2h_3\,\Delta u_1\Delta u_2\Delta u_3$
 \end{align}
 其体积元为
 \begin{equation}
-    \dif V=r\sin\theta r\dif r\dif \phi\dif{\theta}
+    \dif\tau=r\sin\theta r\dif r\dif \phi\dif{\theta}
 \end{equation}
 梯度
 \begin{align}
@@ -802,7 +802,7 @@ H(x)=
 并满足
 \begin{equation}
 \iiint \delta^{(3)}(\boldsymbol r-\boldsymbol r_0)
-f(\boldsymbol r)\,\dif V
+f(\boldsymbol r)\,\dif\tau
 =
 f(\boldsymbol r_0).
 \end{equation}
@@ -810,7 +810,7 @@ f(\boldsymbol r_0).
 
 在正交曲线坐标 $(u_1,u_2,u_3)$ 中, 
 \[
-\dif V = h_1 h_2 h_3 \,\dif u_1\dif u_2\dif u_3,
+\dif\tau = h_1 h_2 h_3 \,\dif u_1\dif u_2\dif u_3,
 \]
 因此定义
 \begin{equation}
@@ -827,27 +827,27 @@ h_1 h_2 h_3
 
 \subsection{矢量场理论}
 \subsubsection{亥姆霍兹定理}
-设矢量场 $\boldsymbol F(\boldsymbol r)$ 定义在整个空间中, 其散度与旋度分别给定为
+设矢量场 $\boldsymbol a(\boldsymbol r)$ 定义在整个空间中, 其散度与旋度分别给定为
 \begin{equation*}
-\boldsymbol{\nabla}\cdot\boldsymbol F(\boldsymbol r)=D(\boldsymbol r),
+\boldsymbol{\nabla}\cdot\boldsymbol a(\boldsymbol r)=f(\boldsymbol r),
 \qquad
-\boldsymbol{\nabla}\times\boldsymbol F(\boldsymbol r)=\boldsymbol C(\boldsymbol r).
+\boldsymbol{\nabla}\times\boldsymbol a(\boldsymbol r)=\boldsymbol b(\boldsymbol r).
 \end{equation*}
 
 为了使体积分有意义, 仅要求
-$D(\boldsymbol r)$ 与 $\boldsymbol C(\boldsymbol r)$ 在无穷远处趋于零是不够的, 
+$f(\boldsymbol r)$ 与 $\boldsymbol b(\boldsymbol r)$ 在无穷远处趋于零是不够的, 
 它们的衰减速度必须足够快。
 
 考虑定义在整个空间上的积分
 \begin{equation*}
-\iiint_{\mathbb V} X(\boldsymbol r)\dif V,
+\iiint_{V} X(\boldsymbol r)\dif\tau,
 \end{equation*}
 其中 $X(\boldsymbol r)$ 表示
-$D(\boldsymbol r)$ 或 $\boldsymbol C(\boldsymbol r)$ 的某一分量。
+$f(\boldsymbol r)$ 或 $\boldsymbol b(\boldsymbol r)$ 的某一分量。
 
 将积分写为球坐标形式, 
 \begin{equation*}
-\iiint_{\mathbb V} X(\boldsymbol r)\dif V
+\iiint_{V} X(\boldsymbol r)\dif\tau
 =
 \int_0^\infty
 \left(
@@ -862,7 +862,7 @@ $\Omega$ 成立
 \end{equation*}
 则有下界估计
 \begin{equation*}
-\iiint_{|\boldsymbol r|>R} |X(\boldsymbol r)|\dif V
+\iiint_{|\boldsymbol r|>R} |X(\boldsymbol r)|\dif\tau
 \ge
 A\int_R^\infty r\dif r
 \iint_{S}\dif\Omega,
@@ -889,7 +889,7 @@ X(\boldsymbol r)=o\!\left(\frac{1}{r^2}\right),
 
 因此, 为保证积分收敛, 必须要求
 \begin{equation}
-D(\boldsymbol r),\ \boldsymbol C(\boldsymbol r)
+f(\boldsymbol r),\ \boldsymbol b(\boldsymbol r)
 = o\!\left(\frac{1}{r^2}\right),
 \qquad r\to\infty.
 \end{equation}
@@ -898,35 +898,35 @@ D(\boldsymbol r),\ \boldsymbol C(\boldsymbol r)
 
 
 
-设矢量场 $\boldsymbol F(\boldsymbol r)$ 具有散度
-$D(\boldsymbol r)$ 与旋度 $\boldsymbol C(\boldsymbol r)$。
+设矢量场 $\boldsymbol a(\boldsymbol r)$ 具有散度
+$f(\boldsymbol r)$ 与旋度 $\boldsymbol b(\boldsymbol r)$。
 若取另一矢量场
 \begin{equation*}
-\boldsymbol F'(\boldsymbol r)
+\boldsymbol a'(\boldsymbol r)
 =
-\boldsymbol F(\boldsymbol r)+\boldsymbol G(\boldsymbol r),
+\boldsymbol a(\boldsymbol r)+\boldsymbol c(\boldsymbol r),
 \end{equation*}
-且 $\boldsymbol G(\boldsymbol r)$ 满足
+且 $\boldsymbol c(\boldsymbol r)$ 满足
 \begin{equation*}
-\boldsymbol{\nabla}\cdot\boldsymbol G=0,
+\boldsymbol{\nabla}\cdot\boldsymbol c=0,
 \qquad
-\boldsymbol{\nabla}\times\boldsymbol G=\boldsymbol 0,
+\boldsymbol{\nabla}\times\boldsymbol c=\boldsymbol 0,
 \end{equation*}
-则 $\boldsymbol F'$ 与 $\boldsymbol F$ 具有相同的散度与旋度。
+则 $\boldsymbol a'$ 与 $\boldsymbol a$ 具有相同的散度与旋度。
 
 因此, 仅给定散度与旋度并不能唯一确定矢量场。然而可以证明：不存在一个非零的矢量场(见第三章)
-$\boldsymbol G(\boldsymbol r)$, 
+$\boldsymbol c(\boldsymbol r)$, 
 它在整个空间中同时满足
 \begin{equation*}
-\boldsymbol{\nabla}\cdot\boldsymbol G=0,
+\boldsymbol{\nabla}\cdot\boldsymbol c=0,
 \qquad
-\boldsymbol{\nabla}\times\boldsymbol G=\boldsymbol 0,
+\boldsymbol{\nabla}\times\boldsymbol c=\boldsymbol 0,
 \end{equation*}
 并且在无穷远处趋于零。
 
 因此, 若进一步要求
 \begin{equation*}
-\boldsymbol F(\boldsymbol r)\to \boldsymbol 0
+\boldsymbol a(\boldsymbol r)\to \boldsymbol 0
 \qquad \text{当 } r\to\infty,
 \end{equation*}
 则满足给定散度与旋度的矢量场解是唯一的。
@@ -936,24 +936,24 @@ $\boldsymbol G(\boldsymbol r)$,
 现在可以严谨地表述亥姆霍兹定理如下：
 
 \begin{quote}
-若矢量场 $\boldsymbol F(\boldsymbol r)$ 的散度
-$D(\boldsymbol r)$ 与旋度 $\boldsymbol C(\boldsymbol r)$ 已知, 
+若矢量场 $\boldsymbol a(\boldsymbol r)$ 的散度
+$f(\boldsymbol r)$ 与旋度 $\boldsymbol b(\boldsymbol r)$ 已知, 
 且二者在 $r\to\infty$ 时均比 $1/r^2$ 衰减得更快, 
-同时 $\boldsymbol F(\boldsymbol r)$ 在无穷远处趋于零, 
-则 $\boldsymbol F(\boldsymbol r)$ 被其散度与旋度唯一确定。
+同时 $\boldsymbol a(\boldsymbol r)$ 在无穷远处趋于零, 
+则 $\boldsymbol a(\boldsymbol r)$ 被其散度与旋度唯一确定。
 \end{quote}
 
 \subsubsection{势函数}
 
 \paragraph{1. 标量势与无旋场}
-设向量场 $\boldsymbol F(\boldsymbol r)$ 定义在某一区域 $V\subset\mathbb R^3$。若存在标量函数 $\phi(\boldsymbol r)$, 使得
+设向量场 $\boldsymbol a(\boldsymbol r)$ 定义在某一区域。若存在标量函数 $U(\boldsymbol r)$, 使得
 \begin{equation}
-    \boldsymbol F = -\boldsymbol{\nabla}\phi,
+    \boldsymbol a = -\boldsymbol{\nabla}U,
 \end{equation}
-则称 $\phi$ 为 $\boldsymbol F$ 的\textbf{标量势函数}, $\boldsymbol F$ 称为\textbf{保守场}。由旋度的定义可得
+则称 $U$ 为 $\boldsymbol a$ 的\textbf{标量势函数}, $\boldsymbol a$ 称为\textbf{保守场}。由旋度的定义可得
 \begin{equation}
-    \boldsymbol{\nabla}\times\boldsymbol F
-    = -\boldsymbol{\nabla}\times\boldsymbol{\nabla}\phi
+    \boldsymbol{\nabla}\times\boldsymbol a
+    = -\boldsymbol{\nabla}\times\boldsymbol{\nabla}U
     = \boldsymbol 0.
 \end{equation}
 因此, 任何具有标量势的向量场必为无旋场。
@@ -961,48 +961,48 @@ $D(\boldsymbol r)$ 与旋度 $\boldsymbol C(\boldsymbol r)$ 已知,
 \paragraph{2. 无旋场的势函数存在性}
 若
 \begin{equation}
-    \boldsymbol{\nabla}\times\boldsymbol F = \boldsymbol 0,
+    \boldsymbol{\nabla}\times\boldsymbol a = \boldsymbol 0,
 \end{equation}
 并且区域 $V$ 是单连通的(任意闭合曲线可连续收缩为一点), 则由斯托克斯定理可得
 \begin{equation}
-    \oint_C \boldsymbol F \cdot \dif \boldsymbol l
-    = \iint_S (\boldsymbol{\nabla}\times\boldsymbol F) \cdot \dif \boldsymbol S
+    \oint_C \boldsymbol a \cdot \dif \boldsymbol l
+    = \iint_S (\boldsymbol{\nabla}\times\boldsymbol a) \cdot \dif \boldsymbol S
     = 0,
 \end{equation}
 线积分与路径无关, 可定义
 \begin{equation}
     \phi(\boldsymbol r)
-    = -\int_{\boldsymbol r_0}^{\boldsymbol r} \boldsymbol F \cdot \dif \boldsymbol l,
+    = -\int_{\boldsymbol r_0}^{\boldsymbol r} \boldsymbol a \cdot \dif \boldsymbol l,
 \end{equation}
-从而得到 $\boldsymbol F = -\boldsymbol{\nabla}\phi$。
+从而得到 $\boldsymbol a = -\boldsymbol{\nabla}\phi$。
 
 \paragraph{3. 向量势与无散场}
-若存在向量函数 $\boldsymbol A(\boldsymbol r)$, 使
+若存在向量函数 $\boldsymbol b(\boldsymbol r)$, 使
 \begin{equation}
-    \boldsymbol F = \boldsymbol{\nabla} \times \boldsymbol A,
+    \boldsymbol a = \boldsymbol{\nabla} \times \boldsymbol b,
 \end{equation}
-则称 $\boldsymbol A$ 为 $\boldsymbol F$ 的\textbf{向量势}。由恒等式
+则称 $\boldsymbol b$ 为 $\boldsymbol F$ 的\textbf{向量势}。由恒等式
 \begin{equation}
-    \boldsymbol{\nabla}\cdot(\boldsymbol{\nabla}\times \boldsymbol A) = 0
+    \boldsymbol{\nabla}\cdot(\boldsymbol{\nabla}\times \boldsymbol b) = 0
 \end{equation}
 可知, 任何具有向量势的向量场必为无散场。
 
 \paragraph{4. 势函数的不唯一性}
 \begin{itemize}
-    \item 若 $\boldsymbol F = -\boldsymbol{\nabla}\phi$, 则对任意常数 $C$, $\phi' = \phi + C$ 给出同一向量场。
-    \item 若 $\boldsymbol F = \boldsymbol{\nabla}\times \boldsymbol A$, 则对任意标量函数 $\chi(\boldsymbol r)$, $\boldsymbol A' = \boldsymbol A + \boldsymbol{\nabla} \chi$ 产生相同的 $\boldsymbol F$(\textbf{规范变换})。
+    \item 若 $\boldsymbol a = -\boldsymbol{\nabla}U$, 则对任意常数 $C$, $U' = U + C$ 给出同一向量场。
+    \item 若 $\boldsymbol a = \boldsymbol{\nabla}\times \boldsymbol b$, 则对任意标量函数 $\chi(\boldsymbol r)$, $\boldsymbol b' = \boldsymbol b + \boldsymbol{\nabla} \chi$ 产生相同的 $\boldsymbol a$(\textbf{规范变换})。
 \end{itemize}
 
 \paragraph{5. 亥姆霍兹分解}
-在满足适当衰减条件的情况下, 任意向量场 $\boldsymbol F$ 可分解为
+在满足适当衰减条件的情况下, 任意向量场 $\boldsymbol a$ 可分解为
 \begin{equation}
-    \boldsymbol F
-    = -\boldsymbol{\nabla}\phi + \boldsymbol{\nabla}\times \boldsymbol A,
+    \boldsymbol a
+    = -\boldsymbol{\nabla}U + \boldsymbol{\nabla}\times \boldsymbol b,
 \end{equation}
 其中
 \begin{align}
-    \boldsymbol{\nabla}^2 \phi &= -\boldsymbol{\nabla}\cdot \boldsymbol F,\\
-    \boldsymbol{\nabla}^2 \boldsymbol A &= -\boldsymbol{\nabla}\times \boldsymbol F.
+    \boldsymbol{\nabla}^2 U &= -\boldsymbol{\nabla}\cdot \boldsymbol a,\\
+    \boldsymbol{\nabla}^2 \boldsymbol b &= -\boldsymbol{\nabla}\times \boldsymbol a.
 \end{align}
 这就是亥姆霍兹定理在势函数语言下的表达。
 
@@ -1122,8 +1122,8 @@ $D(\boldsymbol r)$ 与旋度 $\boldsymbol C(\boldsymbol r)$ 已知,
 \end{align*}
 \mysssec{证明$\iiint_V \boldsymbol{b}\cdot(\boldsymbol{\nabla}\times\boldsymbol{a})\dif \tau=\iiint_V \boldsymbol{a}\cdot(\boldsymbol{\nabla}\times\boldsymbol{b})\dif \tau+\iint(\boldsymbol{a}\times\boldsymbol{b})\cdot\dif \boldsymbol{S}_{\partial V}$}
 \begin{align*}
-    \iint_{\partial V} (\boldsymbol{a}\times\boldsymbol{b}) \cdot \dif \boldsymbol{S}&= \iiint_V \boldsymbol{\nabla} \cdot (\boldsymbol{a}\times\boldsymbol{b})  \dif V\\
-    &= \iiint_V [\boldsymbol{b}\cdot(\boldsymbol{\nabla}\times\boldsymbol{a})-\boldsymbol{a}\cdot(\boldsymbol{\nabla}\times\boldsymbol{b})]  \dif V\\
+    \iint_{\partial V} (\boldsymbol{a}\times\boldsymbol{b}) \cdot \dif \boldsymbol{S}&= \iiint_V \boldsymbol{\nabla} \cdot (\boldsymbol{a}\times\boldsymbol{b})  \dif\tau\\
+    &= \iiint_V [\boldsymbol{b}\cdot(\boldsymbol{\nabla}\times\boldsymbol{a})-\boldsymbol{a}\cdot(\boldsymbol{\nabla}\times\boldsymbol{b})]  \dif\tau\\
     \iiint_V \boldsymbol{b}\cdot(\boldsymbol{\nabla}\times\boldsymbol{a})\dif \tau&=\iiint_V \boldsymbol{a}\cdot(\boldsymbol{\nabla}\times\boldsymbol{b})\dif \tau+\iint_{\partial V}(\boldsymbol{a}\times\boldsymbol{b})\cdot\dif \boldsymbol{S}
 \end{align*}
 \mysssec{设$f=f(r)$,求$\boldsymbol{\nabla}^2\left[f(r)\right]$}
@@ -1139,7 +1139,7 @@ $D(\boldsymbol r)$ 与旋度 $\boldsymbol C(\boldsymbol r)$ 已知,
     +\frac{\partial^2 f}{\partial r^2}
     \nonumber\\
 \end{align}
-\mysssec{证明:$\iiint_V\boldsymbol{\nabla}\times\boldsymbol{a}\dif V=\oiint\dif\boldsymbol{S}\times\boldsymbol{a}$}
+\mysssec{证明:$\iiint_V\boldsymbol{\nabla}\times\boldsymbol{a}\dif\tau=\oiint\dif\boldsymbol{S}\times\boldsymbol{a}$}
 
 取任意常向量 $\boldsymbol c$。利用式\ref{向量恒等式0}得
 $\boldsymbol\nabla\times\boldsymbol c=\boldsymbol 0$, 因此
@@ -1151,17 +1151,17 @@ $\boldsymbol\nabla\times\boldsymbol c=\boldsymbol 0$, 因此
 
 应用高斯定理, 
 \[
-\iiint_V \boldsymbol\nabla\cdot(\boldsymbol a\times\boldsymbol c)\dif V
+\iiint_V \boldsymbol\nabla\cdot(\boldsymbol a\times\boldsymbol c)\dif\tau
 =
 \oiint_{\partial V} (\boldsymbol a\times\boldsymbol c)\cdot \dif \boldsymbol S
 =
-\iiint_V \boldsymbol c\cdot(\boldsymbol\nabla\times\boldsymbol a)\dif V.
+\iiint_V \boldsymbol c\cdot(\boldsymbol\nabla\times\boldsymbol a)\dif\tau.
 \]
 
 利用式\ref{标量三重积}得
 \[
 \boldsymbol c\cdot
-\iiint_V (\boldsymbol\nabla\times\boldsymbol a)\dif V
+\iiint_V (\boldsymbol\nabla\times\boldsymbol a)\dif\tau
 =
 \boldsymbol c\cdot
 \oiint_{\partial V} \dif \boldsymbol S\times\boldsymbol a.
@@ -1169,7 +1169,7 @@ $\boldsymbol\nabla\times\boldsymbol c=\boldsymbol 0$, 因此
 
 由于上述等式对任意常向量 $\boldsymbol c$ 成立, 必有
 \[
-\iiint_V (\boldsymbol{\boldsymbol\nabla}\times\boldsymbol a)\dif V
+\iiint_V (\boldsymbol{\boldsymbol\nabla}\times\boldsymbol a)\dif\tau
 =
 \oiint_{\partial V} \dif \boldsymbol S\times\boldsymbol a.
 \]
@@ -1349,13 +1349,13 @@ $\boldsymbol\nabla\times\boldsymbol c=\boldsymbol 0$, 因此
     =&\int_{0}^{R}2\pi r^3\frac{\pi}{3}\dif r\\
     =&2\pi R^4\frac{\pi}{12}
 \end{align*}
-\mysssec{证明$\iiint_V\left[f\boldsymbol{\nabla}^2g+(\boldsymbol{\nabla}f)\cdot(\boldsymbol{\nabla}g)\right]\dif V=\oiint_S(f\boldsymbol{\nabla}g)\cdot\dif S$}
+\mysssec{证明$\iiint_V\left[f\boldsymbol{\nabla}^2g+(\boldsymbol{\nabla}f)\cdot(\boldsymbol{\nabla}g)\right]\dif\tau=\oiint_S(f\boldsymbol{\nabla}g)\cdot\dif S$}
 \begin{align*}
-    \iiint_V (\boldsymbol{\nabla} \cdot \boldsymbol{a})  \dif V
+    \iiint_V (\boldsymbol{\nabla} \cdot \boldsymbol{a})  \dif\tau
     &= \iint_{\partial V} \boldsymbol{a} \cdot \dif \boldsymbol{S}\\
-    \iiint_V [\boldsymbol{\nabla} \cdot (f\boldsymbol{\nabla}g)]  \dif V
+    \iiint_V [\boldsymbol{\nabla} \cdot (f\boldsymbol{\nabla}g)]  \dif\tau
     &= \iint_{\partial V} (f\boldsymbol{\nabla}g) \cdot \dif \boldsymbol{S}\\
-    \iiint_V\left[f\boldsymbol{\nabla}^2g+(\boldsymbol{\nabla}f)\cdot(\boldsymbol{\nabla}g)\right]\dif V
+    \iiint_V\left[f\boldsymbol{\nabla}^2g+(\boldsymbol{\nabla}f)\cdot(\boldsymbol{\nabla}g)\right]\dif\tau
     &= \iint_{\partial V} (f\boldsymbol{\nabla}g) \cdot \dif \boldsymbol{S}\\
 \end{align*}
 \mysssec{求$\boldsymbol{a}={r^n}\boldsymbol{e}_r$的散度}

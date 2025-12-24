@@ -3,9 +3,9 @@
 \section{静电学}
 \subsection{电场}
 \mysssec{库仑定律}
-设一个静止点电荷$q$距检验电荷$Q$的距离为$r$, 那么它作用在$Q$上的力是
+设一个静止点电荷$q_1$距检验电荷$q_2$的距离为$r$, 那么它作用在$Q$上的力是
 \begin{equation}
-    \boldsymbol{F}=\frac{1}{4\pi\varepsilon_0}\frac{qQ}{r^3}\boldsymbol{r}
+    \boldsymbol{F}=\frac{1}{4\pi\varepsilon_0}\frac{q_1q_2}{r^3}\boldsymbol{r}
 \end{equation}
 常数$\varepsilon_0$称为真空介电常数, $\varepsilon_0=8.85\times10^{-12}\ \rm{\dfrac{C^2}{N\cdot m^2}}$
 \mysssec{电场}
@@ -99,10 +99,10 @@ $\rho$为电荷密度
 \subsection{电势}
 \subsubsection{定义}
 \begin{equation}
-    V(\boldsymbol{r})\equiv-\int_{O}^{r}\boldsymbol{E}\cdot\dif\boldsymbol{l}
+    U(\boldsymbol{r})\equiv-\int_{O}^{r}\boldsymbol{E}\cdot\dif\boldsymbol{l}
 \end{equation}
 其中$O$为预先设置的标准参考点, 通常为无限远处
-\mysssec{一个半径为$R$的均匀带电球体, 总电荷为$q$, 求电势$V(\boldsymbol{r})$}
+\mysssec{一个半径为$R$的均匀带电球体, 总电荷为$q$, 求电势$U(\boldsymbol{r})$}
 $r\ge R$:
 \begin{align*}
     \int_{r}^{\infty}\dfrac{q }{4\pi\varepsilon_0x^2}\dif x=
@@ -119,22 +119,22 @@ $r<R$:
     -\dfrac{qr^2}{4\pi\varepsilon_0R^3}\\
     &=\dfrac{q }{2\pi\varepsilon_0R}-\dfrac{qr^2}{4\pi\varepsilon_0R^3}
 \end{align*}
-\mysssec{一条均匀带电的无限长直线, 电荷线密度为$\lambda$, 求电势$V(\boldsymbol{r})$}
+\mysssec{一条均匀带电的无限长直线, 电荷线密度为$\lambda$, 求电势$U(\boldsymbol{r})$}
 \begin{align*}
-    V=\int_r^\infty\frac{\lambda}{2\pi r}\dif x=
+    U=\int_r^\infty\frac{\lambda}{2\pi r}\dif x=
     \left.\frac{\lambda}{2\pi}\ln(x)\right|_r^\infty
     =\frac{1}{2\pi}\ln(r)
 \end{align*}
 \mysssec{一个长度为$2L$的细杆均匀带电, 电荷线密度为$\lambda $, 求垂直于杆且与杆中心距离为$h$处的电势}
 \begin{align*}
-    V&=\int_{h}^{\infty}\frac{\lambda}{4\pi\varepsilon_0}\frac{2L}{x_2\sqrt{L^2+x_2^2}}\dif x_2\\
+    U&=\int_{h}^{\infty}\frac{\lambda}{4\pi\varepsilon_0}\frac{2L}{x_2\sqrt{L^2+x_2^2}}\dif x_2\\
     &=-\left.\frac{\lambda}{2\pi\varepsilon_0}\ln\left(\frac{\sqrt{x^2+L^2}+L}{x}\right)\right|_{h}^{\infty}
     \\
 &=\frac{\lambda}{2\pi\varepsilon_0}\ln\left(\frac{\sqrt{h^2+L^2}+L}{h}\right)
 \end{align*}
 \mysssec{一个半径为$r$的圆片均匀带电, 电荷面密度为$\sigma  $, 求圆片中心上方距$h$处的电势}
 \begin{align*}
-    V&=\int_{h}^{\infty}\left(\frac{\sigma }{2\varepsilon_0}
+    U&=\int_{h}^{\infty}\left(\frac{\sigma }{2\varepsilon_0}
     -\frac{\sigma }{2\varepsilon_0}\frac{x_3}{\sqrt{x_3^2+r^2}}\right)\dif x_3\\
     &=\left.\frac{\sigma }{2\varepsilon_0}x_3
     -\frac{\sigma }{2\varepsilon_0}{\sqrt{x_3^2+r^2}}\right|_{h}^{\infty}\\
@@ -143,13 +143,13 @@ $r<R$:
 \end{align*}
 \mysssec{一个半径为$r$的圆线框均匀带电, 电荷线密度为$\lambda $, 求线框中心上方距$h$处的电势}
 \begin{align*}
-    V=\int_{h}^{\infty}\frac{\lambda}{2\varepsilon_0}\frac{x_3r}{\sqrt{x_3^2+r^2}^3}\dif x_3
+    U=\int_{h}^{\infty}\frac{\lambda}{2\varepsilon_0}\frac{x_3r}{\sqrt{x_3^2+r^2}^3}\dif x_3
     =\left.-\frac{\lambda r}{2\varepsilon_0}\frac{1}{\sqrt{x_3^2+r^2}}\right|_{h}^{\infty}
     =\frac{\lambda r}{2\varepsilon_0}\frac{1}{\sqrt{h^2+r^2}}
 \end{align*}
 \mysssec{一个尖角向下的圆锥体均匀带电, 电荷面密度为$\sigma  $, 圆锥高度等于半径为$h$, 求$z=h$处的电势}
 \begin{align*}
-    V&=\int_{-h}^{0}\frac{\lambda (h+x_3)}{2\varepsilon_0}\frac{1}{\sqrt{(h-x_3)^2+(h+x_3)^2}}\dif x_3\\
+    U&=\int_{-h}^{0}\frac{\lambda (h+x_3)}{2\varepsilon_0}\frac{1}{\sqrt{(h-x_3)^2+(h+x_3)^2}}\dif x_3\\
     &=\int_{-h}^{0}\frac{\lambda (h+x_3)}{2\varepsilon_0}\frac{1}{\sqrt{2h^2+2x_3^2}}\dif x_3\\
     &=\frac{\lambda }{2\sqrt{2}\varepsilon_0}\int_{-h}^{0}\frac{h}{\sqrt{h^2+x_3^2}}+\frac{x_3}{\sqrt{h^2+x_3^2}}\dif x_3\\
     &=\left.h\ln\left({x_3}+{\sqrt{h^2+x_3^2}}\right)+\sqrt{h^2+x_3^2}\right|_{-h}^{0}\frac{\lambda }{2\sqrt{2}\varepsilon_0}\\
@@ -166,7 +166,7 @@ $r<R$:
 \end{align*}
 \mysssec{一个半径为$r$的圆柱均匀带电, 电荷体密度为$\rho  $, 求圆柱中心上方距$h$处的电势}
 \begin{align*}
-    V&=\int_{-h}^{0}\frac{\rho}{2\varepsilon_0}\frac{r^2}{h+x_3+\sqrt{(h+x_3)^2+r^2}}\dif x_3\\
+    U&=\int_{-h}^{0}\frac{\rho}{2\varepsilon_0}\frac{r^2}{h+x_3+\sqrt{(h+x_3)^2+r^2}}\dif x_3\\
     &\xlongequal{u=h+x_3}\int_{0}^{h}\frac{\rho}{2\varepsilon_0}\frac{r^2}{u+\sqrt{u^2+r^2}}\dif u\\
     &=\int_{0}^{h}\frac{\rho r^2}{2\varepsilon_0}\frac{\sqrt{u^2+r^2}-u}{r^2}\dif u\\
     &=\frac{\rho}{2\varepsilon_0}\int_{0}^{h}{\sqrt{u^2+r^2}-u}\dif u\\
@@ -222,7 +222,7 @@ U
 \[
 U
 =
-\frac{1}{2}\iiint \rho\varphi\dif V.
+\frac{1}{2}\iiint \rho\varphi\dif\tau.
 \]
 
 \mysssec{场能量}
@@ -236,7 +236,7 @@ U
 \[
 U
 =
--\frac{\varepsilon_0}{2}\iiint \varphi\,\nabla^2\varphi\,\dif V.
+-\frac{\varepsilon_0}{2}\iiint \varphi\,\nabla^2\varphi\,\dif\tau.
 \]
 
 对右端积分作分部积分。注意到
@@ -260,9 +260,9 @@ U
 =
 -\frac{\varepsilon_0}{2}
 \left[
-\iiint \nabla\cdot(\varphi\nabla\varphi)\,\dif V
+\iiint \nabla\cdot(\varphi\nabla\varphi)\,\dif\tau
 -
-\iiint (\nabla\varphi)^2\,\dif V
+\iiint (\nabla\varphi)^2\,\dif\tau
 \right].
 \]
 
@@ -284,11 +284,11 @@ U
 \[
 U
 =
-\frac{\varepsilon_0}{2}\iiint (\nabla\varphi)^2\,\dif V.
+\frac{\varepsilon_0}{2}\iiint (\nabla\varphi)^2\,\dif\tau.
 \]
 
 \[
-U=\frac{\varepsilon_0}{2}\iiint E^2\,\dif V
+U=\frac{\varepsilon_0}{2}\iiint E^2\,\dif\tau
 \]
 \mysssec{电场能量密度}
 这表明：静电能可以视为分布在空间中的电场所携带的能量。
@@ -303,7 +303,7 @@ u
 \]
 \mysssec{考虑两个同心球面, 半径分别为$a$和$b$, 内球面带有电荷$q$ , 外球面带有电荷$-q$, 求总能量}
 \begin{align*}
-    U&=\frac{\varepsilon_0}{2}\iiint E^2\dif V
+    U&=\frac{\varepsilon_0}{2}\iiint E^2\dif\tau
     =\frac{\varepsilon_04\pi}{2}\int_a^b \left(\frac{q}{4\pi\varepsilon_0r^2}\right)^2r^2\dif r
     =\int_a^b \frac{q^2}{8\pi\varepsilon_0r^2}\dif r
     =\frac{q^2}{8\pi\varepsilon_0}\left(\frac{1}{b}-\frac{1}{a}\right)
@@ -374,7 +374,7 @@ u
 若外表面电荷分布破坏球对称性, 则球外电场中将出现非径向分量, 
 从而在保持总电荷为 $q$ 的约束下增加电场能
 \[
-U=\frac{\varepsilon_0}{2}\int E^2\,\dif V.
+U=\frac{\varepsilon_0}{2}\int E^2\,\dif\tau.
 \]
 因此, 能量极小所对应的电荷分布必然保持球对称性。
 
@@ -409,7 +409,7 @@ U=\frac{\varepsilon_0}{2}\int E^2\,\dif V.
 
 (b):
 \begin{align*}
-    V=\int_{b}^{\infty}\frac{q}{4\pi\varepsilon_0 r}\dif r
+    U=\int_{b}^{\infty}\frac{q}{4\pi\varepsilon_0 r}\dif r
     +\int_{R}^{a}\frac{q}{4\pi\varepsilon_0 r}\dif r
     =\frac{q}{4\pi\varepsilon_0 }\ln \left(\frac{bR}{a}\right)
 \end{align*}
@@ -419,7 +419,7 @@ U=\frac{\varepsilon_0}{2}\int E^2\,\dif V.
     \sigma_R&=\frac{q}{4\pi R^2}\\
     \sigma_a&=\frac{q}{4\pi a^2}\\
     \sigma_b&=0\\
-    V&=\frac{q}{4\pi\varepsilon_0 }\ln \left(\frac{R}{a}\right)
+    U&=\frac{q}{4\pi\varepsilon_0 }\ln \left(\frac{R}{a}\right)
 \end{align*}
 \mysssec{一个半径为$R$的导体球体, 其内部有两个半径分别为a和b的圆形空洞, 在$a$空洞的中心放有点电荷$q$, 在$b$空洞的中心放有点电荷q。\\
 (a)求出电荷面密度$\sigma_a$, $\sigma_b$和$\sigma_R$。\\
@@ -451,16 +451,16 @@ U=\frac{\varepsilon_0}{2}\int E^2\,\dif V.
 
 \subsection{电容}
 \begin{equation}
-    C\equiv\frac{Q}{V}
+    C\equiv\frac{Q}{U}
 \end{equation}
 \begin{equation}
     W=\int_{0}^{Q}\left(\frac{q}{C}\right)\dif q=\frac{Q^2}{2C}
 \end{equation}
 \mysssec{两个同轴金属管壳, 半径分别为$a$和$b$, 求出单位长度的电容。}
 \begin{align*}
-    V&=\int_{a}^{b}\frac{Q}{2\varepsilon_0 r}\dif r\\
+    U&=\int_{a}^{b}\frac{Q}{2\varepsilon_0 r}\dif r\\
     &=\frac{Q}{2\varepsilon_0}\ln\left(\frac{b}{a}\right)\\
-    C&=\frac{Q}{V}\\
+    C&=\frac{Q}{U}\\
     &=\frac{2\varepsilon_0}{\ln\left(\dfrac{b}{a}\right)}
 \end{align*}
 \subsection{习题}
@@ -501,7 +501,7 @@ U=\frac{\varepsilon_0}{2}\int E^2\,\dif V.
 \end{align*}
 \mysssec{一个半径为$R$的倒置半球面均匀带电, 电荷面密度为$\sigma$。求出北极与球心处的电势差}
 \begin{align*}
-    V_{\text{半球北极}}&=\dif\varphi\int_{0}^{\frac{\pi}{2}}\frac{\sigma R\sin\theta}{2\varepsilon_0}\frac{1}{\sqrt{R^2\left(1-\cos\theta\right)^2+R^2\sin^2\theta}}R\dif\theta\\
+    U_{\text{半球北极}}&=\dif\varphi\int_{0}^{\frac{\pi}{2}}\frac{\sigma R\sin\theta}{2\varepsilon_0}\frac{1}{\sqrt{R^2\left(1-\cos\theta\right)^2+R^2\sin^2\theta}}R\dif\theta\\
     &=\int_{0}^{\frac{\pi}{2}}\frac{\sigma \sin^2\theta}{2\varepsilon_0}\frac{1}{\sqrt{\left(1-\cos\theta\right)^2+\sin^2\theta}}R^2\dif\theta\\
     &=\int_{0}^{\frac{\pi}{2}}\frac{\sigma \sin\theta}{2\varepsilon_0}\frac{1}{\sqrt{2-2\cos\theta}}R\dif\theta\\
     &=\int_{0}^{\frac{\pi}{2}}\dfrac{\sigma 2\sin\dfrac{\theta}{2}\cos\dfrac{\theta}{2}}{2\sqrt{2}\varepsilon_0}\dfrac{1}{\sqrt{1-\cos^2\dfrac{\theta}{2}+\sin^2\dfrac{\theta}{2}}}R\dif\theta\\
@@ -510,9 +510,9 @@ U=\frac{\varepsilon_0}{2}\int E^2\,\dif V.
     &=\int_{0}^{\frac{\pi}{2}}\dfrac{\sigma}{\varepsilon_0}R\dif\sin\dfrac{\theta}{2}\\
     &=\left.\dfrac{\sigma \sin\dfrac{\theta}{2}}{\varepsilon_0}R\right|_{0}^{\frac{\pi}{2}}\\
     &=\dfrac{\sqrt{2}\sigma }{2\varepsilon_0}R\\
-    V_{\text{半球球心}}&=\frac{2\pi R^2\sigma}{4\pi\varepsilon_0 R}
+    U_{\text{半球球心}}&=\frac{2\pi R^2\sigma}{4\pi\varepsilon_0 R}
     =\frac{\sigma R}{2\varepsilon_0 }\\
-    \Delta V&=\frac{\sigma }{2\varepsilon_0}\frac{R^2}{\sqrt{R^2}}
+    \Delta U&=\frac{\sigma }{2\varepsilon_0}\frac{R^2}{\sqrt{R^2}}
     +\frac{\sigma R}{2\varepsilon_0 }
     -\frac{\sigma }{2\varepsilon_0}\frac{R^2}{R+\sqrt{R^2+R^2}}
     -\dfrac{\sqrt{2}\sigma }{2\varepsilon_0}R\\
@@ -543,12 +543,12 @@ U=\frac{\varepsilon_0}{2}\int E^2\,\dif V.
     +\pi\frac{k^2R^8}{8\varepsilon_0 R}\\
     &=\pi\frac{k^2R^7}{7\varepsilon_0}
 \end{align*}
-\mysssec{电势为$V=\frac{Ae^{-\lambda r}}{r}$, 求电场, 电荷密度, 总电荷}
+\mysssec{电势为$U=\frac{Ae^{-\lambda r}}{r}$, 求电场, 电荷密度, 总电荷}
 \begin{align*}
-    \boldsymbol{E}&=-\boldsymbol{\nabla}V\\
+    \boldsymbol{E}&=-\boldsymbol{\nabla}U\\
     &=\dfrac{\partial \dfrac{Ae^{-\lambda r}}{r}}{\partial r}\boldsymbol{e}_r\\
     &=\dfrac{\lambda rAe^{-\lambda r}+Ae^{-\lambda r}}{r^2}\boldsymbol{e}_r\\
-    \rho&=\varepsilon_0\boldsymbol{\nabla}^2V\\
+    \rho&=\varepsilon_0\boldsymbol{\nabla}^2U\\
     &=\varepsilon_0\frac{1}{r^2}\dfrac{\partial r^2a_r}{\partial r}\\
     &=\varepsilon_0\frac{1}{r^2}\dfrac{\partial \lambda rAe^{-\lambda r}+Ae^{-\lambda r}}{\partial r}\\
     &=\varepsilon_0\dfrac{\lambda Ae^{-\lambda r}
@@ -568,7 +568,7 @@ U=\frac{\varepsilon_0}{2}\int E^2\,\dif V.
 \end{align*}
 \mysssec{两条平行于z轴的无限长均匀带电线, 电荷线密度分别为$+\lambda$和$-\lambda$, 距离为$2d$。\\
 (a)求出任意一点的电势。\\
-(b)证明等势面为圆柱面, 对给定的电势$V$, 给出圆柱面的半径和轴的位置。}
+(b)证明等势面为圆柱面, 对给定的电势$U$, 给出圆柱面的半径和轴的位置。}
 % \begin{align*}
 %     \boldsymbol E_{+\lambda}&=\frac{\lambda(\boldsymbol{r}-d\boldsymbol{e}_1)}{2\varepsilon_0(\boldsymbol{r}-d\boldsymbol{e}_1)\cdot(\boldsymbol{r}-d\boldsymbol{e}_1)}\\
 %     &=\frac{\lambda(\boldsymbol{r}-d\boldsymbol{e}_1)}{2\varepsilon_0({r^2}-2d\boldsymbol{r}\cdot\boldsymbol{e}_1+d^2)}\\
@@ -596,9 +596,9 @@ U=\frac{\varepsilon_0}{2}\int E^2\,\dif V.
 % \end{align*}
 (a):
 \begin{align*}
-    V_{+\lambda}&=-\frac{\lambda}{2\pi\varepsilon_0}\ln\left|\boldsymbol{r}-d\boldsymbol{e}_1\right|\\
-    V_{-\lambda}&=\frac{\lambda}{2\pi\varepsilon_0}\ln\left|\boldsymbol{r}+d\boldsymbol{e}_1\right|\\
-    V&=-\frac{\lambda}{2\pi\varepsilon_0}\ln\left|\boldsymbol{r}-d\boldsymbol{e}_1\right|
+    U_{+\lambda}&=-\frac{\lambda}{2\pi\varepsilon_0}\ln\left|\boldsymbol{r}-d\boldsymbol{e}_1\right|\\
+    U_{-\lambda}&=\frac{\lambda}{2\pi\varepsilon_0}\ln\left|\boldsymbol{r}+d\boldsymbol{e}_1\right|\\
+    U&=-\frac{\lambda}{2\pi\varepsilon_0}\ln\left|\boldsymbol{r}-d\boldsymbol{e}_1\right|
     +\frac{\lambda}{2\pi\varepsilon_0}\ln\left|\boldsymbol{r}+d\boldsymbol{e}_1\right|\\
     &=\frac{\lambda}{4\pi\varepsilon_0}\ln\left[\frac{(x_1+d)^2+x_2^2}{(x_1-d)^2+x_2^2}\right]\\
 \end{align*}
@@ -611,26 +611,26 @@ U=\frac{\varepsilon_0}{2}\int E^2\,\dif V.
     u^2-d^2&=(x_1-u)^2+x_2^2\\
     R&=\sqrt{u^2-d^2}\\
     &=\sqrt{\left(\frac{k+1}{k-1}\right)^2-d^2}\\
-    &=\sqrt{\left(\frac{e^\dfrac{4\pi\varepsilon_0V}{\lambda}+1}{e^\dfrac{4\pi\varepsilon_0V}{\lambda}-1}\right)^2-d^2}
+    &=\sqrt{\left(\frac{e^\dfrac{4\pi\varepsilon_0U}{\lambda}+1}{e^\dfrac{4\pi\varepsilon_0U}{\lambda}-1}\right)^2-d^2}
 \end{align*}
-\mysssec{在一个真空二极管中, 电子从阴极面“热蒸发”后向阳极面加速运动, 阴极电势为零, 对面阳极的电势为$V_0$。在两极间隙中所形成的电子云(称为空间电荷)很快会达到一种分布状态, 使得阴极面上的电场为零。然后在两极板之间形成稳定的电流I。假定两个极板面积$A$远大于它们之间的距离$d$($A>>d$), 所以边界效应可以忽略。则$V, \rho, v$(电子速度)都仅是$x$的函数。\\
+\mysssec{在一个真空二极管中, 电子从阴极面“热蒸发”后向阳极面加速运动, 阴极电势为零, 对面阳极的电势为$U_0$。在两极间隙中所形成的电子云(称为空间电荷)很快会达到一种分布状态, 使得阴极面上的电场为零。然后在两极板之间形成稳定的电流I。假定两个极板面积$A$远大于它们之间的距离$d$($A>>d$), 所以边界效应可以忽略。则$U, \rho, v$(电子速度)都仅是$x$的函数。\\
 (a)写出在两极板之间空间的泊松方程。\\
-(b)假定电子从阴极是从静止开始运动的, 那么在点$x$, 这里电势为$V(x)$, 电子速度为多少?\\
+(b)假定电子从阴极是从静止开始运动的, 那么在点$x$, 这里电势为$U(x)$, 电子速度为多少?\\
 (c)在稳定状态下, 电流$I$不依赖于$x$。那么$\rho$和$v$之间的关系是什么?\\
-(d)利用上面的结果, 消去$\rho$和$v$, 得出$V$满足的微分方程。\\
-(e)作为$x, V_0, d$的函数, 求出$V$的解。并与没有空间电荷的情况比较。另外作为$x$的函
+(d)利用上面的结果, 消去$\rho$和$v$, 得出$U$满足的微分方程。\\
+(e)作为$x, U_0, d$的函数, 求出$U$的解。并与没有空间电荷的情况比较。另外作为$x$的函
 数, 求出$\rho$和$v$。\\
-(f) 证明$1 =KV^\frac{3}{2}_0$
+(f) 证明$1 =KU^\frac{3}{2}_0$
 求出常数$K$。}
 (a):
 \begin{align*}
-    \frac{\partial^2 V}{\partial x^2}=\frac{\rho}{\varepsilon_0}
+    \frac{\partial^2 U}{\partial x^2}=\frac{\rho}{\varepsilon_0}
 \end{align*}
 
 (b):
 \begin{align*}
-    eV&=\frac{1}{2}mv^2\\
-    v&=\sqrt{\frac{2eV}{m}}
+    eU&=\frac{1}{2}mv^2\\
+    v&=\sqrt{\frac{2eU}{m}}
 \end{align*}
 
 (c):
@@ -641,53 +641,48 @@ U=\frac{\varepsilon_0}{2}\int E^2\,\dif V.
 
 (d):
 \begin{align*}
-    \frac{\partial^2 V}{\partial x^2}&=\frac{\rho}{\varepsilon_0}\\
-    \frac{\partial^2 V}{\partial x^2}&=\frac{I}{Av\varepsilon_0}\\
-    \frac{\partial^2 V}{\partial x^2}&=\frac{I}{A\sqrt{\frac{2eV}{m}}\varepsilon_0}\\
+    \frac{\partial^2 U}{\partial x^2}&=\frac{\rho}{\varepsilon_0}\\
+    \frac{\partial^2 U}{\partial x^2}&=\frac{I}{Av\varepsilon_0}\\
+    \frac{\partial^2 U}{\partial x^2}&=\frac{I}{A\sqrt{\frac{2eU}{m}}\varepsilon_0}\\
     \end{align*}
 
     (e):
     \begin{align*}
-    2\frac{\partial V}{\partial x}\frac{\partial^2 V}{\partial x^2}&=2\frac{\partial V}{\partial x}\frac{I}{A\sqrt{\frac{2eV}{m}}\varepsilon_0}\\
-    \frac{\partial }{\partial x}\left(\frac{\partial V}{\partial x}\right)^2&=4\frac{\partial V^\frac{1}{2}}{\partial x}\frac{I}{A\sqrt{\frac{2e}{m}}\varepsilon_0}\\
-    \left(\frac{\partial V}{\partial x}\right)^2&=4\frac{IV^\frac{1}{2}}{A\sqrt{\frac{2e}{m}}\varepsilon_0}\\
-    \frac{\partial V}{\partial x}&=2\frac{I^\frac{1}{2}V^\frac{1}{4}}{A^\frac{1}{2}\left(\frac{2e}{m}\right)^\frac{1}{4}\varepsilon_0^\frac{1}{2}}\\
-    V^{-\frac{1}{4}}{\partial V}{}&=2\frac{I^\frac{1}{2}{m}^\frac{1}{4}\partial x}{A^\frac{1}{2}(2e)^\frac{1}{4}\varepsilon_0^\frac{1}{2}}\\
-    \frac{4}{3}V^{\frac{3}{4}}&=2\frac{I^\frac{1}{2}{m}^\frac{1}{4}x}{A^\frac{1}{2}(2e)^\frac{1}{4}\varepsilon_0^\frac{1}{2}}\\
-    V&=\frac{3^{\frac{4}{3}}I^\frac{2}{3}x^{\frac{4}{3}}{m}^\frac{1}{4}}{2A^\frac{1}{2}e^\frac{1}{3}\varepsilon_0^\frac{2}{3}}\\
-    v&=\sqrt{\frac{2eV}{m}}\\
+    2\frac{\partial U}{\partial x}\frac{\partial^2 U}{\partial x^2}&=2\frac{\partial U}{\partial x}\frac{I}{A\sqrt{\frac{2eU}{m}}\varepsilon_0}\\
+    \frac{\partial }{\partial x}\left(\frac{\partial U}{\partial x}\right)^2&=4\frac{\partial U^\frac{1}{2}}{\partial x}\frac{I}{A\sqrt{\frac{2e}{m}}\varepsilon_0}\\
+    \left(\frac{\partial U}{\partial x}\right)^2&=4\frac{IU^\frac{1}{2}}{A\sqrt{\frac{2e}{m}}\varepsilon_0}\\
+    \frac{\partial U}{\partial x}&=2\frac{I^\frac{1}{2}U^\frac{1}{4}}{A^\frac{1}{2}\left(\frac{2e}{m}\right)^\frac{1}{4}\varepsilon_0^\frac{1}{2}}\\
+    U^{-\frac{1}{4}}{\partial U}{}&=2\frac{I^\frac{1}{2}{m}^\frac{1}{4}\partial x}{A^\frac{1}{2}(2e)^\frac{1}{4}\varepsilon_0^\frac{1}{2}}\\
+    \frac{4}{3}U^{\frac{3}{4}}&=2\frac{I^\frac{1}{2}{m}^\frac{1}{4}x}{A^\frac{1}{2}(2e)^\frac{1}{4}\varepsilon_0^\frac{1}{2}}\\
+    U&=\frac{3^{\frac{4}{3}}I^\frac{2}{3}x^{\frac{4}{3}}{m}^\frac{1}{4}}{2A^\frac{1}{2}e^\frac{1}{3}\varepsilon_0^\frac{2}{3}}\\
+    v&=\sqrt{\frac{2eU}{m}}\\
     &=\sqrt{\dfrac{2e\dfrac{3^{\frac{4}{3}}I^\frac{2}{3}x^{\frac{4}{3}}{m}^\frac{1}{4}}{2A^\frac{1}{2}e^\frac{1}{3}\varepsilon_0^\frac{2}{3}}}{m}}\\
     &=\sqrt{\dfrac{3^{\frac{4}{3}}I^\frac{2}{3}x^{\frac{4}{3}}e^\frac{2}{3}}{A^\frac{1}{2}\varepsilon_0^\frac{2}{3}{m}^\frac{3}{4}}}\\
     &=\dfrac{3^{\frac{2}{3}}I^\frac{1}{3}x^{\frac{2}{3}}e^\frac{1}{3}}{A^\frac{1}{4}\varepsilon_0^\frac{1}{3}{m}^\frac{3}{8}}\\
-    \rho&=\varepsilon_0\frac{\partial^2 V}{\partial x^2}\\
+    \rho&=\varepsilon_0\frac{\partial^2 U}{\partial x^2}\\
     &=\frac{2I^\frac{2}{3}{m}^\frac{1}{4}\varepsilon_0^\frac{1}{3}}{3^{\frac{2}{3}}A^\frac{1}{2}e^\frac{1}{3}x^{\frac{2}{3}}}\\
 \end{align*}
 
 (f):
 \begin{align*}
-    V&=\frac{3^{\frac{4}{3}}I^\frac{2}{3}x^{\frac{4}{3}}{m}^\frac{1}{4}}{2A^\frac{1}{2}e^\frac{1}{3}\varepsilon_0^\frac{2}{3}}\\
-    I^\frac{2}{3}&=\frac{V2A^\frac{1}{2}e^\frac{1}{3}\varepsilon_0^\frac{2}{3}}{3^{\frac{4}{3}}x^{\frac{4}{3}}{m}^\frac{1}{4}}\\
-    I&=\frac{V^\frac{3}{2}2^\frac{3}{2}A^\frac{3}{4}e^\frac{1}{2}\varepsilon_0^\frac{2}{3}}{3^2x^2{m}^\frac{3}{2}}\\
-    I&=\frac{V_0^\frac{3}{2}2^\frac{3}{2}A^\frac{3}{4}e^\frac{1}{2}\varepsilon_0^\frac{2}{3}}{3^2d^2{m}^\frac{3}{2}}
+    U&=\frac{3^{\frac{4}{3}}I^\frac{2}{3}x^{\frac{4}{3}}{m}^\frac{1}{4}}{2A^\frac{1}{2}e^\frac{1}{3}\varepsilon_0^\frac{2}{3}}\\
+    I^\frac{2}{3}&=\frac{U2A^\frac{1}{2}e^\frac{1}{3}\varepsilon_0^\frac{2}{3}}{3^{\frac{4}{3}}x^{\frac{4}{3}}{m}^\frac{1}{4}}\\
+    I&=\frac{U^\frac{3}{2}2^\frac{3}{2}A^\frac{3}{4}e^\frac{1}{2}\varepsilon_0^\frac{2}{3}}{3^2x^2{m}^\frac{3}{2}}\\
+    I&=\frac{U_0^\frac{3}{2}2^\frac{3}{2}A^\frac{3}{4}e^\frac{1}{2}\varepsilon_0^\frac{2}{3}}{3^2d^2{m}^\frac{3}{2}}
 \end{align*}
-\mysssec{假设现在极精确的测量已经揭示出库仑定律的误差。两个点电荷之间的作用力为$\boldsymbol{F}=\dfrac{q_1q_2}{4\pi\varepsilon_0r^2}\left(1+\frac{r}{\lambda}\right)e^{-\frac{r}{\lambda}}\boldsymbol{e}_r$式中，入是一个新的自然常数。你的任务是按照这个新发现重新表述静电学。假定叠加原理仍然成立。\\
+\mysssec{假设现在极精确的测量已经揭示出库仑定律的误差。两个点电荷之间的作用力为$\boldsymbol{F}=\dfrac{q_1q_2}{4\pi\varepsilon_0r^2}\left(1+\frac{r}{\lambda}\right)e^{-\frac{r}{\lambda}}\boldsymbol{e}_r$式中, 入是一个新的自然常数。你的任务是按照这个新发现重新表述静电学。假定叠加原理仍然成立。\\
 (a)电场是什么?\\
 (b)求出一个点电荷的电势。\\
-(c)对一个位于原点的点电荷, 证明$\oiint_S\boldsymbol{E}\cdot\dif\boldsymbol{S}+\frac{1}{\lambda^2}\iiint_VV\dif\tau =\frac{q}{\varepsilon_0}$\\
-(d)证明$\oiint_S\boldsymbol{E}\cdot\dif\boldsymbol{S}+\frac{1}{\lambda^2}\iiint_VV\dif\tau =\iiint_V\frac{\rho}{\varepsilon_0}\dif\tau$
+(c)对一个位于原点的点电荷, 证明$\oiint_S\boldsymbol{E}\cdot\dif\boldsymbol{S}+\frac{1}{\lambda^2}\iiint_VU\dif\tau =\frac{q}{\varepsilon_0}$
 }
 (a):
 \begin{align*}
     \boldsymbol{E}&=\dfrac{q}{4\pi\varepsilon_0r^2}\left(1+\frac{r}{\lambda}\right)e^{-\frac{r}{\lambda}}\boldsymbol{e}_r
-    % \boldsymbol{\nabla}\cdot\boldsymbol{E}&=\frac{1}{r^2}\dfrac{\partial r^2\dfrac{q}{4\pi\varepsilon_0r^2}\left(1+\frac{r}{\lambda}\right)e^{-\frac{r}{\lambda}}}{\partial r}\\
-    % &=\frac{q}{r^2 4\pi\varepsilon_0}\dfrac{\partial\left(1+\frac{r}{\lambda}\right)e^{-\frac{r}{\lambda}}}{\partial r}\\
-    % &=-\frac{q}{r^2 4\pi\varepsilon_0}\frac{re^{-\frac{r}{\lambda}}}{\lambda^2}\\
-    % &=-\frac{qe^{-\frac{r}{\lambda}}}{r 4\pi\varepsilon_0\lambda^2}\\
 \end{align*}
 
 (b):
 \begin{align*}
-    V&=\int_{R}^{\infty}\dfrac{q}{4\pi\varepsilon_0r^2}\left(1+\frac{r}{\lambda}\right)e^{-\frac{r}{\lambda}}\dif r\\
+    U&=\int_{R}^{\infty}\dfrac{q}{4\pi\varepsilon_0r^2}\left(1+\frac{r}{\lambda}\right)e^{-\frac{r}{\lambda}}\dif r\\
     &=\dfrac{q}{4\pi\varepsilon_0\lambda}\int_{R}^{\infty}\left(\frac{\lambda^2}{r^2}+\frac{\lambda}{r}\right)e^{-\frac{r}{\lambda}}\dif \frac{r}{\lambda}\\
     &=-\dfrac{q}{4\pi\varepsilon_0\lambda}\int_{R}^{\infty}\left(\frac{\lambda^2}{r^2}--\frac{\lambda}{r}\right)e^{-\frac{r}{\lambda}}\dif -\frac{r}{\lambda}\\
     &\xlongequal{u=-\frac{r}{\lambda}}-\dfrac{q}{4\pi\varepsilon_0\lambda}\int_{-\frac{R}{\lambda}}^{-\infty}\left(\frac{1}{u^2}-\frac{1}{u}\right)e^{u}\dif u\\
@@ -699,13 +694,85 @@ U=\frac{\varepsilon_0}{2}\int E^2\,\dif V.
 \begin{align*}
     \oiint_S\boldsymbol{E}\cdot\dif\boldsymbol{S}&=4\pi R^2\dfrac{q}{4\pi\varepsilon_0R^2}\left(1+\frac{R}{\lambda}\right)e^{-\frac{r}{\lambda}}
     =\dfrac{q}{\varepsilon_0}\left(1+\frac{R}{\lambda}\right)e^{-\frac{r}{\lambda}}\\
-    \frac{1}{\lambda^2}\iiint_VV\dif\tau&=4\pi\frac{1}{\lambda^2}\int_0^Re^{-\frac{r}{\lambda}}\dfrac{q}{4\pi\varepsilon_0r}r^2\dif r\\
+    \frac{1}{\lambda^2}\iiint_VU\dif\tau&=4\pi\frac{1}{\lambda^2}\int_0^Re^{-\frac{r}{\lambda}}\dfrac{q}{4\pi\varepsilon_0r}r^2\dif r\\
     &=\int_0^R-\frac{r}{\lambda}e^{-\frac{r}{\lambda}}\dfrac{q}{\varepsilon_0}\dif -\frac{r}{\lambda}\\
     &\xlongequal{u=-\frac{r}{\lambda}}\int_0^{-\frac{R}{\lambda}}ue^{u}\dfrac{q}{\varepsilon_0}\dif u\\
     &=\left.\left(u-1\right)e^{u}\dfrac{q}{\varepsilon_0}\right|_0^{-\frac{R}{\lambda}}\\
     &=\left(-\frac{R}{\lambda}-1\right)e^{-\frac{R}{\lambda}}\dfrac{q}{\varepsilon_0}
     +\dfrac{q}{\varepsilon_0}\\
-     \frac{q}{\varepsilon_0}&=\oiint_S\boldsymbol{E}\cdot\dif\boldsymbol{S}+\frac{1}{\lambda^2}\iiint_VV\dif\tau
+     \frac{q}{\varepsilon_0}&=\oiint_S\boldsymbol{E}\cdot\dif\boldsymbol{S}+\frac{1}{\lambda^2}\iiint_VU\dif\tau
+\end{align*}
+\mysssec{假设一个电场
+$E_1=ax,\, E_2=E_3 =0$
+, 电荷密度为什么?}
+\begin{align*}
+    \varepsilon_0\frac{\partial ax}{\partial x}
+    &=a
 \end{align*}
 
-(d):
+\mysssec{所有的静电学特性都是从库仑定律的$\frac{1}{r^2}$以及叠加原理导出的。因此也可以对牛顿万有
+引力构建类似的理论。什么是一个半径为$R$, 质量为$M$的球体的引力能?假设质量密度是均匀的。利用所
+得结果估计太阳的引力能}
+
+根据库仑定律与万有引力定律的数学相似性, 我们可以通过替换常数直接得到均匀球体的引力自能。
+
+在静电学中, 均匀带电球体的静电能为：
+\begin{equation}
+    W_e = \frac{3}{5} \frac{1}{4\pi\varepsilon_0} \frac{Q^2}{R}
+\end{equation}
+利用类比关系得到质量为 $M$ 的均匀球体的引力能：
+\begin{equation}
+    W_g = -\frac{3}{5} \frac{GM^2}{R}
+\end{equation}
+
+假设球体密度为 $\rho = \frac{M}{\frac{4}{3}\pi R^3}$。考虑已形成半径为 $r$ 的球核, 其质量为 $m(r) = \frac{4}{3}\pi \rho r^3$。现从无穷远处移近一层厚度为 $dr$ 的薄壳, 其质量为 $dm = 4\pi \rho r^2 dr$。此过程引力所做的功为：
+\begin{align}
+    dW &= -\frac{G m(r) dm}{r} \\
+       &= -\frac{G}{r} \left( \frac{4}{3}\pi \rho r^3 \right) \left( 4\pi \rho r^2 dr \right) \\
+       &= -\frac{16}{3} \pi^2 G \rho^2 r^4 dr
+\end{align}
+对整个球体从 $0$ 到 $R$ 积分：
+\begin{align}
+    W_g &= \int_{0}^{R} -\frac{16}{3} \pi^2 G \rho^2 r^4 dr \\
+        &= -\frac{16}{3} \pi^2 G \rho^2 \left[ \frac{1}{5} r^5 \right]_{0}^{R} \\
+        &= -\frac{16}{15} \pi^2 G \rho^2 R^5
+\end{align}
+将 $\rho^2 = \frac{M^2}{\frac{16}{9}\pi^2 R^6}$ 代入上式, 化简得：
+\begin{equation}
+    W_g = -\frac{3}{5} \frac{GM^2}{R}
+\end{equation}
+
+取太阳参数：$M \approx {2.0e30}{kg}$, $R \approx {7.0e8}{m}$, 引力常数 $G \approx {6.67e-11}{m^3.kg^{-1}.s^{-2}}$。代入公式得：
+\begin{align*}
+    W &= -\frac{3}{5} \frac{6.67 \times 10^{-11} \times (2.0 \times 10^{30})^2}{7.0 \times 10^8} \\
+            &\approx -{2.28e41}{J}
+\end{align*}
+\mysssec{我们知道导体上的电荷是分布于其表面的, 但是在表面上是如何分布的不是很容易确定
+的。电荷面密度可以直接计算的著名例子是椭圆面：
+$\dfrac{x_1^2}{r_1^2}+\dfrac{x_2^2}{r_2^2}+\dfrac{x_3^2}{r_3^2}=1$
+对这种情况
+$\sigma=\dfrac{Q}{4\pi r_1r_2r_3}\left(\dfrac{x_1^2}{r_1^4}+\dfrac{x_2^2}{r_2^4}+\dfrac{x_3^2}{r_3^4}\right)^{-\frac{1}{2}}$\\
+(a)一个半径为$R$的圆盘的净电荷面密度
+$\sigma$;\\
+(b)位于$x,y$平面一条无限长的导体“丝带”的电荷面密度$\sigma$, 丝带沿$y$轴放置, 宽度$2a$;\\
+(c)求出一个从$x_3=-a$到$x_3=a$的导体“针”每单位长度的电荷。}
+(a):令$r_1=r_2$
+\begin{align*}
+    \sigma&=\dfrac{Q}{4\pi r_1^2r_3}\left(\dfrac{x_1^2+x_2^2}{r_1^4}+\dfrac{x_3^2}{r_3^4}\right)^{-\frac{1}{2}}\\
+    &=\dfrac{Q}{4\pi r_1^2r_3}\left(\dfrac{x_1^2+x_2^2}{r_1^4}+\dfrac{r_1^2-{x_1^2-x_2^2}}{r_3^2r_1^2}\right)^{-\frac{1}{2}}\\
+    &=\dfrac{Q}{4\pi r_1^2}\left(\dfrac{x_1^2+x_2^2}{r_1^4}r_3^2+\dfrac{r_1^2-{x_1^2-x_2^2}}{r_1^2}\right)^{-\frac{1}{2}}\\
+    &\xlongequal{r_3\rightarrow 0}\dfrac{Q}{4\pi r_1^2}\left(\dfrac{r_1^2-{x_1^2-x_2^2}}{r_1^2}\right)^{-\frac{1}{2}}
+\end{align*}
+
+(b):令$r_2=\infty$
+\begin{align*}
+    \sigma&=\dfrac{\lambda}{4\pi r_1r_3}\left(\dfrac{x_1^2}{r_1^4}+\dfrac{x_3^2}{r_3^4}\right)^{-\frac{1}{2}}\\
+    &=\dfrac{\lambda}{2\pi \sqrt{r_1^2-x_1^2}}
+\end{align*}
+
+(c):
+\begin{align*}
+    \sigma&=\dfrac{Q}{4\pi r_1^2}\left(\dfrac{x_1^2+x_2^2}{r_1^4}r_3^2+\dfrac{r_1^2-{x_1^2-x_2^2}}{r_1^2}\right)^{-\frac{1}{2}}\\
+    &=\dfrac{Q}{4\pi r_1^2}\left(\dfrac{r_1^2r_3^2+r_1^2x_3^2}{r_1^4}+\dfrac{x_3^2}{r_1^2r_3^2}\right)^{-\frac{1}{2}}\\
+    &\xlongequal{r_1\rightarrow 0}\dfrac{Q}{2\pi \sqrt{a^2-x_3^2}}
+\end{align*}
