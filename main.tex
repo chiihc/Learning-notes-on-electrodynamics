@@ -1,0 +1,28 @@
+\documentclass[UTF8]{ctexart}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{esint}
+\usepackage{extarrows}
+\numberwithin{equation}{section}
+\newcommand{\dif}{\mathinner{\mathrm{d}}\hphantom{\mskip-\thinmuskip}}
+
+\title{电动力学}
+\author{}
+\date{\today}
+\newcommand{\mysssec}[1]{%
+  \refstepcounter{subsubsection}%
+  \subsubsection*{\thesubsubsection\quad #1}%
+}
+
+\begin{document}
+\include{chapters/chap0}
+\include{chapters/chap1}
+\include{chapters/chap2}
+\end{document}

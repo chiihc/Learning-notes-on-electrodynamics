@@ -1,0 +1,1405 @@
+
+
+
+
+
+
+\cleardoublepage
+
+\section{矢量分析}
+\subsection{定义}
+\mysssec{爱因斯坦求和约定}
+\begin{equation}
+    \sum_{i=1}^3a_ib_i\equiv a_ib_i
+\end{equation}
+\mysssec{克罗内克尔符号}
+\begin{equation}
+    \delta_{ij}\equiv\left\{\begin{aligned}
+        1\ (i=j) \\
+        0\ (i\neq j)
+    \end{aligned}\right.
+\end{equation}
+性质:
+\begin{equation}
+    a_ib_j\delta_{ij}=a_ib_i
+\end{equation}
+\begin{equation}
+    \delta_{ij}\delta_{jk}=\delta_{ik}
+\end{equation}
+\mysssec{点乘}
+\begin{equation}\boldsymbol{a}\cdot\boldsymbol{b}\equiv a_ib_i\end{equation}
+\mysssec{Levi-Civita符号}
+\begin{equation}
+    \varepsilon_{ijk} \equiv \begin{pmatrix}
+        \delta_{1i} & \delta_{2i} & \delta_{3i} \\
+        \delta_{1j} & \delta_{2j} & \delta_{3j} \\
+        \delta_{1k} & \delta_{2k} & \delta_{3k} \\
+    \end{pmatrix}
+\end{equation}
+性质:
+\begin{equation}
+    \varepsilon_{ijk}=-\varepsilon_{ikj}=-\varepsilon_{kji}=-\varepsilon_{jik}
+\end{equation}
+\begin{align}
+    \varepsilon_{ijk}\varepsilon_{lmn}
+     & =\begin{pmatrix}
+                  \delta_{1i} & \delta_{2i} & \delta_{3i} \\
+                  \delta_{1j} & \delta_{2j} & \delta_{3j} \\
+                  \delta_{1k} & \delta_{2k} & \delta_{3k} \\
+              \end{pmatrix}\begin{pmatrix}
+                                           \delta_{1i} & \delta_{2i} & \delta_{3i} \\
+                                           \delta_{1j} & \delta_{2j} & \delta_{3j} \\
+                                           \delta_{1k} & \delta_{2k} & \delta_{3k} \\
+                                       \end{pmatrix}\nonumber   \\
+     & =\begin{pmatrix}
+                  \delta_{1i} & \delta_{2i} & \delta_{3i} \\
+                  \delta_{1j} & \delta_{2j} & \delta_{3j} \\
+                  \delta_{1k} & \delta_{2k} & \delta_{3k} \\
+              \end{pmatrix}^T\begin{pmatrix}
+                                             \delta_{1l} & \delta_{2l} & \delta_{3l} \\
+                                             \delta_{1m} & \delta_{2m} & \delta_{3m} \\
+                                             \delta_{1n} & \delta_{2n} & \delta_{3n} \\
+                                         \end{pmatrix}\nonumber \\
+     & =\begin{pmatrix}
+                  \delta_{1i} & \delta_{1j} & \delta_{1k} \\
+                  \delta_{2i} & \delta_{2j} & \delta_{2k} \\
+                  \delta_{3i} & \delta_{3j} & \delta_{3k} \\
+              \end{pmatrix}\begin{pmatrix}
+                                           \delta_{1l} & \delta_{2l} & \delta_{3l} \\
+                                           \delta_{1m} & \delta_{2m} & \delta_{3m} \\
+                                           \delta_{1n} & \delta_{2n} & \delta_{3n} \\
+                                       \end{pmatrix}\nonumber   \\
+     & =\begin{pmatrix}
+                  \delta_{1l} & \delta_{2l} & \delta_{3l} \\
+                  \delta_{1m} & \delta_{2m} & \delta_{3m} \\
+                  \delta_{1n} & \delta_{2n} & \delta_{3n} \\
+              \end{pmatrix}\begin{pmatrix}
+                                           \delta_{1i} & \delta_{1j} & \delta_{1k} \\
+                                           \delta_{2i} & \delta_{2j} & \delta_{2k} \\
+                                           \delta_{3i} & \delta_{3j} & \delta_{3k} \\
+                                       \end{pmatrix}\nonumber   \\
+     & =\begin{pmatrix}
+                  \delta_{li} & \delta_{lj} & \delta_{lk} \\
+                  \delta_{mi} & \delta_{mj} & \delta_{mk} \\
+                  \delta_{ni} & \delta_{nj} & \delta_{nk} \\
+              \end{pmatrix}
+\end{align}
+\begin{equation}
+    \varepsilon_{ijk}\varepsilon_{lmk}
+      =\sum_{k=1}^{3}\begin{pmatrix}
+                                \delta_{li} & \delta_{lj} & \delta_{lk} \\
+                                \delta_{mi} & \delta_{mj} & \delta_{mk} \\
+                                \delta_{ki} & \delta_{kj} & 1           \\
+                            \end{pmatrix} =\begin{pmatrix}
+                  \delta_{li} & \delta_{lj} & 0 \\
+                  \delta_{mi} & \delta_{mj} & 0 \\
+                  0           & 0           & 1 \\
+              \end{pmatrix} =\delta_{li}\delta_{mj}-\delta_{lj}\delta_{mi}
+\end{equation}
+\begin{equation}
+    \varepsilon_{ijk}\varepsilon_{ljk}  =\delta_{li}\delta_{jj}-\delta_{lj}\delta_{ji} =3\delta_{li}-\delta_{li} =2\delta_{li}
+\end{equation}
+\mysssec{叉乘}
+\begin{equation}
+    \boldsymbol{a}\times\boldsymbol{b}\equiv \varepsilon_{ijk} a_i b_j \boldsymbol{e}_k=\begin{pmatrix}
+        \boldsymbol{e}_i & \boldsymbol{e}_j & \boldsymbol{e}_k \\
+        a_i              & a_j              & a_k              \\
+        b_i              & b_j              & b_k
+    \end{pmatrix}
+\end{equation}
+性质:
+\begin{align}
+    \boldsymbol{c}\cdot(\boldsymbol{a}\times\boldsymbol{b})
+     & =\boldsymbol{c}\cdot\varepsilon_{ijk} a_i b_j \boldsymbol{e}_k\nonumber \\
+     & =c_k\varepsilon_{ijk} a_i b_j \nonumber                                 \\
+     & =\varepsilon_{ijk} a_i b_j c_k\nonumber                                 \\
+     & =\begin{pmatrix}
+                  \delta_{1i} & \delta_{2i} & \delta_{3i} \\
+                  \delta_{1j} & \delta_{2j} & \delta_{3j} \\
+                  \delta_{1k} & \delta_{2k} & \delta_{3k} \\
+              \end{pmatrix}a_i b_j c_k\nonumber                          \\
+     & =\begin{pmatrix}
+                  \delta_{1i}a_i  & \delta_{2i}a_i  & \delta_{3i}a_i \\
+                  \delta_{1j} b_j & \delta_{2j} b_j & \delta_{3j}b_j \\
+                  \delta_{1k}c_k  & \delta_{2k} c_k & \delta_{3k}c_k \\
+              \end{pmatrix}\nonumber               \\
+     & =\begin{pmatrix}
+                  a_1 & a_2 & a_3 \\
+                  b_1 & b_2 & b_3 \\
+                  c_1 & c_2 & c_3 \\
+              \end{pmatrix}\label{标量三重积}
+\end{align}
+\begin{align}
+    \boldsymbol{c}\times(\boldsymbol{a}\times\boldsymbol{b})
+     & =\boldsymbol{c}\times\varepsilon_{ijk} a_i b_j \boldsymbol{e}_k\nonumber                                       \\
+     & =\varepsilon_{lkn}c_l\varepsilon_{ijk} a_i b_j \boldsymbol{e}_n\nonumber                                       \\
+     & =-\varepsilon_{lnk}\varepsilon_{ijk} a_i b_j c_l\boldsymbol{e}_n\nonumber                                      \\
+     & =-(\delta_{il}\delta_{jn}-\delta_{in}\delta_{jl})a_i b_j c_l\boldsymbol{e}_n\nonumber                          \\
+     & =-\delta_{il}\delta_{jn}a_i b_j c_l\boldsymbol{e}_n+\delta_{in}\delta_{jl}a_i b_j c_l\boldsymbol{e}_n\nonumber \\
+     & =-a_i b_j c_i\boldsymbol{e}_j+a_i b_j c_j\boldsymbol{e}_i\nonumber                                             \\
+     & =-(\boldsymbol{a}\cdot\boldsymbol{c})\boldsymbol{b}+(\boldsymbol{b}\cdot\boldsymbol{c})\boldsymbol{a}\label{三个矢量叉乘}
+\end{align}
+\begin{align}
+    \boldsymbol{e}\times(\boldsymbol{e}\times\boldsymbol{b}) & =-(\boldsymbol{e}\cdot\boldsymbol{e})\boldsymbol{b}+(\boldsymbol{b}\cdot\boldsymbol{e})\boldsymbol{e}=-\boldsymbol{b}+(\boldsymbol{b}\cdot\boldsymbol{e})\boldsymbol{e}
+\end{align}
+\mysssec{哈密顿算子}
+\begin{equation}
+    \boldsymbol{\nabla}\equiv\frac{\partial}{\partial x_i}\boldsymbol{e}_i
+\end{equation}
+\mysssec{梯度}
+
+设位置矢量 $\boldsymbol r=\boldsymbol r(u_1,u_2,u_3)$, 拉梅系数为
+\[
+h_i\equiv\Big\|\frac{\partial\boldsymbol r}{\partial u_i}\Big\|,\qquad
+{\boldsymbol e}\equiv\frac{1}{h_i}\frac{\partial\boldsymbol r}{\partial u_i}
+\]
+且 ${\boldsymbol e}_i\cdot{\boldsymbol e}_j=\delta_{ij}$。
+
+对标量场 $f(u_1,u_2,u_3)$, 全微分为
+\[
+\dif f = \frac{\partial f}{\partial u_i}\dif u_i.
+\]
+无穷小位移(线元)为
+\[
+\dif \boldsymbol l =  h_i\,\dif u_i\,{\boldsymbol e}_i.
+\]
+设 $\boldsymbol\nabla f = G_i {\boldsymbol e}_i$, 则
+\[
+\dif f = \boldsymbol\nabla f\cdot\boldsymbol d\boldsymbol l
+=G_i h_i\,\dif  u_i.
+\]
+比较系数, 得 $\boldsymbol G = \dfrac{1}{h_i}\dfrac{\partial f}{\partial u_i}\boldsymbol e_i$, 从而
+\begin{equation}
+\boldsymbol\nabla f =  \frac{1}{h_i}\frac{\partial f}{\partial u_i}{\boldsymbol e}_i\label{梯度}
+\end{equation}
+对于直角坐标
+\begin{equation}
+    \boldsymbol{\nabla} f=\frac{\partial f}{\partial x_i}\boldsymbol{e}_i
+\end{equation}
+性质:
+\begin{equation}
+    \boldsymbol{\nabla}r=\frac{\partial \sqrt{x_ix_i}}{\partial x_i}\boldsymbol{e}_i=\frac{ x_i}{ r}\boldsymbol{e}_i=\frac{\boldsymbol{r}}{r}
+\end{equation}
+\begin{equation}
+    \boldsymbol{\nabla} f(r)=\frac{\partial f}{\partial r}\frac{\partial r}{\partial x_i}\boldsymbol{e}_i=\frac{\partial f}{\partial r}\frac{\boldsymbol{r}}{r}
+\end{equation}
+\mysssec{散度}
+对微小增量 \(\dif u_1,\dif u_2,\dif u_3,\) 线元在三方向的实际长度分别为
+\[
+\dif l_1 = h_1\dif u_1,\quad \dif l_2 = h_2\dif u_2,\quad \dif l_3 = h_3\dif u_3
+\]
+因此微小长方体的体元为
+\begin{equation}\label{eq:volume}
+\dif \tau = \dif l_1 \dif l_2\dif l_3 
+= h_1 h_2 h_3\dif u_1\dif u_2\dif u_3.
+\end{equation}
+
+设矢量场在该点为
+\[
+\boldsymbol a = a_1{\boldsymbol e}_1 + a_2{\boldsymbol e}_2 + a_3{\boldsymbol e}_3,
+\]
+其中 \(a_1,a_2,a_3\) 为在局部单位基矢下的分量(均为 \(u_1,u_2,u_3\) 的函数)。
+
+下面计算穿过微小长方体六个面的净通量。以 \(u_1\) 方向为例, 考察在 \(u_1\) 与 \(u_1+\dif u_1\) 两个面：
+
+   面 \(u_1\)(在坐标 \(u\) 处, 向外法向为 \(-{\boldsymbol e}_1\))：面积元为
+  \[
+  \dif \boldsymbol a_{1}^{(-)} = -{\boldsymbol e}_1(h_2 \dif u_2)(h_3 \dif u_3) = -{\boldsymbol e}_1h_2 h_3\dif u_2\dif u_3,
+  \]
+  对应的通量(近似取该面中心处分量)：
+  \[
+  \Phi_1^{(-)} = \boldsymbol a(u_1,u_2,u_3)\cdot \dif \boldsymbol a_{1}^{(-)}
+  = -a_1(u_1,u_2,u_3)h_2 h_3\dif u_2\dif u_3.
+  \]
+
+   面 \(u+\dif u\)(向外法向为 \(+{\boldsymbol e}_1\))：面积元
+  \[
+  \dif\boldsymbol a_{1}^{(+)} = +{\boldsymbol e}_1h_2 h_3\dif u_2\dif u_3,
+  \]
+  通量(在 \(u+du\) 处)：
+  \[
+  \Phi_1^{(+)} = a_1(u_1+du_1,u_2,u_3)h_2(u_1+du_1,u_2,u_3)h_3(u_1+du_1,u_2,u_3)\dif u_2\dif u_3.
+  \]
+
+因此穿过这对面的净通量为
+\begin{align*}
+    \Delta\Phi_1 &= \Phi_1^{(+)}-\Phi_1^{(-)}\\
+&= \left[ a_1(u_1+\dif u_1,u_2,u_3)h_2(u_1+\dif u_1,u_2,u_3)h_3(u_1+\dif u_1,u_2,u_3) - a_1(u_1,u_2,u_3)h_2 h_3 \right] \dif u_2\dif u_3.
+\end{align*}
+用泰勒展开到一阶并忽略高阶项, 得
+\[
+\Delta\Phi_u = \frac{\partial}{\partial u_1}( h_2 h_3 a_1 )\dif u_1\dif u_2\dif u_3 + o(\dif u_1\dif u_2\dif u_3).
+\]
+
+对 \(u_2\) 和 \(u_3\) 方向做同样的计算, 六个面的净通量近似为三项之和：
+\[
+\Delta\Phi_{\text{total}} =
+\frac{\partial}{\partial u_i}\left( h_1h_2 h_3 \frac{a_i}{h_i} \right)\dif u_1\dif u_2\dif u_3
+\]
+
+
+由于体元按照式\eqref{eq:volume}为 \(\dif\tau = h_1 h_2 h_3\dif u_1\dif u_2\dif u_3\), 故单位体积的通量密度(即散度)为极限：
+\[
+\begin{aligned}
+\boldsymbol\nabla\cdot\boldsymbol a
+&= \lim_{\Delta\tau\to 0}\frac{\Delta\Phi_{\text{total}}}{d\tau} \\
+&=\frac{1}{h_1 h_2 h_3}\frac{\partial}{\partial u_i}\left(h_1 h_2 h_3\frac{a_i}{h_i}
+\right).
+\end{aligned}
+\]
+
+于是得到正交曲线坐标系下的散度公式：
+
+\begin{equation}\label{eq:div-general}
+\boldsymbol\nabla\cdot\boldsymbol a
+=\frac{1}{h_1 h_2 h_3}\frac{\partial}{\partial u_i}\left(h_1 h_2 h_3\frac{a_i}{h_i}
+\right).
+\end{equation}
+
+对于直角坐标
+\begin{equation}
+    \boldsymbol\nabla\cdot\boldsymbol a = \frac{\partial a_i}{\partial x_i} 
+\end{equation}
+
+
+
+性质:
+\begin{equation}
+    \boldsymbol{\nabla}\cdot \boldsymbol{r}=3
+\end{equation}
+\begin{equation}
+    \boldsymbol{\nabla}\cdot\boldsymbol{f}(r)=\frac{\partial f_i(r)}{\partial x_i}=f_i'\frac{\partial r}{\partial x_i}=\boldsymbol{f}'\cdot\frac{\boldsymbol{r}}{r}
+\end{equation}
+\mysssec{旋度}
+选取微小矩形位于 $u_1$-$u_2$ 平面, 固定 $u_3$。
+矩形四边的线元素：
+\[
+\begin{aligned}
+\text{下边: } & \dif \boldsymbol l_1 = h_1 \dif u_1 {\boldsymbol e}_1, \quad \text{从 } (u_1,u_2) \to (u_1+\dif u_1,u_2) \\
+\text{右边: } & \dif \boldsymbol l_2 = h_2 \dif u_2 {\boldsymbol e}_2, \quad \text{从 } (u_1+\dif u_1,u_2) \to (u_1+\dif u_1,u_2+\dif u_2) \\
+\text{上边: } & \dif \boldsymbol l_3 = -h_1 \dif u_1 {\boldsymbol e}_1, \quad \text{从 } (u_1+\dif u_1,u_2+\dif u_2) \to (u_1,u_2+\dif u_2) \\
+\text{左边: } & \dif \boldsymbol l_4 = -h_2 du_2 {\boldsymbol e}_2, \quad \text{从 } (u_1,u_2+\dif u_2) \to (u_1,u_2)
+\end{aligned}
+\]
+
+沿每一边计算 $\boldsymbol a \cdot d\boldsymbol l$ 并做泰勒展开(只保留一阶项)：
+\[
+\oint \boldsymbol a \cdot \dif \boldsymbol l
+\approx \left[ \frac{\partial}{\partial u_1} (h_2 a_2) - \frac{\partial}{\partial u_2} (h_1 a_1) \right] \dif u_1 \dif u_2
+\]
+
+面元面积：
+\[
+d S_3 = h_1 h_2 \dif u_1 \dif u_2
+\]
+
+旋度在 ${\boldsymbol e}_3$ 方向的分量：
+\[
+(\boldsymbol{\nabla} \times \boldsymbol a)_3 = \lim_{\dif u_1,\dif u_2 \to 0} \frac{\oint \boldsymbol a \cdot \dif \boldsymbol l}{\dif  S_3} = \frac{1}{h_1 h_2} \left[ \frac{\partial}{\partial u_1} (h_2 a_2) - \frac{\partial}{\partial u_2} (h_1 a_1) \right]
+\]
+
+同理, 对于其他两个方向：
+\[
+(\boldsymbol{\nabla} \times \boldsymbol a)_1 = \frac{1}{h_2 h_3} \left[ \frac{\partial}{\partial u_2} (h_3 a_3) - \frac{\partial}{\partial u_3} (h_2 a_2) \right],\quad
+(\boldsymbol{\nabla} \times \boldsymbol a)_2 = \frac{1}{h_3 h_1} \left[ \frac{\partial}{\partial u_3} (h_1 a_1) - \frac{\partial}{\partial u_1} (h_3 a_3) \right]
+\]
+
+最终正交曲线坐标系下旋度公式为：
+\begin{equation}
+    \boldsymbol{\nabla} \times \boldsymbol a
+= 
+\frac{h_i}{h_1h_2h_3}\varepsilon_{ijk}\frac{\partial (h_ka_k)}{\partial u_j}\boldsymbol{e}_i\label{正交曲线坐标系下旋度公式}
+\end{equation}
+对于直角坐标
+\begin{equation}
+    \boldsymbol{\nabla} \times \boldsymbol a
+= 
+\varepsilon_{ijk}\frac{\partial a_j}{\partial x_i}\boldsymbol{e}_k
+\end{equation}
+性质:
+\begin{equation}
+    \boldsymbol{\nabla}\times\boldsymbol{r}=0
+\end{equation}
+\begin{equation}
+    \boldsymbol{\nabla}\times (f\boldsymbol{a})=\varepsilon_{ijk}\frac{\partial (fa_j)}{\partial x_i}\boldsymbol{e}_k=f\varepsilon_{ijk}\frac{\partial a_j}{\partial x_i}\boldsymbol{e}_k+\varepsilon_{ijk}\frac{\partial f}{\partial x_i}a_j\boldsymbol{e}_k=f(\boldsymbol{\nabla}\times \boldsymbol{a})+(\boldsymbol{\nabla} f)\times \boldsymbol{a}\label{向量恒等式1}
+\end{equation}
+
+\mysssec{并积}
+\begin{equation}
+    \boldsymbol{\nabla}\boldsymbol{a}\equiv\begin{pmatrix}
+    \dfrac{\partial a_1}{x_1}&\dfrac{\partial a_2}{x_1}&\dfrac{\partial a_3}{x_1}\\[6pt]
+    \dfrac{\partial a_1}{x_2}&\dfrac{\partial a_2}{x_2}&\dfrac{\partial a_3}{x_2}\\[6pt]
+    \dfrac{\partial a_1}{x_3}&\dfrac{\partial a_2}{x_3}&\dfrac{\partial a_3}{x_3}\\
+\end{pmatrix}=\frac{\partial a_i}{\partial x_j}\boldsymbol{e}_i\boldsymbol{e}_j
+\end{equation}
+\mysssec{拉普拉斯算子}
+定义为梯度的散度, 由\ref{梯度}和\ref{eq:div-general}得
+\begin{align}
+    \boldsymbol{\nabla}^2f&=\boldsymbol{\nabla}\cdot(\boldsymbol{\nabla}f)\nonumber\\
+    &=\boldsymbol{\nabla}\cdot\left(\frac{1}{h_i}\frac{\partial f}{\partial u_i}\right)\nonumber\\
+    &=\frac{1}{h_1 h_2 h_3}\frac{\partial}{\partial u_i}\left(h_1 h_2 h_3\dfrac{\dfrac{1}{h_i}\dfrac{\partial f}{\partial u_i}}{h_i}\right)\nonumber\\
+    &=\frac{1}{h_1 h_2 h_3}\frac{\partial}{\partial u_i}\left(h_1 h_2 h_3\dfrac{{\partial f}}{h_i^2\partial u_i}\right)
+\end{align}
+对于直角坐标
+\begin{equation}
+    \boldsymbol{\nabla}^2=\frac{\partial^2}{\partial x_i^2}
+\end{equation}
+性质:
+\begin{align}
+    \boldsymbol{\nabla}^2(fg)&=\frac{\partial}{\partial x_i}\frac{\partial fg}{\partial x_i}\nonumber\\
+    &=\frac{\partial}{\partial x_i}\left(g\frac{\partial f}{\partial x_i}+f\frac{\partial g}{\partial x_i}\right)\nonumber\\
+    &=\frac{\partial}{\partial x_i}\left(g\frac{\partial f}{\partial x_i}\right)+\frac{\partial}{\partial x_i}\left(f\frac{\partial g}{\partial x_i}\right)\nonumber\\
+    &=\frac{\partial}{\partial x_i}\left(g\frac{\partial f}{\partial x_i}\right)
+    +\frac{\partial}{\partial x_i}\left(f\frac{\partial g}{\partial x_i}\right)\nonumber\\
+    &=\frac{\partial g}{\partial x_i}\frac{\partial f}{\partial x_i}
+    +g\frac{\partial^2 f}{\partial x_i^2}
+    +\frac{\partial f}{\partial x_i}\frac{\partial g}{\partial x_i}
+    +a\frac{\partial^2 g}{\partial x_i^2}\nonumber\\
+    &=g\frac{\partial^2 f}{\partial x_i^2}
+    +2\frac{\partial f}{\partial x_i}\frac{\partial g}{\partial x_i}
+    +f\frac{\partial^2 g}{\partial x_i^2}\nonumber\\
+    &=g\boldsymbol{\nabla}^2f
+    +2(\boldsymbol{\nabla}f)\cdot(\boldsymbol{\nabla}g)
+    +f\boldsymbol{\nabla}^2g
+\end{align}
+\subsection{微分运算}
+\subsubsection{和规则}
+\begin{equation}
+    \boldsymbol{\nabla}(f+g)=\boldsymbol{\nabla}f+\boldsymbol{\nabla}g
+\end{equation}
+\begin{equation}
+    \boldsymbol{\nabla}\cdot(\boldsymbol{a}+\boldsymbol{b})=\boldsymbol{\nabla}\cdot\boldsymbol{a}+\boldsymbol{\nabla}\cdot\boldsymbol{b}
+\end{equation}
+\begin{equation}
+    \boldsymbol{\nabla}\times(\boldsymbol{a}+\boldsymbol{b})=\boldsymbol{\nabla}\times\boldsymbol{a}+\boldsymbol{\nabla}\times\boldsymbol{b}
+\end{equation}
+\subsubsection{积规则}
+\begin{equation}
+    \boldsymbol{\nabla}(fg)=g\boldsymbol{\nabla}f+f\boldsymbol{\nabla}g
+\end{equation}
+    \begin{align}
+    &\boldsymbol{a}\times(\boldsymbol{\nabla}\times\boldsymbol{b})+
+    \boldsymbol{b}\times(\boldsymbol{\nabla}\times\boldsymbol{a})+
+    (\boldsymbol{a}\cdot\boldsymbol{\nabla})\boldsymbol{b}+
+    (\boldsymbol{b}\cdot\boldsymbol{\nabla})\boldsymbol{a}\nonumber\\
+    =& 
+    \boldsymbol{a}\times\left(\varepsilon_{ijk}\frac{\partial b_j}{\partial x_i}\boldsymbol{e}_k\right)+
+    \boldsymbol{b}\times\left(\varepsilon_{ijk}\frac{\partial a_j}{\partial x_i}\boldsymbol{e}_k\right)+
+    \left(a_i\frac{\partial}{\partial x_i}\right)\boldsymbol{b}+
+    \left(b_i\frac{\partial}{\partial x_i}\right)\boldsymbol{a}\nonumber\\
+    =&
+    \varepsilon_{lkn}a_l\varepsilon_{ijk}\frac{\partial b_j}{\partial x_i}\boldsymbol{e}_n+
+    \varepsilon_{lkn}b_l\varepsilon_{ijk}\frac{\partial a_j}{\partial x_i}\boldsymbol{e}_n+
+    a_i\frac{\partial b_j}{\partial x_i}\boldsymbol{e}_j+
+    b_i\frac{\partial a_j}{\partial x_i}\boldsymbol{e}_j\nonumber\\
+    =&
+    -\varepsilon_{lnk}\varepsilon_{ijk}a_l\frac{\partial b_j}{\partial x_i}\boldsymbol{e}_n-
+    \varepsilon_{lnk}\varepsilon_{ijk}b_l\frac{\partial a_j}{\partial x_i}\boldsymbol{e}_n+
+    a_i\frac{\partial b_j}{\partial x_i}\boldsymbol{e}_j+
+    b_i\frac{\partial a_j}{\partial x_i}\boldsymbol{e}_j\nonumber\\
+    =&
+    -(\delta_{il}\delta_{jn}-\delta_{in}\delta_{jl})a_l\frac{\partial b_j}{\partial x_i}\boldsymbol{e}_n-
+    (\delta_{il}\delta_{jn}-\delta_{in}\delta_{jl})b_l\frac{\partial a_j}{\partial x_i}\boldsymbol{e}_n+
+    a_i\frac{\partial b_j}{\partial x_i}\boldsymbol{e}_j+
+    b_i\frac{\partial a_j}{\partial x_i}\boldsymbol{e}_j\nonumber\\
+    =&
+    \left(
+        -\delta_{il}\delta_{jn}a_l\frac{\partial b_j}{\partial x_i}\boldsymbol{e}_n
+        +\delta_{in}\delta_{jl}a_l\frac{\partial b_j}{\partial x_i}\boldsymbol{e}_n
+    \right)
+    +
+    \left(
+        -\delta_{il}\delta_{jn}b_l\frac{\partial a_j}{\partial x_i}\boldsymbol{e}_n
+        +\delta_{in}\delta_{jl}b_l\frac{\partial a_j}{\partial x_i}\boldsymbol{e}_n
+    \right)
+    +
+    a_i\frac{\partial b_j}{\partial x_i}\boldsymbol{e}_j+
+    b_i\frac{\partial a_j}{\partial x_i}\boldsymbol{e}_j\nonumber\\
+    =&
+    \left(
+        -a_i\frac{\partial b_j}{\partial x_i}\boldsymbol{e}_j
+        +a_j\frac{\partial b_j}{\partial x_i}\boldsymbol{e}_i
+    \right)
+    +
+    \left(
+        -b_i\frac{\partial a_j}{\partial x_i}\boldsymbol{e}_j
+        +b_j\frac{\partial a_j}{\partial x_i}\boldsymbol{e}_i
+    \right)
+    +
+    a_i\frac{\partial b_j}{\partial x_i}\boldsymbol{e}_j+
+    b_i\frac{\partial a_j}{\partial x_i}\boldsymbol{e}_j\nonumber\\
+    =&
+    a_j\frac{\partial b_j}{\partial x_i}\boldsymbol{e}_i
+    +b_j\frac{\partial a_j}{\partial x_i}\boldsymbol{e}_i\nonumber\\
+    =&
+    \frac{\partial (a_jb_j)}{\partial x_i}\boldsymbol{e}_i\nonumber\\
+    =&
+    \boldsymbol{\nabla}(\boldsymbol{a}\cdot\boldsymbol{b})
+    \end{align}
+
+\begin{equation}
+    \boldsymbol{\nabla}\cdot (f\boldsymbol{a})=\frac{\partial fa_i}{\partial x_i}=f\frac{\partial a_i}{\partial x_i}+a_i\frac{\partial f}{\partial x_i}=f\boldsymbol{\nabla}\cdot \boldsymbol{a}+\boldsymbol{a}\cdot\boldsymbol{\nabla}f
+\end{equation}
+
+\begin{align}
+    \boldsymbol{b}\cdot(\boldsymbol{\nabla}\times\boldsymbol{a})-\boldsymbol{a}\cdot(\boldsymbol{\nabla}\times\boldsymbol{b})
+    &=\boldsymbol{b}\cdot(\varepsilon_{ijk}\frac{\partial a_j}{\partial x_i}\boldsymbol{e}_k)-\boldsymbol{a}\cdot(\varepsilon_{ijk}\frac{\partial b_j}{\partial x_i}\boldsymbol{e}_k)\nonumber\\
+    &=b_k\varepsilon_{ijk}\frac{\partial a_j}{\partial x_i}-a_k\varepsilon_{ijk}\frac{\partial b_j}{\partial x_i}\nonumber\\
+    &=b_j\varepsilon_{ijk}\frac{\partial a_i}{\partial x_k}+a_i\varepsilon_{ijk}\frac{\partial b_j}{\partial x_k}\nonumber\\
+    &=\frac{\partial\varepsilon_{ijk}a_ib_j}{\partial x_k}\nonumber\\
+    &=\boldsymbol{\nabla}\cdot (\varepsilon_{ijk}a_ib_j\boldsymbol{e}_k)\nonumber\\
+    &=\boldsymbol{\nabla}\cdot (\boldsymbol{a}\times \boldsymbol{b})\label{向量恒等式0}
+\end{align}
+\subsubsection{二阶积规则}
+\begin{equation}
+    \boldsymbol{\nabla}\times(\boldsymbol{\nabla}f)=\boldsymbol{\nabla}\times(\frac{\partial f}{\partial x_i}\boldsymbol{e}_i)=\varepsilon_{ijk}\frac{\partial}{\partial x_i}\frac{\partial f}{\partial x_j}\boldsymbol{e}_k=0
+\end{equation}
+\begin{equation}
+    \boldsymbol{\nabla}\cdot(\boldsymbol{\nabla}\times \boldsymbol{a})=\boldsymbol{\nabla}\cdot(\varepsilon_{ijk}\frac{\partial a_i}{\partial x_j}\boldsymbol{e}_k)=\varepsilon_{ijk}\frac{\partial^2 a_i}{\partial x_j\partial x_k}=0
+\end{equation}
+\begin{equation}
+    \Delta f=\frac{\partial^2 f}{\partial x_i^2}
+\end{equation}
+\begin{equation}
+    \Delta \boldsymbol{a}=\frac{\partial^2 (a_j\boldsymbol{e}_j)}{\partial x_i^2}
+\end{equation}
+\begin{align}
+    \boldsymbol{\nabla}\times(\boldsymbol{\nabla}\times \boldsymbol{a})&=\boldsymbol{\nabla}\times(\varepsilon_{ijk}\frac{\partial a_i}{\partial x_j}\boldsymbol{e}_k)\nonumber\\
+    &=\varepsilon_{lmn}\varepsilon_{ijl}\frac{\partial^2 a_i}{\partial x_j\partial x_m}\boldsymbol{e}_n\nonumber\\
+    &=\varepsilon_{mnl}\varepsilon_{ijl}\frac{\partial^2 a_i}{\partial x_j\partial x_m}\boldsymbol{e}_n\nonumber\\
+    &=(\delta_{im}\delta_{jn}-\delta_{in}\delta_{jm})\frac{\partial^2 a_i}{\partial x_j\partial x_m}\boldsymbol{e}_n\nonumber\\
+    &=\delta_{im}\delta_{jn}\frac{\partial^2 a_i}{\partial x_j\partial x_m}\boldsymbol{e}_n\nonumber-\delta_{in}\delta_{jm}\frac{\partial^2 a_i}{\partial x_j\partial x_m}\boldsymbol{e}_n\nonumber\\
+    &=\frac{\partial^2 a_i}{\partial x_j\partial x_i}\boldsymbol{e}_j\nonumber-\frac{\partial^2 a_i}{\partial x_j\partial x_j}\boldsymbol{e}_i\nonumber\\
+    &=\boldsymbol{\nabla}(\boldsymbol{\nabla}\cdot\boldsymbol{a})-\Delta \boldsymbol{a}
+\end{align}
+\subsection{积分运算}
+\subsubsection{高斯定理}
+我们已经得到正交坐标系中的散度局部公式\ref{eq:div-general}。
+因此, 对体积元
+$\Delta\tau=h_1h_2h_3\,\Delta u_1\Delta u_2\Delta u_3$
+的六个面计算净通量时：
+\[
+\Phi^{(\text{out})}-\Phi^{(\text{in})}
+=\left[\frac{\partial}{\partial u_i}
+\left(h_1h_2h_3\frac{a_i}{h_i}\right)\right]
+\Delta u_1\Delta u_2\Delta u_3
+=(\boldsymbol{\nabla}\cdot\boldsymbol a)\,\Delta\tau.
+\]
+将整个区域 $V$ 分割成许多此类体积元, 内部公共面的通量相互抵消, 
+仅留下外边界 $\partial V$ 的通量。令分割尺寸趋于零, 
+通量和体积和分别趋于各自积分, 故得到
+\begin{equation}
+\iiint_V (\boldsymbol{\nabla} \cdot \boldsymbol{a})  \dif\tau
+= \iint_{\partial V} \boldsymbol{a} \cdot \dif \boldsymbol{S}
+\end{equation}
+\subsubsection{斯托克斯定理}
+我们已经得到任意正交坐标系中的旋度局部公式\ref{正交曲线坐标系下旋度公式}
+, 考虑由 $(u_1,u_2)$ 增量生成的一个无穷小曲面元
+\[
+\dif\boldsymbol S=(h_1h_2\dif u_1\dif u_2)\boldsymbol e_3
+.
+\]
+沿此小曲面元的边界进行线积分, 可得
+\[
+\oiint_{\partial S}\boldsymbol a\cdot d\boldsymbol l
+=(\nabla\times\boldsymbol a)\cdot d\boldsymbol S.
+\]
+将整个曲面分割成许多这样的小元, 内部公共边界的线积分相互抵消, 
+仅留下外边界 $\partial S$ 的线积分。令分割尺寸趋于零, 
+总和趋于积分, 故得
+\begin{equation}
+\iint_{S} (\boldsymbol{\nabla} \times \boldsymbol{a}) \cdot \dif \boldsymbol{S}
+= \oiint_{\partial S} \boldsymbol{a} \cdot \dif \boldsymbol{l}
+\end{equation}
+\subsection{曲面坐标系}
+\subsubsection{柱坐标系}
+将柱坐标系坐标转化为直角系坐标的方式为
+\begin{equation}
+    x_1=s\cos\phi,\ x_2=s\sin\phi,\ x_3=x_3\label{柱坐标系坐标转化为直角系坐标}
+\end{equation}
+其中$s$是坐标点到$z$轴的距离。柱坐标系和直角系坐标无限小元转换方式为
+\begin{equation}
+    \begin{pmatrix}
+        \dif{x}_1\\\dif{x}_2\\\dif{x}_3
+    \end{pmatrix}=\begin{pmatrix}
+        \dfrac{x_1}{s}&-x_2&0\\[6pt]
+        \dfrac{x_2}{s}&x_1&0\\0&0&1
+    \end{pmatrix}\begin{pmatrix}
+        \dif{s}\\\dif{\phi}\\\dif{x}_3
+    \end{pmatrix}
+\end{equation}
+其拉梅系数为
+\begin{equation}
+    h_1=1,\ h_2=s,\ h_3=1
+\end{equation}
+其无限小位移为
+\begin{equation}
+    \dif\boldsymbol{l}=h_i\dif{u}_i\boldsymbol{e}_i=\dif{s}\boldsymbol{s}+s\dif{\phi}\boldsymbol{\phi}+\dif{x}_3\boldsymbol{x}_3
+\end{equation}
+其体积元为
+\begin{equation}
+    \dif\tau=s\dif s\dif \phi\dif{x}_3
+\end{equation}
+梯度
+\begin{align}
+    \nabla f&=\frac{1}{h_i}\frac{\partial f}{\partial u_i}{\boldsymbol e}_i=\dfrac{\partial}{\partial s}\boldsymbol{s}+\dfrac{1}{s}\dfrac{\partial}{\partial \phi}\boldsymbol{\phi}+\dfrac{\partial}{\partial x_3}\boldsymbol{x}_3
+\end{align}
+散度
+\begin{equation}
+    \boldsymbol{\nabla}\cdot\boldsymbol{a}=\frac{1}{s}(\dfrac{\partial sa_s}{\partial s}+\dfrac{\partial a_{\phi}}{\partial \phi}+\dfrac{\partial sa_{3}}{\partial x_3})
+    =\frac{1}{s}\dfrac{\partial sa_s}{\partial s}+\frac{1}{s}\dfrac{\partial a_{\phi}}{\partial \phi}+\dfrac{\partial a_{3}}{\partial x_3}
+    =\frac{a_s}{s}+\dfrac{\partial a_s}{\partial s}+\frac{1}{s}\dfrac{\partial a_{\phi}}{\partial \phi}+\dfrac{\partial a_{3}}{\partial x_3}
+\end{equation}
+旋度
+\begin{align}
+    \boldsymbol{\nabla}\times\boldsymbol{a}&=\frac{h_i}{h_1h_2h_3}\varepsilon_{ijk}\frac{\partial (h_ka_k)}{\partial u_j}\boldsymbol{e}_i\nonumber\\
+    &=\frac{h_i}{s}\varepsilon_{ijk}\frac{\partial (h_ka_k)}{\partial u_j}\boldsymbol{e}_i\nonumber\\
+    &=\frac{1}{s}\left(\varepsilon_{123}\frac{\partial a_3}{\partial u_2}\boldsymbol{e}_1
+    +\varepsilon_{132}\frac{\partial sa_2}{\partial u_3}\boldsymbol{e}_1
+    +\varepsilon_{321}\frac{\partial a_1}{\partial u_2}\boldsymbol{e}_3
+    +s\varepsilon_{213}\frac{\partial a_3}{\partial u_1}\boldsymbol{e}_2
+    +\varepsilon_{312}\frac{\partial sa_2}{\partial u_1}\boldsymbol{e}_3
+    +s\varepsilon_{231}\frac{\partial a_1}{\partial u_3}\boldsymbol{e}_2\right)\nonumber\\
+    &=\frac{1}{s}\left(\frac{\partial a_3}{\partial u_2}\boldsymbol{e}_1
+    -\frac{\partial sa_2}{\partial u_3}\boldsymbol{e}_1
+    -\frac{\partial a_1}{\partial u_2}\boldsymbol{e}_3
+    -s\frac{\partial a_3}{\partial u_1}\boldsymbol{e}_2
+    +\frac{\partial sa_2}{\partial u_1}\boldsymbol{e}_3
+    +s\frac{\partial a_1}{\partial u_3}\boldsymbol{e}_2\right)\nonumber\\
+    &=\frac{1}{s}\left(\frac{\partial a_{3}}{\partial \phi}\boldsymbol{s}
+    -\frac{\partial sa_{\phi}}{\partial x_3}\boldsymbol{s}
+    -\frac{\partial a_s}{\partial \phi}\boldsymbol{e}_3
+    -s\frac{\partial a_{3}}{\partial s}\boldsymbol{\phi}
+    +\frac{\partial sa_{\phi}}{\partial s}\boldsymbol{e}_3
+    +s\frac{\partial a_s}{\partial x_3}\boldsymbol{\phi}\right)\nonumber\\
+    &=\frac{1}{s}\left(\frac{\partial a_{3}}{\partial \phi}-s\frac{\partial a_{\phi}}{\partial x_3}\right)\boldsymbol{s}
+    +\left(\frac{\partial a_s}{\partial x_3}-\frac{\partial a_{3}}{\partial s}\right)\boldsymbol{\phi}
+    +\frac{1}{s}\left(\frac{\partial sa_{\phi}}{\partial s}
+    -\frac{\partial a_s}{\partial \phi}
+    \right)\boldsymbol{e}_3
+\end{align}
+拉普拉斯算子
+\begin{align}
+    \boldsymbol{\nabla}^2{f}&=\frac{1}{h_1 h_2 h_3}\frac{\partial}{\partial u_i}\left(h_1 h_2 h_3\dfrac{{\partial f}}{h_i^2\partial u_i}\right)\nonumber\\
+    &=\frac{1}{s}\frac{\partial}{\partial u_i}\left(s\dfrac{{\partial f}}{h_i^2\partial u_i}\right)\nonumber\\
+    &=\frac{1}{s}\frac{\partial}{\partial u_s}\left(s\dfrac{{\partial f}}{h_s^2\partial u_s}\right)
+    +\frac{1}{s}\frac{\partial}{\partial \phi}\left(s\dfrac{{\partial f}}{h_{\phi}^2\partial \phi}\right)
+    +\frac{1}{s}\frac{\partial}{\partial u_3}\left(s\dfrac{{\partial f}}{h_3^2\partial u_3}\right)\nonumber\\
+    &=\frac{1}{s}\frac{\partial}{\partial u_s}\left(s\dfrac{{\partial f}}{\partial u_s}\right)
+    +\frac{1}{s}\frac{\partial}{\partial \phi}\left(s\dfrac{{\partial f}}{s^2\partial \phi}\right)
+    +\frac{1}{s}\frac{\partial}{\partial u_3}\left(s\dfrac{{\partial f}}{\partial u_3}\right)\nonumber\\
+    &=\frac{1}{s}\frac{\partial}{\partial u_s}\left(s\dfrac{{\partial f}}{\partial u_s}\right)
+    +\frac{1}{s^2}\dfrac{{\partial^2 f}}{\partial \phi^2}
+    +\dfrac{{\partial^2 f}}{\partial u_3^2}
+\end{align}
+\subsubsection{球坐标系}
+将球坐标系坐标转化为直角系坐标的方式为
+\begin{equation}
+    x_1=r\cos\phi\sin\theta,\ x_2=r\sin\phi\sin\theta,\ x_3=r\cos\theta
+\end{equation}
+球坐标系和直角系坐标无限小元转换方式为
+\begin{equation}
+    \begin{pmatrix}
+        \dif{x}_1\\\dif{x}_2\\\dif{x}_3
+    \end{pmatrix}=\begin{pmatrix}
+        \dfrac{x_1}{r}&-x_2&\dfrac{x_1x_3}{r\sin\theta}\\[6pt]
+        \dfrac{x_2}{r}&x_1&\dfrac{x_2x_3}{r\sin\theta}\\[6pt]
+        \dfrac{x_3}{r}&0&-r\sin\theta
+    \end{pmatrix}\begin{pmatrix}
+        \dif{r}\\\dif{\phi}\\\dif{\theta}
+    \end{pmatrix}
+\end{equation}
+其拉梅系数为
+\begin{equation}
+    h_1=1,\ h_2=r\sin\theta,\ h_3=r
+\end{equation}
+其无限小位移为
+\begin{align}
+    \dif\boldsymbol{l}&=\dif{r}\boldsymbol{r}+r\sin\theta\dif{\phi}\boldsymbol{\phi}+r\dif{\theta}\boldsymbol{\theta}
+\end{align}
+其体积元为
+\begin{equation}
+    \dif\tau=r\sin\theta r\dif r\dif \phi\dif{\theta}
+\end{equation}
+梯度
+\begin{align}
+    \nabla f&=\frac{1}{h_i}\frac{\partial f}{\partial u_i}{\boldsymbol e}_i
+    =\dfrac{\partial}{\partial r}\boldsymbol{r}+\dfrac{1}{r\sin\theta}\dfrac{\partial}{\partial \phi}\boldsymbol{\phi}+\frac{1}{r}\dfrac{\partial}{\partial \theta}\boldsymbol{\theta}
+\end{align}
+散度
+\begin{align}
+    \boldsymbol{\nabla}\cdot\boldsymbol{a}&=\frac{1}{r^2\sin\theta}(\dfrac{\partial r^2\sin\theta a_r}{\partial r}+\dfrac{\partial ra_{\phi}}{\partial \phi}+\dfrac{\partial r\sin\theta a_\theta}{\partial \theta})\nonumber\\
+    &=\frac{1}{r^2\sin\theta}(\sin\theta \dfrac{\partial r^2a_r}{\partial r}+r\dfrac{\partial a_{\phi}}{\partial \phi}+r\dfrac{\partial \sin\theta a_\theta}{\partial \theta})\nonumber\\
+    &=\frac{1}{r^2}\dfrac{\partial r^2a_r}{\partial r}
+    +\frac{1}{r\sin\theta}\dfrac{\partial a_{\phi}}{\partial \phi}
+    +\frac{1}{r\sin\theta }\dfrac{\partial \sin\theta a_\theta}{\partial \theta}
+\end{align}
+旋度
+\begin{align}
+    &\boldsymbol{\nabla}\times\boldsymbol{a}\\
+    =&\frac{h_i}{h_1h_2h_3}\varepsilon_{ijk}\frac{\partial (h_ka_k)}{\partial u_j}\boldsymbol{e}_i\nonumber\\
+    =&\frac{h_i}{r^2\sin\theta}\varepsilon_{ijk}\frac{\partial (h_ka_k)}{\partial u_j}\boldsymbol{e}_i\nonumber\\
+    =&\frac{1}{r^2\sin\theta}\left(\varepsilon_{123}\frac{\partial ra_3}{\partial u_2}\boldsymbol{e}_1
+    +\varepsilon_{132}\frac{\partial sa_2}{\partial u_3}\boldsymbol{e}_1
+    +r\varepsilon_{321}\frac{\partial a_1}{\partial u_2}\boldsymbol{e}_3
+    +s\varepsilon_{213}\frac{\partial ra_3}{\partial u_1}\boldsymbol{e}_2
+    +r\varepsilon_{312}\frac{\partial sa_2}{\partial u_1}\boldsymbol{e}_3
+    +s\varepsilon_{231}\frac{\partial a_1}{\partial u_3}\boldsymbol{e}_2\right)\nonumber\\
+    =&\frac{1}{r^2\sin\theta}\left(\frac{\partial ra_3}{\partial u_2}\boldsymbol{e}_1
+    -\frac{\partial r\sin\theta a_2}{\partial u_3}\boldsymbol{e}_1
+    -r\frac{\partial a_1}{\partial u_2}\boldsymbol{e}_3
+    -r\sin\theta \frac{\partial ra_3}{\partial u_1}\boldsymbol{e}_2
+    +r\frac{\partial r\sin\theta a_2}{\partial u_1}\boldsymbol{e}_3
+    +r\sin\theta \frac{\partial a_1}{\partial u_3}\boldsymbol{e}_2\right)\nonumber\\
+    =&\frac{1}{r^2\sin\theta }\left(\frac{\partial ra_{\theta}}{\partial \phi}\boldsymbol{r}
+    -\frac{\partial r\sin\theta a_{\phi}}{\partial \theta}\boldsymbol{r}
+    -r\frac{\partial a_r}{\partial \phi}\boldsymbol{\theta}
+    -r\sin\theta \frac{\partial ra_{\theta}}{\partial r}\boldsymbol{\phi}
+    +r\frac{\partial r\sin\theta a_{\phi}}{\partial r}\boldsymbol{\theta}
+    +r\sin\theta \frac{\partial a_r}{\partial \theta}\boldsymbol{\phi}\right)\nonumber\\
+    =&\frac{1}{r^2\sin\theta}\left(r\frac{\partial a_\theta}{\partial \phi}
+    -r\frac{\partial \sin\theta a_{\phi}}{\partial \theta}\right)\boldsymbol{r}
+    +\frac{1}{r}\left(\frac{\partial a_r}{\partial \theta}
+    -\frac{\partial ra_\theta}{\partial r}\right)\boldsymbol{\phi}
+    +\frac{1}{r\sin\theta }\left(\sin\theta\frac{\partial r a_{\phi}}{\partial r}
+    -\frac{\partial a_r}{\partial \phi}
+    \right)\boldsymbol{\theta}\nonumber\\
+    =&\frac{1}{r\sin\theta}\left(\frac{\partial a_\theta}{\partial \phi}
+    -\frac{\partial\sin\theta  a_{\phi}}{\partial \theta}\right)\boldsymbol{r}
+    +\frac{1}{r}\left(\frac{\partial a_r}{\partial \theta}
+    -\frac{\partial ra_\theta}{\partial r}\right)\boldsymbol{\phi}
+    +\frac{1}{r\sin\theta }\left(\sin\theta\frac{\partial r a_{\phi}}{\partial r}
+    -\frac{\partial a_r}{\partial \phi}
+    \right)\boldsymbol{\theta}
+\end{align}
+拉普拉斯算子
+\begin{align}
+    \boldsymbol{\nabla}^2{f}&=\frac{1}{h_1 h_2 h_3}\frac{\partial}{\partial u_i}\left(h_1 h_2 h_3\dfrac{{\partial f}}{h_i^2\partial u_i}\right)\nonumber\\
+    &=\frac{1}{r^2\sin\theta}\frac{\partial}{\partial u_i}\left(r^2\sin\theta\dfrac{{\partial f}}{h_i^2\partial u_i}\right)\nonumber\\
+    &=\frac{1}{r^2\sin\theta}\frac{\partial}{\partial r}\left(r^2\sin\theta\dfrac{{\partial f}}{\partial r}\right)
+    +\frac{1}{r^2\sin\theta}\frac{\partial}{\partial \phi}\left(\dfrac{{\partial f}}{\sin\theta\partial \phi}\right)
+    +\frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta\dfrac{{\partial f}}{\partial \theta}\right)\nonumber\\
+    &=\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\dfrac{{\partial f}}{\partial r}\right)
+    +\frac{1}{r^2\sin^2\theta}\dfrac{{\partial^2 f}}{\partial \phi^2}
+    +\frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta\dfrac{{\partial f}}{\partial \theta}\right)
+\end{align}
+\subsection{狄拉克函数与阶跃函数}
+
+% \mysssec{定义}
+% 狄拉克 $\delta$ 函数是一种广义函数(广义分布), 满足：
+% \begin{equation}
+% \delta(x) = 
+% \begin{cases}
+% +\infty,& x = 0,\\
+% 0, & x \neq 0,
+% \end{cases}
+% \end{equation}
+% 并且满足积分性质
+% \begin{equation}
+% \int_{-\infty}^{+\infty} f(x) \, \dif x \, \delta(x) = f(0)
+% \end{equation}
+% 对任意连续函数 $f(x)$。
+
+% \mysssec{平移性质}
+% \begin{equation}
+% \delta(x-x_0) \text{ 满足 } \int_{-\infty}^{+\infty} f(x) \, \delta(x-x_0) \, \dif x = f(x_0).
+% \end{equation}
+
+% \mysssec{缩放性质}
+% \begin{equation}
+% \delta(a x) = \frac{1}{|a|}\delta(x), \quad a\neq 0.
+% \end{equation}
+
+% \mysssec{多维情况}
+% 对于向量 $\boldsymbol{r} \in \mathbb{R}^3$, 有
+% \begin{equation}
+% \int_{\mathbb{R}^3} f(\boldsymbol{r}) \, \delta(\boldsymbol{r}-\boldsymbol{r}_0) \, \dif^3 \boldsymbol{r} = f(\boldsymbol{r}_0),
+% \end{equation}
+% 以及在曲面坐标系(柱坐标或球坐标)下的表达式：
+% \begin{align}
+% \delta(\boldsymbol{r}-\boldsymbol{r}_0) 
+% &= \frac{1}{s} \delta(s-s_0)\delta(\phi-\phi_0)\delta(z-z_0), \quad \text{柱坐标 } (s,\phi,z), \\
+% \delta(\boldsymbol{r}-\boldsymbol{r}_0) 
+% &= \frac{1}{r^2 \sin\theta} \delta(r-r_0)\delta(\theta-\theta_0)\delta(\phi-\phi_0), \quad \text{球坐标 } (r,\theta,\phi).
+% \end{align}
+
+% \subsubsection{常用恒等式}
+% \begin{align}
+% x \, \delta(x) &= 0, \\
+% \delta(-x) &= \delta(x), \\
+% \frac{\dif}{\dif x} \Theta(x) &= \delta(x),
+% \end{align}
+% 其中 $\Theta(x)$ 是 Heaviside 阶跃函数。
+
+% \subsubsection{积分中的换元}
+% 若 $g(x)$ 单调且 $g'(x)\neq 0$, 则
+% \begin{equation}
+% \delta(g(x)) = \sum_i \frac{\delta(x-x_i)}{|g'(x_i)|},
+% \end{equation}
+% 其中 $x_i$ 为 $g(x_i)=0$ 的根。
+\subsubsection{狄拉克函数}
+
+严格来说, 狄拉克 $\delta$ 函数并不是一个通常意义下的函数, 
+而是通过其在积分中的作用来定义的。设 $f(x)$ 是在 $x=0$ 附近连续, 并且在无穷远处足够快衰减的函数。
+定义狄拉克 $\delta$ 满足
+\begin{equation}
+\int_{-\infty}^{\infty} \delta(x)\,f(x)\,\dif x = f(0),
+\end{equation}
+
+
+由定义立即得到
+\begin{equation}
+\int_{-\infty}^{\infty} \delta(x-a)\,f(x)\,\dif x = f(a).
+\end{equation}
+
+
+
+设 $g(x)$ 在 $x_i$ 处有孤立零点, 且 $g'(x_i)\neq 0$, 则
+\begin{equation}
+\delta(g(x)) = \sum_i \frac{\delta(x-x_i)}{|g'(x_i)|}.
+\end{equation}
+
+
+\subsubsection{阶跃函数}
+
+定义阶跃函数
+\begin{equation}
+H(x)=
+\begin{cases}
+0, & x<0,\\
+1, & x>0.
+\end{cases}
+\end{equation}
+
+\subsection{阶跃函数的导数}
+
+在通常意义下, $H(x)$ 在 $x=0$ 不可导。
+但在积分意义下, 我们定义
+\begin{equation}
+\int_{-\infty}^{\infty} \frac{\dif H(x)}{\dif x}\,f(x)\,\dif x
+\equiv
+-\int_{-\infty}^{\infty} H(x)\,\frac{\dif f}{\dif x}\,\dif x.
+\end{equation}
+对右侧分部积分：
+\begin{align}
+-\int_{-\infty}^{\infty} H(x)\frac{\dif f}{\dif x}\dif x
+&=
+-\int_0^{\infty} \frac{\dif f}{\dif x}\dif x\nonumber \\
+&= f(0).
+\end{align}
+于是得到
+\begin{equation}
+\frac{\dif H(x)}{\dif x} = \delta(x),
+\end{equation}
+\subsubsection{多维狄拉克函数}
+
+三维 $\delta$ 函数定义为
+\begin{equation}
+\delta^{(3)}(\boldsymbol r)
+=
+\delta(x)\delta(y)\delta(z),
+\end{equation}
+并满足
+\begin{equation}
+\iiint \delta^{(3)}(\boldsymbol r-\boldsymbol r_0)
+f(\boldsymbol r)\,\dif\tau
+=
+f(\boldsymbol r_0).
+\end{equation}
+
+
+在正交曲线坐标 $(u_1,u_2,u_3)$ 中, 
+\[
+\dif\tau = h_1 h_2 h_3 \,\dif u_1\dif u_2\dif u_3,
+\]
+因此定义
+\begin{equation}
+\delta^{(3)}(\boldsymbol r-\boldsymbol r_0)
+=
+\frac{
+\delta(u_1-u_{1,0})
+\delta(u_2-u_{2,0})
+\delta(u_3-u_{3,0})
+}{
+h_1 h_2 h_3
+}.
+\end{equation}
+
+\subsection{矢量场理论}
+\subsubsection{亥姆霍兹定理}
+设矢量场 $\boldsymbol a(\boldsymbol r)$ 定义在整个空间中, 其散度与旋度分别给定为
+\begin{equation*}
+\boldsymbol{\nabla}\cdot\boldsymbol a(\boldsymbol r)=f(\boldsymbol r),
+\qquad
+\boldsymbol{\nabla}\times\boldsymbol a(\boldsymbol r)=\boldsymbol b(\boldsymbol r).
+\end{equation*}
+
+为了使体积分有意义, 仅要求
+$f(\boldsymbol r)$ 与 $\boldsymbol b(\boldsymbol r)$ 在无穷远处趋于零是不够的, 
+它们的衰减速度必须足够快。
+
+考虑定义在整个空间上的积分
+\begin{equation*}
+\iiint_{V} X(\boldsymbol r)\dif\tau,
+\end{equation*}
+其中 $X(\boldsymbol r)$ 表示
+$f(\boldsymbol r)$ 或 $\boldsymbol b(\boldsymbol r)$ 的某一分量。
+
+将积分写为球坐标形式, 
+\begin{equation*}
+\iiint_{V} X(\boldsymbol r)\dif\tau
+=
+\int_0^\infty
+\left(
+\iint_{S} X(r,\Omega) r^2\dif\Omega
+\right)\dif r.
+\end{equation*}
+
+若存在常数 $A>0$ 及 $R>0$, 使得当 $r>R$ 时对所有方向
+$\Omega$ 成立
+\begin{equation*}
+|X(r,\Omega)| \ge \frac{A}{r},
+\end{equation*}
+则有下界估计
+\begin{equation*}
+\iiint_{|\boldsymbol r|>R} |X(\boldsymbol r)|\dif\tau
+\ge
+A\int_R^\infty r\dif r
+\iint_{S}\dif\Omega,
+\end{equation*}
+该积分显然发散。
+
+类似地, 若
+\begin{equation*}
+|X(r,\Omega)| \ge \frac{A}{r^2},
+\end{equation*}
+则径向积分包含
+\[
+\int_R^\infty \frac{\dif r}{r},
+\]
+从而发散。
+
+因此, 为保证体积分收敛, 必须要求
+\begin{equation}
+X(\boldsymbol r)=o\!\left(\frac{1}{r^2}\right),
+\qquad r\to\infty,
+\end{equation}
+该条件需在角向上一致成立。
+
+
+因此, 为保证积分收敛, 必须要求
+\begin{equation}
+f(\boldsymbol r),\ \boldsymbol b(\boldsymbol r)
+= o\!\left(\frac{1}{r^2}\right),
+\qquad r\to\infty.
+\end{equation}
+
+这一条件同时也足以保证在无穷远处的曲面积分为零。
+
+
+
+设矢量场 $\boldsymbol a(\boldsymbol r)$ 具有散度
+$f(\boldsymbol r)$ 与旋度 $\boldsymbol b(\boldsymbol r)$。
+若取另一矢量场
+\begin{equation*}
+\boldsymbol a'(\boldsymbol r)
+=
+\boldsymbol a(\boldsymbol r)+\boldsymbol c(\boldsymbol r),
+\end{equation*}
+且 $\boldsymbol c(\boldsymbol r)$ 满足
+\begin{equation*}
+\boldsymbol{\nabla}\cdot\boldsymbol c=0,
+\qquad
+\boldsymbol{\nabla}\times\boldsymbol c=\boldsymbol 0,
+\end{equation*}
+则 $\boldsymbol a'$ 与 $\boldsymbol a$ 具有相同的散度与旋度。
+
+因此, 仅给定散度与旋度并不能唯一确定矢量场。然而可以证明：不存在一个非零的矢量场(见第三章)
+$\boldsymbol c(\boldsymbol r)$, 
+它在整个空间中同时满足
+\begin{equation*}
+\boldsymbol{\nabla}\cdot\boldsymbol c=0,
+\qquad
+\boldsymbol{\nabla}\times\boldsymbol c=\boldsymbol 0,
+\end{equation*}
+并且在无穷远处趋于零。
+
+因此, 若进一步要求
+\begin{equation*}
+\boldsymbol a(\boldsymbol r)\to \boldsymbol 0
+\qquad \text{当 } r\to\infty,
+\end{equation*}
+则满足给定散度与旋度的矢量场解是唯一的。
+
+
+
+现在可以严谨地表述亥姆霍兹定理如下：
+
+\begin{quote}
+若矢量场 $\boldsymbol a(\boldsymbol r)$ 的散度
+$f(\boldsymbol r)$ 与旋度 $\boldsymbol b(\boldsymbol r)$ 已知, 
+且二者在 $r\to\infty$ 时均比 $1/r^2$ 衰减得更快, 
+同时 $\boldsymbol a(\boldsymbol r)$ 在无穷远处趋于零, 
+则 $\boldsymbol a(\boldsymbol r)$ 被其散度与旋度唯一确定。
+\end{quote}
+
+\subsubsection{势函数}
+
+\paragraph{1. 标量势与无旋场}
+设向量场 $\boldsymbol a(\boldsymbol r)$ 定义在某一区域。若存在标量函数 $U(\boldsymbol r)$, 使得
+\begin{equation}
+    \boldsymbol a = -\boldsymbol{\nabla}U,
+\end{equation}
+则称 $U$ 为 $\boldsymbol a$ 的\textbf{标量势函数}, $\boldsymbol a$ 称为\textbf{保守场}。由旋度的定义可得
+\begin{equation}
+    \boldsymbol{\nabla}\times\boldsymbol a
+    = -\boldsymbol{\nabla}\times\boldsymbol{\nabla}U
+    = \boldsymbol 0.
+\end{equation}
+因此, 任何具有标量势的向量场必为无旋场。
+
+\paragraph{2. 无旋场的势函数存在性}
+若
+\begin{equation}
+    \boldsymbol{\nabla}\times\boldsymbol a = \boldsymbol 0,
+\end{equation}
+并且区域 $V$ 是单连通的(任意闭合曲线可连续收缩为一点), 则由斯托克斯定理可得
+\begin{equation}
+    \oint_C \boldsymbol a \cdot \dif \boldsymbol l
+    = \iint_S (\boldsymbol{\nabla}\times\boldsymbol a) \cdot \dif \boldsymbol S
+    = 0,
+\end{equation}
+线积分与路径无关, 可定义
+\begin{equation}
+    \phi(\boldsymbol r)
+    = -\int_{\boldsymbol r_0}^{\boldsymbol r} \boldsymbol a \cdot \dif \boldsymbol l,
+\end{equation}
+从而得到 $\boldsymbol a = -\boldsymbol{\nabla}\phi$。
+
+\paragraph{3. 向量势与无散场}
+若存在向量函数 $\boldsymbol b(\boldsymbol r)$, 使
+\begin{equation}
+    \boldsymbol a = \boldsymbol{\nabla} \times \boldsymbol b,
+\end{equation}
+则称 $\boldsymbol b$ 为 $\boldsymbol F$ 的\textbf{向量势}。由恒等式
+\begin{equation}
+    \boldsymbol{\nabla}\cdot(\boldsymbol{\nabla}\times \boldsymbol b) = 0
+\end{equation}
+可知, 任何具有向量势的向量场必为无散场。
+
+\paragraph{4. 势函数的不唯一性}
+\begin{itemize}
+    \item 若 $\boldsymbol a = -\boldsymbol{\nabla}U$, 则对任意常数 $C$, $U' = U + C$ 给出同一向量场。
+    \item 若 $\boldsymbol a = \boldsymbol{\nabla}\times \boldsymbol b$, 则对任意标量函数 $\chi(\boldsymbol r)$, $\boldsymbol b' = \boldsymbol b + \boldsymbol{\nabla} \chi$ 产生相同的 $\boldsymbol a$(\textbf{规范变换})。
+\end{itemize}
+
+\paragraph{5. 亥姆霍兹分解}
+在满足适当衰减条件的情况下, 任意向量场 $\boldsymbol a$ 可分解为
+\begin{equation}
+    \boldsymbol a
+    = -\boldsymbol{\nabla}U + \boldsymbol{\nabla}\times \boldsymbol b,
+\end{equation}
+其中
+\begin{align}
+    \boldsymbol{\nabla}^2 U &= -\boldsymbol{\nabla}\cdot \boldsymbol a,\\
+    \boldsymbol{\nabla}^2 \boldsymbol b &= -\boldsymbol{\nabla}\times \boldsymbol a.
+\end{align}
+这就是亥姆霍兹定理在势函数语言下的表达。
+
+\subsection{习题}
+\mysssec{证明:\ $\boldsymbol{a}\times(\boldsymbol{b}\times\boldsymbol{c})+\boldsymbol{c}\times(\boldsymbol{a}\times\boldsymbol{b})+\boldsymbol{b}\times(\boldsymbol{c}\times\boldsymbol{a})=0$}
+\begin{math}
+    \boldsymbol{a}\times(\boldsymbol{b}\times\boldsymbol{c})+\boldsymbol{c}\times(\boldsymbol{a}\times\boldsymbol{b})+\boldsymbol{b}\times(\boldsymbol{c}\times\boldsymbol{a})=-(\boldsymbol{b}\cdot\boldsymbol{a})\boldsymbol{c}+(\boldsymbol{a}\cdot\boldsymbol{b})\boldsymbol{c}-(\boldsymbol{a}\cdot\boldsymbol{c})\boldsymbol{b}+(\boldsymbol{b}\cdot\boldsymbol{c})\boldsymbol{a}-(\boldsymbol{c}\cdot\boldsymbol{b})\boldsymbol{a}+(\boldsymbol{a}\cdot\boldsymbol{b})\boldsymbol{c}=0
+\end{math}
+\mysssec{证明:\ $\boldsymbol{R}\boldsymbol{a}\cdot\boldsymbol{R}\boldsymbol{b}=\boldsymbol{a}\cdot\boldsymbol{b}$,\ 其中$\boldsymbol{R}$为旋转矩阵}
+\begin{math}
+    \boldsymbol{R}\boldsymbol{a}\cdot\boldsymbol{R}\boldsymbol{b}=(\boldsymbol{R}\boldsymbol{a})^T(\boldsymbol{R}\boldsymbol{b})=\boldsymbol{a}^T\boldsymbol{R}^T\boldsymbol{R}\boldsymbol{b}=\boldsymbol{a}^T\boldsymbol{R}^{-1}\boldsymbol{R}\boldsymbol{b}=\boldsymbol{a}^T\boldsymbol{b}=\boldsymbol{a}\cdot\boldsymbol{b}
+\end{math}
+\mysssec{在坐标逆变换($x'=-x,\ y'=-y,\ z'=-z$)下,\ 两个矢量的叉乘是如何变换的?}
+\begin{math}
+    \boldsymbol{a}'\times\boldsymbol{b}'=\begin{pmatrix}
+        \boldsymbol{e}_i & \boldsymbol{e}_j & \boldsymbol{e}_k \\
+        a_i'               & a_j'               & a_k'               \\
+        b_i'               & b_j'               & b_k'
+    \end{pmatrix}=\begin{pmatrix}
+        \boldsymbol{e}_i & \boldsymbol{e}_j & \boldsymbol{e}_k \\
+        -a_i              & -a_j              & -a_k              \\
+        -b_i              & -b_j              & -b_k
+    \end{pmatrix}=\boldsymbol{a}\times\boldsymbol{b}
+\end{math}
+\mysssec{在坐标逆变换下,\ 标量三重积($\boldsymbol{c}\cdot(\boldsymbol{a}\times\boldsymbol{b})$)是如何变换的?}
+\begin{math}
+    \boldsymbol{c}'\cdot(\boldsymbol{a}'\times\boldsymbol{b}')=\boldsymbol{c}'\cdot(\boldsymbol{a}\times\boldsymbol{b})=-\boldsymbol{c}\cdot(\boldsymbol{a}\times\boldsymbol{b})
+\end{math}
+\mysssec{$\boldsymbol{n}$是固定点$(x',y',z')$到点$(x,y,z)$的间隔矢量,\ $n$是它的长度,\ 证明:\\
+\hspace*{2em} (a)\ $\boldsymbol{\nabla}n^2=2\boldsymbol{n}$.\\
+\hspace*{2em} (b)\ $\boldsymbol{\nabla}\frac{1}{n}=-\frac{\boldsymbol{n}}{n^2}$.\\
+\hspace*{2em} (c)\ $\boldsymbol{\nabla}n^a=a\boldsymbol{n}n^{a-2}(a\neq 0)$.
+}
+(a)\ \begin{math}
+    \boldsymbol{\nabla}n^2=\frac{\partial n^2}{\partial e_i}\boldsymbol{e}_i=2n\frac{\partial n}{\partial e_i}\boldsymbol{e}_i=2\boldsymbol{n}
+\end{math}
+
+(c)\ \begin{math}
+    \boldsymbol{\nabla}n^a=\frac{\partial n^a}{\partial e_i}\boldsymbol{e}_i=an^{-1}\frac{\partial n}{\partial e_i}\boldsymbol{e}_i=a\boldsymbol{n}n^{a-2}
+\end{math}
+\mysssec{函数$f$只依赖平面坐标$y,z$。令旋转后的坐标记为$\begin{pmatrix}
+    y'\\z'
+\end{pmatrix}=\begin{pmatrix}
+    \cos \theta&\sin\theta\\ -\sin\theta&\cos\theta
+\end{pmatrix}\begin{pmatrix}
+    y\\z
+\end{pmatrix}$
+, 求证$\boldsymbol{\nabla}f'=\begin{pmatrix}
+    \cos \theta&\sin\theta\\ -\sin\theta&\cos\theta
+\end{pmatrix}\begin{pmatrix}
+    \frac{\partial f}{\partial y}\\\frac{\partial f}{\partial z}
+\end{pmatrix}$}
+\begin{align*}
+\begin{pmatrix} y \\ z \end{pmatrix}
+&=
+\begin{pmatrix}
+\cos\theta & -\sin\theta\\
+\sin\theta & \cos\theta
+\end{pmatrix}
+\begin{pmatrix}  y' \\  z' \end{pmatrix} \\[6pt]
+\frac{\partial f}{\partial y'}
+&=
+\frac{\partial f}{\partial y}\frac{\partial y}{\partial y'}
++
+\frac{\partial f}{\partial z}\frac{\partial z}{\partial y'}
+=
+\frac{\partial f}{\partial y}\cos\theta
++
+\frac{\partial f}{\partial z}\sin\theta \\[6pt]
+\frac{\partial f}{\partial z'}
+&=
+\frac{\partial f}{\partial y}\frac{\partial y}{\partial z'}
++
+\frac{\partial f}{\partial z}\frac{\partial z}{\partial z'}
+=
+-\frac{\partial f}{\partial y}\sin\theta
++
+\frac{\partial f}{\partial z}\cos\theta \\[6pt]
+\vphantom{\begin{pmatrix}
+\dfrac{\partial f}{\partial y}\\
+\dfrac{\partial f}{\partial z}
+\end{pmatrix}}
+\begin{pmatrix}
+\dfrac{\partial f}{\partial y'}\\[10pt]
+\dfrac{\partial f}{\partial z'}
+\end{pmatrix}
+&=
+\vphantom{\begin{pmatrix}
+\dfrac{\partial f}{\partial y}\\
+\dfrac{\partial f}{\partial z}
+\end{pmatrix}}
+\begin{pmatrix}
+\cos\theta & \sin\theta\\
+-\sin\theta & \cos\theta
+\end{pmatrix}
+\begin{pmatrix}
+\dfrac{\partial f}{\partial y}\\[10pt]
+\dfrac{\partial f}{\partial z}
+\end{pmatrix}
+\end{align*}
+\mysssec{计算$\left(\boldsymbol{\nabla}\boldsymbol{T}\right)\times(\boldsymbol{\nabla}\boldsymbol{S})$}
+\begin{align*}
+    \left(\boldsymbol{\nabla}\boldsymbol{T}\right)\times(\boldsymbol{\nabla}\boldsymbol{S})&=\left(\varepsilon_{ijk}\frac{\partial T_j}{\partial x_i}\boldsymbol{e}_k\right)\times\left(\varepsilon_{lmn}\frac{\partial S_m}{\partial x_l}\boldsymbol{e}_n\right)\\
+    &=\varepsilon_{opq}\varepsilon_{ijo}\frac{\partial T_j}{\partial x_i}\varepsilon_{lmp}\frac{\partial S_m}{\partial x_l}\boldsymbol{e}_q\\
+    &=\varepsilon_{pqo}\varepsilon_{ijo}\frac{\partial T_j}{\partial x_i}\varepsilon_{lmp}\frac{\partial S_m}{\partial x_l}\boldsymbol{e}_q\\
+    &=(\delta_{ip}\delta_{jq}-\delta_{iq}\delta_{jp})\frac{\partial T_j}{\partial x_i}\varepsilon_{lmp}\frac{\partial S_m}{\partial x_l}\boldsymbol{e}_q\\
+    &=\delta_{ip}\delta_{jq}\frac{\partial T_j}{\partial x_i}\varepsilon_{lmp}\frac{\partial S_m}{\partial x_l}\boldsymbol{e}_q-\delta_{iq}\delta_{jp}\frac{\partial T_j}{\partial x_i}\varepsilon_{lmp}\frac{\partial S_m}{\partial x_l}\boldsymbol{e}_q\\
+    &=\frac{\partial T_j}{\partial x_i}\varepsilon_{lmi}\frac{\partial S_m}{\partial x_l}\boldsymbol{e}_j-\frac{\partial T_j}{\partial x_i}\varepsilon_{lmj}\frac{\partial S_m}{\partial x_l}\boldsymbol{e}_i\\
+    &=\frac{\partial T_i}{\partial x_j}\varepsilon_{lmj}\frac{\partial S_m}{\partial x_l}\boldsymbol{e}_i-\frac{\partial T_j}{\partial x_i}\varepsilon_{lmj}\frac{\partial S_m}{\partial x_l}\boldsymbol{e}_i\\
+    &=\left(\frac{\partial T_i}{\partial x_j}-\frac{\partial T_j}{\partial x_i}\right)\varepsilon_{lmj}\frac{\partial S_m}{\partial x_l}\boldsymbol{e}_i
+\end{align*}
+\mysssec{证明$\iint_S f(\boldsymbol{\nabla}\times\boldsymbol{a})\cdot\dif \boldsymbol{S}=\iint_S [\boldsymbol{a}\times(\boldsymbol{\nabla}f)]\cdot\dif \boldsymbol{S}+\oint_{\partial S} f\boldsymbol{a}\cdot\dif \boldsymbol{l}$}
+\begin{align*}
+    \oint_{\partial S} f\boldsymbol{a}\cdot\dif \boldsymbol{l}&=\iint_S[\boldsymbol{\nabla\times(f\boldsymbol{a})}]\cdot\dif \boldsymbol{S}\\
+    &=\iint_S[f(\boldsymbol{\nabla}\times \boldsymbol{a})+(\boldsymbol{\nabla} f)\times \boldsymbol{a}]\cdot\dif \boldsymbol{S}\\
+    \iint_S f(\boldsymbol{\nabla}\times\boldsymbol{a})\cdot\dif \boldsymbol{S}&=\iint_S [\boldsymbol{a}\times(\boldsymbol{\nabla}f)]\cdot\dif \boldsymbol{S}+\oint_{\partial S} f\boldsymbol{a}\cdot\dif \boldsymbol{l}
+\end{align*}
+\mysssec{证明$\iiint_V \boldsymbol{b}\cdot(\boldsymbol{\nabla}\times\boldsymbol{a})\dif \tau=\iiint_V \boldsymbol{a}\cdot(\boldsymbol{\nabla}\times\boldsymbol{b})\dif \tau+\iint(\boldsymbol{a}\times\boldsymbol{b})\cdot\dif \boldsymbol{S}_{\partial V}$}
+\begin{align*}
+    \iint_{\partial V} (\boldsymbol{a}\times\boldsymbol{b}) \cdot \dif \boldsymbol{S}&= \iiint_V \boldsymbol{\nabla} \cdot (\boldsymbol{a}\times\boldsymbol{b})  \dif\tau\\
+    &= \iiint_V [\boldsymbol{b}\cdot(\boldsymbol{\nabla}\times\boldsymbol{a})-\boldsymbol{a}\cdot(\boldsymbol{\nabla}\times\boldsymbol{b})]  \dif\tau\\
+    \iiint_V \boldsymbol{b}\cdot(\boldsymbol{\nabla}\times\boldsymbol{a})\dif \tau&=\iiint_V \boldsymbol{a}\cdot(\boldsymbol{\nabla}\times\boldsymbol{b})\dif \tau+\iint_{\partial V}(\boldsymbol{a}\times\boldsymbol{b})\cdot\dif \boldsymbol{S}
+\end{align*}
+\mysssec{设$f=f(r)$,求$\boldsymbol{\nabla}^2\left[f(r)\right]$}
+\begin{align}
+    \boldsymbol{\nabla}^2\left[f(r)\right]&=\frac{1}{sr}\frac{\partial}{\partial r}\left(sr\dfrac{{\partial f}}{\partial r}\right)
+    +\frac{1}{s^2}\frac{\partial}{\partial \phi}\left(\dfrac{{\partial f}}{\partial \phi}\right)
+    +\frac{1}{sr^2}\frac{\partial}{\partial \theta}\left(s\dfrac{{\partial f}}{\partial \theta}\right)\nonumber\\
+    &=\frac{1}{sr}\frac{\partial}{\partial r}\left(sr\frac{\partial f}{\partial r}\right)
+    \nonumber\\
+    &=\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\frac{\partial f}{\partial r}\right)
+    \nonumber\\
+    &=\frac{2}{r}\frac{\partial f}{\partial r}
+    +\frac{\partial^2 f}{\partial r^2}
+    \nonumber\\
+\end{align}
+\mysssec{证明:$\iiint_V\boldsymbol{\nabla}\times\boldsymbol{a}\dif\tau=\oiint\dif\boldsymbol{S}\times\boldsymbol{a}$}
+
+取任意常向量 $\boldsymbol c$。利用式\ref{向量恒等式0}得
+$\boldsymbol\nabla\times\boldsymbol c=\boldsymbol 0$, 因此
+\[
+\boldsymbol\nabla\cdot(\boldsymbol a\times\boldsymbol c)
+=
+\boldsymbol c\cdot(\boldsymbol\nabla\times\boldsymbol a).
+\]
+
+应用高斯定理, 
+\[
+\iiint_V \boldsymbol\nabla\cdot(\boldsymbol a\times\boldsymbol c)\dif\tau
+=
+\oiint_{\partial V} (\boldsymbol a\times\boldsymbol c)\cdot \dif \boldsymbol S
+=
+\iiint_V \boldsymbol c\cdot(\boldsymbol\nabla\times\boldsymbol a)\dif\tau.
+\]
+
+利用式\ref{标量三重积}得
+\[
+\boldsymbol c\cdot
+\iiint_V (\boldsymbol\nabla\times\boldsymbol a)\dif\tau
+=
+\boldsymbol c\cdot
+\oiint_{\partial V} \dif \boldsymbol S\times\boldsymbol a.
+\]
+
+由于上述等式对任意常向量 $\boldsymbol c$ 成立, 必有
+\[
+\iiint_V (\boldsymbol{\boldsymbol\nabla}\times\boldsymbol a)\dif\tau
+=
+\oiint_{\partial V} \dif \boldsymbol S\times\boldsymbol a.
+\]
+
+\mysssec{证明:$\iint_S\dif\boldsymbol{S}\times\boldsymbol{\nabla}f=\oint_{\partial S}f\dif\boldsymbol{l}$}
+
+取任意常向量 $\boldsymbol c$。利用式\ref{向量恒等式1}得
+\[
+\iint_S (\boldsymbol{\nabla} f \times \boldsymbol c)\cdot \dif \boldsymbol S
+=
+\iint_S (\boldsymbol{\nabla} \times (f \boldsymbol c)) \cdot \dif \boldsymbol S.
+\]
+
+由斯托克斯定理
+\[
+\iint_S (\boldsymbol{\nabla}\times \boldsymbol A) \cdot \dif \boldsymbol S
+=
+\oint_{\partial S} \boldsymbol A \cdot \dif \boldsymbol l,
+\]
+取 $\boldsymbol A = f \boldsymbol c$, 得
+\[
+\iint_S (\boldsymbol{\nabla} \times (f \boldsymbol c)) \cdot \dif \boldsymbol S
+=
+\oint_{\partial S} (f \boldsymbol c) \cdot \dif \boldsymbol l
+=
+\oint_{\partial S} f\, \boldsymbol c \cdot \dif \boldsymbol l.
+\]
+
+又由混合积恒等式
+\[
+\boldsymbol c \cdot (\dif \boldsymbol S \times \boldsymbol{\nabla} f)
+=
+(\boldsymbol{\nabla} f \times \boldsymbol c)\cdot \dif \boldsymbol S,
+\]
+所以
+\[
+\boldsymbol c \cdot 
+\iint_S \dif \boldsymbol S \times \boldsymbol{\nabla} f
+=
+\boldsymbol c \cdot \oint_{\partial S} f\, \dif \boldsymbol l.
+\]
+
+由于上述等式对任意常向量 $\boldsymbol c$ 都成立, 必有
+\[
+\iint_S \dif \boldsymbol S \times \boldsymbol{\nabla} f
+=
+\oint_{\partial S} f\, \dif \boldsymbol l.
+\]
+\mysssec{证明:$\oiint_{\partial S}(\boldsymbol{a}\times\boldsymbol{r})\cdot\dif\boldsymbol{l}=2\iint_S\boldsymbol{a}\cdot\dif\boldsymbol{S}$}
+\begin{align*}
+    \oiint_{\partial S}(\boldsymbol{a}\times\boldsymbol{r})\cdot\dif\boldsymbol{l}
+    &=\iint_S\left[\boldsymbol{\nabla}\times(\boldsymbol{a}\times\boldsymbol{r})\right]\cdot\dif\boldsymbol{S}\\
+    &=\iint_S\left[\boldsymbol{\nabla}\times(\varepsilon_{ijk}a_ix_j\boldsymbol{e}_k)\right]\cdot\dif\boldsymbol{S}\\
+    &=\iint_S(\varepsilon_{lmn}\varepsilon_{ijm}\frac{\partial a_ix_j}{\partial x_l}\boldsymbol{e}_n)\cdot\dif\boldsymbol{S}\\
+    &=-\iint_S(\varepsilon_{lnm}\varepsilon_{ijm}\frac{\partial a_ix_j}{\partial x_l}\boldsymbol{e}_n)\cdot\dif\boldsymbol{S}\\
+    &=-\iint_S(\delta_{il}\delta_{jn}-\delta_{in}\delta_{jl})(\frac{\partial a_ix_j}{\partial x_l}\boldsymbol{e}_n)\cdot\dif\boldsymbol{S}\\
+    &=\iint_S(\delta_{in}\delta_{jl}\frac{\partial a_ix_j}{\partial x_l}\boldsymbol{e}_n-\delta_{il}\delta_{jn}\frac{\partial a_ix_j}{\partial x_l}\boldsymbol{e}_n)\cdot\dif\boldsymbol{S}\\
+    &=\iint_S(\frac{\partial a_ix_j}{\partial x_j}\boldsymbol{e}_i-\frac{\partial a_ix_j}{\partial x_i}\boldsymbol{e}_j)\cdot\dif\boldsymbol{S}\\
+    &=\iint_S(\frac{\partial a_jx_i}{\partial x_i}\boldsymbol{e}_j-\frac{\partial a_ix_j}{\partial x_i}\boldsymbol{e}_j)\cdot\dif\boldsymbol{S}\\
+    &=\iint_S(a_j\frac{\partial x_i}{\partial x_i}
+    +x_i\frac{\partial a_j}{\partial x_i}
+    -a_i\frac{\partial x_j}{\partial x_i}
+    -x_j\dfrac{\partial a_i}{\partial x_i})\boldsymbol{e}_j\cdot\dif\boldsymbol{S}\\
+    &=\iint_S(3a_j
+    +x_i\frac{\partial a_j}{\partial x_i}
+    -a_i\delta_{ij}
+    -x_j\dfrac{\partial a_i}{\partial x_i})\boldsymbol{e}_j\cdot\dif\boldsymbol{S}\\
+    &=\iint_S2a_j\boldsymbol{e}_j\cdot\dif\boldsymbol{S}\\
+    &=\iint_S\boldsymbol{a}\cdot\dif\boldsymbol{S}
+\end{align*}
+\mysssec{将下列电荷分布表示成电荷密度函数$\rho$:1.电荷量$Q$均匀分布在半径为$R$的球面上; 2.电荷均匀分布在半径为$R$的柱面上, 单位长度的电荷量为$\lambda$; 3.电荷量均匀分布在半径为$R$的平面圆盘上}
+\begin{align*}
+&1.\rho =\delta(R\boldsymbol{e}_r-\boldsymbol{r})\dfrac{Q}{4\pi R^2}\\
+&2.\rho=\delta(R\boldsymbol{e}_s-\boldsymbol{s})\dfrac{\lambda}{2\pi R}\\
+&3.\rho=\delta(\boldsymbol x_3)H(x+R)H(-x-R)\dfrac{\lambda}{\pi R^2}
+\end{align*}
+\mysssec{对函数$\boldsymbol a=r^2\cos\theta\boldsymbol{r} +r^2\cos\phi \boldsymbol{\theta}-r^2\cos\theta\sin\phi\boldsymbol{\phi}$验证散度定理,体积为半径为$R$在第一卦限的$1/8$球体}
+\begin{math}
+    \boldsymbol{\nabla}\cdot \boldsymbol a=2r\cos\theta-r^2\cos\theta\cos\phi
+\end{math}
+\begin{align*}
+    \int_{0}^{\frac{\pi}{2}}\dif \phi\int_{0}^{\frac{\pi}{2}}\dif \theta\int_{0}^{R}\boldsymbol{\nabla}\cdot \boldsymbol a\dif r
+    &=\int_{0}^{\frac{\pi}{2}}\dif \phi\int_{0}^{\frac{\pi}{2}}\dif \theta\int_{0}^{R}\left(2r\cos\theta-r^2\cos\theta\cos\phi\right)\dif r\\
+    &=\int_{0}^{\frac{\pi}{2}}\dif \phi\int_{0}^{\frac{\pi}{2}}\dif \theta\left.\left(r^2\cos\theta-\frac{r^3}{3}\cos\theta\cos\phi\right)\right|_0^R\\
+    &=\int_{0}^{\frac{\pi}{2}}\dif \phi\int_{0}^{\frac{\pi}{2}}\left(R^2\cos\theta-\frac{R^3}{3}\cos\theta\cos\phi\right)\dif \theta\\
+    &=\int_{0}^{\frac{\pi}{2}}\dif \phi\left.\left(R^2\sin\theta-\frac{R^3}{3}\sin\theta\cos\phi\right)\right|_0^{\frac{\pi}{2}}\\
+    &=\int_{0}^{\frac{\pi}{2}}\left(R^2-\frac{R^3}{3}\cos\phi\right)\dif \phi\\
+    &=\left.\left(R^2\phi-\frac{R^3}{3}\sin\phi\right)\right|_{0}^{\frac{\pi}{2}}\\
+    &=\frac{\pi}{2}R^2-\frac{R^3}{3}
+\end{align*}
+计算$XY$平面:
+\begin{align*}
+    \int_{0}^{\frac{\pi}{2}}\dif \theta\int_{0}^{R}a_{\phi}\dif r
+    &=-\int_{0}^{\frac{\pi}{2}}\dif \theta\int_{0}^{R}r^2\cos\theta\sin\phi\dif r\\
+    &=-\int_{0}^{\frac{\pi}{2}}\dif \theta\int_{0}^{R}r^2\cos\theta\dif r\\
+    &=-\int_{0}^{\frac{\pi}{2}}\dif \theta\left.\frac{r^3}{3}\cos\theta\right|_{0}^{R}\\
+    &=-\int_{0}^{\frac{\pi}{2}}\frac{R^3}{3}\cos\theta\dif \theta\\
+    &=-\frac{R^3}{3}
+\end{align*}
+计算$XZ$平面:
+\begin{align*}
+    \int_{0}^{\frac{\pi}{2}}\dif \phi\int_{0}^{R}a_{\theta}\dif r
+    &=\int_{0}^{\frac{\pi}{2}}\dif \phi\int_{0}^{R}r^2\cos\phi\dif r\\
+    &=\int_{0}^{\frac{\pi}{2}}\dif \phi\left.\frac{r^3}{3}\cos\phi\right|_{0}^{R}\\
+    &=\int_{0}^{\frac{\pi}{2}}\frac{R^3}{3}\cos\phi\dif \phi\\
+    &=\frac{R^3}{3}
+\end{align*}
+计算$YZ$平面:
+\begin{align*}
+    \int_{0}^{\frac{\pi}{2}}\dif \phi\int_{0}^{R}a_{\theta}\dif r
+    &=\int_{0}^{\frac{\pi}{2}}\dif \phi\int_{0}^{R}r^2\cos\phi\dif r=\frac{R^3}{3}
+\end{align*}
+\mysssec{对函数$\boldsymbol a=bx_2\boldsymbol{e}_1+cx_1\boldsymbol{e}_2$验证斯托克斯定理, 面的边界线选为处在$XY$平面, 半径为$R$, 圆心在原点的圆周线。}
+\begin{align*}
+    \boldsymbol \nabla\times\boldsymbol a&=\boldsymbol \nabla\times (by\boldsymbol{e}_1+cx\boldsymbol{e}_2)
+    =\begin{pmatrix}
+        \boldsymbol{e}_1&\boldsymbol{e}_2&\boldsymbol{e}_3\\
+        \frac{\partial}{\partial x_1}&\frac{\partial}{\partial x_2}&\frac{\partial}{\partial x_3}\\
+        bx_2&cx_1&0
+    \end{pmatrix}
+    =(c-b)\boldsymbol{e}_3
+\end{align*}
+\begin{align*}
+    \iint \boldsymbol \nabla\times\boldsymbol a\cdot\dif\boldsymbol{l}
+    =\iint \boldsymbol (c-b)\boldsymbol{e}_3\cdot\dif\boldsymbol{S}
+    =2\pi R(c-b)
+\end{align*}
+\begin{align*}
+    \oint(bR\sin\phi \boldsymbol{e}_1+cR\cos\phi\boldsymbol{e}_2)\cdot\dif\boldsymbol{l}=&\int_0^{2\pi}(bR\sin\phi \boldsymbol{e}_1+cR\cos\phi\boldsymbol{e}_2)\cdot(−R\sin\phi \boldsymbol{e}_1​+R\cos\phi \boldsymbol{e}_2​)\dif \phi\\
+    =&\int_0^{2\pi}(-bR^2\sin^2\phi+cR^2\cos^2\phi)\dif \phi\\
+    =&2\pi R(c-b)
+\end{align*}
+\mysssec{对函数$\boldsymbol a=r\cos^2\theta\boldsymbol{r}-r\sin\theta\cos\theta\boldsymbol{\theta}+3r\boldsymbol{\phi}$验证斯托克斯定理。}
+    \begin{align*}
+    &\boldsymbol{\nabla}\times\boldsymbol a\\
+    =&\frac{1}{sr}\left(r\frac{\partial a_\theta}{\partial \phi}-s\frac{\partial a_{\phi}}{\partial \theta}\right)\boldsymbol{r}
+    +\frac{1}{r}\left(\frac{\partial a_r}{\partial \theta}
+    -\frac{\partial ra_\theta}{\partial r}\right)\boldsymbol{\phi}
+    +\frac{1}{s}\left(\frac{\partial sa_{\phi}}{\partial r}
+    -\frac{\partial a_r}{\partial \phi}
+    \right)\boldsymbol{\theta}\\
+    =&\frac{1}{sr}\left(r\frac{\partial r\sin\theta\cos\theta}{\partial \phi}-s\frac{\partial 3r}{\partial \theta}\right)\boldsymbol{r}
+    +\frac{1}{r}\left(\frac{\partial r\cos^2\theta}{\partial \theta}
+    -\frac{\partial rr\sin\theta\cos\theta}{\partial r}\right)\boldsymbol{\phi}
+    +\frac{1}{s}\left(\frac{\partial s3r}{\partial r}
+    -\frac{\partial r\cos^2\theta}{\partial \phi}
+    \right)\boldsymbol{\theta}\\
+    =&\frac{1}{s}\left(6r\sin\theta
+    \right)\boldsymbol{\theta}\\
+    =&6\boldsymbol{\theta}
+\end{align*}
+计算$XY$平面:
+\begin{align*}
+    \int_{0}^{\frac{\pi}{2}}\dif \theta\int_{0}^{R}a_{\phi}\dif r
+    &=\int_{0}^{\frac{\pi}{2}}\dif \theta\int_{0}^{R}6\dif r\\
+    &=\frac{3}{2}R
+\end{align*}
+\mysssec{对函数$\boldsymbol a=r^2\sin^2\theta\boldsymbol{r}+4r^2\cos\theta\boldsymbol{\theta}+r^2\tan\theta\boldsymbol{\phi}$验证散度定理。}
+\begin{align*}
+    \boldsymbol{\nabla}\cdot\boldsymbol a&=\frac{1}{sr}(\dfrac{\partial sra_r}{\partial r}+r\dfrac{\partial a_{\phi}}{\partial \phi}+s\dfrac{\partial \theta}{\partial \theta})\\
+    &=\frac{1}{sr}(\dfrac{\partial srr^2\sin^2\theta}{\partial r}
+    +r\dfrac{\partial 4r^2\cos\theta}{\partial \phi}
+    +s\dfrac{\partial r^2\tan\theta}{\partial \theta})\\
+    &=\frac{1}{sr}(4sr^2\sin^2\theta
+    +sr^2\dfrac{1}{\cos^2\theta})\\
+    &=4r\sin^2\theta
+    +r\dfrac{1}{\cos^2\theta}
+\end{align*}
+\begin{align*}
+    &\int_{0}^{R}r^2\dif r\int_{0}^{2\pi}\dif \phi\int_{0}^{\frac{\pi}{6}}(4r\sin^2\theta
+    +r\dfrac{1}{\cos^2\theta})\sin\theta
+    \dif \theta\\
+    =&\int_{0}^{R}2\pi r^3\dif r\int_{0}^{\frac{\pi}{6}}(4\sin^2\theta
+    +\dfrac{1}{\cos^2\theta})\dif \theta\\
+    =&\int_{0}^{R}2\pi r^3\left.(2\theta-\sin2\theta+\tan\theta)\right|_{0}^{\frac{\pi}{6}}\dif r\\
+    =&\int_{0}^{R}2\pi r^3(\frac{\pi}{3}-\frac{\sqrt{3}}{2}+\frac{\sqrt{3}}{2})\dif r\\
+    =&\int_{0}^{R}2\pi r^3\frac{\pi}{3}\dif r\\
+    =&2\pi R^4\frac{\pi}{12}
+\end{align*}
+\mysssec{证明$\iiint_V\left[f\boldsymbol{\nabla}^2g+(\boldsymbol{\nabla}f)\cdot(\boldsymbol{\nabla}g)\right]\dif\tau=\oiint_S(f\boldsymbol{\nabla}g)\cdot\dif S$}
+\begin{align*}
+    \iiint_V (\boldsymbol{\nabla} \cdot \boldsymbol{a})  \dif\tau
+    &= \iint_{\partial V} \boldsymbol{a} \cdot \dif \boldsymbol{S}\\
+    \iiint_V [\boldsymbol{\nabla} \cdot (f\boldsymbol{\nabla}g)]  \dif\tau
+    &= \iint_{\partial V} (f\boldsymbol{\nabla}g) \cdot \dif \boldsymbol{S}\\
+    \iiint_V\left[f\boldsymbol{\nabla}^2g+(\boldsymbol{\nabla}f)\cdot(\boldsymbol{\nabla}g)\right]\dif\tau
+    &= \iint_{\partial V} (f\boldsymbol{\nabla}g) \cdot \dif \boldsymbol{S}
+\end{align*}
+\mysssec{求$\boldsymbol{a}={r^n}\boldsymbol{e}_r$的散度}
+\begin{align*}
+    \boldsymbol{\nabla}\cdot\boldsymbol{a}&=\frac{\partial a_i}{\partial x_i}\\
+    &=\frac{\partial x_ir^{n-1}}{\partial x_i}\\
+    &=3r^{n-1}
+    +x_i(n-1)r^{n-2}\frac{\partial r}{\partial x_i}\\
+    &=3r^{n-1}
+    +x_i(n-1)r^{n-2}\frac{ x_i}{ r}\\
+    &=3r^{n-1}
+    +(n-1)r^{n-1}\\
+    &=(n+2)r^{n-1}
+\end{align*}
+\begin{align*}
+    \iint_{\partial V} \boldsymbol{a} \cdot \dif \boldsymbol{S}
+    =\iint_{\partial V} {r^n}\boldsymbol{e}_r \cdot \dif \boldsymbol{S}
+    =4\pi r^2r^n=
+\end{align*}
+\mysssec{求$\boldsymbol{a}={r^n}\boldsymbol{e}_r$的旋度}
+\begin{align*}
+    \boldsymbol{\nabla}\times\boldsymbol{a}&=\varepsilon_{ijk}\frac{\partial a_j}{\partial x_i}\boldsymbol{e}_k\\
+    &=\varepsilon_{ijk}\frac{\partial r^{n-1}x_j}{\partial x_i}\boldsymbol{e}_k\\
+    &=\varepsilon_{ijk}x_j\frac{\partial r^{n-1}}{\partial x_i}\boldsymbol{e}_k\\
+    &=(n-1)\varepsilon_{ijk}x_jr^{n-2}\frac{\partial r}{\partial x_i}\boldsymbol{e}_k\\
+    &=(n-1)\varepsilon_{ijk}x_jr^{n-2}\frac{x_i}{r}\boldsymbol{e}_k\\
+    &=(n-1)r^{n-3}\varepsilon_{ijk}{x_i}x_j\boldsymbol{e}_k\\
+    &=0
+\end{align*}
+\mysssec{以匀角速绕轴转动的抛物线形金属丝, 其方程为
+$x²=4ay$。一质量为$m$的小环套在此金属丝上, 可沿着金属丝
+无摩擦滑动。求小环在$x$方向的运动微分方程。}
+\begin{align*}
+    \frac{\partial \dfrac{mx^2\omega^2}{2}+mgy+\dfrac{m\dot y^2}{2}+\dfrac{m\dot x^2}{2}}{\partial t}&=0\\
+    \frac{\partial \dfrac{mx^2\omega^2}{2}+mg\dfrac{x^2}{4a}+\dfrac{mx^2\dot x^2}{8a^2}+\dfrac{m\dot x^2}{2}}{\partial t}&=0\\
+    x\dot x\omega^2
+    +gx\dfrac{\dot x}{2a}
+    +\dfrac{x\dot x^3}{4a^2}
+    +\dfrac{x^2\dot x\ddot x}{4a^2}
+    +mx\dot x&=0\\
+    x\omega^2
+    +\dfrac{gx}{2a}
+    +\dfrac{x\dot x^2}{4a^2}
+    +\dfrac{x^2\ddot x}{4a^2}
+    +mx&=0
+\end{align*}
+\newpage
