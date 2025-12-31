@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.1)  30 DEC 2025 12:30
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.11.1)  31 DEC 2025 08:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -735,8 +735,6 @@ File: uesint.fd
 LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <10.53937> not available
 (Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 3.
 [2]
-Missing character: There is no δ (U+03B4) in font [lmroman10-regular]:mapping=tex-text;!
-
 
 [3])
 \openout2 = `chapters/chap1.aux'.
@@ -786,11 +784,6 @@ Missing character: There is no δ (U+03B4) in font [lmroman10-regular]:mapping=t
 [21]
 
 [22]
-Missing character: There is no ​ (U+200B) in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ​ (U+200B) in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ​ (U+200B) in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no ​ (U+200B) in font [lmroman10-regular]:mapping=tex-text;!
-
 
 [23]
 
@@ -862,23 +855,29 @@ Missing character: There is no ​ (U+200B) in font [lmroman10-regular]:mapping=
 
 [53]
 
-[54])
+[54]
 
-[55] (./main.aux (./chapters/chap0.aux) (./chapters/chap1.aux) (./chapters/chap2.aux))
+[55]
+
+[56]
+
+[57])
+
+[58] (./main.aux (./chapters/chap0.aux) (./chapters/chap1.aux) (./chapters/chap2.aux))
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 06C75B9E1BE0D97D5D560D01CEBD52F5;3272.
+(rerunfilecheck)             Checksum: 82B498BA322889C2E413E079A0C1C6D7;3437.
  ) 
 Here is how much of TeX's memory you used:
- 16083 strings out of 468388
- 357607 string characters out of 5444280
- 793441 words of memory out of 5000000
- 44316 multiletter control sequences out of 15000+600000
- 640654 words of font info for 124 fonts, out of 8000000 for 9000
+ 16139 strings out of 468388
+ 361187 string characters out of 5444280
+ 793595 words of memory out of 5000000
+ 44370 multiletter control sequences out of 15000+600000
+ 640662 words of font info for 125 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,19n,111p,566b,379s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (55 pages).
+Output written on main.pdf (58 pages).
