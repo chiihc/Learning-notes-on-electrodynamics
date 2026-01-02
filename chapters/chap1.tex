@@ -140,7 +140,7 @@
 \begin{align}
     \boldsymbol{e}\times(\boldsymbol{e}\times\boldsymbol{b}) & =-(\boldsymbol{e}\cdot\boldsymbol{e})\boldsymbol{b}+(\boldsymbol{b}\cdot\boldsymbol{e})\boldsymbol{e}=-\boldsymbol{b}+(\boldsymbol{b}\cdot\boldsymbol{e})\boldsymbol{e}
 \end{align}
-\mysssec{哈密顿算子}
+\mysssec{梯度算子}
 \begin{equation}
     \boldsymbol{\nabla}\equiv\frac{\partial}{\partial x_i}\boldsymbol{e}_i
 \end{equation}
@@ -513,7 +513,7 @@ $\Delta\tau=h_1h_2h_3\,\Delta u_1\Delta u_2\Delta u_3$
 \subsubsection{柱坐标系}
 将柱坐标系坐标转化为直角系坐标的方式为
 \begin{equation}
-    x_1=s\cos\phi,\ x_2=s\sin\phi,\ x_3=x_3\label{柱坐标系坐标转化为直角系坐标}
+    x_1=s\cos\phi,\ x_2=s\sin\phi,\ x_3=z\label{柱坐标系坐标转化为直角系坐标}
 \end{equation}
 其中$s$是坐标点到$z$轴的距离。柱坐标系和直角系坐标无限小元转换方式为
 \begin{equation}
@@ -523,7 +523,7 @@ $\Delta\tau=h_1h_2h_3\,\Delta u_1\Delta u_2\Delta u_3$
         \dfrac{x_1}{s}&-x_2&0\\[6pt]
         \dfrac{x_2}{s}&x_1&0\\0&0&1
     \end{pmatrix}\begin{pmatrix}
-        \dif{s}\\\dif{\phi}\\\dif{x}_3
+        \dif{s}\\\dif{\phi}\\\dif z
     \end{pmatrix}
 \end{equation}
 其拉梅系数为
@@ -532,21 +532,21 @@ $\Delta\tau=h_1h_2h_3\,\Delta u_1\Delta u_2\Delta u_3$
 \end{equation}
 其无限小位移为
 \begin{equation}
-    \dif\boldsymbol{l}=h_i\dif{u}_i\boldsymbol{e}_i=\dif{s}\boldsymbol{s}+s\dif{\phi}\boldsymbol{\phi}+\dif{x}_3\boldsymbol{x}_3
+    \dif\boldsymbol{l}=h_i\dif{u}_i\boldsymbol{e}_i=\dif{s}\boldsymbol{s}+s\dif{\phi}\boldsymbol{\phi}+\dif z\boldsymbol z
 \end{equation}
 其体积元为
 \begin{equation}
-    \dif\tau=s\dif s\dif \phi\dif{x}_3
+    \dif\tau=s\dif s\dif \phi\dif z
 \end{equation}
 梯度
 \begin{align}
-    \nabla f&=\frac{1}{h_i}\frac{\partial f}{\partial u_i}{\boldsymbol e}_i=\dfrac{\partial}{\partial s}\boldsymbol{s}+\dfrac{1}{s}\dfrac{\partial}{\partial \phi}\boldsymbol{\phi}+\dfrac{\partial}{\partial x_3}\boldsymbol{x}_3
+    \nabla f&=\frac{1}{h_i}\frac{\partial f}{\partial u_i}{\boldsymbol e}_i=\dfrac{\partial}{\partial s}\boldsymbol{s}+\dfrac{1}{s}\dfrac{\partial}{\partial \phi}\boldsymbol{\phi}+\dfrac{\partial}{\partial z}\boldsymbol z
 \end{align}
 散度
 \begin{equation}
-    \boldsymbol{\nabla}\cdot\boldsymbol{a}=\frac{1}{s}(\dfrac{\partial sa_s}{\partial s}+\dfrac{\partial a_{\phi}}{\partial \phi}+\dfrac{\partial sa_{3}}{\partial x_3})
-    =\frac{1}{s}\dfrac{\partial sa_s}{\partial s}+\frac{1}{s}\dfrac{\partial a_{\phi}}{\partial \phi}+\dfrac{\partial a_{3}}{\partial x_3}
-    =\frac{a_s}{s}+\dfrac{\partial a_s}{\partial s}+\frac{1}{s}\dfrac{\partial a_{\phi}}{\partial \phi}+\dfrac{\partial a_{3}}{\partial x_3}
+    \boldsymbol{\nabla}\cdot\boldsymbol{a}=\frac{1}{s}(\dfrac{\partial sa_s}{\partial s}+\dfrac{\partial a_{\phi}}{\partial \phi}+\dfrac{\partial sa_{z}}{\partial z})
+    =\frac{1}{s}\dfrac{\partial sa_s}{\partial s}+\frac{1}{s}\dfrac{\partial a_{\phi}}{\partial \phi}+\dfrac{\partial a_{z}}{\partial z}
+    =\frac{a_s}{s}+\dfrac{\partial a_s}{\partial s}+\frac{1}{s}\dfrac{\partial a_{\phi}}{\partial \phi}+\dfrac{\partial a_{z}}{\partial z}
 \end{equation}
 旋度
 \begin{align}
@@ -564,31 +564,31 @@ $\Delta\tau=h_1h_2h_3\,\Delta u_1\Delta u_2\Delta u_3$
     -s\frac{\partial a_3}{\partial u_1}\boldsymbol{e}_2
     +\frac{\partial sa_2}{\partial u_1}\boldsymbol{e}_3
     +s\frac{\partial a_1}{\partial u_3}\boldsymbol{e}_2\right)\nonumber\\
-    &=\frac{1}{s}\left(\frac{\partial a_{3}}{\partial \phi}\boldsymbol{s}
-    -\frac{\partial sa_{\phi}}{\partial x_3}\boldsymbol{s}
-    -\frac{\partial a_s}{\partial \phi}\boldsymbol{e}_3
-    -s\frac{\partial a_{3}}{\partial s}\boldsymbol{\phi}
-    +\frac{\partial sa_{\phi}}{\partial s}\boldsymbol{e}_3
-    +s\frac{\partial a_s}{\partial x_3}\boldsymbol{\phi}\right)\nonumber\\
-    &=\frac{1}{s}\left(\frac{\partial a_{3}}{\partial \phi}-s\frac{\partial a_{\phi}}{\partial x_3}\right)\boldsymbol{s}
-    +\left(\frac{\partial a_s}{\partial x_3}-\frac{\partial a_{3}}{\partial s}\right)\boldsymbol{\phi}
+    &=\frac{1}{s}\left(\frac{\partial a_{z}}{\partial \phi}\boldsymbol{s}
+    -\frac{\partial sa_{\phi}}{\partial z}\boldsymbol{s}
+    -\frac{\partial a_s}{\partial \phi}\boldsymbol z
+    -s\frac{\partial a_{z}}{\partial s}\boldsymbol{\phi}
+    +\frac{\partial sa_{\phi}}{\partial s}\boldsymbol z
+    +s\frac{\partial a_s}{\partial z}\boldsymbol{\phi}\right)\nonumber\\
+    &=\frac{1}{s}\left(\frac{\partial a_{z}}{\partial \phi}-s\frac{\partial a_{\phi}}{\partial z}\right)\boldsymbol{s}
+    +\left(\frac{\partial a_s}{\partial z}-\frac{\partial a_{z}}{\partial s}\right)\boldsymbol{\phi}
     +\frac{1}{s}\left(\frac{\partial sa_{\phi}}{\partial s}
     -\frac{\partial a_s}{\partial \phi}
-    \right)\boldsymbol{e}_3
+    \right)\boldsymbol z
 \end{align}
 拉普拉斯算子
 \begin{align}
     \boldsymbol{\nabla}^2{f}&=\frac{1}{h_1 h_2 h_3}\frac{\partial}{\partial u_i}\left(h_1 h_2 h_3\dfrac{{\partial f}}{h_i^2\partial u_i}\right)\nonumber\\
     &=\frac{1}{s}\frac{\partial}{\partial u_i}\left(s\dfrac{{\partial f}}{h_i^2\partial u_i}\right)\nonumber\\
-    &=\frac{1}{s}\frac{\partial}{\partial u_s}\left(s\dfrac{{\partial f}}{h_s^2\partial u_s}\right)
+    &=\frac{1}{s}\frac{\partial}{\partial s}\left(s\dfrac{{\partial f}}{h_s^2\partial s}\right)
     +\frac{1}{s}\frac{\partial}{\partial \phi}\left(s\dfrac{{\partial f}}{h_{\phi}^2\partial \phi}\right)
-    +\frac{1}{s}\frac{\partial}{\partial u_3}\left(s\dfrac{{\partial f}}{h_3^2\partial u_3}\right)\nonumber\\
-    &=\frac{1}{s}\frac{\partial}{\partial u_s}\left(s\dfrac{{\partial f}}{\partial u_s}\right)
+    +\frac{1}{s}\frac{\partial}{\partial z}\left(s\dfrac{{\partial f}}{h_3^2\partial z}\right)\nonumber\\
+    &=\frac{1}{s}\frac{\partial}{\partial s}\left(s\dfrac{{\partial f}}{\partial s}\right)
     +\frac{1}{s}\frac{\partial}{\partial \phi}\left(s\dfrac{{\partial f}}{s^2\partial \phi}\right)
-    +\frac{1}{s}\frac{\partial}{\partial u_3}\left(s\dfrac{{\partial f}}{\partial u_3}\right)\nonumber\\
-    &=\frac{1}{s}\frac{\partial}{\partial u_s}\left(s\dfrac{{\partial f}}{\partial u_s}\right)
+    +\frac{1}{s}\frac{\partial}{\partial z}\left(s\dfrac{{\partial f}}{\partial z}\right)\nonumber\\
+    &=\frac{1}{s}\frac{\partial}{\partial s}\left(s\dfrac{{\partial f}}{\partial s}\right)
     +\frac{1}{s^2}\dfrac{{\partial^2 f}}{\partial \phi^2}
-    +\dfrac{{\partial^2 f}}{\partial u_3^2}
+    +\dfrac{{\partial^2 f}}{\partial z^2}
 \end{align}
 \subsubsection{球坐标系}
 将球坐标系坐标转化为直角系坐标的方式为

@@ -85,7 +85,7 @@ $\rho$为电荷密度
     % &\xlongequal{u=r^2+2rd\cos\phi+d^2}\int_{0}^{\pi}\frac{\sigma r}{4\varepsilon_0d}\boldsymbol e_3\frac{d-r\cos\phi}{\sqrt{u}^3}\dif u\\
     % &=\int_{0}^{\pi}\frac{\sigma r}{2\varepsilon_0}\boldsymbol e_3\frac{u^2+d^2-r^2}{\sqrt{u}^3}\dif u
 \end{align*}
-\mysssec{在某个区域电场可以写为$\boldsymbol{E}=kr^3\boldsymbol{e_r}$, 求电荷密度和包含在半径为$R$, 球心在原点的闭合球面内的总电荷}
+\mysssec{在某个区域电场可以写为$\boldsymbol{E}=kr^3\boldsymbol{e}_r$, 求电荷密度和包含在半径为$R$, 球心在原点的闭合球面内的总电荷}
 \begin{align*}
     \rho=\varepsilon_0\boldsymbol{\nabla}\cdot\boldsymbol{E}
     =\varepsilon_0\frac{1}{sr}\dfrac{\partial srE_r}{\partial r}
@@ -187,7 +187,7 @@ $r<R$:
 
 设在放置第 $i$ 个电荷时, 其余电荷已就位, 则该电荷所处位置的当前电势为
 \[
-\varphi_i
+\phi_i
 =
 \sum_{j=1}^{i-1}
 \frac{1}{4\pi\varepsilon_0}
@@ -214,7 +214,7 @@ U
 \frac{1}{4\pi\varepsilon_0}
 \frac{q_i q_j}{|\boldsymbol r_i-\boldsymbol r_j|}
 =
-\frac12 q_i \varphi_i.
+\frac12 q_i \phi_i.
 \]
 
 
@@ -223,36 +223,36 @@ U
 \[
 U
 =
-\frac{1}{2}\iiint \rho\varphi\dif\tau.
+\frac{1}{2}\iiint \rho\phi\dif\tau.
 \]
 
 \mysssec{场能量}
 
 静电势满足泊松方程
 \[
-\nabla^2 \varphi = -\frac{\rho}{\varepsilon_0}.
+\nabla^2 \phi = -\frac{\rho}{\varepsilon_0}.
 \]
 
 将其代入能量表达式, 得
 \[
 U
 =
--\frac{\varepsilon_0}{2}\iiint \varphi\,\nabla^2\varphi\,\dif\tau.
+-\frac{\varepsilon_0}{2}\iiint \phi\,\nabla^2\phi\,\dif\tau.
 \]
 
 对右端积分作分部积分。注意到
 \[
-\nabla\cdot(\varphi\nabla\varphi)
+\nabla\cdot(\phi\nabla\phi)
 =
-(\nabla\varphi)^2 + \varphi\nabla^2\varphi,
+(\nabla\phi)^2 + \phi\nabla^2\phi,
 \]
 于是
 \[
-\varphi\nabla^2\varphi
+\phi\nabla^2\phi
 =
-\nabla\cdot(\varphi\nabla\varphi)
+\nabla\cdot(\phi\nabla\phi)
 -
-(\nabla\varphi)^2.
+(\nabla\phi)^2.
 \]
 
 代入得
@@ -261,31 +261,31 @@ U
 =
 -\frac{\varepsilon_0}{2}
 \left[
-\iiint \nabla\cdot(\varphi\nabla\varphi)\,\dif\tau
+\iiint \nabla\cdot(\phi\nabla\phi)\,\dif\tau
 -
-\iiint (\nabla\varphi)^2\,\dif\tau
+\iiint (\nabla\phi)^2\,\dif\tau
 \right].
 \]
 
 当 $r\to\infty$ 时, 
 \[
-\varphi(\boldsymbol r)\sim \frac{1}{r},\qquad
-\nabla\varphi\sim \frac{1}{r^2}.
+\phi(\boldsymbol r)\sim \frac{1}{r},\qquad
+\nabla\phi\sim \frac{1}{r^2}.
 \]
 
 因此
 \[
-\varphi\nabla\varphi \sim \frac{1}{r^3},
+\phi\nabla\phi \sim \frac{1}{r^3},
 \]
 对应的无穷远处曲面积分
 \[
-\oiint \varphi\nabla\varphi\cdot\dif\boldsymbol S\to0
+\oiint \phi\nabla\phi\cdot\dif\boldsymbol S\to0
 \]
 
 \[
 U
 =
-\frac{\varepsilon_0}{2}\iiint (\nabla\varphi)^2\,\dif\tau.
+\frac{\varepsilon_0}{2}\iiint (\nabla\phi)^2\,\dif\tau.
 \]
 
 \[
@@ -315,7 +315,7 @@ u
 与静电平衡的假设矛盾。
 因此, 导体内部必须满足
 \[
-\boldsymbol E = -\boldsymbol{\nabla}\varphi = \boldsymbol 0.
+\boldsymbol E = -\boldsymbol{\nabla}\phi = \boldsymbol 0.
 \]
 
 \mysssec{导体内部体电荷密度为零}
@@ -332,7 +332,7 @@ u
 而导体整体可能带有净电荷, 
 则这些电荷只能分布在导体的表面上。
 \mysssec{导体是等势体}
-由 $\boldsymbol E = -\boldsymbol{\nabla}\varphi$ 以及
+由 $\boldsymbol E = -\boldsymbol{\nabla}\phi$ 以及
 导体内部 $\boldsymbol E=\boldsymbol 0$, 
 可知导体内部电势处处相同
 \mysssec{导体表面外侧电场垂直于表面}
@@ -365,7 +365,7 @@ u
 注意到：在所有满足
 \[
 \boldsymbol E = 0 \quad (\text{导体内部}), \qquad 
-\varphi = \text{常数} \quad (\text{导体表面})
+\phi = \text{常数} \quad (\text{导体表面})
 \]
 的允许电荷分布中, 实际的静电平衡态对应于体系总静电能的极小值。
 
@@ -472,8 +472,8 @@ U=\frac{\varepsilon_0}{2}\int E^2\,\dif\tau.
 \begin{align}
     U&=ax+b
 \end{align}
-\mysssec{在球坐标下，对$U$仅依赖于$r$的情况，求出拉普拉斯方程的一般解。对柱坐标系，假定$U$
-仅依赖于$s$，做同样的计算。}
+\mysssec{在球坐标下, 对$U$仅依赖于$r$的情况, 求出拉普拉斯方程的一般解。对柱坐标系, 假定$U$
+仅依赖于$s$, 做同样的计算。}
 \begin{align*}
     \frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\dfrac{{\partial U}}{\partial r}\right)&=0\\
     \frac{\partial}{\partial r}\left(r^2\dfrac{{\partial U}}{\partial r}\right)&=0\\
@@ -503,8 +503,9 @@ U=\frac{\varepsilon_0}{2}\int E^2\,\dif\tau.
     &=-\left.\frac{q^2R}{8\pi\varepsilon_0\left(r^2-{R^2}\right)}\right|_{\infty}^{a}\\
     &=-\frac{q^2R}{8\pi\varepsilon_0\left(a^2-{R^2}\right)}
 \end{align*}
-\mysssec{一条无限长均匀带电线，电荷线密度为$\lambda$，它距一个接地导体板距离为$d$。带电线
-平行于$x$轴并位于$x$轴上方，导体板为$xy$平面\\
+\subsection{镜像法}
+\mysssec{一条无限长均匀带电线, 电荷线密度为$\lambda$, 它距一个接地导体板距离为$d$。带电线
+平行于$x$轴并位于$x$轴上方, 导体板为$xy$平面\\
 (a)求出导体板上方的电势。\\
 (b)求出导体板上的诱导电荷的面密度。}
 (a):
@@ -518,9 +519,9 @@ U=\frac{\varepsilon_0}{2}\int E^2\,\dif\tau.
     E_3&=\frac{\lambda}{\pi\varepsilon_0d}\\
     \sigma&=\varepsilon_0E_3=\frac{\lambda}{\pi d}
 \end{align*}
-\mysssec{两个半无限大接地导体板一端相接形成一个直角。在它们之间的区域有一个点电荷$q$，计算这个区域内的电势。
-作用在$q$上的力是什么？把$q$从无限远处移到所示位置需做多少功？假定两板形成的角度不是$\frac{\pi}{2}$，而是另
-外的一些角度，你还能用镜像法求解问题吗？如果不能，对什么样的特殊角度仍然可以用镜像法求解?}
+\mysssec{两个半无限大接地导体板一端相接形成一个直角。在它们之间的区域有一个点电荷$q$, 计算这个区域内的电势。
+作用在$q$上的力是什么？把$q$从无限远处移到所示位置需做多少功？假定两板形成的角度不是$\frac{\pi}{2}$, 而是另
+外的一些角度, 你还能用镜像法求解问题吗？如果不能, 对什么样的特殊角度仍然可以用镜像法求解?}
 假设在$(a,a),(-a,-a)$处有电荷$q$, $(a,-a),(-a,a)$有电荷$-q$, 当$x=0,\, z=0$时
 \begin{align*}
     U
@@ -539,12 +540,12 @@ U=\frac{\varepsilon_0}{2}\int E^2\,\dif\tau.
     &=-\left(\sqrt{2}-\frac{1}{2}\right)\frac{\sqrt{2}q^2}{4\pi\varepsilon_0 a}
 \end{align*}
 
-在无源区域内，电势满足拉普拉斯方程：
+在无源区域内, 电势满足拉普拉斯方程：
 \[
 \nabla^2 V(x,y) = 0.
 \]
 
-在二维情况下，可引入复势
+在二维情况下, 可引入复势
 \[
 W(z) = \Phi(x,y) + i \Psi(x,y),
 \]
@@ -554,12 +555,12 @@ W(z) = \Phi(x,y) + i \Psi(x,y),
 \]
 
 $W(z)$ 为解析函数的充要条件是
-$\Phi$ 与 $\Psi$ 满足 Cauchy--Riemann 条件，
+$\Phi$ 与 $\Psi$ 满足 Cauchy--Riemann 条件, 
 而这等价于 $\Phi$ 满足拉普拉斯方程。
-因此，求解二维静电问题等价于构造合适的解析函数 $W(z)$。
+因此, 求解二维静电问题等价于构造合适的解析函数 $W(z)$。
 
 
-二维中，点电荷对应的 Green 函数为对数型：
+二维中, 点电荷对应的 Green 函数为对数型：
 \[
 W_0(z) =
 -\frac{q}{2\pi\epsilon_0} \ln (z - z_0),
@@ -569,7 +570,7 @@ W_0(z) =
 U(z) = -\frac{q}{2\pi\epsilon_0} \ln |z - z_0|.
 \]
 
-该表达式在 $z=z_0$ 处具有对数奇点，
+该表达式在 $z=z_0$ 处具有对数奇点, 
 对应于二维点电荷。
 
 
@@ -580,15 +581,15 @@ w = z^{\pi/\alpha}.
 
 该映射具有如下性质：
 \begin{itemize}
-  \item 若 $0 < \arg z < \alpha$，则 $0 < \arg w < \pi$；
+  \item 若 $0 < \arg z < \alpha$, 则 $0 < \arg w < \pi$；
   \item 楔形区域被映射为上半平面；
   \item $\arg z = 0, \alpha$ 被映射为实轴。
 \end{itemize}
 
-因此，楔形导体边界在 $w$ 平面中对应于接地的实轴。
+因此, 楔形导体边界在 $w$ 平面中对应于接地的实轴。
 
 
-在上半平面中，实轴接地，
+在上半平面中, 实轴接地, 
 位于 $w_0$（$\Im w_0 > 0$）的点电荷的复势为
 \[
 W(w)
@@ -600,7 +601,7 @@ W(w)
 该表达式满足：
 \begin{itemize}
   \item 在上半平面内调和；
-  \item 在实轴上 $|w-w_0| = |w-\overline{w_0}|$，
+  \item 在实轴上 $|w-w_0| = |w-\overline{w_0}|$, 
         因而 $V=0$；
   \item 在 $w=w_0$ 处具有正确的对数奇点。
 \end{itemize}
@@ -609,7 +610,7 @@ W(w)
 
 
 
-将 $w=z^{\pi/\alpha}$ 代回，得到楔形区域内的复势：
+将 $w=z^{\pi/\alpha}$ 代回, 得到楔形区域内的复势：
 \[
 W(z)
 =
@@ -675,15 +676,15 @@ z - \overline{z_0} e^{2\pi i k/n}
 
 这正对应于有限多个镜像电荷的叠加。
 
-若 $\alpha \neq \pi/n$，则 $z^{\pi/\alpha}$ 为多值函数，
-解析延拓将产生无限多个像点，
+若 $\alpha \neq \pi/n$, 则 $z^{\pi/\alpha}$ 为多值函数, 
+解析延拓将产生无限多个像点, 
 镜像法不再以有限求和形式成立。
 \subsection{分离变量法}
 \subsubsection{直角坐标系}
-{两个无限大接地金属平板平行于$xz$平面放置，一个位于$y=0$，另一个位于$y=a$。在$x=0$
-两板的左端点，被与两板绝缘的无限长带封闭，带子上维持特定的电势$U_0(y)$。求出这个“夹缝”中的电势。}
+{两个无限大接地金属平板平行于$xz$平面放置, 一个位于$y=0$, 另一个位于$y=a$。在$x=0$
+两板的左端点, 被与两板绝缘的无限长带封闭, 带子上维持特定的电势$U_0(y)$。求出这个“夹缝”中的电势。}
 
-由于几何结构和边界条件在 $z$ 方向具有平移对称性，且 $U_0$ 与 $z$ 无关，
+由于几何结构和边界条件在 $z$ 方向具有平移对称性, 且 $U_0$ 与 $z$ 无关, 
 物理解必然满足
 \[
 \frac{\partial\Phi}{\partial z}=0 .
@@ -711,7 +712,7 @@ U(x,y)=X(x)Y(y).
 \frac{X''(x)}{X(x)} + \frac{Y''(y)}{Y(y)} = 0.
 \]
 
-因此两项必须分别等于常数，记为 $-k^2$：
+因此两项必须分别等于常数, 记为 $-k^2$：
 \begin{align*}
 Y''(y) + k^2 Y(y) &= 0, \\
 X''(x) - k^2 X(x) &= 0. 
@@ -728,7 +729,7 @@ k = \frac{n\pi}{a}, \quad n=1,2,3,\dots
 Y_n(y)=\sin\frac{n\pi y}{a}.
 \]
 
-对每个 $k_n=n\pi/a$，横向方程为
+对每个 $k_n=n\pi/a$, 横向方程为
 \[
 X_n''(x) - \left(\frac{n\pi}{a}\right)^2 X_n(x)=0.
 \]
@@ -738,13 +739,13 @@ X_n''(x) - \left(\frac{n\pi}{a}\right)^2 X_n(x)=0.
 X_n(x)=A_n e^{-(n\pi/a)x}+B_n e^{+(n\pi/a)x}.
 \]
 
-由远处边界条件，要求 $V\to0$，
+由远处边界条件, 要求 $V\to0$, 
 \[
 B_n=0.
 \]
 
 
-利用线性叠加原理，电势的一般解为
+利用线性叠加原理, 电势的一般解为
 \[
 V(x,y)
 =
@@ -754,7 +755,7 @@ A_n
 \,e^{-(n\pi/a)x}.
 \]
 
-在 $x=0$ 处，要求
+在 $x=0$ 处, 要求
 \[
 V(0,y)=U_0(y).
 \]
@@ -783,7 +784,7 @@ U_0(y)
 
 
 
-综上，夹缝区域中的电势为
+综上, 夹缝区域中的电势为
 \[
 {
 U
@@ -801,7 +802,7 @@ e^{-(n\pi/a)x}
 }
 \]
 
-若问题在 $z$ 方向不具平移对称性，可进一步设
+若问题在 $z$ 方向不具平移对称性, 可进一步设
 \[
 \Phi = X(x)Y(y)Z(z),
 \]
@@ -826,7 +827,7 @@ C_n(\lambda)
 \]
 \subsubsection{球坐标系}
 
-在球坐标系中，拉普拉斯算符为
+在球坐标系中, 拉普拉斯算符为
 \begin{align*}
 \boldsymbol\nabla^2 U
 &=
@@ -842,10 +843,10 @@ r^2 \frac{\partial U}{\partial r}
 \right)
 +
 \frac{1}{r^2\sin^2\theta}
-\frac{\partial^2 U}{\partial\varphi^2}
+\frac{\partial^2 U}{\partial\phi^2}
 \end{align*}
 
-设电势可以写成完全分离的形式,即$U=R(r)\Theta(\theta)\Phi(\varphi)$
+设电势可以写成完全分离的形式,即$U=R(r)\Theta(\theta)\Phi(\phi)$
 \begin{align*}
     \frac{1}{r^2}\frac{\partial}{\partial r}
 \left(
@@ -859,7 +860,7 @@ r^2 \frac{\partial U}{\partial r}
 \right)
 +
 \frac{1}{r^2\sin^2\theta}
-\frac{\partial^2 U}{\partial\varphi^2}&=0\\
+\frac{\partial^2 U}{\partial\phi^2}&=0\\
 \frac{\partial}{\partial r}
 \left(
 r^2 \frac{\partial U}{\partial r}
@@ -872,7 +873,7 @@ r^2 \frac{\partial U}{\partial r}
 \right)
 +
 \frac{1}{\sin^2\theta}
-\frac{\partial^2 U}{\partial\varphi^2}&=0\\
+\frac{\partial^2 U}{\partial\phi^2}&=0\\
 \frac{\partial}{\partial r}
 \left(
 r^2 \frac{\partial R\Theta\Phi}{\partial r}
@@ -885,7 +886,7 @@ r^2 \frac{\partial R\Theta\Phi}{\partial r}
 \right)
 +
 \frac{1}{\sin^2\theta}
-\frac{\partial^2 R\Theta\Phi}{\partial\varphi^2}&=0\\
+\frac{\partial^2 R\Theta\Phi}{\partial\phi^2}&=0\\
 \frac{1}{R r^2}\frac{\dif }{\dif r}
 \left(
 r^2 \frac{\dif R}{\dif r}
@@ -898,7 +899,7 @@ r^2 \frac{\dif R}{\dif r}
 \right)
 +
 \frac{1}{\Phi r^2\sin^2\theta}
-\frac{\dif ^2\Phi}{\dif \varphi^2}
+\frac{\dif ^2\Phi}{\dif \phi^2}
 &=0\\
 -
 \left[
@@ -909,7 +910,7 @@ r^2 \frac{\dif R}{\dif r}
 \right)
 +
 \frac{1}{\Phi\sin^2\theta}
-\frac{\dif ^2\Phi}{\dif \varphi^2}
+\frac{\dif ^2\Phi}{\dif \phi^2}
 \right]
 &=
 \frac{1}{R}\frac{\dif }{\dif r}
@@ -920,11 +921,11 @@ r^2 \frac{\dif R}{\dif r}
 
 
 
-由于左边仅依赖 $r$，右边仅依赖角变量，
+由于左边仅依赖 $r$, 右边仅依赖角变量, 
 两边必须等于同一个常数。
 
 
-引入分离常数 $l(l+1),\, l\in Z$
+引入分离常数 $l(l+1),\, l\in \mathbb N$
 
 于是得到：
 \begin{equation}
@@ -944,28 +945,28 @@ r^2 \frac{\dif R}{\dif r}
 +
 \frac{1}{\sin^2\theta}
 \frac{1}{\Phi}
-\frac{\dif ^2\Phi}{\dif \varphi^2}
+\frac{\dif ^2\Phi}{\dif \phi^2}
 +
 l(l+1)
 =0.
 \end{equation}
 
-继续分离$\Theta(\theta)\Phi(\varphi)$，令
+继续分离$\Theta(\theta)\Phi(\phi)$, 令
 \[
-\frac{1}{\Phi}\frac{\dif ^2\Phi}{\dif \varphi^2} = -m^2,
+\frac{1}{\Phi}\frac{\dif ^2\Phi}{\dif \phi^2} = -m^2,
 \qquad
-m \in {Z}.
+m \in \mathbb{Z}.
 \]
 
 于是得到：
 
-{$\varphi$ 方程}
+{$\phi$ 方程}
 \begin{equation}
-\frac{\dif ^2\Phi}{\dif \varphi^2} + m^2 \Phi = 0,
+\frac{\dif ^2\Phi}{\dif \phi^2} + m^2 \Phi = 0,
 \end{equation}
 其解为
 \[
-\Phi_m(\varphi) = C_1e^{i m \varphi}
+\Phi_m(\phi) = C_1e^{i m \phi}
 \]
 
 {$\theta$ 方程}
@@ -984,7 +985,7 @@ l(l+1)
 =0.\label{theta方程}
 \end{equation}
 
-这是{关联勒让德方程}，
+这是{关联勒让德方程}, 
 其在 $\theta\in[0,\pi]$ 上正则的解为
 \[
 \Theta_{lm}(\theta)=P_{lm}(\cos\theta),\qquad
@@ -1000,13 +1001,13 @@ $P_l(x)$可由罗德里格(Rodrigue)公式计算:
 \begin{equation}
     P_l(x)=\frac{1}{2^ll!}\left(\frac{\dif}{\dif x}\right)^l(x^2-1)^l
 \end{equation}
-罗德里格公式显然仅对非负的整数$l$成立。另外，它仅提供给我们一个解。但是式\ref{theta方程}应当有两个解。情况是那些另外的解在$\theta=0$和/或$\theta=\pi$发散
+罗德里格公式显然仅对非负的整数$l$成立。另外, 它仅提供给我们一个解。但是式\ref{theta方程}应当有两个解。情况是那些另外的解在$\theta=0$和/或$\theta=\pi$发散
 
 
 
-为了方便，将角向部分合并，定义球谐函数
+为了方便, 将角向部分合并, 定义球谐函数
 \begin{equation}
-    Y_{lm}=\sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}}P_{lm}(\cos\theta) e^{i m \varphi}
+    Y_{lm}\equiv\sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}}P_{lm}(\cos\theta) e^{i m \phi}
 \end{equation}
 
 径向方程为
@@ -1026,16 +1027,16 @@ B_l r^{-(l+1)}
 
 
 
-将各部分组合，得到球坐标下拉普拉斯方程的一般解
+将各部分组合, 得到球坐标下拉普拉斯方程的一般解
 \begin{equation}
-U(r,\theta,\varphi)
+U(r,\theta,\phi)
 =
 \left(
 A_{lm} r^l
 +
 B_{lm} r^{-(l+1)}
 \right)
-Y_{lm}(\theta,\varphi)
+Y_{lm}(\theta,\phi)
 \end{equation}
 
 当$m=0$时, 式\ref{theta方程}退化为
@@ -1067,9 +1068,74 @@ B_l r^{-(l+1)}
 \right)
 P_{l}(\cos\theta)
 \end{equation}
-
+\subsubsection{柱坐标系}
+\begin{align*}
+    \boldsymbol{\nabla}^2 U&=\frac{1}{s}\frac{\partial}{\partial s}\left(s\dfrac{{\partial U}}{\partial s}\right)
+    +\frac{1}{s^2}\dfrac{{\partial^2 U}}{\partial \phi^2}
+    +\dfrac{{\partial^2 U}}{\partial z^2}
+\end{align*}
+设电势可以写成完全分离的形式,即$U=S(s)Z(z)\Phi(\phi)$
+\begin{align*}
+    0&=\frac{1}{s}\frac{\partial}{\partial s}\left(s\dfrac{{\partial S(s)Z(z)\Phi(\phi)}}{\partial s}\right)
+    +\frac{1}{s^2}\dfrac{{\partial^2 S(s)Z(z)\Phi(\phi)}}{\partial \phi^2}
+    +\dfrac{{\partial^2 S(s)Z(z)\Phi(\phi)}}{\partial z^2}\\
+    &=\frac{1}{sS(s)}\frac{\partial}{\partial s}\left(s\dfrac{{\partial S(s)}}{\partial s}\right)
+    +\frac{1}{s^2\Phi(\phi)}\dfrac{{\partial^2 \Phi(\phi)}}{\partial \phi^2}
+    +\frac{1}{Z(z)}\dfrac{{\partial^2 Z(z)}}{\partial z^2}\\
+\end{align*}
+设$\dfrac{1}{\Phi(\phi)}\dfrac{{\partial^2 \Phi(\phi)}}{\partial \phi^2}=-m^2$
+\begin{align*}
+    -\left[\frac{1}{sS(s)}\frac{\partial}{\partial s}\left(s\dfrac{{\partial S(s)}}{\partial s}\right)
+    -\frac{m^2}{s^2}\right]
+    &=\frac{1}{Z(z)}\dfrac{{\partial^2 Z(z)}}{\partial z^2}
+\end{align*}
+由于左边仅依赖 $s$, 右边仅依赖$z$,
+两边必须等于同一个常数, 设为$-k^2$
+\begin{align*}
+\frac{\dif^2 Z(z)}{\dif z^2}+k^2 Z(z)=0
+\end{align*}
+\begin{align*}
+\frac{1}{sS(s)}\frac{\partial}{\partial s}\left(s\dfrac{{\partial S(s)}}{\partial s}\right)
+    -\frac{m^2}{s^2}&=k^2\\
+    \frac{s}{S(s)}\frac{\partial}{\partial s}\left(s\dfrac{{\partial S(s)}}{\partial s}\right)
+    -k^2s^2&=m^2\\
+    s^2\dfrac{{\partial^2 S(s)}}{\partial s^2}
+    +s\dfrac{{\partial S(s)}}{\partial s}
+    -k^2s^2S(s)-m^2S(s)&=0\\
+\end{align*}
+设$S(s)=\sum\limits_{n=0}^{\infty}a_n s^{n+c}$
+\begin{align*}
+    0&=\sum\limits_{n=0}^{\infty}a_n(n+c)(n+c-1)s^{n+c}
+    +\sum\limits_{n=0}^{\infty}a_n(n+c)s^{n+c}
+    -k^2\sum\limits_{n=0}^{\infty}a_n s^{n+c+2}
+    -m^2\sum\limits_{n=0}^{\infty}a_n s^{n+c}\\
+    &=\sum\limits_{n=0}^{\infty}a_n\left[(n+c)^2-m^2\right]s^{n+c}
+    -k^2\sum\limits_{n=0}^{\infty}a_n s^{n+c+2}\\
+    &=a_0\left[c^2-m^2\right]s^{c}
+    +a_1\left[(1+c)^2-m^2\right]s^{1+c}
+    +\sum\limits_{n=2}^{\infty}\left\{a_n\left[(n+c)^2-m^2\right]-k^2 a_{n-2}\right\}s^{n+c}\\
+    a_{n+2}&=\frac{k^2}{(n+c)^2-m^2}
+\end{align*}
+当处于$\dfrac{\partial U}{\partial z}=0$的简化条件下时
+\begin{align}
+    s^2\dfrac{{\partial^2 S(s)}}{\partial s^2}
+    +s\dfrac{{\partial S(s)}}{\partial s}
+    -m^2S(s)&=0
+\end{align}
+解得
+\begin{align}
+    S(s)=C_ms^{-m}+D_ms^{m}
+\end{align}
+\begin{align}
+    \dfrac{1}{\Phi(\phi)}\dfrac{{\partial^2 \Phi(\phi)}}{\partial \phi^2}&=-m^2\nonumber\\
+    \Phi&=E_m\cos m\phi+F_m\sin m\phi,\,(m\in\mathbb N)
+\end{align}
+将各部分组合, 得到一般解
+\begin{equation}
+    U=\left(C_ms^{-m}+D_ms^{m}\right)(E_m\cos m\phi+F_m\sin m\phi),\,(m\in\mathbb N)
+\end{equation}
 \subsubsection{勒让德多项式性质的证明}
-\paragraph{$l\in Z$的证明}
+\paragraph{$l\in \mathbb N$的证明}
 \begin{align*}
     0&=\frac{1}{\sin\theta}
 \frac{\dif }{\dif \theta}
@@ -1145,8 +1211,8 @@ a_{n+2}&=[n(n+1)-l(l+1)]a_n
 由高斯判别法可得级数在$u=\pm 1$时发散, 因此$l\in Z$
 
 \paragraph{勒让德多项式的求和形式}
-由递推关系 $a_{n+2} = -(l-n)(l+n+1)a_n$，若级数在 $n=l$ 时截断，则 $\Theta(u)$ 成为一个 $l$ 阶多项式。
-规定最高次项 $u^l$ 的系数为 $\frac{(2l)!}{2^l(l!)^2}$，通过逆向递推
+由递推关系 $a_{n+2} = -(l-n)(l+n+1)a_n$, 若级数在 $n=l$ 时截断, 则 $\Theta(u)$ 成为一个 $l$ 阶多项式。
+规定最高次项 $u^l$ 的系数为 $\frac{(2l)!}{2^l(l!)^2}$, 通过逆向递推
 最终得到 $l$ 阶勒让德多项式的求和形式：
 \begin{equation}
     P_l(x) = \sum_{k=0}^{M} (-1)^k \frac{(2l-2k)!}{2^l k! (l-k)! (l-2k)!} x^{l-2k}
@@ -1154,7 +1220,7 @@ a_{n+2}&=[n(n+1)-l(l+1)]a_n
 其中 $M = l/2$（$l$ 为偶数）或 $(l-1)/2$（$l$ 为奇数）。
 
 \paragraph{正交性的证明}
-取两个不同阶数的勒让德函数 $P_a$、$P_b$，满足：
+取两个不同阶数的勒让德函数 $P_a$、$P_b$, 满足：
 \begin{align*}
     0&=
 \frac{\dif}{\dif u}\left[(1-u^2)P_a'\right]
@@ -1205,12 +1271,12 @@ a_{n+2}&=[n(n+1)-l(l+1)]a_n
     P_l(x)&=\frac{1}{2^ll!}\left(\frac{\dif}{\dif x}\right)^l(x^2-1)^l\\
     &\xlongequal{u=x-1}\frac{1}{2^ll!}\left(\frac{\dif}{\dif u}\right)^l[u^l(u+2)^l]
 \end{align*}
-根据莱布尼茨公式，只有当 $u^l$ 被求导 $l$ 次变成 $l!$ 时，且剩下部分不含 $u$（即 $u \to 0$ 时不为 0），该项才有贡献：
+根据莱布尼茨公式, 只有当 $u^l$ 被求导 $l$ 次变成 $l!$ 时, 且剩下部分不含 $u$（即 $u \to 0$ 时不为 0）, 该项才有贡献：
 \begin{align*}
     \left. P_l(1) = \frac{1}{2^l l!} \cdot l! \cdot (u+2)^l \right|_{u=0} = \frac{1}{2^l} \cdot 2^l = 1
 \end{align*}
 同理可证 $P_l(-1) = (-1)^l$。
-\mysssec{两个无限长接地金属板，分别在$y=0$和$y=a$放置，在$x=±b$的侧边连接有电势为$U_0$的两个金属带。求出这个矩形管中的电势。}
+\mysssec{两个无限长接地金属板, 分别在$y=0$和$y=a$放置, 在$x=±b$的侧边连接有电势为$U_0$的两个金属带。求出这个矩形管中的电势。}
 此时边界条件为:
 \begin{align*}
         U&\xlongequal{y=0}0\\
@@ -1226,7 +1292,7 @@ a_{n+2}&=[n(n+1)-l(l+1)]a_n
 \begin{align*}
     U=C\cosh\frac{n\pi}{a} x\sin \frac{n\pi}{a}y
 \end{align*}
-余下的事是构造一般的叠加解, 设定系数$C_n$，使其拟合边界条件
+余下的事是构造一般的叠加解, 设定系数$C_n$, 使其拟合边界条件
 \begin{align*}
     U(b,y)&=\sum_{n=1}^{\infty}C_n\cosh\frac{n\pi}{a} b\sin \frac{n\pi}{a}y=U_0
 \end{align*}
@@ -1269,7 +1335,7 @@ A_{0}
 &=\int_{0}^{\pi}k\cos3\theta \cos\theta\sin\theta\dif \theta
 \end{align*}
 不想算积分了
-\mysssec{假定一个球面上的电势为$U_0(\theta)$，并且球内球外没有电荷分布。证明球面上的电荷面密度为$\sigma=\frac{\varepsilon_0}{2R}(2l+1)^2P_l(\cos\theta)\int_{0}^{\pi}U_0(\theta')P_l(\cos\theta')\sin\theta'\dif\theta'$}
+\mysssec{假定一个球面上的电势为$U_0(\theta)$, 并且球内球外没有电荷分布。证明球面上的电荷面密度为$\sigma=\frac{\varepsilon_0}{2R}(2l+1)^2P_l(\cos\theta)\int_{0}^{\pi}U_0(\theta')P_l(\cos\theta')\sin\theta'\dif\theta'$}
 \begin{align*}
     U(R,\theta)&=U_0(\theta)\\
     \left(
@@ -1333,7 +1399,7 @@ P_{l}(\cos\theta)\\
 \frac{1}{2}(2l+1)\int_{0}^{\pi}U_0(\theta')P_l(\cos\theta')\sin\theta'\dif\theta'&=\dfrac{\int_{0}^{\pi}P_{l}(\cos\theta)U_0(\theta)\sin\theta\dif\theta}{\int_{0}^{\pi} R^{-(l+1)}P_{l}^2(\cos\theta)\sin\theta\dif\theta} R^{-(l+1)}\\
 \frac{1}{2}(2l+1)&=\dfrac{1}{\int_{0}^{\pi} P_{l}^2(\cos\theta)\sin\theta\dif\theta} 
 \end{align*}
-\mysssec{一个带电金属球(电荷为$Q$，半径为$R$)置于均匀外电场$\boldsymbol E_0$中, 求球外的电势。}
+\mysssec{一个带电金属球(电荷为$Q$, 半径为$R$)置于均匀外电场$\boldsymbol E_0$中, 求球外的电势。}
 边界条件:
 \begin{align*}
     \lim_{r\to\infty}U&\to E_0r\cos\theta\\
@@ -1360,7 +1426,7 @@ B_{1} R^{-2}
 B_1&=E_0R^3
 \end{align*}
 \mysssec{在习题\ref{圆片上方电势}中求出了一个均匀带电盘轴线上的电势。 \\
-(a)对带电盘不在轴线上的电势，计算在展开式中的前三
+(a)对带电盘不在轴线上的电势, 计算在展开式中的前三
 项, 假设$r>R$。\\
 (b)求出$r<R$的电势。}
 (a):
@@ -1396,7 +1462,7 @@ P_{l}(1)\\
     \frac{\sigma }{2\varepsilon_0}\left(\sqrt{r^2+R^2}-r\right)
     &=A_{l} r^l
 \end{align*}
-\mysssec{一个半径为$R$的球壳在“北半球”带有均匀的面电荷，电荷面密度为$\sigma$，在“南半球”也带有均匀的面电荷，电荷面密度为$-\sigma$。求出球壳内外的电势。}
+\mysssec{一个半径为$R$的球壳在“北半球”带有均匀的面电荷, 电荷面密度为$\sigma$, 在“南半球”也带有均匀的面电荷, 电荷面密度为$-\sigma$。求出球壳内外的电势。}
 由连续性可得$
     A_{l} r^l=B_{l} r^{-(l+1)}$
 \begin{align*}
@@ -1418,9 +1484,9 @@ P_{l}(\cos\theta)}\\
 B_{l} r^{-(l+2)}
 P_{l}(\cos\theta)}
 \end{align*}
-\subsubsection{多极展开与远距离近似电势}
+\subsection{多极展开}
 
-设电荷分布 $\rho(\boldsymbol r')$ 局域在有限区域内，取坐标原点在该区域附近。
+设电荷分布 $\rho(\boldsymbol r')$ 局域在有限区域内, 取坐标原点在该区域附近。
 空间中任意点 $\boldsymbol r$ 处的静电势为
 \begin{equation}
 U(\boldsymbol r)
@@ -1428,25 +1494,23 @@ U(\boldsymbol r)
 \frac{1}{4\pi\varepsilon_0}
 \int
 \frac{\rho(\boldsymbol r')}{|\boldsymbol r-\boldsymbol r'|}
-\dif^3 r'.
+\dif r'
 \end{equation}
 
 当观测点满足
 \[
 r\gg r'
 \]
-时，可展开电荷：
+时, 可展开电荷：
 \begin{equation}
 \frac{1}{|\boldsymbol r-\boldsymbol r'|}
 =
 \sum_{l=0}^{\infty}
 \frac{r'^l}{r^{l+1}}
-P_l(\cos\gamma),
-\qquad
-\cos\gamma=\hat{\boldsymbol r}\cdot\hat{\boldsymbol r}'.
+P_l(\cos\gamma)
 \end{equation}
 
-代入电势表达式，得
+代入电势表达式, 得
 \begin{equation}
 U(\boldsymbol r)
 =
@@ -1457,62 +1521,67 @@ U(\boldsymbol r)
 r'^l
 P_l(\cos\gamma)
 \rho(\boldsymbol r')
-\,\dif^3 r'.
+\dif r'
 \end{equation}
 
-该展开称为\textbf{多极展开}。其中每一阶 $l$ 对应一个多极矩项，
+该展开称为\textbf{多极展开}。其中每一阶 $l$ 对应一个多极矩项, 
 并按 $r^{-(l+1)}$ 的幂次递减。
 
-\paragraph{单极项（$l=0$）}
+\subsubsection{单极项（$l=0$）}
 
-注意 $P_0(\cos\gamma)=1$，于是
+注意 $P_0(\cos\gamma)=1$, 于是
 \begin{equation}
 U_0(r)
 =
 \frac{1}{4\pi\varepsilon_0}
 \frac{1}{r}
-\int \rho(\boldsymbol r')\,\dif^3 r'
+\int \rho(\boldsymbol r')\dif r'
 =
 \frac{1}{4\pi\varepsilon_0}
 \frac{Q}{r},
 \end{equation}
 其中
 \[
-Q=\int \rho(\boldsymbol r')\,\dif^3 r'
+Q=\int \rho(\boldsymbol r')\dif r'
 \]
 为体系的总电荷。
 
-\paragraph{偶极项（$l=1$）}
+\subsubsection{偶极项（$l=1$）}
 
 利用
 \[
-P_1(\cos\gamma)=\cos\gamma=\hat{\boldsymbol r}\cdot\hat{\boldsymbol r}',
+P_1(\cos\gamma)=\cos\gamma={\boldsymbol r}\cdot{\boldsymbol r}',
 \]
 可得
 \begin{equation}
 U_1(\boldsymbol r)
 =
 \frac{1}{4\pi\varepsilon_0}
-\frac{1}{r^2}
-\hat{\boldsymbol r}\cdot
-\int \boldsymbol r'\rho(\boldsymbol r')\,\dif^3 r'.
+\frac{1}{r^3}{\boldsymbol r}\cdot
+\int \boldsymbol r'\rho(\boldsymbol r')\,\dif r'.
 \end{equation}
 
 定义电偶极矩
 \[
-\boldsymbol d=\int \boldsymbol r'\rho(\boldsymbol r')\,\dif^3 r',
+\boldsymbol d\equiv\int \boldsymbol r'\rho(\boldsymbol r')\,\dif^3 r',
 \]
 于是
 \begin{equation}
 U_1(\boldsymbol r)
 =
 \frac{1}{4\pi\varepsilon_0}
-\frac{\boldsymbol p\cdot\hat{\boldsymbol r}}{r^2}.
+\frac{\boldsymbol p\cdot{\boldsymbol r}}{r^3}
+=\frac{d\cos\theta}{4\pi\varepsilon_0r^2}
 \end{equation}
+\begin{align}
+    E_r&=-\frac{\partial V}{\partial r}=\frac{2d\cos\theta}{4\pi\varepsilon_0r^3}\\
+    E_\theta&=-\frac{1}{r}\frac{\partial V}{\partial \theta}=\frac{d\sin\theta}{4\pi\varepsilon_0r^2}\\
+    E_\phi&=-\frac{1}{r\sin\theta}\frac{\partial V}{\partial \phi}=0\\
+    \boldsymbol{E}&=\frac{d}{4\pi\varepsilon_0r^2}(2\cos\theta\boldsymbol{e}_r+\sin\theta\boldsymbol{e}_\theta)
+\end{align}
+\subsubsection{四极项及更高阶}
 
-\paragraph{四极项及更高阶}
-
-对于 $l\ge 2$，电势项的一般形式为
+对于 $l\ge 2$, 电势项的一般形式为
 \begin{equation}
 U_l(\boldsymbol r)
 =
@@ -1522,16 +1591,16 @@ U_l(\boldsymbol r)
 r'^l
 P_l(\cos\gamma)
 \rho(\boldsymbol r')
-\,\dif^3 r'.
+\,\dif r'.
 \end{equation}
 
-这些项随 $r$ 增大而迅速衰减，在远场区
+这些项随 $r$ 增大而迅速衰减, 在远场区
 \[
 r \gg r'
 \]
-时，其贡献相对低阶项可以忽略。
+时, 其贡献相对低阶项可以忽略。
 
-因此，在远离电荷分布的区域，电势可近似表示为
+因此, 在远离电荷分布的区域, 电势可近似表示为
 \begin{equation}
 U(\boldsymbol r)
 \sim
@@ -1539,86 +1608,84 @@ U(\boldsymbol r)
 \left(
 \frac{Q}{r}
 +
-\frac{\boldsymbol d\cdot\hat{\boldsymbol r}}{r^2}
-+
-\frac{1}{r^3}\cdots
+\frac{\boldsymbol d\cdot{\boldsymbol r}}{r^3}
++\cdots
 \right).
 \end{equation}
 
-若体系总电荷 $Q=0$，则单极项消失；
-若同时电偶极矩 $\boldsymbol p=0$，则远场由四极项主导。
+若体系总电荷 $Q=0$, 则单极项消失；
+若同时电偶极矩 $\boldsymbol d=0$, 则远场由更高极项主导。
+\mysssec{四个粒子(一个带电为$q$, 一个为$3q$, 另两个为$-2q$), 每一个距原点距离为$a$。求出远离原点处电势的简单近似表达式。}
+\begin{align*}
+    U&=\frac{q}{4\pi\varepsilon_0}\sum_{l=0}^{\infty}
+    \frac{3a^l}{r^{l+1}}P_l(\cos\theta)
+    +\frac{(-a)^l}{r^{l+1}}P_l(\cos\theta)
+    -\frac{2a^l}{r^{l+1}}P_l(\sin\theta)
+    -\frac{2(-a)^l}{r^{l+1}}P_l(\sin\theta)
+\end{align*}
+$l=0$:
+\begin{align*}
+    &=\frac{q}{4\pi\varepsilon_0}\left[
+    \frac{3}{r^{1}}
+    +\frac{1}{r^{1}}
+    -\frac{2}{r^{1}}
+    -\frac{2}{r^{1}}\right]=0
+\end{align*}
+$l=1$:
+% \end{align*}
+\begin{align*}
+    &=\frac{q}{4\pi\varepsilon_0}\left[
+    \frac{3a}{r^{2}}P_1(\cos\theta)
+    +\frac{(-a)}{r^{2}}P_1(\cos\theta)
+    -\frac{2a}{r^{2}}P_1(\sin\theta)
+    -\frac{2(-a)}{r^{2}}P_1(\sin\theta)\right]\\
+    &=\frac{q}{4\pi\varepsilon_0}
+    \frac{2a}{r^{2}}\cos\theta
+\end{align*}
+\mysssec{确定电偶极子电势中的四极矩项}
+\begin{align*}
+    U&=\frac{q}{4\pi\varepsilon_0}\sum_{l=0}^{\infty}
+    \frac{a^l}{r^{l+1}}P_l(\cos\theta)
+    -\frac{(-a)^l}{r^{l+1}}P_l(\cos\theta)
+\end{align*}
+$l=3$:
+\begin{align*}
+    &=\frac{q}{4\pi\varepsilon_0}\left[
+    \frac{a^3}{r^{4}}P_3(\cos\theta)
+    -\frac{(-a)^3}{r^{4}}P_3(\cos\theta)\right]\\
+    &=\frac{q}{4\pi\varepsilon_0}\left[
+    \frac{a^3}{r^{4}}\frac{3}{2}\sqrt{1-\cos^2\theta}(5\cos^2\theta-1)
+    -\frac{(-a)^3}{r^{4}}\frac{3}{2}\sqrt{1-\cos^2\theta}(5\cos^2\theta-1)\right]\\
+    &=\frac{3q}{4\pi\varepsilon_0}
+    \frac{a^3}{r^{4}}\sqrt{1-\cos^2\theta}(5\cos^2\theta-1)
+\end{align*}
+\mysssec{一个“纯粹”的偶极子$d$位于原点, 指向$z$方向。\\
+(a)作用在位于$(a,0,0)$(直角坐标系)的点电荷$q$上的力是什么?\\
+(b)作用在位于$(0,0, a)$(直角坐标系)的点电荷$q$上的力是什么?\\
+(c)把点电荷$q$从$(a,0,0)$移动到$(0,0,a)$所需的功为多少?}
+(a)
+\begin{align*}
+    \boldsymbol F
+    =q\boldsymbol E
+    =\frac{d}{4\pi\varepsilon_0r^2}(2\cos\theta\boldsymbol{e}_r+\sin\theta\boldsymbol{e}_\theta)
+    =\frac{d}{4\pi\varepsilon_0a^2}\boldsymbol{e}_\theta
+\end{align*}
 
-\paragraph{为什么多极展开必然出现勒让德多项式}
+(b)
+\begin{align*}
+    \boldsymbol F
+    =q\boldsymbol E
+    =\frac{d}{4\pi\varepsilon_0r^2}(2\cos\theta\boldsymbol{e}_r+\sin\theta\boldsymbol{e}_\theta)
+    =\frac{d}{2\pi\varepsilon_0a^2}\boldsymbol{e}_r
+\end{align*}
 
-在对电势进行远距离展开时，为什么展开系数
-{恰好}是勒让德多项式，而不是其他函数？这并非计算技巧的巧合，
-而是由对称性与算符谱结构唯一决定的结果。
-
-在球坐标中，拉普拉斯算符可写为
-\[
-\nabla^2
-=
-\frac{1}{r^2}\frac{\partial}{\partial r}
-\left(r^2\frac{\partial}{\partial r}\right)
-+
-\frac{1}{r^2}\mathcal L_\Omega,
-\]
-其中角向算符为
-\[
-\mathcal L_\Omega
-=
-\frac{1}{\sin\theta}\frac{\dif}{\dif\theta}
-\left(\sin\theta\frac{\dif}{\dif\theta}\right)
-+
-\frac{1}{\sin^2\theta}\frac{\dif^2}{\dif\varphi^2}.
-\]
-
-当问题具有轴对称性（$\partial/\partial\varphi=0$）时，
-角向问题退化为定义在
-\[
-x=\cos\theta\in[-1,1]
-\]
-上的 Sturm--Liouville 本征值问题
-\[
-\frac{\dif}{\dif x}
-\left[(1-x^2)\frac{\dif \Theta}{\dif x}\right]
-+ l(l+1)\Theta=0.
-\]
-
-要求电势在极轴 $\theta=0,\pi$ 处有限，
-该本征值问题只允许
-\[
-l=0,1,2,\dots
-\]
-并给出唯一的正则本征函数族——勒让德多项式 $P_l(x)$。
-
-因此，勒让德多项式不是人为选取的展开基，
-而是角向拉普拉斯算符在球面对称条件下的
-\emph{完备正交本征函数}。
-
-\paragraph{与洛朗展开的类比}
-
-多极展开在结构上与复变函数中的洛朗展开高度类似。
-
-洛朗展开中有
-\[
-\frac{1}{z-z'}
-=
-\sum_{n=0}^{\infty}
-\frac{z'^n}{z^{n+1}},
-\qquad |z|>|z'|.
-\]
-
-而在三维静电学中，对应的展开为
-\[
-\frac{1}{|\boldsymbol r-\boldsymbol r'|}
-=
-\sum_{l=0}^{\infty}
-\frac{r'^{\,l}}{r^{l+1}}
-P_l(\cos\gamma),
-\qquad r>r'.
-\]
-
+(c)
+\begin{align*}
+    W=q\Delta U=q\frac{d}{4\pi\varepsilon_0a^2}
+\end{align*}
+\mysssec{两个电量为$-q$的点电荷位于$(0,a,0),(0,-a,0)$, 一个电量为$q$的点电荷位于$(0,0,a)$求出远离原点处的近似电场, 计算到多极展开
+中的最低两项。}
+暂时不会
 \subsection{习题}
 \mysssec{一个均匀带电、边长为$2a$的正方形面, 电荷面密度为$\sigma$。
 求出距中心高度为$z$处的电场。}
@@ -1657,7 +1724,7 @@ P_l(\cos\gamma),
 \end{align*}
 \mysssec{一个半径为$R$的倒置半球面均匀带电, 电荷面密度为$\sigma$。求出北极与球心处的电势差}
 \begin{align*}
-    U_{\text{半球北极}}&=\dif\varphi\int_{0}^{\frac{\pi}{2}}\frac{\sigma R\sin\theta}{2\varepsilon_0}\frac{1}{\sqrt{R^2\left(1-\cos\theta\right)^2+R^2\sin^2\theta}}R\dif\theta\\
+    U_{\text{半球北极}}&=\dif\phi\int_{0}^{\frac{\pi}{2}}\frac{\sigma R\sin\theta}{2\varepsilon_0}\frac{1}{\sqrt{R^2\left(1-\cos\theta\right)^2+R^2\sin^2\theta}}R\dif\theta\\
     &=\int_{0}^{\frac{\pi}{2}}\frac{\sigma \sin^2\theta}{2\varepsilon_0}\frac{1}{\sqrt{\left(1-\cos\theta\right)^2+\sin^2\theta}}R^2\dif\theta\\
     &=\int_{0}^{\frac{\pi}{2}}\frac{\sigma \sin\theta}{2\varepsilon_0}\frac{1}{\sqrt{2-2\cos\theta}}R\dif\theta\\
     &=\int_{0}^{\frac{\pi}{2}}\dfrac{\sigma 2\sin\dfrac{\theta}{2}\cos\dfrac{\theta}{2}}{2\sqrt{2}\varepsilon_0}\dfrac{1}{\sqrt{1-\cos^2\dfrac{\theta}{2}+\sin^2\dfrac{\theta}{2}}}R\dif\theta\\
@@ -1931,4 +1998,300 @@ $\sigma$;\\
     \sigma&=\dfrac{Q}{4\pi r_1^2}\left(\dfrac{x_1^2+x_2^2}{r_1^4}r_3^2+\dfrac{r_1^2-{x_1^2-x_2^2}}{r_1^2}\right)^{-\frac{1}{2}}\\
     &=\dfrac{Q}{4\pi r_1^2}\left(\dfrac{r_1^2r_3^2+r_1^2x_3^2}{r_1^4}+\dfrac{x_3^2}{r_1^2r_3^2}\right)^{-\frac{1}{2}}\\
     &\xlongequal{r_1\rightarrow 0}\dfrac{Q}{2\pi \sqrt{a^2-x_3^2}}
+\end{align*}
+\mysssec{一个质量为$m$, 带电为$q$的粒子, 从与一个无限大接地导体平板距离为$d$处由静止开始释放.求这个粒子碰击到板的时间为多少?}
+\begin{align*}
+    \frac{\partial^2 x}{\partial t^2}&=\frac{q^2}{4\pi\varepsilon_0(2x)^2m}\\
+    v\frac{dv}{dx}&=\frac{q^2}{16\pi\varepsilon_0x^2m}\\
+    \frac{v^2}{2}&=-\frac{q^2}{16\pi\varepsilon_0xm}+C_1\\
+    v&=\sqrt{-\frac{q^2}{8\pi\varepsilon_0xm}+C_1}\\
+    v&=\sqrt{\frac{q^2}{8\pi\varepsilon_0dm}-\frac{q^2}{8\pi\varepsilon_0xm}}\\
+    t&=\int_{0}^{d}\sqrt{\frac{q^2}{8\pi\varepsilon_0dm}-\frac{q^2}{8\pi\varepsilon_0xm}}\dif x\\
+    & = \dfrac{\pi \sqrt{2\pi\varepsilon_0 m d^3}}{q}
+\end{align*}
+\mysssec{两个无限大接地导体平板平行放置。一个点电荷$q$位于原点, 其中一个
+位于$z=-a$, 另一个位于$z=b$。求出作用在$q$上的力。}
+由电像法可得下方电像位于$-2n(a+b),-2a-2n(a+b)$
+上方电像位于$-2n(a+b),-2b-2n(a+b),\, n\in \mathbb N$
+\begin{align*}
+    F&=\frac{q}{4\pi\varepsilon_0}\sum_{n=0}^{\infty}\frac{1}{[2n(a+b)]^2}
+    +\frac{1}{[2a+2n(a+b)]^2}
+    -\frac{1}{[2n(a+b)]^2}
+    -\frac{1}{[2b+2n(a+b)]^2}\\
+    &=\frac{q}{4\pi\varepsilon_0}\sum_{n=0}^{\infty}
+    \frac{1}{[2a+2n(a+b)]^2}
+    -\frac{1}{[2b+2n(a+b)]^2}
+\end{align*}
+\mysssec{两条长直线, 载有均匀分布异号电荷, 电荷线密度为$±\lambda$。两直线分别放置在一个长导体柱的两边。导体柱半径为$R$, 带电线距导体柱轴线的距离为$a$。求出$r$点处的电势}
+\[
+U(r,\phi)=\sum_{n=1}^{\infty}A_n
+\left(\frac{R}{r}\right)^n
+\sin n\phi
+\]
+
+
+导体柱为等势体，取其表面电势为零：
+\[
+U(R,\phi)=0
+\]
+
+同时，在 $r=a$ 处存在两条线电荷，
+其电势在无导体情况下可展开为傅里叶级数：
+\[
+U_0(r,\phi)
+=
+\frac{\lambda}{2\pi\varepsilon_0}
+\ln\frac{r^2+a^2-2ar\cos\phi}
+{r^2+a^2+2ar\cos\phi}
+\]
+
+在 $r>R$ 区域展开为
+\[
+U_0(r,\phi)
+=
+-\frac{2\lambda}{\pi\varepsilon_0}
+\sum_{n=1}^{\infty}
+\frac{1}{n}
+\left(\frac{a}{r}\right)^n
+\sin n\phi
+\]
+
+为满足导体边界条件，
+修正解应为
+\[
+U(r,\phi)
+=
+-\frac{2\lambda}{\pi\varepsilon_0}
+\sum_{n=1}^{\infty}
+\frac{1}{n}
+\left[
+\left(\frac{a}{r}\right)^n
+-
+\left(\frac{R^2}{ar}\right)^n
+\right]
+\sin n\phi
+\]
+
+
+柱外区域 $r>R$ 的电势为
+\[{
+U(r,\phi)
+=
+-\frac{2\lambda}{\pi\varepsilon_0}
+\sum_{n=1}^{\infty}
+\frac{1}{n}
+\left[
+\left(\frac{a}{r}\right)^n
+-
+\left(\frac{R^2}{ar}\right)^n
+\right]
+\sin n\phi
+}
+\]
+\mysssec{一个半径为$a$的导体球，电势为$U_0$。一个半径为$b(b>a)$的薄球壳包围着导体球，在球壳
+上分布有电荷面密度
+$\sigma(\theta) = k\cos\theta$。\\
+(a)求出$r>b$，$a<r<b$区域内的电势。\\
+(b)求出导体球表面上的诱导电荷面密度$\sigma$。\\
+(c)这个体系的总电荷为多少？}
+(a):
+
+$a<r<b$:
+\begin{align*}
+    U(r,\theta)
+&=
+\left(
+A_l r^l
++
+B_l r^{-(l+1)}
+\right)
+P_{l}(\cos\theta)\\
+\end{align*}
+
+$r>b$:
+\begin{align*}
+    U(r,\theta)
+&=
+\left(
+A_l' r^l
++
+B_l' r^{-(l+1)}
+\right)
+P_{l}(\cos\theta)\\
+    U(r,\theta)
+&=
+B_l' r^{-(l+1)}
+P_{l}(\cos\theta)\\
+\end{align*}
+
+由边界条件可得:
+\begin{align*}
+        U_0
+&=
+\left(
+A_l a^l
++
+B_l a^{-(l+1)}
+\right)
+P_{l}(\cos\theta)\\
+    \left(
+A_l b^l
++
+B_l b^{-(l+1)}
+\right)
+P_{l}(\cos\theta)&=
+B_l' b^{-(l+1)}
+P_{l}(\cos\theta)\\
+A_l b^l
++
+B_l b^{-(l+1)}
+&=
+B_l' b^{-(l+1)}\\
+A_l b^{2l+1}
++
+B_l
+&=
+B_l'
+\end{align*}
+\begin{align*}
+\sigma&=-\varepsilon_0\frac{\partial U}{\partial r}\\
+\sigma&=-\varepsilon_0\frac{\partial \left(
+A_l r^l
++
+B_l r^{-(l+1)}
+\right)
+P_{l}(\cos\theta)}{\partial r}
++\varepsilon_0\frac{\partial B_l' r^{-(l+1)}
+P_{l}(\cos\theta)}{\partial r}\\
+\sigma&=-\varepsilon_0\left[
+A_ll b^{l-1}
+-(l+1)
+B_l b^{-(l+2)}
+\right]
+P_{l}(\cos\theta)
+-(l+1)\varepsilon_0B_l' b^{-(l+2)}
+P_{l}(\cos\theta)\\
+\sigma&=-\varepsilon_0\left[
+A_ll b^{l-1}
+-(l+1)
+B_l b^{-(l+2)}
+\right]
+P_{l}(\cos\theta)
+-(l+1)\varepsilon_0(A_l b^l
++
+B_l b^{-(l+1)}) b^{-1}
+P_{l}(\cos\theta)\\
+\sigma&=-\varepsilon_0\left[
+A_ll b^{l-1}-(l+1)A_lb^{l-1}
+\right]
+P_{l}(\cos\theta)\\
+\sigma&=\varepsilon_0
+A_l b^{l-1}
+P_{l}(\cos\theta)\\
+\frac{k}{\varepsilon_0}&=
+A_1 
+\end{align*}
+\begin{align*}
+    U_0
+&=
+\left(
+A_l a^l
++
+B_l a^{-(l+1)}
+\right)
+P_{l}(\cos\theta)\\
+    U_0
+&=
+B_0 a^{-(0+1)}\\
+    aU_0
+&=
+B_0\\
+B_1&=-\frac{ka^3}{\varepsilon_0}\\
+B_0'
+&=
+A_0 b^{1}
++
+B_0\\
+B_0'
+&=
+aU_0\\
+B_1'
+&=
+A_1 b^{3}
++
+B_1\\
+B_1'
+&=
+\frac{k}{\varepsilon_0} b^{3}
+-\frac{k}{\varepsilon_0} a^{3}
+\end{align*}
+
+$a<r<b$:
+\begin{align*}
+        U
+&=
+B_0 r^{-1}
+P_{0}(\cos\theta)
++
+\left(
+A_1 r^1
++
+B_1 r^{-2}
+\right)
+P_{1}(\cos\theta)\\
+    U&=\frac{aU_0}{r}+\left(\frac{kr}{\varepsilon_0}-\frac{ka^3}{\varepsilon_0r^2}\right)\cos\theta
+\end{align*}
+
+$r>b$:
+\begin{align*}
+        U&=
+aU_0 r^{-1}
++\left(\frac{k}{\varepsilon_0} b^{3}
+-\frac{k}{\varepsilon_0} a^{3}\right) r^{-2}\cos\theta
+\end{align*}
+\mysssec{一个半径为$R$的无限长柱壳上半壳载有均匀分布的电荷，电荷
+面密度为$\sigma_0$,下半壳载有均匀分布的电荷面密度为$-\sigma_0$的电荷
+求出柱壳内外的电势。}
+柱壳内:
+\begin{align*}
+    U(r,\phi)
+&=
+\left(C_ms^{-m}+D_ms^{m}\right)(E_m\cos m\phi+F_m\sin m\phi)\\
+    U(r,\phi)
+&=
+\sum_{m=0}^{\infty}D_ms^{m}\cos m\phi
+\end{align*}
+
+柱壳外:\begin{align*}
+    U(r,\phi)
+&=
+\sum_{m=0}^{\infty}D_m's^{-m}\cos m\phi\\
+\end{align*}
+
+由连续性可得:
+\begin{align*}
+    D_mR^{m}\cos m\phi&=D_m'R^{-m}\cos m\phi\\
+    D_mR^{2n}&=D_m'
+\end{align*}
+\begin{align*}
+    \sigma(\phi)&=\sum_{m=0}^{\infty}-\varepsilon_0\frac{\partial U}{\partial s}\\
+    \sigma(\phi)&=\sum_{m=0}^{\infty}-\varepsilon_0\frac{\partial D_m's^{-m}\cos m\phi-D_ns^{m}\cos m\phi}{\partial s}\\
+    \sigma(\phi)&=\sum_{m=0}^{\infty}-\varepsilon_0(-mD_m's^{-m-1}\cos m\phi-mD_ms^{m-1}\cos m\phi)\\
+    \sigma(\phi)&=\sum_{m=0}^{\infty}-\varepsilon_0(-mD_mR^{2m}R^{-m-1}\cos m\phi-mD_mR^{m-1}\cos m\phi)\\
+    \sigma(\phi)&=\sum_{m=0}^{\infty}2\varepsilon_0mD_mR^{m-1}\cos m\phi\\
+    \int_{0}^{\pi}\sigma(\phi)2\varepsilon_0mD_mR^{m-1}\cos m\phi\dif \phi
+    &=\int_{0}^{\pi}2^2\varepsilon_0^2m^2D_m^2R^{2m-2}\cos^2 m\phi\dif \phi\\
+    2\int_{0}^{\frac{\pi}{2}}\sigma(\phi)\cos m\phi\dif \phi
+    &=\int_{0}^{\pi}2\varepsilon_0mD_mR^{m-1}\cos^2 m\phi\dif \phi\\
+    2\int_{0}^{\frac{\pi}{2}}\frac{\sigma_0}{m}\dif \sin m\phi
+    &=\int_{0}^{\pi}2\varepsilon_0mD_mR^{m-1}\cos^2 m\phi\dif \phi
+\end{align*}
+
+$m$为奇数时:
+\begin{align*}
+    2\int_{0}^{\frac{\pi}{2}}\frac{\sigma_0}{m}\dif \sin m\phi
+    &=\int_{0}^{\pi}2\varepsilon_0mD_mR^{m-1}\cos^2 m\phi\dif \phi\\
+    2\frac{\sigma_0}{m}
+    &=\pi\varepsilon_0mD_mR^{m-1}\\
+    D_m&=\frac{2\sigma_0}{\pi\varepsilon_0R^{m-1}m^2}
 \end{align*}

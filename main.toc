@@ -32,18 +32,18 @@
 \contentsline {subsection}{\numberline {2.4}导体}{32}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}电容}{34}{subsection.2.5}%
 \contentsline {subsection}{\numberline {2.6}拉普拉斯方程}{35}{subsection.2.6}%
-\contentsline {subsection}{\numberline {2.7}分离变量法}{38}{subsection.2.7}%
-\contentsline {subsubsection}{\numberline {2.7.1}直角坐标系}{38}{subsubsection.2.7.1}%
-\contentsline {subsubsection}{\numberline {2.7.2}球坐标系}{40}{subsubsection.2.7.2}%
-\contentsline {subsubsection}{\numberline {2.7.3}勒让德多项式性质的证明}{42}{subsubsection.2.7.3}%
-\contentsline {paragraph}{$l\in Z$的证明}{42}{paragraph*.80}%
-\contentsline {paragraph}{勒让德多项式的求和形式}{42}{paragraph*.81}%
-\contentsline {paragraph}{正交性的证明}{43}{paragraph*.82}%
-\contentsline {paragraph}{证明 $P_l(1)=1$}{43}{paragraph*.83}%
-\contentsline {subsubsection}{\numberline {2.7.10}多极展开与远距离近似电势}{47}{subsubsection.2.7.10}%
-\contentsline {paragraph}{单极项（$l=0$）}{47}{paragraph*.90}%
-\contentsline {paragraph}{偶极项（$l=1$）}{47}{paragraph*.91}%
-\contentsline {paragraph}{四极项及更高阶}{48}{paragraph*.92}%
-\contentsline {paragraph}{为什么多极展开必然出现勒让德多项式}{48}{paragraph*.93}%
-\contentsline {paragraph}{与洛朗展开的类比}{48}{paragraph*.94}%
-\contentsline {subsection}{\numberline {2.8}习题}{49}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.7}镜像法}{36}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}分离变量法}{38}{subsection.2.8}%
+\contentsline {subsubsection}{\numberline {2.8.1}直角坐标系}{38}{subsubsection.2.8.1}%
+\contentsline {subsubsection}{\numberline {2.8.2}球坐标系}{40}{subsubsection.2.8.2}%
+\contentsline {subsubsection}{\numberline {2.8.3}柱坐标系}{42}{subsubsection.2.8.3}%
+\contentsline {subsubsection}{\numberline {2.8.4}勒让德多项式性质的证明}{43}{subsubsection.2.8.4}%
+\contentsline {paragraph}{$l\in \mathbb N$的证明}{43}{paragraph*.80}%
+\contentsline {paragraph}{勒让德多项式的求和形式}{43}{paragraph*.81}%
+\contentsline {paragraph}{正交性的证明}{44}{paragraph*.82}%
+\contentsline {paragraph}{证明 $P_l(1)=1$}{44}{paragraph*.83}%
+\contentsline {subsection}{\numberline {2.9}多极展开}{48}{subsection.2.9}%
+\contentsline {subsubsection}{\numberline {2.9.1}单极项（$l=0$）}{48}{subsubsection.2.9.1}%
+\contentsline {subsubsection}{\numberline {2.9.2}偶极项（$l=1$）}{48}{subsubsection.2.9.2}%
+\contentsline {subsubsection}{\numberline {2.9.3}四极项及更高阶}{49}{subsubsection.2.9.3}%
+\contentsline {subsection}{\numberline {2.10}习题}{51}{subsection.2.10}%
