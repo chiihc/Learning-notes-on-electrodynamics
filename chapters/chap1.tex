@@ -1383,6 +1383,27 @@ $\boldsymbol\nabla\times\boldsymbol c=\boldsymbol 0$, 因此
     &=(n-1)r^{n-3}\varepsilon_{ijk}{x_i}x_j\boldsymbol{e}_k\\
     &=0
 \end{align*}
+\mysssec{设$\boldsymbol{m}$是一常矢量, 证明:$\boldsymbol{\nabla}\times \dfrac{\boldsymbol{m}\times\boldsymbol{r}}{r^3}=-\boldsymbol{\nabla}\dfrac{\boldsymbol{m}\cdot\boldsymbol{r}}{r^3}$}
+\begin{align*}
+    \boldsymbol{\nabla}\times \dfrac{\boldsymbol{m}\times\boldsymbol{r}}{r^3}
+    &=\boldsymbol{\nabla}\times \frac{\varepsilon_{ijk}m_ir_j\boldsymbol e_k}{r^3}\\
+    &=\varepsilon_{lkn}\frac{\partial \dfrac{\varepsilon_{ijk}m_ir_j}{r^3}}{\partial x_l}\boldsymbol e_n\\
+    &=-\varepsilon_{lnk}\varepsilon_{ijk}\frac{\partial \dfrac{m_ir_j}{r^3}}{\partial x_l}\boldsymbol e_n\\
+    &=-(\delta_{li}\delta_{nj}-\delta_{lj}\delta_{ni})\frac{\partial \dfrac{m_ir_j}{r^3}}{\partial x_l}\boldsymbol e_n\\
+    &=-\delta_{li}\delta_{nj}\frac{\partial \dfrac{m_ir_j}{r^3}}{\partial x_l}\boldsymbol e_n
+    +\delta_{lj}\delta_{ni}\frac{\partial \dfrac{m_ir_j}{r^3}}{\partial x_l}\boldsymbol e_n\\
+    &=-\frac{\partial \dfrac{m_lr_n}{r^3}}{\partial x_l}\boldsymbol e_n
+    +\frac{\partial \dfrac{m_nr_l}{r^3}}{\partial x_l}\boldsymbol e_n\\
+    &=-\dfrac{m_n}{r^3}\boldsymbol e_n
+    +3\dfrac{m_lr_n}{r^4}\frac{r_l}{r}\boldsymbol e_n
+    +3\dfrac{m_n}{r^3}\boldsymbol e_n
+    -3\dfrac{m_nr_l}{r^4}\frac{r_l}{r}\boldsymbol e_n\\
+    &=3\dfrac{m_lr_n}{r^4}\frac{r_l}{r}\boldsymbol e_n
+    +2\dfrac{m_n}{r^3}\boldsymbol e_n
+    -3\dfrac{m_n}{r^3}\boldsymbol e_n\\
+    &=3\dfrac{m_lr_l}{r^4}\frac{r_n}{r}\boldsymbol e_n
+    -\dfrac{m_n}{r^3}\boldsymbol e_n\\
+\end{align*}
 \mysssec{以匀角速绕轴转动的抛物线形金属丝, 其方程为
 $x²=4ay$。一质量为$m$的小环套在此金属丝上, 可沿着金属丝
 无摩擦滑动。求小环在$x$方向的运动微分方程。}

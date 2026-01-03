@@ -590,7 +590,7 @@ w = z^{\pi/\alpha}.
 
 
 在上半平面中, 实轴接地, 
-位于 $w_0$（$\Im w_0 > 0$）的点电荷的复势为
+位于 $w_0$($\Im w_0 > 0$)的点电荷的复势为
 \[
 W(w)
 =
@@ -1217,7 +1217,7 @@ a_{n+2}&=[n(n+1)-l(l+1)]a_n
 \begin{equation}
     P_l(x) = \sum_{k=0}^{M} (-1)^k \frac{(2l-2k)!}{2^l k! (l-k)! (l-2k)!} x^{l-2k}
 \end{equation}
-其中 $M = l/2$（$l$ 为偶数）或 $(l-1)/2$（$l$ 为奇数）。
+其中 $M = l/2$($l$ 为偶数)或 $(l-1)/2$($l$ 为奇数)。
 
 \paragraph{正交性的证明}
 取两个不同阶数的勒让德函数 $P_a$、$P_b$, 满足：
@@ -1271,7 +1271,7 @@ a_{n+2}&=[n(n+1)-l(l+1)]a_n
     P_l(x)&=\frac{1}{2^ll!}\left(\frac{\dif}{\dif x}\right)^l(x^2-1)^l\\
     &\xlongequal{u=x-1}\frac{1}{2^ll!}\left(\frac{\dif}{\dif u}\right)^l[u^l(u+2)^l]
 \end{align*}
-根据莱布尼茨公式, 只有当 $u^l$ 被求导 $l$ 次变成 $l!$ 时, 且剩下部分不含 $u$（即 $u \to 0$ 时不为 0）, 该项才有贡献：
+根据莱布尼茨公式, 只有当 $u^l$ 被求导 $l$ 次变成 $l!$ 时, 且剩下部分不含 $u$(即 $u \to 0$ 时不为 0), 该项才有贡献：
 \begin{align*}
     \left. P_l(1) = \frac{1}{2^l l!} \cdot l! \cdot (u+2)^l \right|_{u=0} = \frac{1}{2^l} \cdot 2^l = 1
 \end{align*}
@@ -1306,7 +1306,7 @@ a_{n+2}&=[n(n+1)-l(l+1)]a_n
     U&=\sum_{n=0}^{\infty}\frac{4U_0}{(2n+1)\pi }\left(\cosh\frac{2n+1}{a}\pi b\right)^{-1}\cosh\frac{n\pi}{a} x\sin \frac{n\pi}{a}y
 \end{align*}
 \mysssec{一个半径为$R$的球面上的电势为
-$U_0= k\cos3\theta$。求出球面内外的电势以及球面上的电荷面密度$\sigma(\theta)$。（假定球内和球外没有电荷分布。）}
+$U_0= k\cos3\theta$。求出球面内外的电势以及球面上的电荷面密度$\sigma(\theta)$。(假定球内和球外没有电荷分布。)}
 球内:
 \begin{align*}
     U(R,\theta)&=k\cos3\theta\\
@@ -1527,94 +1527,287 @@ P_l(\cos\gamma)
 该展开称为\textbf{多极展开}。其中每一阶 $l$ 对应一个多极矩项, 
 并按 $r^{-(l+1)}$ 的幂次递减。
 
-\subsubsection{单极项（$l=0$）}
+\subsubsection{单极项}
 
 注意 $P_0(\cos\gamma)=1$, 于是
 \begin{equation}
-U_0(r)
+U_0(\boldsymbol r)
 =
 \frac{1}{4\pi\varepsilon_0}
 \frac{1}{r}
-\int \rho(\boldsymbol r')\dif r'
+\int \rho(\boldsymbol r')\,\dif^3 r'
 =
 \frac{1}{4\pi\varepsilon_0}
 \frac{Q}{r},
 \end{equation}
 其中
 \[
-Q=\int \rho(\boldsymbol r')\dif r'
+Q=\int \rho(\boldsymbol r')\,\dif^3 r'
 \]
 为体系的总电荷。
 
-\subsubsection{偶极项（$l=1$）}
+\subsubsection{偶极项}
 
 利用
 \[
-P_1(\cos\gamma)=\cos\gamma={\boldsymbol r}\cdot{\boldsymbol r}',
+P_1(\cos\gamma)=\cos\gamma
+=
+\frac{\boldsymbol r\cdot\boldsymbol r'}{r\,r'},
 \]
 可得
 \begin{equation}
 U_1(\boldsymbol r)
 =
 \frac{1}{4\pi\varepsilon_0}
-\frac{1}{r^3}{\boldsymbol r}\cdot
-\int \boldsymbol r'\rho(\boldsymbol r')\,\dif r'.
+\frac{\boldsymbol r}{r^3}\cdot
+\int \boldsymbol r'\rho(\boldsymbol r')\,\dif\tau
 \end{equation}
 
 定义电偶极矩
 \[
-\boldsymbol d\equiv\int \boldsymbol r'\rho(\boldsymbol r')\,\dif^3 r',
+\boldsymbol d
+\equiv
+\int \boldsymbol r'\rho(\boldsymbol r')\,\dif\tau
 \]
 于是
 \begin{equation}
 U_1(\boldsymbol r)
 =
 \frac{1}{4\pi\varepsilon_0}
-\frac{\boldsymbol p\cdot{\boldsymbol r}}{r^3}
-=\frac{d\cos\theta}{4\pi\varepsilon_0r^2}
+\frac{\boldsymbol d\cdot\boldsymbol r}{r^3}
+=
+\frac{p\cos\theta}{4\pi\varepsilon_0 r^2}.
 \end{equation}
-\begin{align}
-    E_r&=-\frac{\partial V}{\partial r}=\frac{2d\cos\theta}{4\pi\varepsilon_0r^3}\\
-    E_\theta&=-\frac{1}{r}\frac{\partial V}{\partial \theta}=\frac{d\sin\theta}{4\pi\varepsilon_0r^2}\\
-    E_\phi&=-\frac{1}{r\sin\theta}\frac{\partial V}{\partial \phi}=0\\
-    \boldsymbol{E}&=\frac{d}{4\pi\varepsilon_0r^2}(2\cos\theta\boldsymbol{e}_r+\sin\theta\boldsymbol{e}_\theta)
-\end{align}
-\subsubsection{四极项及更高阶}
 
-对于 $l\ge 2$, 电势项的一般形式为
+相应电场为
+\begin{align}
+E_r&=-\frac{\partial U}{\partial r}
+=\frac{2d\cos\theta}{4\pi\varepsilon_0 r^3},\\
+E_\theta&=-\frac{1}{r}\frac{\partial U}{\partial \theta}
+=\frac{d\sin\theta}{4\pi\varepsilon_0 r^3},\\
+E_\phi&=0,
+\end{align}
+即
+\[
+\boldsymbol E
+=
+\frac{d}{4\pi\varepsilon_0 r^3}
+\left(
+2\cos\theta\,\boldsymbol e_r
++
+\sin\theta\,\boldsymbol e_\theta
+\right).
+\]
+
+\subsubsection{四极项}
+
+由
+\[
+P_2(\cos\gamma)
+=
+\frac{1}{2}
+\left(
+3\cos^2\gamma-1
+\right)
+=
+\frac{1}{2}
+\left(
+\frac{3(\boldsymbol r\cdot\boldsymbol r')^2}{r^2 r'^2}
+-1
+\right),
+\]
+可得四极项电势
 \begin{equation}
-U_l(\boldsymbol r)
+U_2(\boldsymbol r)
 =
 \frac{1}{4\pi\varepsilon_0}
-\frac{1}{r^{l+1}}
+\frac{1}{2r^5}
 \int
-r'^l
-P_l(\cos\gamma)
+\left[
+3(\boldsymbol r\cdot\boldsymbol r')^2
+-
+r^2 r'^2
+\right]
 \rho(\boldsymbol r')
-\,\dif r'.
+\,\dif\tau
 \end{equation}
 
-这些项随 $r$ 增大而迅速衰减, 在远场区
-\[
-r \gg r'
-\]
-时, 其贡献相对低阶项可以忽略。
-
-因此, 在远离电荷分布的区域, 电势可近似表示为
+将其改写为张量形式，引入四极矩张量
 \begin{equation}
-U(\boldsymbol r)
-\sim
-\frac{1}{4\pi\varepsilon_0}
+Q_{ij}
+\equiv
+\int
 \left(
-\frac{Q}{r}
-+
-\frac{\boldsymbol d\cdot{\boldsymbol r}}{r^3}
-+\cdots
-\right).
+3x'_i x'_j
+-
+r'^2\delta_{ij}
+\right)
+\rho(\boldsymbol r')
+\,\dif\tau
+\end{equation}
+其中 $Q_{ij}=Q_{ji}$ 且满足无迹条件 $Q_{ii}=0$。
+
+于是四极项电势可写为
+\begin{equation}
+U_2(\boldsymbol r)
+=
+\frac{1}{8\pi\varepsilon_0}
+\frac{1}{r^5}
+Q_{ij} x_i x_j.
 \end{equation}
 
-若体系总电荷 $Q=0$, 则单极项消失；
-若同时电偶极矩 $\boldsymbol d=0$, 则远场由更高极项主导。
+\subsubsection{四极矩矩阵的推导}
+
+在远场条件 $r\gg r'$ 下，多极展开中 $l=2$ 项为
+\begin{equation}
+U_2(\boldsymbol r)
+=
+\frac{1}{4\pi\varepsilon_0}
+\frac{1}{r^{3}}
+\int
+r'^2 P_2(\cos\gamma)\,
+\rho(\boldsymbol r')\,
+\dif\tau
+\end{equation}
+其中
+\[
+\cos\gamma
+=
+\frac{\boldsymbol r\cdot\boldsymbol r'}{r\,r'}.
+\]
+
+利用
+\[
+P_2(\cos\gamma)
+=
+\frac{1}{2}\left(3\cos^2\gamma-1\right),
+\]
+得
+\[
+r'^2 P_2(\cos\gamma)
+=
+\frac{1}{2}
+\left(
+\frac{3(\boldsymbol r\cdot\boldsymbol r')^2}{r^2}
+-
+r'^2
+\right).
+\]
+
+因此
+\begin{equation}
+U_2(\boldsymbol r)
+=
+\frac{1}{4\pi\varepsilon_0}
+\frac{1}{2r^{5}}
+\int
+\left[
+3(\boldsymbol r\cdot\boldsymbol r')^2
+-
+r^2 r'^2
+\right]
+\rho(\boldsymbol r')
+\,\dif\tau
+\end{equation}
+
+将标量平方写成指标形式，
+\[
+(\boldsymbol r\cdot\boldsymbol r')^2
+=
+(x_i x'_i)(x_j x'_j)
+=
+x_i x_j\,x'_i x'_j,
+\]
+于是
+\[
+3(\boldsymbol r\cdot\boldsymbol r')^2
+-
+r^2 r'^2
+=
+x_i x_j
+\left(
+3x'_i x'_j
+-
+r'^2\delta_{ij}
+\right).
+\]
+
+代回电势表达式，可得
+\begin{equation}
+U_2(\boldsymbol r)
+=
+\frac{1}{4\pi\varepsilon_0}
+\frac{1}{2r^{5}}
+x_i x_j
+\int
+\left(
+3x'_i x'_j
+-
+r'^2\delta_{ij}
+\right)
+\rho(\boldsymbol r')
+\,\dif\tau
+\end{equation}
+
+由此自然定义四极矩张量
+\begin{equation}
+Q_{ij}
+\equiv
+\int
+\left(
+3x'_i x'_j
+-
+r'^2\delta_{ij}
+\right)
+\rho(\boldsymbol r')
+\,\dif\tau
+\end{equation}
+
+由定义可见
+\[
+Q_{ij}=Q_{ji},
+\qquad
+Q_{ii}=0,
+\]
+即 $Q_{ij}$ 为对称无迹二阶张量。
+
+最终，四极项电势可写为矩阵形式
+\begin{equation}
+U_2(\boldsymbol r)
+=
+\frac{1}{8\pi\varepsilon_0}
+\frac{1}{r^{5}}
+Q_{ij}x_i x_j.
+\end{equation}
+
+若记
+\[
+\mathbf Q=
+\begin{pmatrix}
+Q_{xx} & Q_{xy} & Q_{xz}\\
+Q_{yx} & Q_{yy} & Q_{yz}\\
+Q_{zx} & Q_{zy} & Q_{zz}
+\end{pmatrix},
+\qquad
+\boldsymbol r=
+\begin{pmatrix}
+x\\y\\z
+\end{pmatrix},
+\]
+则
+\begin{equation}
+U_2(\boldsymbol r)
+=
+\frac{1}{8\pi\varepsilon_0}
+\frac{1}{r^{5}}
+\boldsymbol r^{\mathsf T}
+\mathbf Q
+\boldsymbol r,
+\qquad
+\mathrm{Tr}\,\mathbf Q=0.
+\end{equation}
+
+
 \mysssec{四个粒子(一个带电为$q$, 一个为$3q$, 另两个为$-2q$), 每一个距原点距离为$a$。求出远离原点处电势的简单近似表达式。}
 \begin{align*}
     U&=\frac{q}{4\pi\varepsilon_0}\sum_{l=0}^{\infty}
@@ -1686,6 +1879,303 @@ $l=3$:
 \mysssec{两个电量为$-q$的点电荷位于$(0,a,0),(0,-a,0)$, 一个电量为$q$的点电荷位于$(0,0,a)$求出远离原点处的近似电场, 计算到多极展开
 中的最低两项。}
 暂时不会
+\subsection{Green 互易定理}
+
+设在同一空间区域 \(V\) 内, 有两组电荷分布
+\[
+\rho_1(\boldsymbol  r), \qquad \rho_2(\boldsymbol  r),
+\]
+它们分别产生电势
+\[
+U_1(\boldsymbol  r), \qquad U_2(\boldsymbol  r),
+\]
+且二者满足相同的边界条件。
+
+则有
+\[
+\boxed{
+\int_V \rho_1(\boldsymbol  r)\,U_2(\boldsymbol  r)\,\dif\tau
+=
+\int_V \rho_2(\boldsymbol  r)\,U_1(\boldsymbol  r)\,\dif\tau
+}
+\]
+
+这就是 Green 互易定理。
+
+\[
+\nabla^2 U_1
+=
+-\frac{\rho_1}{\varepsilon_0},
+\qquad
+\nabla^2 U_2
+=
+-\frac{\rho_2}{\varepsilon_0}.
+\]
+
+将第一式乘以 \(U_2\), 第二式乘以 \(U_1\), 得到
+\[
+U_2\nabla^2 U_1
+=
+-\frac{U_2\rho_1}{\varepsilon_0},
+\qquad
+U_1\nabla^2 U_2
+=
+-\frac{U_1\rho_2}{\varepsilon_0}.
+\]
+
+两式相减：
+\[
+U_2\nabla^2 U_1 - U_1\nabla^2 U_2
+=
+-\frac{1}{\varepsilon_0}
+\bigl(
+U_2\rho_1 - U_1\rho_2
+\bigr).
+\]
+
+注意到如下恒等式（可直接验证)：
+\[
+\nabla\cdot
+\bigl(
+U_2\nabla U_1 - U_1\nabla U_2
+\bigr)
+=
+U_2\nabla^2 U_1 - U_1\nabla^2 U_2.
+\]
+
+因此有
+\[
+\nabla\cdot
+\bigl(
+U_2\nabla U_1 - U_1\nabla U_2
+\bigr)
+=
+-\frac{1}{\varepsilon_0}
+\bigl(
+U_2\rho_1 - U_1\rho_2
+\bigr).
+\]
+
+对体积 \(V\) 积分：
+\[
+\int_V
+\nabla\cdot
+\bigl(
+U_2\nabla U_1 - U_1\nabla U_2
+\bigr)\,\tau
+=
+-\frac{1}{\varepsilon_0}
+\int_V
+\bigl(
+U_2\rho_1 - U_1\rho_2
+\bigr)\,\tau.
+\]
+
+左侧应用高斯定理：
+\[
+\oint_{\partial V}
+\bigl(
+U_2\nabla U_1 - U_1\nabla U_2
+\bigr)\cdot\dif\boldsymbol  S
+=
+-\frac{1}{\varepsilon_0}
+\int_V
+\bigl(
+U_2\rho_1 - U_1\rho_2
+\bigr)\,\tau.
+\]
+
+若满足以下任一条件：
+
+\begin{itemize}
+  \item Dirichlet 边界条件：\(U_1 = U_2 = 0\) 于 \(\partial V\)
+  \item 或 Neumann 边界条件：
+  \(\displaystyle \frac{\partial U_1}{\partial n}
+  =
+  \frac{\partial U_2}{\partial n}
+  = 0\)
+\end{itemize}
+
+则表面积分为零。
+
+于是得到
+\[
+\int_V
+U_2\rho_1\,\tau
+=
+\int_V
+U_1\rho_2\,\tau,
+\]
+即 Green 互易定理。
+
+若 \(\rho_1\) 或 \(\rho_2\) 包含点电荷, 例如
+\[
+\rho_1(\boldsymbol  r)
+=
+q\,\delta^{(3)}(\boldsymbol  r-\boldsymbol  r_0),
+\]
+则体积分应理解为分布作用：
+\[
+\int \rho_1 U_2\,\tau
+=
+q\,U_2(\boldsymbol  r_0).
+\]
+
+在此意义下, 互易定理仍然成立。
+
+考虑两块无限大、相互平行的理想导体平板，
+分别位于
+\[
+z=0,\qquad z=d,
+\]
+且二者均接地：
+\[
+U=0 \quad \text{于 } z=0,d.
+\]
+
+在两板之间放置一个点电荷 \(q\)，其位置为
+\[
+\boldsymbol  r_0=(0,0,x),\qquad 0<x<d.
+\]
+
+求：两块导体平板上分别感应出的总电荷。
+
+总诱导电荷：
+
+\[
+Q_1=\int_{z=0}\sigma_1\,\dif S,
+\qquad
+Q_2=\int_{z=d}\sigma_2\,\dif S.
+\]
+
+我们构造两种静电系统：
+
+\begin{description}
+  \item[系统 A]  
+  两平板接地，在 \(\boldsymbol  r_0\) 处放置点电荷 \(q\)
+
+  \item[系统 B]  
+  去掉点电荷，仅将 \emph{其中一块} 平板置于单位电势，
+  另一块保持接地
+\end{description}
+
+随后对系统 A 与系统 B 使用 Green 互易定理。
+
+
+\paragraph{情形 1：下板 \(z=0\) 置于单位电势}
+
+由于几何与边界条件均为平移对称，
+系统 B 的电势仅与 \(z\) 有关，满足拉普拉斯方程：
+
+\[
+\frac{\dif^2 U}{\dif z^2}=0,
+\quad
+U(0)=1,\quad U(d)=0.
+\]
+
+解：
+\[
+{
+U_B^{(1)}(z)=1-\frac{z}{d}
+}
+\]
+
+
+\paragraph{情形 2：上板 \(z=d\) 置于单位电势}
+
+同理：
+\[
+{
+U_B^{(2)}(z)=\frac{z}{d}
+}
+\]
+
+Green 互易定理给出：
+\[
+\int \rho_A U_B\,\dif \tau
+=
+\int \rho_B U_A\,\dif \tau
+\]
+
+\paragraph{计算左边}
+
+系统 A 的电荷分布仅包含点电荷：
+\[
+\rho_A(\boldsymbol  r)
+=
+q\,\delta^{(3)}(\boldsymbol  r-\boldsymbol  r_0)
+\]
+
+因此：
+\[
+\int \rho_A U_B\,\dif \tau
+=
+q\,U_B(\boldsymbol  r_0)
+\]
+
+
+\paragraph{计算右边}
+
+系统 B 中没有体电荷，只有导体表面的诱导电荷。
+由于平板接地，导体表面电势恒为零，因此：
+
+\[
+\int \rho_B U_A\,\dif \tau
+=
+\sum_i
+\int_{\text{plate } i}
+\sigma_i(\boldsymbol  r_\parallel)\,
+U_A(\boldsymbol  r_\parallel)\,\dif S
+\]
+
+但在系统 A 中：
+
+\[
+U_A=0 \quad \text{于导体表面}
+\]
+
+唯一剩下的贡献来自于
+系统 B 中被置于单位电势的那块板，
+其总电荷记为 \(Q\)。
+
+于是：
+\[
+\int \rho_B U_A\,\dif \tau
+=
+Q
+\]
+
+下板的诱导电荷:
+
+\[
+q\,U_B^{(1)}(x)=Q_1
+\]
+
+代入：
+\[
+{
+Q_1
+=
+q\left(1-\frac{x}{d}\right)
+}
+\]
+
+
+上板的诱导电荷：
+
+\[
+q\,U_B^{(2)}(x)=Q_2
+\]
+
+代入：
+\[
+{
+Q_2
+=
+q\,\frac{x}{d}
+}
+\]
+
 \subsection{习题}
 \mysssec{一个均匀带电、边长为$2a$的正方形面, 电荷面密度为$\sigma$。
 求出距中心高度为$z$处的电场。}
@@ -2030,12 +2520,12 @@ U(r,\phi)=\sum_{n=1}^{\infty}A_n
 \]
 
 
-导体柱为等势体，取其表面电势为零：
+导体柱为等势体, 取其表面电势为零：
 \[
 U(R,\phi)=0
 \]
 
-同时，在 $r=a$ 处存在两条线电荷，
+同时, 在 $r=a$ 处存在两条线电荷, 
 其电势在无导体情况下可展开为傅里叶级数：
 \[
 U_0(r,\phi)
@@ -2056,7 +2546,7 @@ U_0(r,\phi)
 \sin n\phi
 \]
 
-为满足导体边界条件，
+为满足导体边界条件, 
 修正解应为
 \[
 U(r,\phi)
@@ -2088,10 +2578,10 @@ U(r,\phi)
 \sin n\phi
 }
 \]
-\mysssec{一个半径为$a$的导体球，电势为$U_0$。一个半径为$b(b>a)$的薄球壳包围着导体球，在球壳
+\mysssec{一个半径为$a$的导体球, 电势为$U_0$。一个半径为$b(b>a)$的薄球壳包围着导体球, 在球壳
 上分布有电荷面密度
 $\sigma(\theta) = k\cos\theta$。\\
-(a)求出$r>b$，$a<r<b$区域内的电势。\\
+(a)求出$r>b$, $a<r<b$区域内的电势。\\
 (b)求出导体球表面上的诱导电荷面密度$\sigma$。\\
 (c)这个体系的总电荷为多少？}
 (a):
@@ -2249,7 +2739,7 @@ aU_0 r^{-1}
 +\left(\frac{k}{\varepsilon_0} b^{3}
 -\frac{k}{\varepsilon_0} a^{3}\right) r^{-2}\cos\theta
 \end{align*}
-\mysssec{一个半径为$R$的无限长柱壳上半壳载有均匀分布的电荷，电荷
+\mysssec{一个半径为$R$的无限长柱壳上半壳载有均匀分布的电荷, 电荷
 面密度为$\sigma_0$,下半壳载有均匀分布的电荷面密度为$-\sigma_0$的电荷
 求出柱壳内外的电势。}
 柱壳内:
@@ -2295,3 +2785,14 @@ $m$为奇数时:
     &=\pi\varepsilon_0mD_mR^{m-1}\\
     D_m&=\frac{2\sigma_0}{\pi\varepsilon_0R^{m-1}m^2}
 \end{align*}
+\mysssec{一个细绝缘杆, 端点位于$z=a$和$z=-a$, 细杆载有均匀
+电荷, 电荷线密度为$\lambda$。对下列情况求出多极展开电势中的首项：
+(a)$\lambda=
+k\cos(\frac{\pi z}{2a})$, (b)$\lambda=
+k\sin(\frac{\pi z}{2a})$, (c)$\lambda=
+k\cos(\frac{\pi z}{a})$}
+\begin{align*}
+    U=\int_{-a}^{a}\frac{\lambda}{4\pi\varepsilon_0\sqrt{r^2+a^2-2ra\cos\theta}}\dif z'
+\end{align*}
+不想写
+\mysssec{求多极展开中的四极矩项}
