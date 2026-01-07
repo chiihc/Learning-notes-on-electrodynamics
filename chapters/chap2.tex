@@ -1276,7 +1276,8 @@ a_{n+2}&=[n(n+1)-l(l+1)]a_n
     \left. P_l(1) = \frac{1}{2^l l!} \cdot l! \cdot (u+2)^l \right|_{u=0} = \frac{1}{2^l} \cdot 2^l = 1
 \end{align*}
 同理可证 $P_l(-1) = (-1)^l$。
-\mysssec{两个无限长接地金属板, 分别在$y=0$和$y=a$放置, 在$x=±b$的侧边连接有电势为$U_0$的两个金属带。求出这个矩形管中的电势。}
+\mysssec{两个无限长接地金属板, 分别在$y=0$和$y=a$放置, 在$x=±b$的侧边连接有电势为$U_0$的两个金属带。求出这个矩形管中的电势。\\若侧面上的电势为零, 顶面的电势为非零常数$U_0$, 求出管内的电势。\\
+当$a=b$时, 求底面单位长度的电荷}
 此时边界条件为:
 \begin{align*}
         U&\xlongequal{y=0}0\\
@@ -1286,7 +1287,7 @@ a_{n+2}&=[n(n+1)-l(l+1)]a_n
 \end{align*}
 做法同前解得
 \begin{align*}
-    U=(Ae^{kx}+Be^{-kx})(C\sin \frac{n\pi}{a}x+D\cos \frac{n\pi}{a}x)
+    U=(Ae^{\frac{n\pi x}{a}}+Be^{-\frac{n\pi x}{a}})(C\sin \frac{n\pi}{a}y+D\cos \frac{n\pi}{a}y)
 \end{align*}
 因为$U(-x)=U(x),\, U\xlongequal{y=0}0$, 所以$A=B,\, D=0$, 并把系数吸进$C$得
 \begin{align*}
@@ -1304,6 +1305,44 @@ a_{n+2}&=[n(n+1)-l(l+1)]a_n
     C_n\cosh\frac{2n+1}{a}\pi b&=\frac{2}{a}\int_{0}^{a}U_0\sin \frac{2n+1}{a}\pi y\dif y\\
     &=\frac{4U_0}{(2n+1)\pi }\left(\cosh\frac{2n+1}{a}\pi b\right)^{-1}\\
     U&=\sum_{n=0}^{\infty}\frac{4U_0}{(2n+1)\pi }\left(\cosh\frac{2n+1}{a}\pi b\right)^{-1}\cosh\frac{n\pi}{a} x\sin \frac{n\pi}{a}y
+\end{align*}
+此时边界条件为:
+\begin{align*}
+        U&\xlongequal{y=0}0\\
+    U&\xlongequal{y=a}U_0\\
+    U&\xlongequal{x=b}0\\
+    U&\xlongequal{x=-b}0
+\end{align*}
+做法同前解得
+\begin{align*}
+    U=(Ae^{\frac{n\pi }{b}y}+Be^{-\frac{n\pi }{b}y})(C\sin \frac{n\pi}{b}x+D\cos \frac{n\pi}{b}x)
+\end{align*}
+因为$U(-x)=U(x),\, U\xlongequal{y=0}0$, 所以$A=-B,\, D=0$, 并把系数吸进$D$得
+\begin{align*}
+    U=C\sinh\frac{n\pi}{b} y\sin \frac{n\pi}{b}x
+\end{align*}
+余下的事是构造一般的叠加解, 设定系数$C_n$, 使其拟合边界条件
+\begin{align*}
+    U(x,a)&=\sum_{n=1}^{\infty}C_n\sinh\frac{n\pi}{b} a\sin \frac{n\pi}{b}x=U_0
+\end{align*}
+\begin{align*}
+    \int_{-b}^{b}C_n\sinh\frac{n\pi}{b} a\sin^2 \frac{n\pi}{b}x\dif x
+    &=\int_{-b}^{b}U_0\sin \frac{n\pi}{b}x\dif x\\
+    bC_n\sinh\frac{n\pi}{b} a
+    &=-\frac{2b}{n\pi}U_0\cos {n\pi}\\
+    C_n
+    &=-\frac{2}{n\pi\sinh\frac{n\pi}{b} a}U_0\cos {n\pi}
+\end{align*}
+\begin{align*}
+    U&=\frac{4U_0}{\pi}\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}\frac{\sinh\frac{(2n+1)\pi}{2b}y}{\sinh\frac{(2n+1)\pi}{2b}a}\sin\frac{(2n+1)\pi(x+b)}{2b}\\
+    &=\frac{4U_0}{\pi}\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}\frac{\sinh\frac{(2n+1)\pi}{2b}y}{\sinh\frac{(2n+1)\pi}{2}}\sin\frac{(2n+1)\pi(x+b)}{2b}
+\end{align*}
+\begin{align*}
+    \sigma&=-\varepsilon_0\frac{\partial U}{\partial y}\\
+    \sigma&=-\varepsilon_0\dfrac{\partial \dfrac{4U_0}{\pi}\sum\limits_{n=0}^{\infty}\dfrac{(-1)^n}{2n+1}\dfrac{\sinh\frac{(2n+1)\pi}{2b}y}{\sinh\frac{(2n+1)\pi}{2}}\sin\dfrac{(2n+1)\pi(x+b)}{2b}}{\partial y}\\
+    \sigma&=-\varepsilon_0{ \dfrac{4U_0}{\pi}\sum\limits_{n=0}^{\infty}\dfrac{(-1)^n}{2n+1}\frac{(2n+1)\pi}{2b}\dfrac{1}{\sinh\frac{(2n+1)\pi}{2}}\sin\dfrac{(2n+1)\pi(x+b)}{2b}}\\
+    \sigma&=-4U_0\varepsilon_0\sum\limits_{n=0}^{\infty}\dfrac{(-1)^n}{2b}\dfrac{1}{\sinh\frac{(2n+1)\pi}{2}}\sin\dfrac{(2n+1)\pi(x+b)}{2b}\\
+    \int_{-b}^b\sigma\dif x&=\int_{-b}^b-4U_0\varepsilon_0\sum\limits_{n=0}^{\infty}\dfrac{(-1)^n}{2b}\dfrac{1}{\sinh\frac{(2n+1)\pi}{2}}\sin\dfrac{(2n+1)\pi(x+b)}{2b}\dif x
 \end{align*}
 \mysssec{一个半径为$R$的球面上的电势为
 $U_0= k\cos3\theta$。求出球面内外的电势以及球面上的电荷面密度$\sigma(\theta)$。(假定球内和球外没有电荷分布。)}
@@ -1483,6 +1522,26 @@ P_{l}(\cos\theta)}\\
 (2l+1)
 B_{l} r^{-(l+2)}
 P_{l}(\cos\theta)}
+\end{align*}
+\mysssec{一个横截面为圆形(半径为$R$)的长金属管，管面沿圆周分为相等的四份，其中三份接地，余下的
+一份维持常数电势$U_0$求出相对于$U_0$面的面上单位长度的电荷。}
+\begin{align*}
+    U(\phi)&=\left(C_ms^{-m}+D_ms^{m}\right)\left(E_m\cos m\phi+F_m\sin m\phi\right)\\
+    U(\phi)&=\sum_{m=0}^{\infty}D_ms^{m}\cos m\phi\\
+    U(\phi)&=\sum_{m=0}^{\infty}D_mR^{m}\cos m\phi\\
+    \int_{0}^{2\pi}U(\phi)\cos m\phi\dif\phi&=\int_{0}^{2\pi}D_mR^{m}\cos^2 m\phi\dif\phi\\
+    \int_{-\frac{\pi}{4}}^{\frac{\pi}{4}}U_0\cos m\phi\dif\phi&=\pi D_mR^{m}\\
+    \frac{2U_0}{m}\sin \frac{m}{4}&=\pi D_mR^{m}\\
+    \frac{2U_0}{m\pi R^{m}}\sin \frac{m}{4}&=D_m\\    
+    U(\phi)&=\frac{U_0}{4}+\sum_{m=1}^{\infty}\frac{2U_0s^{m}}{m\pi R^{m}}\sin \frac{m}{4}\cos m\phi
+    \end{align*}
+    \begin{align*}
+    \sigma(\phi)&=-\varepsilon_0\frac{\partial U}{\partial r}\\
+    \sigma(\phi)&=-\varepsilon_0\frac{\partial \sum\limits_{m=0}^{\infty}\frac{2U_0}{m\pi R^{m}}\sin \frac{m}{4}r^{m}\cos m\phi}{\partial r}\\
+    \sigma(\phi)&=\varepsilon_0{\sum\limits_{m=0}^{\infty}\frac{2U_0}{\pi R^{m}}\sin \frac{m}{4}r^{m-1}\cos m\phi}\\
+    \sigma(\phi)&=\varepsilon_0{\sum\limits_{m=0}^{\infty}\frac{2U_0}{\pi R}\sin \frac{m}{4}\cos m\phi}\\
+    \int_{\frac{3\pi}{4}}^{\frac{5\pi}{4}}R\sigma(\phi)\dif\phi&=\int_{\frac{3\pi}{4}}^{\frac{5\pi}{4}}\varepsilon_0\sum\limits_{m=0}^{\infty}R\frac{2U_0}{\pi R}\sin \frac{m}{4}\cos m\phi\dif\phi\\
+    \int_{\frac{3\pi}{4}}^{\frac{5\pi}{4}}R\sigma(\phi)\dif\phi&=\varepsilon_0\sum\limits_{m=0}^{\infty}\frac{4U_0}{\pi m\pi}\sin\frac{m}{4}\sin\frac{5m}{4}
 \end{align*}
 \subsection{多极展开}
 
@@ -2795,4 +2854,124 @@ k\cos(\frac{\pi z}{a})$}
     U=\int_{-a}^{a}\frac{\lambda}{4\pi\varepsilon_0\sqrt{r^2+a^2-2ra\cos\theta}}\dif z'
 \end{align*}
 不想写
-\mysssec{求多极展开中的四极矩项}
+\mysssec{一个理想的电偶极子位于原点，方向沿$z$轴方向。一个电荷从$xy$平面上
+的一点由静止开始释放。证明它在一个半圆弧上往复运动，就像挂在原点的一个单摆一样。}
+由于体系绕 $z$ 轴轴对称，且初始条件取在某一固定平面内，可令
+\[
+\dot\phi=0,
+\]
+从而运动限制在 $(r,\theta)$ 平面中。
+
+
+系统的拉格朗日量为
+\begin{equation}
+L
+=
+\frac{m}{2}\left(\dot r^2+r^2\dot\theta^2\right)
+-
+\frac{A\cos\theta}{r^2}.
+\end{equation}
+
+
+考虑如下无穷小变换:
+\begin{equation}
+\delta r = \varepsilon\, r\cos\theta,
+\qquad
+\delta\theta = -\varepsilon\,\sin\theta .
+\end{equation}
+
+在该变换下，势能的变分为
+\[
+\delta V
+=
+\frac{\partial V}{\partial r}\delta r
++
+\frac{\partial V}{\partial\theta}\delta\theta
+=
+-\frac{2A\cos\theta}{r^3}(r\cos\theta)
++
+\frac{A\sin\theta}{r^2}(\sin\theta)
+=0.
+\]
+
+动能的变分可以直接计算，结果为一个全时间导数：
+\[
+\delta T
+=
+\varepsilon m
+\frac{\dif}{\dif t}
+\bigl(
+r\dot r\cos\theta
+-
+r^2\dot\theta\sin\theta
+\bigr).
+\]
+
+因此
+\[
+\delta L = \frac{\dif F}{\dif t},
+\]
+该变换是拉格朗日量的一个连续对称性。
+
+
+由 Noether 定理，对应的守恒量为
+\[
+Q
+=
+\frac{\partial L}{\partial \dot r}\delta r
++
+\frac{\partial L}{\partial \dot\theta}\delta\theta
+=
+m\dot r(r\cos\theta)
+-
+mr^2\dot\theta\sin\theta.
+\]
+
+注意到
+\[
+\frac{\dif}{\dif t}(r\sin^2\theta)
+=
+\sin^2\theta\,\dot r
++
+2r\sin\theta\cos\theta\,\dot\theta,
+\]
+可以验证
+\[
+Q
+=
+-\frac{m}{2}
+\frac{\dif}{\dif t}\bigl(r\sin^2\theta\bigr).
+\]
+
+由于 $Q$ 为常数，得到几何不变量
+\begin{equation}
+{
+r\sin^2\theta = \text{const}.
+}
+\end{equation}
+
+
+在包含 $z$ 轴的运动平面内，引入
+\[
+\rho = r\sin\theta, \qquad z=r\cos\theta .
+\]
+
+守恒关系变为
+\[
+\frac{\rho^2}{r} = C,
+\qquad C=\text{const}.
+\]
+
+结合
+\[
+r=\sqrt{\rho^2+z^2},
+\]
+可化为
+\[
+(\rho^2-\tfrac{C}{2})^2+z^2=(\tfrac{C}{2})^2,
+\]
+这是一个圆的方程，其圆心位于 $(\rho,z)=(C/2,0)$，半径为 $C/2$，
+且圆经过原点。
+
+因此，试探电荷的轨迹是一条以原点为端点的半圆弧。
+\newpage

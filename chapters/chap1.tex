@@ -1402,7 +1402,18 @@ $\boldsymbol\nabla\times\boldsymbol c=\boldsymbol 0$, 因此
     +2\dfrac{m_n}{r^3}\boldsymbol e_n
     -3\dfrac{m_n}{r^3}\boldsymbol e_n\\
     &=3\dfrac{m_lr_l}{r^4}\frac{r_n}{r}\boldsymbol e_n
-    -\dfrac{m_n}{r^3}\boldsymbol e_n\\
+    -\dfrac{m_n}{r^3}\boldsymbol e_n
+\end{align*}
+\begin{align*}
+    \boldsymbol{\nabla}\dfrac{\boldsymbol{m}\cdot\boldsymbol{r}}{r^3}
+    &= \boldsymbol{\nabla}\frac{m_ir_i}{r^3}\\
+    &= \frac{\partial }{\partial x_j}\frac{m_ir_i}{r^3}\boldsymbol{e}_j\\
+    &= r_i\frac{\partial }{\partial x_j}\frac{m_i}{r^3}\boldsymbol{e}_j
+    +\frac{1}{r^3}\frac{\partial m_ir_i}{\partial x_j}\boldsymbol{e}_j\\
+    &= -3r_i\frac{m_i r_j}{r^5}\boldsymbol{e}_j
+    +\frac{1}{r^3}m_i\delta_{ij}\boldsymbol{e}_j\\
+    &= -3r_i\frac{m_i r_j}{r^5}\boldsymbol{e}_j
+    +\frac{1}{r^3}m_i\boldsymbol{e}_i
 \end{align*}
 \mysssec{以匀角速绕轴转动的抛物线形金属丝, 其方程为
 $x²=4ay$。一质量为$m$的小环套在此金属丝上, 可沿着金属丝
