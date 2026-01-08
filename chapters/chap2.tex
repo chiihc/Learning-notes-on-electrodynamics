@@ -656,7 +656,7 @@ w = z^n
 z^n - z_0^n
 =
 \prod_{k=0}^{n-1}
-\left(z - z_0 e^{2\pi i k/n}\right),
+\left(z - z_0 \mathrm{e}^{2\pi i k/n}\right),
 \]
 电势可写为有限和：
 \[
@@ -667,9 +667,9 @@ U(z)
 \ln
 \left|
 \frac{
-z - z_0 e^{2\pi i k/n}
+z - z_0 \mathrm{e}^{2\pi i k/n}
 }{
-z - \overline{z_0} e^{2\pi i k/n}
+z - \overline{z_0} \mathrm{e}^{2\pi i k/n}
 }
 \right|.
 \]
@@ -736,7 +736,7 @@ X_n''(x) - \left(\frac{n\pi}{a}\right)^2 X_n(x)=0.
 
 通解为
 \[
-X_n(x)=A_n e^{-(n\pi/a)x}+B_n e^{+(n\pi/a)x}.
+X_n(x)=A_n \mathrm{e}^{-(n\pi/a)x}+B_n \mathrm{e}^{+(n\pi/a)x}.
 \]
 
 由远处边界条件, 要求 $V\to0$, 
@@ -752,7 +752,7 @@ V(x,y)
 \sum_{n=1}^{\infty}
 A_n
 \sin\frac{n\pi y}{a}
-\,e^{-(n\pi/a)x}.
+\,\mathrm{e}^{-(n\pi/a)x}.
 \]
 
 在 $x=0$ 处, 要求
@@ -798,7 +798,7 @@ U_0(y')
 \dif y'
 \right]
 \sin\frac{n\pi y}{a}
-e^{-(n\pi/a)x}
+\mathrm{e}^{-(n\pi/a)x}
 }
 \]
 
@@ -810,7 +810,7 @@ e^{-(n\pi/a)x}
 \[
 Z'' + \lambda^2 Z = 0,
 \qquad
-Z(z)=e^{i\lambda z},\quad \lambda\in\mathbb{R}.
+Z(z)=\mathrm{e}^{i\lambda z},\quad \lambda\in\mathbb{R}.
 \]
 
 此时解的结构变为
@@ -821,8 +821,8 @@ Z(z)=e^{i\lambda z},\quad \lambda\in\mathbb{R}.
 \int_{-\infty}^{\infty}
 C_n(\lambda)
 \sin\frac{n\pi y}{a}
-\,e^{-\sqrt{(n\pi/a)^2+\lambda^2}\,x}
-\,e^{i\lambda z}
+\,\mathrm{e}^{-\sqrt{(n\pi/a)^2+\lambda^2}\,x}
+\,\mathrm{e}^{i\lambda z}
 \,d\lambda .
 \]
 \subsubsection{球坐标系}
@@ -966,7 +966,7 @@ m \in \mathbb{Z}.
 \end{equation}
 其解为
 \[
-\Phi_m(\phi) = C_1e^{i m \phi}
+\Phi_m(\phi) = C_1\mathrm{e}^{i m \phi}
 \]
 
 {$\theta$ 方程}
@@ -1007,7 +1007,7 @@ $P_l(x)$可由罗德里格(Rodrigue)公式计算:
 
 为了方便, 将角向部分合并, 定义球谐函数
 \begin{equation}
-    Y_{lm}\equiv\sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}}P_{lm}(\cos\theta) e^{i m \phi}
+    Y_{lm}\equiv\sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}}P_{lm}(\cos\theta) \mathrm{e}^{i m \phi}
 \end{equation}
 
 径向方程为
@@ -1287,7 +1287,7 @@ a_{n+2}&=[n(n+1)-l(l+1)]a_n
 \end{align*}
 做法同前解得
 \begin{align*}
-    U=(Ae^{\frac{n\pi x}{a}}+Be^{-\frac{n\pi x}{a}})(C\sin \frac{n\pi}{a}y+D\cos \frac{n\pi}{a}y)
+    U=(A\mathrm{e}^{\frac{n\pi x}{a}}+B\mathrm{e}^{-\frac{n\pi x}{a}})(C\sin \frac{n\pi}{a}y+D\cos \frac{n\pi}{a}y)
 \end{align*}
 因为$U(-x)=U(x),\, U\xlongequal{y=0}0$, 所以$A=B,\, D=0$, 并把系数吸进$C$得
 \begin{align*}
@@ -1315,7 +1315,7 @@ a_{n+2}&=[n(n+1)-l(l+1)]a_n
 \end{align*}
 做法同前解得
 \begin{align*}
-    U=(Ae^{\frac{n\pi }{b}y}+Be^{-\frac{n\pi }{b}y})(C\sin \frac{n\pi}{b}x+D\cos \frac{n\pi}{b}x)
+    U=(A\mathrm{e}^{\frac{n\pi }{b}y}+B\mathrm{e}^{-\frac{n\pi }{b}y})(C\sin \frac{n\pi}{b}x+D\cos \frac{n\pi}{b}x)
 \end{align*}
 因为$U(-x)=U(x),\, U\xlongequal{y=0}0$, 所以$A=-B,\, D=0$, 并把系数吸进$D$得
 \begin{align*}
@@ -1647,16 +1647,17 @@ E_\theta&=-\frac{1}{r}\frac{\partial U}{\partial \theta}
 E_\phi&=0,
 \end{align}
 即
-\[
-\boldsymbol E
+\begin{equation}
+    \boldsymbol E
 =
 \frac{d}{4\pi\varepsilon_0 r^3}
 \left(
 2\cos\theta\,\boldsymbol e_r
 +
 \sin\theta\,\boldsymbol e_\theta
-\right).
-\]
+\right)\label{偶极子电场}
+\end{equation}
+
 
 \subsubsection{四极项}
 
@@ -1937,7 +1938,19 @@ $l=3$:
 \end{align*}
 \mysssec{两个电量为$-q$的点电荷位于$(0,a,0),(0,-a,0)$, 一个电量为$q$的点电荷位于$(0,0,a)$求出远离原点处的近似电场, 计算到多极展开
 中的最低两项。}
-暂时不会
+\begin{align*}
+    Q&=q\\
+    d&=-aq\boldsymbol{e}_2+aq\boldsymbol{e}_2+aq\boldsymbol{e}_3=aq\boldsymbol{e}_3
+\end{align*}
+\mysssec{证明一个式\ref{偶极子电场}可以写
+为不依赖于坐标系的形式$\boldsymbol{E}=\dfrac{3(\boldsymbol{d}\cdot\boldsymbol{e}_r)\boldsymbol{e}_r-\boldsymbol{d}}{4\pi\varepsilon_0r^3}$}
+\begin{align*}
+    \dfrac{3(\boldsymbol{d}\cdot\boldsymbol{e}_r)\boldsymbol{e}_r-\boldsymbol{d}}{4\pi\varepsilon_0r^3}
+    &=\dfrac{3(d\boldsymbol{e}_3\cdot \boldsymbol{e}_r)\boldsymbol{e}_r-d\boldsymbol{e}_3}{4\pi\varepsilon_0r^3}\\
+    &=\dfrac{3(dr\cos\theta)\boldsymbol{e}_r-d\cos\theta\boldsymbol{e}_r+d\sin\theta\boldsymbol{e}_\theta}{4\pi\varepsilon_0r^3}\\
+    &=\dfrac{2d\cos\theta\boldsymbol{e}_r+d\sin\theta\boldsymbol{e}_\theta}{4\pi\varepsilon_0r^3}\\
+    &=\dfrac{2d\cos\theta\boldsymbol{e}_r+d\sin\theta\boldsymbol{e}_\theta}{4\pi\varepsilon_0r^3}
+\end{align*}
 \subsection{Green 互易定理}
 
 设在同一空间区域 \(V\) 内, 有两组电荷分布
@@ -2315,25 +2328,25 @@ q\,\frac{x}{d}
     +\pi\frac{k^2R^8}{8\varepsilon_0 R}\\
     &=\pi\frac{k^2R^7}{7\varepsilon_0}
 \end{align*}
-\mysssec{电势为$U=\frac{Ae^{-\lambda r}}{r}$, 求电场, 电荷密度, 总电荷}
+\mysssec{电势为$U=\frac{A\mathrm{e}^{-\lambda r}}{r}$, 求电场, 电荷密度, 总电荷}
 \begin{align*}
     \boldsymbol{E}&=-\boldsymbol{\nabla}U\\
-    &=\dfrac{\partial \dfrac{Ae^{-\lambda r}}{r}}{\partial r}\boldsymbol{e}_r\\
-    &=\dfrac{\lambda rAe^{-\lambda r}+Ae^{-\lambda r}}{r^2}\boldsymbol{e}_r\\
+    &=\dfrac{\partial \dfrac{A\mathrm{e}^{-\lambda r}}{r}}{\partial r}\boldsymbol{e}_r\\
+    &=\dfrac{\lambda rA\mathrm{e}^{-\lambda r}+A\mathrm{e}^{-\lambda r}}{r^2}\boldsymbol{e}_r\\
     \rho&=\varepsilon_0\boldsymbol{\nabla}^2U\\
     &=\varepsilon_0\frac{1}{r^2}\dfrac{\partial r^2a_r}{\partial r}\\
-    &=\varepsilon_0\frac{1}{r^2}\dfrac{\partial \lambda rAe^{-\lambda r}+Ae^{-\lambda r}}{\partial r}\\
-    &=\varepsilon_0\dfrac{\lambda Ae^{-\lambda r}
-    -\lambda^2 rAe^{-\lambda r}
-    -\lambda Ae^{-\lambda r}}{r^2}\\
+    &=\varepsilon_0\frac{1}{r^2}\dfrac{\partial \lambda rA\mathrm{e}^{-\lambda r}+A\mathrm{e}^{-\lambda r}}{\partial r}\\
+    &=\varepsilon_0\dfrac{\lambda A\mathrm{e}^{-\lambda r}
+    -\lambda^2 rA\mathrm{e}^{-\lambda r}
+    -\lambda A\mathrm{e}^{-\lambda r}}{r^2}\\
     &=-\dfrac{\varepsilon_0
-    \lambda^2 Ae^{-\lambda r}
+    \lambda^2 A\mathrm{e}^{-\lambda r}
     }{r}\, (r\neq 0)\\
     \rho&=\dfrac{\varepsilon_0
     A4\pi\delta^{(3)}(r)
     }{r}
     -\dfrac{\varepsilon_0
-    \lambda^2 Ae^{-\lambda r}
+    \lambda^2 A\mathrm{e}^{-\lambda r}
     }{r}\\
     Q&=4\pi\int_{0}^{\infty}\rho r^2\dif r\\
     &=0
@@ -2383,7 +2396,7 @@ q\,\frac{x}{d}
     u^2-d^2&=(x_1-u)^2+x_2^2\\
     R&=\sqrt{u^2-d^2}\\
     &=\sqrt{\left(\frac{k+1}{k-1}\right)^2-d^2}\\
-    &=\sqrt{\left(\frac{e^\dfrac{4\pi\varepsilon_0U}{\lambda}+1}{e^\dfrac{4\pi\varepsilon_0U}{\lambda}-1}\right)^2-d^2}
+    &=\sqrt{\left(\frac{\mathrm{e}^\dfrac{4\pi\varepsilon_0U}{\lambda}+1}{\mathrm{e}^\dfrac{4\pi\varepsilon_0U}{\lambda}-1}\right)^2-d^2}
 \end{align*}
 \mysssec{在一个真空二极管中, 电子从阴极面“热蒸发”后向阳极面加速运动, 阴极电势为零, 对面阳极的电势为$U_0$。在两极间隙中所形成的电子云(称为空间电荷)很快会达到一种分布状态, 使得阴极面上的电场为零。然后在两极板之间形成稳定的电流I。假定两个极板面积$A$远大于它们之间的距离$d$($A>>d$), 所以边界效应可以忽略。则$U, \rho, v$(电子速度)都仅是$x$的函数。\\
 (a)写出在两极板之间空间的泊松方程。\\
@@ -2426,51 +2439,51 @@ q\,\frac{x}{d}
     \frac{\partial U}{\partial x}&=2\frac{I^\frac{1}{2}U^\frac{1}{4}}{A^\frac{1}{2}\left(\frac{2e}{m}\right)^\frac{1}{4}\varepsilon_0^\frac{1}{2}}\\
     U^{-\frac{1}{4}}{\partial U}{}&=2\frac{I^\frac{1}{2}{m}^\frac{1}{4}\partial x}{A^\frac{1}{2}(2e)^\frac{1}{4}\varepsilon_0^\frac{1}{2}}\\
     \frac{4}{3}U^{\frac{3}{4}}&=2\frac{I^\frac{1}{2}{m}^\frac{1}{4}x}{A^\frac{1}{2}(2e)^\frac{1}{4}\varepsilon_0^\frac{1}{2}}\\
-    U&=\frac{3^{\frac{4}{3}}I^\frac{2}{3}x^{\frac{4}{3}}{m}^\frac{1}{4}}{2A^\frac{1}{2}e^\frac{1}{3}\varepsilon_0^\frac{2}{3}}\\
+    U&=\frac{3^{\frac{4}{3}}I^\frac{2}{3}x^{\frac{4}{3}}{m}^\frac{1}{4}}{2A^\frac{1}{2}\mathrm{e}^\frac{1}{3}\varepsilon_0^\frac{2}{3}}\\
     v&=\sqrt{\frac{2eU}{m}}\\
-    &=\sqrt{\dfrac{2e\dfrac{3^{\frac{4}{3}}I^\frac{2}{3}x^{\frac{4}{3}}{m}^\frac{1}{4}}{2A^\frac{1}{2}e^\frac{1}{3}\varepsilon_0^\frac{2}{3}}}{m}}\\
-    &=\sqrt{\dfrac{3^{\frac{4}{3}}I^\frac{2}{3}x^{\frac{4}{3}}e^\frac{2}{3}}{A^\frac{1}{2}\varepsilon_0^\frac{2}{3}{m}^\frac{3}{4}}}\\
-    &=\dfrac{3^{\frac{2}{3}}I^\frac{1}{3}x^{\frac{2}{3}}e^\frac{1}{3}}{A^\frac{1}{4}\varepsilon_0^\frac{1}{3}{m}^\frac{3}{8}}\\
+    &=\sqrt{\dfrac{2e\dfrac{3^{\frac{4}{3}}I^\frac{2}{3}x^{\frac{4}{3}}{m}^\frac{1}{4}}{2A^\frac{1}{2}\mathrm{e}^\frac{1}{3}\varepsilon_0^\frac{2}{3}}}{m}}\\
+    &=\sqrt{\dfrac{3^{\frac{4}{3}}I^\frac{2}{3}x^{\frac{4}{3}}\mathrm{e}^\frac{2}{3}}{A^\frac{1}{2}\varepsilon_0^\frac{2}{3}{m}^\frac{3}{4}}}\\
+    &=\dfrac{3^{\frac{2}{3}}I^\frac{1}{3}x^{\frac{2}{3}}\mathrm{e}^\frac{1}{3}}{A^\frac{1}{4}\varepsilon_0^\frac{1}{3}{m}^\frac{3}{8}}\\
     \rho&=\varepsilon_0\frac{\partial^2 U}{\partial x^2}\\
-    &=\frac{2I^\frac{2}{3}{m}^\frac{1}{4}\varepsilon_0^\frac{1}{3}}{3^{\frac{2}{3}}A^\frac{1}{2}e^\frac{1}{3}x^{\frac{2}{3}}}
+    &=\frac{2I^\frac{2}{3}{m}^\frac{1}{4}\varepsilon_0^\frac{1}{3}}{3^{\frac{2}{3}}A^\frac{1}{2}\mathrm{e}^\frac{1}{3}x^{\frac{2}{3}}}
 \end{align*}
 
 (f):
 \begin{align*}
-    U&=\frac{3^{\frac{4}{3}}I^\frac{2}{3}x^{\frac{4}{3}}{m}^\frac{1}{4}}{2A^\frac{1}{2}e^\frac{1}{3}\varepsilon_0^\frac{2}{3}}\\
-    I^\frac{2}{3}&=\frac{U2A^\frac{1}{2}e^\frac{1}{3}\varepsilon_0^\frac{2}{3}}{3^{\frac{4}{3}}x^{\frac{4}{3}}{m}^\frac{1}{4}}\\
-    I&=\frac{U^\frac{3}{2}2^\frac{3}{2}A^\frac{3}{4}e^\frac{1}{2}\varepsilon_0^\frac{2}{3}}{3^2x^2{m}^\frac{3}{2}}\\
-    I&=\frac{U_0^\frac{3}{2}2^\frac{3}{2}A^\frac{3}{4}e^\frac{1}{2}\varepsilon_0^\frac{2}{3}}{3^2d^2{m}^\frac{3}{2}}
+    U&=\frac{3^{\frac{4}{3}}I^\frac{2}{3}x^{\frac{4}{3}}{m}^\frac{1}{4}}{2A^\frac{1}{2}\mathrm{e}^\frac{1}{3}\varepsilon_0^\frac{2}{3}}\\
+    I^\frac{2}{3}&=\frac{U2A^\frac{1}{2}\mathrm{e}^\frac{1}{3}\varepsilon_0^\frac{2}{3}}{3^{\frac{4}{3}}x^{\frac{4}{3}}{m}^\frac{1}{4}}\\
+    I&=\frac{U^\frac{3}{2}2^\frac{3}{2}A^\frac{3}{4}\mathrm{e}^\frac{1}{2}\varepsilon_0^\frac{2}{3}}{3^2x^2{m}^\frac{3}{2}}\\
+    I&=\frac{U_0^\frac{3}{2}2^\frac{3}{2}A^\frac{3}{4}\mathrm{e}^\frac{1}{2}\varepsilon_0^\frac{2}{3}}{3^2d^2{m}^\frac{3}{2}}
 \end{align*}
-\mysssec{假设现在极精确的测量已经揭示出库仑定律的误差。两个点电荷之间的作用力为$\boldsymbol{F}=\dfrac{q_1q_2}{4\pi\varepsilon_0r^2}\left(1+\frac{r}{\lambda}\right)e^{-\frac{r}{\lambda}}\boldsymbol{e}_r$式中, 入是一个新的自然常数。你的任务是按照这个新发现重新表述静电学。假定叠加原理仍然成立。\\
+\mysssec{假设现在极精确的测量已经揭示出库仑定律的误差。两个点电荷之间的作用力为$\boldsymbol{F}=\dfrac{q_1q_2}{4\pi\varepsilon_0r^2}\left(1+\frac{r}{\lambda}\right)\mathrm{e}^{-\frac{r}{\lambda}}\boldsymbol{e}_r$式中, 入是一个新的自然常数。你的任务是按照这个新发现重新表述静电学。假定叠加原理仍然成立。\\
 (a)电场是什么?\\
 (b)求出一个点电荷的电势。\\
 (c)对一个位于原点的点电荷, 证明$\oiint_S\boldsymbol{E}\cdot\dif\boldsymbol{S}+\frac{1}{\lambda^2}\iiint_VU\dif\tau =\frac{q}{\varepsilon_0}$
 }
 (a):
 \begin{align*}
-    \boldsymbol{E}&=\dfrac{q}{4\pi\varepsilon_0r^2}\left(1+\frac{r}{\lambda}\right)e^{-\frac{r}{\lambda}}\boldsymbol{e}_r
+    \boldsymbol{E}&=\dfrac{q}{4\pi\varepsilon_0r^2}\left(1+\frac{r}{\lambda}\right)\mathrm{e}^{-\frac{r}{\lambda}}\boldsymbol{e}_r
 \end{align*}
 
 (b):
 \begin{align*}
-    U&=\int_{R}^{\infty}\dfrac{q}{4\pi\varepsilon_0r^2}\left(1+\frac{r}{\lambda}\right)e^{-\frac{r}{\lambda}}\dif r\\
-    &=\dfrac{q}{4\pi\varepsilon_0\lambda}\int_{R}^{\infty}\left(\frac{\lambda^2}{r^2}+\frac{\lambda}{r}\right)e^{-\frac{r}{\lambda}}\dif \frac{r}{\lambda}\\
-    &=-\dfrac{q}{4\pi\varepsilon_0\lambda}\int_{R}^{\infty}\left(\frac{\lambda^2}{r^2}--\frac{\lambda}{r}\right)e^{-\frac{r}{\lambda}}\dif -\frac{r}{\lambda}\\
-    &\xlongequal{u=-\frac{r}{\lambda}}-\dfrac{q}{4\pi\varepsilon_0\lambda}\int_{-\frac{R}{\lambda}}^{-\infty}\left(\frac{1}{u^2}-\frac{1}{u}\right)e^{u}\dif u\\
-    &=-\left.\frac{1}{u}e^{u}\right|_{-\frac{R}{\lambda}}^{-\infty}\dfrac{q}{4\pi\varepsilon_0\lambda}\\
-    &=e^{-\frac{R}{\lambda}}\dfrac{q}{4\pi\varepsilon_0R}
+    U&=\int_{R}^{\infty}\dfrac{q}{4\pi\varepsilon_0r^2}\left(1+\frac{r}{\lambda}\right)\mathrm{e}^{-\frac{r}{\lambda}}\dif r\\
+    &=\dfrac{q}{4\pi\varepsilon_0\lambda}\int_{R}^{\infty}\left(\frac{\lambda^2}{r^2}+\frac{\lambda}{r}\right)\mathrm{e}^{-\frac{r}{\lambda}}\dif \frac{r}{\lambda}\\
+    &=-\dfrac{q}{4\pi\varepsilon_0\lambda}\int_{R}^{\infty}\left(\frac{\lambda^2}{r^2}--\frac{\lambda}{r}\right)\mathrm{e}^{-\frac{r}{\lambda}}\dif -\frac{r}{\lambda}\\
+    &\xlongequal{u=-\frac{r}{\lambda}}-\dfrac{q}{4\pi\varepsilon_0\lambda}\int_{-\frac{R}{\lambda}}^{-\infty}\left(\frac{1}{u^2}-\frac{1}{u}\right)\mathrm{e}^{u}\dif u\\
+    &=-\left.\frac{1}{u}\mathrm{e}^{u}\right|_{-\frac{R}{\lambda}}^{-\infty}\dfrac{q}{4\pi\varepsilon_0\lambda}\\
+    &=\mathrm{e}^{-\frac{R}{\lambda}}\dfrac{q}{4\pi\varepsilon_0R}
 \end{align*}
 
 (c):
 \begin{align*}
-    \oiint_S\boldsymbol{E}\cdot\dif\boldsymbol{S}&=4\pi R^2\dfrac{q}{4\pi\varepsilon_0R^2}\left(1+\frac{R}{\lambda}\right)e^{-\frac{r}{\lambda}}
-    =\dfrac{q}{\varepsilon_0}\left(1+\frac{R}{\lambda}\right)e^{-\frac{r}{\lambda}}\\
-    \frac{1}{\lambda^2}\iiint_VU\dif\tau&=4\pi\frac{1}{\lambda^2}\int_0^Re^{-\frac{r}{\lambda}}\dfrac{q}{4\pi\varepsilon_0r}r^2\dif r\\
-    &=\int_0^R-\frac{r}{\lambda}e^{-\frac{r}{\lambda}}\dfrac{q}{\varepsilon_0}\dif -\frac{r}{\lambda}\\
-    &\xlongequal{u=-\frac{r}{\lambda}}\int_0^{-\frac{R}{\lambda}}ue^{u}\dfrac{q}{\varepsilon_0}\dif u\\
-    &=\left.\left(u-1\right)e^{u}\dfrac{q}{\varepsilon_0}\right|_0^{-\frac{R}{\lambda}}\\
-    &=\left(-\frac{R}{\lambda}-1\right)e^{-\frac{R}{\lambda}}\dfrac{q}{\varepsilon_0}
+    \oiint_S\boldsymbol{E}\cdot\dif\boldsymbol{S}&=4\pi R^2\dfrac{q}{4\pi\varepsilon_0R^2}\left(1+\frac{R}{\lambda}\right)\mathrm{e}^{-\frac{r}{\lambda}}
+    =\dfrac{q}{\varepsilon_0}\left(1+\frac{R}{\lambda}\right)\mathrm{e}^{-\frac{r}{\lambda}}\\
+    \frac{1}{\lambda^2}\iiint_VU\dif\tau&=4\pi\frac{1}{\lambda^2}\int_0^R\mathrm{e}^{-\frac{r}{\lambda}}\dfrac{q}{4\pi\varepsilon_0r}r^2\dif r\\
+    &=\int_0^R-\frac{r}{\lambda}\mathrm{e}^{-\frac{r}{\lambda}}\dfrac{q}{\varepsilon_0}\dif -\frac{r}{\lambda}\\
+    &\xlongequal{u=-\frac{r}{\lambda}}\int_0^{-\frac{R}{\lambda}}u\mathrm{e}^{u}\dfrac{q}{\varepsilon_0}\dif u\\
+    &=\left.\left(u-1\right)\mathrm{e}^{u}\dfrac{q}{\varepsilon_0}\right|_0^{-\frac{R}{\lambda}}\\
+    &=\left(-\frac{R}{\lambda}-1\right)\mathrm{e}^{-\frac{R}{\lambda}}\dfrac{q}{\varepsilon_0}
     +\dfrac{q}{\varepsilon_0}\\
      \frac{q}{\varepsilon_0}&=\oiint_S\boldsymbol{E}\cdot\dif\boldsymbol{S}+\frac{1}{\lambda^2}\iiint_VU\dif\tau
 \end{align*}

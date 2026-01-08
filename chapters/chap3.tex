@@ -2,7 +2,7 @@
 
 \section{物质中的电场}
 \subsection{极化}
-\subsubsection{电介质}
+\subsubsection{诱导偶极子}
 诱导偶极矩:
 \begin{align*}
     \boldsymbol{d}=\alpha\boldsymbol{E}
@@ -28,13 +28,73 @@ $\alpha$称为原子极化率
 \[
 \boldsymbol d
 =
-q\,\boldsymbol s
+q\boldsymbol s
 =
-4\pi\varepsilon_0 a^3\,\boldsymbol E_0.
+4\pi\varepsilon_0 a^3\boldsymbol E_0
 \]
 
 
 \begin{equation}{
-\alpha = 4\pi\varepsilon_0 a^3.
+\alpha = 4\pi\varepsilon_0 a^3
 }
 \end{equation}
+\subsubsection{偶极子在电场}
+偶极子在电场中的力矩:
+\begin{equation}
+    \boldsymbol{N}=\boldsymbol{d}\times\boldsymbol{E}
+\end{equation}
+
+偶极子在电场中的能量:
+\begin{align*}
+    U&=\int \rho U_{ext}\dif \tau\\
+    &=-\int \boldsymbol{d}\cdot\boldsymbol{\nabla}\delta(\boldsymbol{r}) U_{ext}\dif \tau\\
+    &=\int \boldsymbol{d}\cdot\delta(\boldsymbol{r}) \boldsymbol{\nabla}U_{ext}\dif \tau\\
+    &=-\boldsymbol{d}\cdot\boldsymbol{E}
+\end{align*}
+
+偶极子在电场中的力:
+\begin{align*}
+    \boldsymbol{F}&=-\boldsymbol{\nabla}U\\
+    &=\boldsymbol{\nabla}(\boldsymbol{d}\cdot\boldsymbol{E})\\
+    &=(\boldsymbol{d}\cdot\boldsymbol{\nabla})\boldsymbol{E}
+    +(\boldsymbol{E}\cdot\boldsymbol{\nabla})\boldsymbol{d}\\
+    &=(\boldsymbol{d}\cdot\boldsymbol{\nabla})\boldsymbol{E}
+\end{align*}
+
+\mysssec{一个氢原子（其玻尔半径为$a$）位于两个相距$l$的金属板中间，估计在这个装置中电离原子所需的电压为多少。}
+\begin{align*}
+    qs
+&=
+4\pi\varepsilon_0 a^3 E_0\\
+    U
+&=
+\frac{4\pi\varepsilon_0 a^3l}{qs} \\
+\end{align*}
+\mysssec{基态氢原子电子云其电荷密度为$\rho=\dfrac{e}{\pi a^3}\mathrm{e}^{-\frac{2r}{a}}$, 求极化率}
+\begin{align*}
+    E&=\frac{1}{4\pi\varepsilon_0s^2}\int_{0}^{s}4\pi r^2\dfrac{e}{\pi a^3}\mathrm{e}^{-\frac{2r}{a}}\dif r\\
+    &=\frac{1}{4\pi\varepsilon_0s^2}\int_{0}^{s} -\frac{4r^2}{a^2}\dfrac{e}{2 }\mathrm{e}^{-\frac{2r}{a}}\dif -\frac{2r}{a}\\
+    &=-\frac{1}{4\pi\varepsilon_0s^2}\int_{0}^{-\frac{2s}{a}} \dfrac{e}{2 }u^2\mathrm{e}^u\dif u\\
+    &=-\frac{1}{4\pi\varepsilon_0s^2}\left. \dfrac{e}{2 }(u^2-2u+2)\mathrm{e}^u\right|_{0}^{-\frac{2s}{a}}\\
+    &=-\frac{1}{4\pi\varepsilon_0s^2}\dfrac{e}{2}(\frac{4s^2}{a^2}+\frac{4s}{a}+2)\mathrm{e}^{-\frac{2s}{a}}+\frac{1}{4\pi\varepsilon_0s^2}{e}\\
+    &\xlongequal{s<<a}\frac{1}{4\pi\varepsilon_0s^2}\dfrac{e}{2}(\frac{4s^2}{a^2}+\frac{4s}{a}+2)\frac{2s}{a}+\frac{e}{4\pi\varepsilon_0s^2}\\
+    &=\frac{ea}{2\pi\varepsilon_0s}\\
+    \alpha&=\frac{es2\pi\varepsilon_0s}{ea}=\frac{2\pi \varepsilon_0s^2}{a}
+\end{align*}
+\mysssec{证明相距为$\boldsymbol{r}$的两个偶极子的相互作用能为$U=\dfrac{\boldsymbol{d}_1\cdot\boldsymbol{d}_2-3(\boldsymbol{d}_1\cdot\boldsymbol{e}_r)(\boldsymbol{d}_2\cdot\boldsymbol{e}_r)}{4\pi\varepsilon_0r^3}$}
+\begin{align*}
+    U&=-\boldsymbol{d}_1\cdot\boldsymbol{E}_2\\
+    &=-\boldsymbol{d}_1\cdot\dfrac{3(\boldsymbol{d}_2\cdot\boldsymbol{e}_r)\boldsymbol{e}_r-\boldsymbol{d}_2}{4\pi\varepsilon_0r^3}\\
+    &=\dfrac{\boldsymbol{d}_1\cdot\boldsymbol{d}_2-3(\boldsymbol{d}_1\cdot\boldsymbol{e}_r)(\boldsymbol{d}_2\cdot\boldsymbol{e}_r)}{4\pi\varepsilon_0r^3}\\
+\end{align*}
+\mysssec{一个偶极子$\boldsymbol{d}$与一个点电荷$q$相距为，$\boldsymbol{d}$与$\boldsymbol{r}$的夹角为$\theta$。\\
+(a)作用在$\boldsymbol{d}$上的力为多少?\\
+(b)作用在$q$上的力为多少?}
+\begin{align*}
+    \boldsymbol{F}&=(\boldsymbol{d}\cdot\boldsymbol{\nabla})\boldsymbol{E}\\
+    &=q\dfrac{3(\boldsymbol{d}\cdot\boldsymbol{e}_r)\boldsymbol{e}_r-\boldsymbol{d}}{4\pi\varepsilon_0r^3}
+\end{align*}
+\begin{align*}
+    \boldsymbol{F}&=q\boldsymbol{E}\\
+    &=q\dfrac{3(\boldsymbol{d}\cdot\boldsymbol{e}_r)\boldsymbol{e}_r-\boldsymbol{d}}{4\pi\varepsilon_0r^3}
+\end{align*}

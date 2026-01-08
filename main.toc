@@ -48,11 +48,12 @@
 \contentsline {subsubsection}{\numberline {2.9.3}四极项}{52}{subsubsection.2.9.3}%
 \contentsline {subsubsection}{\numberline {2.9.4}四极矩矩阵的推导}{52}{subsubsection.2.9.4}%
 \contentsline {subsection}{\numberline {2.10}Green 互易定理}{54}{subsection.2.10}%
-\contentsline {paragraph}{情形 1：下板 \(z=0\) 置于单位电势}{56}{paragraph*.96}%
-\contentsline {paragraph}{情形 2：上板 \(z=d\) 置于单位电势}{56}{paragraph*.97}%
-\contentsline {paragraph}{计算左边}{56}{paragraph*.98}%
-\contentsline {paragraph}{计算右边}{56}{paragraph*.99}%
+\contentsline {paragraph}{情形 1：下板 \(z=0\) 置于单位电势}{56}{paragraph*.97}%
+\contentsline {paragraph}{情形 2：上板 \(z=d\) 置于单位电势}{56}{paragraph*.98}%
+\contentsline {paragraph}{计算左边}{56}{paragraph*.99}%
+\contentsline {paragraph}{计算右边}{56}{paragraph*.100}%
 \contentsline {subsection}{\numberline {2.11}习题}{57}{subsection.2.11}%
 \contentsline {section}{\numberline {3}物质中的电场}{72}{section.3}%
 \contentsline {subsection}{\numberline {3.1}极化}{72}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}电介质}{72}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}诱导偶极子}{72}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}偶极子在电场}{72}{subsubsection.3.1.2}%
