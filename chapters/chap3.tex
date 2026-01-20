@@ -68,7 +68,7 @@ q\boldsymbol s
 4\pi\varepsilon_0 a^3 E_0\\
     U
 &=
-\frac{4\pi\varepsilon_0 a^3l}{qs} \\
+\frac{4\pi\varepsilon_0 a^3l}{qs} 
 \end{align*}
 \mysssec{基态氢原子电子云其电荷密度为$\rho=\dfrac{e}{\pi a^3}\mathrm{e}^{-\frac{2r}{a}}$, 求极化率}
 \begin{align*}
@@ -92,9 +92,66 @@ q\boldsymbol s
 (b)作用在$q$上的力为多少?}
 \begin{align*}
     \boldsymbol{F}&=(\boldsymbol{d}\cdot\boldsymbol{\nabla})\boldsymbol{E}\\
-    &=q\dfrac{3(\boldsymbol{d}\cdot\boldsymbol{e}_r)\boldsymbol{e}_r-\boldsymbol{d}}{4\pi\varepsilon_0r^3}
+    &=(d_i\frac{\partial}{\partial x_i})E_j\boldsymbol{e}_j\\
+    &=(d_i\frac{\partial}{\partial x_i})\frac{qx_j}{4\pi\varepsilon_0r^3}\boldsymbol{e}_j\\
+    &=d_i\frac{q}{4\pi\varepsilon_0r^3}\boldsymbol{e}_j\frac{\partial x_j}{\partial x_i}
+    +(d_ix_j\frac{\partial}{\partial x_i})\frac{q}{4\pi\varepsilon_0r^3}\boldsymbol{e}_j\\
+    &=d_i\frac{q}{4\pi\varepsilon_0r^3}\boldsymbol{e}_j\delta_{ij}
+    -d_ix_j\frac{qx_i}{\pi\varepsilon_0r^4}\boldsymbol{e}_j\\
+    &=d_i\frac{q}{4\pi\varepsilon_0r^3}\boldsymbol{e}_i
+    -\boldsymbol{d}\cdot\boldsymbol{x}x_j\frac{q}{\pi\varepsilon_0r^4}\boldsymbol{e}_j\\
+    &=\boldsymbol{d}\frac{q}{4\pi\varepsilon_0r^3}
+    -\boldsymbol{d}\cdot\boldsymbol{x}\boldsymbol{x}\frac{q}{\pi\varepsilon_0r^4}
 \end{align*}
 \begin{align*}
     \boldsymbol{F}&=q\boldsymbol{E}\\
     &=q\dfrac{3(\boldsymbol{d}\cdot\boldsymbol{e}_r)\boldsymbol{e}_r-\boldsymbol{d}}{4\pi\varepsilon_0r^3}
 \end{align*}
+\subsection{极化物体的电场}
+\begin{equation}
+    U=\frac{1}{4\pi\varepsilon_0}
+\left(
+\iiint_V \frac{\rho_b(\boldsymbol r')}{|\boldsymbol r-\boldsymbol r'|}\dif\tau'
++
+\oiint_S \frac{\sigma_b(\boldsymbol r')}{|\boldsymbol r-\boldsymbol r'|}\dif S'
+\right)
+\end{equation}
+表面电荷:
+\begin{equation}
+    \sigma_b=\boldsymbol{P}\cdot\boldsymbol{\hat{n}}
+\end{equation}
+内部电荷:
+\begin{equation}
+    \rho_b=-\boldsymbol{\nabla}\cdot\boldsymbol{P}
+\end{equation}
+\mysssec{一个半径为$R$的球的极化强度矢量为
+$\boldsymbol P=k\boldsymbol r$\\
+(a)计算束缚电荷$\sigma_b$和$\rho_b$。\\
+(b)求出球内部和外部的电场。}
+(a):
+\begin{align*}
+    \sigma_b&=\boldsymbol{P}\cdot\boldsymbol{\hat{n}}\\
+    &=kR\\
+    \rho_b&=-\boldsymbol{\nabla}\cdot\boldsymbol{P}\\
+    &=-3k
+\end{align*}
+
+(b):
+\begin{align*}
+    \boldsymbol{E}&=\frac{\int_{0}^{r}4\pi kr'^3\dif r'}{4\pi r^2}\boldsymbol{e}_r\\
+    &=\frac{ kr^2}{4}\boldsymbol{e}_r
+\end{align*}
+
+球内体束缚电荷与表面束缚电荷的总量为
+\[
+Q
+=
+\int_V \rho_b\,\mathrm dV
++
+\oint_S \sigma_b\,\mathrm dS
+=
+(-3k)\frac{4\pi R^3}{3}
++
+kR\cdot 4\pi R^2
+=0.
+\]
