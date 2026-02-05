@@ -12,3 +12,5 @@
 *.bbl
 *.blg
 *.pdf
+*.xdv
+test
