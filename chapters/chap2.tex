@@ -196,7 +196,7 @@ $r<R$:
 
 因此, 体系的总静电能为
 \[
-U
+W
 =
 \sum_{i=1}^{N}\sum_{j=1}^{i-1}
 \frac{1}{4\pi\varepsilon_0}
@@ -207,7 +207,7 @@ U
 $U_{ij}=U_{ji}$, 
 而对所有 $i\neq j$ 的求和中每一对指标被计数两次, 故可将上式对称化为
 \[
-U
+W
 =
 \frac12
 \sum_{\substack{i,j=1\\ i\neq j}}^{N}
@@ -221,7 +221,7 @@ U
 \mysssec{连续电荷分布的能量表达式}
 对离散情形的自然推广给出
 \[
-U
+W
 =
 \frac{1}{2}\iiint \rho\phi\dif\tau.
 \]
@@ -235,7 +235,7 @@ U
 
 将其代入能量表达式, 得
 \[
-U
+W
 =
 -\frac{\varepsilon_0}{2}\iiint \phi\,\nabla^2\phi\,\dif\tau.
 \]
@@ -257,7 +257,7 @@ U
 
 代入得
 \[
-U
+W
 =
 -\frac{\varepsilon_0}{2}
 \left[
@@ -283,13 +283,13 @@ U
 \]
 
 \[
-U
+W
 =
 \frac{\varepsilon_0}{2}\iiint (\nabla\phi)^2\,\dif\tau.
 \]
 
 \[
-U=\frac{\varepsilon_0}{2}\iiint E^2\,\dif\tau
+W=\frac{\varepsilon_0}{2}\iiint E^2\,\dif\tau
 \]
 \mysssec{电场能量密度}
 这表明：静电能可以视为分布在空间中的电场所携带的能量。
@@ -304,7 +304,7 @@ u
 \]
 \mysssec{考虑两个同心球面, 半径分别为$a$和$b$, 内球面带有电荷$q$ , 外球面带有电荷$-q$, 求总能量}
 \begin{align*}
-    U&=\frac{\varepsilon_0}{2}\iiint E^2\dif\tau
+    W&=\frac{\varepsilon_0}{2}\iiint E^2\dif\tau
     =\frac{\varepsilon_04\pi}{2}\int_a^b \left(\frac{q}{4\pi\varepsilon_0r^2}\right)^2r^2\dif r
     =\int_a^b \frac{q^2}{8\pi\varepsilon_0r^2}\dif r
     =\frac{q^2}{8\pi\varepsilon_0}\left(\frac{1}{b}-\frac{1}{a}\right)
@@ -1523,7 +1523,7 @@ P_{l}(\cos\theta)}\\
 B_{l} r^{-(l+2)}
 P_{l}(\cos\theta)}
 \end{align*}
-\mysssec{一个横截面为圆形(半径为$R$)的长金属管，管面沿圆周分为相等的四份，其中三份接地，余下的
+\mysssec{一个横截面为圆形(半径为$R$)的长金属管, 管面沿圆周分为相等的四份, 其中三份接地, 余下的
 一份维持常数电势$U_0$求出相对于$U_0$面的面上单位长度的电荷。}
 \begin{align*}
     U(\phi)&=\left(C_ms^{-m}+D_ms^{m}\right)\left(E_m\cos m\phi+F_m\sin m\phi\right)\\
@@ -1692,7 +1692,7 @@ r^2 r'^2
 \,\dif\tau
 \end{equation}
 
-将其改写为张量形式，引入四极矩张量
+将其改写为张量形式, 引入四极矩张量
 \begin{equation}
 Q_{ij}
 \equiv
@@ -1718,7 +1718,7 @@ Q_{ij} x_i x_j.
 
 \subsubsection{四极矩矩阵的推导}
 
-在远场条件 $r\gg r'$ 下，多极展开中 $l=2$ 项为
+在远场条件 $r\gg r'$ 下, 多极展开中 $l=2$ 项为
 \begin{equation}
 U_2(\boldsymbol r)
 =
@@ -1770,7 +1770,7 @@ r^2 r'^2
 \,\dif\tau
 \end{equation}
 
-将标量平方写成指标形式，
+将标量平方写成指标形式, 
 \[
 (\boldsymbol r\cdot\boldsymbol r')^2
 =
@@ -1792,7 +1792,7 @@ r'^2\delta_{ij}
 \right).
 \]
 
-代回电势表达式，可得
+代回电势表达式, 可得
 \begin{equation}
 U_2(\boldsymbol r)
 =
@@ -1831,7 +1831,7 @@ Q_{ii}=0,
 \]
 即 $Q_{ij}$ 为对称无迹二阶张量。
 
-最终，四极项电势可写为矩阵形式
+最终, 四极项电势可写为矩阵形式
 \begin{equation}
 U_2(\boldsymbol r)
 =
@@ -2005,7 +2005,7 @@ U_2\rho_1 - U_1\rho_2
 \bigr).
 \]
 
-注意到如下恒等式（可直接验证)：
+注意到如下恒等式(可直接验证)：
 \[
 \nabla\cdot
 \bigl(
@@ -2095,7 +2095,7 @@ q\,U_2(\boldsymbol  r_0).
 
 在此意义下, 互易定理仍然成立。
 
-考虑两块无限大、相互平行的理想导体平板，
+考虑两块无限大、相互平行的理想导体平板, 
 分别位于
 \[
 z=0,\qquad z=d,
@@ -2105,7 +2105,7 @@ z=0,\qquad z=d,
 U=0 \quad \text{于 } z=0,d.
 \]
 
-在两板之间放置一个点电荷 \(q\)，其位置为
+在两板之间放置一个点电荷 \(q\), 其位置为
 \[
 \boldsymbol  r_0=(0,0,x),\qquad 0<x<d.
 \]
@@ -2124,10 +2124,10 @@ Q_2=\int_{z=d}\sigma_2\,\dif S.
 
 \begin{description}
   \item[系统 A]  
-  两平板接地，在 \(\boldsymbol  r_0\) 处放置点电荷 \(q\)
+  两平板接地, 在 \(\boldsymbol  r_0\) 处放置点电荷 \(q\)
 
   \item[系统 B]  
-  去掉点电荷，仅将 \emph{其中一块} 平板置于单位电势，
+  去掉点电荷, 仅将 \emph{其中一块} 平板置于单位电势, 
   另一块保持接地
 \end{description}
 
@@ -2136,8 +2136,8 @@ Q_2=\int_{z=d}\sigma_2\,\dif S.
 
 \paragraph{情形 1：下板 \(z=0\) 置于单位电势}
 
-由于几何与边界条件均为平移对称，
-系统 B 的电势仅与 \(z\) 有关，满足拉普拉斯方程：
+由于几何与边界条件均为平移对称, 
+系统 B 的电势仅与 \(z\) 有关, 满足拉普拉斯方程：
 
 \[
 \frac{\dif^2 U}{\dif z^2}=0,
@@ -2188,8 +2188,8 @@ q\,U_B(\boldsymbol  r_0)
 
 \paragraph{计算右边}
 
-系统 B 中没有体电荷，只有导体表面的诱导电荷。
-由于平板接地，导体表面电势恒为零，因此：
+系统 B 中没有体电荷, 只有导体表面的诱导电荷。
+由于平板接地, 导体表面电势恒为零, 因此：
 
 \[
 \int \rho_B U_A\,\dif \tau
@@ -2207,7 +2207,7 @@ U_A=0 \quad \text{于导体表面}
 \]
 
 唯一剩下的贡献来自于
-系统 B 中被置于单位电势的那块板，
+系统 B 中被置于单位电势的那块板, 
 其总电荷记为 \(Q\)。
 
 于是：
@@ -2867,9 +2867,9 @@ k\cos(\frac{\pi z}{a})$}
     U=\int_{-a}^{a}\frac{\lambda}{4\pi\varepsilon_0\sqrt{r^2+a^2-2ra\cos\theta}}\dif z'
 \end{align*}
 不想写
-\mysssec{一个理想的电偶极子位于原点，方向沿$z$轴方向。一个电荷从$xy$平面上
-的一点由静止开始释放。证明它在一个半圆弧上往复运动，就像挂在原点的一个单摆一样。}
-由于体系绕 $z$ 轴轴对称，且初始条件取在某一固定平面内，可令
+\mysssec{一个理想的电偶极子位于原点, 方向沿$z$轴方向。一个电荷从$xy$平面上
+的一点由静止开始释放。证明它在一个半圆弧上往复运动, 就像挂在原点的一个单摆一样。}
+由于体系绕 $z$ 轴轴对称, 且初始条件取在某一固定平面内, 可令
 \[
 \dot\phi=0,
 \]
@@ -2893,7 +2893,7 @@ L
 \delta\theta = -\varepsilon\,\sin\theta .
 \end{equation}
 
-在该变换下，势能的变分为
+在该变换下, 势能的变分为
 \[
 \delta V
 =
@@ -2907,7 +2907,7 @@ L
 =0.
 \]
 
-动能的变分可以直接计算，结果为一个全时间导数：
+动能的变分可以直接计算, 结果为一个全时间导数：
 \[
 \delta T
 =
@@ -2927,7 +2927,7 @@ r^2\dot\theta\sin\theta
 该变换是拉格朗日量的一个连续对称性。
 
 
-由 Noether 定理，对应的守恒量为
+由 Noether 定理, 对应的守恒量为
 \[
 Q
 =
@@ -2956,7 +2956,7 @@ Q
 \frac{\dif}{\dif t}\bigl(r\sin^2\theta\bigr).
 \]
 
-由于 $Q$ 为常数，得到几何不变量
+由于 $Q$ 为常数, 得到几何不变量
 \begin{equation}
 {
 r\sin^2\theta = \text{const}.
@@ -2964,7 +2964,7 @@ r\sin^2\theta = \text{const}.
 \end{equation}
 
 
-在包含 $z$ 轴的运动平面内，引入
+在包含 $z$ 轴的运动平面内, 引入
 \[
 \rho = r\sin\theta, \qquad z=r\cos\theta .
 \]
@@ -2983,8 +2983,8 @@ r=\sqrt{\rho^2+z^2},
 \[
 (\rho^2-\tfrac{C}{2})^2+z^2=(\tfrac{C}{2})^2,
 \]
-这是一个圆的方程，其圆心位于 $(\rho,z)=(C/2,0)$，半径为 $C/2$，
+这是一个圆的方程, 其圆心位于 $(\rho,z)=(C/2,0)$, 半径为 $C/2$, 
 且圆经过原点。
 
-因此，试探电荷的轨迹是一条以原点为端点的半圆弧。
+因此, 试探电荷的轨迹是一条以原点为端点的半圆弧。
 \newpage

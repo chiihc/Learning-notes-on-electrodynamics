@@ -1,2 +1,14 @@
 /PDF
 /.vscode
+*.txt
+*.aux
+*.log
+*.toc
+*.out
+*.gz
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.bbl
+*.blg
+*.pdf

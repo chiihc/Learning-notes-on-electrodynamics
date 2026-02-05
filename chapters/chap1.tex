@@ -338,9 +338,17 @@ d S_3 = h_1 h_2 \dif u_1 \dif u_2
     &=\frac{1}{h_1 h_2 h_3}\frac{\partial}{\partial u_i}\left(h_1 h_2 h_3\dfrac{\dfrac{1}{h_i}\dfrac{\partial f}{\partial u_i}}{h_i}\right)\nonumber\\
     &=\frac{1}{h_1 h_2 h_3}\frac{\partial}{\partial u_i}\left(h_1 h_2 h_3\dfrac{{\partial f}}{h_i^2\partial u_i}\right)
 \end{align}
+\begin{align}
+    \boldsymbol{\nabla}^2\boldsymbol{A}
+    =\frac{1}{h_1 h_2 h_3}\frac{\partial}{\partial u_i}\left(h_1 h_2 h_3\dfrac{{\partial A_i\boldsymbol{e}_i}}{h_i^2\partial u_i}\right)
+\end{align}
 对于直角坐标
 \begin{equation}
-    \boldsymbol{\nabla}^2=\frac{\partial^2}{\partial x_i^2}
+    \boldsymbol{\nabla}^2f=\frac{\partial^2f}{\partial x_i^2}
+\end{equation}
+\begin{equation}
+    \boldsymbol{\nabla}^2\boldsymbol{A}
+    =\dfrac{{\partial^2 A_i}}{\partial x_i^2}\boldsymbol{e}_i
 \end{equation}
 性质:
 \begin{align}
@@ -540,7 +548,7 @@ $\Delta\tau=h_1h_2h_3\,\Delta u_1\Delta u_2\Delta u_3$
 \end{equation}
 梯度
 \begin{align}
-    \nabla f&=\frac{1}{h_i}\frac{\partial f}{\partial u_i}{\boldsymbol e}_i=\dfrac{\partial}{\partial s}\boldsymbol{s}+\dfrac{1}{s}\dfrac{\partial}{\partial \phi}\boldsymbol{\phi}+\dfrac{\partial}{\partial z}\boldsymbol z
+    \boldsymbol\nabla f&=\frac{1}{h_i}\frac{\partial f}{\partial u_i}{\boldsymbol e}_i=\dfrac{\partial}{\partial s}\boldsymbol{s}+\dfrac{1}{s}\dfrac{\partial}{\partial \phi}\boldsymbol{\phi}+\dfrac{\partial}{\partial z}\boldsymbol z
 \end{align}
 散度
 \begin{equation}
@@ -590,7 +598,101 @@ $\Delta\tau=h_1h_2h_3\,\Delta u_1\Delta u_2\Delta u_3$
     +\frac{1}{s^2}\dfrac{{\partial^2 f}}{\partial \phi^2}
     +\dfrac{{\partial^2 f}}{\partial z^2}
 \end{align}
+\begin{align}
+\boldsymbol{\nabla}^2\boldsymbol{A}
+&=\frac{1}{s}\frac{\partial}{\partial s}\left(s\dfrac{{\partial A_i\boldsymbol{e}_i}}{\partial s}\right)
++\frac{1}{s^2}\dfrac{{\partial^2 A_i\boldsymbol{e}_i}}{\partial \phi^2}
++\dfrac{{\partial^2 A_i\boldsymbol{e}_i}}{\partial z^2}\nonumber\\
+\boldsymbol{\nabla}^2\boldsymbol{A}_s
+&=\frac{1}{s}\frac{\partial}{\partial s}\left(s\dfrac{{\partial A_s\boldsymbol{e}_s}}{\partial s}\right)
++\frac{1}{s^2}\dfrac{{\partial^2 A_s\boldsymbol{e}_s}}{\partial \phi^2}
++\dfrac{{\partial^2 A_s\boldsymbol{e}_s}}{\partial z^2}\nonumber\\
+\boldsymbol{\nabla}^2\boldsymbol{A}_s
+&=\frac{1}{s}\frac{\partial}{\partial s}\left(s\dfrac{{\partial A_s}}{\partial s}\right)\boldsymbol{e}_s
++\frac{1}{s^2}\dfrac{\partial}{\partial \phi}\left(A_s\dfrac{{\partial \boldsymbol{e}_s}}{\partial \phi}
++\boldsymbol{e}_s\dfrac{{\partial A_s}}{\partial \phi}\right)
++\dfrac{{\partial^2 A_s}}{\partial z^2}\boldsymbol{e}_s\nonumber\\
+\boldsymbol{\nabla}^2\boldsymbol{A}_s
+&=\frac{1}{s}\frac{\partial}{\partial s}\left(s\dfrac{{\partial A_s}}{\partial s}\right)\boldsymbol{e}_s
++\frac{1}{s^2}\dfrac{\partial}{\partial \phi}\left(A_s\boldsymbol{e}_\phi
++\boldsymbol{e}_s\dfrac{{\partial A_s}}{\partial \phi}\right)
++\dfrac{{\partial^2 A_s}}{\partial z^2}\boldsymbol{e}_s\nonumber\\
+\boldsymbol{\nabla}^2\boldsymbol{A}_s
+&=\frac{1}{s}\frac{\partial}{\partial s}\left(s\dfrac{{\partial A_s}}{\partial s}\right)\boldsymbol{e}_s
++\frac{1}{s^2}\left(A_s\dfrac{\partial \boldsymbol{e}_\phi}{\partial \phi}
++\boldsymbol{e}_\phi\dfrac{\partial A_s}{\partial \phi}
++\dfrac{\partial\boldsymbol{e}_s}{\partial \phi}\dfrac{{\partial A_s}}{\partial \phi}
++\boldsymbol{e}_s\dfrac{{\partial^2 A_s}}{\partial \phi^2}\right)
++\dfrac{{\partial^2 A_s}}{\partial z^2}\boldsymbol{e}_s\nonumber\\
+\boldsymbol{\nabla}^2\boldsymbol{A}_s
+&=\frac{1}{s}\frac{\partial}{\partial s}\left(s\dfrac{{\partial A_s}}{\partial s}\right)\boldsymbol{e}_s
++\frac{1}{s^2}\left(-A_s\boldsymbol{e}_s
++\boldsymbol{e}_\phi\dfrac{\partial A_s}{\partial \phi}
++\boldsymbol{e}_\phi\dfrac{{\partial A_s}}{\partial \phi}
++\boldsymbol{e}_s\dfrac{{\partial^2 A_s}}{\partial \phi^2}\right)
++\dfrac{{\partial^2 A_s}}{\partial z^2}\boldsymbol{e}_s\nonumber\\
+\boldsymbol{\nabla}^2\boldsymbol{A}_s
+&=\frac{1}{s}\frac{\partial}{\partial s}\left(s\dfrac{{\partial A_s}}{\partial s}\right)\boldsymbol{e}_s
++\frac{1}{s^2}\left(-A_s\boldsymbol{e}_s
++2\boldsymbol{e}_\phi\dfrac{\partial A_s}{\partial \phi}
++\boldsymbol{e}_s\dfrac{{\partial^2 A_s}}{\partial \phi^2}\right)
++\dfrac{{\partial^2 A_s}}{\partial z^2}\boldsymbol{e}_s\\
+\boldsymbol{\nabla}^2\boldsymbol{A}_\phi
+&=\frac{1}{s}\frac{\partial}{\partial s}\left(s\dfrac{{\partial A_\phi}}{\partial s}\right)\boldsymbol{e}_\phi
++\frac{1}{s^2}\dfrac{{\partial}}{\partial \phi}\left(A_\phi\dfrac{{\partial \boldsymbol{e}_\phi }}{\partial \phi}
++\boldsymbol{e}_\phi\dfrac{{\partial A_\phi }}{\partial \phi}\right)
++\dfrac{{\partial^2 A_\phi}}{\partial z^2}\boldsymbol{e}_\phi\nonumber\\
+\boldsymbol{\nabla}^2\boldsymbol{A}_\phi
+&=\frac{1}{s}\frac{\partial}{\partial s}\left(s\dfrac{{\partial A_\phi}}{\partial s}\right)\boldsymbol{e}_\phi
++\frac{1}{s^2}\dfrac{{\partial}}{\partial \phi}\left(-A_\phi\boldsymbol{e}_s
++\boldsymbol{e}_\phi\dfrac{{\partial A_\phi }}{\partial \phi}\right)
++\dfrac{{\partial^2 A_\phi}}{\partial z^2}\boldsymbol{e}_\phi\nonumber\\
+\boldsymbol{\nabla}^2\boldsymbol{A}_\phi
+&=\frac{1}{s}\frac{\partial}{\partial s}\left(s\dfrac{{\partial A_\phi}}{\partial s}\right)\boldsymbol{e}_\phi
++\frac{1}{s^2}\left(-\boldsymbol{e}_s\dfrac{{\partial A_\phi}}{\partial \phi}
+-A_\phi\dfrac{{\partial\boldsymbol{e}_s}}{\partial \phi}
++\boldsymbol{e}_\phi\dfrac{{\partial^2 A_\phi }}{\partial \phi^2}
++\dfrac{{\partial\boldsymbol{e}_\phi}}{\partial \phi}\dfrac{{\partial A_\phi }}{\partial \phi}\right)
++\dfrac{{\partial^2 A_\phi}}{\partial z^2}\boldsymbol{e}_\phi\nonumber\\
+\boldsymbol{\nabla}^2\boldsymbol{A}_\phi
+&=\frac{1}{s}\frac{\partial}{\partial s}\left(s\dfrac{{\partial A_\phi}}{\partial s}\right)\boldsymbol{e}_\phi
++\frac{1}{s^2}\left(-\boldsymbol{e}_s\dfrac{{\partial A_\phi}}{\partial \phi}
+-A_\phi\boldsymbol{e}_\phi
++\boldsymbol{e}_\phi\dfrac{{\partial^2 A_\phi }}{\partial \phi^2}
+-\boldsymbol{e}_s\dfrac{{\partial A_\phi }}{\partial \phi}\right)
++\dfrac{{\partial^2 A_\phi}}{\partial z^2}\boldsymbol{e}_\phi\nonumber\\
+\boldsymbol{\nabla}^2\boldsymbol{A}_\phi
+&=\frac{1}{s}\frac{\partial}{\partial s}\left(s\dfrac{{\partial A_\phi}}{\partial s}\right)\boldsymbol{e}_\phi
++\frac{1}{s^2}\left(-2\boldsymbol{e}_s\dfrac{{\partial A_\phi}}{\partial \phi}
+-A_\phi\boldsymbol{e}_\phi
++\boldsymbol{e}_\phi\dfrac{{\partial^2 A_\phi }}{\partial \phi^2}\right)
++\dfrac{{\partial^2 A_\phi}}{\partial z^2}\boldsymbol{e}_\phi
+\end{align}
+\begin{align}
+    (\boldsymbol{\nabla}^2\boldsymbol{A})_s&=\frac{1}{s}\frac{\partial}{\partial s}\left(s\dfrac{{\partial A_s}}{\partial s}\right)\boldsymbol{e}_s
++\frac{1}{s^2}\left(-A_s
+-2\dfrac{\partial A_\phi}{\partial \phi}
++\dfrac{{\partial^2 A_s}}{\partial \phi^2}\right)\boldsymbol{e}_s
++\dfrac{{\partial^2 A_s}}{\partial z^2}\boldsymbol{e}_s\\
+(\boldsymbol{\nabla}^2\boldsymbol{A})_\phi&=
+\frac{1}{s}\frac{\partial}{\partial s}\left(s\dfrac{{\partial A_\phi}}{\partial s}\right)\boldsymbol{e}_\phi
++\frac{1}{s^2}\left(2\dfrac{{\partial A_\phi}}{\partial \phi}
+-A_\phi
++\dfrac{{\partial^2 A_\phi }}{\partial \phi^2}\right)\boldsymbol{e}_\phi
++\dfrac{{\partial^2 A_\phi}}{\partial z^2}\boldsymbol{e}_\phi\\
+(\boldsymbol{\nabla}^2\boldsymbol{A})_z
+&=\frac{1}{s}\frac{\partial}{\partial s}\left(s\dfrac{{\partial A_z}}{\partial s}\right)\boldsymbol{e}_z
+    +\frac{1}{s^2}\dfrac{{\partial^2 A_z}}{\partial \phi^2}\boldsymbol{e}_z
+    +\dfrac{{\partial^2 A_z}}{\partial z^2}\boldsymbol{e}_z
+\end{align}
 \subsubsection{球坐标系}
+\begin{equation}\left\{
+    \begin{aligned}
+        \boldsymbol{e}_r&=\sin\theta\cos\phi&\sin\theta\sin\phi&\cos\theta\\
+        \boldsymbol{e}_\theta&=\cos\theta\cos\phi&\cos\theta\sin\phi&-\sin\theta\\
+        \boldsymbol{e}_\phi&=-\sin\phi&\cos\phi&0
+    \end{aligned}\right.
+\end{equation}
 将球坐标系坐标转化为直角系坐标的方式为
 \begin{equation}
     x_1=r\cos\phi\sin\theta,\ x_2=r\sin\phi\sin\theta,\ x_3=r\cos\theta
@@ -622,7 +724,7 @@ $\Delta\tau=h_1h_2h_3\,\Delta u_1\Delta u_2\Delta u_3$
 梯度
 \begin{align}
     \nabla f&=\frac{1}{h_i}\frac{\partial f}{\partial u_i}{\boldsymbol e}_i
-    =\dfrac{\partial}{\partial r}\boldsymbol{r}+\dfrac{1}{r\sin\theta}\dfrac{\partial}{\partial \phi}\boldsymbol{\phi}+\frac{1}{r}\dfrac{\partial}{\partial \theta}\boldsymbol{\theta}
+    =\dfrac{\partial f}{\partial r}\boldsymbol{r}+\dfrac{1}{r\sin\theta}\dfrac{\partial f}{\partial \phi}\boldsymbol{\phi}+\frac{1}{r}\dfrac{\partial f}{\partial \theta}\boldsymbol{\theta}
 \end{align}
 散度
 \begin{align}
@@ -634,7 +736,7 @@ $\Delta\tau=h_1h_2h_3\,\Delta u_1\Delta u_2\Delta u_3$
 \end{align}
 旋度
 \begin{align}
-    &\boldsymbol{\nabla}\times\boldsymbol{a}\\
+    &\boldsymbol{\nabla}\times\boldsymbol{a}\nonumber\\
     =&\frac{h_i}{h_1h_2h_3}\varepsilon_{ijk}\frac{\partial (h_ka_k)}{\partial u_j}\boldsymbol{e}_i\nonumber\\
     =&\frac{h_i}{r^2\sin\theta}\varepsilon_{ijk}\frac{\partial (h_ka_k)}{\partial u_j}\boldsymbol{e}_i\nonumber\\
     =&\frac{1}{r^2\sin\theta}\left(\varepsilon_{123}\frac{\partial ra_3}{\partial u_2}\boldsymbol{e}_1
@@ -680,6 +782,178 @@ $\Delta\tau=h_1h_2h_3\,\Delta u_1\Delta u_2\Delta u_3$
     &=\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\dfrac{{\partial f}}{\partial r}\right)
     +\frac{1}{r^2\sin^2\theta}\dfrac{{\partial^2 f}}{\partial \phi^2}
     +\frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta\dfrac{{\partial f}}{\partial \theta}\right)
+\end{align}
+
+\begin{align}
+\boldsymbol{\nabla}^2\boldsymbol{A}=&\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\dfrac{{\partial A_i\boldsymbol{e}_i}}{\partial r}\right)
++\frac{1}{r^2\sin^2\theta}\dfrac{{\partial^2 A_i\boldsymbol{e}_i}}{\partial \phi^2}
++\frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta\dfrac{{\partial A_i\boldsymbol{e}_i}}{\partial \theta}\right)\nonumber\\
+\boldsymbol{\nabla}^2\boldsymbol{A}_r=&\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\dfrac{{\partial A_r\boldsymbol{e}_r}}{\partial r}\right)
++\frac{1}{r^2\sin^2\theta}\dfrac{{\partial^2 A_r\boldsymbol{e}_r}}{\partial \phi^2}
++\frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta\dfrac{{\partial A_r\boldsymbol{e}_r}}{\partial \theta}\right)\nonumber\\
+&\frac{1}{r^2\sin^2\theta}\dfrac{{\partial}}{\partial \phi}\left(\boldsymbol{e}_r\dfrac{{\partial A_r}}{\partial \phi}
++A_r\dfrac{{\partial \boldsymbol{e}_r}}{\partial \phi}\right)
++\frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta\boldsymbol{e}_r\dfrac{{\partial A_r}}{\partial \theta}
++\sin\theta A_r\dfrac{{\partial \boldsymbol{e}_r}}{\partial \theta}\right)\nonumber\\
+=&\frac{1}{r^2\sin^2\theta}\dfrac{{\partial}}{\partial \phi}\left(\boldsymbol{e}_r\dfrac{{\partial A_r}}{\partial \phi}
++\sin\theta A_r\boldsymbol{e}_\phi\right)
++\frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta\boldsymbol{e}_r\dfrac{{\partial A_r}}{\partial \theta}
++\sin\theta A_r\boldsymbol{e}_\theta\right)\nonumber
+\end{align}
+\begin{align}
+&\frac{1}{r^2\sin^2\theta}\left(\dfrac{{\partial\boldsymbol{e}_r}}{\partial \phi}\dfrac{{\partial A_r}}{\partial \phi}
++\boldsymbol{e}_r\dfrac{{\partial^2 A_r}}{\partial \phi^2}
++\sin\theta\boldsymbol{e}_\phi\dfrac{{\partial A_r}}{\partial \phi} 
++\sin\theta A_r\dfrac{{\partial\boldsymbol{e}_\phi}}{\partial \phi}\right)\nonumber\\
+=&\frac{1}{r^2\sin^2\theta}\left(2\sin\theta\dfrac{{\partial A_r}}{\partial \phi}\boldsymbol{e}_\phi
++\dfrac{{\partial^2 A_r}}{\partial \phi^2}\boldsymbol{e}_r
+-\sin^2\theta A_r\boldsymbol{e}_r
+-\sin\theta\cos\theta A_r\boldsymbol{e}_\theta\right)\nonumber\\
+=&\frac{1}{r^2\sin\theta}\left(2\dfrac{{\partial A_r}}{\partial \phi}\boldsymbol{e}_\phi
++\frac{1}{\sin\theta}\dfrac{{\partial^2 A_r}}{\partial \phi^2}\boldsymbol{e}_r
+-\sin\theta A_r\boldsymbol{e}_r
+-\cos\theta A_r\boldsymbol{e}_\theta\right)\nonumber
+\end{align}
+\begin{align*}
+&\frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta\boldsymbol{e}_r\dfrac{{\partial A_r}}{\partial \theta}
++\sin\theta A_r\boldsymbol{e}_\theta\right)\\
+=&\frac{1}{r^2\sin\theta}\left(\cos\theta\dfrac{{\partial A_r}}{\partial \theta}\boldsymbol{e}_r
++\sin\theta\frac{\partial\boldsymbol{e}_r}{\partial \theta}\dfrac{{\partial A_r}}{\partial \theta}
++\sin\theta\boldsymbol{e}_r\dfrac{{\partial^2 A_r}}{\partial \theta^2}
++\sin\theta\frac{\partial \boldsymbol{e}_\theta}{\partial \theta}A_r
++\cos\theta A_r\boldsymbol{e}_\theta
++\frac{\partial A_r}{\partial \theta}\sin\theta \boldsymbol{e}_\theta\right)\\
+=&\frac{1}{r^2\sin\theta}\left(\cos\theta\dfrac{{\partial A_r}}{\partial \theta}\boldsymbol{e}_r
++\sin\theta\boldsymbol{e}_\theta\dfrac{{\partial A_r}}{\partial \theta}
++\sin\theta\boldsymbol{e}_r\dfrac{{\partial^2 A_r}}{\partial \theta^2}
+-\sin\theta\boldsymbol{e}_rA_r
++\cos\theta A_r\boldsymbol{e}_\theta
++\frac{\partial A_r}{\partial \theta}\sin\theta \boldsymbol{e}_\theta\right)
+\end{align*}
+\begin{align*}
+    &\frac{1}{r^2\sin^2\theta}\dfrac{{\partial}}{\partial \phi}\left(\boldsymbol{e}_r\dfrac{{\partial A_r}}{\partial \phi}
++\sin\theta A_r\boldsymbol{e}_\phi\right)
++\frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta\boldsymbol{e}_r\dfrac{{\partial A_r}}{\partial \theta}
++\sin\theta A_r\boldsymbol{e}_\theta\right)\nonumber\\
+=&\frac{1}{r^2\sin\theta}\left(\cos\theta\dfrac{{\partial A_r}}{\partial \theta}\boldsymbol{e}_r
++2\sin\theta\boldsymbol{e}_\theta\dfrac{{\partial A_r}}{\partial \theta}
++\sin\theta\boldsymbol{e}_r\dfrac{{\partial^2 A_r}}{\partial \theta^2}
+-2\sin\theta\boldsymbol{e}_rA_r
++2\dfrac{{\partial A_r}}{\partial \phi}\boldsymbol{e}_\phi
++\frac{1}{\sin\theta}\dfrac{{\partial^2 A_r}}{\partial \phi^2}\boldsymbol{e}_r\right)
+\end{align*}
+\begin{align*}
+    \boldsymbol{\nabla}^2\boldsymbol{A}_\phi=&\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\dfrac{{\partial A_\phi\boldsymbol{e}_\phi}}{\partial r}\right)
++\frac{1}{r^2\sin^2\theta}\dfrac{{\partial^2 A_\phi\boldsymbol{e}_\phi}}{\partial \phi^2}
++\frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta\dfrac{{\partial A_\phi\boldsymbol{e}_\phi}}{\partial \theta}\right)\\
+\boldsymbol{\nabla}^2\boldsymbol{A}_\phi=&\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\dfrac{{\partial A_\phi\boldsymbol{e}_\phi}}{\partial r}\right)
++\frac{1}{r^2\sin^2\theta}\dfrac{\partial}{\partial \phi}\left(\dfrac{\partial A_\phi}{\partial \phi}\boldsymbol{e}_\phi
++A_\phi\dfrac{\partial \boldsymbol{e}_\phi}{\partial \phi}\right)
++\frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta\dfrac{{\partial A_\phi}}{\partial \theta}\boldsymbol{e}_\phi\right)\\
+&\frac{1}{r^2\sin^2\theta}\dfrac{\partial}{\partial \phi}\left(\dfrac{\partial A_\phi}{\partial \phi}\boldsymbol{e}_\phi
++A_\phi\dfrac{\partial \boldsymbol{e}_\phi}{\partial \phi}\right)
++\frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta\dfrac{{\partial A_\phi}}{\partial \theta}\boldsymbol{e}_\phi\right)\\
+=&\frac{1}{r^2\sin^2\theta}\dfrac{\partial}{\partial \phi}\left(\dfrac{\partial A_\phi}{\partial \phi}\boldsymbol{e}_\phi
+-\sin\theta A_\phi\boldsymbol{e}_r
+-\cos\theta A_\phi\boldsymbol{e}_\theta\right)
++\frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta\dfrac{{\partial A_\phi}}{\partial \theta}\boldsymbol{e}_\phi\right)\\
+&\frac{1}{r^2\sin^2\theta}\dfrac{\partial}{\partial \phi}\left(\dfrac{\partial A_\phi}{\partial \phi}\boldsymbol{e}_\phi
+-\sin\theta A_\phi\boldsymbol{e}_r
+-\cos\theta A_\phi\boldsymbol{e}_\theta\right)\\
+% =&\frac{1}{r^2\sin^2\theta}\left(\dfrac{\partial\boldsymbol{e}_\phi}{\partial \phi}\dfrac{\partial A_\phi}{\partial \phi}
+% +\dfrac{\partial^2 A_\phi}{\partial \phi^2}\boldsymbol{e}_\phi
+% -\dfrac{\partial A_\phi}{\partial \phi}\sin\theta \boldsymbol{e}_r
+% -\dfrac{\partial\boldsymbol{e}_r}{\partial \phi}\sin\theta A_\phi
+% -\dfrac{\partial A_\phi}{\partial \phi}\cos\theta \boldsymbol{e}_\theta
+% -\dfrac{\partial\boldsymbol{e}_\theta}{\partial \phi}\cos\theta A_\phi\right)\\
+=&\frac{1}{r^2\sin^2\theta}\left(\dfrac{\partial\boldsymbol{e}_\phi}{\partial \phi}\dfrac{\partial A_\phi}{\partial \phi}
++\dfrac{\partial^2 A_\phi}{\partial \phi^2}\boldsymbol{e}_\phi
+-\dfrac{\partial A_\phi}{\partial \phi}\sin\theta \boldsymbol{e}_r
+-\boldsymbol{e}_\phi\sin^2\theta A_\phi
+-\dfrac{\partial A_\phi}{\partial \phi}\cos\theta \boldsymbol{e}_\theta
+-\boldsymbol{e}_\phi\cos^2\theta A_\phi\right)\\
+=&\frac{1}{r^2\sin^2\theta}\left(-\sin\theta\boldsymbol{e}_r\dfrac{\partial A_\phi}{\partial \phi}
+-\cos\theta\boldsymbol{e}_\theta\dfrac{\partial A_\phi}{\partial \phi}
++\dfrac{\partial^2 A_\phi}{\partial \phi^2}\boldsymbol{e}_\phi
+-\dfrac{\partial A_\phi}{\partial \phi}\sin\theta \boldsymbol{e}_r
+-\dfrac{\partial A_\phi}{\partial \phi}\cos\theta \boldsymbol{e}_\theta
+-\boldsymbol{e}_\phi A_\phi\right)\\
+=&\frac{1}{r^2\sin^2\theta}\left(\dfrac{\partial^2 A_\phi}{\partial \phi^2}\boldsymbol{e}_\phi
+-2\dfrac{\partial A_\phi}{\partial \phi}\sin\theta \boldsymbol{e}_r
+-2\dfrac{\partial A_\phi}{\partial \phi}\cos\theta \boldsymbol{e}_\theta
+- A_\phi\boldsymbol{e}_\phi\right)\\
+&\frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta\dfrac{{\partial A_\phi}}{\partial \theta}\boldsymbol{e}_\phi\right)\\
+=&\frac{1}{r^2\sin\theta}\left(\frac{\partial\sin\theta}{\partial \theta}\dfrac{{\partial A_\phi}}{\partial \theta}\boldsymbol{e}_\phi
++\sin\theta\dfrac{\partial^2 A_\phi}{\partial \theta^2}\boldsymbol{e}_\phi
++\sin\theta\dfrac{{\partial A_\phi}}{\partial \theta}\frac{\partial\boldsymbol{e}_\phi}{\partial \theta}
+\right)\\
+=&\frac{1}{r^2\sin\theta}\left(\cos\theta\dfrac{{\partial A_\phi}}{\partial \theta}\boldsymbol{e}_\phi
++\sin\theta\dfrac{\partial^2 A_\phi}{\partial \theta^2}\boldsymbol{e}_\phi
+\right)
+\end{align*}
+\begin{align*}
+&\frac{1}{r^2\sin^2\theta}\dfrac{{\partial^2 A_\theta\boldsymbol{e}_\theta}}{\partial \phi^2}
++\frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta\dfrac{{\partial A_\theta\boldsymbol{e}_\theta}}{\partial \theta}\right)\nonumber\\
+=&\frac{1}{r^2\sin^2\theta}\dfrac{\partial}{\partial \phi}\left(\dfrac{\partial A_\theta}{\partial \phi}\boldsymbol{e}_\theta
++A_\theta\dfrac{\partial \boldsymbol{e}_\theta}{\partial \phi}\right)
++\frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta\dfrac{{\partial A_\theta}}{\partial \theta}\boldsymbol{e}_\theta
++A_\theta\sin\theta\dfrac{{\partial \boldsymbol{e}_\theta}}{\partial \theta}\right)\nonumber\\
+=&\frac{1}{r^2\sin^2\theta}\dfrac{\partial}{\partial \phi}\left(\dfrac{\partial A_\theta}{\partial \phi}\boldsymbol{e}_\theta
++\cos\theta A_\theta\boldsymbol{e}_\phi\right)
++\frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta\dfrac{{\partial A_\theta}}{\partial \theta}\boldsymbol{e}_\theta
+-A_\theta\sin\theta\boldsymbol{e}_r\right)\\
+&\frac{1}{r^2\sin^2\theta}\dfrac{\partial}{\partial \phi}\left(\dfrac{\partial A_\theta}{\partial \phi}\boldsymbol{e}_\theta
++\cos\theta A_\theta\boldsymbol{e}_\phi\right)\\
+=&\frac{1}{r^2\sin^2\theta}\left(\dfrac{\partial^2 A_\theta}{\partial \phi^2}\boldsymbol{e}_\theta
++\frac{\partial\boldsymbol{e}_\theta}{\partial \phi}\dfrac{\partial A_\theta}{\partial \phi}
++\cos\theta A_\theta\dfrac{\partial\boldsymbol{e}_\phi}{\partial \phi}
++\dfrac{\partial A_\theta}{\partial \phi}\cos\theta \boldsymbol{e}_\phi\right)\\
+=&\frac{1}{r^2\sin^2\theta}\left(\dfrac{\partial^2 A_\theta}{\partial \phi^2}\boldsymbol{e}_\theta
++2\cos\theta\boldsymbol{e}_\phi\dfrac{\partial A_\theta}{\partial \phi}
+-\sin\theta\cos\theta A_\theta\boldsymbol{e}_r
+-\cos^2\theta A_\theta\boldsymbol{e}_\theta\right)\\
+&\frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta\dfrac{{\partial A_\theta}}{\partial \theta}\boldsymbol{e}_\theta
+-A_\theta\sin\theta\boldsymbol{e}_r\right)\\
+=&\frac{1}{r^2\sin\theta}\left(\cos\theta\dfrac{{\partial A_\theta}}{\partial \theta}\boldsymbol{e}_\theta
++\sin\theta\dfrac{{\partial^2 A_\theta}}{\partial \theta^2}\boldsymbol{e}_\theta
++\sin\theta\dfrac{{\partial A_\theta}}{\partial \theta}\frac{\partial\boldsymbol{e}_\theta}{\partial \theta}
+-\frac{\partial A_\theta}{\partial \theta}\sin\theta\boldsymbol{e}_r
+-\cos\theta A_\theta\boldsymbol{e}_r
+-\frac{\partial\boldsymbol{e}_r}{\partial \theta}A_\theta\sin\theta\right)\\
+=&\frac{1}{r^2\sin\theta}\left(\cos\theta\dfrac{{\partial A_\theta}}{\partial \theta}\boldsymbol{e}_\theta
++\sin\theta\dfrac{{\partial^2 A_\theta}}{\partial \theta^2}\boldsymbol{e}_\theta
+-\sin\theta\dfrac{{\partial A_\theta}}{\partial \theta}\boldsymbol{e}_r
+-\frac{\partial A_\theta}{\partial \theta}\sin\theta\boldsymbol{e}_r
+-\cos\theta A_\theta\boldsymbol{e}_r
+-\boldsymbol{e}_\theta A_\theta\sin\theta\right)\\
+=&\frac{1}{r^2\sin\theta}\left(\cos\theta\dfrac{{\partial A_\theta}}{\partial \theta}\boldsymbol{e}_\theta
++\sin\theta\dfrac{{\partial^2 A_\theta}}{\partial \theta^2}\boldsymbol{e}_\theta
+-2\sin\theta\dfrac{{\partial A_\theta}}{\partial \theta}\boldsymbol{e}_r
+-\cos\theta A_\theta\boldsymbol{e}_r
+- A_\theta\sin\theta\boldsymbol{e}_\theta\right)
+\end{align*}
+\begin{align}
+(\boldsymbol{\nabla}^2\boldsymbol{A})_r=&\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\dfrac{{\partial A_r}}{\partial r}\right)+\frac{1}{r^2\sin^2\theta}\dfrac{{\partial^2 A_r}}{\partial \phi^2}\\
+&+\frac{1}{r^2\sin\theta}\left(\cos\theta\dfrac{{\partial A_r}}{\partial \theta}
++\sin\theta\dfrac{{\partial^2 A_r}}{\partial \theta^2}
+-2\sin\theta A_r
+-2\sin\theta\dfrac{{\partial A_\theta}}{\partial \theta}
+-2\cos\theta A_\theta
+-2\dfrac{\partial A_\phi}{\partial \phi}\right)\nonumber\\
+(\boldsymbol{\nabla}^2\boldsymbol{A})_\phi=&\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\dfrac{{\partial A_\phi}}{\partial r}\right)+\frac{1}{r^2\sin^2\theta}\left(\dfrac{\partial^2 A_\phi}{\partial \phi^2}
+- A_\phi
++2\cos\theta\dfrac{\partial A_\theta}{\partial \phi}\right)\\
+&+\frac{1}{r^2\sin\theta}\left(2\dfrac{{\partial A_r}}{\partial \phi}
++\cos\theta\dfrac{{\partial A_\phi}}{\partial \theta}
++\sin\theta\dfrac{\partial^2 A_\phi}{\partial \theta^2}\right)\nonumber\\
+(\boldsymbol{\nabla}^2\boldsymbol{A})_\theta
+=&\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\dfrac{{\partial A_\theta}}{\partial r}\right)
++\frac{1}{r^2\sin^2\theta}\left(\dfrac{{\partial^2 A_\theta}}{\partial \phi^2}-2\dfrac{\partial A_\phi}{\partial \phi}\cos\theta
+-\cos^2\theta A_\theta\right)\nonumber\\
+&+\frac{1}{r^2\sin\theta}\left(2\sin\theta\dfrac{{\partial A_r}}{\partial \theta}
++\cos\theta\dfrac{{\partial A_\theta}}{\partial \theta}
++\sin\theta\dfrac{{\partial^2 A_\theta}}{\partial \theta^2}
+- A_\theta\sin\theta\right)
 \end{align}
 \subsection{狄拉克函数与阶跃函数}
 

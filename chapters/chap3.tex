@@ -10,13 +10,13 @@
 $\alpha$称为原子极化率
 
 考虑一个简单的原子模型：  
-原子核位于原点，带电量 $+q$；  
-电子云为半径为 $a$ 的均匀带电球体，总电荷为 $-q$。
+原子核位于原点, 带电量 $+q$；  
+电子云为半径为 $a$ 的均匀带电球体, 总电荷为 $-q$。
 
-在无外场时，体系整体电中性，电偶极矩为零。
+在无外场时, 体系整体电中性, 电偶极矩为零。
 
 现施加一弱、均匀的外电场$E_0$
-假设外场足够弱，使电子云仅发生微小整体位移而保持形状不变。
+假设外场足够弱, 使电子云仅发生微小整体位移而保持形状不变。
 
 
 \[
@@ -61,7 +61,7 @@ q\boldsymbol s
     &=(\boldsymbol{d}\cdot\boldsymbol{\nabla})\boldsymbol{E}
 \end{align*}
 
-\mysssec{一个氢原子（其玻尔半径为$a$）位于两个相距$l$的金属板中间，估计在这个装置中电离原子所需的电压为多少。}
+\mysssec{一个氢原子(其玻尔半径为$a$)位于两个相距$l$的金属板中间, 估计在这个装置中电离原子所需的电压为多少。}
 \begin{align*}
     qs
 &=
@@ -87,7 +87,7 @@ q\boldsymbol s
     &=-\boldsymbol{d}_1\cdot\dfrac{3(\boldsymbol{d}_2\cdot\boldsymbol{e}_r)\boldsymbol{e}_r-\boldsymbol{d}_2}{4\pi\varepsilon_0r^3}\\
     &=\dfrac{\boldsymbol{d}_1\cdot\boldsymbol{d}_2-3(\boldsymbol{d}_1\cdot\boldsymbol{e}_r)(\boldsymbol{d}_2\cdot\boldsymbol{e}_r)}{4\pi\varepsilon_0r^3}\\
 \end{align*}
-\mysssec{一个偶极子$\boldsymbol{d}$与一个点电荷$q$相距为，$\boldsymbol{d}$与$\boldsymbol{r}$的夹角为$\theta$。\\
+\mysssec{一个偶极子$\boldsymbol{d}$与一个点电荷$q$相距为, $\boldsymbol{d}$与$\boldsymbol{r}$的夹角为$\theta$。\\
 (a)作用在$\boldsymbol{d}$上的力为多少?\\
 (b)作用在$q$上的力为多少?}
 \begin{align*}
@@ -155,3 +155,343 @@ Q
 kR\cdot 4\pi R^2
 =0.
 \]
+
+\mysssec{一个圆柱体, 半径为$a$, 长度为$L$, 具有均匀极化强度$\boldsymbol{P}$, 方向垂直圆柱面轴线\\
+(a)求电场强度\\
+(b)证明$\boldsymbol{E}=\dfrac{a^2}{2\varepsilon_0s^2}[2(\boldsymbol{P}\cdot\boldsymbol{e}_s)\boldsymbol{e}_s-\boldsymbol{P}]$}
+
+(a):边界条件
+\begin{align*}
+    \sigma_b=\boldsymbol{P}\cdot\boldsymbol{\hat{n}}=P\cos \phi
+\end{align*}
+
+球内
+\begin{align*}
+    U&=\sum_{m=0}^{\infty}D_ms^{m}\cos m\phi+D_m's^{-m}\cos m\phi\\
+    -\varepsilon_0\frac{\partial U}{\partial s}
+    &=\sum_{m=0}^{\infty}\varepsilon_0mD_ms^{m-1}\cos m\phi
+    -\varepsilon_0mD_m's^{-m-1}\cos m\phi\\
+    \sigma_b
+    &=\sum_{m=0}^{\infty}\varepsilon_0mD_ms^{m-1}\cos m\phi
+    -\varepsilon_0mD_m's^{-m-1}\cos m\phi\\
+    P\cos \phi
+    &=\sum_{m=0}^{\infty}\varepsilon_0mD_ms^{m-1}\cos m\phi
+    -\varepsilon_0mD_m's^{-m-1}\cos m\phi\\
+    P&=\varepsilon_0D_1
+    -\varepsilon_0D_1's^{-2}
+\end{align*}
+
+球外
+\begin{align*}
+    D_1'&=-\frac{a^2P}{2\varepsilon_0}
+\end{align*}
+
+(b):
+\begin{align*}
+    U&=-\frac{a^2P}{2\varepsilon_0}s^{-1}\cos\phi\\
+    \boldsymbol{E}&=-\boldsymbol{\nabla}U\\
+    \boldsymbol{E}&=\dfrac{\partial U}{\partial s}\boldsymbol{s}+\dfrac{1}{s}\dfrac{\partial U}{\partial \phi}\boldsymbol{\phi}\\
+    \boldsymbol{E}&=-\dfrac{\partial \frac{a^2P}{2\varepsilon_0}s^{-1}\cos\phi}{\partial s}\boldsymbol{s}
+    -\dfrac{1}{s}\dfrac{\partial \frac{a^2P}{2\varepsilon_0}s^{-1}\cos\phi}{\partial \phi}\boldsymbol{\phi}\\
+    \boldsymbol{E}&=\frac{a^2P}{2\varepsilon_0}s^{-2}\cos\phi\boldsymbol{s}
+    +\dfrac{1}{s}\frac{a^2P}{2\varepsilon_0}s^{-1}\sin\phi\boldsymbol{\phi}
+\end{align*}
+\begin{align*}
+    \dfrac{a^2}{2\varepsilon_0s^2}[2(\boldsymbol{P}\cdot\boldsymbol{e}_s)\boldsymbol{e}_s-\boldsymbol{P}]
+    &=\dfrac{a^2}{2\varepsilon_0s^2}(2P_s\boldsymbol{e}_s-P_s\boldsymbol{e}_s-P_\phi\boldsymbol{e}_\phi)\\
+    &=\dfrac{a^2}{2\varepsilon_0s^2}(P_s\boldsymbol{e}_s-P_\phi\boldsymbol{e}_\phi)
+\end{align*}
+\subsection{电位移矢量}
+\begin{equation}
+    \boldsymbol{D}\equiv\varepsilon_0\boldsymbol{E}+\boldsymbol{P}
+\end{equation}
+\begin{equation}
+    \boldsymbol{\nabla}\cdot\boldsymbol{D}=\rho
+\end{equation}
+\begin{equation}
+    \boldsymbol{\nabla}\times\boldsymbol{D}=\boldsymbol{P}
+\end{equation}
+\subsubsection{边界条件}
+\begin{align}
+    D_{\text{上}}^\bot -D_{\text{下}}^\bot&=\sigma_f\\
+D_{\text{上}}^{\parallel} -D_{\text{下}}^{\parallel}&=P_{\text{上}}^{\parallel} -P_{\text{下}}^{\parallel}\\
+E_{\text{上}}^\bot -E_{\text{下}}^\bot&=\frac{\sigma}{\varepsilon_0}\\
+E_{\text{上}}^{\parallel} -E_{\text{下}}^{\parallel}&=0
+\end{align}
+\subsection{线性电介质}
+\subsubsection{电极化率,介电常数,相对介电常数和能量}
+\begin{equation}
+    \chi_e\equiv\frac{P}{\varepsilon_0 E}
+\end{equation}
+\begin{equation}
+    \varepsilon_r\equiv1+\chi_e=\frac{\varepsilon}{\varepsilon_0}\Rightarrow \boldsymbol{D}=\varepsilon\boldsymbol{E}
+\end{equation}
+\begin{equation}
+W=\frac{\varepsilon_0}{2}\iiint \boldsymbol{D}\cdot\boldsymbol{E}\dif\tau
+\end{equation}
+\mysssec{一个线性均匀的球形电介质材料放置于一个均匀的外电场$E_0$中, 求球内部的电场强度}
+边界条件:
+\begin{align*}
+    &U_\text{内}=U_\text{外},&r=R\\
+    &\varepsilon\frac{\partial U_\text{内}}{\partial r}=\varepsilon_0\frac{\partial U_\text{外}}{\partial r},&r=R\\
+    &U_\text{外}\to-{E}_0r\cos\theta,&r\to\infty
+\end{align*}
+\begin{align*}
+    U_\text{内}&
+=
+A_l r^l
+P_{l}(\cos\theta)\\
+    U_\text{外}&
+=
+B_l r^{-(l+1)}
+P_{l}(\cos\theta)-E_0r\cos\theta\\
+A_l R^l
+P_{l}(\cos\theta)&=B_l R^{-(l+1)}P_{l}(\cos\theta)-E_0R\cos\theta\\
+\varepsilon\frac{\partial U_\text{内}}{\partial r}&=\varepsilon_0\frac{\partial U_\text{外}}{\partial r}\\
+\varepsilon\frac{\partial A_l r^l
+P_{l}(\cos\theta)}{\partial r}&=\varepsilon_0\frac{\partial B_l r^{-(l+1)}
+P_{l}(\cos\theta)-E_0r\cos\theta}{\partial r}\\
+\varepsilon lA_l R^{l-1}
+P_{l}(\cos\theta)&=-\varepsilon_0B_l (l+1)R^{-(l+2)}
+P_{l}(\cos\theta)-E_0\cos\theta
+\end{align*}
+
+解得
+\begin{align*}
+    A_1&=-\frac{3}{\varepsilon_r+2}E_0\\
+    B_1&=\frac{\varepsilon_r-1}{\varepsilon_r+2}E_0
+\end{align*}
+\mysssec{在一个半径为$a$的不带电导体球外面覆盖一层绝缘外壳, 相对介电常数为$\varepsilon_r$,外壳半径为$b$, 放置在均匀外场$E_0$中, 求绝缘外壳内部的电场}
+边界条件:
+\begin{align*}
+    &U_{a\text{内}}=U_{a\text{外}},&r=a\\
+    &U_{b\text{内}}=U_{b\text{外}},&r=b\\
+    &\varepsilon\frac{\partial U_{a\text{内}}}{\partial r}-\varepsilon_0\frac{\partial U_{a\text{外}}}{\partial r}=\sigma_f,&r=a\\
+    &U_\text{外}\to-{E}_0r\cos\theta,&r\to\infty
+\end{align*}
+
+由静电屏蔽并设球心处电势为零可得
+\begin{align*}
+        U_{a\text{内}}&
+=0\\
+U_{a\text{外}b\text{内}}&=
+A_{l2} r^l
+P_{l}(\cos\theta)
++B_{l2} r^{-l-1}
+P_{l}(\cos\theta)\\
+U_{b\text{外}}&=
+B_{l3} r^{-l-1}
+P_{l}(\cos\theta)-E_0r\cos\theta
+\end{align*}
+\begin{align*}
+U_{a\text{内}}&=U_{a\text{外}}\\
+0&=A_{l2}a^l
+P_{l}(\cos\theta)
++B_{l2}a^{-l-1}
+P_{l}(\cos\theta)\\
+A_{l2}+B_{l2}a^{-2l-1}&=0
+\end{align*}
+\begin{align*}
+U_{b\text{内}}&=U_{b\text{外}}\\
+A_{l2}b^l
+P_{l}(\cos\theta)
++B_{l2}b^{-l-1}
+P_{l}(\cos\theta)&=
+B_{l3}b^{-l-1}
+P_{l}(\cos\theta)-E_0b\cos\theta\\
+A_{l2}b^l
++B_{l2}b^{-l-1}&=
+B_{l3}b^{-l-1},\,(l\neq  1)
+\end{align*}
+\begin{align*}
+% \varepsilon\frac{\partial U_{a\text{内}}}{\partial r}&=\varepsilon_0\frac{\partial U_{a\text{外}}}{\partial r}\\
+% 0&=\varepsilon_0\frac{\partial A_{l2} r\cos\theta
+% +B_{12} r^{-1}
+% \cos\theta}{\partial r}\\
+% 0&=\varepsilon_0 A_{l2}
+% -B_{12} a^{-2}\\
+\varepsilon\frac{\partial U_{b\text{内}}}{\partial r}&=\varepsilon_0\frac{\partial U_{b\text{外}}}{\partial r}\\
+\varepsilon\frac{\partial A_{l2} r^l
+P_{l}(\cos\theta)
++B_{l2} r^{-l-1}
+P_{l}(\cos\theta)}{\partial r}&=\varepsilon_0\frac{\partial 
+B_{l3} r^{-l-1}
+P_{l}(\cos\theta)-E_0r\cos\theta}{\partial r}\\
+\varepsilon lA_{l2} b^{l-1}
+P_{l}(\cos\theta)
+-\varepsilon (l+1)B_{l2} b^{-l-2}
+P_{l}(\cos\theta)&=-\varepsilon_0(l+1)
+B_{l3} b^{-l-2}
+P_{l}(\cos\theta)-\varepsilon_0E_0\cos\theta\\
+\varepsilon lA_{l2} b^{l-1}
+-\varepsilon (l+1)B_{l2} b^{-l-2}&=-\varepsilon_0(l+1)
+B_{l3} b^{-l-2},\,(l\neq  1)
+\end{align*}
+
+\begin{align*}
+    &\left\{\begin{aligned}
+        A_{l2}+B_{l2}a^{-2l-1}&=0\\
+A_{l2}b^l
++B_{l2}b^{-l-1}&=
+B_{l3}b^{-l-1}\\
+\varepsilon lA_{l2} b^{l-1}
+-\varepsilon (l+1)B_{l2} b^{-l-2}&=-\varepsilon_0(l+1)
+B_{l3} b^{-l-2}
+\end{aligned}\right.,\,(l\neq  1)
+\end{align*}
+
+由于线性无关, 所以$A_{l2}=B_{l2}=B_{l3}=0$
+\begin{align*}&\left\{
+\begin{aligned}
+        A_{12}+B_{12}a^{-3}&=0\\
+A_{12}b
++B_{12}b^{-2}&=
+B_{13}b^{-2}-E_0b\\
+\varepsilon A_{12}
+-\varepsilon 2B_{12} b^{-3}&=-\varepsilon_02
+B_{13} b^{-3}-\varepsilon_0E_0
+\end{aligned}
+\right.\\
+&\left\{
+\begin{aligned}
+A_{12}+a^{-3}B_{12}&=0\\
+bA_{12}
++b^{-2}B_{12}
+-b^{-2}B_{13}&=
+-E_0b\\
+\varepsilon A_{12}
+-\varepsilon 2b^{-3}B_{12} 
++\varepsilon_02b^{-3}
+B_{13} &=-\varepsilon_0E_0
+\end{aligned}
+\right.\\
+&\left\{
+\begin{aligned}
+-a^{-3}B_{12}b
++b^{-2}B_{12}
+-b^{-2}B_{13}&=
+-E_0b\\
+-\varepsilon a^{-3}B_{12}
+-\varepsilon 2b^{-3}B_{12} 
++\varepsilon_02b^{-3}
+B_{13} &=-\varepsilon_0E_0
+\end{aligned}
+\right.
+\\
+&\left\{
+\begin{aligned}
+-\varepsilon_0a^{-3}B_{12}
++\varepsilon_0b^{-3}B_{12}
+-\varepsilon_0b^{-3}B_{13}&=
+-\varepsilon_0E_0\\
+-\varepsilon a^{-3}B_{12}
+-\varepsilon 2b^{-3}B_{12} 
++\varepsilon_02b^{-3}
+B_{13} &=-\varepsilon_0E_0
+\end{aligned}
+\right.\\
+&\left\{
+\begin{aligned}
+-\varepsilon_0a^{-3}B_{12}
++\varepsilon_0b^{-3}B_{12}
+-\varepsilon_0b^{-3}B_{13}&=
+-\varepsilon_0E_0\\
+-(\varepsilon+2\varepsilon_0) a^{-3}B_{12}
+-(\varepsilon-2\varepsilon_0) 2b^{-3}B_{12} 
+ &=-3\varepsilon_0E_0
+\end{aligned}
+\right.
+\end{align*}
+\mysssec{一个半径为$a$, 带电荷为$Q$的导体球被一个半径为$b$的线性电介质包裹, 求总能量}
+\begin{align*}
+    W&=\int_{a}^{b}4\pi r\varepsilon_0\left(\frac{Q}{4\pi\varepsilon r^2}\right)^2\dif R
++\int_{b}^{\infty}4\pi r\varepsilon_0\left(\frac{Q}{4\pi\varepsilon_0r^2}\right)^2\dif R=\left(\frac{1}{a^4}-\frac{1}{b^4}\right)\frac{\varepsilon_0Q^2}{16\pi\varepsilon^2}+\frac{1}{b^4}\frac{Q^2}{16\pi\varepsilon_0}
+\end{align*}
+\mysssec{内径为$a$外径为$b$的同轴圆柱导体管竖直放置在充满密度为$\rho$的油性电介质的桶中, 内部的金属管电势恒为$U_0$, 外管接地, 求两管之间油上升的高度$h$}
+\begin{align*}
+    W&=\iiint\frac{D^2\pi(b^2-a^2)}{2\varepsilon}\dif z\dif S+\int_{0}^{h}\rho g\pi(b^2-a^2)z\dif z\\
+    W&=\iiint\frac{D^2\pi(b^2-a^2)}{2\varepsilon}\dif z\dif S+\frac{1}{2}\rho g\pi(b^2-a^2)h^2
+    \end{align*}
+    \begin{align*}
+    \frac{\partial W}{\partial h}&=0\\
+    \frac{\partial \iiint\dfrac{D^2\pi(b^2-a^2)}{2\varepsilon}\dif z\dif S+\dfrac{1}{2}\rho g\pi(b^2-a^2)h^2}{\partial h}&=0\\
+    \frac{\partial -\iint\dfrac{D^2\pi(b^2-a^2)\chi_eh}{2\varepsilon}\dif S+\dfrac{1}{2}\rho g\pi(b^2-a^2)h^2}{\partial h}&=0\\
+    -\iint\dfrac{D^2\pi(b^2-a^2)\chi_e}{2\varepsilon}\dif S+\rho g\pi(b^2-a^2)h&=0\\
+    -\int_a^br\left(\frac{U_0\varepsilon}{r\ln b-r\ln a}\right)^2\dfrac{\chi_e}{2\varepsilon}\dif r+\rho gh&=0\\
+    \rho gh&=\frac{U_0^2\varepsilon}{\ln b-\ln a}\dfrac{\chi_e}{2}\\
+    h&=\frac{U_0^2\varepsilon\chi_e}{2\rho g\ln b-2\rho g\ln a}
+\end{align*}
+\subsection{习题}
+\mysssec{电荷$q$位于一个线性均匀电介质球的中心, 求球内电场强度, 极化强度和体束缚电荷}
+\begin{align*}
+    D&=\frac{q}{4\pi r^2}\\
+    E&=\frac{D}{\varepsilon}=\frac{q}{4\pi r^2\varepsilon}\\
+    P&=D-\varepsilon_0E=\frac{q\chi_e}{4\pi r^2\varepsilon_r}\\
+    \rho_b&=-\boldsymbol{\nabla}\cdot\boldsymbol{P}=0
+\end{align*}
+\mysssec{在两个不同介电常数电介质表面, 电场线会发生弯折, 如果在边界没有自由电荷, 证明:\\$\dfrac{\tan\theta_1}{\tan\theta_2}=\dfrac{\varepsilon_1}{\varepsilon_2}$}
+\begin{align}
+    D_{1}^\bot&=D_{2}^\bot\\
+    \varepsilon_1E_1^\bot&=\varepsilon_2E_2^\bot\\
+E_1^{\parallel}&=E_2^{\parallel}\\
+\dfrac{\tan\theta_1}{\tan\theta_2}
+&=\dfrac{\dfrac{E_2^\bot}{E_2^{\parallel}}}{\dfrac{E_1^\bot}{E_1^{\parallel}}}\\
+&=\frac{E_1^{\parallel}E_2^\bot}{E_1^\bot E_2^{\parallel}}\\
+&=\frac{E_2^\bot}{E_1^\bot}\\
+&=\dfrac{\varepsilon_1}{\varepsilon_2}
+\end{align}
+\mysssec{一个点电偶极子$d$镶嵌在一个线性均匀介电球(电极化
+率为$\chi_e$, 半径为$R$)的中心。求在球体内部和外部的电势能}
+边界条件:
+\begin{align*}
+    &U_{\text{内}}=U_{\text{外}},&r=R\\
+    &\varepsilon\frac{\partial U_{\text{内}}}{\partial r}=\varepsilon_0\frac{\partial U_{\text{外}}}{\partial r},&r=R\\
+    &U_\text{外}\to0,&r\to\infty\\
+    &U_{\text{内}}\to\frac{d\cos\theta}{4\pi\varepsilon_0r^2},&r\to0
+\end{align*}
+\begin{align*}
+U_{\text{内}}&=
+A_l r^l
+P_l(\cos\theta)
++\frac{d\cos\theta}{4\pi\varepsilon_0r^2}\\
+U_{b\text{外}}&=
+B_l r^{-l-1}
+P_l(\cos\theta)\\
+A_l R^l
+P_l(\cos\theta)
++\frac{d\cos\theta}{4\pi\varepsilon_0R^2}&=
+B_l R^{-l-1}
+P_l(\cos\theta)\\
+A_l R^l&=
+B_l R^{-l-1},\,(l\neq1)\\
+\varepsilon\frac{\partial A_l r^l
+P_l(\cos\theta)
++\dfrac{d\cos\theta}{4\pi\varepsilon_0r^2}}{\partial r}&=\varepsilon_0\frac{\partial B_l r^{-l-1}
+P_l(\cos\theta)}{\partial r}\\
+\varepsilon lA_l r^{l-1}P_l(\cos\theta)
+- \frac{2\varepsilon d\cos\theta}{4\pi\varepsilon_0r^3}&=-(l+1)\varepsilon_0B_l r^{-l-2}
+P_l(\cos\theta)\\
+\varepsilon lA_l R^{l-1}&=
+-(l+1)\varepsilon_0B_l R^{-l-2},\,(l\neq1)
+\end{align*}
+
+由于线性无关, 所以$A_{l}=B_{l}=0$
+\begin{align*}
+    A_1 R
+P_1(\cos\theta)
++\frac{d\cos\theta}{4\pi\varepsilon_0R^2}&=
+B_1' R^{-2}
+P_l(\cos\theta)\\
+A_1 R
++\frac{d}{4\pi\varepsilon_0R^2}&=
+B_1 R^{-2}\\
+\varepsilon A_1 P_1(\cos\theta)
+- \frac{2\varepsilon d\cos\theta}{4\pi\varepsilon_0R^3}&=-2\varepsilon_0B_1 R^{-3}
+P_1(\cos\theta)\\
+\varepsilon A_1
+- \frac{\varepsilon d}{2\pi\varepsilon_0R^3}&=-2\varepsilon_0B_1 R^{-3}\\
+B_1&=\frac{3d\varepsilon}{4\pi\varepsilon_0(\varepsilon+2\varepsilon_0)}\\
+A_1&=\frac{2d(\varepsilon-\varepsilon_0)}{4\pi\varepsilon_0(\varepsilon+2\varepsilon_0)R^3}
+\end{align*}
+
+\newpage

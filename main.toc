@@ -10,51 +10,66 @@
 \contentsline {subsubsection}{\numberline {1.3.2}斯托克斯定理}{12}{subsubsection.1.3.2}%
 \contentsline {subsection}{\numberline {1.4}曲面坐标系}{12}{subsection.1.4}%
 \contentsline {subsubsection}{\numberline {1.4.1}柱坐标系}{12}{subsubsection.1.4.1}%
-\contentsline {subsubsection}{\numberline {1.4.2}球坐标系}{13}{subsubsection.1.4.2}%
-\contentsline {subsection}{\numberline {1.5}狄拉克函数与阶跃函数}{14}{subsection.1.5}%
-\contentsline {subsubsection}{\numberline {1.5.1}狄拉克函数}{14}{subsubsection.1.5.1}%
-\contentsline {subsubsection}{\numberline {1.5.2}阶跃函数}{15}{subsubsection.1.5.2}%
-\contentsline {subsection}{\numberline {1.6}阶跃函数的导数}{15}{subsection.1.6}%
-\contentsline {subsubsection}{\numberline {1.6.1}多维狄拉克函数}{15}{subsubsection.1.6.1}%
-\contentsline {subsection}{\numberline {1.7}矢量场理论}{15}{subsection.1.7}%
-\contentsline {subsubsection}{\numberline {1.7.1}亥姆霍兹定理}{15}{subsubsection.1.7.1}%
-\contentsline {subsubsection}{\numberline {1.7.2}势函数}{17}{subsubsection.1.7.2}%
-\contentsline {paragraph}{1. 标量势与无旋场}{17}{paragraph*.14}%
-\contentsline {paragraph}{2. 无旋场的势函数存在性}{17}{paragraph*.15}%
-\contentsline {paragraph}{3. 向量势与无散场}{17}{paragraph*.16}%
-\contentsline {paragraph}{4. 势函数的不唯一性}{17}{paragraph*.17}%
-\contentsline {paragraph}{5. 亥姆霍兹分解}{17}{paragraph*.18}%
-\contentsline {subsection}{\numberline {1.8}习题}{18}{subsection.1.8}%
-\contentsline {section}{\numberline {2}静电学}{27}{section.2}%
-\contentsline {subsection}{\numberline {2.1}电场}{27}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}电势}{29}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}静电场的能量}{31}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}导体}{33}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}电容}{35}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}拉普拉斯方程}{36}{subsection.2.6}%
-\contentsline {subsection}{\numberline {2.7}镜像法}{37}{subsection.2.7}%
-\contentsline {subsection}{\numberline {2.8}分离变量法}{39}{subsection.2.8}%
-\contentsline {subsubsection}{\numberline {2.8.1}直角坐标系}{39}{subsubsection.2.8.1}%
-\contentsline {subsubsection}{\numberline {2.8.2}球坐标系}{41}{subsubsection.2.8.2}%
-\contentsline {subsubsection}{\numberline {2.8.3}柱坐标系}{43}{subsubsection.2.8.3}%
-\contentsline {subsubsection}{\numberline {2.8.4}勒让德多项式性质的证明}{44}{subsubsection.2.8.4}%
-\contentsline {paragraph}{$l\in \mathbb N$的证明}{44}{paragraph*.81}%
-\contentsline {paragraph}{勒让德多项式的求和形式}{44}{paragraph*.82}%
-\contentsline {paragraph}{正交性的证明}{45}{paragraph*.83}%
-\contentsline {paragraph}{证明 $P_l(1)=1$}{45}{paragraph*.84}%
-\contentsline {subsection}{\numberline {2.9}多极展开}{51}{subsection.2.9}%
-\contentsline {subsubsection}{\numberline {2.9.1}单极项}{51}{subsubsection.2.9.1}%
-\contentsline {subsubsection}{\numberline {2.9.2}偶极项}{51}{subsubsection.2.9.2}%
-\contentsline {subsubsection}{\numberline {2.9.3}四极项}{52}{subsubsection.2.9.3}%
-\contentsline {subsubsection}{\numberline {2.9.4}四极矩矩阵的推导}{52}{subsubsection.2.9.4}%
-\contentsline {subsection}{\numberline {2.10}Green 互易定理}{54}{subsection.2.10}%
-\contentsline {paragraph}{情形 1：下板 \(z=0\) 置于单位电势}{56}{paragraph*.97}%
-\contentsline {paragraph}{情形 2：上板 \(z=d\) 置于单位电势}{56}{paragraph*.98}%
-\contentsline {paragraph}{计算左边}{56}{paragraph*.99}%
-\contentsline {paragraph}{计算右边}{56}{paragraph*.100}%
-\contentsline {subsection}{\numberline {2.11}习题}{57}{subsection.2.11}%
-\contentsline {section}{\numberline {3}物质中的电场}{72}{section.3}%
-\contentsline {subsection}{\numberline {3.1}极化}{72}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}诱导偶极子}{72}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}偶极子在电场}{72}{subsubsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.2}极化物体的电场}{74}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {1.4.2}球坐标系}{14}{subsubsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.5}狄拉克函数与阶跃函数}{18}{subsection.1.5}%
+\contentsline {subsubsection}{\numberline {1.5.1}狄拉克函数}{18}{subsubsection.1.5.1}%
+\contentsline {subsubsection}{\numberline {1.5.2}阶跃函数}{18}{subsubsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.6}阶跃函数的导数}{18}{subsection.1.6}%
+\contentsline {subsubsection}{\numberline {1.6.1}多维狄拉克函数}{19}{subsubsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.7}矢量场理论}{19}{subsection.1.7}%
+\contentsline {subsubsection}{\numberline {1.7.1}亥姆霍兹定理}{19}{subsubsection.1.7.1}%
+\contentsline {subsubsection}{\numberline {1.7.2}势函数}{20}{subsubsection.1.7.2}%
+\contentsline {paragraph}{1. 标量势与无旋场}{20}{paragraph*.14}%
+\contentsline {paragraph}{2. 无旋场的势函数存在性}{20}{paragraph*.15}%
+\contentsline {paragraph}{3. 向量势与无散场}{21}{paragraph*.16}%
+\contentsline {paragraph}{4. 势函数的不唯一性}{21}{paragraph*.17}%
+\contentsline {paragraph}{5. 亥姆霍兹分解}{21}{paragraph*.18}%
+\contentsline {subsection}{\numberline {1.8}习题}{21}{subsection.1.8}%
+\contentsline {section}{\numberline {2}静电学}{30}{section.2}%
+\contentsline {subsection}{\numberline {2.1}电场}{30}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}电势}{32}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}静电场的能量}{34}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}导体}{36}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}电容}{38}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}拉普拉斯方程}{39}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}镜像法}{40}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}分离变量法}{42}{subsection.2.8}%
+\contentsline {subsubsection}{\numberline {2.8.1}直角坐标系}{42}{subsubsection.2.8.1}%
+\contentsline {subsubsection}{\numberline {2.8.2}球坐标系}{44}{subsubsection.2.8.2}%
+\contentsline {subsubsection}{\numberline {2.8.3}柱坐标系}{46}{subsubsection.2.8.3}%
+\contentsline {subsubsection}{\numberline {2.8.4}勒让德多项式性质的证明}{47}{subsubsection.2.8.4}%
+\contentsline {paragraph}{$l\in \mathbb N$的证明}{47}{paragraph*.81}%
+\contentsline {paragraph}{勒让德多项式的求和形式}{47}{paragraph*.82}%
+\contentsline {paragraph}{正交性的证明}{48}{paragraph*.83}%
+\contentsline {paragraph}{证明 $P_l(1)=1$}{48}{paragraph*.84}%
+\contentsline {subsection}{\numberline {2.9}多极展开}{54}{subsection.2.9}%
+\contentsline {subsubsection}{\numberline {2.9.1}单极项}{54}{subsubsection.2.9.1}%
+\contentsline {subsubsection}{\numberline {2.9.2}偶极项}{54}{subsubsection.2.9.2}%
+\contentsline {subsubsection}{\numberline {2.9.3}四极项}{55}{subsubsection.2.9.3}%
+\contentsline {subsubsection}{\numberline {2.9.4}四极矩矩阵的推导}{55}{subsubsection.2.9.4}%
+\contentsline {subsection}{\numberline {2.10}Green 互易定理}{57}{subsection.2.10}%
+\contentsline {paragraph}{情形 1：下板 \(z=0\) 置于单位电势}{59}{paragraph*.97}%
+\contentsline {paragraph}{情形 2：上板 \(z=d\) 置于单位电势}{59}{paragraph*.98}%
+\contentsline {paragraph}{计算左边}{59}{paragraph*.99}%
+\contentsline {paragraph}{计算右边}{59}{paragraph*.100}%
+\contentsline {subsection}{\numberline {2.11}习题}{60}{subsection.2.11}%
+\contentsline {section}{\numberline {3}物质中的电场}{75}{section.3}%
+\contentsline {subsection}{\numberline {3.1}极化}{75}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}诱导偶极子}{75}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}偶极子在电场}{75}{subsubsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}极化物体的电场}{77}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}电位移矢量}{79}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}边界条件}{79}{subsubsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.4}线性电介质}{79}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}电极化率,介电常数,相对介电常数和能量}{79}{subsubsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.5}习题}{82}{subsection.3.5}%
+\contentsline {section}{\numberline {4}静磁学}{84}{section.4}%
+\contentsline {subsection}{\numberline {4.1}洛伦兹力定律}{84}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}磁力}{84}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}电流}{84}{subsubsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.2}比奥萨伐尔定律}{84}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}稳恒电流}{84}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}稳恒电流的磁场}{85}{subsubsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.3}磁矢势}{85}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}分离变量法}{86}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}含表面电流时径向磁矢势的边界条件}{86}{subsubsection.4.3.2}%

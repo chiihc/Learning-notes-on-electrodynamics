@@ -1,0 +1,324 @@
+\cleardoublepage
+
+\section{静磁学}
+\subsection{洛伦兹力定律}
+\subsubsection{磁力}
+\begin{equation}
+    \boldsymbol{F}=\boldsymbol{v}\times\boldsymbol{B}
+\end{equation}
+\begin{equation}
+    \boldsymbol{F}=I\int\dif\boldsymbol{l}\times\boldsymbol{B}
+\end{equation}
+\begin{equation}
+    \boldsymbol{F}=\int\boldsymbol{J}\times\boldsymbol{B}\dif\tau
+\end{equation}
+\subsubsection{电流}
+\begin{equation}
+    \boldsymbol{\nabla}\cdot\boldsymbol{J}=-\frac{\partial \rho}{\partial t}
+\end{equation}
+% \mysssec{假设在某个区域磁场形式为
+% $\boldsymbol B =kz\boldsymbol{\hat{x}}$。一个边长为$a$的方形线框, 处在$yz$平面内, 中心在原点, 如果通逆时针的电流。求作用在线框的力。}
+% \begin{align*}
+%     \boldsymbol{F}=I\int\dif\boldsymbol{l}\times\boldsymbol{B}=0
+% \end{align*}
+\mysssec{电流$I$沿半径为$a$的导线流动, \\
+(a)如果电流均匀分布在导线表面上, 那么面电流密度$K$为多少？\\
+(b)如果体电流密度分布反比于到中心轴的距离, 那么$J$为什么？}
+(a):$\frac{I}{2\pi a}$
+
+(b):
+\begin{align*}
+    I&=2\pi\int_{0}^{a}\frac{k}{r}r\dif r=2\pi ak\to k=\frac{I}{2\pi a}\\
+    J&=\frac{I}{2\pi ar}
+\end{align*}
+\mysssec{(a)一个留声机唱片表面有均匀的电荷面密度$\sigma$。如果它以角速度$\omega$旋转, 那么离中心距离为$r$处的面
+电流密度$K$为多少?\\
+(b)电荷$Q$均匀分布在半径为$R$的固体球内, 中心在原点, 并以恒定角速度$\omega$绕轴旋转。求出球内任
+意点($r,\theta,\phi$)处的电流密度$J$。}
+(a):$K=\sigma v=\sigma \omega r$
+
+(b):$J=\rho v=\frac{4Q}{3\pi R^3}r\sin\phi\omega$
+\subsection{比奥萨伐尔定律}
+\subsubsection{稳恒电流}
+\begin{equation}
+    \boldsymbol{\nabla}\cdot\boldsymbol{J}=0
+\end{equation}
+\subsubsection{稳恒电流的磁场}
+\begin{equation}
+    \boldsymbol{B}=\frac{\mu_0}{4\pi}I\int\frac{\dif \boldsymbol{l}\times\boldsymbol{r}}{r^3}
+\end{equation}
+\begin{equation}
+    \boldsymbol{\nabla}\cdot\boldsymbol{B}=0
+\end{equation}
+\begin{equation}
+    \boldsymbol{\nabla}\times\boldsymbol{B}=\mu_0\boldsymbol{J}
+\end{equation}
+\mysssec{求出通有稳恒电流$I$的$n$边规则多边形线框中心的磁场, 同样$R$为中心到边的距离。}
+\begin{align*}
+    B=2n\frac{\mu_0 I}{4\pi R}\sin\frac{2\pi}{2n}=\frac{n\mu_0 I}{2\pi R}\sin\frac{\pi}{n}
+\end{align*}
+% \mysssec{电流$I$沿半径为$a$的导线流动, 求磁场\\
+% (a)如果电流均匀分布在导线表面上\\
+% (b)如果体电流密度分布反比于到中心轴的距离}
+% (a):$2\pi aB=\mu_0 I\to B=\dfrac{\mu_0 I}{2\pi aB}$
+
+% (b):
+\mysssec{一个大平板的厚度从$z=-a$到$z=a$, 它的电流密度为$\boldsymbol{J}=J\boldsymbol{\hat x}$, 
+求出平板内外的磁场。}
+\begin{align*}
+    B=\left\{\begin{aligned}
+        &aJ&,|z|>a\\
+        &zJ&,|z|<=a\\
+    \end{aligned}\right.
+\end{align*}
+\mysssec{一个大平行板电容器, 上极板有均匀电荷$\sigma$, 下极板有均匀电荷$-\sigma$, 
+两极板以恒定速度$v$运动\\
+(a)求出两极板间的磁场\\
+(b)求出作用在上极板单位面积上的磁力及其方向\\
+(c)为了使磁力和电场力平衡, 速度应为多大}
+(a):$
+    B=\mu_0J=\mu_0\sigma v$
+
+(b):$F=\sigma vB=\mu_0\sigma^2 v^2$
+
+(c):$\mu_0\sigma^2 v^2=\dfrac{\sigma}{2\varepsilon_0}\to v^2=\dfrac{1}{2\mu_0\sigma \varepsilon_0}$
+\subsection{磁矢势}
+
+
+在静磁学中，磁场满足
+$
+\boldsymbol{\nabla}\cdot\boldsymbol{B}=0.
+$
+这意味着磁场是一个\emph{无源场}。
+
+根据向量分析中的 Helmholtz 定理：
+
+\begin{quote}
+在单连通区域内，任何散度为零的光滑矢量场，都可以表示为某个矢量场的旋度。
+\end{quote}
+
+因此存在矢量场
+$\boldsymbol{A}(\boldsymbol{r})$，使得
+\begin{equation}
+\boxed{
+\boldsymbol{B}=\boldsymbol{\nabla}\times\boldsymbol{A}.
+}
+\end{equation}
+
+该矢量场 $\boldsymbol{A}$ 称为{磁矢势}。
+
+
+
+磁矢势并非唯一。
+若 $\boldsymbol{A}$ 给出磁场 $\boldsymbol{B}$，则对任意标量场
+$\Lambda(\boldsymbol{r})$，定义
+\begin{equation}
+\boldsymbol{A}'=\boldsymbol{A}+\boldsymbol{\nabla}\Lambda,
+\end{equation}
+有
+\begin{equation}
+\boldsymbol{\nabla}\times\boldsymbol{A}'
+=
+\boldsymbol{\nabla}\times\boldsymbol{A}
+=
+\boldsymbol{B}.
+\end{equation}
+
+磁场 $\boldsymbol{B}$ 是可观测量，而磁矢势 $\boldsymbol{A}$ 本身不是。
+不同的 $\boldsymbol{A}$ 描述的是同一个物理磁场。
+
+
+为了固定这种不唯一性，通常施加附加条件。
+最常用的是{库仑规范}：
+\begin{equation}
+{
+\boldsymbol{\nabla}\cdot\boldsymbol{A}=0.
+}
+\end{equation}
+
+
+静磁场满足安培定律：
+\begin{equation}
+\boldsymbol{\nabla}\times\boldsymbol{B}=\mu_0\boldsymbol{J}.
+\end{equation}
+
+代入 $\boldsymbol{B}=\boldsymbol{\nabla}\times\boldsymbol{A}$，得到
+\begin{equation}
+\boldsymbol{\nabla}\times(\boldsymbol{\nabla}\times\boldsymbol{A})
+=
+\mu_0\boldsymbol{J}.
+\end{equation}
+
+利用恒等式
+\[
+\boldsymbol{\nabla}\times(\boldsymbol{\nabla}\times\boldsymbol{A})
+=
+\boldsymbol{\nabla}(\boldsymbol{\nabla}\cdot\boldsymbol{A})
+-
+\nabla^2\boldsymbol{A},
+\]
+并在库仑规范下 $\boldsymbol{\nabla}\cdot\boldsymbol{A}=0$，得
+\begin{equation}
+{
+\nabla^2\boldsymbol{A}=-\mu_0\boldsymbol{J}.
+}
+\end{equation}
+
+这是一组三个{形式上独立的泊松方程}。
+
+
+在无穷远处 $\boldsymbol{A}\to0$ 的条件下，上式的解为
+\begin{equation}
+{
+\boldsymbol{A}(\boldsymbol{r})
+=
+\frac{\mu_0}{4\pi}
+\int
+\frac{\boldsymbol{J}(\boldsymbol{r}')}{|\boldsymbol{r}-\boldsymbol{r}'|}
+\,\dif^3 r'.
+}
+\end{equation}
+
+该表达式在形式上与静电学中电势的解完全类似。
+
+\subsubsection{分离变量法}
+
+在没有电流时
+
+\begin{align*}
+    \nabla^2\boldsymbol{A}&=0\\
+    \frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\dfrac{{\partial \boldsymbol{A}}}{\partial r}\right)
+    +\frac{1}{r^2\sin^2\theta}\dfrac{{\partial^2 \boldsymbol{A}}}{\partial \phi^2}
+    +\frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta\dfrac{{\partial \boldsymbol{A}}}{\partial \theta}\right)&=0
+\end{align*}
+
+$\boldsymbol r$方向
+
+
+\subsubsection{含表面电流时径向磁矢势的边界条件}
+对麦克斯韦方程在一条跨越界面的无穷小曲面上积分，并取极限 $\epsilon\to0$，得到边界条件
+\begin{equation}
+\boldsymbol{B}_{||\text{out}}-\boldsymbol{B}_{||\text{in}}=\mu_0\boldsymbol{K}.
+\end{equation}
+
+代入 $\boldsymbol{B}=\boldsymbol\nabla\times\boldsymbol{A}$，得到边界条件
+\begin{equation}
+\boldsymbol\nabla\times\boldsymbol{A}_{||\text{out}}-
+\boldsymbol\nabla\times\boldsymbol{A}_{||\text{in}}=\mu_0\boldsymbol{K}
+\end{equation}
+
+
+\subsubsection*{直角坐标系下的形式}
+
+设界面为 $z=0$ 平面，表面电流为
+$\boldsymbol{K}=K_x\hat{\boldsymbol{x}}+K_y\hat{\boldsymbol{y}}$。
+
+旋度在直角坐标系中为
+\begin{equation}
+\nabla\times\boldsymbol{A}=
+\begin{pmatrix}
+\partial_y A_z-\partial_z A_y\
+\partial_z A_x-\partial_x A_z\
+\partial_x A_y-\partial_y A_x
+\end{pmatrix}.
+\end{equation}
+
+代入普适条件并逐分量比较，得到
+\begin{align}
+\left.\frac{\partial A_x}{\partial z}\right|_{||\text{out}}-
+\left.\frac{\partial A_x}{\partial z}\right|_{||\text{in}}&=-\mu_0 K_y,\
+\left.\frac{\partial A_y}{\partial z}\right|_{||\text{out}}-
+\left.\frac{\partial A_y}{\partial z}\right|_{||\text{in}}&=\mu_0 K_x.
+\end{align}
+
+\subsubsection*{三、球坐标系下的形式}
+
+设界面为球面 $r=R$。并设电流与$\phi$无关, 则
+\begin{equation*}
+\nabla\times\boldsymbol{A}=-\frac{1}{r\sin\theta}\left(\frac{\partial a_\theta}{\partial \phi}
+    -\frac{\partial\sin\theta  a_{\phi}}{\partial \theta}\right)\boldsymbol{r}
+    +\frac{1}{r}\left(\frac{\partial a_r}{\partial \theta}
+    -\frac{\partial ra_\theta}{\partial r}\right)\boldsymbol{\phi}
+    +\frac{1}{r\sin\theta }\left(\sin\theta\frac{\partial r a_{\phi}}{\partial r}
+    -\frac{\partial a_r}{\partial \phi}
+    \right)\boldsymbol{\theta}
+\end{equation*}
+
+代入普适边界条件，得到
+\begin{equation}
+\boxed{
+\left.\frac{\partial}{\partial r}\bigl(rA_{\varphi,\text{out}}\bigr)\right|*{r=R}-
+\left.\frac{\partial}{\partial r}\bigl(rA*{\varphi,\text{in}}\bigr)\right|*{r=R}
+=-\mu_0 R K*\varphi
+}
+\end{equation}
+
+这是旋转带电球壳等问题中使用的标准形式。
+
+\subsubsection*{四、柱坐标系下的形式}
+
+设界面为圆柱面 $\rho=a$，法向 $\hat{\boldsymbol{n}}=\hat{\boldsymbol{\rho}}$。若
+\begin{equation}
+\boldsymbol{K}=K_z(\varphi,z),\hat{\boldsymbol{z}},
+\qquad
+\boldsymbol{A}=A_z(\rho),\hat{\boldsymbol{z}},
+\end{equation}
+
+则
+\begin{equation}
+(\nabla\times\boldsymbol{A})_\varphi=-\frac{\partial A_z}{\partial \rho}.
+\end{equation}
+
+边界条件化为
+\begin{equation}
+\boxed{
+\left.\frac{\partial A_{z,\text{out}}}{\partial \rho}\right|*{\rho=a}-
+\left.\frac{\partial A*{z,\text{in}}}{\partial \rho}\right|_{\rho=a}
+=-\mu_0 K_z
+}
+\end{equation}
+
+
+\mysssec{一半径为$R$的球壳，表面带有均匀电荷，电荷面密度为$\sigma$，当它以恒定角速度$\omega$旋转时，求出它在产生的矢势}
+边界条件:
+\begin{align*}
+    &\boldsymbol{A}_{\text{内}}=\boldsymbol{A}_{\text{外}},&r=R\\
+    &\frac{\partial A_{\theta\text{外}}}{\partial r}-\frac{\partial A_{\theta\text{内}}}{\partial r}=-\mu_0\sigma\omega R\sin\theta,&r=R\\
+    &\boldsymbol{A}_\text{外}\to0,&r\to\infty\\
+    &\boldsymbol{A}_{\text{内}}\to\frac{d\cos\theta}{4\pi\varepsilon_0r^2},&r\to0
+\end{align*}
+\begin{align}
+\boldsymbol{\nabla}^2\boldsymbol{A}
+&=\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\dfrac{{\partial \boldsymbol{A}}}{\partial r}\right)
++\frac{1}{r^2\sin^2\theta}\dfrac{{\partial^2 \boldsymbol{A}}}{\partial \phi^2}
++\frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta\dfrac{{\partial \boldsymbol{A}}}{\partial \theta}\right)\nonumber \\
+\boldsymbol{\nabla}^2\boldsymbol{A}_\theta
+&=\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\dfrac{{\partial \boldsymbol{A}_\theta}}{\partial r}\right)
++\frac{1}{r^2\sin^2\theta}\dfrac{{\partial^2 \boldsymbol{A}_\theta}}{\partial \phi^2}
++\frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta\dfrac{{\partial \boldsymbol{A}_\theta}}{\partial \theta}\right)\nonumber \\
+&=\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\dfrac{{\partial A_\theta}\boldsymbol{e}_\theta}{\partial r}\right)
++\frac{1}{r^2\sin^2\theta}\dfrac{{\partial^2 A_\theta}\boldsymbol{e}_\theta}{\partial \phi^2}
++\frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta\dfrac{{\partial A_\theta}\boldsymbol{e}_\theta}{\partial \theta}\right)\nonumber \\
+&=\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\dfrac{{\partial A_\theta}}{\partial r}\right)\boldsymbol{e}_\theta
++\frac{1}{r^2\sin^2\theta}\dfrac{{\partial^2 A_\theta}}{\partial \phi^2}\boldsymbol{e}_\theta
++\frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta\dfrac{{\partial A_\theta}\boldsymbol{e}_\theta}{\partial \theta}\right)\nonumber \\
+\end{align}
+
+\begin{align*}
+\boldsymbol{A}_{\text{内}}&
+=
+\boldsymbol{B}_l r^lP_{l}(\cos\theta)\\
+\boldsymbol{A}_{\text{外}}&
+=
+\boldsymbol{C}_l r^{-(l+1)}P_{l}(\cos\theta)\\
+\boldsymbol{A}_{\text{内}}&=\boldsymbol{A}_{\text{外}}\\
+\boldsymbol{B}_l R^lP_{l}(\cos\theta)
+&=\boldsymbol{C}_l R^{-(l+1)}P_{l}(\cos\theta)\\
+\frac{\partial A_{\phi\text{外}}}{\partial r}-\frac{\partial A_{\phi\text{内}}}{\partial r}&=-\mu_0\sigma\omega R\sin\theta\\
+\frac{\partial \boldsymbol{B}_l r^lP_{l}(\cos\theta)}{\partial r}-\frac{\partial \boldsymbol{C}_l r^{-(l+1)}P_{l}(\cos\theta)}{\partial r}&=-\mu_0\sigma\omega R\sin\theta\\
+l\boldsymbol{B}_l R^{l-1}P_{l}(\cos\theta)+(l+1)\boldsymbol{C}_l R^{-(l+2)}P_{l}(\cos\theta)&=-\mu_0\sigma\omega R\sin\theta\\
+l\boldsymbol{B}_l R^lP_{l}(\cos\theta)+(l+1)\boldsymbol{C}_l R^{-(l+1)}P_{l}(\cos\theta)&=-\mu_0\sigma\omega R^2\sin\theta\\
+l\boldsymbol{C}_l R^{-(l+1)}P_{l}(\cos\theta)+(l+1)\boldsymbol{C}_l R^{-(l+1)}P_{l}(\cos\theta)&=-\mu_0\sigma\omega R^2\sin\theta\\
+\boldsymbol{C}_l R^{-2}P_1(\cos\theta)+2\boldsymbol{C}_l R^{-2}P_1(\cos\theta)&=-\mu_0\sigma\omega R^2\sin\theta\\  
+\boldsymbol{C}_l R^{-2}P_1(\cos\theta)+2\boldsymbol{C}_l R^{-2}P_1(\cos\theta)&=-\mu_0\sigma\omega R^2\sin\theta\\  
+\end{align*}
