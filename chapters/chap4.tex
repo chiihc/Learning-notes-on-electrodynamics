@@ -198,7 +198,7 @@ $\Lambda(\boldsymbol{r})$，定义
     B_{\bot\text{out}}=B_{\bot\text{in}}
 \end{equation}
 
-\mysssec{一半径为$R$的球壳，表面带有均匀电荷，电荷面密度为$\sigma$，当它以恒定角速度$\omega$旋转时，求出它在产生的矢势}
+\mysssec{一半径为$R$的球壳，表面带有均匀电荷，电荷面密度为$\sigma$，当它以恒定角速度$\omega$旋转时，求矢势}
 边界条件:
 \begin{align*}
     &\boldsymbol{A}_{\text{内}}=\boldsymbol{A}_{\text{外}},&r=R\\
@@ -247,3 +247,23 @@ B_1=&\frac{1}{3}\mu_0\sigma\omega R
 \frac{k}{\mu_0s^2}\boldsymbol{e}_\phi
 \end{align*}
 \subsection{磁偶极矩}
+\begin{equation}
+    \boldsymbol{A}_\text{偶极}=\frac{\mu_0}{4\pi}\frac{\boldsymbol{m}\times\boldsymbol{r}}{r^3}
+\end{equation}
+式中, $\boldsymbol{m}$是磁偶极矩
+\begin{equation}
+    \boldsymbol{m}\equiv I\boldsymbol{a}
+\end{equation}
+\mysssec{一个半径为$R$的留声机唱片，带有均匀的面电荷$\sigma$，以恒定角速度$\omega$旋转，求出它的磁偶极矩}
+\begin{align*}
+    {m}= I{a}=\int_{0}^{R}2\pi\sigma r\omega \pi r^2\dif r
+    =\int_{0}^{R}2\pi^2\sigma \omega \pi r^3\dif r
+    =\frac{1}{2}\pi^2\sigma \omega \pi R^4
+\end{align*}
+\subsection{习题}
+\mysssec{既然平行电流相互吸引，单根导线中的电流将收缩到沿着中心轴线的一条细束上。然而在实际中，电流一般将均匀地分布于导线中，如果正电荷(密度$\rho_+$)是静止的，负电荷(密度$\rho_-$)以速度$v$运动，证明$\rho_-=\rho_+\gamma^2$，其中$\gamma=1/\sqrt{1-(v/c)^2}$。如果导线整体上是中性的，那么补偿电荷处在什么地方?}
+设导线中负电荷的分布为$\rho_-(r)$
+\begin{align*}
+    W&=\int_{0}^{R}\frac{\varepsilon_0}{2}E^2+\frac{B^2}{2\mu_0}\dif R\\
+    W&=\int_{0}^{R}\frac{\varepsilon_0}{2}\left(\int_0^r\frac{\rho_+-\rho_-}{2\pi \varepsilon_0r'}\dif r'\right)^2+\frac{1}{2\mu_0}\left(\int_0^r\frac{\mu_0\rho_-}{2\pi r'}\dif r'\right)^2\dif R\\
+\end{align*}
