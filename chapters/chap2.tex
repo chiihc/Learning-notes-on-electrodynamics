@@ -988,14 +988,14 @@ l(l+1)
 这是{关联勒让德方程}, 
 其在 $\theta\in[0,\pi]$ 上正则的解为
 \[
-\Theta_{lm}(\theta)=P_{lm}(\cos\theta),\qquad
+\Theta_{lm}(\theta)=P_l^m(\cos\theta),\qquad
 l=0,1,2,\dots,
 \qquad
 |m|\le l.
 \]
 其中,
 \begin{equation}
-    P_{lm}(x)\equiv\sqrt{(1+x^2)^m}\frac{\dif^m}{\dif x^m}P_l(x)
+    P_l^m(x)\equiv\sqrt{(1-x^2)^m}\frac{\dif^m}{\dif x^m}P_l(x)
 \end{equation}
 $P_l(x)$可由罗德里格(Rodrigue)公式计算:
 \begin{equation}
@@ -1007,7 +1007,7 @@ $P_l(x)$可由罗德里格(Rodrigue)公式计算:
 
 为了方便, 将角向部分合并, 定义球谐函数
 \begin{equation}
-    Y_{lm}\equiv\sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}}P_{lm}(\cos\theta) \mathrm{e}^{i m \phi}
+    Y_{lm}\equiv\sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}}P_l^m(\cos\theta) \mathrm{e}^{i m \phi}
 \end{equation}
 
 径向方程为
