@@ -247,8 +247,6 @@ A_{\phi\text{外}}
 \cos\theta  \mu_0\sigma\omega R \boldsymbol{e}_r
 -\frac{2}{3 } \mu_0\sigma\omega R\sin\theta 
 \boldsymbol{e}_\theta\\
-\boldsymbol{B}_{\text{内}}&=\frac{2}{3}
-\mu_0\sigma\omega R \boldsymbol{e}_z\\
 \boldsymbol{B}_{\text{外}}&=-\frac{1}{r\sin\theta}
 \frac{\partial\sin\theta  A_{\phi}}{\partial \theta}\boldsymbol{e}_r
 +\frac{1}{r\sin\theta }\left(\sin\theta\frac{\partial r A_{\phi}}{\partial r}
@@ -329,5 +327,63 @@ A_{\phi\text{外}}
     \boldsymbol{F}&=q(v_r\boldsymbol{e}_r+v_\phi\boldsymbol{e}_\phi)\times B\boldsymbol{e}_z\\
     F_\phi&=-qv_rB\\
     ma_\phi&=-qv_rB\\
-    \frac{1}{r}\frac{\dif rmv_\phi}{\dif t}&=-qB\frac{\dif r}{\dif t}\\
+    \frac{1}{r}\frac{\dif rmv_\phi}{\dif t}&=-qB\frac{\dif r}{\dif t}
+\end{align*}
+\mysssec{质量为$m$，带电荷量为$q_e$的粒子在一个磁场
+$\boldsymbol{B}=\dfrac{\mu_0q_m}{4\pi r^2}\boldsymbol{e}_r$中运动。\\
+(a）求出该粒子的加速度。\\
+(b）证明矢量$\boldsymbol{Q}\equiv m\left(\boldsymbol{r}\times\boldsymbol{v}\right)-\dfrac{\mu_0q_eq_m}{4\pi}\boldsymbol{e}_r$是常量\\
+(c)计算$\boldsymbol{Q}\cdot\boldsymbol{e}_\phi$，证明：$\theta$是一个运动恒量}
+(a):%设定坐标系使得粒子仅在$xy$上运动
+\begin{align*}
+\boldsymbol{F}&=q_e\boldsymbol{v}\times\boldsymbol{B}\\
+\boldsymbol{a}&=q_e(v_r\boldsymbol{e}_r
++v_\theta\boldsymbol{e}_\theta
++v_\phi\boldsymbol{e}_\phi)\times\dfrac{\mu_0q_m}{4\pi r^2m}\boldsymbol{e}_r\\
+a_\phi\boldsymbol{e}_\phi
++a_\theta\boldsymbol{e}_\theta&=q_e(-v_\theta\boldsymbol{e}_\phi
++v_\phi\boldsymbol{e}_\theta)\dfrac{\mu_0q_m}{4\pi r^2m}\\
+a_\phi\boldsymbol{e}_\phi
+&=-q_ev_\theta\boldsymbol{e}_\phi
+\dfrac{\mu_0q_m}{4\pi r^2m}\\
+r\sin\theta\ddot\phi
++2\dot r\sin\theta\dot \phi
++2r\cos\theta\dot\theta\dot\phi
+&=-q_er\dot\theta
+\dfrac{\mu_0q_m}{4\pi r^2m}\\
+r\sin\theta\ddot\phi
++2r\cos\theta\dot\theta\dot\phi
+&=-q_er\dot\theta
+\dfrac{\mu_0q_m}{4\pi r^2m}\\
+\sin^2\theta\ddot\phi
++2\sin\theta\cos\theta\dot\theta\dot\phi
+&=-q_e\sin\theta\dot\theta
+\dfrac{\mu_0q_m}{4\pi r^2m}\\
+\frac{\dif}{\dif t}\left(\sin^2\theta\dot\phi\right)
+&=\frac{\dif\cos\theta}{\dif t}q_e
+\dfrac{\mu_0q_m}{4\pi r^2m}
+% a_\theta&=q_ev_\phi\dfrac{\mu_0q_m}{4\pi r^2m}\\
+% r\ddot\theta-r\sin\theta\cos\theta\dot\phi^2&=q_er\sin\theta\dot\phi\dfrac{\mu_0q_m}{4\pi r^2m}\\
+\end{align*}
+(b)
+\begin{align*}
+\frac{\dif \boldsymbol{r}\times\boldsymbol{v}}{\dif t}&=\boldsymbol{\dot r}\times\boldsymbol{v}
++\boldsymbol{r}\times\boldsymbol{\dot v}\\
+\frac{\dif \boldsymbol{r}\times\boldsymbol{v}}{\dif t}&=\boldsymbol{v}\times\boldsymbol{v}
++\boldsymbol{r}\times\boldsymbol{a}\\
+\frac{\dif \boldsymbol{r}\times\boldsymbol{v}}{\dif t}&=\boldsymbol{r}\times q_e(-v_\theta\boldsymbol{e}_\phi
++v_\phi\boldsymbol{e}_\theta)\dfrac{\mu_0q_m}{4\pi r^2m}\\
+\frac{\dif \boldsymbol{r}\times\boldsymbol{v}}{\dif t}&=rq_e(v_\theta\boldsymbol{e}_\theta
++v_\phi\boldsymbol{e}_\phi)\dfrac{\mu_0q_m}{4\pi r^2m}\\
+\frac{\dif \boldsymbol{e}_r}{\dif t}&=\frac{1}{r}(v_\theta\boldsymbol{e}_\theta
++v_\phi\boldsymbol{e}_\phi)\\
+\frac{\dif m\left(\boldsymbol{r}\times\boldsymbol{v}\right)-\dfrac{\mu_0q_eq_m}{4\pi}\boldsymbol{e}_r}{\dif t}&=m\frac{\dif \boldsymbol{r}\times\boldsymbol{v}}{\dif t}
+-\dfrac{\mu_0q_eq_m}{4\pi}\frac{\dif \boldsymbol{e}_r}{\dif t}=0
+\end{align*}
+(c):
+\begin{align*}
+m\left(\boldsymbol{r}\times\boldsymbol{v}\right)\cdot\boldsymbol{e}_\phi-\dfrac{\mu_0q_eq_m}{4\pi}\boldsymbol{e}_r\cdot\boldsymbol{e}_\phi
+&=m\left(\boldsymbol{e}_\phi\times\boldsymbol{r}\right)\cdot\boldsymbol{v}\\
+\boldsymbol{Q}\cdot\boldsymbol{e}_\phi&=rm\boldsymbol{e}_\theta \cdot\boldsymbol{v}\\
+\boldsymbol{Q}\cdot\boldsymbol{e}_\phi&=rmv_\theta\\
 \end{align*}
