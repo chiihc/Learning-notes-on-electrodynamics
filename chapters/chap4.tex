@@ -333,13 +333,15 @@ A_{\phi\text{外}}
 $\boldsymbol{B}=\dfrac{\mu_0q_m}{4\pi r^2}\boldsymbol{e}_r$中运动。\\
 (a）求出该粒子的加速度。\\
 (b）证明矢量$\boldsymbol{Q}\equiv m\left(\boldsymbol{r}\times\boldsymbol{v}\right)-\dfrac{\mu_0q_eq_m}{4\pi}\boldsymbol{e}_r$是常量\\
-(c)计算$\boldsymbol{Q}\cdot\boldsymbol{e}_\phi$，证明：$\theta$是一个运动恒量}
+(c)选择球坐标 并让  $z$  轴沿  $Q$  方向。计算$\boldsymbol{Q}\cdot\boldsymbol{e}_\phi$，证明：$\theta$是一个运动恒量\\
+(d)计算$\boldsymbol{Q}\cdot\boldsymbol{e}_r$,  求函数$f(r)=\dfrac{\dif r}{\dif \phi}$}
 (a):%设定坐标系使得粒子仅在$xy$上运动
 \begin{align*}
 \boldsymbol{F}&=q_e\boldsymbol{v}\times\boldsymbol{B}\\
 \boldsymbol{a}&=q_e(v_r\boldsymbol{e}_r
 +v_\theta\boldsymbol{e}_\theta
 +v_\phi\boldsymbol{e}_\phi)\times\dfrac{\mu_0q_m}{4\pi r^2m}\boldsymbol{e}_r\\
+\boldsymbol{a}&=q_e\boldsymbol{v}\times\boldsymbol{r}\dfrac{\mu_0q_m}{4\pi r^3m}\\
 a_\phi\boldsymbol{e}_\phi
 +a_\theta\boldsymbol{e}_\theta&=q_e(-v_\theta\boldsymbol{e}_\phi
 +v_\phi\boldsymbol{e}_\theta)\dfrac{\mu_0q_m}{4\pi r^2m}\\
@@ -362,7 +364,7 @@ r\sin\theta\ddot\phi
 \frac{\dif}{\dif t}\left(\sin^2\theta\dot\phi\right)
 &=\frac{\dif\cos\theta}{\dif t}q_e
 \dfrac{\mu_0q_m}{4\pi r^2m}
-% a_\theta&=q_ev_\phi\dfrac{\mu_0q_m}{4\pi r^2m}\\
+% \\a_\theta&=q_ev_\phi\dfrac{\mu_0q_m}{4\pi r^2m}\\
 % r\ddot\theta-r\sin\theta\cos\theta\dot\phi^2&=q_er\sin\theta\dot\phi\dfrac{\mu_0q_m}{4\pi r^2m}\\
 \end{align*}
 (b)
@@ -385,5 +387,37 @@ r\sin\theta\ddot\phi
 m\left(\boldsymbol{r}\times\boldsymbol{v}\right)\cdot\boldsymbol{e}_\phi-\dfrac{\mu_0q_eq_m}{4\pi}\boldsymbol{e}_r\cdot\boldsymbol{e}_\phi
 &=m\left(\boldsymbol{e}_\phi\times\boldsymbol{r}\right)\cdot\boldsymbol{v}\\
 \boldsymbol{Q}\cdot\boldsymbol{e}_\phi&=rm\boldsymbol{e}_\theta \cdot\boldsymbol{v}\\
-\boldsymbol{Q}\cdot\boldsymbol{e}_\phi&=rmv_\theta\\
+0&=rmv_\theta\\
+0&=v_\theta
 \end{align*}
+(d)
+\begin{align*}
+m\left(\boldsymbol{r}\times\boldsymbol{v}\right)\cdot\boldsymbol{e}_r-\dfrac{\mu_0q_eq_m}{4\pi}\boldsymbol{e}_r\cdot\boldsymbol{e}_r
+&=m\left(\boldsymbol{e}_r\times\boldsymbol{r}\right)\cdot\boldsymbol{v}
+-\dfrac{\mu_0q_eq_m}{4\pi}\\
+\boldsymbol{Q}\cdot\boldsymbol{e}_r&=-\dfrac{\mu_0q_eq_m}{4\pi}\\
+|\boldsymbol Q|&=\left|\dfrac{\mu_0q_eq_m}{4\pi\cos\theta}\right|
+\end{align*}
+(e)
+\begin{align*}
+m\left(\boldsymbol{r}\times\boldsymbol{v}\right)\cdot\boldsymbol{e}_\theta-\dfrac{\mu_0q_eq_m}{4\pi}\boldsymbol{e}_r\cdot\boldsymbol{e}_\theta
+&=m\left(\boldsymbol{e}_\theta\times\boldsymbol{r}\right)\cdot\boldsymbol{v}\\
+\boldsymbol{Q}\cdot\boldsymbol{e}_\theta&=-rm\boldsymbol{e}_\phi \cdot\boldsymbol{v}\\
+-\sin\theta Q&=rmv_\phi\\
+\sin\theta \dfrac{\mu_0q_eq_m}{4\pi\cos\theta}&=r^2m\frac{\dif \phi}{\dif t}\\
+\sin\theta \dfrac{\mu_0q_eq_m}{4\pi m\cos\theta(r_0+v_rt)^2}\dif t&=\dif \phi\\
+-\sin\theta \dfrac{\mu_0q_eq_m}{4\pi m\cos\theta v_r(r_0+v_rt)}&=\phi_0+ \phi\\
+-\sin\theta \dfrac{\mu_0q_eq_m}{4\pi m\cos\theta v_rr}&=\phi_0+ \phi
+\end{align*}
+\mysssec{一个半圆形导线带有稳恒电流$ 
+I$，求在另一半圆上 
+$P$
+ 点的磁场}
+ \begin{align*}
+    \boldsymbol{B}&=\int_{\pi}^{2\pi}\frac{\mu_0 I\dif\boldsymbol l\times \left[(R\cos\theta-R\cos\theta')\boldsymbol{e}_x+(R\sin\theta-R\sin\theta')\boldsymbol{e}_y\right]}{4\pi \left[(R\cos\theta-R\cos\theta')+(R\sin\theta-R\sin\theta')\right]^\frac{3}{2}}\\
+    \boldsymbol{B}&=\int_{\pi}^{2\pi}\frac{\mu_0 I\dif(R\cos\theta'\boldsymbol{e}_x+R\sin\theta'\boldsymbol{e}_y)\times \left[(R\cos\theta-R\cos\theta')\boldsymbol{e}_x+(R\sin\theta-R\sin\theta')\boldsymbol{e}_y\right]}{4\pi \left(2R^2-2R^2\sin\theta\sin\theta'-2R^2\cos\theta\cos\theta'\right)^\frac{3}{2}}\\
+    \boldsymbol{B}&=\int_{\pi}^{2\pi}\frac{\mu_0 IR(-\sin\theta'\boldsymbol{e}_x\dif\theta'+\cos\theta'\boldsymbol{e}_y\dif\theta')\times \left[(R\cos\theta-R\cos\theta')\boldsymbol{e}_x+(R\sin\theta-R\sin\theta')\boldsymbol{e}_y\right]}{4\pi R^3\left(2-2\sin\theta\sin\theta'-2\cos\theta\cos\theta'\right)^\frac{3}{2}}\\
+    \boldsymbol{B}&=\int_{\pi}^{2\pi}\frac{\mu_0 IR[-\sin\theta'(R\sin\theta-R\sin\theta')-\cos\theta'(R\cos\theta-R\cos\theta')]\boldsymbol{e}_z\dif\theta'}{2\pi R^3\left(2-2\sin\theta\sin\theta'-2\cos\theta\cos\theta'\right)^\frac{3}{2}}\\
+    \boldsymbol{B}&=\int_{\pi}^{2\pi}\frac{\mu_0 I[1-\sin\theta'(\sin\theta)]\boldsymbol{e}_z\dif\theta'}{4\pi R\left(2-2\sin\theta\sin\theta'-2\cos\theta\cos\theta'\right)^\frac{3}{2}}
+ \end{align*}
+ 不会积分
