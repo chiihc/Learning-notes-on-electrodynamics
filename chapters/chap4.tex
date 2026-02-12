@@ -421,3 +421,69 @@ $P$
     \boldsymbol{B}&=\int_{\pi}^{2\pi}\frac{\mu_0 I[1-\sin\theta'(\sin\theta)]\boldsymbol{e}_z\dif\theta'}{4\pi R\left(2-2\sin\theta\sin\theta'-2\cos\theta\cos\theta'\right)^\frac{3}{2}}
  \end{align*}
  不会积分
+ \mysssec{圆形电流中心轴线上的磁场是非常不均匀的（随着距中心点距离的增加而迅速减小）。你
+可以用两个相距为$2d$的同样的圆电流来产生一个非常接近均匀的磁场。\\
+（a）作为$z$的函数求出磁场$\boldsymbol{B}$，证明在两圆电流之间的中点（$z=0$处）$\dfrac{\partial \boldsymbol{B}}{\partial z}$为零。现在，如果你把$d$选
+取得正好使$\boldsymbol{B}$的二阶导数在中点也为零，这种安排就是亥姆霍兹线圈，是一种在实验室中产生相对均匀的
+磁场非常有效的方法。\\
+(b)在中点处用$\dfrac{\partial^2 \boldsymbol{B}}{\partial z^2}=0$来决定$d$，找出中心处的磁场}
+(a):
+对于单个圆形电流来说
+\begin{align*}
+    \boldsymbol{B}&=\int_{0}^{2\pi}\frac{\mu_0 I\dif \boldsymbol{l}\times\boldsymbol{r}}{4\pi r^3}\\
+    B_z&=\int_{0}^{2\pi}\frac{\mu_0 IR\dif lr}{4\pi r^4}\\
+    B_z&=\frac{\mu_0 IR}{2 \left(R^2+z^2\right)^\frac{3}{2}}
+\end{align*}
+
+对于两个相距为$2d$的同样的圆电流
+\begin{align*}
+    B_z&=\frac{\mu_0 IR}{2 \left[R^2+\left(z-d\right)^2\right]^\frac{3}{2}}+\frac{\mu_0 IR}{2 \left[R^2+\left(z+d\right)^2\right]^\frac{3}{2}}\\
+    \frac{\partial B_z}{\partial z}
+    &=
+    \frac{\partial \frac{\mu_0 IR}{2 \left[R^2+\left(z-d\right)^2\right]^\frac{3}{2}}+\frac{\mu_0 IR}{2 \left[R^2+\left(z+d\right)^2\right]^\frac{3}{2}}}{\partial z}\\
+    \frac{\partial B_z}{\partial z}
+    &=-
+    \frac{3}{2}\frac{2\left(z-d\right)\mu_0 IR}{2 \left[R^2+\left(z-d\right)^2\right]^\frac{5}{2}}-\frac{3}{2}\frac{2\left(z+d\right)\mu_0 IR}{2 \left[R^2+\left(z+d\right)^2\right]^\frac{5}{2}}\\
+    \left.\frac{\partial B_z}{\partial z}\right|_{z=0}
+    &=0
+\end{align*}
+
+(2):
+\begin{align*}
+    \frac{\partial B_z}{\partial z}
+    &=-
+    \frac{3\left(z-d\right)\mu_0 IR}{2 \left[R^2+\left(z-d\right)^2\right]^\frac{5}{2}}-\frac{3\left(z+d\right)\mu_0 IR}{2 \left[R^2+\left(z+d\right)^2\right]^\frac{5}{2}}\\
+    \frac{\partial^2 B_z}{\partial z^2}
+    &=\frac{\partial -
+    \frac{3\left(z-d\right)\mu_0 IR}{2 \left[R^2+\left(z-d\right)^2\right]^\frac{5}{2}}-\frac{3\left(z+d\right)\mu_0 IR}{2 \left[R^2+\left(z+d\right)^2\right]^\frac{5}{2}}}{\partial z}\\
+    \frac{\partial -
+    \frac{3\left(z-d\right)\mu_0 IR}{2 \left[R^2+\left(z-d\right)^2\right]^\frac{5}{2}}}{\partial z}
+    &=-
+    \frac{3\mu_0 IR\left[R^2+\left(z-d\right)^2\right]^\frac{5}{2}
+    -15\left(z-d\right)^2\mu_0 IR\left[R^2+\left(z-d\right)^2\right]^\frac{3}{2}}{2 \left[R^2+\left(z-d\right)^2\right]^5}\\
+\frac{\partial -
+    \frac{3\left(z-d\right)\mu_0 IR}{2 \left[R^2+\left(z-d\right)^2\right]^\frac{5}{2}}}{\partial z}
+    &=-
+    \frac{3\mu_0 IR^3
+    -12\left(z-d\right)^2\mu_0 IR}{2 \left[R^2+\left(z-d\right)^2\right]^\frac{7}{2}}\\
+    \frac{\partial^2 B_z}{\partial z^2}
+    &=-
+    \frac{3\mu_0 IR^3
+    -12\left(z-d\right)^2\mu_0 IR}{2 \left[R^2+\left(z-d\right)^2\right]^\frac{7}{2}}
+    -
+    \frac{3\mu_0 IR^3
+    -12\left(z+d\right)^2\mu_0 IR}{2 \left[R^2+\left(z+d\right)^2\right]^\frac{7}{2}}\\
+    \left.\frac{\partial^2 B_z}{\partial z^2}\right|_{z=0}
+    &=-
+    \frac{3\mu_0 IR^3
+    -12d^2\mu_0 IR}{2 \left(R^2+d^2\right)^\frac{7}{2}}
+    -
+    \frac{3\mu_0 IR^3
+    -12d^2\mu_0 IR}{2 \left(R^2+d^2\right)^\frac{7}{2}}=0\\
+    R
+    &=2d
+\end{align*}
+\begin{align*}
+    B_z&=\frac{\mu_0 Id}{\left[4d^2+\left(z-d\right)^2\right]^\frac{3}{2}}+\frac{\mu_0 Id}{\left[4d^2+\left(z+d\right)^2\right]^\frac{3}{2}}\\
+    \left.B_z\right|_{z=0}&=\frac{2\mu_0 Id}{\left[5d^2\right]^\frac{3}{2}}
+\end{align*}
