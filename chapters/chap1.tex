@@ -715,7 +715,7 @@ $\Delta\tau=h_1h_2h_3\,\Delta u_1\Delta u_2\Delta u_3$
 \end{equation}
 其无限小位移为
 \begin{align}
-    \dif\boldsymbol{l}&=\dif{r}\boldsymbol{r}+r\sin\theta\dif{\phi}\boldsymbol{e}_\phi+r\dif{\theta}\boldsymbol{\theta}
+    \dif\boldsymbol{l}&=\dif{r}\boldsymbol{r}+r\sin\theta\dif{\phi}\boldsymbol{e}_\phi+r\dif{\theta}\boldsymbol{e}_\theta
 \end{align}
 其体积元为
 \begin{equation}
@@ -724,7 +724,7 @@ $\Delta\tau=h_1h_2h_3\,\Delta u_1\Delta u_2\Delta u_3$
 梯度
 \begin{align}
     \nabla f&=\frac{1}{h_i}\frac{\partial f}{\partial u_i}{\boldsymbol e}_i
-    =\dfrac{\partial f}{\partial r}\boldsymbol{r}+\dfrac{1}{r\sin\theta}\dfrac{\partial f}{\partial \phi}\boldsymbol{e}_\phi+\frac{1}{r}\dfrac{\partial f}{\partial \theta}\boldsymbol{\theta}
+    =\dfrac{\partial f}{\partial r}\boldsymbol{r}+\dfrac{1}{r\sin\theta}\dfrac{\partial f}{\partial \phi}\boldsymbol{e}_\phi+\frac{1}{r}\dfrac{\partial f}{\partial \theta}\boldsymbol{e}_\theta
 \end{align}
 散度
 \begin{align}
@@ -751,26 +751,26 @@ $\Delta\tau=h_1h_2h_3\,\Delta u_1\Delta u_2\Delta u_3$
     -r\sin\theta \frac{\partial ra_3}{\partial u_1}\boldsymbol{e}_2
     +r\frac{\partial r\sin\theta a_2}{\partial u_1}\boldsymbol{e}_3
     +r\sin\theta \frac{\partial a_1}{\partial u_3}\boldsymbol{e}_2\right)\nonumber\\
-    =&\frac{1}{r^2\sin\theta }\left(\frac{\partial ra_{\theta}}{\partial \phi}\boldsymbol{r}
-    -\frac{\partial r\sin\theta a_{\phi}}{\partial \theta}\boldsymbol{r}
-    -r\frac{\partial a_r}{\partial \phi}\boldsymbol{\theta}
+    =&\frac{1}{r^2\sin\theta }\left(\frac{\partial ra_{\theta}}{\partial \phi}\boldsymbol{e}_r
+    -\frac{\partial r\sin\theta a_{\phi}}{\partial \theta}\boldsymbol{e}_r
+    -r\frac{\partial a_r}{\partial \phi}\boldsymbol{e}_\theta
     -r\sin\theta \frac{\partial ra_{\theta}}{\partial r}\boldsymbol{e}_\phi
-    +r\frac{\partial r\sin\theta a_{\phi}}{\partial r}\boldsymbol{\theta}
+    +r\frac{\partial r\sin\theta a_{\phi}}{\partial r}\boldsymbol{e}_\theta
     +r\sin\theta \frac{\partial a_r}{\partial \theta}\boldsymbol{e}_\phi\right)\nonumber\\
     =&\frac{1}{r^2\sin\theta}\left(r\frac{\partial a_\theta}{\partial \phi}
-    -r\frac{\partial \sin\theta a_{\phi}}{\partial \theta}\right)\boldsymbol{r}
+    -r\frac{\partial \sin\theta a_{\phi}}{\partial \theta}\right)\boldsymbol{e}_r
     +\frac{1}{r}\left(\frac{\partial a_r}{\partial \theta}
     -\frac{\partial ra_\theta}{\partial r}\right)\boldsymbol{e}_\phi
     +\frac{1}{r\sin\theta }\left(\sin\theta\frac{\partial r a_{\phi}}{\partial r}
     -\frac{\partial a_r}{\partial \phi}
-    \right)\boldsymbol{\theta}\nonumber\\
+    \right)\boldsymbol{e}_\theta\nonumber\\
     =&\frac{1}{r\sin\theta}\left(\frac{\partial a_\theta}{\partial \phi}
-    -\frac{\partial\sin\theta  a_{\phi}}{\partial \theta}\right)\boldsymbol{r}
+    -\frac{\partial\sin\theta  a_{\phi}}{\partial \theta}\right)\boldsymbol{e}_r
     +\frac{1}{r}\left(\frac{\partial a_r}{\partial \theta}
     -\frac{\partial ra_\theta}{\partial r}\right)\boldsymbol{e}_\phi
     +\frac{1}{r\sin\theta }\left(\sin\theta\frac{\partial r a_{\phi}}{\partial r}
     -\frac{\partial a_r}{\partial \phi}
-    \right)\boldsymbol{\theta}
+    \right)\boldsymbol{e}_\theta
 \end{align}
 拉普拉斯算子
 \begin{align}
@@ -1465,7 +1465,7 @@ $\boldsymbol\nabla\times\boldsymbol c=\boldsymbol 0$, 因此
 &2.\rho=\delta(R\boldsymbol{e}_s-\boldsymbol{e}_s)\dfrac{\lambda}{2\pi R}\\
 &3.\rho=\delta(\boldsymbol x_3)H(x+R)H(-x-R)\dfrac{\lambda}{\pi R^2}
 \end{align*}
-\mysssec{对函数$\boldsymbol a=r^2\cos\theta\boldsymbol{r} +r^2\cos\phi \boldsymbol{\theta}-r^2\cos\theta\sin\phi\boldsymbol{e}_\phi$验证散度定理,体积为半径为$R$在第一卦限的$1/8$球体}
+\mysssec{对函数$\boldsymbol a=r^2\cos\theta\boldsymbol{r} +r^2\cos\phi \boldsymbol{e}_\theta-r^2\cos\theta\sin\phi\boldsymbol{e}_\phi$验证散度定理,体积为半径为$R$在第一卦限的$1/8$球体}
 \begin{math}
     \boldsymbol{\nabla}\cdot \boldsymbol a=2r\cos\theta-r^2\cos\theta\cos\phi
 \end{math}
@@ -1521,7 +1521,7 @@ $\boldsymbol\nabla\times\boldsymbol c=\boldsymbol 0$, 因此
     =&\int_0^{2\pi}(-bR^2\sin^2\phi+cR^2\cos^2\phi)\dif \phi\\
     =&2\pi R(c-b)
 \end{align*}
-\mysssec{对函数$\boldsymbol a=r\cos^2\theta\boldsymbol{r}-r\sin\theta\cos\theta\boldsymbol{\theta}+3r\boldsymbol{e}_\phi$验证斯托克斯定理。}
+\mysssec{对函数$\boldsymbol a=r\cos^2\theta\boldsymbol{r}-r\sin\theta\cos\theta\boldsymbol{e}_\theta+3r\boldsymbol{e}_\phi$验证斯托克斯定理。}
     \begin{align*}
     &\boldsymbol{\nabla}\times\boldsymbol a\\
     =&\frac{1}{sr}\left(r\frac{\partial a_\theta}{\partial \phi}-s\frac{\partial a_{\phi}}{\partial \theta}\right)\boldsymbol{r}
@@ -1529,16 +1529,16 @@ $\boldsymbol\nabla\times\boldsymbol c=\boldsymbol 0$, 因此
     -\frac{\partial ra_\theta}{\partial r}\right)\boldsymbol{e}_\phi
     +\frac{1}{s}\left(\frac{\partial sa_{\phi}}{\partial r}
     -\frac{\partial a_r}{\partial \phi}
-    \right)\boldsymbol{\theta}\\
+    \right)\boldsymbol{e}_\theta\\
     =&\frac{1}{sr}\left(r\frac{\partial r\sin\theta\cos\theta}{\partial \phi}-s\frac{\partial 3r}{\partial \theta}\right)\boldsymbol{r}
     +\frac{1}{r}\left(\frac{\partial r\cos^2\theta}{\partial \theta}
     -\frac{\partial rr\sin\theta\cos\theta}{\partial r}\right)\boldsymbol{e}_\phi
     +\frac{1}{s}\left(\frac{\partial s3r}{\partial r}
     -\frac{\partial r\cos^2\theta}{\partial \phi}
-    \right)\boldsymbol{\theta}\\
+    \right)\boldsymbol{e}_\theta\\
     =&\frac{1}{s}\left(6r\sin\theta
-    \right)\boldsymbol{\theta}\\
-    =&6\boldsymbol{\theta}
+    \right)\boldsymbol{e}_\theta\\
+    =&6\boldsymbol{e}_\theta
 \end{align*}
 计算$XY$平面:
 \begin{align*}
@@ -1546,7 +1546,7 @@ $\boldsymbol\nabla\times\boldsymbol c=\boldsymbol 0$, 因此
     &=\int_{0}^{\frac{\pi}{2}}\dif \theta\int_{0}^{R}6\dif r\\
     &=\frac{3}{2}R
 \end{align*}
-\mysssec{对函数$\boldsymbol a=r^2\sin^2\theta\boldsymbol{r}+4r^2\cos\theta\boldsymbol{\theta}+r^2\tan\theta\boldsymbol{e}_\phi$验证散度定理。}
+\mysssec{对函数$\boldsymbol a=r^2\sin^2\theta\boldsymbol{r}+4r^2\cos\theta\boldsymbol{e}_\theta+r^2\tan\theta\boldsymbol{e}_\phi$验证散度定理。}
 \begin{align*}
     \boldsymbol{\nabla}\cdot\boldsymbol a&=\frac{1}{sr}(\dfrac{\partial sra_r}{\partial r}+r\dfrac{\partial a_{\phi}}{\partial \phi}+s\dfrac{\partial \theta}{\partial \theta})\\
     &=\frac{1}{sr}(\dfrac{\partial srr^2\sin^2\theta}{\partial r}

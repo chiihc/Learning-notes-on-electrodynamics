@@ -1124,15 +1124,15 @@ P_{l}(\cos\theta)
 \end{align}
 解得
 \begin{align}
-    S(s)=C_ms^{-m}+D_ms^{m}
+    S(s)=C_ms^{-m}+D_ms^{m},\,(m\in\mathbb N^+)
 \end{align}
 \begin{align}
     \dfrac{1}{\Phi(\phi)}\dfrac{{\partial^2 \Phi(\phi)}}{\partial \phi^2}&=-m^2\nonumber\\
-    \Phi&=E_m\cos m\phi+F_m\sin m\phi,\,(m\in\mathbb N)
+    \Phi&=E_m\cos m\phi+F_m\sin m\phi,\,(m\in\mathbb N^+)
 \end{align}
 将各部分组合, 得到一般解
 \begin{equation}
-    U=\left(C_ms^{-m}+D_ms^{m}\right)(E_m\cos m\phi+F_m\sin m\phi),\,(m\in\mathbb N)
+    U=\left(C_ms^{-m}+D_ms^{m}\right)(E_m\cos m\phi+F_m\sin m\phi),\,(m\in\mathbb N^+)
 \end{equation}
 \subsubsection{勒让德多项式性质的证明}
 \paragraph{$l\in \mathbb N$的证明}
@@ -2867,6 +2867,15 @@ k\cos(\frac{\pi z}{a})$}
     U=\int_{-a}^{a}\frac{\lambda}{4\pi\varepsilon_0\sqrt{r^2+a^2-2ra\cos\theta}}\dif z'
 \end{align*}
 不想写
+\mysssec{证明一个位于球内点$r$处的单电荷$q$所产生的平均电场等于球内均匀电荷分布$\rho=-q/\left(\frac{4}{3}\pi R^3\right)$在
+$r$处产生的电场，为}
+\begin{align*}
+    \frac{9}{16\pi^2\varepsilon_0R^3}\int\frac{q\boldsymbol{r'}}{r'^3}\dif\tau'
+\end{align*}
+% 平均电场:
+% \begin{align*}
+%     \boldsymbol{E}=
+% \end{align*}
 \mysssec{一个理想的电偶极子位于原点, 方向沿$z$轴方向。一个电荷从$xy$平面上
 的一点由静止开始释放。证明它在一个半圆弧上往复运动, 就像挂在原点的一个单摆一样。}
 由于体系绕 $z$ 轴轴对称, 且初始条件取在某一固定平面内, 可令

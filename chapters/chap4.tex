@@ -85,7 +85,7 @@
 \subsection{磁矢势}
 
 
-在静磁学中，磁场满足
+在静磁学中, 磁场满足
 $
 \boldsymbol{\nabla}\cdot\boldsymbol{B}=0.
 $
@@ -94,11 +94,11 @@ $
 根据向量分析中的 Helmholtz 定理：
 
 \begin{quote}
-在单连通区域内，任何散度为零的光滑矢量场，都可以表示为某个矢量场的旋度。
+在单连通区域内, 任何散度为零的光滑矢量场, 都可以表示为某个矢量场的旋度。
 \end{quote}
 
 因此存在矢量场
-$\boldsymbol{A}(\boldsymbol{r})$，使得
+$\boldsymbol{A}(\boldsymbol{r})$, 使得
 \begin{equation}
 \boxed{
 \boldsymbol{B}=\boldsymbol{\nabla}\times\boldsymbol{A}.
@@ -110,8 +110,8 @@ $\boldsymbol{A}(\boldsymbol{r})$，使得
 
 
 磁矢势并非唯一。
-若 $\boldsymbol{A}$ 给出磁场 $\boldsymbol{B}$，则对任意标量场
-$\Lambda(\boldsymbol{r})$，定义
+若 $\boldsymbol{A}$ 给出磁场 $\boldsymbol{B}$, 则对任意标量场
+$\Lambda(\boldsymbol{r})$, 定义
 \begin{equation}
 \boldsymbol{A}'=\boldsymbol{A}+\boldsymbol{\nabla}\Lambda,
 \end{equation}
@@ -124,11 +124,11 @@ $\Lambda(\boldsymbol{r})$，定义
 \boldsymbol{B}.
 \end{equation}
 
-磁场 $\boldsymbol{B}$ 是可观测量，而磁矢势 $\boldsymbol{A}$ 本身不是。
+磁场 $\boldsymbol{B}$ 是可观测量, 而磁矢势 $\boldsymbol{A}$ 本身不是。
 不同的 $\boldsymbol{A}$ 描述的是同一个物理磁场。
 
 
-为了固定这种不唯一性，通常施加附加条件。
+为了固定这种不唯一性, 通常施加附加条件。
 最常用的是{库仑规范}：
 \begin{equation}
 {
@@ -142,7 +142,7 @@ $\Lambda(\boldsymbol{r})$，定义
 \boldsymbol{\nabla}\times\boldsymbol{B}=\mu_0\boldsymbol{J}.
 \end{equation}
 
-代入 $\boldsymbol{B}=\boldsymbol{\nabla}\times\boldsymbol{A}$，得到
+代入 $\boldsymbol{B}=\boldsymbol{\nabla}\times\boldsymbol{A}$, 得到
 \begin{equation}
 \boldsymbol{\nabla}\times(\boldsymbol{\nabla}\times\boldsymbol{A})
 =
@@ -157,7 +157,7 @@ $\Lambda(\boldsymbol{r})$，定义
 -
 \nabla^2\boldsymbol{A},
 \]
-并在库仑规范下 $\boldsymbol{\nabla}\cdot\boldsymbol{A}=0$，得
+并在库仑规范下 $\boldsymbol{\nabla}\cdot\boldsymbol{A}=0$, 得
 \begin{equation}
 {
 \nabla^2\boldsymbol{A}=-\mu_0\boldsymbol{J}.
@@ -167,7 +167,7 @@ $\Lambda(\boldsymbol{r})$，定义
 这是一组三个{形式上独立的泊松方程}。
 
 
-在无穷远处 $\boldsymbol{A}\to0$ 的条件下，上式的解为
+在无穷远处 $\boldsymbol{A}\to0$ 的条件下, 上式的解为
 \begin{equation}
 {
 \boldsymbol{A}(\boldsymbol{r})
@@ -175,19 +175,23 @@ $\Lambda(\boldsymbol{r})$，定义
 \frac{\mu_0}{4\pi}
 \int
 \frac{\boldsymbol{J}(\boldsymbol{r}')}{|\boldsymbol{r}-\boldsymbol{r}'|}
-\,\dif^3 r'.
+\,\dif r'.
 }
 \end{equation}
 
-该表达式在形式上与静电学中电势的解完全类似。
+类比电场,可以写出用$\boldsymbol{B}$来表示$\boldsymbol{A}$的公式
+
+\begin{equation}
+    \boldsymbol{A}=\frac{1}{4\pi}\int\boldsymbol{B}(\boldsymbol r')\times\frac{\boldsymbol{r}}{r^3}\dif r'
+\end{equation}
 
 \subsubsection{含表面电流时径向磁矢势的边界条件}
-对麦克斯韦方程在一条跨越界面的无穷小曲面上积分，并取极限 $\epsilon\to0$，得到边界条件
+对麦克斯韦方程在一条跨越界面的无穷小曲面上积分, 并取极限 $\epsilon\to0$, 得到边界条件
 \begin{equation}
 \boldsymbol{B}_{||\text{out}}-\boldsymbol{B}_{||\text{in}}=\mu_0\boldsymbol{K}.
 \end{equation}
 
-代入 $\boldsymbol{B}=\boldsymbol\nabla\times\boldsymbol{A}$，得到边界条件
+代入 $\boldsymbol{B}=\boldsymbol\nabla\times\boldsymbol{A}$, 得到边界条件
 \begin{equation}
 \boldsymbol\nabla\times\boldsymbol{A}_{||\text{out}}-
 \boldsymbol\nabla\times\boldsymbol{A}_{||\text{in}}=\mu_0\boldsymbol{K}
@@ -198,7 +202,7 @@ $\Lambda(\boldsymbol{r})$，定义
     B_{\bot\text{out}}=B_{\bot\text{in}}
 \end{equation}
 
-\mysssec{一半径为$R$的球壳，表面带有均匀电荷，电荷面密度为$\sigma$，当它以恒定角速度$\omega$旋转时，求矢势和南北半球之间的相互吸引磁力。}
+\mysssec{一半径为$R$的球壳, 表面带有均匀电荷, 电荷面密度为$\sigma$, 当它以恒定角速度$\omega$旋转时, 求矢势和南北半球之间的相互吸引磁力。}
 边界条件:
 \begin{align*}
     &\boldsymbol{A}_{\text{内}}=\boldsymbol{A}_{\text{外}},&r=R\\
@@ -207,12 +211,12 @@ $\Lambda(\boldsymbol{r})$，定义
     &\boldsymbol{A}_{\text{内}}\to\frac{d\cos\theta}{4\pi\varepsilon_0r^2},&r\to0
 \end{align*}
 \begin{align*}
-\boldsymbol{\nabla}^2\boldsymbol{A}_\theta
-&=\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\dfrac{{\partial A_\theta}}{\partial r}\right)\boldsymbol{e}_\theta
--\frac{1}{r^2\sin^2\theta}A_\theta\boldsymbol{e}_\theta
+\boldsymbol{\nabla}^2\boldsymbol{A}_\phi
+&=\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\dfrac{{\partial A_\phi}}{\partial r}\right)\boldsymbol{e}_\phi
+-\frac{1}{r^2\sin^2\theta}A_\phi\boldsymbol{e}_\phi
 +\frac{1}{r^2\sin\theta}\left(
-\cos\theta\dfrac{{\partial A_\theta}}{\partial \theta}
-+\sin\theta\dfrac{{\partial^2 A_\theta}}{\partial \theta^2}\right)\boldsymbol{e}_\theta\\
+\cos\theta\dfrac{{\partial A_\phi}}{\partial \theta}
++\sin\theta\dfrac{{\partial^2 A_\phi}}{\partial \theta^2}\right)\boldsymbol{e}_\phi\\
 A_{\phi\text{内}}
 &=B_1rP_1^1(\cos\theta)=-B_1\sin\theta r\\
 A_{\phi\text{外}}
@@ -285,10 +289,10 @@ A_{\phi\text{外}}
 \boldsymbol{F}&=-\frac{1}{4}\pi R^4\sigma^2 \omega^2\mu_0
 \boldsymbol{e}_z
 \end{align*}
-\mysssec{一段长$l$直导线通有电流$I$，它所产生的磁矢势为多少？}
+\mysssec{一段长$l$直导线通有电流$I$, 它所产生的磁矢势为多少？}
 \begin{align*}
     A=\frac{\mu_0}{4\pi}\int_0^l\frac{\dif z'}{\sqrt{s^2+(z-z')^2}}=\frac{\mu_0}{4\pi}\ln\left[\frac{z+\sqrt{s^2+z^2}}{z-l+\sqrt{s^2+(z-l)^2}}\right]\end{align*}
-\mysssec{用柱坐标表示，电流密度为多大才能产生磁矢势$\boldsymbol A=k\boldsymbol{e}_\phi$}
+\mysssec{用柱坐标表示, 电流密度为多大才能产生磁矢势$\boldsymbol A=k\boldsymbol{e}_\phi$}
 \begin{align*}
     \boldsymbol A&=k\boldsymbol{e}_\phi\\
     \boldsymbol\nabla^2\boldsymbol A&=k\boldsymbol\nabla^2\boldsymbol{e}_\phi\\
@@ -305,16 +309,16 @@ A_{\phi\text{外}}
 \end{equation}
 式中, $\boldsymbol{m}$是磁偶极矩
 \begin{equation}
-    \boldsymbol{m}\equiv I\boldsymbol{a}
+    \boldsymbol{m}\equiv I\int\dif\boldsymbol{a}=I\boldsymbol{a}
 \end{equation}
-\mysssec{一个半径为$R$的留声机唱片，带有均匀的面电荷$\sigma$，以恒定角速度$\omega$旋转，求出它的磁偶极矩}
+\mysssec{一个半径为$R$的留声机唱片, 带有均匀的面电荷$\sigma$, 以恒定角速度$\omega$旋转, 求出它的磁偶极矩}
 \begin{align*}
     {m}= I{a}=\int_{0}^{R}2\pi\sigma r\omega \pi r^2\dif r
     =\int_{0}^{R}2\pi^2\sigma \omega \pi r^3\dif r
     =\frac{1}{2}\pi^2\sigma \omega \pi R^4
 \end{align*}
 \subsection{习题}
-\mysssec{既然平行电流相互吸引，单根导线中的电流将收缩到沿着中心轴线的一条细束上。然而在实际中，电流一般将均匀地分布于导线中，如果正电荷(密度$\rho_+$)是静止的，负电荷(密度$\rho_-$)以速度$v$运动，证明$\rho_-=\rho_+\gamma^2$，其中$\gamma=1/\sqrt{1-(v/c)^2}$。如果导线整体上是中性的，那么补偿电荷处在什么地方?}
+\mysssec{既然平行电流相互吸引, 单根导线中的电流将收缩到沿着中心轴线的一条细束上。然而在实际中, 电流一般将均匀地分布于导线中, 如果正电荷(密度$\rho_+$)是静止的, 负电荷(密度$\rho_-$)以速度$v$运动, 证明$\rho_-=\rho_+\gamma^2$, 其中$\gamma=1/\sqrt{1-(v/c)^2}$。如果导线整体上是中性的, 那么补偿电荷处在什么地方?}
 设导线中位于半径小于$r$处的负线电荷为$\lambda_-(r)$
 \begin{align*}
     E&=vB\\
@@ -322,18 +326,18 @@ A_{\phi\text{外}}
     \pi r^2\rho_++\lambda_-&=v^2\mu_0\lambda_-\varepsilon_0\\
     \lambda_-&=\frac{\pi r^2\rho_+}{1-\frac{v^2}{c^2}}
 \end{align*}
-\mysssec{一个圆对称磁场（$B$仅依赖于到中心轴的距离），方向垂直于纸面，。如果总磁通量为零，证明一个从磁场中心出发的带电粒子将沿径向从边缘射出（只要它能逃 脱磁场区。）反过来，一个粒子瞄准圆心从外面入射，它将击中圆心。}
+\mysssec{一个圆对称磁场（$B$仅依赖于到中心轴的距离）, 方向垂直于纸面, 。如果总磁通量为零, 证明一个从磁场中心出发的带电粒子将沿径向从边缘射出（只要它能逃 脱磁场区。）反过来, 一个粒子瞄准圆心从外面入射, 它将击中圆心。}
 \begin{align*}
     \boldsymbol{F}&=q(v_r\boldsymbol{e}_r+v_\phi\boldsymbol{e}_\phi)\times B\boldsymbol{e}_z\\
     F_\phi&=-qv_rB\\
     ma_\phi&=-qv_rB\\
     \frac{1}{r}\frac{\dif rmv_\phi}{\dif t}&=-qB\frac{\dif r}{\dif t}
 \end{align*}
-\mysssec{质量为$m$，带电荷量为$q_e$的粒子在一个磁场
+\mysssec{质量为$m$, 带电荷量为$q_e$的粒子在一个磁场
 $\boldsymbol{B}=\dfrac{\mu_0q_m}{4\pi r^2}\boldsymbol{e}_r$中运动。\\
 (a）求出该粒子的加速度。\\
 (b）证明矢量$\boldsymbol{Q}\equiv m\left(\boldsymbol{r}\times\boldsymbol{v}\right)-\dfrac{\mu_0q_eq_m}{4\pi}\boldsymbol{e}_r$是常量\\
-(c)选择球坐标 并让  $z$  轴沿  $Q$  方向。计算$\boldsymbol{Q}\cdot\boldsymbol{e}_\phi$，证明：$\theta$是一个运动恒量\\
+(c)选择球坐标 并让  $z$  轴沿  $Q$  方向。计算$\boldsymbol{Q}\cdot\boldsymbol{e}_\phi$, 证明：$\theta$是一个运动恒量\\
 (d)计算$\boldsymbol{Q}\cdot\boldsymbol{e}_r$,  求函数$f(r)=\dfrac{\dif r}{\dif \phi}$}
 (a):%设定坐标系使得粒子仅在$xy$上运动
 \begin{align*}
@@ -410,7 +414,7 @@ m\left(\boldsymbol{r}\times\boldsymbol{v}\right)\cdot\boldsymbol{e}_\theta-\dfra
 -\sin\theta \dfrac{\mu_0q_eq_m}{4\pi m\cos\theta v_rr}&=\phi_0+ \phi
 \end{align*}
 \mysssec{一个半圆形导线带有稳恒电流$ 
-I$，求在另一半圆上 
+I$, 求在另一半圆上 
 $P$
  点的磁场}
  \begin{align*}
@@ -423,27 +427,27 @@ $P$
  不会积分
  \mysssec{圆形电流中心轴线上的磁场是非常不均匀的（随着距中心点距离的增加而迅速减小）。你
 可以用两个相距为$2d$的同样的圆电流来产生一个非常接近均匀的磁场。\\
-（a）作为$z$的函数求出磁场$\boldsymbol{B}$，证明在两圆电流之间的中点（$z=0$处）$\dfrac{\partial \boldsymbol{B}}{\partial z}$为零。现在，如果你把$d$选
-取得正好使$\boldsymbol{B}$的二阶导数在中点也为零，这种安排就是亥姆霍兹线圈，是一种在实验室中产生相对均匀的
+（a）作为$z$的函数求出磁场$\boldsymbol{B}$, 证明在两圆电流之间的中点（$z=0$处）$\dfrac{\partial \boldsymbol{B}}{\partial z}$为零。现在, 如果你把$d$选
+取得正好使$\boldsymbol{B}$的二阶导数在中点也为零, 这种安排就是亥姆霍兹线圈, 是一种在实验室中产生相对均匀的
 磁场非常有效的方法。\\
-(b)在中点处用$\dfrac{\partial^2 \boldsymbol{B}}{\partial z^2}=0$来决定$d$，找出中心处的磁场}
+(b)在中点处用$\dfrac{\partial^2 \boldsymbol{B}}{\partial z^2}=0$来决定$d$, 找出中心处的磁场}
 (a):
 对于单个圆形电流来说
 \begin{align*}
     \boldsymbol{B}&=\int_{0}^{2\pi}\frac{\mu_0 I\dif \boldsymbol{l}\times\boldsymbol{r}}{4\pi r^3}\\
     B_z&=\int_{0}^{2\pi}\frac{\mu_0 IR\dif lr}{4\pi r^4}\\
-    B_z&=\frac{\mu_0 IR}{2 \left(R^2+z^2\right)^\frac{3}{2}}
+    B_z&=\frac{\mu_0 IR^2}{2 \left(R^2+z^2\right)^\frac{3}{2}}
 \end{align*}
 
 对于两个相距为$2d$的同样的圆电流
 \begin{align*}
-    B_z&=\frac{\mu_0 IR}{2 \left[R^2+\left(z-d\right)^2\right]^\frac{3}{2}}+\frac{\mu_0 IR}{2 \left[R^2+\left(z+d\right)^2\right]^\frac{3}{2}}\\
+    B_z&=\frac{\mu_0 IR^2}{2 \left[R^2+\left(z-d\right)^2\right]^\frac{3}{2}}+\frac{\mu_0 IR^2}{2 \left[R^2+\left(z+d\right)^2\right]^\frac{3}{2}}\\
     \frac{\partial B_z}{\partial z}
     &=
-    \frac{\partial \frac{\mu_0 IR}{2 \left[R^2+\left(z-d\right)^2\right]^\frac{3}{2}}+\frac{\mu_0 IR}{2 \left[R^2+\left(z+d\right)^2\right]^\frac{3}{2}}}{\partial z}\\
+    \frac{\partial \frac{\mu_0 IR^2}{2 \left[R^2+\left(z-d\right)^2\right]^\frac{3}{2}}+\frac{\mu_0 IR^2}{2 \left[R^2+\left(z+d\right)^2\right]^\frac{3}{2}}}{\partial z}\\
     \frac{\partial B_z}{\partial z}
     &=-
-    \frac{3}{2}\frac{2\left(z-d\right)\mu_0 IR}{2 \left[R^2+\left(z-d\right)^2\right]^\frac{5}{2}}-\frac{3}{2}\frac{2\left(z+d\right)\mu_0 IR}{2 \left[R^2+\left(z+d\right)^2\right]^\frac{5}{2}}\\
+    \frac{3}{2}\frac{2\left(z-d\right)\mu_0 IR^2}{2 \left[R^2+\left(z-d\right)^2\right]^\frac{5}{2}}-\frac{3}{2}\frac{2\left(z+d\right)\mu_0 IR^2}{2 \left[R^2+\left(z+d\right)^2\right]^\frac{5}{2}}\\
     \left.\frac{\partial B_z}{\partial z}\right|_{z=0}
     &=0
 \end{align*}
@@ -452,38 +456,207 @@ $P$
 \begin{align*}
     \frac{\partial B_z}{\partial z}
     &=-
-    \frac{3\left(z-d\right)\mu_0 IR}{2 \left[R^2+\left(z-d\right)^2\right]^\frac{5}{2}}-\frac{3\left(z+d\right)\mu_0 IR}{2 \left[R^2+\left(z+d\right)^2\right]^\frac{5}{2}}\\
+    \frac{3\left(z-d\right)\mu_0 IR^2}{2 \left[R^2+\left(z-d\right)^2\right]^\frac{5}{2}}-\frac{3\left(z+d\right)\mu_0 IR^2}{2 \left[R^2+\left(z+d\right)^2\right]^\frac{5}{2}}\\
     \frac{\partial^2 B_z}{\partial z^2}
     &=\frac{\partial -
-    \frac{3\left(z-d\right)\mu_0 IR}{2 \left[R^2+\left(z-d\right)^2\right]^\frac{5}{2}}-\frac{3\left(z+d\right)\mu_0 IR}{2 \left[R^2+\left(z+d\right)^2\right]^\frac{5}{2}}}{\partial z}\\
+    \frac{3\left(z-d\right)\mu_0 IR^2}{2 \left[R^2+\left(z-d\right)^2\right]^\frac{5}{2}}-\frac{3\left(z+d\right)\mu_0 IR^2}{2 \left[R^2+\left(z+d\right)^2\right]^\frac{5}{2}}}{\partial z}\\
     \frac{\partial -
-    \frac{3\left(z-d\right)\mu_0 IR}{2 \left[R^2+\left(z-d\right)^2\right]^\frac{5}{2}}}{\partial z}
+    \frac{3\left(z-d\right)\mu_0 IR^2}{2 \left[R^2+\left(z-d\right)^2\right]^\frac{5}{2}}}{\partial z}
     &=-
-    \frac{3\mu_0 IR\left[R^2+\left(z-d\right)^2\right]^\frac{5}{2}
-    -15\left(z-d\right)^2\mu_0 IR\left[R^2+\left(z-d\right)^2\right]^\frac{3}{2}}{2 \left[R^2+\left(z-d\right)^2\right]^5}\\
+    \frac{3\mu_0 IR^2\left[R^2+\left(z-d\right)^2\right]^\frac{5}{2}
+    -15\left(z-d\right)^2\mu_0 IR^2\left[R^2+\left(z-d\right)^2\right]^\frac{3}{2}}{2 \left[R^2+\left(z-d\right)^2\right]^5}\\
 \frac{\partial -
-    \frac{3\left(z-d\right)\mu_0 IR}{2 \left[R^2+\left(z-d\right)^2\right]^\frac{5}{2}}}{\partial z}
+    \frac{3\left(z-d\right)\mu_0 IR^2}{2 \left[R^2+\left(z-d\right)^2\right]^\frac{5}{2}}}{\partial z}
     &=-
-    \frac{3\mu_0 IR^3
-    -12\left(z-d\right)^2\mu_0 IR}{2 \left[R^2+\left(z-d\right)^2\right]^\frac{7}{2}}\\
+    \frac{3\mu_0 IR^4
+    -12\left(z-d\right)^2\mu_0 IR^2}{2 \left[R^2+\left(z-d\right)^2\right]^\frac{7}{2}}\\
     \frac{\partial^2 B_z}{\partial z^2}
     &=-
-    \frac{3\mu_0 IR^3
-    -12\left(z-d\right)^2\mu_0 IR}{2 \left[R^2+\left(z-d\right)^2\right]^\frac{7}{2}}
+    \frac{3\mu_0 IR^4
+    -12\left(z-d\right)^2\mu_0 IR^2}{2 \left[R^2+\left(z-d\right)^2\right]^\frac{7}{2}}
     -
-    \frac{3\mu_0 IR^3
-    -12\left(z+d\right)^2\mu_0 IR}{2 \left[R^2+\left(z+d\right)^2\right]^\frac{7}{2}}\\
+    \frac{3\mu_0 IR^4
+    -12\left(z+d\right)^2\mu_0 IR^2}{2 \left[R^2+\left(z+d\right)^2\right]^\frac{7}{2}}\\
     \left.\frac{\partial^2 B_z}{\partial z^2}\right|_{z=0}
     &=-
-    \frac{3\mu_0 IR^3
-    -12d^2\mu_0 IR}{2 \left(R^2+d^2\right)^\frac{7}{2}}
+    \frac{3\mu_0 IR^4
+    -12d^2\mu_0 IR^2}{2 \left(R^2+d^2\right)^\frac{7}{2}}
     -
-    \frac{3\mu_0 IR^3
-    -12d^2\mu_0 IR}{2 \left(R^2+d^2\right)^\frac{7}{2}}=0\\
+    \frac{3\mu_0 IR^4
+    -12d^2\mu_0 IR^2}{2 \left(R^2+d^2\right)^\frac{7}{2}}=0\\
     R
     &=2d
 \end{align*}
 \begin{align*}
-    B_z&=\frac{\mu_0 Id}{\left[4d^2+\left(z-d\right)^2\right]^\frac{3}{2}}+\frac{\mu_0 Id}{\left[4d^2+\left(z+d\right)^2\right]^\frac{3}{2}}\\
-    \left.B_z\right|_{z=0}&=\frac{2\mu_0 Id}{\left[5d^2\right]^\frac{3}{2}}
+    B_z&=\frac{2\mu_0 Id^2}{\left[4d^2+\left(z-d\right)^2\right]^\frac{3}{2}}+\frac{2\mu_0 Id^2}{\left[4d^2+\left(z+d\right)^2\right]^\frac{3}{2}}\\
+    \left.B_z\right|_{z=0}&=\frac{4\mu_0 I}{5^\frac{3}{2}d}
 \end{align*}
+\mysssec{一个留声机唱片表面有均匀的电荷面密度 
+$\sigma$
+ 。如果它以角速度 
+$\omega$
+ 旋转, 求出轴线上的磁场($z>0$)}
+\begin{align*}
+B_z&=\int_{0}^{R}\frac{\mu_0 \sigma\omega r^3}{2 \left(r^2+z^2\right)^\frac{3}{2}}\dif r\\
+B_z&\xlongequal{r=z\tan\theta}\int_{0}^{\arctan\frac{r}{z}}\frac{\mu_0 \sigma\omega z^3\tan^3\theta\cos^3\theta}{2 z^3}\dif z\tan\theta\\
+B_z&=\int_{0}^{\arctan\frac{r}{z}}\frac{z\mu_0 \sigma\omega \sin^3\theta}{2\cos^2\theta}\dif \theta\\
+B_z&=-\int_{0}^{\arctan\frac{r}{z}}\frac{z\mu_0 \sigma\omega (1-\cos^2\theta)}{2\cos^2\theta}\dif \cos\theta\\
+B_z&=\left.\frac{z\mu_0 \sigma\omega }{2\cos\theta}
++\frac{z\mu_0 \sigma\omega \cos\theta}{2}\right|_{0}^{\arctan\frac{r}{z}}\\
+B_z&=\frac{\mu_0 \sigma\omega \sqrt{r^2+z^2}}{2}
++\frac{z^2\mu_0 \sigma\omega }{2\sqrt{r^2+z^2}}
+-\frac{|z|\mu_0 \sigma\omega }{2}
+-\frac{|z|\mu_0 \sigma\omega }{2}
+\end{align*}
+\mysssec{电荷$\rho$均匀分布在半径为 $R$的固体球内, 中心在原点, 并以恒定角速度 $\omega$绕$z$轴旋转。求$r>R$处的磁场}
+\begin{align*}
+A_{\phi\text{外}}
+&=-\int_{0}^{R}\frac{1}{3}\mu_0\rho\omega r'^4\sin\theta r^{-2}\dif r'\\
+A_{\phi\text{外}}
+&=-\frac{1}{15}\mu_0\rho\omega R^5\sin\theta r^{-2}\\
+A_{\phi\text{外}}
+&=-\frac{1}{20\pi}\mu_0Q\omega R^2\sin\theta r^{-2}\\
+\boldsymbol{B}_{\text{外}}&=-\frac{1}{r\sin\theta}
+\frac{\partial\sin\theta  A_{\phi}}{\partial \theta}\boldsymbol{e}_r
++\frac{1}{r\sin\theta }\left(\sin\theta\frac{\partial r A_{\phi}}{\partial r}
+\right)\boldsymbol{e}_\theta\\
+\boldsymbol{B}_{\text{外}}&=\frac{1}{15r^3\sin\theta}
+\frac{\partial\sin\theta  \mu_0\rho\omega R^5\sin\theta }{\partial \theta}\boldsymbol{e}_r
+-\frac{1}{15r }\left(\frac{\partial  r^{-1}\mu_0\rho\omega R^5\sin\theta }{\partial r}
+\right)\boldsymbol{e}_\theta\\
+\boldsymbol{B}_{\text{外}}&=\frac{2}{15r^3}
+\cos\theta  \mu_0\rho\omega R^5 \boldsymbol{e}_r
++\frac{1}{15 r^3} \mu_0\rho\omega R^5\sin\theta 
+\boldsymbol{e}_\theta
+\end{align*}
+\mysssec{假设你想求出距离一个圆电流中心为$\boldsymbol{r}$处的磁场, 这点并不在圆心的正上方。你可能会选择坐标方向使$\boldsymbol{r}$处在$yz$平面内的$(0, y, z)$处。源点为$(R\cos\phi', R\sin\phi', 0)$, $\phi'$从$0$变
+化到$2\pi$。给出用来计算$B_x$, $B_y$, $B_z$,的积分式并计算出$B_x$。}
+\begin{align*}
+    \boldsymbol{B}&=\int_{0}^{2\pi}\frac{\mu_0 I\dif (R\cos\phi'\boldsymbol{e}_x+ R\sin\phi'\boldsymbol{e}_y)\times(-R\cos\phi'\boldsymbol{e}_x+y\boldsymbol{e}_y -R\sin\phi'\boldsymbol{e}_y-z\boldsymbol{e}_z)}{4\pi [R^2\cos^2\phi'+(y -R\sin\phi')^2+z^2]^\frac32}\\
+    \boldsymbol{B}&=\int_{0}^{2\pi}\frac{\mu_0 I (-R\sin\phi'\boldsymbol{e}_x+ R\cos\phi'\boldsymbol{e}_y)\times(-R\cos\phi'\boldsymbol{e}_x+y\boldsymbol{e}_y -R\sin\phi'\boldsymbol{e}_y-z\boldsymbol{e}_z)}{4\pi [R^2\cos^2\phi'+(y -R\sin\phi')^2+z^2]^\frac32}\dif \phi'
+\end{align*}
+\begin{align*}
+    B_x&=\int_{0}^{2\pi}\frac{-\mu_0 I  R\cos\phi'z}{4\pi [R^2\cos^2\phi'+(y -R\sin\phi')^2+z^2]^\frac32}\dif\phi'=0\\
+    B_y&=\int_{0}^{2\pi}\frac{-\mu_0 IR\sin\phi' z}{4\pi [R^2\cos^2\phi'+(y -R\sin\phi')^2+z^2]^\frac32}\dif \phi'\\
+    B_z&=\int_{0}^{2\pi}\frac{\mu_0 I(-R\sin\phi'\boldsymbol{e}_x+ R\cos\phi'\boldsymbol{e}_y)\times(-R\cos\phi'\boldsymbol{e}_x+y\boldsymbol{e}_y -R\sin\phi'\boldsymbol{e}_y)}{4\pi [R^2\cos^2\phi'+(y -R\sin\phi')^2+z^2]^\frac32}\dif \phi'
+\end{align*}
+\mysssec{假设矢势定义为$\boldsymbol{A}=-\boldsymbol{r}\times\int_0^1\lambda\boldsymbol{B}(\lambda\boldsymbol{r})\dif\lambda$求出均匀磁场$\boldsymbol{B}$的矢势。\\
+求出载流$I$的无限长直导线的矢势。是否自动满足
+$\boldsymbol{\nabla} \cdot\boldsymbol{A} =0 $? }
+在均匀磁场下$\boldsymbol{B}$为常量, 不妨设在$x$方向
+\begin{align*}
+    \boldsymbol{A}&=-\boldsymbol{r}\times\int_0^1\lambda B_0\boldsymbol{e}_x\dif\lambda\\
+    \boldsymbol{A}&=-\frac12\boldsymbol{r}\times B_0\boldsymbol{e}_x
+\end{align*}
+\begin{align*}
+    \boldsymbol{A}&=-(s\boldsymbol{e}_s+\phi\boldsymbol{e}_\phi+z\boldsymbol{e}_z)\times\int_0^1\lambda\frac{\mu_0I}{2\pi \lambda s}\boldsymbol{e}_\phi\dif\lambda\\
+    \boldsymbol{A}&=-(s\boldsymbol{e}_s+z\boldsymbol{e}_z)\times\frac{\mu_0I}{2\pi  s}\boldsymbol{e}_\phi\\
+    \boldsymbol{A}&=-\boldsymbol{e}_z\frac{\mu_0I}{2\pi}+z\boldsymbol{e}_s\frac{\mu_0I}{2\pi  s}\\
+    \boldsymbol{\nabla} \cdot\boldsymbol{A}&=\frac{A_s}{s}+\dfrac{\partial A_s}{\partial s}\\
+    \boldsymbol{\nabla} \cdot\boldsymbol{A}&=\frac{z\mu_0I}{2\pi  s^2}+\dfrac{\partial z\frac{\mu_0I}{2\pi  s}}{\partial s}=0\\
+\end{align*}
+\mysssec{ 正如$\boldsymbol{\nabla}\cdot\boldsymbol{B}=0$可使我们通过矢势的旋度表示$\boldsymbol{B}$。因此 
+$\boldsymbol{\nabla}\cdot\boldsymbol{A}=0$可使我们将$\boldsymbol{A}$自身作为“更高”势的旋度：$\boldsymbol{A}=\boldsymbol{\nabla}\times\boldsymbol{W}$\\
+求出$\boldsymbol{W}$的一般方程形式。
+% \\（b）求出均匀磁场 
+% $\boldsymbol{B}$
+%  的 
+% $\boldsymbol{W}$\\
+% （c）求出无限长直螺线管内部和外部的 $\boldsymbol{W}$
+}
+\begin{align*}
+    \boldsymbol{A}&=\boldsymbol{\nabla}\times\boldsymbol{W}\\
+    \boldsymbol{B}&=\boldsymbol{\nabla}\times\boldsymbol{\nabla}\times\boldsymbol{W}\\
+    \boldsymbol{B}&=\boldsymbol{\nabla}(\boldsymbol{\nabla}\cdot\boldsymbol{W})-\Delta \boldsymbol{W}
+\end{align*}
+令$\boldsymbol{\nabla}\cdot\boldsymbol{W}=0$
+\begin{align*}
+    \boldsymbol{B}&=-\Delta \boldsymbol{W}\\
+    \boldsymbol{W}&=
+\frac{1}{4\pi}
+\int
+\frac{\boldsymbol{B}(\boldsymbol{r}')}{|\boldsymbol{r}-\boldsymbol{r}'|}
+\dif r'
+\end{align*}
+\mysssec{一个磁偶极矩$\boldsymbol{m}=-m_0\boldsymbol{e}_z$放置在原点并处于另一个均匀磁场$\boldsymbol{B}=B_0\boldsymbol{e}_z$中，证明：存在一个中
+心在原点的球面，没有磁场线穿过它。求出球的半径。}
+\begin{align*}
+    \boldsymbol{B}&=B_0\boldsymbol{e}_z+\frac{\mu_0}{4\pi}\boldsymbol{\nabla}\times\frac{\boldsymbol{m}\times\boldsymbol{r}}{r^3}\\
+    \boldsymbol{B}&=B_0\boldsymbol{e}_z+\frac{\mu_0}{4\pi}\boldsymbol{\nabla}\times\frac{-m_0(\cos\theta\boldsymbol{e}_r+\sin\theta\boldsymbol{e}_\theta)\times(r\boldsymbol{e}_r)}{r^3}\\
+    \boldsymbol{B}&=B_0\boldsymbol{e}_z+\frac{\mu_0}{4\pi}\boldsymbol{\nabla}\times\frac{m_0\sin\theta }{r^2}\boldsymbol{e}_\phi\\
+    \boldsymbol{B}&=B_0(\cos\theta\boldsymbol{e}_r+\sin\theta\boldsymbol{e}_\theta)+\frac{\mu_0}{4\pi}
+    \frac{1}{r\sin\theta}\left(
+    -\frac{\partial\sin\theta  \frac{m_0\sin\theta }{r^2}}{\partial \theta}\right)\boldsymbol{e}_r
+    +\frac{\mu_0}{4\pi}\frac{1}{r}\frac{\partial \frac{m_0\sin\theta }{r}}{\partial r}\boldsymbol{e}_\theta\\
+    \boldsymbol{B}&=B_0\cos\theta\boldsymbol{e}_r+B_0\sin\theta\boldsymbol{e}_\theta-\frac{\mu_0}{2\pi}
+    \frac{\cos\theta}{r}\frac{m_0 }{r^2}\boldsymbol{e}_r
+    -\frac{\mu_0}{4\pi}\frac{m_0\sin\theta }{r^3}\boldsymbol{e}_\theta\\
+    B_r&=B_0\cos\theta-\frac{\mu_0}{2\pi}
+    \frac{\cos\theta}{r}\frac{m_0 }{r^2}\\
+    r&=\left(\frac{\mu_0m_0}{2\pi B_0}\right)^\frac{1}{3}
+\end{align*}
+\mysssec{一个质量为$m$环形圈，带有均匀分布的电荷$Q$，绕着它的轴线旋转。\\
+(a）找出磁偶极矩与角动量之比，这叫做旋磁比。\\
+（b)对于一个均匀旋转球，它的旋磁比为多少？}
+(a):
+\begin{align*}
+    \boldsymbol{m}&=I\pi R^2\boldsymbol{e}_z\\
+    \boldsymbol{m}&=\frac12Q\omega  R^2\boldsymbol{e}_z\\
+    \boldsymbol{L}&=J\boldsymbol{\omega}\\
+    \boldsymbol{L}&=mR^2\boldsymbol{\omega}\\
+    \frac{|\boldsymbol{m}|}{|\boldsymbol{L}|}&=\frac{Q}{2m}
+\end{align*}
+
+(b):
+\begin{align*}
+    \boldsymbol A_{\phi}&=-\frac{1}{20\pi}\mu_0Q\omega R^2\sin\theta r^{-2}\boldsymbol{e}_\phi\\
+    \frac{\mu_0}{4\pi}\frac{\boldsymbol{m}\times\boldsymbol{r}}{r^3}&=-\frac{1}{20\pi}\mu_0Q\omega R^2\sin\theta r^{-2}\boldsymbol{e}_\phi\\
+    \mu_0m_\theta&=\frac{1}{5}\mu_0Q\omega R^2\sin\theta \\
+    m_\theta&=\frac{Q\omega R^2\sin\theta}{5} \\
+    \boldsymbol{L}&=\frac25mR^2\boldsymbol{\omega}\\
+    \frac{|\boldsymbol{m}|}{|\boldsymbol{L}|}&=\frac{Q}{2m}
+\end{align*}
+\mysssec{证明，一个半径为$R$的球，由球内稳恒电流产生的磁场对球的平均值为$\dfrac{\mu_0\boldsymbol{m}}{2\pi R^3}$}
+\begin{align*}
+    \boldsymbol{B}_{\text{平均}}&=\frac{3}{4\pi R^3}\iiint \boldsymbol{B}\dif\tau\\
+    \boldsymbol{B}_{\text{平均}}&=\frac{3}{4\pi R^3}\iiint \boldsymbol{\nabla}\times\boldsymbol{A}\dif\tau\\
+    \boldsymbol{B}_{\text{平均}}&=-\frac{3}{4\pi R^3}\oiint \boldsymbol{A}\times\dif\boldsymbol{a}\\
+    \boldsymbol{B}_{\text{平均}}&=-\frac{3}{4\pi R^3}\frac{\mu_0}{4\pi}\oiint \frac{\boldsymbol{m}\times\boldsymbol{r}}{r^3}\times\dif\boldsymbol{a}\\
+    \boldsymbol{B}_{\text{平均}}&=\frac{3}{4\pi R^3}\frac{\mu_0}{4\pi}\oiint-\frac{1}{r^3}(\boldsymbol{m}\cdot\dif\boldsymbol{a})\boldsymbol{r}+\frac{1}{r^3}(\boldsymbol{r}\cdot\dif\boldsymbol{a})\boldsymbol{m}\\
+    \boldsymbol{B}_{\text{平均}}&=\frac{\mu_0}{2\pi R^3}\boldsymbol{m}
+\end{align*}
+\mysssec{一个半径为$R$，长为$L$的细玻璃棒，表面有均匀电荷$\sigma$。它关于其中心轴线以角速度$\omega$旋
+转，找出距离棒中心轴线为$s$处的磁场，$s>>R$}
+边界条件:
+\begin{align*}
+    &\boldsymbol{A}_{\text{内}}=\boldsymbol{A}_{\text{外}},&s=R\\
+    &\frac{\partial A_{\phi\text{外}}}{\partial s}-\frac{\partial A_{\phi\text{内}}}{\partial s}=-\mu_0\sigma\omega R,&s=R\\
+    &\boldsymbol{A}_\text{外}\to0,&s\to\infty
+\end{align*}
+\begin{align*}
+    \boldsymbol{\nabla}^2\boldsymbol{A}_\phi
+&=\frac{1}{s}\frac{\partial}{\partial s}\left(s\dfrac{{\partial A_\phi}}{\partial s}\right)\boldsymbol{e}_\phi
+-\frac{1}{s^2}
+A_\phi\boldsymbol{e}_\phi\\
+0
+&=\dfrac{\partial^2 A_\phi}{\partial s^2}
++\frac{1}{s}\dfrac{\partial A_\phi}{\partial s}
+-\frac{1}{s^2}
+A_\phi\\
+A_\phi&=C_1s+\frac{C_2}{s}
+\end{align*}
+\begin{align*}
+    C_1R&=\frac{C_2}{R}\\
+    C_1+\frac{C_2}{R^2}&=-\mu_0\sigma\omega R\\
+    \boldsymbol{A}_\text{外}&=-\frac{\mu_0\sigma\omega R^3}{2s}\boldsymbol{e}_\phi\\
+    \boldsymbol{\nabla}\times\boldsymbol{A}&=\frac{1}{s}\left(\frac{\partial A_{z}}{\partial \phi}-s\frac{\partial A_{\phi}}{\partial z}\right)\boldsymbol{e}_s
+    +\left(\frac{\partial A_s}{\partial z}-\frac{\partial A_{z}}{\partial s}\right)\boldsymbol{e}_\phi
+    +\frac{1}{s}\left(\frac{\partial sA_{\phi}}{\partial s}
+    -\frac{\partial A_s}{\partial \phi}
+    \right)\boldsymbol{e}_z\\
+        \boldsymbol{\nabla}\times\boldsymbol{A}&=\frac{1}{s}\frac{\partial sA_{\phi}}{\partial s}\boldsymbol{e}_z\\
+    \boldsymbol{B}&=-\frac{1}{2s}\frac{\partial \mu_0\sigma\omega R^3}{\partial s}\boldsymbol{e}_z\\
+    \boldsymbol{B}&=0
+\end{align*}
+算错了
+\newpage
