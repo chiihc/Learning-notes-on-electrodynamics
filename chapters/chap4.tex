@@ -66,7 +66,7 @@
 \mysssec{一个大平板的厚度从$z=-a$到$z=a$, 它的电流密度为$\boldsymbol{J}=J\boldsymbol{\hat x}$, 
 求出平板内外的磁场。}
 \begin{align*}
-    B=\left\{\begin{aligned}
+    B_y=\left\{\begin{aligned}
         &aJ&,|z|>a\\
         &zJ&,|z|<=a\\
     \end{aligned}\right.
@@ -307,9 +307,41 @@ A_{\phi\text{外}}
 \begin{equation}
     \boldsymbol{A}_\text{偶极}=\frac{\mu_0}{4\pi}\frac{\boldsymbol{m}\times\boldsymbol{r}}{r^3}
 \end{equation}
+
 式中, $\boldsymbol{m}$是磁偶极矩
 \begin{equation}
     \boldsymbol{m}\equiv I\int\dif\boldsymbol{a}=I\boldsymbol{a}
+\end{equation}
+\begin{align}
+    \boldsymbol{B}_\text{偶极}&=\boldsymbol{\nabla}\times\boldsymbol{A}\nonumber\\
+    &=\boldsymbol{\nabla}\times\left(\frac{\mu_0}{4\pi}\frac{\boldsymbol{m}\times\boldsymbol{r}}{r^3}\right)\nonumber\\
+    &=\frac{\mu_0}{4\pi}\frac{\partial \dfrac{m_nr_l\boldsymbol{e}_n}{r^3}}{\partial x_l}
+    -\frac{\mu_0}{4\pi}\frac{\partial \dfrac{m_lr_n\boldsymbol{e}_n}{r^3}}{\partial x_l}\nonumber\\
+    &=\frac{\mu_0}{4\pi}\frac{\partial \dfrac{x_l}{r^3}}{\partial x_l}m_n\boldsymbol{e}_n
+    -\frac{\mu_0}{4\pi}\frac{\partial \dfrac{1}{r^3}}{\partial x_l}x_nm_l\boldsymbol{e}_n\nonumber\\
+    &=\frac{\mu_0}{4\pi}\frac{\partial \dfrac{1}{r^3}}{\partial x_l}x_lm_n\boldsymbol{e}_n
+    +\frac{\mu_0}{4\pi}\frac{\partial x_l}{\partial x_l}\dfrac{1}{r^3}m_n\boldsymbol{e}_n
+    -\frac{\mu_0}{4\pi}\frac{\partial x_n}{\partial x_l}\dfrac{1}{r^3}m_l\boldsymbol{e}_n
+    -\frac{\mu_0}{4\pi}\frac{\partial \dfrac{1}{r^3}}{\partial x_l}x_nm_l\boldsymbol{e}_n\nonumber\\
+    &=-\frac{\mu_0}{4\pi}\dfrac{3x_l^2}{r^5}m_n\boldsymbol{e}_n
+    +\frac{\mu_0}{4\pi}\dfrac{\delta_{ll}}{r^3}m_n\boldsymbol{e}_n
+    -\frac{\mu_0}{4\pi}\dfrac{\delta_{nl}}{r^3}m_l\boldsymbol{e}_n
+    +\frac{3\mu_0}{4\pi}\frac{x_nx_l}{r^5}m_l\boldsymbol{e}_n\nonumber\\
+    &=-\frac{\mu_0}{4\pi}\dfrac{3}{r^3}m_n\boldsymbol{e}_n
+    +\frac{\mu_0}{4\pi}\dfrac{3}{r^3}m_n\boldsymbol{e}_n
+    -\frac{\mu_0}{4\pi}\dfrac{1}{r^3}m_n\boldsymbol{e}_n
+    +\frac{3\mu_0}{4\pi}\frac{x_nx_l}{r^5}m_l\boldsymbol{e}_n\nonumber\\
+    &=-\frac{\mu_0}{4\pi}\dfrac{1}{r^3}m_n\boldsymbol{e}_n
+    +\frac{3\mu_0}{4\pi}\frac{x_nx_l}{r^5}m_l\boldsymbol{e}_n
+\end{align}
+当$\boldsymbol{m}\bot \boldsymbol{r}$时
+\begin{equation}
+    \boldsymbol{B}_\text{偶极}=-\frac{\mu_0}{4\pi}\dfrac{1}{r^3}m_n\boldsymbol{e}_n
+    =-\frac{\mu_0}{4\pi}\dfrac{\boldsymbol{m}}{r^3}
+\end{equation}
+当$\boldsymbol{m}\parallel\boldsymbol{r}$时
+\begin{equation}
+    \boldsymbol{B}_\text{偶极}=\frac{\mu_0}{2\pi}\dfrac{\boldsymbol{m}}{r^3}
 \end{equation}
 \mysssec{一个半径为$R$的留声机唱片, 带有均匀的面电荷$\sigma$, 以恒定角速度$\omega$旋转, 求出它的磁偶极矩}
 \begin{align*}
@@ -326,7 +358,7 @@ A_{\phi\text{外}}
     \pi r^2\rho_++\lambda_-&=v^2\mu_0\lambda_-\varepsilon_0\\
     \lambda_-&=\frac{\pi r^2\rho_+}{1-\frac{v^2}{c^2}}
 \end{align*}
-\mysssec{一个圆对称磁场（$B$仅依赖于到中心轴的距离）, 方向垂直于纸面, 。如果总磁通量为零, 证明一个从磁场中心出发的带电粒子将沿径向从边缘射出（只要它能逃 脱磁场区。）反过来, 一个粒子瞄准圆心从外面入射, 它将击中圆心。}
+\mysssec{一个圆对称磁场($B$仅依赖于到中心轴的距离), 方向垂直于纸面, 。如果总磁通量为零, 证明一个从磁场中心出发的带电粒子将沿径向从边缘射出(只要它能逃 脱磁场区。)反过来, 一个粒子瞄准圆心从外面入射, 它将击中圆心。}
 \begin{align*}
     \boldsymbol{F}&=q(v_r\boldsymbol{e}_r+v_\phi\boldsymbol{e}_\phi)\times B\boldsymbol{e}_z\\
     F_\phi&=-qv_rB\\
@@ -335,8 +367,8 @@ A_{\phi\text{外}}
 \end{align*}
 \mysssec{质量为$m$, 带电荷量为$q_e$的粒子在一个磁场
 $\boldsymbol{B}=\dfrac{\mu_0q_m}{4\pi r^2}\boldsymbol{e}_r$中运动。\\
-(a）求出该粒子的加速度。\\
-(b）证明矢量$\boldsymbol{Q}\equiv m\left(\boldsymbol{r}\times\boldsymbol{v}\right)-\dfrac{\mu_0q_eq_m}{4\pi}\boldsymbol{e}_r$是常量\\
+(a)求出该粒子的加速度。\\
+(b)证明矢量$\boldsymbol{Q}\equiv m\left(\boldsymbol{r}\times\boldsymbol{v}\right)-\dfrac{\mu_0q_eq_m}{4\pi}\boldsymbol{e}_r$是常量\\
 (c)选择球坐标 并让  $z$  轴沿  $Q$  方向。计算$\boldsymbol{Q}\cdot\boldsymbol{e}_\phi$, 证明：$\theta$是一个运动恒量\\
 (d)计算$\boldsymbol{Q}\cdot\boldsymbol{e}_r$,  求函数$f(r)=\dfrac{\dif r}{\dif \phi}$}
 (a):%设定坐标系使得粒子仅在$xy$上运动
@@ -425,9 +457,9 @@ $P$
     \boldsymbol{B}&=\int_{\pi}^{2\pi}\frac{\mu_0 I[1-\sin\theta'(\sin\theta)]\boldsymbol{e}_z\dif\theta'}{4\pi R\left(2-2\sin\theta\sin\theta'-2\cos\theta\cos\theta'\right)^\frac{3}{2}}
  \end{align*}
  不会积分
- \mysssec{圆形电流中心轴线上的磁场是非常不均匀的（随着距中心点距离的增加而迅速减小）。你
+ \mysssec{圆形电流中心轴线上的磁场是非常不均匀的(随着距中心点距离的增加而迅速减小)。你
 可以用两个相距为$2d$的同样的圆电流来产生一个非常接近均匀的磁场。\\
-（a）作为$z$的函数求出磁场$\boldsymbol{B}$, 证明在两圆电流之间的中点（$z=0$处）$\dfrac{\partial \boldsymbol{B}}{\partial z}$为零。现在, 如果你把$d$选
+(a)作为$z$的函数求出磁场$\boldsymbol{B}$, 证明在两圆电流之间的中点($z=0$处)$\dfrac{\partial \boldsymbol{B}}{\partial z}$为零。现在, 如果你把$d$选
 取得正好使$\boldsymbol{B}$的二阶导数在中点也为零, 这种安排就是亥姆霍兹线圈, 是一种在实验室中产生相对均匀的
 磁场非常有效的方法。\\
 (b)在中点处用$\dfrac{\partial^2 \boldsymbol{B}}{\partial z^2}=0$来决定$d$, 找出中心处的磁场}
@@ -558,11 +590,11 @@ $\boldsymbol{\nabla} \cdot\boldsymbol{A} =0 $? }
 \mysssec{ 正如$\boldsymbol{\nabla}\cdot\boldsymbol{B}=0$可使我们通过矢势的旋度表示$\boldsymbol{B}$。因此 
 $\boldsymbol{\nabla}\cdot\boldsymbol{A}=0$可使我们将$\boldsymbol{A}$自身作为“更高”势的旋度：$\boldsymbol{A}=\boldsymbol{\nabla}\times\boldsymbol{W}$\\
 求出$\boldsymbol{W}$的一般方程形式。
-% \\（b）求出均匀磁场 
+% \\(b)求出均匀磁场 
 % $\boldsymbol{B}$
 %  的 
 % $\boldsymbol{W}$\\
-% （c）求出无限长直螺线管内部和外部的 $\boldsymbol{W}$
+% (c)求出无限长直螺线管内部和外部的 $\boldsymbol{W}$
 }
 \begin{align*}
     \boldsymbol{A}&=\boldsymbol{\nabla}\times\boldsymbol{W}\\
@@ -578,8 +610,8 @@ $\boldsymbol{\nabla}\cdot\boldsymbol{A}=0$可使我们将$\boldsymbol{A}$自身�
 \frac{\boldsymbol{B}(\boldsymbol{r}')}{|\boldsymbol{r}-\boldsymbol{r}'|}
 \dif r'
 \end{align*}
-\mysssec{一个磁偶极矩$\boldsymbol{m}=-m_0\boldsymbol{e}_z$放置在原点并处于另一个均匀磁场$\boldsymbol{B}=B_0\boldsymbol{e}_z$中，证明：存在一个中
-心在原点的球面，没有磁场线穿过它。求出球的半径。}
+\mysssec{一个磁偶极矩$\boldsymbol{m}=-m_0\boldsymbol{e}_z$放置在原点并处于另一个均匀磁场$\boldsymbol{B}=B_0\boldsymbol{e}_z$中, 证明：存在一个中
+心在原点的球面, 没有磁场线穿过它。求出球的半径。}
 \begin{align*}
     \boldsymbol{B}&=B_0\boldsymbol{e}_z+\frac{\mu_0}{4\pi}\boldsymbol{\nabla}\times\frac{\boldsymbol{m}\times\boldsymbol{r}}{r^3}\\
     \boldsymbol{B}&=B_0\boldsymbol{e}_z+\frac{\mu_0}{4\pi}\boldsymbol{\nabla}\times\frac{-m_0(\cos\theta\boldsymbol{e}_r+\sin\theta\boldsymbol{e}_\theta)\times(r\boldsymbol{e}_r)}{r^3}\\
@@ -595,9 +627,9 @@ $\boldsymbol{\nabla}\cdot\boldsymbol{A}=0$可使我们将$\boldsymbol{A}$自身�
     \frac{\cos\theta}{r}\frac{m_0 }{r^2}\\
     r&=\left(\frac{\mu_0m_0}{2\pi B_0}\right)^\frac{1}{3}
 \end{align*}
-\mysssec{一个质量为$m$环形圈，带有均匀分布的电荷$Q$，绕着它的轴线旋转。\\
-(a）找出磁偶极矩与角动量之比，这叫做旋磁比。\\
-（b)对于一个均匀旋转球，它的旋磁比为多少？}
+\mysssec{一个质量为$m$环形圈, 带有均匀分布的电荷$Q$, 绕着它的轴线旋转。\\
+(a)找出磁偶极矩与角动量之比, 这叫做旋磁比。\\
+(b)对于一个均匀旋转球, 它的旋磁比为多少？}
 (a):
 \begin{align*}
     \boldsymbol{m}&=I\pi R^2\boldsymbol{e}_z\\
@@ -616,7 +648,7 @@ $\boldsymbol{\nabla}\cdot\boldsymbol{A}=0$可使我们将$\boldsymbol{A}$自身�
     \boldsymbol{L}&=\frac25mR^2\boldsymbol{\omega}\\
     \frac{|\boldsymbol{m}|}{|\boldsymbol{L}|}&=\frac{Q}{2m}
 \end{align*}
-\mysssec{证明，一个半径为$R$的球，由球内稳恒电流产生的磁场对球的平均值为$\dfrac{\mu_0\boldsymbol{m}}{2\pi R^3}$}
+\mysssec{证明, 一个半径为$R$的球, 由球内稳恒电流产生的磁场对球的平均值为$\dfrac{\mu_0\boldsymbol{m}}{2\pi R^3}$}
 \begin{align*}
     \boldsymbol{B}_{\text{平均}}&=\frac{3}{4\pi R^3}\iiint \boldsymbol{B}\dif\tau\\
     \boldsymbol{B}_{\text{平均}}&=\frac{3}{4\pi R^3}\iiint \boldsymbol{\nabla}\times\boldsymbol{A}\dif\tau\\
@@ -625,8 +657,8 @@ $\boldsymbol{\nabla}\cdot\boldsymbol{A}=0$可使我们将$\boldsymbol{A}$自身�
     \boldsymbol{B}_{\text{平均}}&=\frac{3}{4\pi R^3}\frac{\mu_0}{4\pi}\oiint-\frac{1}{r^3}(\boldsymbol{m}\cdot\dif\boldsymbol{a})\boldsymbol{r}+\frac{1}{r^3}(\boldsymbol{r}\cdot\dif\boldsymbol{a})\boldsymbol{m}\\
     \boldsymbol{B}_{\text{平均}}&=\frac{\mu_0}{2\pi R^3}\boldsymbol{m}
 \end{align*}
-\mysssec{一个半径为$R$，长为$L$的细玻璃棒，表面有均匀电荷$\sigma$。它关于其中心轴线以角速度$\omega$旋
-转，找出距离棒中心轴线为$s$处的磁场，$s>>R$}
+\mysssec{一个半径为$R$, 长为$L$的细玻璃棒, 表面有均匀电荷$\sigma$。它关于其中心轴线以角速度$\omega$旋
+转, 找出距离棒中心轴线为$s$处的磁场, $s>>R$}
 边界条件:
 \begin{align*}
     &\boldsymbol{A}_{\text{内}}=\boldsymbol{A}_{\text{外}},&s=R\\

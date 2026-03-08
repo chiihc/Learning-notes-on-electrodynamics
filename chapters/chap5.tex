@@ -9,3 +9,263 @@
 \begin{equation}
     \boldsymbol{F}=\boldsymbol{\nabla}\left(\boldsymbol{m}\cdot\boldsymbol{B}\right)
 \end{equation}
+\subsubsection{磁化物体的磁场}
+\begin{equation}
+    \boldsymbol{M}\equiv\text{单位体积内的总磁偶极矩}
+\end{equation}
+\begin{equation}
+    \boldsymbol{A}=\frac{\mu_0}{4\pi}\int\frac{\boldsymbol{M}\times\boldsymbol{r}}{r^3}=\frac{\mu_0}{4\pi}\int\frac{\boldsymbol{J}}{r}
+    +\frac{\mu_0}{4\pi}\oint\frac{\boldsymbol{K}}{r}
+\end{equation}
+\begin{equation}
+    \boldsymbol{K}=\boldsymbol{M}\times\boldsymbol{e}_n
+\end{equation}
+\begin{equation}
+    \boldsymbol{J}=\boldsymbol{\nabla}\times\boldsymbol{M}
+\end{equation}
+\mysssec{一个通有均匀电流$\boldsymbol{J}=J_0\boldsymbol{e}_z$的平板导体板面垂直于$y$轴, 板的一边位于$x=-a$, 另一边位
+于$x=a$。一个磁偶极矩$\boldsymbol{m}=m_0\boldsymbol{e}_x$位于原点。\\
+(a)求作用在磁偶极矩上的力。\\
+(b)若磁偶极矩沿$y$轴方向$\boldsymbol{m}=m_0\boldsymbol{e}_y$, 求作用在磁偶极矩上的力。}
+\begin{align*}
+    \boldsymbol{F}&=\boldsymbol{\nabla}\left(\boldsymbol{m}\cdot\boldsymbol{B}\right)=\boldsymbol{\nabla}\left(m_0\boldsymbol{e}_x\cdot xJ_0\boldsymbol{e}_y\right)=0
+\end{align*}
+\begin{align*}
+    \boldsymbol{F}&=\boldsymbol{\nabla}\left(\boldsymbol{m}\cdot\boldsymbol{B}\right)\\
+    &=\boldsymbol{\nabla}\left(m_0\boldsymbol{e}_y\cdot xJ_0\boldsymbol{e}_y\right)\\
+    &=\boldsymbol{\nabla}m_0xJ_0\\
+    &=m_0J_0\boldsymbol{e}_x
+\end{align*}
+\subsection{辅助场$\boldsymbol{H}$}
+
+\subsubsection*{1. 磁场强度 \(\boldsymbol{H}\) 的定义}
+
+磁场强度 \(\boldsymbol{H}\) 是描述磁场的一种物理量, 其与磁感应强度 \(\boldsymbol{B}\) 有以下关系：
+\[
+\boldsymbol{B} = \mu_0 (\boldsymbol{H} + \boldsymbol{M})
+\]
+
+磁场强度 \(\boldsymbol{H}\) 描述了磁场的源——电流和外部磁场对物质的影响。
+
+在均匀介质中
+\[
+\nabla \times \boldsymbol{H} = \boldsymbol{J}
+\]
+
+在没有磁化的情况下, 安培环路定律为：
+\[
+\oint \boldsymbol{H} \cdot d\boldsymbol{l} = I_{\text{free}}
+\]
+其中, \(I_{\text{free}}\) 是通过闭合回路的自由电流。
+
+
+\subsubsection*{5. 在均匀介质中的表达式}
+
+在均匀介质中, 磁场强度 \(\boldsymbol{H}\) 的方程可以通过麦克斯韦方程组直接推导得到。通过积分, 我们可以得到外部电流源产生的磁场强度分布。
+
+对于均匀介质中的直流电流, 磁场强度 \(\boldsymbol{H}\) 和磁感应强度 \(\boldsymbol{B}\) 满足以下关系：
+\[
+\boldsymbol{B} = \mu_0 \boldsymbol{H}
+\]
+其中, \(\mu_0\) 为真空的磁导率。
+
+\subsubsection*{6. 磁场强度 \(\boldsymbol{H}\) 和磁感应强度 \(\boldsymbol{B}\) 的关系}
+
+磁感应强度 \(\boldsymbol{B}\) 和磁场强度 \(\boldsymbol{H}\) 之间的关系在物质中通过磁化强度 \(\boldsymbol{M}\) 来描述：
+\[
+\boldsymbol{B} = \mu_0 (\boldsymbol{H} + \boldsymbol{M})
+\]
+这一关系表明, 磁场强度 \(\boldsymbol{H}\) 描述的是由于自由电流产生的磁场, 而磁感应强度 \(\boldsymbol{B}\) 则同时考虑了自由电流和由物质的磁化效应所产生的磁场。
+
+在没有物质磁化的情况下, \(\boldsymbol{M} = 0\), 此时 \(\boldsymbol{B} = \mu_0 \boldsymbol{H}\)。
+
+\subsubsection*{7. 磁场强度与磁化强度的相互关系}
+
+磁化强度 \(\boldsymbol{M}\) 描述了物质内的自发磁化或由外部磁场引起的磁化。在静态情况下, \(\boldsymbol{M}\) 和 \(\boldsymbol{H}\) 之间的关系由材料的磁导率决定。
+
+对于均匀线性材料：
+\[
+\boldsymbol{M} = \chi_m \boldsymbol{H}
+\]
+其中, \(\chi_m\) 是材料的磁化率。
+
+因此, 在材料中, 磁感应强度 \(\boldsymbol{B}\) 与磁场强度 \(\boldsymbol{H}\) 之间的关系可以写作：
+\[
+\boldsymbol{B} = \mu_0 (1 + \chi_m) \boldsymbol{H}
+\]
+或者, 使用磁导率 \(\mu = \mu_0 (1 + \chi_m)\)：
+\[
+\boldsymbol{B} = \mu \boldsymbol{H}
+\]
+
+\subsubsection*{8. 磁场强度的边界条件}
+
+在物质的界面处, 磁场强度 \(\boldsymbol{H}\) 满足以下边界条件：
+- 在界面上的法向分量连续：
+  \[
+  \boldsymbol{H}_1 \cdot \boldsymbol{n} = \boldsymbol{H}_2 \cdot \boldsymbol{n}
+  \]
+- 在界面上的切向分量不连续(如果有表面电流)：
+  \[
+  \boldsymbol{H}_1 \times \boldsymbol{n} - \boldsymbol{H}_2 \times \boldsymbol{n} = \boldsymbol{K}_b
+  \]
+  其中, \(\boldsymbol{K}_b\) 是表面束缚电流密度。
+
+
+\subsection{磁荷与磁标势方法}
+
+
+在无自由电流($\boldsymbol J_f=0$)情况下, 
+\begin{equation}
+\nabla\times \boldsymbol H = 0
+\end{equation}
+因此 $\boldsymbol H$ 可表示为标势的梯度：
+\begin{equation}
+\boldsymbol H = -\nabla \phi_m
+\end{equation}
+
+
+\subsubsection*{2. 等效磁荷的引入}
+
+由
+\[
+\nabla\cdot \boldsymbol B = 0
+\]
+代入 $\boldsymbol B=\mu_0(\boldsymbol H+\boldsymbol M)$ 得
+
+\begin{align}
+0 &= \mu_0 \nabla\cdot(\boldsymbol H + \boldsymbol M) \\
+\nabla\cdot \boldsymbol H &= -\nabla\cdot \boldsymbol M
+\end{align}
+
+定义等效体磁荷密度
+\begin{equation}
+\rho_m \equiv -\nabla\cdot \boldsymbol M
+\end{equation}
+
+在界面处, 由散度定理得到等效面磁荷密度：
+\begin{equation}
+\sigma_m = \boldsymbol M\cdot \boldsymbol n
+\end{equation}
+
+其中 $\boldsymbol n$ 为外法向量。
+
+
+\subsubsection*{3. 磁标势的泊松方程}
+
+由于
+\[
+\boldsymbol H = -\nabla\phi_m
+\]
+
+代入 $\boldsymbol\nabla\cdot\boldsymbol H = \rho_m$ 得
+
+\begin{equation}
+\nabla^2 \phi_m = -\rho_m
+\end{equation}
+
+该方程形式与静电学中的泊松方程完全一致：
+\[
+\nabla^2 \phi = -\frac{\rho}{\varepsilon_0}
+\]
+
+因此磁标势的解为
+
+\begin{equation}
+\phi_m(\boldsymbol r)
+=
+\frac{1}{4\pi}
+\left(
+\iiint
+\frac{\rho_m(\boldsymbol r')}{|\boldsymbol r-\boldsymbol r'|} dV'
++
+\iint
+\frac{\sigma_m(\boldsymbol r')}{|\boldsymbol r-\boldsymbol r'|} dS'
+\right)
+\end{equation}
+
+随后得到
+
+\begin{align}
+\boldsymbol H &= -\nabla \phi_m \\
+\boldsymbol B &= \mu_0(\boldsymbol H + \boldsymbol M)
+\end{align}
+
+\mysssec{一个长为$L$, 横截面为方形(边长为$a$)的铁棒, 带有一个均匀的纵向磁化强度$\boldsymbol M$, 然后 将其弯成一个有狭窄缺口的圆(缺口宽度为$w$)。设$w<<a<<L$, 求出缺口中心处的磁场。}
+ $\boldsymbol M$ 在铁棒内部为常矢量，因此
+\[
+\boldsymbol\nabla\times\boldsymbol M = 0,
+\]
+体束缚电流为零，仅在铁棒外表面存在面束缚电流。
+\[
+\sigma_m \equiv \boldsymbol M\cdot\boldsymbol n
+\]
+
+
+在缺口两侧的铁棒端面上：
+\[
+\sigma_m = +M \quad \text{(一侧)}, \qquad
+\sigma_m = -M \quad \text{(另一侧)}.
+\]
+因此，缺口可视为由两片面积约为 $a^2$、相距 $w$、带相反磁荷面密度的“磁极板”。
+
+
+
+在缺口中心附近，由于 $w \ll a$，可将每一端面近似视为无限大磁荷平面。
+类比静电学中无限大带电平面的电场结果，单个磁荷平面在空气中产生的磁场强度为
+\[
+H = \frac{\sigma_m}{2}.
+\]
+两端面产生的磁场在缺口中方向相同，因此叠加得到
+\[
+H_{\text{gap}} = \frac{M}{2} + \frac{M}{2} = M.
+\]
+\[
+\boldsymbol B_{\text{gap}} = \mu_0 \boldsymbol H_{\text{gap}}.
+\]
+
+
+
+缺口中心处的磁场大小为
+\[
+\boldsymbol B_{\text{gap}} = \mu_0 M,
+\]
+方向沿圆环的切向，由等效正磁荷端面指向负磁荷端面。
+
+\mysssec{假设一大块磁材料内部的磁场为$\boldsymbol B_0$。\\
+(a)现在在材料上掏出一个球形空腔。求洞中心的磁场和洞中心的$\boldsymbol H$。\\
+(b)对一个平行于$\boldsymbol M$的长针形空腔作相同的计算。\\
+(c)对一个垂直于$\boldsymbol M$的圆盘形空腔作相同的计算。}
+\begin{align*}
+    \boldsymbol H&=\frac{\boldsymbol B_0}{\mu_0}-\boldsymbol M\\
+    \rho_m&= \boldsymbol\nabla\cdot\boldsymbol H \\
+    \rho_m&=0 \\
+    \sigma_m &= \boldsymbol M\cdot \boldsymbol n\\
+    \sigma_m &=M\cos\theta
+\end{align*}
+边界条件:
+\begin{align*}
+    &\phi_\text{内}=\phi_\text{外},&r=R\\
+    &\frac{\partial \phi_\text{外}}{\mu_0\partial r}
+    -\frac{\partial \phi_\text{内}}{\mu\partial r}
+    =M\cos\theta,&r=R\\
+    &\phi_\text{外}\to 0,&r\to\infty
+\end{align*}
+\begin{align*}
+    \phi_\text{内}&=A_lr^lP_l(\cos\theta)\\
+    \phi_\text{外}&=B_lr^{-l-1}P_l(\cos\theta)\\
+    A_lR^lP_l(\cos\theta)&=B_lR^{-l-1}P_l(\cos\theta)\\
+    \frac{\partial B_lr^{-l-1}P_l(\cos\theta)}{\mu_0\partial r}
+    -\frac{\partial A_lr^lP_l(\cos\theta)}{\mu\partial r}
+    &=M\cos\theta\\
+    -\frac{(l+1)B_lr^{-l-2}P_l(\cos\theta)}{\mu_0}
+    -\frac{lA_lr^{l-1}P_l(\cos\theta)}{\mu}
+    &=M\cos\theta\\
+    -\frac{2B_1R^{-3}}{\mu_0}
+    -\frac{A_1R}{\mu}
+    &=M\\
+    \phi_\text{内}&=(\frac{1}{3\mu_0}-\frac{1}{3\mu})r\cos\theta\\
+    \phi_\text{外}&=(\frac{R^3}{3\mu_0}-\frac{R^3}{3\mu})r^{-2}\cos\theta\\
+\end{align*}
+还是没算对,漏了一层,这算的是全体空间都是磁材料
+\newpage

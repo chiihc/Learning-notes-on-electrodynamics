@@ -456,6 +456,14 @@ d S_3 = h_1 h_2 \dif u_1 \dif u_2
     &=\boldsymbol{\nabla}\cdot (\varepsilon_{ijk}a_ib_j\boldsymbol{e}_k)\nonumber\\
     &=\boldsymbol{\nabla}\cdot (\boldsymbol{a}\times \boldsymbol{b})\label{向量恒等式0}
 \end{align}
+\begin{align}
+    \boldsymbol{\nabla}\times\left(\boldsymbol{a}\times\boldsymbol{b}\right)
+    &=\boldsymbol{\nabla}\times\left(\varepsilon_{ijk}a_ib_j\boldsymbol{e}_k\right)\nonumber\\
+    \boldsymbol{\nabla}\times\left(\boldsymbol{a}\times\boldsymbol{b}\right)&=\varepsilon_{lmn}\varepsilon_{ijm}\frac{\partial a_ib_j\boldsymbol{e}_n}{\partial x_l}\nonumber\\
+    \boldsymbol{\nabla}\times\left(\boldsymbol{a}\times\boldsymbol{b}\right)&=(\delta_{lj}\delta_{ni}-\delta_{li}\delta_{nj})\frac{\partial a_ib_j\boldsymbol{e}_n}{\partial x_l}\nonumber\\
+    \boldsymbol{\nabla}\times\left(\boldsymbol{a}\times\boldsymbol{b}\right)&=\frac{\partial a_nb_l\boldsymbol{e}_n}{\partial x_l}
+    -\frac{\partial a_lb_n\boldsymbol{e}_n}{\partial x_l}
+\end{align}
 \subsubsection{二阶积规则}
 \begin{equation}
     \boldsymbol{\nabla}\times(\boldsymbol{\nabla}f)=\boldsymbol{\nabla}\times(\frac{\partial f}{\partial x_i}\boldsymbol{e}_i)=\varepsilon_{ijk}\frac{\partial}{\partial x_i}\frac{\partial f}{\partial x_j}\boldsymbol{e}_k=0
