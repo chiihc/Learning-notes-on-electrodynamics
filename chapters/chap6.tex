@@ -1,13 +1,16 @@
 \cleardoublepage
 
 \section{电动力学}
-\subsection{欧姆定律}
+\subsection{电动势}
+\subsubsection{欧姆定律}
 \begin{equation}
     \boldsymbol{J}=\sigma \boldsymbol{E}
 \end{equation}
-\mysssec{两个半径分别为$a$和$b$的同心金属球壳，被电导率为$\sigma$的弱导电材料分开\\
-(a)如果它们之间保持电势差$U$，从一个球壳流向另一个的电流多大？\\
-(b)球壳之间的电阻多大？}
+\subsubsection{动生电动势}
+\begin{equation}
+    U=-\frac{\dif \Phi}{\dif t}
+\end{equation}
+\mysssec{两个半径分别为$a$和$b$的同心金属球壳，被电导率为$\sigma$的弱导电材料分开如果它们之间保持电势差$U$，从一个球壳流向另一个的电流多大？球壳之间的电阻多大？}
 \begin{align*}
     E&=\frac{q}{4\pi r^2}\\
     U&=\frac{q}{4\pi a}-\frac{q}{4\pi b}\\
@@ -15,4 +18,344 @@
     I&=\int \sigma E\dif S\\
     I&=\frac{4\pi Uab\sigma}{b-a}\\
     R&=\frac{b-a}{4\pi ab\sigma}
+\end{align*}
+\mysssec{一个电容器$C$被充电到电势为$U_0$；在$t=0$时刻这个电容器与一个电阻$R$连接，并且开始
+放电。求出电容器极板上的电荷随时间的变化$Q(t)$及流经电阻的电流$I(t)$。电容器中最初存储的能量为多少。\\
+现在设想给电容器充电，将电容器(和电阻)在$t=0$时刻连接到一个固定电压为$U_0$的电池上。求出电池的能量输出。确定电阻上耗散的热量。最终储存在电容中的能量有多大？电池
+所做的功中有多大部分作为电容器中的能量出现?}
+\begin{align*}
+    C&=\frac{Q}{U}\\
+    I&=\frac{Q}{CR}\\
+    \frac{\dif Q}{\dif t}&=\frac{Q}{CR}\\
+    Q&=U_0C{e}^{t/CR}\\
+    I&=\frac{U_0}{R}{e}^{t/CR}\\
+    U&=\frac{1}{2}CU^2\\
+    W_R&=\int_{0}^{\infty}I^2R\dif t=\int_{0}^{\infty}\frac{U_0^2}{R}{e}^{2t/CR}\dif t=\frac{1}{2}CU^2\varepsilon
+\end{align*}
+\mysssec{一根质量为$m$的金属棒在两个相距$l$的平行导电导轨上无摩擦地滑动
+电阻$R$连接在两个导轨之间，而一个方向指向纸面的均匀磁场$B$充满了整个区域。如果该棒以速度向右运动，电阻中的电
+流有多大？棒上受到的磁力多大?如果棒在$t=0$时刻开始以速度$v_0$运动，
+随后自行滑动，在稍后时刻$t$它的速度是多大?}
+\begin{align*}
+    I&=\frac{Blv}{R}\\
+    F&=IBl=\frac{B^2l^2v}{R}\\
+    \frac{\dif v}{\dif t}&=\frac{B^2l^2v}{R}\\
+    v&=v_0\exp\left(\frac{B^2l^2t}{R}\right)
+\end{align*}
+\mysssec{一个正方形导线框(边长$a$)平放在桌子上，它的一边距一条带有电流$I$的长直导线的距离
+为s。求出穿过线框的$\boldsymbol{B}$的通量。如果现在有人以速度将线框平直拉离导线，产生的电动势多大？}
+\begin{align*}
+    \Phi&=\int_{s}^{s+a}a\frac{\mu_0I}{2\pi r}\dif r\\
+    \Phi&=\frac{\mu_0I}{2\pi}\ln\frac{s+a}{s}\\
+    U&=-\frac{\dif \Phi}{\dif t}\\
+    U&=-\frac{\dif \Phi}{\dif t}\\
+    U&=-\frac{\mu_0Iav}{2\pi s(s+a)}
+\end{align*}
+\mysssec{一个由厚铝板剪成的正方形线框的上半部被放置在一个匀强磁场$B$中，在重力作用下下
+落。求出线框离开磁场区域时的最终速度。求出作为时间函数的线框速度。}
+\begin{align*}
+    U&=vBl\\
+    I&=\frac{vBl}{R}\\
+    ma&=mg-\frac{vB^2l^2}{R}\\
+    \ln\left(1-\frac{B^2l^2v}{gmR}\right)&=-\frac{B^2l^2t}{mR}\\
+    g-\frac{B^2l^2v}{mR}&=g\exp\left(-\frac{B^2l^2t}{mR}\right)\\
+    gt-\frac{B^2l^2y}{mR}&=\frac{mRg}{B^2l^2}-\frac{mRg}{B^2l^2}\exp\left(-\frac{B^2l^2t}{mR}\right)\\
+\end{align*}
+\subsection{电磁感应}
+\subsubsection{法拉第定律}
+\begin{equation}
+    \boldsymbol{\nabla}\times\boldsymbol{E}=-\frac{\partial \boldsymbol{B}}{\partial t}
+\end{equation}
+\begin{equation}
+    \oint\boldsymbol{E}\cdot\dif\boldsymbol{l}=-\frac{\partial \Phi}{\partial t}
+\end{equation}
+\subsubsection{电感}
+\begin{equation}
+    \Phi_2=M_{21}I_1
+\end{equation}
+\begin{equation}
+    W=\frac{1}{2\mu_0}\int B^2\dif \tau
+\end{equation}
+$M_{21}$被称为两个回路的互感
+\begin{align*}
+    \Phi_2&=\int \boldsymbol{B}_1\dif\boldsymbol S_2\\
+    \Phi_2&=\int \boldsymbol{\nabla}\times\boldsymbol{A}_1\dif\boldsymbol S_2\\
+    \Phi_2&=\oint \boldsymbol{A}_1\cdot\dif\boldsymbol l_2\\
+    \Phi_2&=\oint \oint\frac{\dif\boldsymbol l_1}{r}\cdot\dif\boldsymbol l_2
+\end{align*}
+显然$M_{12}=M_{21}$
+\mysssec{一个半径为$a$、每单位长度匝数为$n$的长螺线管通有一个沿$\boldsymbol{e}_\phi$方向且随时间变化的电流$I(t)$
+。在准静态近似下，求出距轴$s$处(螺线管内部)的电场。}
+\begin{align*}
+    \oint\boldsymbol{E}\cdot\dif\boldsymbol{l}&=-\frac{\partial \Phi}{\partial t}\\
+2\pi aE&=-\frac{\partial \mu_0nI\pi s^2}{\partial t}
+\end{align*}
+\mysssec{一个半径为$a$、单位长度带有$n$匝线圈的长
+螺线管，被一个电阻为$R$的导线框环绕，。\\
+(a)如果螺线管中的电流以一个固定速率$I=kt$变大，在线框中流动多大的电流?\\
+(b)如果螺线管中的电流是固定的，但是将螺线管从线
+框中抽出，然后以相反的方向重新插入，通过电阻的总电荷
+量是多少？}
+\begin{align*}
+    I&=\frac{\mu_0nk\pi a^2}{R}\\
+    Q&=\int I\dif t\\
+    Q&=\frac{\Delta \Phi}{R}\\
+    Q&=\frac{2\mu_0 nI\pi a^2}{R}\\
+\end{align*}
+\mysssec{一个边长为$a$、电阻为$R$的正方形线框，位于距离一条带有电流$I$的无限长直导线$s$处。现在有人剪断了导线，所以$I$下降到零。在这个电流流动期间通过线框中的一给定点的总电荷量是多少？}
+\begin{align*}
+    Q&=\frac{\Delta \Phi}{R}\\
+    Q&=\frac{\mu_0Ia[\ln(a+s)-\ln(s)]}{R}\\
+\end{align*}
+% \mysssec{一个内径为$a$、外径为$a+w$、高为$h$的环形螺线管其横截面为矩形。它共有$N$匝密绕线
+% 圈，而电流以固定速率$(dI/dt=k)$增长。如果$w$与$h$远小于$a$，求出环形中心上方点$z$的电场。}
+% 因为$w$与$h$远小于$a$, 可以等效为$m=NIhw$的磁偶极子
+% \begin{align*}
+%     \boldsymbol{A}&=\frac{\mu_0\boldsymbol{m}\times\boldsymbol{r}}{4\pi r^3}=0
+% \end{align*}
+\mysssec{一个小导线框(半径$a$)位于一个大导线框(半径$b$)的中心上方距离$z$处。
+两个线框平面平行，且垂直于它们的共同轴线。\\
+(a)假设在大线框中通有电流$I$。求出通过小线框的磁通量。\\
+(b)假设在小线框中通有电流$I$。求出通过大线框的磁通量。}
+(a)
+\begin{align*}
+    B&=\frac{\mu_0 Ib^2}{2(z^2+b^2)^\frac{3}{2}}\\
+    \Phi&=\frac{\pi \mu_0 Ib^2a^2}{2(z^2+b^2)^\frac{3}{2}}
+\end{align*}
+
+(b)
+% \begin{align*}
+%     \Phi&=\int_0^b\frac{\mu_0}{2}\dfrac{I a^22\pi r}{(z^2+r^2)^\frac{3}{2}}\dif\sigma\\
+%     \Phi&\xlongequal{r=z\tan\theta}\int_0^{\arctan\frac{b}{z}}\frac{2\pi \mu_0}{2}\dfrac{I a^2\sin\theta\cos\theta}{z}\dif\theta\\
+%     \Phi&=\left.\frac{\mu_0}{2}\dfrac{I a^2\sin^2\theta}{z}\right|_0^{\arctan\frac{b}{z}}\\
+%     \Phi&=\frac{\mu_0}{2}\dfrac{I a^2b^2}{z(z^2+b^2)^\frac{2}{2}}\\
+% \end{align*}
+\begin{align*}
+    \Phi&=\oint\boldsymbol{A}\cdot\dif \boldsymbol{l}\\
+    \Phi&=\oint\frac{\mu_0\boldsymbol{m}\times\boldsymbol{r}}{4\pi (z^2+b^2)^\frac{3}{2}}\cdot\dif \boldsymbol{l}\\
+    \Phi&=\oint\frac{\mu_0mb}{4\pi (z^2+b^2)^\frac{3}{2}}\dif l\\
+    \Phi&=\frac{\pi \mu_0Ia^2b^2}{2(z^2+b^2)^\frac{3}{2}}
+\end{align*}
+\mysssec{一个边长为$2a$的正方形导线框，位于两个相距$4a$的长直
+导线的正中间，并且它们位于同一平面。在这个正方形线框中的一个顺时针流动的电流$I$正在逐渐增大：$\frac{\dif I}{\dif t}=k$。求出大回路中的感应电动势。}
+\begin{align*}
+    \Phi&=4a\frac{\mu_0}{2\pi}I\int_{-a}^a\frac{\dif x}{x+2a}\\
+    \Phi&=2\ln3a\frac{\mu_0}{\pi}I\\
+    M&=2\ln3a\frac{\mu_0}{\pi}\\
+    U&=-\frac{\dif \Phi}{\dif t}\\
+    U&=-2\ln3a\frac{\mu_0}{\pi}k
+\end{align*}
+\mysssec{求出一个半径为$R$、每单位长度带有$n$匝的长直螺线管每
+单位长度的自感。}
+\begin{align*}
+    L&=\frac{\dif \Phi}{\dif I}\\
+    L&=\pi R^2\mu_0n
+\end{align*}
+\mysssec{一个交变电流$I=\cos(\omega t)$流过一个直导线，该导线沿着一个横截面为
+矩形的环形螺线管线圈（内径为$a$ ，外径为$b$，高为
+$h$，$n$匝）的轴放置。这个环形螺线管线圈连接有一
+个$R$的电阻。\\
+（a）在准静态近似下，环形螺线管线圈中会感应出多
+大的电动势？求出电阻中的电流$I(t)$。\\
+（b）计算环形螺线管线圈中由电流$I(t)$产生的反电
+动势。这个反电动势与（a）中的“直接”电动势的振幅比为
+多大?}
+(a)
+\begin{align*}
+    I=&-\frac{\partial \Phi}{R\partial t}\\
+    I=&-\int_{a}^{b}\frac{h\partial \mu_0 n\cos(\omega t)}{2\pi rR\partial t}\dif r\\
+    I=&\frac{\omega h\mu_0 n\sin(\omega t)}{2\pi R}\ln \frac{b}{a}\\
+\end{align*}
+
+(b)暂时不会
+% \begin{align*}
+%     \oint\boldsymbol{E}\cdot\dif\boldsymbol{l}&=-\frac{\partial \Phi}{\partial t}\\
+%     2\pi aE&=-\frac{\partial nI\mu_0 \pi a^2}{\partial t}\\
+%      E&=-  a\frac{\omega^2 h\mu_0^2 n\cos(\omega t)}{4\pi R}\ln \frac{b}{a}\\
+% \end{align*}
+\mysssec{一个电容$C$被充电到电势为$U$，并且连
+接到一个电感$L$上。在$t=0$时刻合上开关。作为时间的函数，求出电路中的电流。如果将一个电阻$R$与$C$和$L$串联起来，如何变化？}
+\begin{align*}
+    \frac{Q}{C}&=-L\frac{\dif I}{\dif t}\\
+    \frac{Q}{C}&=-L\frac{\dif^2 Q}{\dif t^2}\\
+    Q&=CU\cos\left(\frac{t}{\sqrt{LC}}\right)\\
+    \frac{Q}{C}&=-L\frac{\dif I}{\dif t}+IR\\
+    \frac{Q}{C}&=-L\frac{\dif^2 Q}{\dif t^2}-R\frac{\dif Q}{\dif t}
+\end{align*}
+设$Q=e^{kt}$
+\begin{align*}
+    0&=Lk^2+Rk+1
+\end{align*}
+\mysssec{求出储存在一个长螺线管（半径$R$，电流$I$，每单位长度$n$匝）中长度为$l$的一段中的能
+量}
+\begin{align*}
+    W&=\frac{1}{2\mu_0}\int B^2\dif \tau\\
+    W&=\frac{1}{2\mu_0}\int \left(\mu_0nI\right)^2\dif \tau\\
+    W&=\frac{1}{2\mu_0}\left(\mu_0nI\right)^2\pi R^2l\\
+\end{align*}
+\mysssec{一个长电缆带有一个沿同一方向且在其圆形横截面上均匀分布的电流。电流沿着表面流回。求出每单位长度的自感。}
+\begin{align*}
+    W&=\int_{a}^{b}\frac{1}{2}\mu_0 B^22\pi r\dif r\\
+    W&=\int_{a}^{b}\frac{1}{2}\mu_0 \left(\frac{\mu_0I}{2\pi r}\right)^22\pi r\dif r\\
+    W&=\frac{\mu_0I^2}{4\pi }\ln\frac{b}{a}\\
+    L&=\frac{2W}{I^2}\\
+    L&=\frac{\mu_0}{2\pi}\ln\frac{b}{a}\\
+\end{align*}
+\subsection{麦克斯韦方程组}
+\begin{equation}
+    \left\{\begin{aligned}
+        &\boldsymbol{\nabla}\cdot\boldsymbol{E}&=&\frac{\rho}{\varepsilon_0}\\
+        &\boldsymbol{\nabla}\times\boldsymbol{E}&=&-\frac{\partial \boldsymbol{B}}{\partial t}\\
+        &\boldsymbol{\nabla}\cdot\boldsymbol{B}&=&0\\
+        &\boldsymbol{\nabla}\times\boldsymbol{B}&=&\mu_0\boldsymbol{J}+\mu_0\varepsilon_0\frac{\partial \boldsymbol{E}}{\partial t}
+    \end{aligned}\right.
+\end{equation}
+\mysssec{一个半径为$a$的粗导线，其横截面上均匀分布有稳恒电流$I$。导线中有一个宽度$\omega<<a$的窄间隙，从而形成了一个平行板电容器。求出间隙中距离轴处的磁场。}
+\begin{align*}
+    E&=\frac{It}{\varepsilon_0\pi a^2}\\
+    \frac{\partial E}{\partial t}&=\frac{I}{\varepsilon_0\pi a^2}\\
+    2\pi rB&=\pi r^2\mu_0\varepsilon_0\frac{I}{\varepsilon_0\pi a^2}\\
+    B&=\frac{Ir\mu_0}{2\pi a^2}
+\end{align*}
+\mysssec{假设
+$\boldsymbol E=-\dfrac{q}{4\pi\varepsilon_0r^2}\theta(vt-r)\boldsymbol{e}_r,\ \boldsymbol B=0$
+证明这些场满足所有的麦克斯韦方程，并且确定$\rho$和$\boldsymbol J$。}
+\begin{align*}
+    \boldsymbol{\nabla}\cdot\boldsymbol{E}&=\boldsymbol{\nabla}\cdot\dfrac{q}{4\pi\varepsilon_0r^2}\theta(vt-r)\boldsymbol{e}_r\\
+    \boldsymbol{\nabla}\cdot\boldsymbol{E}&=\frac{1}{r^2}\frac{\partial }{\partial r}\dfrac{qr^2}{4\pi\varepsilon_0r^2}\theta(vt-r)\\
+    \boldsymbol{\nabla}\cdot\boldsymbol{E}&=-\frac{1}{r^2}\dfrac{q}{4\pi\varepsilon_0}\delta(vt-r)\\
+    %gsfg
+    \frac{\partial \boldsymbol E}{\partial t}&=-\frac{\partial }{\partial t}\dfrac{q}{4\pi\varepsilon_0r^2}\theta(vt-r)\boldsymbol{e}_r\\
+    \frac{\partial \boldsymbol E}{\partial t}&=-\dfrac{qv}{4\pi\varepsilon_0r^2}\delta(vt-r)\boldsymbol{e}_r\\
+    \boldsymbol{\nabla}\times\boldsymbol{B}&=\mu_0\boldsymbol{J}+\mu_0\varepsilon_0\frac{\partial \boldsymbol{E}}{\partial t}\\
+    \boldsymbol{J}&=\dfrac{qv}{4\pi r^2}\delta(vt-r)\boldsymbol{e}_r
+\end{align*}
+\mysssec{假设磁荷的“库仑定律”为$\boldsymbol{F}=\dfrac{\mu_0q_{m1}q_{m2}}{4\pi r^2}\boldsymbol{e}_r$, 给出一个磁单极子$q_m$以速度$\boldsymbol v$通过电场$\boldsymbol E$和磁场$\boldsymbol B$时的力定律。}
+
+引入磁荷密度 $\rho_m$ 与磁流密度 $\boldsymbol{J}_m$ 后，麦克斯韦方程变为：
+
+\begin{align*}
+\boldsymbol\nabla \cdot \boldsymbol{E} &= \frac{\rho_e}{\varepsilon_0}, &
+\boldsymbol\nabla \cdot \boldsymbol{B} &= \mu_0 \rho_m, \\
+\boldsymbol\nabla \times \boldsymbol{E} &= -\mu_0 \boldsymbol{J}_m - \frac{\partial \boldsymbol{B}}{\partial t}, &
+\boldsymbol\nabla \times \boldsymbol{B} &= \mu_0 \boldsymbol{J}_e + \mu_0 \varepsilon_0 \frac{\partial \boldsymbol{E}}{\partial t}.
+\end{align*}
+
+
+定义“对偶旋转角度” $\theta$，对偶变换形式为：
+
+\begin{align*}
+\boldsymbol{E}' &= \boldsymbol{E} \cos\theta + c \boldsymbol{B} \sin\theta, \\
+c\,\boldsymbol{B}' &= -\boldsymbol{E} \sin\theta + c \boldsymbol{B} \cos\theta.
+\end{align*}
+
+电荷与电流密度同时旋转后依然成立：
+
+\begin{align*}
+\rho_e' &= \rho_e \cos\theta + \rho_m \sin\theta, &
+\rho_m' &= -\rho_e \sin\theta + \rho_m \cos\theta, \\
+\boldsymbol{J}_e' &= \boldsymbol{J}_e \cos\theta + \boldsymbol{J}_m \sin\theta, &
+\boldsymbol{J}_m' &= -\boldsymbol{J}_e \sin\theta + \boldsymbol{J}_m \cos\theta.
+\end{align*}
+
+\begin{align*}
+    F=q_m(c\boldsymbol{B}-\frac1c\boldsymbol v\times\boldsymbol{E})
+\end{align*}
+\mysssec{设想一个磁单极子$q_m$通过一个自感为$L$的无电阻回路。在回路中会感应出多大的电流？}
+\begin{align*}
+    L&=\frac{\Delta \Phi}{\Delta I}\\
+    I&=\frac{\mu_0 q_m}{L}
+\end{align*}
+\subsection{习题}
+\mysssec{两个非常大的金属板之间保持距离$d$，一个电势为零，另一个电势为$U_0$。一
+个半径为$a(a<<d)$的金属球被切成两半，而其中一个半球被放置在接地的极板上，所以它的电势也同样为零。如果两个极板之间的区域充满均匀电导率为$\sigma$的弱导电材料，流到半球上的电流为多大?}
+由镜像法可得$U=-E_0r\cos\theta+E_0\dfrac{a^3}{r^2}\cos\theta$
+\begin{align*}
+    \boldsymbol{J}&=\sigma\boldsymbol{E}\\
+    \boldsymbol{J}&=-\sigma\boldsymbol{\nabla}U\\
+    \iint\boldsymbol{J}\cdot\dif\boldsymbol{S}&=-\sigma\iint\dfrac{\partial U}{\partial r}\boldsymbol{e}_r\cdot\dif\boldsymbol{S}\\
+    \iint\boldsymbol{J}\cdot\dif\boldsymbol{S}&=-\sigma\iint\left(\dfrac{\partial -E_0r\cos\theta+E_0\dfrac{a^3}{r^2}\cos\theta}{\partial r}\boldsymbol{e}_r\right)\cdot\dif\boldsymbol{S}\\
+    \iint\boldsymbol{J}\cdot\dif\boldsymbol{S}&=-\sigma\iint\left( -E_0\cos\theta-2E_0\dfrac{a^3}{r^3}\cos\theta\right)\cdot\dif{S}\\
+    \iint\boldsymbol{J}\cdot\dif\boldsymbol{S}&=\sigma\iint3E_0\cos\theta\cdot\dif{S}\\
+    \iint\boldsymbol{J}\cdot\dif\boldsymbol{S}&=2\sigma\pi\int_0^{\frac{\pi}{2}}3E_0a^2\sin\theta\cos\theta\cdot\dif\theta\\
+    \iint\boldsymbol{J}\cdot\dif\boldsymbol{S}&=\sigma\frac12\pi\int_0^{\frac{\pi}{2}}3E_0a^2\sin2\theta\cdot\dif2\theta\\
+    \iint\boldsymbol{J}\cdot\dif\boldsymbol{S}&=3\sigma\pi E_0a^2\\
+    I&=\frac{3\pi\sigma U_0a^2}{d}
+\end{align*}
+\mysssec{一个课本上常见的问题是要求你计算一个圆锥形物体的电阻，这个物体的电阻率为$\rho$，
+长度为$L$，一端的半径为$a$，另一端的半径为$b$。圆锥体两端是平的等势面。建议将圆锥切为厚
+度为$d$的圆柱形碟片，得到每个碟片的电阻，然后积分得到总电阻。\\
+(a)用这种方法计算$R$。\\
+(b)解释为什么这个方法从根本上来说是有缺陷的。\\
+（c）如果假设两端是以圆锥体顶点为球心的球面。计算这种情况下的电阻。}
+(a):
+\begin{align*}
+    R&=\int_{0}^{L}\frac{\rho}{S}\dif x\\
+    R&=\int_{0}^{L}\frac{\rho}{\pi r^2}\dif x\\
+    R&=\int_{0}^{L}\frac{\rho}{\pi \left[\frac{(b-a)x}{L}+a\right]^2}\dif x\\
+    R&\xlongequal{\frac{(b-a)x}{L}+a=u}\int_{a}^{b}\frac{\rho L}{\pi u^2(b-a)}\dif u\\
+    R&=\frac{\rho L}{\pi ab}
+\end{align*}
+
+(b):假设了圆锥体内部的等势面是平面的，且电流密度在整个圆锥体内都是均匀且平行于中心轴的。
+
+(c):
+% \begin{align*}
+%     \boldsymbol{\nabla}\cdot\boldsymbol{J}=0\\
+%     \frac{1}{\rho}\boldsymbol{\nabla}\cdot\boldsymbol{E}=0\\
+%     \boldsymbol{\nabla}^2U=0\\
+% \end{align*}
+% 边界条件为
+% \begin{align*}
+%     \left\{
+%     \begin{aligned}
+%         U&=0,\, R=\frac{aL}{a+b}\\
+%         U&=U_0,\, R=\frac{2a+b}{a+b}L\\
+%         \frac{\partial U}{\partial n}&=0,\, \tan\theta=\frac{b-a}{L}
+%     \end{aligned}
+%     \right.
+% \end{align*}
+\begin{align*}
+    R&=\int_{\frac{aL}{b-a}}^{\frac{bL}{b-a}}\frac{\rho}{2\pi r^2\int_{0}^{\arctan \frac{b-a}{L}}\sin\theta\dif \theta}\dif r\\
+    R&=\int_{\frac{aL}{b-a}}^{\frac{bL}{b-a}}\frac{\rho}{2\pi r^2\left(\frac{\sqrt{L^2+(b-a)^2}}{L}-1\right)}\dif r\\
+    R&=\frac{\rho(b-a)^2}{2\pi abL\left(\frac{\sqrt{L^2+(b-a)^2}}{L}-1\right)}\\
+    R&=\frac{\rho(b-a)^2}{2\pi ab\left(\sqrt{L^2+(b-a)^2}-L\right)}\\
+    R&=\frac{\rho\sqrt{L^2+(b-a)^2}+\rho L}{2\pi ab}
+\end{align*}
+\mysssec{设想一个无限长圆柱形薄
+板，其电阻率均匀且半径为$a$。一个位
+于$\phi=±\pi$处的狭缝（与电池相对应）被保持在电势$+U_0/
+2$，在圆柱表面上流有稳恒电流。\\
+利用柱坐标下的分离变量法，求出圆柱内部和圆柱
+外部的$U$\\
+求出圆柱面上的电荷面密度。}
+边界条件为
+\begin{align*}
+    \left\{
+    \begin{aligned}
+        U&=\frac{U_0\phi}{2\pi},\, R=a\, -\pi<\phi<\pi\\
+        \frac{\partial U}{\partial s}&=0\, R=a,\, \tan\phi=\frac{b-a}{L}
+    \end{aligned}
+    \right.
+\end{align*}
+内部
+\begin{align*}
+    U&=D_ms^{m}\sin m\phi\\
+    \frac{U_0\phi}{2\pi}&=D_ms^{m}\sin m\phi\\
+    \int_{-\pi}^{\pi}\frac{U_0\phi}{2\pi}\sin m\phi\dif\phi&=\int_{-\pi}^{\pi}D_ms^{m}\sin^2 m\phi\dif\phi\\
+    \int_{-\pi}^{\pi}\frac{U_0m\phi}{2\pi m^2}\sin m\phi\dif m\phi&=\pi D_ms^{m}\\
+    \int_{-m\pi}^{m\pi}\frac{U_0u}{2\pi m^2}\sin u\dif u&=\pi D_mR^{m}\\
+    -\left.\frac{U_0u}{2\pi m^2}\cos u\right|_{-m\pi}^{m\pi}
+    +\int_{-m\pi}^{m\pi}\frac{U_0}{2\pi m^2}\cos u\dif u&=\pi D_mR^{m}\\
+    -\frac{U_0}{m}\cos m\pi&=\pi D_mR^{m}\\
+    -\frac{(-1)^mU_0}{\pi ma^{m}}&= D_m\\
+\end{align*}
+同理外部
+\begin{align*}
+    U&=C_ms^{-m}\sin m\phi\\
+    C_m&=-\frac{(-1)^mU_0a^{m}}{\pi m}\\
+    \boldsymbol{\nabla}^2U&=-\frac{\rho}{\varepsilon_0}\\
+    \frac{\partial^2 C_ms^{-m}\sin m\phi-D_ms^{m}\sin m\phi}{\partial s^2}&=-\frac{\rho}{\varepsilon_0}\\
+    -m(m+1)\frac{(-1)^mU_0a^{m}}{\pi m}s^{-m-2}\sin m\phi+
+    m(m-1)\frac{(-1)^mU_0}{\pi ma^{m}}s^{m-2}\sin m\phi&=-\frac{\rho}{\varepsilon_0}\\
 \end{align*}
