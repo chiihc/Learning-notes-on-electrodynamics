@@ -152,13 +152,13 @@ $M_{21}$被称为两个回路的互感
     L&=\pi R^2\mu_0n
 \end{align*}
 \mysssec{一个交变电流$I=\cos(\omega t)$流过一个直导线，该导线沿着一个横截面为
-矩形的环形螺线管线圈（内径为$a$ ，外径为$b$，高为
-$h$，$n$匝）的轴放置。这个环形螺线管线圈连接有一
+矩形的环形螺线管线圈(内径为$a$ ，外径为$b$，高为
+$h$，$n$匝)的轴放置。这个环形螺线管线圈连接有一
 个$R$的电阻。\\
-（a）在准静态近似下，环形螺线管线圈中会感应出多
+(a)在准静态近似下，环形螺线管线圈中会感应出多
 大的电动势？求出电阻中的电流$I(t)$。\\
-（b）计算环形螺线管线圈中由电流$I(t)$产生的反电
-动势。这个反电动势与（a）中的“直接”电动势的振幅比为
+(b)计算环形螺线管线圈中由电流$I(t)$产生的反电
+动势。这个反电动势与(a)中的“直接”电动势的振幅比为
 多大?}
 (a)
 \begin{align*}
@@ -186,7 +186,7 @@ $h$，$n$匝）的轴放置。这个环形螺线管线圈连接有一
 \begin{align*}
     0&=Lk^2+Rk+1
 \end{align*}
-\mysssec{求出储存在一个长螺线管（半径$R$，电流$I$，每单位长度$n$匝）中长度为$l$的一段中的能
+\mysssec{求出储存在一个长螺线管(半径$R$，电流$I$，每单位长度$n$匝)中长度为$l$的一段中的能
 量}
 \begin{align*}
     W&=\frac{1}{2\mu_0}\int B^2\dif \tau\\
@@ -287,7 +287,7 @@ c\,\boldsymbol{B}' &= -\boldsymbol{E} \sin\theta + c \boldsymbol{B} \cos\theta.
 度为$d$的圆柱形碟片，得到每个碟片的电阻，然后积分得到总电阻。\\
 (a)用这种方法计算$R$。\\
 (b)解释为什么这个方法从根本上来说是有缺陷的。\\
-（c）如果假设两端是以圆锥体顶点为球心的球面。计算这种情况下的电阻。}
+(c)如果假设两端是以圆锥体顶点为球心的球面。计算这种情况下的电阻。}
 (a):
 \begin{align*}
     R&=\int_{0}^{L}\frac{\rho}{S}\dif x\\
@@ -324,7 +324,7 @@ c\,\boldsymbol{B}' &= -\boldsymbol{E} \sin\theta + c \boldsymbol{B} \cos\theta.
 \end{align*}
 \mysssec{设想一个无限长圆柱形薄
 板，其电阻率均匀且半径为$a$。一个位
-于$\phi=±\pi$处的狭缝（与电池相对应）被保持在电势$+U_0/
+于$\phi=±\pi$处的狭缝(与电池相对应)被保持在电势$+U_0/
 2$，在圆柱表面上流有稳恒电流。\\
 利用柱坐标下的分离变量法，求出圆柱内部和圆柱
 外部的$U$\\
@@ -357,5 +357,62 @@ c\,\boldsymbol{B}' &= -\boldsymbol{E} \sin\theta + c \boldsymbol{B} \cos\theta.
     \boldsymbol{\nabla}^2U&=-\frac{\rho}{\varepsilon_0}\\
     \frac{\partial^2 C_ms^{-m}\sin m\phi-D_ms^{m}\sin m\phi}{\partial s^2}&=-\frac{\rho}{\varepsilon_0}\\
     -m(m+1)\frac{(-1)^mU_0a^{m}}{\pi m}s^{-m-2}\sin m\phi+
-    m(m-1)\frac{(-1)^mU_0}{\pi ma^{m}}s^{m-2}\sin m\phi&=-\frac{\rho}{\varepsilon_0}\\
+    m(m-1)\frac{(-1)^mU_0}{\pi ma^{m}}s^{m-2}\sin m\phi&=-\frac{\rho}{\varepsilon_0}
+\end{align*}
+\mysssec{在理想导体中，电导率无穷大，所以
+$E=0$，任何净电荷都位于导体表面上(正如
+在静电学情形中，位于非理想导体的表面那样)。\\
+(a)证明理想导体内部磁场是恒定的($\partial \boldsymbol B/\partial t=0$)。\\
+超导体是一种理想导体，但具有内部的
+$\boldsymbol B$事实上为零的特殊性质。(这里的“磁通量排斥”
+被称为迈斯纳效应(Meissner effect)。)\\
+(b)证明超导体中的电流被限制在表面上。\\
+(c)超导性在高于某个确定的临界温度($T$)时消失，这个温度对于不同的材料是不同的。假设你有一
+个温度高于其临界温度的球(半径$a$)，然后，你将它保持在一个均匀磁场$B_z$中并逐渐将其冷却到低于$T_0$
+的温度。作为极角$\theta$的函数，求出感应面电流密度$K$。}
+(a):
+    $\boldsymbol{\nabla}\times\boldsymbol{E}=-\frac{\partial \boldsymbol{B}}{\partial t}=0$
+
+(b):$\boldsymbol{\nabla}\times\boldsymbol{B}=\mu_0\boldsymbol{J}+\mu_0\varepsilon_0\frac{\partial \boldsymbol{E}}{\partial t}=\mu_0\boldsymbol{J}$
+
+(c):边界条件
+\begin{align*}
+        &\boldsymbol{B}_{\bot}=0,&r=R\\
+    &\boldsymbol{A}\to\frac12B_z\sin\theta r,&r\to\infty
+\end{align*}
+\begin{align*}
+\boldsymbol{\nabla}^2\boldsymbol{A}_\phi
+&=\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\dfrac{{\partial A_\phi}}{\partial r}\right)\boldsymbol{e}_\phi
+-\frac{1}{r^2\sin^2\theta}A_\phi\boldsymbol{e}_\phi
++\frac{1}{r^2\sin\theta}\left(
+\cos\theta\dfrac{{\partial A_\phi}}{\partial \theta}
++\sin\theta\dfrac{{\partial^2 A_\phi}}{\partial \theta^2}\right)\boldsymbol{e}_\phi\\
+A_{\phi}
+&=B_1rP_1^1(\cos\theta)+C_1r^{-2}P_1^1(\cos\theta)\\
+A_{\phi}&=\frac12B_z\sin\theta r-C_1\sin\theta r^{-2}\\
+\frac12B_za^3&=-C_1\\
+A_{\phi}
+A_{\phi}&=\frac12B_z\sin\theta r-\frac12B_za^3\sin\theta r^{-2}\\
+B_\theta &= -\frac{1}{r} \frac{\partial}{\partial r} (r A_\phi)\\
+B_\theta &= -\frac{1}{r} \frac{\partial}{\partial r} (\frac12B_z\sin\theta r^2-\frac12B_za^3\sin\theta r^{-1})\\
+B_\theta &= -\frac{1}{r}(B_z\sin\theta r+\frac12B_za^3\sin\theta r^{-2})\\
+B_\theta &= -\frac32B_z\sin\theta\\
+\boldsymbol{K} &= \frac{1}{\mu_0} B_\theta \boldsymbol{\hat{\phi}} = -\frac{3B_0}{2\mu_0} \sin\theta \boldsymbol{\hat{\phi}}
+\end{align*}
+\mysssec{一个超导性为人所熟知的演示是，在一块超导材料上方悬浮着一块磁铁。这
+个现象可以利用镜像法分析。将磁铁作为一个理想磁偶极子$\boldsymbol m$处理，该磁偶极子在原点上方$z$处(并且限
+制其方向为$z$方向)，然后认为超导体占据了$xy$平面以下的整个半空间。由于迈斯纳效应，对于$z<0$处$\boldsymbol B=0$，而且因为$\boldsymbol B$是无散度的，法线方向$z$分量是连续的，所以在界面的稍上方$B_z=0$。作为超导体的替
+身，将镜像构造为在$-z$处放置一个相同的磁偶极子时，满足边界条件；这两个不同的布置在$z>0$区域产
+生相同的磁场。\\
+(a)镜像磁偶极子应该指向哪个方向？\\
+(b)求出由超导体上的感应电流而产生的施加在磁铁上的力(这也就是说，由镜像磁偶极子产生的力)。
+将其设定为与$Mg$相等(其中$M$是磁铁的质量)，从而得到磁铁将会“悬浮”的高度。\\
+(c)超导体表面($xy$平面)上的感应电流可以由关于$\boldsymbol B$切线分量的边界条件得到：$B=\mu_0(\boldsymbol K\times \boldsymbol e_z)$。利用你通过镜像法得到的磁场，证明$\boldsymbol K=-\dfrac{3mrh}{2\pi (r^2+h^2)^{5/2}}\boldsymbol e_\phi$}
+(a):$-z$
+
+(b)\begin{align*}
+    \boldsymbol F&=\boldsymbol \nabla\left(\boldsymbol m\cdot\boldsymbol B\right)\\
+    \boldsymbol F&=\boldsymbol \nabla\left(\boldsymbol m\cdot\frac{\mu_0}{2\pi}\dfrac{\boldsymbol{m}}{r^3}\right)\\
+    \boldsymbol F&=\boldsymbol \nabla\left(\frac{\mu_0}{2\pi}\dfrac{{m^2}}{8z^3}\right)\\
+    Mg&=\frac{3\mu_0}{16\pi}\dfrac{{m^2}}{z^4}\\
 \end{align*}
