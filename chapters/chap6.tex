@@ -576,3 +576,27 @@ $a<s<b$的区域中，电势$U(s,z)$满足拉普拉斯方程，并有边界条�
     E_s(a)&=\dfrac{zI\rho}{\pi a^3\ln(a/b)}\\
     \sigma&=\dfrac{zI\rho\varepsilon_0}{\pi a^3\ln(a/b)}
 \end{align*}
+\mysssec{某输电线路由两条宽度为$w$，相距很小的距离$h<<w$薄金属“带”构成。电流沿着其中一条流出，然后沿着另一条流回。电流在带的表面上是均匀分布的。\\
+(a)求出每单位长度的电容，$C$。\\
+(b)求出每单位长度的电感，$L$。\\
+(c)乘积$LC$在数值上有多大?[当然，$L$和$C$对于不同种类的传输线是不同的，但是它们的乘积是一个普适常数——例如，检验例题7.13中的电缆——只要两个导体之间的空间是真空的。在传输线的理论
+中，这个乘积与沿着导线传播的脉冲的速度有关：$v=1/\sqrt{LC}$。]\\
+(d)如果这两条导线相互之间用介电常数为$\varepsilon$、磁导率为$\mu$的不导电材料绝缘，此时乘积LC为多大?
+传播速度多大？}
+\begin{align*}
+    C&=\frac{\sigma}{U}\\
+    U&=\int_{0}^{w}\dif d\int_{-\infty}^{\infty}E\dif x\\
+    U&=\int_{h/2}^{h/2+w}\dif d\int_{-\infty}^{\infty}\frac{\sigma}{2\pi \varepsilon_0 (x-d)}-\frac{\sigma}{2\pi \varepsilon_0 (x-d-h-\omega)}\dif x\\
+    U&=\int_{-\infty}^{\infty}\dif x\left.-\frac{\sigma\ln\left|x-d\right|}{2\pi \varepsilon_0 }
+    +\frac{\ln\left|x-d-h-\omega\right|}{2\pi \varepsilon_0 }\right|_{h/2}^{h/2+w}\\
+    U&\approx\int_{-\infty}^{\infty}\dif x\left.-\frac{\sigma\ln\left|x-d\right|}{2\pi \varepsilon_0 }
+    +\frac{\ln\left|x-d-\omega\right|}{2\pi \varepsilon_0 }\right|_{h/2}^{w}\\
+    U&\approx\int_{-\infty}^{\infty}-\frac{\sigma\ln\left|x-w\right|}{2\pi \varepsilon_0 }
+    +\frac{\ln\left|x-2\omega\right|}{2\pi \varepsilon_0 }
+    +\frac{\sigma\ln\left|x-h/2\right|}{2\pi \varepsilon_0 }
+    -\frac{\ln\left|x-h/2-\omega\right|}{2\pi \varepsilon_0 }\dif x\\
+    C&=\frac{2\pi \varepsilon_0}{\ln \omega-\ln h}
+\end{align*}
+\begin{align*}
+    L&=\frac{\Phi}{I}\\
+\end{align*}
