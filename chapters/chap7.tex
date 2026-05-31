@@ -1,0 +1,54 @@
+\cleardoublepage
+
+\section{守恒定律}
+\subsection{电荷和能量}
+连续性方程:
+\begin{equation}
+    \frac{\partial \rho}{\partial t}=-\boldsymbol{\nabla}\cdot\boldsymbol{J}
+\end{equation}
+假设我们有电荷和电流分布，在时刻t，它们产生电场$\boldsymbol{E}$和磁场$\boldsymbol{B}$。在下一时刻，$\dif t$，电荷
+移动了一小段距离。问：在时间间隔$\dif t$中，作用在这些电荷上的电磁力做了多少功?
+\begin{align*}
+    \boldsymbol F\cdot\dif\boldsymbol{l}&=q(\boldsymbol{E}+\boldsymbol{v}\times\boldsymbol{B})\cdot\boldsymbol{v}\dif t\\
+    \boldsymbol F\cdot\dif\boldsymbol{l}&=q\boldsymbol{E}\cdot\boldsymbol{v}\dif t\\
+    P&=\int \boldsymbol{E}\cdot\boldsymbol{J}\dif\tau\\
+    \boldsymbol{E}\cdot\boldsymbol{J}&=\frac{1}{\mu_0}\boldsymbol{E}\cdot(\boldsymbol{\nabla}\times\boldsymbol{B})
+    -\varepsilon_0\boldsymbol{E}\cdot\frac{\partial \boldsymbol{E}}{\partial t}\\
+    \boldsymbol{E}\cdot\boldsymbol{J}&=-\frac{1}{\mu_0}\boldsymbol{\nabla}\cdot(\boldsymbol{E}\times\boldsymbol{B})
+    +\frac{1}{\mu_0}\boldsymbol{B}\cdot(\boldsymbol{\nabla}\times\boldsymbol{E})
+    -\varepsilon_0\boldsymbol{E}\cdot\frac{\partial \boldsymbol{E}}{\partial t}\\
+    \boldsymbol{E}\cdot\boldsymbol{J}&=-\frac{1}{\mu_0}\boldsymbol{\nabla}\cdot(\boldsymbol{E}\times\boldsymbol{B})
+    -\frac{1}{\mu_0}\boldsymbol{B}\cdot\frac{\partial \boldsymbol{B}}{\partial t}
+    -\varepsilon_0\boldsymbol{E}\cdot\frac{\partial \boldsymbol{E}}{\partial t}\\
+    \boldsymbol{E}\cdot\boldsymbol{J}&=-\frac{1}{\mu_0}\boldsymbol{\nabla}\cdot(\boldsymbol{E}\times\boldsymbol{B})
+    -\frac{1}{2\mu_0}\frac{\partial B^2}{\partial t}
+    -\frac{\varepsilon_0}{2}\frac{\partial E^2}{\partial t}\\
+    P&=-\frac{\dif}{\dif t}\int\frac{1}{2}\frac{\partial }{\partial t}\left(\varepsilon_0E^2+\frac{1}{\mu_0}B^2\right)\dif\tau-\frac{1}{\mu_0}\oint\boldsymbol{E}\times\boldsymbol{B}\cdot\dif\boldsymbol{a}
+\end{align*}
+单位时间内电磁场通过单位表面积向外传递的能量称为坡印廷矢量$\boldsymbol{S}$
+\begin{equation}
+    \boldsymbol{S}\equiv\frac{1}{\mu_0}\boldsymbol{E}\times\boldsymbol{B}
+\end{equation}
+\mysssec{计算沿着电缆传输的功率（单位时间内传输的能量），假设内外两
+个导线间的电势差为$U$。\\
+(a)一个长同轴电缆带有电流$I$(电流沿着半径为$a$的内圆柱的表面流出，然后沿着半径为
+的外柱面流回）。\\
+(b)两条宽度为$w$，相距很小的距离$h<<w$薄金属“带”。电流沿着其中一
+条流出，然后沿着另一条流回。电流在带的表面上是均匀分布的。}
+(a)
+\begin{align*}
+    U&=\int_{a}^{b}\frac{\lambda}{4\pi\varepsilon_0 r}\dif r\\
+    U&=\frac{\lambda}{4\pi\varepsilon_0}\ln\frac{b}{a}\\
+    \lambda&=\frac{4\pi\varepsilon_0U}{\ln(b/a)}\\
+    \int\boldsymbol{S}\cdot\dif\boldsymbol\sigma&=\int\frac{1}{\mu_0}\boldsymbol{E}\times\boldsymbol{B}\cdot\dif\boldsymbol\sigma\\
+    \int\boldsymbol{S}\cdot\dif\boldsymbol\sigma&=\int\frac{1}{\mu_0}\frac{\lambda}{4\pi\varepsilon_0 r}\frac{\mu_0I}{2\pi r}\dif\sigma\\
+    \int\boldsymbol{S}\cdot\dif\boldsymbol\sigma&=\int\frac{U}{r\ln(b/a)}\frac{I}{2\pi r}2\pi r\dif r\\
+    \int\boldsymbol{S}\cdot\dif\boldsymbol\sigma&=UI
+\end{align*}
+
+(b)\begin{align*}
+    S&=EB\\
+    S&=\frac{U}{\mu_0 h}\mu_0J\\
+    S&=\frac{UI}{wh}\\
+    \int\boldsymbol{S}\cdot\dif\boldsymbol\sigma&=UI
+\end{align*}

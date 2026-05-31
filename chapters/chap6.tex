@@ -593,15 +593,27 @@ $a<s<b$的区域中，电势$U(s,z)$满足拉普拉斯方程，并有边界条�
     L&=\frac{\Phi}{I}\\
     L&=\frac{hB}{I}\\
     L&=\frac{h\mu_0 J}{I}\\
-    L&=\frac{h\mu_0 }{w}\\
+    L&=\frac{h\mu_0 }{w}
 \end{align*}
-\mysssec{证明阿法万（Alfven）定理：在理想导电流体中（例如，自由电子气），通过任意随流体流动的闭合回路的磁通量在所有时刻保持恒定。（磁场线，实际上，被“冻结”在流体中。）\\
-（a）利用欧姆定律，以及法拉第定律，证明如果$\sigma=\infty$但是$\boldsymbol J$有限，则\\ \\
-\centerline{$\dfrac{\partial \boldsymbol{B}}{\partial t }=\boldsymbol{\nabla}\times(\boldsymbol{v}\times\boldsymbol{B})$}\\ \\
-(b)令$S$为在时刻$t$以回路（$P$）为边界的面，而$S'$为在时刻$t+\Delta t$以新位置（$P'$）的回路为边界的面。磁通量的变化为
-$\dif \Phi=\int_S\boldsymbol{B}(t+\Delta t)\cdot\dif \boldsymbol{a}
--\int_{S'}\boldsymbol{B}(t)\cdot\dif \boldsymbol{a}$
-证明\\
-\centerline{$\int_{S'}\boldsymbol{B}(t+\Delta t)\cdot\dif \boldsymbol{a}+\int_R\boldsymbol{B}(t+\Delta t)\cdot\dif \boldsymbol{a}=\int_S\boldsymbol{B}(t+\Delta t)\cdot\dif \boldsymbol{a}$}\\
-（式中，$R$为连接$P$和$P'$的“带”），因此（对于无限小的$\Delta t$）\\\\
-\centerline{$\dif\Phi=\Delta$}}
+\mysssec{证明阿法万（Alfven）定理：在理想导电流体中（例如，自由电子气），通过任意随流体流动的闭合回路的磁通量在所有时刻保持恒定。（磁场线，实际上，被“冻结”在流体中。）}
+\begin{align*}
+    \boldsymbol{J}&=\sigma(\boldsymbol{E}+\boldsymbol{v}\times\boldsymbol{B})\\
+    0&=\boldsymbol{E}+\boldsymbol{v}\times\boldsymbol{B}\\
+    \boldsymbol{E}&=-\boldsymbol{v}\times\boldsymbol{B}\\
+    \frac{\partial \boldsymbol{B}}{\partial t}&=-\boldsymbol{\nabla}\times\boldsymbol{E}\\
+    \frac{\partial \boldsymbol{B}}{\partial t}&=\boldsymbol{\nabla}\times(\boldsymbol{v}\times\boldsymbol{B})
+\end{align*}
+令$S$为在时刻$t$以回路（$P$）为边界的面，而$S'$为在时刻$t+\dif t$以新位置（$P'$）的回路为边界的面。磁通量的变化为（式中，$R$为连接$P$和$P'$的“带”）
+\begin{align*}
+    \dif \Phi&=\int_{S'}\boldsymbol{B}(t+\dif t)\cdot\dif \boldsymbol{a}
+-\int_S\boldsymbol{B}(t)\cdot\dif \boldsymbol{a}\\
+\int_{S'}\boldsymbol{B}(t+\dif t)\cdot\dif \boldsymbol{a}+\int_R\boldsymbol{B}(t+\dif t)\cdot\dif \boldsymbol{a}&=\int_S\boldsymbol{B}(t+\dif t)\cdot\dif \boldsymbol{a}\\
+\dif\Phi&=\dif t\int_S\dfrac{\partial \boldsymbol{B}}{\partial t}\cdot \boldsymbol{a}-\int_R\boldsymbol{B}(t+\dif t)\cdot\dif\boldsymbol{a}\\
+\dif\Phi&=\dif t\int_S\dfrac{\partial \boldsymbol{B}}{\partial t}\cdot \boldsymbol{a}
+-\dif t\oint_P\boldsymbol{B}\times\boldsymbol{v}\cdot\dif\boldsymbol{l}\\
+\frac{\dif\Phi}{\dif t}&=\int_S\dfrac{\partial \boldsymbol{B}}{\partial t}\cdot \boldsymbol{a}
+-\oint_P\boldsymbol{B}\times\boldsymbol{v}\cdot\dif\boldsymbol{l}\\
+\frac{\dif\Phi}{\dif t}&=\int_S\left[\dfrac{\partial \boldsymbol{B}}{\partial t}-\boldsymbol{\nabla}\times\boldsymbol{v}\times\boldsymbol{B}\right]\cdot \boldsymbol{a}\\
+\frac{\dif\Phi}{\dif t}&=0
+\end{align*}
+\newpage
