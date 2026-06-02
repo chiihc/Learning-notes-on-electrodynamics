@@ -80,5 +80,27 @@
     u&=\frac{1}{2}\varepsilon_0E^2+\frac{1}{2\mu_0}B^2\\
     u&=\frac{1}{2}\varepsilon_0\frac{I^2t^2}{\pi^2 a^4\varepsilon_0^2}+\frac{1}{2\mu_0}\mu_0\frac{I^2s^2}{4\pi^2 a^4}\\
     u&=\frac{1}{2}\frac{I^2t^2}{\pi^2 a^4\varepsilon_0}+\frac{1}{2}\mu_0\frac{I^2s^2}{4\pi^2 a^4}\\
-    \frac{\partial u}{\partial t}&=\frac{I^2t}{\pi^2 a^4\varepsilon_0}\\
+    \frac{\partial u}{\partial t}&=\frac{I^2t}{\pi^2 a^4\varepsilon_0}
 \end{align*}
+\subsection{动量}
+\begin{align*}
+    \boldsymbol f&=\rho\boldsymbol{E}+\boldsymbol{J}\times\boldsymbol{B}\\
+    \boldsymbol f&=\varepsilon_0\boldsymbol{\nabla}\cdot\boldsymbol{E}\boldsymbol{E}+\left(\frac{1}{\mu_0}\boldsymbol{\nabla}\times\boldsymbol{B}-\varepsilon_0\frac{\partial\boldsymbol{E}}{\partial t}\right)\times\boldsymbol{B}\\
+    \boldsymbol f&=\varepsilon_0\boldsymbol{\nabla}\cdot\boldsymbol{E}\boldsymbol{E}+\frac{1}{\mu_0}\boldsymbol{\nabla}\times\boldsymbol{B}\times\boldsymbol{B}
+    -\varepsilon_0\frac{\partial\boldsymbol{E}}{\partial t}\times\boldsymbol{B}\\
+    \boldsymbol f&=\varepsilon_0\boldsymbol{\nabla}\cdot\boldsymbol{E}\boldsymbol{E}+\frac{1}{\mu_0}\boldsymbol{\nabla}\times\boldsymbol{B}\times\boldsymbol{B}
+    -\varepsilon_0\frac{\partial\boldsymbol{E}\times\boldsymbol{B}}{\partial t}
+    +\varepsilon_0\boldsymbol{E}\times\frac{\partial\boldsymbol{B}}{\partial t}\\
+    \boldsymbol f&=\varepsilon_0\boldsymbol{\nabla}\cdot\boldsymbol{E}\boldsymbol{E}+\frac{1}{\mu_0}\boldsymbol{\nabla}\times\boldsymbol{B}\times\boldsymbol{B}
+    -\varepsilon_0\frac{\partial\boldsymbol{E}\times\boldsymbol{B}}{\partial t}
+    -\varepsilon_0\boldsymbol{E}\times\left(\boldsymbol{\nabla}\times\boldsymbol{E}\right)\\
+    % \boldsymbol{\nabla}(\boldsymbol{E}\cdot\boldsymbol{E})&=2\boldsymbol{E}\times(\boldsymbol{\nabla}\times\boldsymbol{E})+
+    % 2(\boldsymbol{E}\cdot\boldsymbol{\nabla})\boldsymbol{E}\\
+    \boldsymbol f&=\varepsilon_0\left[\left(\boldsymbol{\nabla}\cdot\boldsymbol{E}\right)+\left(\boldsymbol{E}\cdot\boldsymbol{\nabla}\right)\right]\boldsymbol{E}
+    +\frac{1}{\mu_0}\left[\left(\boldsymbol{\nabla}\cdot\boldsymbol{B}\right)+\left(\boldsymbol{B}\cdot\boldsymbol{\nabla}\right)\right]\boldsymbol{B}
+    -\frac12\boldsymbol{\nabla}\left(\varepsilon_0E^2+\frac{1}{\mu_0}B^2\right)-\varepsilon_0\frac{\partial}{\partial t}(\boldsymbol{E}\times\boldsymbol{B})
+\end{align*}
+引入麦克斯韦应力张量
+\begin{equation}
+    T_{ij}\equiv\varepsilon_0\left(E_iE_j-\frac{1}{2}\delta_{ij}E^2\right)+\frac{1}{\mu_0}\left(B_iB_j-\frac{1}{2}\delta_{ij}B^2\right)
+\end{equation}
