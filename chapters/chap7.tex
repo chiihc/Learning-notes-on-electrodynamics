@@ -29,6 +29,11 @@
 \begin{equation}
     \boldsymbol{S}\equiv\frac{1}{\mu_0}\boldsymbol{E}\times\boldsymbol{B}
 \end{equation}
+如果我们用$u_{mech}$表示机械能能量密度，同时用$u_{em}$表示电磁场的能量密度：
+\begin{equation}
+    \frac{\partial u_{mech}+u_{em}}{\partial t}=-\boldsymbol{\nabla}\cdot\boldsymbol{S}
+    \label{坡印廷_守恒定律}
+\end{equation}
 \mysssec{计算沿着电缆传输的功率（单位时间内传输的能量），假设内外两
 个导线间的电势差为$U$。\\
 (a)一个长同轴电缆带有电流$I$(电流沿着半径为$a$的内圆柱的表面流出，然后沿着半径为
@@ -51,4 +56,29 @@
     S&=\frac{U}{\mu_0 h}\mu_0J\\
     S&=\frac{UI}{wh}\\
     \int\boldsymbol{S}\cdot\dif\boldsymbol\sigma&=UI
+\end{align*}
+\mysssec{一个半径为$a$的粗导线，其横截面上均匀分布有稳恒电流$I$。导线中有一个宽度$\omega<<a$的
+窄间隙，从而形成了一个平行板电容器。\\
+（a）作为到轴线的距离$s$与时间$t$的函数，求间隙中的电场与磁场。（假设在$t$=0时刻，电容器的电荷量为零）。\\
+（b)求间隙中的能量密度$u$。和坡印廷矢量$S$。并且验证是否满足式\ref{坡印廷_守恒定律}。
+% //（c）作为时间的函数，计算间隙中的总能量。找一个合适的表面对坡印廷矢量积分求出电磁场向间隙中传输的总功率，检验它与间隙中能量的增加率相等。（式（8.9）—不过现在$W=0$，因为间隙中没有电荷）。[如果担心边缘区域的影响，可以选取半径$b<a$的体积使其完全处在间隙内部。]
+}
+(a)
+\begin{align*}
+    E&=\frac{Q}{\pi a^2\varepsilon_0}\\
+    E&=\frac{It}{\pi a^2\varepsilon_0}\\
+    2\pi sB&=\pi s^2\mu_0\varepsilon_0\frac{\partial E}{\partial t}\\
+    2\pi sB&=\pi s^2\mu_0\frac{I}{\pi a^2}\\
+    B&=\mu_0\frac{Is}{2\pi a^2}
+\end{align*}
+
+(b)\begin{align*}
+    S&=\frac{It}{\pi a^2\varepsilon_0}\frac{Is}{2\pi a^2}\\
+    \boldsymbol{\nabla}\cdot\boldsymbol{S}&=\frac{S_s}{s}+\dfrac{\partial S_s}{\partial s}+\frac{1}{s}\dfrac{\partial S_{\phi}}{\partial \phi}+\dfrac{\partial S_{z}}{\partial z}\\
+    \boldsymbol{\nabla}\cdot\boldsymbol{S}&=\frac{S_s}{s}+\dfrac{\partial S_s}{\partial s}\\
+    \boldsymbol{\nabla}\cdot\boldsymbol{S}&=-\frac{I^2t}{\pi^2 a^4\varepsilon_0}\\
+    u&=\frac{1}{2}\varepsilon_0E^2+\frac{1}{2\mu_0}B^2\\
+    u&=\frac{1}{2}\varepsilon_0\frac{I^2t^2}{\pi^2 a^4\varepsilon_0^2}+\frac{1}{2\mu_0}\mu_0\frac{I^2s^2}{4\pi^2 a^4}\\
+    u&=\frac{1}{2}\frac{I^2t^2}{\pi^2 a^4\varepsilon_0}+\frac{1}{2}\mu_0\frac{I^2s^2}{4\pi^2 a^4}\\
+    \frac{\partial u}{\partial t}&=\frac{I^2t}{\pi^2 a^4\varepsilon_0}\\
 \end{align*}
