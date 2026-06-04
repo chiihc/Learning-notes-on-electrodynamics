@@ -119,28 +119,53 @@
 \end{align*}
 \mysssec{求一个均匀带电球下半球作用于上半球的力，球的半径为$R$，带有电荷$q$。}
 \begin{align*}
-    F_z&=\oiint\boldsymbol{T}\cdot\dif\boldsymbol{a}\\
+    F_z&=\oiint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}\\
     F_z&=\iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}+\iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}'\\
     \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}&=\iint\varepsilon_0\left(E_iE_z-\frac{1}{2}\delta_{iz}E^2\right)\dif a_i\\
-    \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}&=\iint \varepsilon_0E_iE_z\dif a_i
-    -\varepsilon_0\frac{1}{2}\delta_{iz}E^2\dif a_i\\
-    \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}&=\iint
-    -\varepsilon_0\frac{1}{2}E^2\dif a_z\\
+    \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}&=\varepsilon_0\iint E_iE_z\dif a_i
+    -\frac{1}{2}\delta_{iz}E^2\dif a_i\\
+    \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}&=\varepsilon_0\iint
+    E_z^2\dif a_z-\frac{1}{2}E^2\dif a_z\\
     \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}&=\int_0^R
-    -\varepsilon_0\frac{1}{2}\left(\frac{qr^3}{4\pi\varepsilon_0 r^2R^3}\right)^22\pi r\dif r\\
+    \varepsilon_0\frac{1}{2}\left(\frac{qr^3}{4\pi\varepsilon_0 r^2R^3}\right)^22\pi r\dif r\\
     \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}&=\int_0^R
-    -\frac{q^2r^3}{16\pi\varepsilon_0R^6}\dif r\\
+    \frac{q^2r^3}{16\pi\varepsilon_0R^6}\dif r\\
     \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}&=
-    -\frac{q^2}{64\pi\varepsilon_0R^2}\\
+    \frac{q^2}{64\pi\varepsilon_0R^2}\\
     \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}'&=\iint\varepsilon_0\left(E_iE_z-\frac{1}{2}\delta_{iz}E^2\right)\dif a_i'\\
     \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}'&=\iint \varepsilon_0E_iE_z\dif a_i'
     -\varepsilon_0\frac{1}{2}E^2\dif a_z'\\
-    \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}'&=\varepsilon_0\iint E_xE_z\dif a_x'
-    +E_yE_z\dif a_y'
-    +E_zE_z\dif a_z'
-    -\frac{1}{2}E^2\dif a_z'\\
-    \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}'&=\varepsilon_0\iint \frac{Q\sin\theta\cos\phi}{4\pi\varepsilon_0R^2}\frac{Q\cos\theta}{4\pi\varepsilon_0R^2}\dif a_x'
-    +E_y\frac{Q\cos\theta}{4\pi\varepsilon_0R^2}\dif a_y'
-    +\frac{Q^2\cos^2\theta}{16\pi^2\varepsilon_0^2R^4}\dif a_z'
-    -\frac{1}{2}E^2\dif a_z'\\
+    \boldsymbol{E}&\parallel \boldsymbol{a}'\\
+    E_zE_ia'_i&=E_zE\\
+    E_zE_ia'_i&=E^2a'_z\\
+    \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}'&=\iint \varepsilon_0\frac{1}{2}E^2\dif a_z'\\
+    \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}'&=\varepsilon_0\frac{1}{2}\left(\frac{q}{4\pi\varepsilon_0 R^2}\right)^2\pi R^2\\
+    \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}'&=\frac{q^2}{32\pi\varepsilon_0 R^2}\\
+    F_z&=\frac{3q^2}{64\pi\varepsilon_0 R^2}
+\end{align*}
+\mysssec{计算一个均匀带电旋转球壳南北半球间的磁吸引力。球壳半径为$R$，转动角速度为$\omega$，电荷面密度为$\sigma$。($\boldsymbol{B}_{\text{内}}=\frac{2}{3}
+\mu_0\sigma\omega R \boldsymbol{e}_z,\ \boldsymbol{B}_{\text{z外}}=-\frac{1}{3r^3}
+\mu_0\sigma\omega R^4 \boldsymbol{e}_z$)}
+\begin{align*}
+    F_z&=\frac{1}{\mu_0}\iint\left(B_iB_z-\frac{1}{2}\delta_{iz}B^2\right)\dif a_i\\
+    F_z&=\frac{1}{\mu_0}\iint B_iB_z\dif a_i-\frac{1}{2}\delta_{iz}B^2\dif a_i\\
+    F_z&=\frac{1}{\mu_0}\iint\frac{1}{2}B^2\dif a_z\\
+    F_z&=\frac{1}{\mu_0}\iint\frac{1}{2}\left(\frac{2}{3}\mu_0\sigma\omega R \right)^2\dif a_z
+    +\frac{1}{\mu_0}\int_R^\infty\frac{1}{2}\left(\frac{1}{3r^3}\mu_0\sigma\omega R^4\right)^22\pi r\dif r\\
+    F_z&=\iint\frac{2}{9}\mu_0\sigma^2\omega^2 R^2\dif a_z
+    +\int_R^\infty\frac{1}{9r^5}\mu_0\sigma^2\omega^2 R^8\pi \dif r\\
+    F_z&=-\frac{2}{9}\mu_0\sigma^2\omega^2 R^4\pi-\frac{1}{36}\mu_0\sigma^2\omega^2 R^4\pi\\
+    F_z&=-\frac{1}{4}\mu_0\sigma^2\omega^2 R^4\pi
+\end{align*}
+\mysssec{考虑相距为$2a$，带有等量电荷量$q$的两个点电荷。在到两电荷距离相等的平面上对麦克斯韦应力张量积分求一个电荷对另一个的作用力。\\
+（b）若两电荷带等量相反电荷，重复（a)中的求解。}
+(a)
+\begin{align*}
+    F_z&=\iint\varepsilon_0\left(E_iE_z-\frac{1}{2}\delta_{iz}E^2\right)\dif a_i\\
+    F_z&=\iint\varepsilon_0\frac{1}{2}E^2\dif a_z\\
+    F_z&=\int_0^\infty\varepsilon_0\frac{1}{2}\left[\frac{2aq}{4\pi\varepsilon_0(a^2+r^2)^\frac32}\right]^22\pi r\dif r\\
+    F_z&=\int_0^\infty\frac{a^2q^2}{4\pi\varepsilon_0(a^2+r^2)^3}r\dif r\\
+    F_z&\xlongequal{r=a\tan\theta}\int_0^\frac\pi 2\frac{a^2q^2}{4\pi\varepsilon_0(a^2+a^2\tan^2\theta)^3}a\tan\theta\dif a\tan\theta\\
+    F_z&=\int_0^\frac\pi 2\frac{aq^2\sin\theta}{4\pi\varepsilon_0}\dif \theta\\
+    F_z&=-\frac{aq^2}{4\pi\varepsilon_0}\\
 \end{align*}
