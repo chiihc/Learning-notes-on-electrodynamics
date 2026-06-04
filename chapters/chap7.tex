@@ -104,3 +104,43 @@
 \begin{equation}
     T_{ij}\equiv\varepsilon_0\left(E_iE_j-\frac{1}{2}\delta_{ij}E^2\right)+\frac{1}{\mu_0}\left(B_iB_j-\frac{1}{2}\delta_{ij}B^2\right)
 \end{equation}
+\begin{align*}
+    \boldsymbol{\nabla}\cdot\boldsymbol{T}&=\frac{\partial}{\partial x_i}\varepsilon_0\left(E_iE_j-\frac{1}{2}\delta_{ij}E^2\right)\boldsymbol{e}_j
+    +\frac{\partial}{\partial x_i}\frac{1}{\mu_0}\left(B_iB_j-\frac{1}{2}\delta_{ij}B^2\right)\boldsymbol{e}_j\\
+    \boldsymbol{\nabla}\cdot\boldsymbol{T}&=\varepsilon_0\frac{\partial E_iE_j}{\partial x_i}\boldsymbol{e}_j
+    -\varepsilon_0\frac{1}{2}\frac{\partial E^2}{\partial x_i}\delta_{ij}\boldsymbol{e}_j
+    +\frac{1}{\mu_0}\frac{\partial B_iB_j}{\partial x_i}\frac{1}{\mu_0}\boldsymbol{e}_j
+    -\frac{1}{\mu_0}\frac{1}{2}\frac{\partial B^2}{\partial x_i}\delta_{ij}\boldsymbol{e}_j\\
+    \boldsymbol{\nabla}\cdot\boldsymbol{T}&=\varepsilon_0\frac{\partial E_iE_j}{\partial x_i}\boldsymbol{e}_j
+    -\varepsilon_0\frac{1}{2}\frac{\partial E^2}{\partial x_i}\boldsymbol{e}_i
+    +\frac{1}{\mu_0}\frac{\partial B_iB_j}{\partial x_i}\boldsymbol{e}_j
+    -\frac{1}{\mu_0}\frac{1}{2}\frac{\partial B^2}{\partial x_i}\boldsymbol{e}_i\\
+    \boldsymbol{f}&=\boldsymbol{\nabla}\cdot\boldsymbol{T}-\varepsilon_0\mu_0\frac{\partial\boldsymbol S}{\partial t}
+\end{align*}
+\mysssec{求一个均匀带电球下半球作用于上半球的力，球的半径为$R$，带有电荷$q$。}
+\begin{align*}
+    F_z&=\oiint\boldsymbol{T}\cdot\dif\boldsymbol{a}\\
+    F_z&=\iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}+\iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}'\\
+    \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}&=\iint\varepsilon_0\left(E_iE_z-\frac{1}{2}\delta_{iz}E^2\right)\dif a_i\\
+    \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}&=\iint \varepsilon_0E_iE_z\dif a_i
+    -\varepsilon_0\frac{1}{2}\delta_{iz}E^2\dif a_i\\
+    \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}&=\iint
+    -\varepsilon_0\frac{1}{2}E^2\dif a_z\\
+    \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}&=\int_0^R
+    -\varepsilon_0\frac{1}{2}\left(\frac{qr^3}{4\pi\varepsilon_0 r^2R^3}\right)^22\pi r\dif r\\
+    \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}&=\int_0^R
+    -\frac{q^2r^3}{16\pi\varepsilon_0R^6}\dif r\\
+    \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}&=
+    -\frac{q^2}{64\pi\varepsilon_0R^2}\\
+    \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}'&=\iint\varepsilon_0\left(E_iE_z-\frac{1}{2}\delta_{iz}E^2\right)\dif a_i'\\
+    \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}'&=\iint \varepsilon_0E_iE_z\dif a_i'
+    -\varepsilon_0\frac{1}{2}E^2\dif a_z'\\
+    \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}'&=\varepsilon_0\iint E_xE_z\dif a_x'
+    +E_yE_z\dif a_y'
+    +E_zE_z\dif a_z'
+    -\frac{1}{2}E^2\dif a_z'\\
+    \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}'&=\varepsilon_0\iint \frac{Q\sin\theta\cos\phi}{4\pi\varepsilon_0R^2}\frac{Q\cos\theta}{4\pi\varepsilon_0R^2}\dif a_x'
+    +E_y\frac{Q\cos\theta}{4\pi\varepsilon_0R^2}\dif a_y'
+    +\frac{Q^2\cos^2\theta}{16\pi^2\varepsilon_0^2R^4}\dif a_z'
+    -\frac{1}{2}E^2\dif a_z'\\
+\end{align*}
