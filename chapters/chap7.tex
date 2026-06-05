@@ -83,6 +83,7 @@
     \frac{\partial u}{\partial t}&=\frac{I^2t}{\pi^2 a^4\varepsilon_0}
 \end{align*}
 \subsection{动量}
+\subsubsection{麦克斯韦应力张量}
 \begin{align*}
     \boldsymbol f&=\rho\boldsymbol{E}+\boldsymbol{J}\times\boldsymbol{B}\\
     \boldsymbol f&=\varepsilon_0\boldsymbol{\nabla}\cdot\boldsymbol{E}\boldsymbol{E}+\left(\frac{1}{\mu_0}\boldsymbol{\nabla}\times\boldsymbol{B}-\varepsilon_0\frac{\partial\boldsymbol{E}}{\partial t}\right)\times\boldsymbol{B}\\
@@ -117,6 +118,11 @@
     -\frac{1}{\mu_0}\frac{1}{2}\frac{\partial B^2}{\partial x_i}\boldsymbol{e}_i\\
     \boldsymbol{f}&=\boldsymbol{\nabla}\cdot\boldsymbol{T}-\varepsilon_0\mu_0\frac{\partial\boldsymbol S}{\partial t}
 \end{align*}
+\subsubsection{动量守恒}
+\begin{align}
+    \frac{\dif \boldsymbol{p}_{mech}}{\dif t}&=\boldsymbol{F}\\
+    \frac{\dif \boldsymbol{p}_{mech}}{\dif t}&=\oint\boldsymbol{T}\cdot\dif\boldsymbol{a}-\varepsilon_0\mu_0\int\frac{\dif\boldsymbol S}{\dif t}\dif\tau
+\end{align}
 \mysssec{求一个均匀带电球下半球作用于上半球的力，球的半径为$R$，带有电荷$q$。}
 \begin{align*}
     F_z&=\oiint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}\\
@@ -159,13 +165,17 @@
 \end{align*}
 \mysssec{考虑相距为$2a$，带有等量电荷量$q$的两个点电荷。在到两电荷距离相等的平面上对麦克斯韦应力张量积分求一个电荷对另一个的作用力。\\
 （b）若两电荷带等量相反电荷，重复（a)中的求解。}
-(a)
+(a)\begin{align*}
+    F_z&=\iint\varepsilon_0\left(E_iE_z-\frac{1}{2}\delta_{iz}E^2\right)\dif a_i\\
+    F_z&=-\iint\varepsilon_0\frac{1}{2}E^2\dif a_z\\
+    F_z&=\int_0^\infty\varepsilon_0\frac{1}{2}\left[\frac{2rq}{4\pi \varepsilon_0(a^2+r^2)^\frac32}\right]^22\pi r\dif r\\
+    F_z&=\frac{q^2}{16 a^2\pi\varepsilon_0}
+\end{align*}
+(b)
 \begin{align*}
     F_z&=\iint\varepsilon_0\left(E_iE_z-\frac{1}{2}\delta_{iz}E^2\right)\dif a_i\\
     F_z&=\iint\varepsilon_0\frac{1}{2}E^2\dif a_z\\
-    F_z&=\int_0^\infty\varepsilon_0\frac{1}{2}\left[\frac{2aq}{4\pi\varepsilon_0(a^2+r^2)^\frac32}\right]^22\pi r\dif r\\
-    F_z&=\int_0^\infty\frac{a^2q^2}{4\pi\varepsilon_0(a^2+r^2)^3}r\dif r\\
-    F_z&\xlongequal{r=a\tan\theta}\int_0^\frac\pi 2\frac{a^2q^2}{4\pi\varepsilon_0(a^2+a^2\tan^2\theta)^3}a\tan\theta\dif a\tan\theta\\
-    F_z&=\int_0^\frac\pi 2\frac{aq^2\sin\theta}{4\pi\varepsilon_0}\dif \theta\\
-    F_z&=-\frac{aq^2}{4\pi\varepsilon_0}\\
+    F_z&=-\int_0^\infty\varepsilon_0\frac{1}{2}\left[\frac{2aq}{4\pi\varepsilon_0(a^2+r^2)^\frac32}\right]^22\pi r\dif r\\
+    F_z&=-\int_0^\infty\frac{a^2q^2}{4\pi\varepsilon_0(a^2+r^2)^3}r\dif r\\
+    F_z&=-\frac{q^2}{16 a^2\pi\varepsilon_0}
 \end{align*}
