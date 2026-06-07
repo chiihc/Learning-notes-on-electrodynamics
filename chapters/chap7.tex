@@ -105,24 +105,34 @@
 \begin{equation}
     T_{ij}\equiv\varepsilon_0\left(E_iE_j-\frac{1}{2}\delta_{ij}E^2\right)+\frac{1}{\mu_0}\left(B_iB_j-\frac{1}{2}\delta_{ij}B^2\right)
 \end{equation}
-\begin{align*}
+\begin{align}
     \boldsymbol{\nabla}\cdot\boldsymbol{T}&=\frac{\partial}{\partial x_i}\varepsilon_0\left(E_iE_j-\frac{1}{2}\delta_{ij}E^2\right)\boldsymbol{e}_j
-    +\frac{\partial}{\partial x_i}\frac{1}{\mu_0}\left(B_iB_j-\frac{1}{2}\delta_{ij}B^2\right)\boldsymbol{e}_j\\
+    +\frac{\partial}{\partial x_i}\frac{1}{\mu_0}\left(B_iB_j-\frac{1}{2}\delta_{ij}B^2\right)\boldsymbol{e}_j\nonumber\\
     \boldsymbol{\nabla}\cdot\boldsymbol{T}&=\varepsilon_0\frac{\partial E_iE_j}{\partial x_i}\boldsymbol{e}_j
     -\varepsilon_0\frac{1}{2}\frac{\partial E^2}{\partial x_i}\delta_{ij}\boldsymbol{e}_j
     +\frac{1}{\mu_0}\frac{\partial B_iB_j}{\partial x_i}\frac{1}{\mu_0}\boldsymbol{e}_j
-    -\frac{1}{\mu_0}\frac{1}{2}\frac{\partial B^2}{\partial x_i}\delta_{ij}\boldsymbol{e}_j\\
+    -\frac{1}{\mu_0}\frac{1}{2}\frac{\partial B^2}{\partial x_i}\delta_{ij}\boldsymbol{e}_j\nonumber\\
     \boldsymbol{\nabla}\cdot\boldsymbol{T}&=\varepsilon_0\frac{\partial E_iE_j}{\partial x_i}\boldsymbol{e}_j
     -\varepsilon_0\frac{1}{2}\frac{\partial E^2}{\partial x_i}\boldsymbol{e}_i
     +\frac{1}{\mu_0}\frac{\partial B_iB_j}{\partial x_i}\boldsymbol{e}_j
-    -\frac{1}{\mu_0}\frac{1}{2}\frac{\partial B^2}{\partial x_i}\boldsymbol{e}_i\\
-    \boldsymbol{f}&=\boldsymbol{\nabla}\cdot\boldsymbol{T}-\varepsilon_0\mu_0\frac{\partial\boldsymbol S}{\partial t}
-\end{align*}
+    -\frac{1}{\mu_0}\frac{1}{2}\frac{\partial B^2}{\partial x_i}\boldsymbol{e}_i\nonumber\\
+    \boldsymbol{f}&=\boldsymbol{\nabla}\cdot\boldsymbol{T}-\varepsilon_0\mu_0\frac{\partial\boldsymbol S}{\partial t}\label{麦克斯韦应力张量受力}
+\end{align}
+动量密度$\boldsymbol{\wp}$
+\begin{equation}
+    \boldsymbol{\wp}=\varepsilon_0\mu_0\boldsymbol{S}=\varepsilon_0(\boldsymbol{E}\times\boldsymbol{B})
+\end{equation}
 \subsubsection{动量守恒}
 \begin{align}
     \frac{\dif \boldsymbol{p}_{mech}}{\dif t}&=\boldsymbol{F}\\
     \frac{\dif \boldsymbol{p}_{mech}}{\dif t}&=\oint\boldsymbol{T}\cdot\dif\boldsymbol{a}-\varepsilon_0\mu_0\int\frac{\dif\boldsymbol S}{\dif t}\dif\tau
 \end{align}
+式中，$\boldsymbol{p}_{mech}$代表体积内所有粒子的总（机械）动量。
+\subsubsection{角动量}
+角动量密度$\ell$
+\begin{equation}
+    \ell=\boldsymbol{r}\times\boldsymbol{\wp}=\varepsilon_0\left[\boldsymbol{r}\times(\boldsymbol E\times\boldsymbol B)\right]
+\end{equation}
 \mysssec{求一个均匀带电球下半球作用于上半球的力，球的半径为$R$，带有电荷$q$。}
 \begin{align*}
     F_z&=\oiint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}\\
@@ -134,8 +144,6 @@
     E_z^2\dif a_z-\frac{1}{2}E^2\dif a_z\\
     \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}&=\int_0^R
     \varepsilon_0\frac{1}{2}\left(\frac{qr^3}{4\pi\varepsilon_0 r^2R^3}\right)^22\pi r\dif r\\
-    \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}&=\int_0^R
-    \frac{q^2r^3}{16\pi\varepsilon_0R^6}\dif r\\
     \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}&=
     \frac{q^2}{64\pi\varepsilon_0R^2}\\
     \iint\boldsymbol{T}_z\cdot\dif\boldsymbol{a}'&=\iint\varepsilon_0\left(E_iE_z-\frac{1}{2}\delta_{iz}E^2\right)\dif a_i'\\
@@ -178,4 +186,91 @@
     F_z&=-\int_0^\infty\varepsilon_0\frac{1}{2}\left[\frac{2aq}{4\pi\varepsilon_0(a^2+r^2)^\frac32}\right]^22\pi r\dif r\\
     F_z&=-\int_0^\infty\frac{a^2q^2}{4\pi\varepsilon_0(a^2+r^2)^3}r\dif r\\
     F_z&=-\frac{q^2}{16 a^2\pi\varepsilon_0}
+\end{align*}
+\mysssec{长为$l$的长同轴电缆由内导线（半径为$a$）和外导线（半径为$b$)组成。在导线一端接有电池，另一端接有电阻。内导线带有均匀分布的电荷，每单位长度上电荷量为$\lambda$，并且载有稳定向右的电流$I$；外导线具有相反的电荷和电流。问：电磁场具有的动量为多少?}
+\begin{align*}
+    \boldsymbol{p}_{em}&=\mu_0\varepsilon_0\int\boldsymbol{S}\dif\tau\\
+    \boldsymbol{p}_{em}&=\varepsilon_0\int\boldsymbol{E}\times\boldsymbol{B}\dif\tau\\
+    \boldsymbol{p}_{em}&=\varepsilon_0\int_a^b\frac{\lambda}{2\pi\varepsilon s}\frac{\mu_0I}{2\pi s}\boldsymbol{e}_s\times\boldsymbol{e}_\phi2\pi s\dif s\\
+    \boldsymbol{p}_{em}&=\varepsilon_0\int_a^b\frac{\lambda\mu_0I}{2\pi\varepsilon s}\boldsymbol{e}_z\dif s\\
+    \boldsymbol{p}_{em}&=\varepsilon_0\frac{\lambda\mu_0I}{2\pi\varepsilon}\boldsymbol{e}_z\ln\frac{b}{a}
+\end{align*}
+\mysssec{考虑一个无限大平板电容器，下板面（$z=-d/2$)电荷面密度为$-\sigma$，上板面（$z=+d/2$）电荷面密度为$+\sigma$。\\
+（a）求两板之间的电磁场应力张量的九个分量。将结果写成一个$3\times3$矩阵的形式。\\
+（b)利用式\ref{麦克斯韦应力张量受力}求作用在上板面单位面积上的力。\\
+（c)求单位时间内穿过$xy$平面单位面积的动量。}
+(a)\begin{align*}
+    T_{ij}&=\left(E_iE_j-\frac{1}{2}\delta_{ij}E^2\right)\\
+    T&=\left(\begin{matrix}
+        T_{xx}&T_{xy}&T_{xz}\\
+        T_{yx}&T_{yy}&T_{yz}\\
+        T_{zx}&T_{zy}&T_{zz}\\
+    \end{matrix}\right)\\
+    T&=\varepsilon_0\left(\begin{matrix}
+        E_xE_x-\frac{1}{2}E^2&E_xE_y&E_xE_z\\
+        E_yE_x&E_yE_y-\frac{1}{2}E^2&E_yE_z\\
+        E_zxE_j&E_zE_y&E_zE_z-\frac{1}{2}E^2\\
+    \end{matrix}\right)\\
+    T&=\varepsilon_0\left(\begin{matrix}
+        -\frac{1}{2}E^2&0&0\\
+        0&-\frac{1}{2}E^2&0\\
+        0&0&\frac{1}{2}E^2\\
+    \end{matrix}\right)\\
+    T&=\left(\begin{matrix}
+        -\dfrac{\sigma^2}{2\varepsilon_0}&0&0\\
+        0&-\dfrac{\sigma^2}{2\varepsilon_0}&0\\
+        0&0&\dfrac{\sigma^2}{2\varepsilon_0}\\
+    \end{matrix}\right)
+\end{align*}
+
+(b)\begin{align*}
+    \boldsymbol{F}&=-\boldsymbol{T}\cdot\dif\boldsymbol{a}\\
+    \boldsymbol{F}&=-\iint\dfrac{\sigma^2}{2\varepsilon_0}\dif{a}\\
+    \boldsymbol{F}&=-\dfrac{\sigma^2}{2\varepsilon_0}
+\end{align*}
+
+(c)\begin{align*}
+    \boldsymbol{p}_z&=-\boldsymbol{T}\\
+    \boldsymbol{p}_z&=-\dfrac{\sigma^2}{2\varepsilon_0}\boldsymbol{e}_z
+\end{align*}
+
+\mysssec{一个带电平行板电容器（板间有均匀电场$\boldsymbol{E}=E\boldsymbol{e}_z$）放置在均匀磁场$\boldsymbol{B}=B\boldsymbol{e}_x$中。\\
+（a）求两板之间的电磁动量。\\
+（b）用一个具有电阻的导线连接两平板，沿着$z$轴方向，
+电容器开始缓慢放电。导线中的电流会受到磁力；求放电过程
+中系统受到的总冲量？\\
+（c）缓慢减小磁场。这样会产生一个法拉第电场，它将会对平板施加
+一个作用力。求整个过程中对系统施加的总冲量。}
+(a)\begin{align*}
+    \boldsymbol{p}_{em}&=\varepsilon_0\int\boldsymbol{E}\times\boldsymbol{B}\dif\tau\\
+    \boldsymbol{p}_{em}&=\varepsilon_0\int E\boldsymbol{e}_z\times B\boldsymbol{e}_x\dif\tau\\
+\boldsymbol{p}_{em}&=-\varepsilon_0LBE\boldsymbol{e}_y
+\end{align*}
+
+(b)\begin{align*}
+    \boldsymbol{F}&=I\boldsymbol{B}\times\boldsymbol{L}\\
+    \boldsymbol{F}t&=-QBL\boldsymbol{e}_y\\
+    \boldsymbol{F}t&=-\varepsilon_0LBE\boldsymbol{e}_y
+\end{align*}
+
+(c)\begin{align*}
+    \boldsymbol{\nabla}\times\boldsymbol{E}&=-\frac{\partial \boldsymbol{B}}{\partial t}\\
+    t\oint\boldsymbol{E}\dif s&=-\boldsymbol{B}l\\
+    tE&=-BL\\
+    Ft&=\sigma Et\\
+    Ft&=-\varepsilon_0E BL
+\end{align*}
+\mysssec{设想有一个半径为$R$的长螺线管线圈，单位长度绕有$n$匝，载有电流$I$。有两个长为$l$的圆柱形壳管与螺线管同轴，螺线管内的壳管半径为$a$，表面均匀带有电荷$+Q$。螺线管外的壳管半径为$b$，均匀带有电荷$-Q$(设$l>>b$)。当螺线管中电流逐渐减小时，圆柱形壳管开始旋转。问：这些角动量来自哪里？}
+\begin{align*}
+    \iiint\ell&=\iiint\varepsilon_0\left[\boldsymbol{r}\times(\boldsymbol E\times\boldsymbol B)\right]\dif\tau\\
+    \iiint\ell&=2\pi\int_a^R\varepsilon_0\left[s\boldsymbol{e}_r\times\left(\frac{Q}{2\pi s}\boldsymbol{e}_r\times\mu_0nI\boldsymbol{e}_z s\right)\right]\dif s\\
+    \iiint\ell&=-\int_a^R\varepsilon_0s\boldsymbol{e}_r\times Q\boldsymbol{e}_\phi\mu_0nI\dif s\\
+    \iiint\ell&=-\varepsilon_0\boldsymbol{e}_zQ\mu_0nI(R^2-a^2)\\
+\end{align*}
+\mysssec{设想一个半径为$R$的均匀磁化铁球，带有电荷$Q$和磁矩$\boldsymbol M=M\boldsymbol{e}_z$。铁球开始时处于静止。\\
+（a）计算存储在电磁场中的角动量。\\
+（b）假设该球被逐渐（均匀）去磁（或许加热到居里温度以上）。用法拉第定律确定感应电场，求出这个电场作用在球体上的力矩，求出在整个去磁过程中传递给球体的总角动量。\\
+（c）如果代替去磁，我们在球体北极连接一个接地导线使球体放电。假设球面上电流的流动使电荷密度保持均匀。用洛伦兹力定律确定作用在球上的力矩，并且计算整个放电过程中传递给球的力矩。（球面处的磁场并不连续，这有影响吗?}
+(a)\begin{align*}
+    \boldsymbol{L}
 \end{align*}
