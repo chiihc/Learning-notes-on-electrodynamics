@@ -265,12 +265,36 @@
     \iiint\ell&=\iiint\varepsilon_0\left[\boldsymbol{r}\times(\boldsymbol E\times\boldsymbol B)\right]\dif\tau\\
     \iiint\ell&=2\pi\int_a^R\varepsilon_0\left[s\boldsymbol{e}_r\times\left(\frac{Q}{2\pi s}\boldsymbol{e}_r\times\mu_0nI\boldsymbol{e}_z s\right)\right]\dif s\\
     \iiint\ell&=-\int_a^R\varepsilon_0s\boldsymbol{e}_r\times Q\boldsymbol{e}_\phi\mu_0nI\dif s\\
-    \iiint\ell&=-\varepsilon_0\boldsymbol{e}_zQ\mu_0nI(R^2-a^2)\\
+    \iiint\ell&=-\varepsilon_0\boldsymbol{e}_zQ\mu_0nI(R^2-a^2)
 \end{align*}
-\mysssec{设想一个半径为$R$的均匀磁化铁球，带有电荷$Q$和磁矩$\boldsymbol M=M\boldsymbol{e}_z$。铁球开始时处于静止。\\
-（a）计算存储在电磁场中的角动量。\\
-（b）假设该球被逐渐（均匀）去磁（或许加热到居里温度以上）。用法拉第定律确定感应电场，求出这个电场作用在球体上的力矩，求出在整个去磁过程中传递给球体的总角动量。\\
-（c）如果代替去磁，我们在球体北极连接一个接地导线使球体放电。假设球面上电流的流动使电荷密度保持均匀。用洛伦兹力定律确定作用在球上的力矩，并且计算整个放电过程中传递给球的力矩。（球面处的磁场并不连续，这有影响吗?}
-(a)\begin{align*}
-    \boldsymbol{L}
+\mysssec{设想一个半径为$R$的均匀磁化铁球，带有电荷$Q$和磁矩$\boldsymbol M=M\boldsymbol{e}_z$。铁球开始时处于静止。
+% \\（a）
+计算存储在电磁场中的角动量。
+% \\（b）假设该球被逐渐（均匀）去磁（或许加热到居里温度以上）。用法拉第定律确定感应电场，求出这个电场作用在球体上的力矩，求出在整个去磁过程中传递给球体的总角动量。\\
+% （c）如果代替去磁，我们在球体北极连接一个接地导线使球体放电。假设球面上电流的流动使电荷密度保持均匀。用洛伦兹力定律确定作用在球上的力矩，并且计算整个放电过程中传递给球的力矩。（球面处的磁场并不连续，这有影响吗?
+}
+\begin{align*}
+    \iiint\ell&=\iiint\varepsilon_0\boldsymbol{r}\times(\boldsymbol E\times\boldsymbol B)\dif\tau\\
+    \iiint\ell&=\iiint\varepsilon_0r\boldsymbol{e}_r\times\left[\frac{Q}{4\pi\varepsilon_0r^2}\boldsymbol{e}_r\times \frac{\mu_0M}{4\pi r^3}\left(2\cos\theta\boldsymbol{e}_r+\sin\theta\boldsymbol{e}_\theta\right)\right]\dif\tau\\
+    \iiint\ell&=-\iiint\varepsilon_0\frac{Q}{4\pi\varepsilon_0r}\frac{\mu_0M}{4\pi r^3}\sin\theta\boldsymbol{e}_\phi\dif\tau\\
+    \iiint\ell&=-\iiint\frac{Q}{16\pi r^4}\frac{\mu_0M}{\pi}\sin\theta\left(\cos\theta\cos\phi\boldsymbol{e}_x+\cos\theta\sin\phi\boldsymbol{e}_y-\sin\theta\boldsymbol{e}_z\right)r^2\sin\theta\dif r\dif\theta\dif\phi\\
+    \iiint\ell&=\iint\frac{Q\mu_0M}{8\pi r^2}\sin^3\theta\boldsymbol{e}_z\dif r\dif\theta\\
+    \iiint\ell&=\frac{Q\mu_0M}{6\pi R}\boldsymbol{e}_z
 \end{align*}
+\mysssec{有一个非常长的半径为$a$的螺线管线圈，单位长度绕有$n$砸，载有电流$I_s$另一半径
+$b>>a$的圆线框与之同轴，线框电阻为$R$。当螺线管中电流减小时，线框中产生感应电流$I_r$。\\
+(a)作为$dI_s/dt$的函数，计算感应电流$I_r$。\\
+（b）向线框传输的功率（$I_r^2R$)必然来自螺线管。由计算螺线管表面的坡印廷矢量证实这一点，对螺线管整个表面作积分验证它与总功率相等。}(a)
+\begin{align*}
+    \oint\boldsymbol{E}\cdot\boldsymbol{l}&=-\iint\frac{\partial \boldsymbol{B}}{\partial t}\cdot\dif\boldsymbol{\sigma}\\
+    I_rR&=-\pi a^2\frac{\mu_0 n \partial I_s}{\partial t}\\
+    I_r&=-\frac{\pi a^2\mu_0 n}{R}\frac{ \dif I_s}{\dif t}
+\end{align*}
+
+(b)\begin{align*}
+    \boldsymbol{S}&=\frac{1}{\mu_0}\boldsymbol{E}\times\boldsymbol{B}\\
+    \boldsymbol{S}&=\frac{1}{\mu_0}\frac{I_rR}{2\pi a}\boldsymbol{e}_\phi\times\mu_0I_r\frac{b^2}{2(b^2+z^2)^\frac32}\boldsymbol{e}_z\\
+    \boldsymbol{S}&=\frac{I_r^2Rb^2}{4\pi a(b^2+z^2)^\frac32}\boldsymbol{e}_r
+\end{align*}
+
+\mysssec{半径为$R$的球体带有均匀电极化矢量$\boldsymbol P$和磁化强度$\boldsymbol M$，（并不一定在相同方向）。求它所产生的电磁场具有的角动量。}
