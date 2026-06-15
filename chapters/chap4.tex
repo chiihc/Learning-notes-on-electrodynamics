@@ -343,11 +343,20 @@ A_{\phi\text{外}}
 \begin{equation}
     \boldsymbol{B}_\text{偶极}=\frac{\mu_0}{2\pi}\dfrac{\boldsymbol{m}}{r^3}
 \end{equation}
+\mysssec{一半径为$R$的球壳, \,表面带有均匀电荷, \,电荷面密度为$\sigma$, \,当它以恒定角速度$\omega$旋转时, \,求磁偶极矩}
+\begin{align*}
+    \dif q&=\sigma\dif S\\
+    \dif q&=\sigma 2\pi R^2\sin\theta\dif\theta\\
+    \dif I&=\sigma R^2\sin\theta\omega\dif\theta\\
+    m&=\int \pi R^2\sin^2\theta\dif I\\
+    m&=\int\pi a\sigma R^4\sin^3\theta\omega\dif\theta\\
+    m&=\frac43\pi\omega\sigma R^4
+\end{align*}
 \mysssec{一个半径为$R$的留声机唱片, \,带有均匀的面电荷$\sigma$, \,以恒定角速度$\omega$旋转, \,求出它的磁偶极矩}
 \begin{align*}
-    {m}= I{a}=\int_{0}^{R}2\pi\sigma r\omega \pi r^2\dif r
+    {m}= I{a}=\int_{0}^{R}\sigma r\omega \pi r^2\dif r
     =\int_{0}^{R}2\pi^2\sigma \omega \pi r^3\dif r
-    =\frac{1}{2}\pi^2\sigma \omega \pi R^4
+    =\frac{1}{4}\pi\sigma \omega \pi R^4
 \end{align*}
 \subsection{习题}
 \mysssec{既然平行电流相互吸引, \,单根导线中的电流将收缩到沿着中心轴线的一条细束上。然而在实际中, \,电流一般将均匀地分布于导线中, \,如果正电荷(密度$\rho_+$)是静止的, \,负电荷(密度$\rho_-$)以速度$v$运动, \,证明$\rho_-=\rho_+\gamma^2$, \,其中$\gamma=1/\sqrt{1-(v/c)^2}$。如果导线整体上是中性的, \,那么补偿电荷处在什么地方?}
@@ -572,8 +581,7 @@ A_{\phi\text{外}}
     B_y&=\int_{0}^{2\pi}\frac{-\mu_0 IR\sin\phi' z}{4\pi [R^2\cos^2\phi'+(y -R\sin\phi')^2+z^2]^\frac32}\dif \phi'\\
     B_z&=\int_{0}^{2\pi}\frac{\mu_0 I(-R\sin\phi'\boldsymbol{e}_x+ R\cos\phi'\boldsymbol{e}_y)\times(-R\cos\phi'\boldsymbol{e}_x+y\boldsymbol{e}_y -R\sin\phi'\boldsymbol{e}_y)}{4\pi [R^2\cos^2\phi'+(y -R\sin\phi')^2+z^2]^\frac32}\dif \phi'
 \end{align*}
-\mysssec{假设矢势定义为$\boldsymbol{A}=-\boldsymbol{r}\times\int_0^1\lambda\boldsymbol{B}(\lambda\boldsymbol{r})\dif\lambda$求出均匀磁场$\boldsymbol{B}$的矢势。\\
-求出载流$I$的无限长直导线的矢势。是否自动满足
+\mysssec{假设矢势定义为$\boldsymbol{A}=-\boldsymbol{r}\times\int_0^1\lambda\boldsymbol{B}(\lambda\boldsymbol{r})\dif\lambda$求出均匀磁场$\boldsymbol{B}$的矢势。求出载流$I$的无限长直导线的矢势。是否自动满足
 $\boldsymbol{\nabla} \cdot\boldsymbol{A} =0 $? }
 在均匀磁场下$\boldsymbol{B}$为常量, \,不妨设在$x$方向
 \begin{align*}

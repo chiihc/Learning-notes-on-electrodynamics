@@ -260,13 +260,35 @@
     Ft&=\sigma Et\\
     Ft&=-\varepsilon_0E BL
 \end{align*}
-\mysssec{设想有一个半径为$R$的长螺线管线圈，单位长度绕有$n$匝，载有电流$I$。有两个长为$l$的圆柱形壳管与螺线管同轴，螺线管内的壳管半径为$a$，表面均匀带有电荷$+Q$。螺线管外的壳管半径为$b$，均匀带有电荷$-Q$(设$l>>b$)。当螺线管中电流逐渐减小时，圆柱形壳管开始旋转。问：这些角动量来自哪里？}
-\begin{align*}
+\mysssec{设想有一个半径为$R$的长螺线管线圈，单位长度绕有$n$匝，载有电流$I$。有两个长为$l$的圆柱形壳管与螺线管同轴，螺线管内的壳管半径为$a$，表面均匀带有电荷$+Q$。螺线管外的壳管半径为$b$，均匀带有电荷$-Q$(设$l>>b$)。当螺线管中电流逐渐减小时，圆柱形壳管开始旋转。\\
+(a)这些角动量来自哪里？\\
+因为两个壳层在转动，实际上，即使是在螺线管中电流减小到零时，还有一个剩余磁场，因此磁场还会有剩余的角动量。\\
+(b)计算最后的电磁场中的角动量(作为$\omega_a$和$\omega_b$的函数）。
+% \\（c）当壳管开始转动时，它们变化的磁场会产生一个额外的沿方位角方向的电场，这样反过来会对壳
+% 管有一个附加力矩，求出相应的角动量，同(b）中结果作比较。
+}
+(a)\begin{align*}
     \iiint\ell&=\iiint\varepsilon_0\left[\boldsymbol{r}\times(\boldsymbol E\times\boldsymbol B)\right]\dif\tau\\
-    \iiint\ell&=2\pi\int_a^R\varepsilon_0\left[s\boldsymbol{e}_r\times\left(\frac{Q}{2\pi s}\boldsymbol{e}_r\times\mu_0nI\boldsymbol{e}_z s\right)\right]\dif s\\
-    \iiint\ell&=-\int_a^R\varepsilon_0s\boldsymbol{e}_r\times Q\boldsymbol{e}_\phi\mu_0nI\dif s\\
-    \iiint\ell&=-\varepsilon_0\boldsymbol{e}_zQ\mu_0nI(R^2-a^2)
+    \iiint\ell&=\iiint s\boldsymbol{e}_s\times\left(\frac{Q}{2\pi s}\boldsymbol{e}_s\times\mu_0nI\boldsymbol{e}_z\right)\dif\tau\\
+    \iiint\ell&=\frac12Q\mu_0nI(R^2-a^2)\boldsymbol{e}_z
 \end{align*}
+
+(b)\begin{align*}
+    \iiint\ell&=\iiint\varepsilon_0\left[\boldsymbol{r}\times(\boldsymbol E\times\boldsymbol B)\right]\dif\tau\\
+    \iiint\ell&=-\iiint s\boldsymbol{e}_s\times\left(\frac{Q}{2\pi s}\boldsymbol{e}_s\times\frac{\mu_0Q\omega_b}{2\pi l}\boldsymbol{e}_z\right)\dif\tau\\
+    \iiint\ell&=\iiint\frac{\mu_0Q^2\omega_b}{4\pi^2 l}\boldsymbol{e}_z\dif\tau\\
+    \iiint\ell&=\frac{\mu_0Q^2\omega_b(b^2-a^2)}{4\pi}\boldsymbol{e}_z
+\end{align*}
+
+% (c)\begin{align*}
+%     \int \boldsymbol{a}\dif\boldsymbol{F}
+%     =Q{a}\boldsymbol{E}
+%     =Q{a}\left(-\frac{1}{2\pi a}\frac{\dif\Phi}{\dif t}\right)
+%     =-Q\frac{1}{2\pi}\frac{\dif\Phi}{\dif t}
+% \end{align*}
+% \begin{align*}
+%     1
+% \end{align*}
 \mysssec{设想一个半径为$R$的均匀磁化铁球，带有电荷$Q$和磁矩$\boldsymbol M=M\boldsymbol{e}_z$。铁球开始时处于静止。
 % \\（a）
 计算存储在电磁场中的角动量。
@@ -281,6 +303,7 @@
     \iiint\ell&=\iint\frac{Q\mu_0M}{8\pi r^2}\sin^3\theta\boldsymbol{e}_z\dif r\dif\theta\\
     \iiint\ell&=\frac{Q\mu_0M}{6\pi R}\boldsymbol{e}_z
 \end{align*}
+\subsection{习题}
 \mysssec{有一个非常长的半径为$a$的螺线管线圈，单位长度绕有$n$砸，载有电流$I_s$另一半径
 $b>>a$的圆线框与之同轴，线框电阻为$R$。当螺线管中电流减小时，线框中产生感应电流$I_r$。\\
 (a)作为$dI_s/dt$的函数，计算感应电流$I_r$。\\
@@ -311,8 +334,80 @@ $b>>a$的圆线框与之同轴，线框电阻为$R$。当螺线管中电流减�
 \end{align*}
 \mysssec{设想电子是一个均匀带电的球壳, 总电荷量为$q_e$, 球壳半径为$R$, 自转角速度为$\omega$。\\
 (a)计算电磁场所具有的总能量。\\
-(b)计算电磁场所具有的总角动量。\\
-}
+(b)计算电磁场所具有的总角动量。}
 (a)\begin{align*}
-    W&=\int_{R}^{\infty}\frac{\varepsilon_0E^2}{2}+\frac{B^2}{2\mu_0}
+    W_{out}&=\int_{0}^{\pi}\int_{R}^{\infty}\left(\frac{\varepsilon_0E^2}{2}+\frac{B^2}{2\mu_0}\right)2\pi r^2\sin\theta\dif r\dif\theta\\
+    W_{out}&=\int_{0}^{\pi}\int_{R}^{\infty}\left[\frac{q_e^2}{16\pi\varepsilon_0 r^4}+\frac{\mu_0m^2}{16\pi r^6}(3\cos^2\theta+1)\right]r^2\sin\theta\dif r\dif\theta\\
+    W_{out}&=\int_{0}^{\pi}\int_{R}^{\infty}\left[\frac{q_e^2}{16\pi\varepsilon_0 r^2}+\frac{\mu_0q_e^2R^4\omega^2}{144\pi r^4}(3\cos^2\theta+1)\right]\sin\theta\dif r\dif\theta\\
+    W_{out}&=\int_{R}^{\infty}\left(\frac{q_e^2}{8\pi\varepsilon_0 r^2}+\frac{\mu_0q_e^2R^4\omega^2}{36\pi r^4}\right)\dif r\\
+    W_{out}&=\frac{q_e^2}{8\pi\varepsilon_0 R}+\frac{\mu_0q_e^2\omega^2R}{108\pi}\\
+    W_{in}&=\int_{0}^{R}\frac{B^2}{2\mu_0}4\pi r^2\dif r\\
+    W_{in}&=\int_{0}^{R}\frac{\mu_0^2q_e^2\omega^2}{18\pi R^2}r^2\dif r\\
+    W_{in}&=\frac{\mu_0^2q_e^2\omega^2R}{54\pi}\\
+    W&=\frac{q_e^2}{8\pi\varepsilon_0 R}+\frac{\mu_0q_e^2\omega^2R}{36\pi}
 \end{align*}
+
+(b)\begin{align*}
+    \iiint\ell&=\iiint\varepsilon_0\boldsymbol{r}\times(\boldsymbol E\times\boldsymbol B)\dif\tau\\
+    \iiint\ell&=\iiint\varepsilon_0r\boldsymbol{e}_r\times\left[\frac{q_e}{4\pi\varepsilon_0r^2}\boldsymbol{e}_r\times\frac{\mu_0q_eR^2\omega}{12\pi r^3}\left(2\cos\theta\boldsymbol{e}_r+\sin\theta\boldsymbol{e}_\theta\right)\right]\dif\tau\\
+    \iiint\ell&=-\iiint\frac{q_e}{4\pi r}\frac{\mu_0q_eR^2\omega}{12\pi r^3}\sin\theta\boldsymbol{e}_\theta\dif\tau\\
+    \iiint\ell&=-\int_R^\infty\int_0^\pi\int_0^{2\pi}\frac{\mu_0q_e^2R^2\omega}{48\pi^2 r^2}(\cos\theta\cos\phi\boldsymbol{e}_x+\cos\theta\sin\phi\boldsymbol{e}_y-\sin\theta\boldsymbol{e}_z)\sin^2\theta\dif\theta\dif\phi\dif r\\
+    \iiint\ell&=\int_R^\infty\int_0^\pi\frac{\mu_0q_e^2R^2\omega}{24\pi r^2}\sin^3\theta\boldsymbol{e}_z\dif\phi\dif r\\
+    \iiint\ell&=\int_0^\pi\frac{\mu_0q_e^2R\omega}{24\pi}\sin^3\theta\boldsymbol{e}_z\dif\phi\\
+    \iiint\ell&=\frac{\mu_0q_e^2R\omega}{18\pi}\boldsymbol{e}_z
+\end{align*}
+
+\mysssec{假设有一个电荷$q_e$和一个磁单极子$q_m$磁荷产生的磁场为$\boldsymbol{B}=\dfrac{\mu_0q_m}{4\pi r^2}\boldsymbol{e}_r$求电磁场所具有的总角动量，设两荷相距为$d$，将磁单极子放置在坐标原点，并将点电荷放置在位置矢量 $\boldsymbol{d}$ 处}
+\begin{align*}
+    \iiint\ell&=\iiint\varepsilon_0\boldsymbol{r}\times(\boldsymbol E\times\boldsymbol B)\dif\tau\\
+    \iiint\ell&=\iiint\varepsilon_0\boldsymbol{r}\times(\boldsymbol \nabla U\times\boldsymbol B)\dif\tau\\
+    \iiint\ell&=\iiint\varepsilon_0\boldsymbol{r}\times[\boldsymbol \nabla \times (U\boldsymbol B)
+    -U\boldsymbol \nabla \times\boldsymbol B]\dif\tau\\
+    \iiint\ell&=\iiint\varepsilon_0\boldsymbol{r}\times[\boldsymbol \nabla \times (U\boldsymbol B)]\dif\tau\\
+    \iiint\ell&=\iiint\varepsilon_0\boldsymbol{r}\times\left(\varepsilon_{ijk}\frac{\partial UB_j}{\partial x_i} \boldsymbol{e}_k\right)\dif\tau\\
+    \iiint\ell&=\iiint\varepsilon_0\varepsilon_{lkn}r_l\varepsilon_{ijk}\frac{\partial UB_j}{\partial x_i} \boldsymbol{e}_n\dif\tau\\
+    \iiint\ell&=\iiint\varepsilon_0(\delta_{lj}\delta_{ni}
+    -\delta_{li}\delta_{nj})r_l\frac{\partial UB_j}{\partial x_i}\boldsymbol{e}_n\dif\tau\\
+    \iiint\ell&=\iiint\left(\varepsilon_0r_l\frac{\partial UB_l}{\partial x_n} \boldsymbol{e}_n
+    -\varepsilon_0r_l\frac{\partial UB_n}{\partial x_l} e_n\right)\dif\tau\\
+    \iiint\ell&=\iiint\left(\frac{\partial UB_lr_l}{\partial x_n}\boldsymbol{e}_n
+    -UB_l\frac{\partial r_l}{\partial x_n}\boldsymbol{e}_n
+    -\frac{\partial UB_nr_l}{\partial x_l}\boldsymbol{e}_n
+    +UB_n\frac{\partial r_l}{\partial x_l}\boldsymbol{e}_n \right)\varepsilon_0\dif\tau\\
+    \iiint\ell&=\iiint2UB_n\boldsymbol{e}_n\varepsilon_0\dif\tau\\
+    \iiint\ell&=\iiint\frac{q_e}{2\pi\left|\boldsymbol{r}-\boldsymbol{d}\right|}\frac{\mu_0q_m}{4\pi r^2}\boldsymbol{e}_r\dif\tau\\
+    \iiint\ell&=-\iiint\frac{q_e}{2\pi\left|\boldsymbol{r}-\boldsymbol{d}\right|}\frac{\mu_0q_m}{4\pi}\boldsymbol{\nabla}\frac{1}{r}\dif\tau\\
+    \iiint\ell&=\iiint\frac{q_e}{2\pi\left|\boldsymbol{r}-\boldsymbol{d}\right|}\frac{\mu_0q_m}{4\pi}\boldsymbol{\nabla}\frac{1}{r}\dif\tau\\
+\end{align*}
+写不下去了, 反正纯数学...
+
+\mysssec{距离无限长螺线管（半径为$R$，单位长度绕有$n$匝，电流为$I$)轴线$a>R$处有一个点电荷$q$。求出电磁场中的动量和角动量（设$q$在$x$轴上，螺线管沿$z$轴。将螺线管视为一个绝缘体，这样就不用考虑螺线管表面的感生电荷）。}
+\begin{align*}
+    \boldsymbol{p}&=\iiint\varepsilon_0\boldsymbol E\times\boldsymbol B\dif\tau\\
+    \boldsymbol{p}&=\iiint\varepsilon_0\left( \frac{q}{4\pi\varepsilon_0 |\boldsymbol{r} - \boldsymbol{a}|^3} \right) [(\boldsymbol{r} - \boldsymbol{a}) \times (\mu_0 n I \boldsymbol{e}_z)]\\
+    \boldsymbol{p}&= \frac{\mu_0 n I q}{4\pi} \iiint\frac{y{\boldsymbol{e}_x} + (a - x){\boldsymbol{e}_y}}{\sqrt{ (x-a)^2 + y^2 + z^2 }^3} \dif x\dif y\dif z\\
+    \boldsymbol{p}&= \frac{\mu_0 n I q}{4\pi} \iiint\frac{(a - x){\boldsymbol{e}_y}}{\sqrt{ (x-a)^2 + y^2 + z^2 }^3} \dif x\dif y\dif z\\
+    \boldsymbol{p}&= \frac{\mu_0 n I q}{4\pi} \iint\frac{(a - x){\boldsymbol{e}_y}}{ (x-a)^2 + y^2} \dif x\dif y\\
+    \boldsymbol{p}&= \frac{\mu_0 n I qR^2}{2a}\boldsymbol{e}_y\\
+    \iiint\ell&=\iiint\varepsilon_0\boldsymbol{r}\times(\boldsymbol E\times\boldsymbol B)\dif\tau\\
+    \iiint\ell&=\iiint\varepsilon_0\left[(\boldsymbol{r}\cdot\boldsymbol B)\boldsymbol E\times
+    -(\boldsymbol{r}\cdot\boldsymbol E)\boldsymbol B\right]\dif\tau\\
+    \iiint\ell&=\iiint\varepsilon_0\left[(\boldsymbol{r}\cdot n\mu_0I\boldsymbol{e}_z)\boldsymbol E
+    -(\boldsymbol{r}\cdot\boldsymbol E)n\mu_0I\boldsymbol{e}_z\right]\dif\tau\\
+    \iiint\ell&=\iiint\varepsilon_0\left[z n\mu_0I\boldsymbol E
+    -(\boldsymbol{r}\cdot\boldsymbol E)n\mu_0I\boldsymbol{e}_z\right]\dif\tau\\
+    \iiint\ell&=\iiint\varepsilon_0\left[
+    -(\boldsymbol{r}\cdot\boldsymbol E)n\mu_0I\boldsymbol{e}_z\right]\dif\tau\\
+    \iiint\ell&=\iiint-\varepsilon_0
+    (xE_x+yE_y)n\mu_0I\boldsymbol{e}_z\dif\tau\\
+    \iiint\ell&=\iiint-
+    \frac{qx(x-a)+qy^2}{4\pi\sqrt{(x-a)^2+y^2+z^2}^3}
+    n\mu_0I\boldsymbol{e}_z\dif x\dif y\dif z\\
+    \iiint\ell&=\iint-
+    \frac{qx(x-a)+qy^2}{2\pi[(x-a)^2+y^2]}
+    n\mu_0I\boldsymbol{e}_z\dif x\dif y\\
+    \iiint\ell&=0
+    % \iiint\ell&=\iiint s\boldsymbol{e}_s\times\left[\frac{q}{4\pi|a\boldsymbol{e}_x-\boldsymbol{r}|^3}(a\boldsymbol{e}_x-\boldsymbol{r})\times n\mu_0I\boldsymbol{e}_z\right]\dif\tau\\
+\end{align*}
+
+\newpage

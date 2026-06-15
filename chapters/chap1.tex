@@ -322,14 +322,14 @@ d S_3 = h_1 h_2 \dif u_1 \dif u_2
     \boldsymbol{\nabla}\times (f\boldsymbol{a})=\varepsilon_{ijk}\frac{\partial (fa_j)}{\partial x_i}\boldsymbol{e}_k=f\varepsilon_{ijk}\frac{\partial a_j}{\partial x_i}\boldsymbol{e}_k+\varepsilon_{ijk}\frac{\partial f}{\partial x_i}a_j\boldsymbol{e}_k=f(\boldsymbol{\nabla}\times \boldsymbol{a})+(\boldsymbol{\nabla} f)\times \boldsymbol{a}\label{向量恒等式1}
 \end{equation}
 
-\mysssec{并积}
-\begin{equation}
-    \boldsymbol{\nabla}\boldsymbol{a}\equiv\begin{pmatrix}
-    \dfrac{\partial a_1}{x_1}&\dfrac{\partial a_2}{x_1}&\dfrac{\partial a_3}{x_1}\\[6pt]
-    \dfrac{\partial a_1}{x_2}&\dfrac{\partial a_2}{x_2}&\dfrac{\partial a_3}{x_2}\\[6pt]
-    \dfrac{\partial a_1}{x_3}&\dfrac{\partial a_2}{x_3}&\dfrac{\partial a_3}{x_3}\\
-\end{pmatrix}=\frac{\partial a_i}{\partial x_j}\boldsymbol{e}_i\boldsymbol{e}_j
-\end{equation}
+% \mysssec{并积}
+% \begin{equation}
+%     \boldsymbol{\nabla}\boldsymbol{a}\equiv\begin{pmatrix}
+%     \dfrac{\partial a_1}{x_1}&\dfrac{\partial a_2}{x_1}&\dfrac{\partial a_3}{x_1}\\[6pt]
+%     \dfrac{\partial a_1}{x_2}&\dfrac{\partial a_2}{x_2}&\dfrac{\partial a_3}{x_2}\\[6pt]
+%     \dfrac{\partial a_1}{x_3}&\dfrac{\partial a_2}{x_3}&\dfrac{\partial a_3}{x_3}\\
+% \end{pmatrix}=\frac{\partial a_i}{\partial x_j}\boldsymbol{e}_i\boldsymbol{e}_j
+% \end{equation}
 \mysssec{拉普拉斯算子}
 定义为梯度的散度, \,由\ref{梯度}和\ref{eq:div-general}得
 \begin{align}
@@ -454,12 +454,20 @@ d S_3 = h_1 h_2 \dif u_1 \dif u_2
 
 \begin{align}
     \boldsymbol{b}\cdot(\boldsymbol{\nabla}\times\boldsymbol{a})-\boldsymbol{a}\cdot(\boldsymbol{\nabla}\times\boldsymbol{b})
-    &=\boldsymbol{b}\cdot(\varepsilon_{ijk}\frac{\partial a_j}{\partial x_i}\boldsymbol{e}_k)-\boldsymbol{a}\cdot(\varepsilon_{ijk}\frac{\partial b_j}{\partial x_i}\boldsymbol{e}_k)\nonumber\\
+    &=\boldsymbol{b}\cdot\varepsilon_{ijk}\frac{\partial a_j}{\partial x_i}\boldsymbol{e}_k-\boldsymbol{a}\cdot\varepsilon_{ijk}\frac{\partial b_j}{\partial x_i}\boldsymbol{e}_k\nonumber\\
     &=b_k\varepsilon_{ijk}\frac{\partial a_j}{\partial x_i}-a_k\varepsilon_{ijk}\frac{\partial b_j}{\partial x_i}\nonumber\\
     &=b_j\varepsilon_{ijk}\frac{\partial a_i}{\partial x_k}+a_i\varepsilon_{ijk}\frac{\partial b_j}{\partial x_k}\nonumber\\
     &=\frac{\partial\varepsilon_{ijk}a_ib_j}{\partial x_k}\nonumber\\
     &=\boldsymbol{\nabla}\cdot (\varepsilon_{ijk}a_ib_j\boldsymbol{e}_k)\nonumber\\
     &=\boldsymbol{\nabla}\cdot (\boldsymbol{a}\times \boldsymbol{b})\label{向量恒等式0}
+\end{align}
+\begin{align}
+    \boldsymbol{\nabla}\times\left(f\boldsymbol{a}\right)
+    =\varepsilon_{ijk}\frac{\partial fa_j}{\partial x_i}\boldsymbol{e}_K
+    =\varepsilon_{ijk}\frac{\partial f}{\partial x_i}a_j\boldsymbol{e}_k
+    +\varepsilon_{ijk}\frac{\partial a_j}{\partial x_i}f\boldsymbol{e}
+    =\boldsymbol{\nabla}f\times\boldsymbol{a}
+    +f\boldsymbol{\nabla}\times\boldsymbol{a}
 \end{align}
 \begin{align}
     \boldsymbol{\nabla}\times\left(\boldsymbol{a}\times\boldsymbol{b}\right)
