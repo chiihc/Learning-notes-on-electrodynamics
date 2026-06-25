@@ -203,22 +203,22 @@ I = \frac{1}{2} \varepsilon v E_0^2
 假设$xy$平面为两线性介质的界面，角频率为$\omega$，沿$z$方向传播和沿$x$方向偏振的平面波从左边入射到界面
 \begin{equation}
 \left.\begin{aligned}
-\widetilde{\boldsymbol{E}}_1 &= \widetilde{E}_{01}e^{i(k_1z-\omega t)}\boldsymbol{e}_x\\
-\widetilde{\boldsymbol{B}}_1 &= \frac{1}{v_1}\widetilde{E}_{01}e^{i(k_1z-\omega t)}\boldsymbol{e}_y
+\widetilde{\boldsymbol{E}}_1 &= \widetilde{E}_{01}e^{i(\boldsymbol k_1\cdot\boldsymbol z-\omega t)}\boldsymbol{e}_x\\
+\widetilde{\boldsymbol{B}}_1 &= \frac{1}{v_1}\widetilde{E}_{01}e^{i(\boldsymbol k_1\cdot\boldsymbol z-\omega t)}\boldsymbol{e}_y
 \end{aligned}\right\}
 \end{equation}
 它产生一个反射波
 \begin{equation}
 \left.\begin{aligned}
-\widetilde{\boldsymbol{E}}_R &= \widetilde{E}_{0R}e^{i(-k_1z-\omega t)}\boldsymbol{e}_x\\
-\widetilde{\boldsymbol{B}}_R &= -\frac{1}{v_1}\widetilde{E}_{0R}e^{i(-k_1z-\omega t)}\boldsymbol{e}_y
+\widetilde{\boldsymbol{E}}_R &= \widetilde{E}_{0R}e^{i(-\boldsymbol k_1\cdot\boldsymbol z-\omega t)}\boldsymbol{e}_x\\
+\widetilde{\boldsymbol{B}}_R &= -\frac{1}{v_1}\widetilde{E}_{0R}e^{i(-\boldsymbol k_1\cdot\boldsymbol z-\omega t)}\boldsymbol{e}_y
 \end{aligned}\right\}
 \end{equation}
 反射波向左折回介质（1）中，$\widetilde{\boldsymbol{B}}_R$中的负号是式\ref{单色平面波}的要求—或者是由坡印廷矢量指向传播方向的事实得出的；及一个透射波
 \begin{equation}
 \left.\begin{aligned}
-\widetilde{\boldsymbol{E}}_T &= \widetilde{E}_{0T}e^{i(k_2z-\omega t)}\boldsymbol{e}_x\\
-\widetilde{\boldsymbol{B}}_T &= \frac{1}{v_2}\widetilde{E}_{0T}e^{i(k_2z-\omega t)}\boldsymbol{e}_y
+\widetilde{\boldsymbol{E}}_T &= \widetilde{E}_{0T}e^{i(\boldsymbol k_2\cdot\boldsymbol z-\omega t)}\boldsymbol{e}_x\\
+\widetilde{\boldsymbol{B}}_T &= \frac{1}{v_2}\widetilde{E}_{0T}e^{i(\boldsymbol k_2\cdot\boldsymbol z-\omega t)}\boldsymbol{e}_y
 \end{aligned}\right\}
 \end{equation}
 透射波继续在介质（2）中向右传播。
@@ -228,7 +228,25 @@ I = \frac{1}{2} \varepsilon v E_0^2
 \frac{1}{\mu_1}\widetilde{\boldsymbol{B}}_1+\frac{1}{\mu_1}\widetilde{\boldsymbol{B}}_R&= \frac{1}{\mu_2}\widetilde{\boldsymbol{B}}_T
 \end{aligned}\right\}\\
 \end{align*}
-设$\beta=\dfrac{\mu_1v_1}{\mu_2v_2}=\dfrac{\mu_1n_2}{\mu_2n_1}$,\ 解得
+设$\beta=\dfrac{\mu_1v_1}{\mu_2v_2}=\dfrac{\mu_1n_2}{\mu_2n_1}$,\, 解得
 \begin{equation}
     \widetilde{E}_{0R}=\frac{1-\beta}{1+\beta}\widetilde{E}_{01}, \ \widetilde{E}_{0T}=\frac{2}{1+\beta}\widetilde{E}_{01}
 \end{equation}
+如果介质的磁导率$\mu$与真空中的接近,\,则
+\begin{equation}
+    \widetilde{E}_{0R}=\frac{v_2-v_1}{v_2+v_1}\widetilde{E}_{01}, \ \widetilde{E}_{0T}=\frac{2v_2}{v_2-v_1}\widetilde{E}_{01}
+\end{equation}
+反射波和入射波强度比为
+\begin{equation}
+    R=\frac{I_R}{I_1}=\frac{\varepsilon_1v_1E_{0R}^2}{\varepsilon_1v_1E_{01}^2}=\left(\frac{n_1-n_2}{n_1+n_2}\right)^2
+\end{equation}
+透射波和入射波强度比为
+\begin{equation}
+    T=\frac{I_T}{I_1}=\frac{\varepsilon_2v_2E_{0T}^2}{\varepsilon_1v_1E_{01}^2}=\frac{4n_1n_2}{\left(n_1+n_2\right)^2}
+\end{equation}
+\subsubsection{倾斜入射时的反射与透射}
+改变坐标轴的方向使$\boldsymbol{k}_1$，在$xz$平面内
+\begin{align*}
+    \widetilde{E}_{01}e^{i(\boldsymbol k_1\cdot\boldsymbol r-\omega t)}+\widetilde{E}_{0R}e^{i(-\boldsymbol k_1\cdot\boldsymbol r-\omega t)}=\widetilde{E}_{0T}e^{i(\boldsymbol k_2\cdot\boldsymbol r-\omega t)}
+\end{align*}
+显然当$z=0$时
