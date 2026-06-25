@@ -5,3 +5,230 @@
 \begin{equation}
     \frac{\partial^2 f}{\partial z^2}=\frac{\partial^2 f}{v^2\partial t^2}
 \end{equation}
+
+为了便利，设节点在$z=0$处，入射波$f_1=A_1e^{i(k_1z-\omega t)},\ (z<0)$从左边人射，产生的一个反射波$f_R=A_Re^{i(-k_1z-\omega t)},\ (z<0)$沿弦1返回(故在前有负号)，以及一个透射波$f_T=A_Te^{i(k_2z-\omega t)},\ (z>0)$沿弦2继续传播。
+
+在靠近连接点($z=0$)处，左边的位移($z=0^-$)必须与右边的位移($z=0^+$)相等，否则两弦间会有断点。如果那个结点本身的质量可忽略，$f$对$z$的一阶偏导也必须是连续的：$\left.\dfrac{\partial f}{\partial z}\right|_{0^-}=\left.\dfrac{\partial f}{\partial z}\right|_{0^+}$
+否则在这个结点上会作用有一个净力，因此会产生一个无穷大的加速度。
+\begin{align*}
+    A_1e^{ik_1z}+A_Re^{-ik_1z}&=A_Te^{ik_2z}\\
+    k_1A_1e^{ik_1z}-k_1A_Re^{-ik_1z}&=k_2A_Te^{ik_2z}
+\end{align*}
+解得
+\begin{equation}
+    A_R=\frac{k_1-k_2}{k_1+k_2}A_1, \ A_T=\frac{2k_2}{k_1+k_2}A_1
+\end{equation}
+
+\mysssec{对于两个施加有应力$T$并用质量为$m$的结点连接的弦，写出其正确的边界条件。}
+\begin{align*}
+    A_1e^{ik_1z}+A_Re^{-ik_1z}&=A_Te^{ik_2z}\\
+    T\left.\dfrac{\partial f_1}{\partial z}\right|_{0^-}-T\left.\dfrac{\partial f_2}{\partial z}\right|_{0^+}&=m\left.\dfrac{\partial^2 f_1}{\partial t^2}\right|_{0}
+\end{align*}
+\mysssec{证明驻波$f=A\sin(kz)\cos(kvt)$满足波方程.把它表示成一个向左和一个向右传播的两个波之和}
+\begin{align*}
+    \frac{\partial^2 f}{\partial z^2}&=-k^2A\sin(kz)\cos(kvt)\\
+    \frac{\partial^2 f}{v^2\partial t^2}&=-k^2A\sin(kz)\cos(kvt)\\
+    A\sin(kz)\cos(kvt)&=A\sin\left(\frac{kz+kvt}{2}+\frac{kz-kvt}{2}\right)\cos\left(\frac{kz+kvt}{2}-\frac{kz-kvt}{2}\right)\\
+    A\sin(kz)\cos(kvt)&=\frac{A}{2}\sin\left(kz+kvt\right)
+    +\frac{A}{2}\sin\left(kz-kvt\right)
+\end{align*}
+\mysssec{假如第二个弦处于某种粘滞介质中，这将施加一个与其横向速度成正比的阻力：$F=-\gamma\dfrac{\partial f}{\partial t}$\\
+(a)推导出修正的描述弦运动的波方程。\\
+(b)假设入射波振动角频率为$\omega$，求解该方程。\\
+（c）求出用$\gamma$，$T$，$\mu$和$\omega$表示的特征穿透距离，在这个距离处，振幅为初始值的$1/e$。
+% \\（d)如果一个振幅为$A_1$，相位为$0$及角频率为$\omega$的入射波从左边进入，求出反射波的振幅和相位。
+}
+(a)\begin{align*}
+    \frac{\partial^2 f}{v^2\partial t^2}=\frac{\partial^2 f}{\partial z^2}-\frac{\gamma}{T}\dfrac{\partial f}{\partial t}z\\
+\end{align*}
+
+(b)设$f=A_1e^{i(k_1z-\omega t)}$\begin{align*}
+    \frac{\partial^2 f}{v^2\partial t^2}=\frac{\partial^2 f}{\partial z^2}-\frac{\gamma}{T}\dfrac{\partial f}{\partial t}\\
+    -\frac{\omega^2}{v^2}=-k_1^2+\omega i\frac{\gamma}{T}\\
+\end{align*}
+
+(c)设$k=a+bi$
+\begin{align*}
+    -\frac{\omega^2}{v^2}=-k_1^2+\omega i\frac{\gamma}{T}\\
+    -\frac{\omega^2}{v^2}=-a^2+b^2-2abi+\omega i\frac{\gamma}{T}\\
+    2ab=\omega \frac{\gamma}{T}\\
+    b=\omega \frac{\gamma}{2aT}\\
+    -\frac{\omega^2}{v^2}=-a^2+\omega^2\frac{\gamma^2}{4a^2T^2}\\
+    a^4-\frac{\omega^2}{v^2}a^2-\omega^2\frac{\gamma^2}{4T^2}=0\\
+    a^2=\frac{\dfrac{\omega^2}{v^2}+\sqrt{\dfrac{\omega^4}{v^4}+\omega^2\dfrac{\gamma^2}{T^2}}}{2}\\
+\end{align*}
+
+% (d)\begin{align*}
+%     A_1e^{ik_1z}+A_Re^{-ik_1z}&=A_Te^{ik_2z}\\
+%     k_1A_1e^{ik_1z}-k_1A_Re^{-ik_1z}&=k_2A_Te^{ik_2z}
+% \end{align*}
+\subsection{真空中的电磁波}
+\subsubsection{$\boldsymbol E$与$\boldsymbol B$的波方程}
+\begin{align}
+    \boldsymbol{\nabla}\times\left(\boldsymbol{\nabla}\times\boldsymbol{E}\right)
+    &=\boldsymbol{\nabla}\left(\boldsymbol{\nabla}\cdot\boldsymbol{E}\right)-\nabla^2\boldsymbol{E}\nonumber\\
+    \boldsymbol{\nabla}\times\left(-\frac{\partial \boldsymbol{B}}{\partial t}\right)
+    &=\boldsymbol{\nabla}0-\nabla^2\boldsymbol{E}\nonumber\\
+    -\frac{\partial \boldsymbol{\nabla}\times\boldsymbol{B}}{\partial t}
+    &=-\nabla^2\boldsymbol{E}\nonumber\\
+    \mu_0\varepsilon_0\frac{\partial \boldsymbol{E}}{\partial t}
+    &=\nabla^2\boldsymbol{E}
+\end{align}
+同理可得
+\begin{equation}
+    \mu_0\varepsilon_0\dfrac{\partial \boldsymbol{B}}{\partial t}=\nabla^2\boldsymbol{B}
+\end{equation}
+解得
+\begin{equation}
+\left.\begin{aligned}
+\widetilde{\boldsymbol{E}} &= \widetilde{E}e^{i(\boldsymbol{k}\cdot\boldsymbol{r}-\omega t)}\boldsymbol{e}_n\\
+\widetilde{\boldsymbol{B}} &= \frac{1}{c}\widetilde{E}e^{i(\boldsymbol{k}\cdot\boldsymbol{r}-\omega t)}\left(\boldsymbol{e}_k\times\boldsymbol{e}_n\right)=\frac{1}{c}\boldsymbol{e}_k\times\widetilde{\boldsymbol{E}}
+\end{aligned}\right\}
+\label{单色平面波}
+\end{equation}
+\subsubsection{电磁波的能量与动量}
+$u=\dfrac{1}{2}\left(\varepsilon_0E^2+\dfrac{1}{\mu_0}B^2\right)$对于单色平面波$B^2=\dfrac{1}{c^2}E^2=\mu_0\varepsilon_0E^2$故电场和磁场的贡献相等
+\begin{equation}
+    u=\varepsilon_0E^2=\varepsilon_0E_0^2\cos^2(kz-\omega t+\delta)
+\end{equation}
+\begin{equation}
+    \boldsymbol{S}=\frac{1}{\mu_0}\boldsymbol{E}\times\boldsymbol{B}
+    =c\varepsilon_0E_0^2\cos^2(kz-\omega t+\delta)
+    =cu\boldsymbol{k}
+\end{equation}
+动量
+\begin{align*}
+    \boldsymbol{\wp}=\frac{1}{c^2}\boldsymbol{S}=\frac{1}{c}u\boldsymbol{k}
+\end{align*}
+用括号$\langle \rangle$表示对一个周期的（时间）平均。通过单位面积传播的电磁波平均功率称为电磁波的强度：
+\begin{equation}
+    \langle u\rangle=\frac{1}{2}\varepsilon_0E_0^2,\ 
+    \langle \boldsymbol{S}\rangle=\frac{1}{2}c\varepsilon_0E_0^2\boldsymbol{k},\ 
+    \langle \boldsymbol{\wp}\rangle=\frac{1}{2c}\varepsilon_0E_0^2\boldsymbol{k}
+\end{equation}
+当光照射在一个物体上并被完全吸收时，光把它的动量传递给物体表面。在时间$\Delta t$内，传递的动量为$\Delta p=\langle \boldsymbol{\wp}\rangle Ac\Delta t$，故辐射压（单位面积上的平均力）是
+\begin{equation}
+    P=\frac{\Delta p}{A\Delta t}=\frac{1}{2}\varepsilon_0E_0^2=\frac{I}{c}
+\end{equation}
+对于一个完全反射的面，压强为上式的2倍。
+\mysssec{写出振幅为$E_0$，频率为$\omega$，相位为零的一单色平面波的电场和磁场：\\
+（a)沿$x$负方
+向传播，偏振沿$z$方向。\\
+（b)传播沿原点至点$(1,1,1)$方向，偏振平行于$XY$平面。
+给出$\boldsymbol k$和$\boldsymbol n$在直角坐标系下的分量。}
+(a)\begin{align*}
+    \boldsymbol{E}=E_0e^{i\left(-\boldsymbol{k}\cdot\boldsymbol{e}_x-\omega t\right)}\boldsymbol{e}_z,\ \boldsymbol{B}=\frac{E_0}{c}e^{i\left(-\boldsymbol{k}\cdot\boldsymbol{e}_x-\omega t\right)}\boldsymbol{e}_y
+\end{align*}
+
+(b)\begin{align*}
+    \boldsymbol{k}=\left(\frac{\sqrt{3}}{3},\frac{\sqrt{3}}{3},\frac{\sqrt{3}}{3}\right),\ \boldsymbol n=\left(\frac{\sqrt{2}}{2},-\frac{\sqrt{2}}{2},0\right)
+\end{align*}
+
+\mysssec{在复数表示中，有一个聪明的方法计算乘积的时间平均。设$f(r,t)=A\cos(\boldsymbol k\cdot\boldsymbol r-\omega t +\delta_a)$和$g(r,t)=B\cos(\boldsymbol k\cdot\boldsymbol r-\omega t +\delta_b)$。证明$\langle fg\rangle=\dfrac{1}{2}\mathrm{Re}(\tilde{f}\tilde{g\vphantom{f}}^*)$。}
+设$c=\boldsymbol k\cdot\boldsymbol r-\omega t$
+\begin{align*}
+    \dfrac{1}{2}\mathrm{Re}(\tilde{f}\tilde{g\vphantom{f}}^*)&=\dfrac{AB}{2}\mathrm{Re}\left\{\left[\cos\left({c +\delta_a}\right)+i\sin\left({c +\delta_a}\right)\right]\left[\cos\left({c +\delta_b}\right)-i\sin\left({c +\delta_b}\right)\right]\right\}\\
+    \dfrac{1}{2}\mathrm{Re}(\tilde{f}\tilde{g\vphantom{f}}^*)&=\dfrac{AB}{2}\left\{\left[\cos\left({c +\delta_a}\right)\cos\left({c +\delta_b}\right)+\sin\left({c +\delta_a}\right)\sin\left({c +\delta_b}\right)\right]\right\}\\
+    \dfrac{1}{2}\mathrm{Re}(\tilde{f}\tilde{g\vphantom{f}}^*)&=A\cos(\boldsymbol k\cdot\boldsymbol r-\omega t +\delta_a)B\cos(\boldsymbol k\cdot\boldsymbol r-\omega t +\delta_b)
+\end{align*}
+\mysssec{求出沿$z$方向传播和在$x$方向线性偏振的单色平面波的麦克斯韦应力张量的
+所有元素。}
+\begin{align*}
+    T&=\frac{\varepsilon_0}{2}\left(\begin{matrix}
+        E^2&0&0\\
+        0&-E^2&0\\
+        0&0&-E^2\\
+    \end{matrix}\right)
+    +\frac{1}{2\mu_0}\left(\begin{matrix}
+        -B^2&0&0\\
+        0&B^2&0\\
+        0&0&-B^2\\
+    \end{matrix}\right)\\
+    T&=\varepsilon_0\left(\begin{matrix}
+        0&0&0\\
+        0&0&0\\
+        0&0&-E^2\\
+    \end{matrix}\right)
+\end{align*}
+\subsection{物质中的电磁波}
+\subsubsection{在线性介质中的传播}
+
+在物质中，在没有自由电荷和电流的区域内，麦克斯韦方程变为
+\begin{equation}
+\left.\begin{aligned}
+\text{(i)} \quad \nabla \cdot \boldsymbol{D} &= 0, & \text{(iii)} \quad \nabla \times \boldsymbol{E} &= -\frac{\partial \boldsymbol{B}}{\partial t} \\
+\text{(ii)} \quad \nabla \cdot \boldsymbol{B} &= 0, & \text{(iv)} \quad \nabla \times \boldsymbol{H} &= \frac{\partial \boldsymbol{D}}{\partial t}
+\end{aligned}\right\}
+\end{equation}
+
+\noindent 如果介质是线性的，
+\begin{equation}
+\boldsymbol{D} = \varepsilon \boldsymbol{E}, \quad \boldsymbol{H} = \frac{1}{\mu} \boldsymbol{B}
+\end{equation}
+和均匀的（即 $\varepsilon$ 和 $\mu$ 不随位置变化），麦克斯韦方程简化为
+\begin{equation}
+\left.\begin{aligned}
+\text{(i)} \quad \nabla \cdot \boldsymbol{E} &= 0, & \text{(iii)} \quad \nabla \times \boldsymbol{E} &= -\frac{\partial \boldsymbol{B}}{\partial t} \\
+\text{(ii)} \quad \nabla \cdot \boldsymbol{B} &= 0, & \text{(iv)} \quad \nabla \times \boldsymbol{B} &= \varepsilon\mu \frac{\partial \boldsymbol{E}}{\partial t}
+\end{aligned}\right\}
+\end{equation}
+
+\noindent 这与真空中的形式不同之处仅在于 $\mu_0\varepsilon_0$ 被 $\mu\varepsilon$ 取代。显然，电磁波通过线性均匀介质时以速度
+\begin{equation}
+v = \frac{1}{\sqrt{\varepsilon\mu}}
+\end{equation}
+传播。式中
+\begin{equation}
+n \equiv \sqrt{\frac{\varepsilon\mu}{\varepsilon_0\mu_0}}
+\end{equation}
+是物体的折射率。对大多数材料，$\mu$ 非常接近于 $\mu_0$，故
+\begin{equation}
+n \approx  \sqrt{\varepsilon_r}
+\end{equation}
+式中，$\varepsilon_r$ 是相对介电常数。因为 $\varepsilon_r$ 总是大于 1，光在物质中的传播速度稍慢。
+
+进行简单的变换 $\varepsilon_0 \rightarrow \varepsilon, \mu_0 \rightarrow \mu$ 及 $c \rightarrow v$，以前得到的结果继续适用。能量密度为
+\begin{equation}
+u = \frac{1}{2}\left( \varepsilon E^2 + \frac{1}{\mu} B^2 \right)
+\end{equation}
+坡印廷矢量为
+\begin{equation}
+\boldsymbol{S} = \frac{1}{\mu}(\boldsymbol{E} \times \boldsymbol{B})
+\end{equation}
+对于单色平面波，角频率和波数有关系 $\omega = kv$，$\boldsymbol{B}$ 的振幅是 $\boldsymbol{E}$ 的振幅的 $1/v$，波的强度是
+\begin{equation}
+I = \frac{1}{2} \varepsilon v E_0^2
+\end{equation}
+\subsubsection{垂直入射时的反射与透射}
+假设$xy$平面为两线性介质的界面，角频率为$\omega$，沿$z$方向传播和沿$x$方向偏振的平面波从左边入射到界面
+\begin{equation}
+\left.\begin{aligned}
+\widetilde{\boldsymbol{E}}_1 &= \widetilde{E}_{01}e^{i(k_1z-\omega t)}\boldsymbol{e}_x\\
+\widetilde{\boldsymbol{B}}_1 &= \frac{1}{v_1}\widetilde{E}_{01}e^{i(k_1z-\omega t)}\boldsymbol{e}_y
+\end{aligned}\right\}
+\end{equation}
+它产生一个反射波
+\begin{equation}
+\left.\begin{aligned}
+\widetilde{\boldsymbol{E}}_R &= \widetilde{E}_{0R}e^{i(-k_1z-\omega t)}\boldsymbol{e}_x\\
+\widetilde{\boldsymbol{B}}_R &= -\frac{1}{v_1}\widetilde{E}_{0R}e^{i(-k_1z-\omega t)}\boldsymbol{e}_y
+\end{aligned}\right\}
+\end{equation}
+反射波向左折回介质（1）中，$\widetilde{\boldsymbol{B}}_R$中的负号是式\ref{单色平面波}的要求—或者是由坡印廷矢量指向传播方向的事实得出的；及一个透射波
+\begin{equation}
+\left.\begin{aligned}
+\widetilde{\boldsymbol{E}}_T &= \widetilde{E}_{0T}e^{i(k_2z-\omega t)}\boldsymbol{e}_x\\
+\widetilde{\boldsymbol{B}}_T &= \frac{1}{v_2}\widetilde{E}_{0T}e^{i(k_2z-\omega t)}\boldsymbol{e}_y
+\end{aligned}\right\}
+\end{equation}
+透射波继续在介质（2）中向右传播。
+\begin{align*}
+\left.\begin{aligned}
+\widetilde{\boldsymbol{E}}_1+\widetilde{\boldsymbol{E}}_R&= \widetilde{\boldsymbol{E}}_T\\
+\frac{1}{\mu_1}\widetilde{\boldsymbol{B}}_1+\frac{1}{\mu_1}\widetilde{\boldsymbol{B}}_R&= \frac{1}{\mu_2}\widetilde{\boldsymbol{B}}_T
+\end{aligned}\right\}\\
+\end{align*}
+设$\beta=\dfrac{\mu_1v_1}{\mu_2v_2}=\dfrac{\mu_1n_2}{\mu_2n_1}$,\ 解得
+\begin{equation}
+    \widetilde{E}_{0R}=\frac{1-\beta}{1+\beta}\widetilde{E}_{01}, \ \widetilde{E}_{0T}=\frac{2}{1+\beta}\widetilde{E}_{01}
+\end{equation}
