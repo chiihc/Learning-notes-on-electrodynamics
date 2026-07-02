@@ -170,7 +170,7 @@ $u=\dfrac{1}{2}\left(\varepsilon_0E^2+\dfrac{1}{\mu_0}B^2\right)$对于单色平
 \left.\begin{aligned}
 \text{(i)} \quad \nabla \cdot \boldsymbol{E} &= 0, & \text{(iii)} \quad \nabla \times \boldsymbol{E} &= -\frac{\partial \boldsymbol{B}}{\partial t} \\
 \text{(ii)} \quad \nabla \cdot \boldsymbol{B} &= 0, & \text{(iv)} \quad \nabla \times \boldsymbol{B} &= \varepsilon\mu \frac{\partial \boldsymbol{E}}{\partial t}
-\end{aligned}\right\}
+\end{aligned}\right\}\label{线性均匀麦克斯韦方程}
 \end{equation}
 
 \noindent 这与真空中的形式不同之处仅在于 $\mu_0\varepsilon_0$ 被 $\mu\varepsilon$ 取代。显然，电磁波通过线性均匀介质时以速度
@@ -373,6 +373,16 @@ I = \frac{1}{2} \varepsilon v E_0^2
 
 \subsubsection{介电常数对频率的依赖}
 
+波包中每个正弦波分量以通常的波（相）速度传播，
+\begin{equation}
+    v=\frac{\omega}{k}
+\end{equation}
+波包作为一个整体（“包络”）以所谓的群速度
+\begin{equation}
+    v_g=\frac{\dif\omega}{\dif k}
+\end{equation}
+传播。
+
 % 在静电学中，介电常数 $\varepsilon$ 通常被视为一个常数。然而，当电磁波在介质中传播时，交变电场会驱动介质中的电荷运动。由于电荷（电子、离子、分子）具有质量和惯性，它们的响应无法完美同步于高频交变电场。因此，介电常数必然依赖于交变电场的角频率 $\omega$，这种现象称为\textbf{介电色散（Dielectric Dispersion）}。
 
 % 为了全面描述能量的高效存储（色散）与损耗（吸收），我们引入\textbf{复介电常数（Complex Dielectric Function）}：
@@ -389,58 +399,50 @@ I = \frac{1}{2} \varepsilon v E_0^2
 \end{equation}
 解得
 \begin{equation}
-    \widetilde{x}=\frac{q}{m\omega_0^2-m\omega^2-im\gamma\omega}E_0
+    \widetilde{x}=\widetilde{x}_0e^{-i\omega t}=\frac{q}{m\omega_0^2-m\omega^2-im\gamma\omega}E_0e^{-i\omega t}
+\end{equation}
+电偶极矩是下式的实部
+\begin{equation}
+    \widetilde{p}=q\widetilde{x}=\frac{q^2}{m\omega_0^2-m\omega^2-im\gamma\omega}E_0e^{-i\omega t}
 \end{equation}
 
-设稳态解具有形式 $\mathbf{x}(t) = \mathbf{x}_0 e^{-i\omega t}$，代入上式得到电荷的位移振幅：
-\[
-\mathbf{x}_0 = \frac{e/m}{\omega_0^2 - \omega^2 - i\gamma\omega}\mathbf{E}_0
-\]
-单个电荷产生的感应偶极矩为 $\mathbf{p} = e\mathbf{x}$。若单位体积内的振子数为 $N$，则宏观极化强度 $\mathbf{P}$ 为：
-\[
-\mathbf{P} = N\mathbf{p} = \frac{Ne^2/m}{\omega_0^2 - \omega^2 - i\gamma\omega}\mathbf{E}_0 e^{-i\omega t}
-\]
+一般地，在一个分子中不同位置的电子会感受到不同的频率和阻尼系数。假设在每一个分子中有$f_j$个电子具有频率$\omega_j$和阻尼$\gamma_j$。如果单位体积内有$N$个分子，则电极化强度$\boldsymbol{P}$由下式实部给出
+\begin{equation}
+    \widetilde{\boldsymbol{P}}=\frac{Nq^2}{m}\sum_j\frac{f_j}{\omega_j^2-\omega^2-i\gamma_j\omega}\widetilde{\boldsymbol{E}}
+\end{equation}
+引入复电极化率和复相对介电常数
+\begin{equation}
+    \widetilde{\boldsymbol{P}}=\varepsilon_0\widetilde{\chi }_e\widetilde{\boldsymbol{E}},\, \widetilde{\varepsilon}_r=1+\frac{Nq^2}{m\varepsilon_0}\sum_j\frac{f_j}{\omega_j^2-\omega^2-i\gamma_j\omega}\widetilde{\boldsymbol{E}}
+\end{equation}
 
+在色散介质中，一个给定频率的波方程是
+\begin{equation}
+    \nabla^2\widetilde{\boldsymbol{E}}=\widetilde{\varepsilon}\mu\frac{\partial^2\widetilde{\boldsymbol{E}}}{\partial t^2}
+\end{equation}
+同前一样，存在平面波解
+\begin{equation}
+    \widetilde{\boldsymbol{E}}=\widetilde{E}_0e^{-\kappa z+i(kz-\omega t)}
+\end{equation}
+其中
+\begin{equation}
+    \widetilde{k}=k+i\kappa\equiv\omega\sqrt{\widetilde{\varepsilon}\mu_0}=\frac{\omega}{c}\sqrt{\widetilde{\varepsilon}}_r
+\end{equation}
+泰勒展开得
+\begin{equation}
+    \widetilde{k}\approx\frac{\omega}{c}\left(1+\frac{Nq^2}{2m\varepsilon_0}\sum_j\frac{f_j}{\omega_j^2-\omega^2-i\gamma_j\omega}\right),\, n=\frac{ck}{\omega}\approx1+\frac{Nq^2}{2m\varepsilon_0}\sum_j\frac{f_j\left(\omega_j^2-\omega^2\right)}{\left(\omega_j^2-\omega^2\right)^2+\gamma_j^2\omega^2}
+    \label{复波数}
+\end{equation}
 
-根据宏观电动力学关系 $\mathbf{D} = \varepsilon_0\mathbf{E} + \mathbf{P} = \widetilde{\varepsilon}\mathbf{E}$，可得复相对介电常数 $\widetilde{\varepsilon}_r(\omega) = \frac{\widetilde{\varepsilon}(\omega)}{\varepsilon_0}$：
-\[
-\widetilde{\varepsilon}_r(\omega) = 1 + \frac{Ne^2}{m\varepsilon_0} \frac{1}{\omega_0^2 - \omega^2 - i\gamma\omega}
-\]
-定义\textbf{等离子体频率（Plasma Frequency）} $\omega_p = \sqrt{\frac{Ne^2}{m\varepsilon_0}}$，上式写为标准形式：
-\[
-\widetilde{\varepsilon}_r(\omega) = 1 + \frac{\omega_p^2}{\omega_0^2 - \omega^2 - i\gamma\omega}
-\]
+因为波的强度正比于$E^2$，吸收系数
+\begin{equation}
+    \alpha\equiv2\kappa\approx\frac{Nq^2\omega^2}{m\varepsilon_0c}\sum_j\frac{f_j\gamma_j}{\left(\omega_j^2-\omega^2\right)^2+\gamma_j^2\omega^2}
+\end{equation}
 
-将复介电常数展开为实部和虚部 $\widetilde{\varepsilon}_r = \varepsilon'_r + i\varepsilon''_r$：
-\[
-\varepsilon'_r(\omega) = 1 + \frac{\omega_p^2 (\omega_0^2 - \omega^2)}{(\omega_0^2 - \omega^2)^2 + \gamma^2\omega^2}
-\]
-\[
-\varepsilon''_r(\omega) = \frac{\omega_p^2 \gamma\omega}{(\omega_0^2 - \omega^2)^2 + \gamma^2\omega^2}
-\]
+如果远离共振频率，阻尼可以忽略，折射率公式可简化为
+\begin{equation}
+    n=1+\frac{Nq^2}{2m\varepsilon_0}\sum_j\frac{f_j}{\omega_j^2-\omega^2}
+\end{equation}
 
-\begin{itemize}
-    \item \textbf{正常色散（Normal Dispersion）}：在远离共振频率 $\omega_0$ 的区域，$\varepsilon'_r$ 随 $\omega$ 的增加而增加（对应折射率 $n$ 随频率升高而变大，如蓝光的折射率大于红光）。
-    \item \textbf{反常色散（Anomalous Dispersion）}：在共振频率附近（$\omega \approx \omega_0$），$\varepsilon'_r$ 随 $\omega$ 增加而剧烈下降。
-\end{itemize}
-
-\begin{itemize}
-    \item $\varepsilon''_r(\omega)$ 严格正相关于介质对电磁波的\textbf{吸收（Absorption）}。
-    \item 在共振点 $\omega = \omega_0$ 处，$\varepsilon''_r$ 达到极大值，形成一个强吸收峰（Absorptive Peak），此时电磁波能量被高效转化为介质的内能。
-\end{itemize}
-
-当考虑金属中的\textbf{自由电子}时，恢复力消失，即固有共振频率 $\omega_0 = 0$。此时洛伦兹模型退化为德鲁德模型：
-\[
-\widetilde{\varepsilon}_r(\omega) = 1 - \frac{\omega_p^2}{\omega^2 + i\gamma\omega}
-\]
-若在光学和高频频段忽略碰撞阻尼（$\gamma \ll \omega$）：
-\[
-\widetilde{\varepsilon}_r(\omega) \approx 1 - \frac{\omega_p^2}{\omega^2}
-\]
-\begin{itemize}
-    \item \textbf{当 $\omega < \omega_p$ 时}：$\widetilde{\varepsilon}_r$ 为\textbf{负实数}。这导致波数变成纯虚数，波在金属内部发生全反射（消逝波），无法向内传播。
-    \item \textbf{当 $\omega > \omega_p$ 时}：$\widetilde{\varepsilon}_r > 0$，金属在紫外等高频段会突然变得透明。
-\end{itemize}
 
 \mysssec{(a)证明在不良导体($\sigma<<\omega\varepsilon$)中趋肤深度是$(2/\sigma)\sqrt{\varepsilon/\mu}$。\\
 (b）证明在良导体($\sigma>>\omega\varepsilon$）中趋肤深度是$\lambda/2/\pi$}
@@ -479,3 +481,138 @@ w&=\frac{\varepsilon}{4} E_0^2e^{-2\kappa z}+\frac{\varepsilon}{4}\sqrt{1+\left(
     S&=\frac{k}{2\mu\omega}E_0^2e^{-2\kappa z}
 \end{align*}
 
+\mysssec{浅水是非色散的，波的传播速度正比于深度的平方根。但对于深水，波不能“感知”水深——它们认为深度与波长差不多。证明深水中的波速是群速的二倍。}
+\begin{align*}
+    v&\propto\sqrt{\lambda}\\
+    v&=\frac{A}{\sqrt{k}}\\
+    \frac{\omega}{k}&=\frac{A}{\sqrt{k}}\\
+    \omega&=A\sqrt{k}\\
+    \dif\omega&=\frac{A}{2\sqrt{k}}\dif k\\
+    2v_g&=v
+\end{align*}
+\mysssec{在量子力学中自由粒子由下面波函数描述$\Phi= Ae^{i(px-Et)/\hbar}$
+。计算群速和波速。}
+\begin{align*}
+    v_g=\frac{p}{2E},\, v=\frac{E}{p}
+\end{align*}
+\mysssec{对于单个共振角频率$\omega_0$，求反常色散区域的宽度。设$\gamma<<\omega_0$，证明折射率呈现最大和最小值处，吸收系数是最大值的一半。}
+\begin{align*}
+    n&\approx1+\frac{Nq^2}{2m\varepsilon_0}\sum_j\frac{f_j\left(\omega_j^2-\omega^2\right)}{\left(\omega_j^2-\omega^2\right)^2+\gamma_j^2\omega^2}\\
+    \dif n&\approx\dif \frac{Nq^2}{2m\varepsilon_0}\sum_j\frac{2f_j\omega_0\left(\omega_0-\omega\right)}{4\omega_0^2\left(\omega_0-\omega\right)^2+\gamma_j^2\omega^2}\\
+    0&\approx\dif \frac{2\omega_0\left(\omega_0-\omega\right)}{4\omega_0^2\left(\omega_0-\omega\right)^2+\gamma_j^2\omega^2}\\
+    0&\approx\frac{-\left[4\omega_0^2\left(\omega_0-\omega\right)^2+\gamma_j^2\omega^2\right]
+    +8\omega_0^2\left(\omega_0-\omega\right)^2}{4\omega_0^2\left(\omega_0-\omega\right)^2+\gamma_j^2\omega^2}\\
+    0&\approx
+    4\omega_0^2\left(\omega_0-\omega\right)^2-\gamma_j^2\omega^2\\
+    0&\approx
+    4\left(\omega_0-\omega\right)^2-\gamma_j^2\\
+    \omega&\approx\omega_0\pm\frac{\gamma}{2}\\
+    \alpha&\approx\frac{Nq^2\omega^2}{m\varepsilon_0c}\sum_j\frac{f_j\gamma_j}{4\omega_0^2\left(\omega_0-\omega\right)^2+\gamma_j^2\omega^2}\\
+    \alpha&\approx \frac{K}{4\left(\omega_0-\omega\right)^2+\gamma_j^2}\\
+    \alpha\left(\omega\pm\frac{\gamma}{2}\right)&\approx \frac{1}{2}\alpha_{MAX}
+\end{align*}
+
+\mysssec{如果忽略阻尼，计算由式\ref{复波数}描述的波的群速度。证明即使$v>c$，仍有$v_g<c$。}
+\begin{align*}
+    k&\approx\frac{\omega}{c}\left(1+\frac{Nq^2}{2m\varepsilon_0}\sum_j\frac{f_j}{\omega_j^2-\omega^2}\right)\\
+    \dif k&\approx\dif \frac{\omega}{c}\left(1+\frac{Nq^2}{2m\varepsilon_0}\sum_j\frac{f_j}{\omega_j^2-\omega^2}\right)\\
+    \dif k&\approx\frac{\omega}{c}\dif \left(1+\frac{Nq^2}{2m\varepsilon_0}\sum_j\frac{f_j}{\omega_j^2-\omega^2}\right)
+    +\frac{1}{c}\left(1+\frac{Nq^2}{2m\varepsilon_0}\sum_j\frac{f_j}{\omega_j^2-\omega^2}\right)\dif\omega \\
+    \dif k&\approx\frac{\omega Nq^2}{2m\varepsilon_0c}\sum_j \frac{2\omega f_j}{\left(\omega_j^2-\omega^2\right)^2}\dif\omega
+    +\frac{1}{c}\left(1+\frac{Nq^2}{2m\varepsilon_0}\sum_j\frac{f_j}{\omega_j^2-\omega^2}\right)\dif\omega \\
+    \frac{1}{v_g}&\approx\frac{\omega^2 Nq^2}{2m\varepsilon_0c}\sum_j \frac{2f_j}{\left(\omega_j^2-\omega^2\right)^2}
+    +\frac{1}{c}\left(1+\frac{Nq^2}{2m\varepsilon_0}\sum_j\frac{f_j}{\omega_j^2-\omega^2}\right)\\
+    \frac{1}{v_g}&\approx\frac{ Nq^2}{2m\varepsilon_0c}\sum_j \frac{f_j\omega^2+f_j\omega_j^2}{\left(\omega_j^2-\omega^2\right)^2}
+    +\frac{1}{c}>\frac{1}{c}
+\end{align*}
+
+\subsection{波导}
+\subsubsection{波导}
+目前，我们处理的是无限扩展的平面波，现在我们考虑限制在一个空管内的电磁波，或称为波导。假定波导是一个理想导体，即在材料内有$\boldsymbol E=0$和$\boldsymbol B=0$。我们对沿管轴传播的单色波感兴趣，故$\boldsymbol E=0$和$\boldsymbol B=0$的形式是
+\begin{equation}
+\left.\begin{aligned}
+\widetilde{\boldsymbol{E}} &= \widetilde{\boldsymbol{E}}_{0}e^{i(kz-\omega t)}\\
+\widetilde{\boldsymbol{B}} &= \widetilde{\boldsymbol{B}}_{0}e^{i(kz-\omega t)}
+\end{aligned}\right\}
+\end{equation}
+在波导内部，电磁场必须满足麦克斯韦方程\ref{线性均匀麦克斯韦方程}
+
+把电磁场和 $\nabla$ 算子都拆成横向（下标 $t$）和纵向（$z$ 方向），矢量场拆分：
+\begin{equation}
+\left.\begin{aligned}
+\boldsymbol{E} &= \boldsymbol{E}_t + E_z \boldsymbol{e}_z\\
+\boldsymbol{B} &= \boldsymbol{B}_t + B_z \boldsymbol{e}_z
+\end{aligned}\right\}
+\end{equation}
+算子拆分（因为 $z$ 导数就是 $ik$）：
+\begin{equation}
+    \boldsymbol\nabla = \boldsymbol\nabla_t + \boldsymbol{e}_z \frac{\partial}{\partial z} = \boldsymbol\nabla_t + i k \boldsymbol{e}_z
+\end{equation}
+\begin{align}
+    \boldsymbol\nabla \times \boldsymbol E &= \left(\boldsymbol\nabla_t + i k \boldsymbol{e}_z\right) \times (\boldsymbol{E}_t + E_z \boldsymbol{e}_z)\nonumber\\
+    \boldsymbol\nabla \times \boldsymbol E &= \boldsymbol\nabla_t\times \boldsymbol{E}_t
+    +i k \boldsymbol{e}_z\times \boldsymbol{E}_t 
+    +\boldsymbol{\nabla}_t  \times E_z \boldsymbol{e}_z\\
+    \boldsymbol\nabla \times \boldsymbol{E} &= i\omega\boldsymbol{B}\\
+    \boldsymbol\nabla_t\times \boldsymbol{E}_t
+    +i k \boldsymbol{e}_z\times \boldsymbol{E}_t 
+    +\boldsymbol{\nabla}_t  \times E_z \boldsymbol{e}_z&= i \omega B_z \boldsymbol{e}_z + i \omega \boldsymbol{B}_t
+\end{align}
+对比两边根据矢量方向
+\begin{equation}
+\left.\begin{aligned}
+\boldsymbol\nabla_t \times \boldsymbol{E}_t &= i \omega B_z \boldsymbol{e}_z\\
+\boldsymbol\nabla_t \times \boldsymbol{B}_t &= -i \frac{\omega}{c^2} E_z \boldsymbol{e}_z\\
+\boldsymbol{e}_z \times (i k \boldsymbol{E}_t - \boldsymbol\nabla_t E_z) &= i \omega \boldsymbol{B}_t\\
+\boldsymbol{e}_z \times (i k \boldsymbol{B}_t - \boldsymbol\nabla_t B_z) &= -i \frac{\omega}{c^2} \boldsymbol{E}_t
+\end{aligned}\right\}
+\end{equation}
+\begin{align}
+    \left.\begin{aligned}
+    \nabla_t^2E_z+\frac{\omega^2}{c^2}-k^2E_z&=0\\
+    \nabla_t^2B_z+\frac{\omega^2}{c^2}-k^2B_z&=0
+\end{aligned}\right\}
+\end{align}
+\subsubsection{矩形波导中的TE波}
+通过分离变量求解。令
+\begin{align*}
+    B_z(x,y)&=X(x)Y(y)\\
+    \nabla_t^2X(x)Y(y)+\frac{\omega^2}{c^2}-k^2X(x)Y(y)&=0\\
+    Y\frac{\partial^2 X}{\partial x^2}
+    +X\frac{\partial^2 Y}{\partial y^2}
+    +\frac{\omega^2}{c^2}-k^2XY&=0\\
+    \frac{1}{X}\frac{\partial^2 X}{\partial x^2}
+    +\frac{1}{Y}\frac{\partial^2 Y}{\partial y^2}
+    +\frac{\omega^2}{c^2}-k^2&=0
+\end{align*}
+注意到依赖于$x$和$y$的项必须是常数:
+\begin{align*}
+    \frac{1}{X}\frac{\partial^2 X}{\partial x^2}=-k_x^2,\, 
+    \frac{1}{Y}\frac{\partial^2 Y}{\partial y^2}=-k_x^2,\, 
+    -k_x^2-k_y^2+\frac{\omega^2}{c^2}-k^2&=0
+\end{align*}
+解得
+\begin{align*}
+    X=A\sin(k_xx)+B\cos(k_xx)
+\end{align*}
+边界条件要求在$x=0$和$x=a$处，$B_x$为零，所以$A=0$,且$k_x=\frac{m\pi}{a},\, m\in \mathbb{Z}$,\, $Y$同理$k_y=\frac{n\pi}{a},\, n\in \mathbb{Z}$
+\begin{equation}
+    B_z=B_0\cos\left(\frac{m\pi x}{a}\right)\cos\left(\frac{n\pi x}{b}\right)
+\end{equation}
+这个解称为TE$_{mn}$模式。
+\begin{equation}
+    k=\sqrt{\frac{\omega^2}{c^2}-\frac{\pi^2m^2}{a^2}-\frac{\pi^2n^2}{b^2}}
+\end{equation}
+如果
+\begin{equation}
+    \omega<c\pi\sqrt{\frac{m^2}{a^2}+\frac{n^2}{b^2}}=\omega_{mn}
+\end{equation}
+波数将是复数，场将指数衰减。由于这个原因$\omega_{mn}$称为这个模式的截断频
+率。利用截断频率，波数波速可写成更简单的形式：
+\begin{equation}
+    k=\frac{1}{c}\sqrt{\omega^2-\omega_{mn}^2},\, v=\dfrac{c}{1-\dfrac{\omega_{mn}^2}{\omega^2}}
+\end{equation}
+\mysssec{证明在TE$_{mn}$模式能量以群速度传播。}
+\begin{align*}
+    \boldsymbol{S}&=\frac{1}{\mu}\boldsymbol{E}\times\boldsymbol{B}\\
+\end{align*}
