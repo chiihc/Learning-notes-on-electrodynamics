@@ -595,7 +595,7 @@ w&=\frac{\varepsilon}{4} E_0^2e^{-2\kappa z}+\frac{\varepsilon}{4}\sqrt{1+\left(
 \begin{align*}
     X=A\sin(k_xx)+B\cos(k_xx)
 \end{align*}
-边界条件要求在$x=0$和$x=a$处，$B_x$为零，所以$A=0$,且$k_x=\frac{m\pi}{a},\, m\in \mathbb{Z}$,\, $Y$同理$k_y=\frac{n\pi}{a},\, n\in \mathbb{Z}$
+边界条件要求在$x=0$和$x=a$处，$B_x$为零，所以$A=0$,且$k_x=\frac{m\pi}{a},\, m\in \mathbb{Z}^+$,\, $Y$同理$k_y=\frac{n\pi}{a},\, n\in \mathbb{Z}$
 \begin{equation}
     B_z=B_0\cos\left(\frac{m\pi x}{a}\right)\cos\left(\frac{n\pi x}{b}\right)
 \end{equation}
@@ -612,7 +612,199 @@ w&=\frac{\varepsilon}{4} E_0^2e^{-2\kappa z}+\frac{\varepsilon}{4}\sqrt{1+\left(
 \begin{equation}
     k=\frac{1}{c}\sqrt{\omega^2-\omega_{mn}^2},\, v=\dfrac{c}{1-\dfrac{\omega_{mn}^2}{\omega^2}}
 \end{equation}
+\subsubsection{共轴传输线}
+\begin{align}
+    \boldsymbol{e}_z \times (i k \boldsymbol{E}_t - \boldsymbol\nabla_t E_z) &= i \omega \boldsymbol{B}_t\nonumber\\
+    \boldsymbol{e}_z \times\boldsymbol{e}_z \times (i k \boldsymbol{E}_t - \boldsymbol\nabla_t E_z) &= \boldsymbol{e}_z \times i \omega \boldsymbol{B}_t\nonumber\\
+    -i k \boldsymbol{E}_t + \boldsymbol\nabla_t E_z &= \boldsymbol{e}_z \times i \omega \boldsymbol{B}_t\nonumber\\
+    -i k \boldsymbol{E}_t + \boldsymbol\nabla_t E_z &= -i \frac{\omega^2}{k c^2} \boldsymbol{E}_t + \frac{\omega}{k} (\boldsymbol{e}_z \times \boldsymbol\nabla_t B_z)\nonumber\\
+    \boldsymbol{E}_t &= \frac{i k \boldsymbol\nabla_t E_z - i \omega (\boldsymbol{e}_z \times \boldsymbol\nabla_t B_z)}{(\omega/c)^2 - k^2}
+\end{align}
+对于 TEM 模式，纵向场全为零：$E_z = 0$ 且 $B_z = 0$。
+如果直接代入，分号上面的分子就变成了 $0$，所以 $\boldsymbol{E}_t$ 只能是 $0$。唯一的出路，就是分母也必须同时为 $0$，$k=\omega/c$。
+\begin{align*}
+    \boldsymbol{e}_z \times (i k\boldsymbol{E}_t - \boldsymbol\nabla_t E_z) &= i \omega \boldsymbol{B}_t\\
+    \boldsymbol{e}_z \times  k\boldsymbol{E}_t   &= \omega \boldsymbol{B}_t\\
+    \boldsymbol{B}_t &= \frac{1}{c} (\boldsymbol{e}_z \times \boldsymbol{E}_t)\\
+    \boldsymbol\nabla_t \times \boldsymbol{E}_t& = 0
+\end{align*}
+具有柱对称的解可分别直接借用无限长线电荷及无限长直线电流的结果,\, 解得：
+\begin{equation}
+    \boldsymbol{E}=\frac{A\cos(kz-\omega t)}{s}\boldsymbol{e}_s,\ \boldsymbol{B}=\frac{A\cos(kz-\omega t)}{cs}\boldsymbol{e}_\phi
+\end{equation}
 \mysssec{证明在TE$_{mn}$模式能量以群速度传播。}
 \begin{align*}
+    k&=\frac{1}{c}\sqrt{\omega^2-\omega_{mn}^2}\\
+    \dif k&=\frac{\omega}{c\sqrt{\omega^2-\omega_{mn}^2}}\dif \omega\\
+    v_g&=\frac{c\sqrt{\omega^2-\omega_{mn}^2}}{\omega}\\
+    v_g&=\frac{c^2k}{\omega}\\
+    P &= \int \frac{1}{2} \text{Re} \left( \boldsymbol{E}_t \times \boldsymbol{H}_t^* \right) \cdot \boldsymbol{e}_z\dif A\\
+    P &= \int \frac{1}{2} \text{Re} \left[ -\frac{\omega\mu_0}{k} ({\boldsymbol{e}_z} \times \boldsymbol{H}_t) \times \boldsymbol{H}_t^* \right] \cdot \boldsymbol{e}_z\dif A\\
+    P &= \int \frac{\omega\mu_0}{2k} |\boldsymbol{H}_t|^2 \dif A
+    \end{align*}
+    \begin{align*}
+    \langle U \rangle &= \int \left( \frac{1}{4} \varepsilon |\boldsymbol{E}_t|^2 + \frac{1}{4} \mu_0 |\boldsymbol{H}|^2 \right) \dif A\\
+    \langle U \rangle &= \int \left( \frac{1}{4} \frac{\mu_0\omega^2}{c^2k^2} |\boldsymbol{H}_t|^2 
+    + \frac{1}{4} \mu_0 |\boldsymbol{H}_t|^2
+    + \frac{1}{4} \mu_0 |H_z|^2\right) \dif A\\
+    \langle U \rangle &= \int  \frac{\mu_0}{4} \frac{\omega^2+c^2k^2}{c^2k^2} |\boldsymbol{H}_t|^2 \dif A
+    + \int\frac{\mu_0}{4}\frac{c^2}{\omega^2-k^2c^2}\frac{\omega^2-k^2c^2}{c^2}  |H_z|^2 \dif A\\
+        \langle U \rangle &= \int  \frac{\mu_0}{4} \frac{\omega^2+c^2k^2}{c^2k^2} |\boldsymbol{H}_t|^2 \dif A
+    + \int\frac{\mu_0}{4}\frac{c^2}{\omega^2-k^2c^2}\frac{\omega^2-k^2c^2}{c^2}  H_zH_z^* \dif A\\
+    \langle U \rangle &= \int  \frac{\mu_0}{4} \frac{\omega^2+c^2k^2}{c^2k^2} |\boldsymbol{H}_t|^2 \dif A
+    + \int\frac{\mu_0}{4}\frac{c^2}{\omega^2-k^2c^2}H_z^* \nabla_t^2 H_z\dif A\\
+    \langle U \rangle &= \int  \frac{\mu_0}{4} \frac{\omega^2+c^2k^2}{c^2k^2} |\boldsymbol{H}_t|^2 \dif A
+    + \oint\frac{\mu_0}{4}\frac{c^2}{\omega^2-k^2c^2} H_z^* \frac{\partial H_z}{\partial n} \dif l
+    - \int\frac{\mu_0}{4}\frac{c^2}{\omega^2-k^2c^2}H_z^* \nabla_t^2 H_z\dif A\\
+    \langle U \rangle &= \int  \frac{\mu_0}{4} \frac{\omega^2+c^2k^2}{c^2k^2} |\boldsymbol{H}_t|^2 \dif A
+    + \oint\frac{\mu_0}{4}\frac{c^2}{\omega^2-k^2c^2} (H_z^* \nabla_t H_z)\cdot\boldsymbol{e}_n \dif l
+    - \int\frac{\mu_0}{4}\frac{c^2}{\omega^2-k^2c^2}H_z^* \nabla_t^2 H_z\dif A\\
+    \langle U \rangle &= \int  \frac{\mu_0}{4} \frac{\omega^2+c^2k^2}{c^2k^2} |\boldsymbol{H}_t|^2 \dif A
+    + \int\frac{\mu_0}{4}\frac{c^2}{\omega^2-k^2c^2}\nabla_t \cdot (H_z^* \nabla_t H_z) \dif A
+    - \int\frac{\mu_0}{4}\frac{c^2}{\omega^2-k^2c^2}H_z^* \nabla_t^2 H_z\dif A\\
+    \langle U \rangle &= \int  \frac{\mu_0}{4} \frac{\omega^2+c^2k^2}{c^2k^2} |\boldsymbol{H}_t|^2 \dif A
+    + \int\frac{\mu_0}{4}\frac{c^2}{\omega^2-k^2c^2}|\nabla H_z|^2 \dif A\\
+    \langle U \rangle &= \int  \frac{\mu_0}{4} \frac{\omega^2+c^2k^2}{c^2k^2} |\boldsymbol{H}_t|^2 \dif A
+    + \int\frac{\mu_0}{4}\frac{1}{k^2}\frac{\omega^2-k^2c^2}{c^2}|\boldsymbol{H}_t|^2 \dif A\\
+    \langle U \rangle &= \int  \frac{\mu_0\omega^2}{2c^2}|\boldsymbol{H}_t|^2 \dif A\\
+    v&=\frac{P}{\langle U \rangle}\\
+    v&=v_g
+\end{align*}
+
+\mysssec{求出矩形波导的TM模式理论表示。求出截断频率。对于一个给定的波导，求出最低TM模式截断频率和最低TE模式截断频率之比。}
+同$B_z$解得
+\begin{align*}
+    X=A\sin(k_xx)+B\cos(k_xx)
+\end{align*}
+边界条件要求在$x=0$和$x=a$处，$E_z$为零，所以$B=0$,且$k_x=\frac{m\pi}{a},\, m\in \mathbb{Z}^+$,\, $Y$同理$k_y=\frac{n\pi}{a},\, n\in \mathbb{Z}^+$
+\begin{equation}
+    E_z=E_0\sin\left(\frac{m\pi x}{a}\right)\sin\left(\frac{n\pi x}{b}\right)
+\end{equation}
+如果把 $m=1, n=0$ 代入：$$E_z = E_0 \sin\left(\frac{\pi}{a}x\right) \sin(0) = 0$$一旦 $E_z = 0$，因为本来就 $B_z = 0$，这会导致整个波导里没有任何纵向场。
+\begin{align*}
+    v_{\text{TE}_{10}} &= \frac{c}{2} \sqrt{\left(\frac{1}{a}\right)^2 + 0} = \frac{c}{2a}\\
+    v_{\text{TM}_{11}} &= \frac{c}{2} \sqrt{\left(\frac{1}{a}\right)^2 + \left(\frac{1}{b}\right)^2}\\
+    \frac{v_{\text{TM}_{11}}}{v_{\text{TE}_{10}}} &= \frac{\sqrt{\frac{1}{a^2} + \frac{1}{b^2}}}{\frac{1}{a}}=\sqrt{1+\frac{a^2}{b^2}}
+\end{align*}
+\subsection{习题}
+\mysssec{傅里叶变换中的“互逆定理”是$$\widetilde{\phi}(z)=\int_{-\infty}^{\infty}\widetilde{\Phi}(k)e^{ikz}\dif k
+\Leftrightarrow \widetilde{\Phi}(k)=\frac{1}{2}\int_{-\infty}^{\infty}\widetilde{\phi}(z)e^{-ikz}\dif z$$
+利用这个变换及$f(z,0)$和$\dot f(z,0)$确定复数频谱函数。}
+\begin{align*}
+    \widetilde{f}(z,t)&=\int_{-\infty}^{\infty}\widetilde{A}(k)e^{i(kz-\omega t)}\dif k\\
+    \widetilde{f}(z,0)&=\int_{-\infty}^{\infty}\widetilde{A}(k)e^{ikz}\dif k\\
+    f(z,t) &= \text{Re}[\tilde{f}(z,t)] \\
+    f(z,t) &= \frac{1}{2} \left[ \widetilde{f}(z,t) + \widetilde{f}^*(z,t) \right]\\
+    f(z,t) &= \frac{1}{2} \left[ \int_{-\infty}^{\infty}\widetilde{A}(k)e^{ikz}\dif k + \int_{-\infty}^{\infty}\widetilde{A}^*(k)e^{ikz}\dif k \right]\\
+    \tilde{A}(k) &= \frac{1}{2\pi} \int_{-\infty}^{\infty} \left[ f(z,0) + \frac{i}{\omega} \dot{f}(z,0) \right] e^{-ikz} \dif z
+\end{align*}
+\mysssec{假设
+$$\boldsymbol{E}=A\frac{\sin\theta}{r}\left[\cos(kr-\omega t)-\frac{1}{kr}\sin(kr-\omega t)\right]\boldsymbol{e}_\phi$$
+（顺便说明，这是最简单的球面波。为了方便，在计算中令$kr-\omega t=u$。)\\
+（a)证明$\boldsymbol{E}$满足真空中的所有四个麦克斯韦方程。求相应的磁场。\\
+(b)计算坡印廷矢量。对$\boldsymbol S$求一个周期的平均。\\
+(c)在一个球面上对$I\cdot\dif a$求积分，确定总的辐射功率。}
+(a)\begin{align*}
+    \boldsymbol\nabla \times \boldsymbol{E} &= -\frac{\partial \boldsymbol{B}}{\partial t}\\
+    \boldsymbol\nabla \times A\frac{\sin\theta}{r}\left[\cos u-\frac{1}{kr}\sin u\right]\boldsymbol{e}_\phi &= -\frac{\partial \boldsymbol{B}}{\partial t}\\
+    -\frac{2\cos\theta}{r}\left[\cos u-\frac{1}{kr}\sin u\right]\boldsymbol{e}_r
+    +\frac{\partial \sin\theta\left[\cos u-\frac{1}{kr}\sin u\right]}{\partial r}
+    \boldsymbol{e}_\theta&=-\frac{r\partial \boldsymbol{B}}{A\partial t}\\
+    2\cos\theta\left(\cos u-\frac{1}{kr}\sin u\right)\boldsymbol{e}_r
+    -\sin\theta\left(-\cos u
+    +\sin u\frac{1-k^2r^2}{kr}\right)
+    \boldsymbol{e}_\theta&=\frac{r^2\partial \boldsymbol{B}}{A\partial t}\\
+    2\cos\theta\left(\sin u+\frac{1}{kr}\cos u\right)\boldsymbol{e}_r
+    +\sin\theta\left(\sin u
+    +\cos u\frac{1-k^2r^2}{kr}\right)
+    \boldsymbol{e}_\theta&=\frac{r^2\omega \boldsymbol{B}}{A}\\
+    \frac{2A}{r^2\omega}\cos\theta\left(\sin u+\frac{1}{kr}\cos u\right)\boldsymbol{e}_r
+    +\frac{A}{r^2\omega}\sin\theta\left(\sin u
+    +\frac{1-k^2r^2}{kr}\cos u\right)
+    \boldsymbol{e}_\theta&=\boldsymbol{B}\\
+    \end{align*}
+    \begin{align*}
+    \boldsymbol{\nabla}\cdot\left[\frac{2A}{r^2\omega}\cos\theta\left(\sin u+\frac{1}{kr}\cos u\right)\boldsymbol{e}_r
+    +\frac{A}{r^2\omega}\sin\theta\left(\sin u
+    +\frac{1-k^2r^2}{kr}\cos u\right)
+    \boldsymbol{e}_\theta\right]&=\boldsymbol{\nabla}\cdot\boldsymbol{B}\\
+    \frac{1}{r^2}\dfrac{\partial r^2\frac{2A}{r^2\omega}\cos\theta\left(\sin u+\frac{1}{kr}\cos u\right)}{\partial r}
+    +\frac{1}{r\sin\theta }\dfrac{\partial \sin\theta \frac{A}{r^2\omega}\sin\theta\left(\sin u
+    +\frac{1-k^2r^2}{kr}\cos u\right)}{\partial \theta}&=\boldsymbol{\nabla}\cdot\boldsymbol{B}\\
+    \frac{1}{r^2}\dfrac{\partial \frac{2A}{\omega}\cos\theta\left(\sin u+\frac{1}{kr}\cos u\right)}{\partial r}
+    +\frac{2A}{r^3\omega}\cos\theta\left(\sin u
+    +\frac{1-k^2r^2}{kr}\cos u\right)&=\boldsymbol{\nabla}\cdot\boldsymbol{B}\\
+    \frac{2Ak}{r^2\omega}\cos\theta\cos u
+    +\frac{1}{r^2}\dfrac{\partial \frac{2A}{\omega}\cos\theta\frac{1}{kr}\cos u}{\partial r}
+    +\frac{2A}{r^3\omega}\cos\theta\left(\sin u
+    +\frac{1-k^2r^2}{kr}\cos u\right)&=\boldsymbol{\nabla}\cdot\boldsymbol{B}\\
+    0&=\boldsymbol{\nabla}\cdot\boldsymbol{B}\\
+    -\frac{1}{r}\left(\frac{\partial a_r}{\partial \theta}
+    -\frac{\partial ra_\theta}{\partial r}\right)\boldsymbol{e}_\phi
+    &=\boldsymbol{\nabla}\times\boldsymbol{B}\\
+    -\frac{1}{r}\left[\frac{\partial \frac{2A}{r^2\omega}\cos\theta\left(\sin u+\frac{1}{kr}\cos u\right)}{\partial \theta}
+    -\frac{\partial r\frac{A}{r^2\omega}\sin\theta\left(\sin u
+    +\frac{1-k^2r^2}{kr}\cos u\right)}{\partial r}\right]\boldsymbol{e}_\phi
+    &=\boldsymbol{\nabla}\times\boldsymbol{B}\\
+    -\frac{A}{r\omega}\left[-\frac{2}{r^2}\sin\theta\left(\sin u+\frac{1}{kr}\cos u\right)
+    -\frac{\partial \frac{1}{r}\sin\theta\left(\sin u
+    +\frac{1-k^2r^2}{kr}\cos u\right)}{\partial r}
+    \right]\boldsymbol{e}_\phi
+    &=\boldsymbol{\nabla}\times\boldsymbol{B}\\
+    -\frac{A}{r^3\omega}\left[-\sin\theta\left(\sin u+\frac{1}{kr}\cos u\right)
+    -2kr\sin\theta \cos u
+    -\frac{r \sin\theta\partial\frac{1-k^2r^2}{kr}\cos u}{\partial r}
+    \right]\boldsymbol{e}_\phi
+    &=\boldsymbol{\nabla}\times\boldsymbol{B}\\
+    -\frac{A}{r^3\omega}\left(-\sin\theta\frac{1}{kr}\cos u
+    -2kr\sin\theta \cos u
+    -\frac{r \sin\theta\cos u\partial\frac{1}{kr}}{\partial r}
+    +\frac{r \sin\theta\partial kr\cos u}{\partial r}
+    \right)\boldsymbol{e}_\phi
+    &=\boldsymbol{\nabla}\times\boldsymbol{B}\\
+    -\frac{A}{r^3\omega}\left(
+    -2kr\sin\theta \cos u
+    +\frac{r^2 \sin\theta\partial k\cos u}{\partial r}
+    +\frac{r \sin\theta\cos u\partial kr}{\partial r}
+    \right)\boldsymbol{e}_\phi
+    &=\boldsymbol{\nabla}\times\boldsymbol{B}\\
+    -\frac{A}{r^3\omega}\left(
+    -kr\sin\theta \cos u
+    -k^2r^2 \sin\theta \sin u
+    \right)\boldsymbol{e}_\phi
+    &=\boldsymbol{\nabla}\times\boldsymbol{B}\\
+    \frac{Ak}{r^2\omega}\sin\theta\left(
+    \cos u
+    +kr \sin u
+    \right)\boldsymbol{e}_\phi
+    &=\boldsymbol{\nabla}\times\boldsymbol{B}\\
+    \frac{k^2}{\omega^2}\frac{\partial A\frac{\sin\theta}{r}\left(\cos u-\frac{1}{kr}\sin u\right)\boldsymbol{e}_\phi}{\partial t}&=\frac{k^2}{\omega^2}\frac{\partial\boldsymbol{E}}{\partial t}\\
+    \frac{Ak^2}{\omega}\frac{\sin\theta}{r}\left(\sin u+\frac{1}{kr}\cos u\right)\boldsymbol{e}_\phi&=\frac{k^2}{\omega^2}\frac{\partial\boldsymbol{E}}{\partial t}
+    % \\\boldsymbol{\nabla}\times\boldsymbol{B}&=\frac{k^2}{\omega^2}\frac{\partial\boldsymbol{E}}{\partial t}
+\end{align*}
+(b)\begin{align*}
     \boldsymbol{S}&=\frac{1}{\mu}\boldsymbol{E}\times\boldsymbol{B}\\
+    S_\theta&=\frac{2A^2\sin\theta}{r^3\omega\mu}\left(\cos u-\frac{1}{kr}\sin u\right)\cos\theta\left(\sin u+\frac{1}{kr}\cos u\right)\\
+    \langle S_\theta\rangle&=\left\langle \frac{2A^2\sin\theta}{r^3\omega\mu}\left(\frac{1}{kr}\cos^2 u-\frac{1}{kr}\sin^2 u\right)\cos\theta\right\rangle\\
+    \langle S_\theta\rangle&=0\\
+    S_r&=-\frac{A^2\sin\theta}{r^3\omega\mu}\left(\cos u-\frac{1}{kr}\sin u\right)\sin\theta\left(\sin u
+    +\frac{1-k^2r^2}{kr}\cos u\right)\\
+    \langle S_r \rangle&=-\left\langle \frac{A^2\sin\theta}{r^3\omega\mu}\left(\frac{1-k^2r^2}{kr}\cos^2 u-\frac{1}{kr}\sin^2 u\right)\sin\theta \right\rangle\\
+    \langle S_r \rangle&=\frac{A^2\sin^2\theta}{2r^2\omega\mu}k
+\end{align*}
+(c)\begin{align*}
+    \oiint-\frac{A^2\sin^2\theta}{2r^2\omega\mu}k\dif a&=\int_{0}^{\pi}\frac{A^2\sin^3\theta}{2r^2\omega\mu}kr^2 2\pi\dif\theta\\
+    \oiint-\frac{A^2\sin^2\theta}{2r^2\omega\mu}k\dif a&=-\pi\int_{0}^{\pi}\frac{A^2\left(1-\sin^2\theta\right)}{\omega\mu}k \dif\cos\theta\\
+    \oiint-\frac{A^2\sin^2\theta}{2r^2\omega\mu}k\dif a&=\left.
+    -\cos\theta+\frac{1}{3}\cos^3\theta\right|_{0}^{\pi}\pi\frac{A^2}{\omega\mu}k\\
+    \oiint-\frac{A^2\sin^2\theta}{2r^2\omega\mu}k\dif a&=\pi\frac{4A^2}{3\omega\mu}k
+\end{align*}
+\mysssec{真空波长为$\lambda$的光，从介质1经过介质2薄板（厚度为$d$)进入介质3。求垂直入射时透射系数}
+\begin{align*}
+    T&=\left|t_{12}t_{23}\sum_{j=0}^{\infty}r_{23}^je^{2ijdn_2/\lambda}\right|^2\\
+    T&=\left|t_{12}t_{23}\frac{1}{1-r_{23}e^{2idn_2/\lambda}}\right|^2\\
+    T&=\left|t_{12}t_{23}\frac{1}{1-r_{23}\cos\left(2dn_2/\lambda\right)-ir_{23}\sin\left(2dn_2/\lambda\right)}\right|^2\\
+    T&=t_{12}^2t_{23}^2\left|\frac{1-r_{23}\cos\left(2dn_2/\lambda\right)+ir_{23}\sin\left(2dn_2/\lambda\right)}{\left[1-r_{23}\cos\left(2dn_2/\lambda\right)\right]^2+r_{23}^2\sin^2\left(2dn_2/\lambda\right)}\right|^2\\
+    T&=t_{12}^2t_{23}^2\frac{\left[1-r_{23}\cos\left(2dn_2/\lambda\right)\right]^2+r_{23}^2\sin^2\left(2dn_2/\lambda\right)}{\left\{\left[1-r_{23}\cos\left(2dn_2/\lambda\right)\right]^2+r_{23}^2\sin^2\left(2dn_2/\lambda\right)\right\}^2}\\
+    T&=\frac{t_{12}^2t_{23}^2}{1-2r_{23}\cos\left(2dn_2/\lambda\right)+r_{23}^2}
 \end{align*}

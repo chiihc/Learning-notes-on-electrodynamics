@@ -760,35 +760,35 @@ $\Delta\tau=h_1h_2h_3\,\Delta u_1\Delta u_2\Delta u_3$
     &\boldsymbol{\nabla}\times\boldsymbol{a}\nonumber\\
     =&\frac{h_i}{h_1h_2h_3}\varepsilon_{ijk}\frac{\partial (h_ka_k)}{\partial u_j}\boldsymbol{e}_i\nonumber\\
     =&\frac{h_i}{r^2\sin\theta}\varepsilon_{ijk}\frac{\partial (h_ka_k)}{\partial u_j}\boldsymbol{e}_i\nonumber\\
-    =&\frac{1}{r^2\sin\theta}\left(\varepsilon_{123}\frac{\partial ra_3}{\partial u_2}\boldsymbol{e}_1
-    +\varepsilon_{132}\frac{\partial sa_2}{\partial u_3}\boldsymbol{e}_1
-    +r\varepsilon_{321}\frac{\partial a_1}{\partial u_2}\boldsymbol{e}_3
-    +s\varepsilon_{213}\frac{\partial ra_3}{\partial u_1}\boldsymbol{e}_2
-    +r\varepsilon_{312}\frac{\partial sa_2}{\partial u_1}\boldsymbol{e}_3
-    +s\varepsilon_{231}\frac{\partial a_1}{\partial u_3}\boldsymbol{e}_2\right)\nonumber\\
-    =&\frac{1}{r^2\sin\theta}\left(\frac{\partial ra_3}{\partial u_2}\boldsymbol{e}_1
-    -\frac{\partial r\sin\theta a_2}{\partial u_3}\boldsymbol{e}_1
-    -r\frac{\partial a_1}{\partial u_2}\boldsymbol{e}_3
-    -r\sin\theta \frac{\partial ra_3}{\partial u_1}\boldsymbol{e}_2
-    +r\frac{\partial r\sin\theta a_2}{\partial u_1}\boldsymbol{e}_3
-    +r\sin\theta \frac{\partial a_1}{\partial u_3}\boldsymbol{e}_2\right)\nonumber\\
-    =&\frac{1}{r^2\sin\theta }\left(\frac{\partial ra_{\theta}}{\partial \phi}\boldsymbol{e}_r
-    -\frac{\partial r\sin\theta a_{\phi}}{\partial \theta}\boldsymbol{e}_r
-    -r\frac{\partial a_r}{\partial \phi}\boldsymbol{e}_\theta
-    -r\sin\theta \frac{\partial ra_{\theta}}{\partial r}\boldsymbol{e}_\phi
-    +r\frac{\partial r\sin\theta a_{\phi}}{\partial r}\boldsymbol{e}_\theta
-    +r\sin\theta \frac{\partial a_r}{\partial \theta}\boldsymbol{e}_\phi\right)\nonumber\\
-    =&\frac{1}{r^2\sin\theta}\left(r\frac{\partial a_\theta}{\partial \phi}
-    -r\frac{\partial \sin\theta a_{\phi}}{\partial \theta}\right)\boldsymbol{e}_r
-    +\frac{1}{r}\left(\frac{\partial a_r}{\partial \theta}
-    -\frac{\partial ra_\theta}{\partial r}\right)\boldsymbol{e}_\phi
-    +\frac{1}{r\sin\theta }\left(\sin\theta\frac{\partial r a_{\phi}}{\partial r}
-    -\frac{\partial a_r}{\partial \phi}
-    \right)\boldsymbol{e}_\theta\nonumber\\
+    % =&\frac{1}{r^2\sin\theta}\left(\varepsilon_{123}\frac{\partial ra_3}{\partial u_2}\boldsymbol{e}_1
+    % +\varepsilon_{132}\frac{\partial sa_2}{\partial u_3}\boldsymbol{e}_1
+    % +r\varepsilon_{321}\frac{\partial a_1}{\partial u_2}\boldsymbol{e}_3
+    % +s\varepsilon_{213}\frac{\partial ra_3}{\partial u_1}\boldsymbol{e}_2
+    % +r\varepsilon_{312}\frac{\partial sa_2}{\partial u_1}\boldsymbol{e}_3
+    % +s\varepsilon_{231}\frac{\partial a_1}{\partial u_3}\boldsymbol{e}_2\right)\nonumber\\
+    % =&\frac{1}{r^2\sin\theta}\left(\frac{\partial ra_3}{\partial u_2}\boldsymbol{e}_1
+    % -\frac{\partial r\sin\theta a_2}{\partial u_3}\boldsymbol{e}_1
+    % -r\frac{\partial a_1}{\partial u_2}\boldsymbol{e}_3
+    % -r\sin\theta \frac{\partial ra_3}{\partial u_1}\boldsymbol{e}_2
+    % +r\frac{\partial r\sin\theta a_2}{\partial u_1}\boldsymbol{e}_3
+    % +r\sin\theta \frac{\partial a_1}{\partial u_3}\boldsymbol{e}_2\right)\nonumber\\
+    % =&\frac{1}{r^2\sin\theta }\left(\frac{\partial ra_{\theta}}{\partial \phi}\boldsymbol{e}_r
+    % -\frac{\partial r\sin\theta a_{\phi}}{\partial \theta}\boldsymbol{e}_r
+    % -r\frac{\partial a_r}{\partial \phi}\boldsymbol{e}_\theta
+    % -r\sin\theta \frac{\partial ra_{\theta}}{\partial r}\boldsymbol{e}_\phi
+    % +r\frac{\partial r\sin\theta a_{\phi}}{\partial r}\boldsymbol{e}_\theta
+    % +r\sin\theta \frac{\partial a_r}{\partial \theta}\boldsymbol{e}_\phi\right)\nonumber\\
+    % =&\frac{1}{r^2\sin\theta}\left(r\frac{\partial a_\theta}{\partial \phi}
+    % -r\frac{\partial \sin\theta a_{\phi}}{\partial \theta}\right)\boldsymbol{e}_r
+    % +\frac{1}{r}\left(\frac{\partial a_r}{\partial \theta}
+    % -\frac{\partial ra_\theta}{\partial r}\right)\boldsymbol{e}_\phi
+    % +\frac{1}{r\sin\theta }\left(\sin\theta\frac{\partial r a_{\phi}}{\partial r}
+    % -\frac{\partial a_r}{\partial \phi}
+    % \right)\boldsymbol{e}_\theta\nonumber\\
     =&\frac{1}{r\sin\theta}\left(\frac{\partial a_\theta}{\partial \phi}
     -\frac{\partial\sin\theta  a_{\phi}}{\partial \theta}\right)\boldsymbol{e}_r
-    +\frac{1}{r}\left(\frac{\partial a_r}{\partial \theta}
-    -\frac{\partial ra_\theta}{\partial r}\right)\boldsymbol{e}_\phi
+    +\frac{1}{r}\left(\frac{\partial ra_\theta}{\partial r}
+    -\frac{\partial a_r}{\partial \theta}\right)\boldsymbol{e}_\phi
     +\frac{1}{r\sin\theta }\left(\sin\theta\frac{\partial r a_{\phi}}{\partial r}
     -\frac{\partial a_r}{\partial \phi}
     \right)\boldsymbol{e}_\theta
