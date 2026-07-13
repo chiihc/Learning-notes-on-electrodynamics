@@ -1,0 +1,82 @@
+\cleardoublepage
+\section{势 和 场}
+\subsection{势表述}
+\subsubsection{标势与矢势}
+\begin{align*}
+    \boldsymbol{B}&=\boldsymbol{\nabla}\times\boldsymbol{A}\\
+\boldsymbol{\nabla}\times\boldsymbol{E}&=-\frac{\partial}{\partial t}\boldsymbol{\nabla}\times\boldsymbol{A}\\
+\boldsymbol{\nabla}\times\left(\boldsymbol{E}+\frac{\partial\boldsymbol{A}}{\partial t}\right)&=0
+\end{align*}
+括号中的量，与单独的$\boldsymbol{E}$不同，它可写成一个标量的梯度：
+\begin{align}
+    \boldsymbol{E}+\frac{\partial\boldsymbol{A}}{\partial t}&=-\boldsymbol{\nabla}V\\
+    \boldsymbol{E}&=-\boldsymbol{\nabla}V-\frac{\partial\boldsymbol{A}}{\partial t}\\
+    \boldsymbol{\nabla}\cdot\boldsymbol{E}&=-\nabla^2V-\frac{\partial\boldsymbol{\boldsymbol{\nabla}\cdot A}}{\partial t}\\
+    \frac{1}{\varepsilon_0}\rho&=-\nabla^2V-\frac{\partial\boldsymbol{\boldsymbol{\nabla}\cdot A}}{\partial t}\\
+    \boldsymbol{\nabla}\times\left(\boldsymbol{\nabla}\times\boldsymbol{A}\right)&=\mu_0\boldsymbol{J}
+    -\mu_0\varepsilon_0\boldsymbol{\nabla}\frac{\partial V}{\partial t}
+    -\mu_0\varepsilon_0\frac{\partial^2\boldsymbol{A}}{\partial t^2}
+\end{align}
+\subsubsection{规范变换}
+只要不影响$\boldsymbol{E}$和$\boldsymbol{B}$，我们可以自由地对$V$和$\boldsymbol{A}$附加额外条件。假设我们有两套势$(V，\boldsymbol{A})$和$(V',\boldsymbol{A}')$，它们对应相同的电场和磁场。设
+$$\boldsymbol{A}'=\boldsymbol{A}+\alpha,\, V'=V+\beta$$
+\mysssec{证明$V$和$\boldsymbol{A}$的微分方程，可以写成下面更对称的形式
+\begin{equation}
+    \left.\begin{aligned}
+    \square^2V+\frac{\partial L}{\partial t}&=-\frac{1}{\varepsilon_0}\rho\\
+        \square^2\boldsymbol{A}+\boldsymbol{\nabla}L&=-\mu_0\boldsymbol{J}\\
+    \end{aligned}\right\}
+\end{equation}
+式中
+\begin{equation}
+    \square^2\equiv\nabla^2-\mu_0\varepsilon_0\frac{\partial^2}{\partial t^2},\,L\equiv\boldsymbol{\nabla}\cdot\boldsymbol{A}+\mu_0\varepsilon_0\frac{\partial V}{\partial t}
+\end{equation}
+}
+\begin{align*}
+    -\nabla^2V-\frac{\partial\boldsymbol{\boldsymbol{\nabla}\cdot A}}{\partial t}&=\frac{1}{\varepsilon_0}\rho\\
+    \nabla^2V+\frac{\partial \boldsymbol{\nabla}\cdot\boldsymbol{A}}{\partial t}&=-\frac{1}{\varepsilon_0}\rho\\
+    \left(\nabla^2-\mu_0\varepsilon_0\frac{\partial^2}{\partial t^2}\right)V+\frac{\partial \boldsymbol{\nabla}\cdot\boldsymbol{A}+\mu_0\varepsilon_0\frac{\partial V}{\partial t}}{\partial t}&=-\frac{1}{\varepsilon_0}\rho\\
+    \square^2V+\frac{\partial L}{\partial t}&=-\frac{1}{\varepsilon_0}\rho\\
+    \boldsymbol{\nabla}\times\left(\boldsymbol{\nabla}\times\boldsymbol{A}\right)&=\mu_0\boldsymbol{J}
+    -\mu_0\varepsilon_0\boldsymbol{\nabla}\frac{\partial V}{\partial t}
+    -\mu_0\varepsilon_0\frac{\partial^2\boldsymbol{A}}{\partial t^2}\\
+    \boldsymbol{\nabla}\left(\boldsymbol{\nabla}\cdot\boldsymbol{A}\right)
+    -\nabla^2\boldsymbol{A}&=\mu_0\boldsymbol{J}
+    -\mu_0\varepsilon_0\boldsymbol{\nabla}\frac{\partial V}{\partial t}
+    -\mu_0\varepsilon_0\frac{\partial^2\boldsymbol{A}}{\partial t^2}\\
+    \left(\nabla^2-\mu_0\varepsilon_0\frac{\partial^2}{\partial t^2}\right)\boldsymbol{A}+\boldsymbol{\nabla}\left(\boldsymbol{\nabla}\cdot\boldsymbol{A}+\mu_0\varepsilon_0\frac{\partial V}{\partial t}\right)&=-\mu_0\boldsymbol{J}\\
+    \square^2\boldsymbol{A}+\boldsymbol{\nabla}L&=-\mu_0\boldsymbol{J}
+\end{align*}
+\mysssec{
+    $$
+        V=0,\,\boldsymbol{A}=\left\{\begin{aligned}
+            &\frac{\mu_0k}{4c}\left(ct-|x|\right)^2\boldsymbol{e}_z,\,&|x|<ct\\
+            &0,\,&|x|>ct
+        \end{aligned}\right.
+    $$
+    考虑一边长为$l$，宽为$w$，高为$h$的长方形盒子放在距$yz$面高为$d$
+的地方。\\
+(a)求在时间$t_1=d/c$和$t_2=(d+h)/c$时，盒子中的能量。\\
+(b)求出坡印廷矢量($x>0$)。确定在时间间隔$t_1<t<t_2$内，单位时间流入盒子的能量。}
+(a)\begin{align*}
+    W&=\frac{1}{2}\varepsilon_0E^2+\frac{1}{2\mu_0}B^2\\
+    W&=\frac{1}{2}\varepsilon_0\left(-\boldsymbol{\nabla}V-\frac{\partial\boldsymbol{A}}{\partial t}\right)^2+\frac{1}{2\mu_0}\left(\boldsymbol{\nabla}\times\boldsymbol{A}\right)^2\\
+    W&=\frac{1}{2}\varepsilon_0\left(\frac{\partial\boldsymbol{A}}{\partial t}\right)^2+\frac{1}{2\mu_0}\left(\boldsymbol{\nabla}\times\boldsymbol{A}\right)^2\\
+    W_1&=0\\
+    W_2&=wl\int_{d}^{d+h}\left\{\frac{1}{2}\varepsilon_0\left[\frac{\partial\frac{\mu_0k}{4c}\left(ct-|x|\right)^2\boldsymbol{e}_z}{\partial t}\right]^2+\frac{1}{2\mu_0}\left[\boldsymbol{\nabla}\times\frac{\mu_0k}{4c}\left(ct-|x|\right)^2\boldsymbol{e}_z\right]^2\right\}\dif x\\
+    W_2&=wl\int_{d}^{d+h}\left\{\frac{1}{2}\varepsilon_0\left[\frac{\partial\frac{\mu_0k}{4c}\left(ct-x\right)^2}{\partial t}\right]^2+\frac{1}{2\mu_0}\left[\boldsymbol{\nabla}\times\frac{\mu_0k}{4c}\left(d+h-x\right)^2\boldsymbol{e}_z\right]^2\right\}\dif x\\
+    W_2&=wl\int_{d}^{d+h}\left\{\frac{1}{2}\varepsilon_0\left[\frac{\mu_0k}{2}\left(ct-x\right)\right]^2+\frac{1}{2\mu_0}\left[\frac{\mu_0k}{2c}\left(x-d-h\right)\right]^2\right\}\dif x\\
+    W_2&=wl\int_{d}^{d+h}\left(\varepsilon_0\frac{\mu_0^2k^2}{8}
+    +\frac{\mu_0k^2}{8c^2}\right)\left(x-d-h\right)^2\dif x\\
+    W_2&=wl\left.\frac{k^2}{12}\frac{\mu_0}{c^2}\left(x-d-h\right)^3\right|_{d}^{d+h}\\
+    W_2&=\frac{k^2}{12}\frac{\mu_0}{c^2}wlh^3
+\end{align*}
+
+(b)\begin{align*}
+    \boldsymbol{S}&=\frac{1}{\mu_0}\boldsymbol{E}\times\boldsymbol{B}\\
+    \boldsymbol{S}&=\frac{1}{\mu_0}\left[-\frac{\mu_0k}{2}\left(ct-x\right)\boldsymbol{e}_z\right]\times\left[\frac{\mu_0k}{2c}(ct-x)\boldsymbol{e}_y\right]\\
+    \boldsymbol{S}&=\frac{\mu_0k^2}{4c}\left(ct-x\right)^2\boldsymbol{e}_x\\
+    \int_{t_1}^{t_2}\boldsymbol{S}\dif t&=wl\int_{t_1}^{t_2}\frac{\mu_0k^2}{4c}\left(ct-d\right)^2\boldsymbol{e}_x\dif t\\
+    \int_{t_1}^{t_2}\boldsymbol{S}\dif t&=wl\left.\frac{\mu_0k^2}{12c^2}\left(ct-d\right)^3\boldsymbol{e}_x\right|_{t_1}^{t_2}\\
+    \int_{t_1}^{t_2}\boldsymbol{S}\dif t&=\frac{k^2}{12}\frac{\mu_0}{c^2}wlh^3
+\end{align*}
