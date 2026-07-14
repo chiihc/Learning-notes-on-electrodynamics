@@ -18,8 +18,26 @@
     -\mu_0\varepsilon_0\frac{\partial^2\boldsymbol{A}}{\partial t^2}
 \end{align}
 \subsubsection{规范变换}
-只要不影响$\boldsymbol{E}$和$\boldsymbol{B}$，我们可以自由地对$V$和$\boldsymbol{A}$附加额外条件。假设我们有两套势$(V，\boldsymbol{A})$和$(V',\boldsymbol{A}')$，它们对应相同的电场和磁场。设
+只要不影响$\boldsymbol{E}$和$\boldsymbol{B}$，我们可以自由地对$V$和$\boldsymbol{A}$附加额外条件。假设我们有两套势$(V,\boldsymbol{A})$和$(V',\boldsymbol{A}')$，它们对应相同的电场和磁场。设
 $$\boldsymbol{A}'=\boldsymbol{A}+\alpha,\, V'=V+\beta$$
+因为$\boldsymbol{A}$与$\boldsymbol{A}'$要给出同样的$\boldsymbol{B}$，它们的旋度必须相等，故
+$$\boldsymbol{\nabla}\times\boldsymbol{\alpha}=0$$
+因此我们可以把$\boldsymbol{\alpha}$写成某个标量的梯度
+$$\boldsymbol{\alpha}=\boldsymbol{\nabla}\lambda$$
+这两个势也要给出同样的$\boldsymbol{E}$，所以
+$$\boldsymbol{\nabla}\left(\beta+\frac{\partial\lambda}{\partial t}\right)=0$$
+括号中的项因此不依赖于坐标（然而它可以依赖于时间），称它为$k(t)$，事实上，我们可以把$k(t)$吸收进$\lambda$中，通过增加一项$\int_{0}^{t}k(t')\dif t'$定义一个新的$\lambda$。这样有，
+\begin{equation}
+    \left.\begin{aligned}
+    \boldsymbol{A}'&=\boldsymbol{A}+\boldsymbol{\nabla}\lambda\\
+    V'&=V-\frac{\partial\lambda}{\partial t}
+    \end{aligned}\right\}
+\end{equation}
+
+这种对$V$和$\boldsymbol{A}$的改变称为规范变换。它们可用来调整$\boldsymbol{A}$的散度。在静磁学中，取$\boldsymbol{\nabla}·\boldsymbol{A}=\boldsymbol{0}$是最合适的。在电动力学情形中，
+情况就不这么明了，最方便的规范变换依赖于具体的问题。在文献中有许多著名的规范变换。下
+面将给出两个最流行的。
+\subsubsection{库仑规范与洛伦兹规范}
 \mysssec{证明$V$和$\boldsymbol{A}$的微分方程，可以写成下面更对称的形式
 \begin{equation}
     \left.\begin{aligned}
@@ -79,4 +97,43 @@ $$\boldsymbol{A}'=\boldsymbol{A}+\alpha,\, V'=V+\beta$$
     \int_{t_1}^{t_2}\boldsymbol{S}\dif t&=wl\int_{t_1}^{t_2}\frac{\mu_0k^2}{4c}\left(ct-d\right)^2\boldsymbol{e}_x\dif t\\
     \int_{t_1}^{t_2}\boldsymbol{S}\dif t&=wl\left.\frac{\mu_0k^2}{12c^2}\left(ct-d\right)^3\boldsymbol{e}_x\right|_{t_1}^{t_2}\\
     \int_{t_1}^{t_2}\boldsymbol{S}\dif t&=\frac{k^2}{12}\frac{\mu_0}{c^2}wlh^3
+\end{align*}
+\mysssec{$V=0,\,\boldsymbol{A}=-\dfrac{qt}{4\pi\varepsilon_0r^2}\boldsymbol{e}_r$求场分布,\, 利用规范函数$\lambda=-\dfrac{qt}{4\pi\varepsilon_0r}$变换势}
+\begin{align*}
+    \boldsymbol{E}&=-\boldsymbol{\nabla}V-\frac{\partial\boldsymbol{A}}{\partial t}\\
+    \boldsymbol{E}&=\frac{\partial\dfrac{qt}{4\pi\varepsilon_0r^2}\boldsymbol{e}_r}{\partial t}\\
+    \boldsymbol{E}&=\dfrac{q}{4\pi\varepsilon_0r^2}\boldsymbol{e}_r\\
+    \boldsymbol{B}&=\boldsymbol{\nabla}\times\boldsymbol{A}\\
+    \boldsymbol{B}&=-\boldsymbol{\nabla}\times\dfrac{qt}{4\pi\varepsilon_0r^2}\boldsymbol{e}_r\\
+    \boldsymbol{B}&=\boldsymbol{0}\\
+    \end{align*}
+    \begin{align*}
+    \boldsymbol{A}'&=\boldsymbol{A}+\boldsymbol{\nabla}\lambda\\
+    \boldsymbol{A}'&=-\dfrac{qt}{4\pi\varepsilon_0r^2}\boldsymbol{e}_r-\boldsymbol{\nabla}\dfrac{qt}{4\pi\varepsilon_0r}\\
+    \boldsymbol{A}'&=-\dfrac{qt}{4\pi\varepsilon_0r^2}\boldsymbol{e}_r-\dfrac{\partial \dfrac{qt}{4\pi\varepsilon_0r}}{\partial r}\boldsymbol{e}_r\\
+    \boldsymbol{A}'&=-\dfrac{qt}{4\pi\varepsilon_0r^2}\boldsymbol{e}_r+\dfrac{qt}{4\pi\varepsilon_0r^2}\boldsymbol{e}_r\\
+    \boldsymbol{A}'&=0\\
+    V'&=V-\frac{\partial\lambda}{\partial t}\\
+    V'&=\frac{\partial\dfrac{qt}{4\pi\varepsilon_0r}}{\partial t}\\
+    V'&=\dfrac{q}{4\pi\varepsilon_0r}\\
+\end{align*}
+\mysssec{设$V=0$，$A=A_0\sin(kx-\omega t)\boldsymbol{e}_y$，其中$A_0$，$\omega$和$k$为常数。求出$\boldsymbol{E}$和$\boldsymbol{B}$，并验证它们满足真
+空中的麦克斯韦方程。对$\omega$和$k$必须施加什么条件？}
+\begin{align*}
+    \boldsymbol{E}&=-\boldsymbol{\nabla}V-\frac{\partial\boldsymbol{A}}{\partial t}\\
+    \boldsymbol{E}&=-\frac{\partial A_0\sin(kx-\omega t)\boldsymbol{e}_y}{\partial t}\\
+    \boldsymbol{E}&=A_0\omega\cos(kx-\omega t)\boldsymbol{e}_y\\
+    \boldsymbol{B}&=\boldsymbol{\nabla}\times\boldsymbol{A}\\
+    \boldsymbol{B}&=\boldsymbol{\nabla}\times A_0\sin(kx-\omega t)\boldsymbol{e}_y\\
+    \boldsymbol{B}&=A_0k\cos(kx-\omega t)\boldsymbol{e}_z\\
+    \end{align*}
+    \begin{align*}
+    \boldsymbol{\nabla}\cdot\boldsymbol{E}&=\boldsymbol{\nabla}\cdot A_0\omega\cos(kx-\omega t)\boldsymbol{e}_y\\
+    \boldsymbol{\nabla}\cdot\boldsymbol{E}&=0\\
+    \boldsymbol{\nabla}\times\boldsymbol{E}&=-\frac{\partial \boldsymbol{B}}{\partial t}\\
+    \boldsymbol{\nabla}\cdot\boldsymbol{B}&=0\\
+    \boldsymbol{\nabla}\times\boldsymbol{B}&=\mu_0\boldsymbol{J}+\mu_0\varepsilon_0\frac{\partial \boldsymbol{E}}{\partial t}\\
+    \boldsymbol{\nabla}\times A_0k\cos(kx-\omega t)\boldsymbol{e}_z&=\mu_0\boldsymbol{J}+\mu_0\varepsilon_0\frac{\partial A_0\omega\cos(kx-\omega t)\boldsymbol{e}_y}{\partial t}\\
+    A_0k^2\sin(kx-\omega t)\boldsymbol{e}_y&=\mu_0\boldsymbol{J}+\mu_0\varepsilon_0A_0\omega^2\sin(kx-\omega t)\boldsymbol{e}_y\\
+    k^2&=\mu_0\varepsilon_0\omega^2
 \end{align*}
