@@ -202,21 +202,47 @@ $$
         \boldsymbol{A}&=\frac{\mu_0}{4\pi}\iiint\frac{\boldsymbol{J}(\boldsymbol{r}', t-\frac{\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}}{c})}{\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}}\dif ^3r'\\
     \end{aligned}\right\}
 \end{equation}
-\mysssec{一无限长直导线载有电流
+\mysssec{
+    (a)一无限长直导线载有电流
 $$I(t)=\left\{
 \begin{aligned}
     &0,\,&t\leq 0\\
     &I_0,\,&t> 0
 \end{aligned}\right.
 $$
-即，一常数电流$I_0$在$t=0$时刻突然出现。让导线沿着$z$轴放置，求$t=t_0$时$(s,0,0)$产生的电场和磁场。}
-\begin{align*}
+即，一常数电流$I_0$在$t=0$时刻突然出现。让导线沿着$z$轴放置，求$t$时$(s,0,0)$产生的电场和磁场。\\
+(b)设a中导线中的电流线性增大，$I=kt$，对$t>0$，求出产生的电磁场。\\
+(c)求出脉冲电流$I=q_0\delta(t)$。($\delta(f(x)) = \sum_{i} \frac{\delta(x - x_i)}{\vert{}f'(x_i)\vert{}}$)}
+(a)\begin{align*}
     \boldsymbol{A}&=\frac{\mu_0}{4\pi}\iiint\frac{\boldsymbol{J}(\boldsymbol{r}', t-\frac{\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}}{c})}{\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}}\dif ^3r'\\
     \boldsymbol{A}&=\frac{\mu_0}{4\pi}\int_{-\sqrt{c^2t^2-s^2}}^{\sqrt{c^2t^2-s^2}}\frac{I_0\boldsymbol{e}_z}{\sqrt{s^2+z'^2}}\dif z'\\
-    \boldsymbol{A}&=\frac{\mu_0}{4\pi}\int_{-\sqrt{c^2t^2-s^2}}^{\sqrt{c^2t^2-s^2}}\frac{I_0\boldsymbol{e}_z}{\sqrt{1+z'^2/s^2}}\dif \frac{z'}{s}\\
     \boldsymbol{A}&=\frac{\mu_0}{2\pi}\left.I_0\boldsymbol{e}_z\ln\left(\sqrt{s^2+z'^2}+z'\right)\right|_{0}^{\sqrt{c^2t^2-s^2}}\\
-    \boldsymbol{A}&=\frac{\mu_0}{2\pi}I_0\ln\frac{\sqrt{s^2+c^2t^2}+ct}{s}\boldsymbol{e}_z\\
+    \boldsymbol{A}&=\frac{\mu_0}{2\pi}I_0\ln\frac{\sqrt{c^2t^2-s^2}+ct}{s}\boldsymbol{e}_z\\
     \boldsymbol{E}&=-\frac{\partial\boldsymbol{A}}{\partial t}\\
     \boldsymbol{E}& = -\frac{\mu_0 I_0 c}{2\pi \sqrt{(ct)^2 - s^2}} \boldsymbol{e}_z\\
     \boldsymbol{B}&= \frac{\mu_0 I_0 c t}{2\pi s \sqrt{(ct)^2 - s^2}} \boldsymbol{e}_\phi
+\end{align*}
+
+(b)\begin{align*}
+    \boldsymbol{A}&=\frac{\mu_0}{4\pi}\int_{-\sqrt{c^2t^2-s^2}}^{\sqrt{c^2t^2-s^2}}\frac{k\left(ct-\sqrt{s^2+z'^2}\right)\boldsymbol{e}_z}{c\sqrt{s^2+z'^2}}\dif z'\\
+    \boldsymbol{A}&=\frac{\mu_0k}{4\pi}\int_{-\sqrt{c^2t^2-s^2}}^{\sqrt{c^2t^2-s^2}}\left(\frac{t\boldsymbol{e}_z}{\sqrt{s^2+z'^2}}
+    -\frac1c\boldsymbol{e}_z\right)\dif z'\\
+    \boldsymbol{A}&=\frac{\mu_0k}{2\pi}\left.\left[t\ln\left(\sqrt{s^2+z'^2}+z'\right)-\frac {z'}c\right]\right|_{0}^{\sqrt{c^2t^2-s^2}}\boldsymbol{e}_z\\
+    \boldsymbol{A}&=\frac{\mu_0kt}{2\pi}\ln\frac{\sqrt{c^2t^2-s^2}+ct}{s}\boldsymbol{e}_z-\frac{\mu_0k}{2\pi c}\sqrt{c^2t^2-s^2}\boldsymbol{e}_z\\
+    \boldsymbol{E}&=-\frac{\partial\boldsymbol{A}}{\partial t}\\
+    \boldsymbol{E}&= -\frac{\mu_0 k}{2\pi} \ln\left( \frac{ct + \sqrt{c^2t^2 - s^2}}{s} \right) \boldsymbol{e}_z\\
+    \boldsymbol{B}&= \frac{\mu_0 k \sqrt{(ct)^2 - s^2}}{2\pi c s} \boldsymbol{e}_{\phi}
+\end{align*}
+
+(c)\begin{align*}
+    \boldsymbol{A}&=\frac{\mu_0}{4\pi}\iiint\frac{q_0\delta\left(t-\sqrt{\frac{s^2+z'^2}{c^2}}\right)}{\sqrt{s^2+z'^2}}\dif ^3r'\boldsymbol{e}_z\\
+    \boldsymbol{A}&=\frac{\mu_0}{4\pi}\iiint\frac{q_0}{\sqrt{s^2+z'^2}} \sum_{i} \frac{\delta(z - z_i)}{\vert{}\frac{1}{c} \frac{z'}{\sqrt{s^2 + z'^2}}\vert{}}\dif ^3r'\boldsymbol{e}_z\\
+    \boldsymbol{A} &= \frac{\mu_0 q_0 c\boldsymbol{e}_z}{2\pi \sqrt{(ct)^2 - s^2}}
+\end{align*}
+
+\mysssec{一导线绕成一个回路，回路中有一随时间线性增加的电流。$I=kt$计算中心处的推迟矢势，求出中心处的电场。为何这个中性的导线能产生一个电场？}
+由于导线分为四段，将积分拆分为四个部分。
+\begin{align*}
+    \boldsymbol{A}&=\frac{\mu_0}{4\pi}\iiint\frac{\boldsymbol{J}(\boldsymbol{r}', t-\frac{\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}}{c})}{\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}}\dif ^3r'\\
+    \boldsymbol{A}&=\frac{\mu_0}{4\pi}\int_{-\sqrt{c^2t^2-s^2}}^{\sqrt{c^2t^2-s^2}}\frac{I_0\boldsymbol{e}_z}{\sqrt{s^2+z'^2}}\dif z'\\
 \end{align*}
