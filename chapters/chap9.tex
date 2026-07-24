@@ -202,6 +202,32 @@ $$
         \boldsymbol{A}&=\frac{\mu_0}{4\pi}\iiint\frac{\boldsymbol{J}(\boldsymbol{r}', t-\frac{\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}}{c})}{\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}}\dif ^3r'\\
     \end{aligned}\right\}
 \end{equation}
+\subsubsection{杰斐缅柯方程}
+\begin{align}
+    \boldsymbol{E}&=-\boldsymbol{\nabla}U-\frac{\partial\boldsymbol{A}}{\partial t}\nonumber\\
+    \boldsymbol{E}&=-\frac{1}{4\pi\varepsilon_0}\int\left(\frac{1}{\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}}\boldsymbol{\nabla}\rho+\rho\boldsymbol{\nabla}\frac{1}{\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}}\right)\dif\tau'-\frac{\mu_0}{4\pi}\int\frac{\boldsymbol{\dot J}}{\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}}\dif\tau'\nonumber\\
+    \boldsymbol{E}&=-\frac{1}{4\pi\varepsilon_0}\int\left(\frac{1}{\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}}\dot{\rho}\boldsymbol{\nabla}t_r+\rho\boldsymbol{\nabla}\frac{1}{\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}}\right)\dif\tau'-\frac{\mu_0}{4\pi}\int\frac{\boldsymbol{\dot J}}{\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}}\dif\tau'\nonumber\\
+    \boldsymbol{E}&=\frac{1}{4\pi\varepsilon_0}\int\left(\frac{\rho}{\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}^2}\boldsymbol{e}_{\boldsymbol{r} - \boldsymbol{r}'}
+    +\frac{\dot{\rho}}{c\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}}\boldsymbol{e}_{\boldsymbol{r} - \boldsymbol{r}'}
+    +\frac{\boldsymbol{\dot J}}{c^2\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}}\right)\dif\tau'
+\end{align}
+\begin{align}
+    \boldsymbol{B}&=\boldsymbol{\nabla}\times\boldsymbol{A}\nonumber\\
+    \boldsymbol{B}&=\frac{\mu_0}{4\pi}\int\frac{1}{\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}}\boldsymbol{\nabla}\times\boldsymbol{J}
+    +\boldsymbol{J}\boldsymbol{\nabla}\times\frac{1}{\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}}
+    \dif r'\nonumber\\
+    \boldsymbol{\nabla}\times\boldsymbol{J}&=\varepsilon_{ijk}\frac{\partial J_j}{\partial x_i}\boldsymbol{e}_k\nonumber\\
+    \boldsymbol{\nabla}\times\boldsymbol{J}&=\varepsilon_{ijk}\frac{\partial J_j}{\partial t_r}\frac{\partial t_r}{\partial x_i}\boldsymbol{e}_k\nonumber\\
+    \boldsymbol{\nabla}\times\boldsymbol{J}&=-\varepsilon_{ijk}\frac{\partial J_j}{\partial t_r}\frac{\partial r}{c\partial x_i}\boldsymbol{e}_k\nonumber\\
+    \boldsymbol{\nabla}\times\boldsymbol{J}&=-\varepsilon_{ijk}\frac{\partial J_j}{\partial t_r}\frac{\partial \sqrt{\left(x_n-x_n'\right)^2}}{c\partial x_i}\boldsymbol{e}_k\nonumber\\
+    \boldsymbol{\nabla}\times\boldsymbol{J}&=-\varepsilon_{ijk}\dot J_j\frac{x_i-x_i'}{c\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}}\boldsymbol{e}_k\nonumber\\
+    \boldsymbol{\nabla}\times\boldsymbol{J}&=\varepsilon_{ijk}\dot J_i\frac{x_j-x_j'}{c\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}}\boldsymbol{e}_k\nonumber\\
+    \boldsymbol\nabla \times \boldsymbol{J} &= \frac{1}{c} \dot{\boldsymbol{J}} \times \boldsymbol{e}_{\boldsymbol{r} - \boldsymbol{r}'}\\
+    \boldsymbol{B}&=\frac{\mu_0}{4\pi}\int\left(\frac{\dot{\boldsymbol{J}}}{c\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}} 
+    +\frac{\boldsymbol{J}}{\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}^2}\right)\times \boldsymbol{e}_{\boldsymbol{r} - \boldsymbol{r}'}
+    \dif r'
+\end{align}
+实际中，杰斐缅柯方程的应用很有限，因为一般求推迟势并求导比直接求场容易。
 \mysssec{
     (a)一无限长直导线载有电流
 $$I(t)=\left\{
@@ -240,9 +266,52 @@ $$
     \boldsymbol{A} &= \frac{\mu_0 q_0 c\boldsymbol{e}_z}{2\pi \sqrt{(ct)^2 - s^2}}
 \end{align*}
 
-\mysssec{一导线绕成一个回路，回路中有一随时间线性增加的电流。$I=kt$计算中心处的推迟矢势，求出中心处的电场。为何这个中性的导线能产生一个电场？}
+\mysssec{一导线绕成一个回路，回路中有一随时间线性增加的电流。$I=kt$计算中心处的推迟矢势，求出中心处的电场。}
 由于导线分为四段，将积分拆分为四个部分。
 \begin{align*}
     \boldsymbol{A}&=\frac{\mu_0}{4\pi}\iiint\frac{\boldsymbol{J}(\boldsymbol{r}', t-\frac{\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}}{c})}{\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}}\dif ^3r'\\
-    \boldsymbol{A}&=\frac{\mu_0}{4\pi}\int_{-\sqrt{c^2t^2-s^2}}^{\sqrt{c^2t^2-s^2}}\frac{I_0\boldsymbol{e}_z}{\sqrt{s^2+z'^2}}\dif z'\\
+    \boldsymbol{A}_0&=\frac{\mu_0}{4\pi}\int_{a}^{b}\frac{k\left(t-\frac{x}{c}\right)\boldsymbol{e}_x}{x}\dif x\\
+    \boldsymbol{A}_0&=\frac{\mu_0k\boldsymbol{e}_x}{4\pi}\left(\ln\frac{b}{a}-\frac{b-a}{c}\right)\\
+    \boldsymbol{A}_1&=\frac{\mu_0}{4\pi}\int_{0}^{\pi}\frac{k\left(t-\frac{b}{c}\right)\left(-\sin\theta\boldsymbol{e}_x+\cos\theta\boldsymbol{e}_y\right)}{b}b\dif \theta\\
+    \boldsymbol{A}_1&=\frac{\mu_0}{4\pi}\int_{0}^{\pi}k\left(t-\frac{b}{c}\right)\left(-\sin\theta\boldsymbol{e}_x+\cos\theta\boldsymbol{e}_y\right)\dif \theta\\
+    \boldsymbol{A}_1&=-\frac{\mu_0}{2\pi}k\left(t-\frac{b}{c}\right)\boldsymbol{e}_x\\
+\boldsymbol{A}_2&=\frac{\mu_0}{4\pi}\int_{-b}^{-a}\frac{k\left(t+\frac{x}{c}\right)\boldsymbol{e}_x}{|x|}\dif x\\
+    \boldsymbol{A}_2&=\frac{\mu_0}{4\pi}\int_{a}^{b}\frac{k\left(t-\frac{x}{c}\right)\boldsymbol{e}_x}{x}\dif x\\
+    \boldsymbol{A}_2&=\frac{\mu_0k\boldsymbol{e}_x}{4\pi}\left(t\ln\frac{b}{a}-\frac{b-a}{c}\right)
+    \end{align*}
+    \begin{align*}
+    \boldsymbol{A}_3&=\frac{\mu_0}{4\pi}\int_{\pi}^{0}\frac{k\left(t-\frac{a}{c}\right)\left(-\sin\theta\boldsymbol{e}_x+\cos\theta\boldsymbol{e}_y\right)}{a}a\dif \theta\\
+    \boldsymbol{A}_3&=\frac{\mu_0}{4\pi}\int_{\pi}^{0}k\left(t-\frac{a}{c}\right)\left(-\sin\theta\boldsymbol{e}_x+\cos\theta\boldsymbol{e}_y\right)\dif \theta\\
+    \boldsymbol{A}_3&=\frac{\mu_0}{2\pi}k\left(t-\frac{a}{c}\right)\boldsymbol{e}_x\\
+    \boldsymbol{A}&=\frac{\mu_0k\boldsymbol{e}_x}{2\pi}\left(t\ln\frac{b}{a}-\frac{b-a}{c}\right)
+    -\frac{\mu_0}{2\pi}k\left(t-\frac{b}{c}\right)\boldsymbol{e}_x
+    +\frac{\mu_0}{2\pi}k\left(t-\frac{a}{c}\right)\boldsymbol{e}_x\\
+    \boldsymbol{A}&=\frac{\mu_0k\boldsymbol{e}_x}{2\pi}t\ln\frac{b}{a}\\
+    \boldsymbol{E} &= -\frac{\partial \boldsymbol{A}}{\partial t}\\
+    \boldsymbol{E} &= -\frac{\mu_0 k}{2\pi} \ln\left(\frac{b}{a}\right) \boldsymbol{e}_x
+\end{align*}
+\subsection{点电荷}
+\subsubsection{李纳-维谢尔势}
+对于一个电荷量为 $q$、在空间中沿着轨迹 $\boldsymbol{r}_s(t')$ 运动的点电荷，其瞬时速度为 $\boldsymbol{v}(t') = \frac{d\boldsymbol{r}_s(t')}{dt'}$。它的电荷密度和电流密度为：
+$$\rho(\boldsymbol{r}', t') = q \delta^3[\boldsymbol{r}' - \boldsymbol{r}_s(t')],\,
+\boldsymbol{J}(\boldsymbol{r}', t') = q \boldsymbol{v}(t') \delta^3[\boldsymbol{r}' - \boldsymbol{r}_s(t')]$$
+\begin{align}
+    U(\boldsymbol{r}, t) &= \frac{1}{4\pi\varepsilon_0} \int \dif t' \int \dif ^3r' q \delta^3[\boldsymbol{r}' - \boldsymbol{r}_s(t')]\frac{\delta\left[t' - t + \frac{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t')\vert{}}{c}\right]}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t')\vert{}}\nonumber\\
+    U(\boldsymbol{r}, t) &= \frac{q}{4\pi\varepsilon_0} \int  \frac{\delta\left[t' - t + \frac{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t')\vert{}}{c}\right]}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t')\vert{}}\dif t'\nonumber\\
+    U(\boldsymbol{r}, t) &= \frac{q}{4\pi\varepsilon_0} \int  \frac{\delta\left(t'-t_r\right)}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t')\vert{}\left[1+\dfrac{\dif \vert{}\boldsymbol{r} -\boldsymbol{r}_s(t')\vert{}}{c\dif t'}\right]}\dif t'\nonumber\\
+    U(\boldsymbol{r}, t) &= \frac{q}{4\pi\varepsilon_0} \int  \frac{\delta\left(t'-t_r\right)}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t')\vert{}\left[1-\dfrac{\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t')}\cdot\boldsymbol{v}}{c}\right]}\dif t'\nonumber\\
+    U(\boldsymbol{r}, t) &= \frac{q}{4\pi\varepsilon_0} \frac{1}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}\left[1-\dfrac{\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}}{c}\right]}\\
+    \boldsymbol{A}(\boldsymbol{r}, t) &= \frac{\mu_0q}{4\pi} \frac{\boldsymbol{v}}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}\left[1-\dfrac{\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}}{c}\right]}
+\end{align}
+\mysssec{求出匀速运动$\boldsymbol{r}_s=vt\boldsymbol{e}_x$的点电荷的势。}
+为了方便凑项，我们定义光信号传播的时间差 $\tau = t - t_r$。那么推迟时间 $t_r = t - \tau$。
+\begin{align*}
+    c^2 \tau^2 &= (x - vt + v\tau)^2 + y^2 + z^2\\
+    (c^2 - v^2)\tau^2 - 2v(x - vt)\tau - \left[ (x - vt)^2 + y^2 + z^2 \right] &= 0\\
+    \frac{2v(x - vt)+ \sqrt{4v^2(x - vt)^2+4(c^2 - v^2)\left[ (x - vt)^2 + y^2 + z^2 \right] }}{2(c^2 - v^2)}&=\tau
+\end{align*}
+\begin{align*}
+    U&= \frac{q}{4\pi\varepsilon_0} \frac{1}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}\left[1-\dfrac{\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(_r)}\cdot\boldsymbol{v}}{c}\right]}\\
+    U&= \frac{q}{4\pi\varepsilon_0} \frac{1}{\vert{}\boldsymbol{r} - vt\boldsymbol{e}_x\vert{}\left[1-\dfrac{v\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(_r)}\cdot\boldsymbol{e}_x}{c}\right]}\\
+    U&= \frac{q}{4\pi\varepsilon_0} \frac{1}{\sqrt{(x- vt)^2+y^2+z^2}\left[1-\dfrac{v(x- vt)}{c\sqrt{(x- vt)^2+y^2+z^2}}\right]}
 \end{align*}
