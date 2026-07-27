@@ -296,22 +296,49 @@ $$
 $$\rho(\boldsymbol{r}', t') = q \delta^3[\boldsymbol{r}' - \boldsymbol{r}_s(t')],\,
 \boldsymbol{J}(\boldsymbol{r}', t') = q \boldsymbol{v}(t') \delta^3[\boldsymbol{r}' - \boldsymbol{r}_s(t')]$$
 \begin{align}
-    U(\boldsymbol{r}, t) &= \frac{1}{4\pi\varepsilon_0} \int \dif t' \int \dif ^3r' q \delta^3[\boldsymbol{r}' - \boldsymbol{r}_s(t')]\frac{\delta\left[t' - t + \frac{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t')\vert{}}{c}\right]}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t')\vert{}}\nonumber\\
+    U(\boldsymbol{r}, t) &= \frac{1}{4\pi\varepsilon_0} \int \dif t' \int \dif ^3r' q \delta^3[\boldsymbol{r}' - \boldsymbol{r}_s(t')]\frac{\delta\left[t' - t + \frac{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t')\vert{}}{c}\right]}{\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}}\nonumber\\
     U(\boldsymbol{r}, t) &= \frac{q}{4\pi\varepsilon_0} \int  \frac{\delta\left[t' - t + \frac{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t')\vert{}}{c}\right]}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t')\vert{}}\dif t'\nonumber\\
     U(\boldsymbol{r}, t) &= \frac{q}{4\pi\varepsilon_0} \int  \frac{\delta\left(t'-t_r\right)}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t')\vert{}\left[1+\dfrac{\dif \vert{}\boldsymbol{r} -\boldsymbol{r}_s(t')\vert{}}{c\dif t'}\right]}\dif t'\nonumber\\
     U(\boldsymbol{r}, t) &= \frac{q}{4\pi\varepsilon_0} \int  \frac{\delta\left(t'-t_r\right)}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t')\vert{}\left[1-\dfrac{\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t')}\cdot\boldsymbol{v}}{c}\right]}\dif t'\nonumber\\
-    U(\boldsymbol{r}, t) &= \frac{q}{4\pi\varepsilon_0} \frac{1}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}\left[1-\dfrac{\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}}{c}\right]}\\
-    \boldsymbol{A}(\boldsymbol{r}, t) &= \frac{\mu_0q}{4\pi} \frac{\boldsymbol{v}}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}\left[1-\dfrac{\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}}{c}\right]}
+    U(\boldsymbol{r}, t) &= \frac{q}{4\pi\varepsilon_0} \frac{c}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}\left[1-\dfrac{\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}}{c}\right]}= \frac{q}{4\pi\varepsilon_0} \frac{c}{c|\boldsymbol{r} - \boldsymbol{r}_s(t_r)|-[\boldsymbol{r}-\boldsymbol{r}_s(t_r)]\cdot\boldsymbol{v}(t_r)}\\
+    \boldsymbol{A}(\boldsymbol{r}, t) &= \frac{\mu_0q}{4\pi} \frac{c\boldsymbol{v}}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right]}
+\end{align}
+\subsubsection{运动点电荷的场}
+\begin{align}
+    \boldsymbol{\nabla}U&=-\frac{qc}{4\pi\varepsilon_0} \frac{1}{\left\{c|\boldsymbol{r} - \boldsymbol{r}_s(t_r)|-[\boldsymbol{r}-\boldsymbol{r}_s(t_r)]\cdot\boldsymbol{v}(t_r)\right\}^2}\boldsymbol{\nabla}c|\boldsymbol{r} - \boldsymbol{r}_s(t_r)|-[\boldsymbol{r}-\boldsymbol{r}_s(t_r)]\cdot\boldsymbol{v}(t_r)\nonumber
 \end{align}
 \mysssec{求出匀速运动$\boldsymbol{r}_s=vt\boldsymbol{e}_x$的点电荷的势。}
-为了方便凑项，我们定义光信号传播的时间差 $\tau = t - t_r$。那么推迟时间 $t_r = t - \tau$。
 \begin{align*}
-    c^2 \tau^2 &= (x - vt + v\tau)^2 + y^2 + z^2\\
-    (c^2 - v^2)\tau^2 - 2v(x - vt)\tau - \left[ (x - vt)^2 + y^2 + z^2 \right] &= 0\\
-    \frac{2v(x - vt)+ \sqrt{4v^2(x - vt)^2+4(c^2 - v^2)\left[ (x - vt)^2 + y^2 + z^2 \right] }}{2(c^2 - v^2)}&=\tau
+    |\boldsymbol{r}-\boldsymbol{v}t_r| &= c(t-t_r)\\
+    (c^2 - v^2)t_r^2 - 2(c^2t-vx)t_r +c^2t^2-x^2- y^2 - z^2 &= 0\\
+    \frac{(c^2t-vx)- \sqrt{(c^2t-vx)^2+(c^2 - v^2)\left( c^2t^2-x^2- y^2\right) }}{c^2 - v^2}&=t_r
 \end{align*}
 \begin{align*}
-    U&= \frac{q}{4\pi\varepsilon_0} \frac{1}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}\left[1-\dfrac{\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(_r)}\cdot\boldsymbol{v}}{c}\right]}\\
-    U&= \frac{q}{4\pi\varepsilon_0} \frac{1}{\vert{}\boldsymbol{r} - vt\boldsymbol{e}_x\vert{}\left[1-\dfrac{v\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(_r)}\cdot\boldsymbol{e}_x}{c}\right]}\\
-    U&= \frac{q}{4\pi\varepsilon_0} \frac{1}{\sqrt{(x- vt)^2+y^2+z^2}\left[1-\dfrac{v(x- vt)}{c\sqrt{(x- vt)^2+y^2+z^2}}\right]}
+    U&= \frac{q}{4\pi\varepsilon_0} \frac{c}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right]}\\
+    U&= \frac{q}{4\pi\varepsilon_0} \frac{c}{\vert{}\boldsymbol{r} - vt_r\boldsymbol{e}_x\vert{}\left(c-v\boldsymbol{e}_{\boldsymbol{r} -vt_r\boldsymbol{e}_x}\cdot\boldsymbol{e}_x\right)}\\
+    U&= \frac{q}{4\pi\varepsilon_0} \frac{c}{\left|\boldsymbol{r} - v\frac{(c^2t-vx)- \sqrt{(c^2t-vx)^2+(c^2 - v^2)\left( c^2t^2-x^2- y^2\right) }}{c^2 - v^2}\boldsymbol{e}_x\right|\left[c-v\frac{x-vt_r}{\sqrt{\left(x-vt_r\right)^2+y^2+z^2}}\right]}\\
+    U&= \frac{q}{4\pi\varepsilon_0} \frac{c}{\sqrt{(c^2t-xv)^2+(c^2-v^2)(r^2-c^2t^2)}}
+\end{align*}
+\mysssec{一个电荷为$q$的粒子以角速度$\omega$作半径为$a$的匀速圆周运动。（假设圆处在$xy$平面，圆心在原点，在$t=0$时刻，粒子位于$(a,0)0$处。）求出轴上各点处的李纳-维谢尔势。}
+\begin{align*}
+    |\boldsymbol{r}-\boldsymbol{v}t_r| &= c(t-t_r)\\
+    \left|a\cos(\omega t_r)\boldsymbol{e}_x+a\sin(\omega t_r)\boldsymbol{e}_y-\boldsymbol{r}\right| &= c(t-t_r)\\
+    [a\cos(\omega t_r)-x]^2+
+    [a\sin(\omega t_r)-y]^2+
+    z^2&=c^2(t-t_r)^2\\
+    t_r&=t-\frac{\sqrt{a^2+z^2}}{c}\\
+    U&= \frac{q}{4\pi\varepsilon_0} \frac{c}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right]}\\
+    U&= \frac{q}{4\pi\varepsilon_0} \frac{c}{\vert{}\boldsymbol{r} - a\cos(\omega t_r)\boldsymbol{e}_x-a\sin(\omega t_r)\boldsymbol{e}_y\vert{}c}\\
+    U&= \frac{q}{4\pi\varepsilon_0} \frac{1}{\sqrt{a^2+z^2}}\\
+\end{align*}
+\mysssec{确定双曲线运动$
+\boldsymbol{w}=\sqrt{b^2+(ct)^2}\boldsymbol{e}_x$的一个电荷的李纳-维谢尔势。假设点$\boldsymbol r$在$x$轴上并位于电荷的右侧。}
+\begin{align*}
+    v&=\frac{c^2t}{\sqrt{b^2+(ct)^2}}\\
+    |\boldsymbol{r}-\boldsymbol{v}t_r| &= c(t-t_r)\\
+    x-\sqrt{b^2+(ct_r)^2} &= c(t-t_r)\\
+     t_r&= \frac{(ct-x)^2-b^2}{2c(ct-x)}\\
+    U&= \frac{q}{4\pi\varepsilon_0} \frac{c}{(x-\sqrt{b^2+c^2t_r^2})\left(c-\frac{c^2t_r}{\sqrt{b^2+c^2t_r^2}}\right)}\\
+    U&= \frac{q}{4\pi\varepsilon_0} \frac{1}{(x-\sqrt{b^2+c^2t_r^2})\left(1-\frac{ct_r}{\sqrt{b^2+c^2t_r^2}}\right)}\\
+    U& = \frac{q}{4\pi\varepsilon_0} \frac{b^2 + (x - ct)^2}{(x^2 - c^2t^2 - b^2)(x - ct)}
 \end{align*}
