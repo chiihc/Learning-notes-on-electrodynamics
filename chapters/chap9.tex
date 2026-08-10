@@ -26,7 +26,7 @@ $$\boldsymbol{\nabla}\times\boldsymbol{\alpha}=0$$
 $$\boldsymbol{\alpha}=\boldsymbol{\nabla}\lambda$$
 这两个势也要给出同样的$\boldsymbol{E}$，所以
 $$\boldsymbol{\nabla}\left(\beta+\frac{\partial\lambda}{\partial t}\right)=0$$
-括号中的项因此不依赖于坐标（然而它可以依赖于时间），称它为$k(t)$，事实上，我们可以把$k(t)$吸收进$\lambda$中，通过增加一项$\int_{0}^{t}k(t')\dif t'$定义一个新的$\lambda$。这样有，
+括号中的项因此不依赖于坐标(然而它可以依赖于时间)，称它为$k(t)$，事实上，我们可以把$k(t)$吸收进$\lambda$中，通过增加一项$\int_{0}^{t}k(t')\dif t'$定义一个新的$\lambda$。这样有，
 \begin{equation}
     \left.\begin{aligned}
     \boldsymbol{A}'&=\boldsymbol{A}+\boldsymbol{\nabla}\lambda\\
@@ -55,7 +55,7 @@ $$\boldsymbol{\nabla}\left(\beta+\frac{\partial\lambda}{\partial t}\right)=0$$
     \end{aligned}\right\}
 \end{equation}
 
-洛伦兹规范的优点在于它对U和A的处理是相同的：相同的微分算子（这称为达朗贝尔（d'Alembertian)算子)同时出现在两个方程中。从现在开始，将只用洛伦兹规范。
+洛伦兹规范的优点在于它对U和A的处理是相同的：相同的微分算子(这称为达朗贝尔(d'Alembertian)算子)同时出现在两个方程中。从现在开始，将只用洛伦兹规范。
 \mysssec{证明$U$和$\boldsymbol{A}$的微分方程，可以写成下面更对称的形式
 \begin{equation}
     \left.\begin{aligned}
@@ -155,7 +155,7 @@ $$\boldsymbol{\nabla}\left(\beta+\frac{\partial\lambda}{\partial t}\right)=0$$
 \end{align*}
 \subsection{连续分布}
 \subsubsection{推迟势}
-这是（四个相同的）泊松方程，由于线性可加，先不管那个复杂连续的源 $\Phi(\boldsymbol{r}, t)$，我们假设在三维空间的原点 $\boldsymbol{r}' = 0$，在时间的零点 $t' = 0$，闪烁了一个极其极其短暂且微小的点火花。
+这是(四个相同的)泊松方程，由于线性可加，先不管那个复杂连续的源 $\Phi(\boldsymbol{r}, t)$，我们假设在三维空间的原点 $\boldsymbol{r}' = 0$，在时间的零点 $t' = 0$，闪烁了一个极其极其短暂且微小的点火花。
 $$\left(\nabla^2 - \frac{1}{c^2}\frac{\partial^2}{\partial t^2}\right) G(\boldsymbol{r}, t) = \delta^3(\boldsymbol{r})\delta(t)$$
 对时间和空间同时做傅里叶变换
 \begin{align}
@@ -314,4 +314,67 @@ $$\rho(\boldsymbol{r}', t') = q \delta^3[\boldsymbol{r}' - \boldsymbol{r}_s(t')]
     U&= \frac{q}{4\pi\varepsilon_0} \frac{1}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}\left[1-\dfrac{\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(_r)}\cdot\boldsymbol{v}}{c}\right]}\\
     U&= \frac{q}{4\pi\varepsilon_0} \frac{1}{\vert{}\boldsymbol{r} - vt\boldsymbol{e}_x\vert{}\left[1-\dfrac{v\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(_r)}\cdot\boldsymbol{e}_x}{c}\right]}\\
     U&= \frac{q}{4\pi\varepsilon_0} \frac{1}{\sqrt{(x- vt)^2+y^2+z^2}\left[1-\dfrac{v(x- vt)}{c\sqrt{(x- vt)^2+y^2+z^2}}\right]}
+\end{align*}
+\subsection{习题}
+\mysssec{假设你拿着半径为$a$的塑料环，有电荷附着在上面，电荷线密度为$\lambda|\sin(\theta/2)|$。使
+环以角速度$\boldsymbol\omega$绕其轴旋转。求出在环中心处的标量和矢量势。}
+\begin{align*}
+    U&=\frac{1}{4\pi\varepsilon_0}\int_0^{2\pi}\frac{\lambda|\sin(\theta/2)|}{a}a\dif \theta\\
+    U&=-\frac{1}{2\pi\varepsilon_0}\left.\lambda\cos(\theta/2)\right|_0^{2\pi}\\
+    U&=\frac{\lambda}{\pi\varepsilon_0}\\
+    \boldsymbol{J}(\boldsymbol{r},t)&=\boldsymbol{v}|\lambda\sin(\theta/2)|\\
+    \boldsymbol{J}(\boldsymbol{r},t)&=a\omega[ \cos(\theta+\omega t)\boldsymbol{e}_x+\sin(\theta+\omega t)\boldsymbol{e}_x]|\lambda\sin(\theta/2)|\\
+    \boldsymbol{A}&=\frac{\mu_0\lambda}{4\pi}\iiint\frac{\boldsymbol{J}(\boldsymbol{r}', t-\frac{a}{c})}{a}\dif ^3r'\\
+    \boldsymbol{A}&=\frac{\mu_0\lambda}{4\pi}\int_0^{2\pi}\frac{a\omega[ \cos(\theta+\omega t)\boldsymbol{e}_x+\sin(\theta+\omega t)\boldsymbol{e}_y]|\sin(\theta/2)|}{a}a\dif \theta\\
+    \boldsymbol{A}&=\frac{\mu_0\lambda}{4\pi}\int_0^{2\pi}a\omega[ \cos(\theta+\omega t)\boldsymbol{e}_x+\sin(\theta+\omega t)\boldsymbol{e}_y]\sin(\theta/2)\dif \theta\\
+    \boldsymbol{A}&=\frac{a\omega\mu_0\lambda}{3\pi}
+    \left[\cos\left(\omega t\right)
+    \boldsymbol{e}_x
+    +\sin\left(\omega t\right)\boldsymbol{e}_y
+    \right]
+\end{align*}
+\mysssec{电荷为$q_1$的一个粒子，静止在原点。另一个电荷为$q_2$的粒子沿$x$轴以双曲线函数接近它
+$x=\sqrt{b^2+c^2t^2}$
+在$t=0$时刻，它到达最接近点$b$，随后折返至无穷远。\\
+(a)在时刻$t$，(由于$q_1$)作用在$q_2$上的$F_2$，是什么?\\
+(b)$q_2$对$q_1$的总的冲量($\int_{-\infty}^{\infty}F_2\dif t$)是什么?\\
+(c)在时刻$t$，(由于$q_2$)作用在$q_1$上的$F_1$是什么?\\
+(d)$q_1$对$q_2$的总的冲量($\int_{-\infty}^{\infty}F_1\dif t$)是什么?}
+(a)
+\begin{align*}
+    F_2=\frac{q_1q_2}{4\pi\varepsilon_0(b^2+c^2t^2)}
+\end{align*}
+
+(b)\begin{align*}
+    \int_{-\infty}^{\infty}\frac{q_1q_2}{4\pi\varepsilon_0(b^2+c^2t^2)}\dif t&=\frac{q_1q_2}{4\varepsilon_0bc}
+\end{align*}
+
+(c)
+\begin{align*}
+    x&=\sqrt{b^2+c^2t^2}\\
+    v&=\frac{c^2t}{\sqrt{b^2+c^2t^2}}\\
+    a&=\frac{b^2c^2}{\sqrt{b^2+c^2t^2}^3}\\
+    \rho&=q_2\delta\left(x-\sqrt{b^2+c^2t^2}\right)\\
+    \dot\rho&=q_2\frac{\partial}{\partial t}\delta\left(x-\sqrt{b^2+c^2t^2}\right)\\
+    \dot\rho&=q_2\frac{\partial x}{\partial t}\frac{\partial}{\partial x}\delta\left(x-\sqrt{b^2+c^2t^2}\right)\\
+    \dot\rho&=q_2\frac{c^2t}{\sqrt{b^2+c^2t^2}}\frac{\partial}{\partial x}\delta\left(x-\sqrt{b^2+c^2t^2}\right)\\
+    J&=\rho v\\
+    \dot J&=\frac{\partial}{\partial t}\rho v\\
+    \dot J&=\rho a
+    +v\dot\rho\\
+    \dot J&=q_2\delta\left(x-\sqrt{b^2+c^2t^2}\right) \frac{b^2c^2}{\sqrt{b^2+c^2t^2}^3}
+    +\frac{c^2t}{\sqrt{b^2+c^2t^2}}q_2\frac{c^2t}{\sqrt{b^2+c^2t^2}}\frac{\partial}{\partial x}\delta\left(x-\sqrt{b^2+c^2t^2}\right)\\
+    \boldsymbol{E}&=\frac{1}{4\pi\varepsilon_0}\int\left(\frac{\rho}{\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}^2}\boldsymbol{e}_{\boldsymbol{r} - \boldsymbol{r}'}
+    +\frac{\dot{\rho}}{c\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}}\boldsymbol{e}_{\boldsymbol{r} - \boldsymbol{r}'}
+    +\frac{\boldsymbol{\dot J}}{c^2\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}}\right)\dif\tau'\\
+    E&=\frac{1}{4\pi\varepsilon_0}\int\left(\frac{q_2\delta\left(x-\sqrt{b^2+c^2t^2}\right)}{b^2+c^2t^2}
+    +\frac{q_2ct\frac{\partial}{\partial x}\delta\left(x-\sqrt{b^2+c^2t^2}\right)}{b^2+c^2t^2}
+    +\frac{\dot J}{c^2\sqrt{b^2+c^2t^2}}\right)\dif\tau'\\
+    E&=\frac{1}{4\pi\varepsilon_0}\int\left(\frac{\dot J}{c^2\sqrt{b^2+c^2t^2}}\right)\dif\tau'+\frac{q_2}{4\pi\varepsilon_0}\frac{1}{b^2+c^2t^2}\\
+    E&=\frac{q_2}{4\pi\varepsilon_0}\int\left(\frac{\delta\left(x-\sqrt{b^2+c^2t^2}\right) \frac{b^2}{\sqrt{b^2+c^2t^2}^3}
+    +\frac{c^2t^2}{b^2+c^2t^2}\frac{\partial}{\partial x}\delta\left(x-\sqrt{b^2+c^2t^2}\right)}{\sqrt{b^2+c^2t^2}}\right)\dif\tau'+\frac{q_2}{4\pi\varepsilon_0}\frac{1}{b^2+c^2t^2}\\
+    E&=\frac{q_2}{4\pi\varepsilon_0}\frac{b^2
+    }{\left(b^2+c^2t^2\right)^2}+\frac{q_2}{4\pi\varepsilon_0}\frac{1}{b^2+c^2t^2}\\
+    E&=\frac{q_2}{4\pi\varepsilon_0}\frac{2b^2+c^2t^2
+    }{\left(b^2+c^2t^2\right)^2}\\
 \end{align*}
