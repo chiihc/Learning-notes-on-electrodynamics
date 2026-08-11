@@ -342,7 +342,7 @@ $$\boldsymbol{\nabla}(\boldsymbol{r}-\boldsymbol{r}_s)\cdot\boldsymbol{v}(t_r)
     \boldsymbol{\nabla}(\boldsymbol{r}-\boldsymbol{r}_s)\cdot\boldsymbol{v}(t_r)
     &=\boldsymbol{\nabla}t_r[(\boldsymbol{r}-\boldsymbol{r}_s) \cdot \boldsymbol{a}- v^2]
     +\boldsymbol{v}\\
-    \boldsymbol{\nabla}U&=-\frac{qc}{4\pi\varepsilon_0} \frac{1}{\left\{c|\boldsymbol{r} - \boldsymbol{r}_s(t_r)|-[\boldsymbol{r}-\boldsymbol{r}_s(t_r)]\cdot\boldsymbol{v}(t_r)\right\}^2}\left\{\boldsymbol{v}-\boldsymbol{\nabla}t_r[(\boldsymbol{r}-\boldsymbol{r}_s) \cdot \boldsymbol{a}+c^2- v^2]\right\}\\
+    \boldsymbol{\nabla}U&=\frac{qc}{4\pi\varepsilon_0} \frac{\boldsymbol{v}-\boldsymbol{\nabla}t_r[(\boldsymbol{r}-\boldsymbol{r}_s) \cdot \boldsymbol{a}+c^2- v^2]}{\left\{c|\boldsymbol{r} - \boldsymbol{r}_s(t_r)|-[\boldsymbol{r}-\boldsymbol{r}_s(t_r)]\cdot\boldsymbol{v}(t_r)\right\}^2}\\
     -c\boldsymbol{\nabla}t_r&=\boldsymbol{\nabla}(\boldsymbol{r}-\boldsymbol{r}_s)\nonumber\\
     -c\boldsymbol{\nabla}t_r&=\frac{1}{2|\boldsymbol{r}-\boldsymbol{r}_s|}\boldsymbol{\nabla}(\boldsymbol{r}-\boldsymbol{r}_s)\cdot(\boldsymbol{r}-\boldsymbol{r}_s)\nonumber\\
     -c\boldsymbol{\nabla}t_r&=\frac{1}{|\boldsymbol{r}-\boldsymbol{r}_s|}\left\{(\boldsymbol{r}-\boldsymbol{r}_s)\times\left[\boldsymbol{\nabla}\times(\boldsymbol{r}-\boldsymbol{r}_s)\right]
@@ -352,13 +352,13 @@ $$\boldsymbol{\nabla}(\boldsymbol{r}-\boldsymbol{r}_s)\cdot\boldsymbol{v}(t_r)
     \boldsymbol{\nabla}t_r&=\frac{-(\boldsymbol{r}-\boldsymbol{r}_s)}{c|\boldsymbol{r}-\boldsymbol{r}_s|-(\boldsymbol{r}-\boldsymbol{r}_s)\cdot\boldsymbol{v}}
 \end{align}
 \begin{equation}
-    \boldsymbol{\nabla}U=-\frac{qc}{4\pi\varepsilon_0} \frac{\boldsymbol{v}\left[c|\boldsymbol{r}-\boldsymbol{r}_s|-(\boldsymbol{r}-\boldsymbol{r}_s)\cdot\boldsymbol{v}\right]
+    \boldsymbol{\nabla}U=\frac{qc}{4\pi\varepsilon_0} \frac{\boldsymbol{v}\left[c|\boldsymbol{r}-\boldsymbol{r}_s|-(\boldsymbol{r}-\boldsymbol{r}_s)\cdot\boldsymbol{v}\right]
     -(\boldsymbol{r}-\boldsymbol{r}_s)[(\boldsymbol{r}-\boldsymbol{r}_s) \cdot \boldsymbol{a}+c^2- v^2]}{\left\{c|\boldsymbol{r} - \boldsymbol{r}_s|-[\boldsymbol{r}-\boldsymbol{r}_s]\cdot\boldsymbol{v}\right\}^3}
 \end{equation}
 引进矢量
 \begin{align}
     \boldsymbol{u}&\equiv c\boldsymbol{e}_{\boldsymbol{r}-\boldsymbol{r}_s}-\boldsymbol{v}\\
-    \boldsymbol{\nabla}U&=-\frac{qc}{4\pi\varepsilon_0} \frac{\boldsymbol{v}\left[(\boldsymbol{r}-\boldsymbol{r}_s)\cdot\boldsymbol{u}\right]
+    \boldsymbol{\nabla}U&=\frac{qc}{4\pi\varepsilon_0} \frac{\boldsymbol{v}\left[(\boldsymbol{r}-\boldsymbol{r}_s)\cdot\boldsymbol{u}\right]
     -(\boldsymbol{r}-\boldsymbol{r}_s)[(\boldsymbol{r}-\boldsymbol{r}_s) \cdot \boldsymbol{a}+c^2- v^2]}{\left[(\boldsymbol{r}-\boldsymbol{r}_s)\cdot\boldsymbol{u}\right]^3}
 \end{align}
 \begin{align*}
@@ -368,28 +368,54 @@ $$\boldsymbol{\nabla}(\boldsymbol{r}-\boldsymbol{r}_s)\cdot\boldsymbol{v}(t_r)
     \frac{\partial\boldsymbol{A}}{\partial t_r}&=\frac{\mu_0qc\boldsymbol{a}}{4\pi\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right]}
     +\frac{\mu_0qc\boldsymbol{v}}{4\pi}\frac{\partial \frac{1}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right]}}{\partial t_r}\\
     \frac{\partial \frac{1}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right]}}{\partial t_r}&=
-    -\frac{1}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}^2\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right]^2}\frac{\partial \vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right]}{\partial t_r}
+    -\frac{1}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}^2\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right]^2}\frac{\partial \vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}c-\left[\boldsymbol{r} - \boldsymbol{r}_s(t_r)\right]\cdot\boldsymbol{v}}{\partial t_r}
 \end{align*}
 \begin{align*}
-    \frac{\partial \vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right]}{\partial t_r}&=
-    \frac{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}\partial \left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right]}{\partial t_r}
-    +\frac{\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right]\partial \vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}}{\partial t_r}\\
-    \frac{\partial \vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right]}{\partial t_r}&=
-    -\frac{\partial \left[\boldsymbol{r} - \boldsymbol{r}_s(t_r)\right]\cdot\boldsymbol{v}}{\partial t_r}
-    +\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right] \vert{}\boldsymbol{v}\vert{}\\
-    \frac{\partial \vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right]}{\partial t_r}&=
-    -\frac{\left[\boldsymbol{r} - \boldsymbol{r}_s(t_r)\right]\cdot\partial \boldsymbol{v}}{\partial t_r}
-    -\frac{\boldsymbol{v}\cdot\partial \left[\boldsymbol{r} - \boldsymbol{r}_s(t_r)\right]}{\partial t_r}
-    +\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right] \vert{}\boldsymbol{v}\vert{}\\
-    \frac{\partial \vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right]}{\partial t_r}&=
+    \frac{\partial \vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}c-\left[\boldsymbol{r} - \boldsymbol{r}_s(t_r)\right]\cdot\boldsymbol{v}}{\partial t_r}&=\frac{c\partial \vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}}{\partial t_r}
+    -\frac{\partial \left[\boldsymbol{r} - \boldsymbol{r}_s(t_r)\right]\cdot\boldsymbol{v}}{\partial t_r}\\
+    \frac{\partial \vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}c-\left[\boldsymbol{r} - \boldsymbol{r}_s(t_r)\right]\cdot\boldsymbol{v}}{\partial t_r}&=c\vert{}\boldsymbol{v}\vert{}
     -\left[\boldsymbol{r} - \boldsymbol{r}_s(t_r)\right]\cdot\boldsymbol{a}
-    +\boldsymbol{v}^2
-    +\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right] \vert{}\boldsymbol{v}\vert{}\\
+    +\boldsymbol{v}^2\\
     \frac{\partial \frac{1}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right]}}{\partial t_r}&=
-    -\frac{-\left[\boldsymbol{r} - \boldsymbol{r}_s(t_r)\right]\cdot\boldsymbol{a}
-    +\boldsymbol{v}^2
-    +\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right] \vert{}\boldsymbol{v}\vert{}}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}^2\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right]^2}
+    \frac{-c\vert{}\boldsymbol{v}\vert{}
+    +\left[\boldsymbol{r} - \boldsymbol{r}_s(t_r)\right]\cdot\boldsymbol{a}
+    -\boldsymbol{v}^2}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}^2\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right]^2}
 \end{align*}
+\begin{align*}
+    \frac{\partial\boldsymbol{A}}{\partial t_r}&=\frac{\mu_0qc\boldsymbol{a}}{4\pi\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right]}
+    +\frac{\mu_0qc\boldsymbol{v}}{4\pi}\frac{-c\vert{}\boldsymbol{v}\vert{}
+    +\left[\boldsymbol{r} - \boldsymbol{r}_s(t_r)\right]\cdot\boldsymbol{a}
+    -\boldsymbol{v}^2}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}^2\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right]^2}\\
+    \frac{\partial\boldsymbol{A}}{\partial t_r}&=
+    \frac{\mu_0qc}{4\pi}\frac{\boldsymbol{a}\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right]
+    -c\vert{}\boldsymbol{v}\vert{}\boldsymbol{v}
+    +\left[\boldsymbol{r} - \boldsymbol{r}_s(t_r)\right]\cdot\boldsymbol{a}\boldsymbol{v}
+    -\boldsymbol{v}^3}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}^2\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right]^2}
+\end{align*}
+\begin{align*}
+    t-t_r&=\frac{|\boldsymbol{r} -\boldsymbol{r}_s(t_r)|}{c}\\
+    1-\frac{\partial t_r}{\partial t}&=\frac{\partial |\boldsymbol{r} -\boldsymbol{r}_s(t_r)|}{\partial t_r}\frac{\partial t_r}{\partial t}\frac{1}{c}\\
+    1-\frac{\partial t_r}{\partial t}&=-\frac{\left[\boldsymbol{r} -\boldsymbol{r}_s(t_r)\right]\cdot\boldsymbol{v}}{c|\boldsymbol{r} -\boldsymbol{r}_s(t_r)|}\frac{\partial t_r}{\partial t}\\
+    \frac{\partial t_r}{\partial t}&=\frac{c|\boldsymbol{r} -\boldsymbol{r}_s(t_r)|}{c|\boldsymbol{r} -\boldsymbol{r}_s(t_r)|-\left[\boldsymbol{r} -\boldsymbol{r}_s(t_r)\right]\cdot\boldsymbol{v}}\\
+    \frac{\partial\boldsymbol{A}}{\partial t}&=\frac{\partial\boldsymbol{A}}{\partial t_r}\frac{\partial t_r}{\partial t}\\
+    \frac{\partial\boldsymbol{A}}{\partial t}&=\frac{\partial\boldsymbol{A}}{\partial t_r}\frac{c|\boldsymbol{r} -\boldsymbol{r}_s(t_r)|}{c|\boldsymbol{r} -\boldsymbol{r}_s(t_r)|-\left[\boldsymbol{r} -\boldsymbol{r}_s(t_r)\right]\cdot\boldsymbol{v}}\\
+    \frac{\partial\boldsymbol{A}}{\partial t}&=\frac{\mu_0qc^2}{4\pi}\frac{\boldsymbol{a}\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right]
+    -c\vert{}\boldsymbol{v}\vert{}\boldsymbol{v}
+    +\left[\boldsymbol{r} - \boldsymbol{r}_s(t_r)\right]\cdot\boldsymbol{a}\boldsymbol{v}
+    -\boldsymbol{v}^3}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}^2\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right]^3}\\
+    \frac{\partial\boldsymbol{A}}{\partial t}&=\frac{q\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}}{4\pi\varepsilon_0}\frac{\boldsymbol{a}\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right]
+    -c\vert{}\boldsymbol{v}\vert{}\boldsymbol{v}
+    +\left[\boldsymbol{r} - \boldsymbol{r}_s(t_r)\right]\cdot\boldsymbol{a}\boldsymbol{v}
+    -\boldsymbol{v}^3}{\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}^3\left[c-\boldsymbol{e}_{\boldsymbol{r} -\boldsymbol{r}_s(t_r)}\cdot\boldsymbol{v}\right]^3}\\
+    \frac{\partial\boldsymbol{A}}{\partial t}&=\frac{\mu_0qc^2\vert{}\boldsymbol{r} - \boldsymbol{r}_s(t_r)\vert{}}{4\pi}\frac{\left[\boldsymbol{r} - \boldsymbol{r}_s(t_r)\right]\cdot\boldsymbol{u}\boldsymbol{a}
+    -c\vert{}\boldsymbol{v}\vert{}\boldsymbol{v}
+    +\left[\boldsymbol{r} - \boldsymbol{r}_s(t_r)\right]\cdot\boldsymbol{a}\boldsymbol{v}
+    -\boldsymbol{v}^3}{\left\{\left[\boldsymbol{r} - \boldsymbol{r}_s(t_r)\right]\cdot\boldsymbol{u}\right\}^3}
+\end{align*}
+\begin{align}
+    \boldsymbol{E}&=-\boldsymbol{\nabla}U-\frac{\partial\boldsymbol{A}}{\partial t}\nonumber\\
+    \boldsymbol{E}&=\frac{qc\left|\boldsymbol{r}-\boldsymbol{r}_s\right|}{4\pi\varepsilon_0} \frac{\left(c^2-v^2\right)\boldsymbol{v}+\left(\boldsymbol{r}-\boldsymbol{r}_s\right)\times\left(\boldsymbol{u}\times\boldsymbol{a}\right)}{\left[(\boldsymbol{r}-\boldsymbol{r}_s)\cdot\boldsymbol{u}\right]^3}
+\end{align}
 \begin{align}
     \boldsymbol{\nabla}\times\boldsymbol{A}&=\frac{1}{c^2}\boldsymbol{\nabla}\times(U\boldsymbol{v})\nonumber\\
     \boldsymbol{\nabla}\times\boldsymbol{A}&=\frac{1}{c^2}\left[U(\boldsymbol{\nabla}\times\boldsymbol{v})-\boldsymbol{v}\times(\boldsymbol{\nabla}U)\right]\nonumber\\
@@ -481,47 +507,18 @@ $x=\sqrt{b^2+c^2t^2}$
     c^2(t-t_r)^2&=b^2+c^2t_r^2\\
     c^2t^2-2c^2tt_r&=b^2\\
     t_r&=\frac{c^2t^2-b^2}{2c^2t}\\
-    \vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}&=c(t-t_r)\\
-    \vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}&=\frac{c^2t^2+b^2}{2ct}
-\end{align*}
-\begin{align*}
-    x&=\sqrt{b^2+c^2t^2}\\
-    v&=\frac{c^2t}{\sqrt{b^2+c^2t^2}}\\
+    \boldsymbol x&=\sqrt{b^2+c^2t^2}\boldsymbol e_x\\
+    \boldsymbol v&=\frac{c^2t}{\sqrt{b^2+c^2t^2}}\boldsymbol e_x\\
     a&=\frac{b^2c^2}{\sqrt{b^2+c^2t^2}^3}\\
-    \rho&=q_2\delta\left(x-\sqrt{b^2+c^2t^2}\right)\\
-    \dot\rho&=q_2\frac{\partial}{\partial t}\delta\left(x-\sqrt{b^2+c^2t^2}\right)\\
-    \dot\rho&=-q_2\frac{c^2t}{\sqrt{b^2+c^2t^2}}\frac{\partial}{\partial x}\delta\left(x-\sqrt{b^2+c^2t^2}\right)\\
-    J&=\rho v\\
-    \dot J&=\frac{\partial}{\partial t}\rho v\\
-    \dot J&=\rho a
-    +v\dot\rho\\
-    \dot J&=q_2\delta\left(x-\sqrt{b^2+c^2t^2}\right) \frac{b^2c^2}{\sqrt{b^2+c^2t^2}^3}
-    -\frac{c^2t}{\sqrt{b^2+c^2t^2}}q_2\frac{c^2t}{\sqrt{b^2+c^2t^2}}\frac{\partial}{\partial x}\delta\left(x-\sqrt{b^2+c^2t^2}\right)\\
-    \boldsymbol{E}&=\frac{1}{4\pi\varepsilon_0}\int\left(\frac{\rho}{\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}^2}\boldsymbol{e}_{\boldsymbol{r} - \boldsymbol{r}'}
-    +\frac{\dot{\rho}}{c\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}}\boldsymbol{e}_{\boldsymbol{r} - \boldsymbol{r}'}
-    -\frac{\boldsymbol{\dot J}}{c^2\vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}}\right)\dif\tau'\\
-    E&=\frac{1}{4\pi\varepsilon_0}\int\left(\frac{q_2\delta\left(x-\sqrt{b^2+c^2t_r^2}\right)}{b^2+c^2t_r^2}
-    -\frac{q_2ct_r\frac{\partial}{\partial x}\delta\left(x-\sqrt{b^2+c^2t_r^2}\right)}{b^2+c^2t_r^2}
-    -\frac{\dot J}{c^2\sqrt{b^2+c^2t_r^2}}\right)\dif\tau'\\
-    E&=-\frac{1}{4\pi\varepsilon_0}\int\left(\frac{\dot J}{c^2\sqrt{b^2+c^2t_r^2}}\right)\dif\tau'+\frac{q_2}{4\pi\varepsilon_0}\frac{1}{b^2+c^2t_r^2}\left(\frac{\partial x-\sqrt{b^2+c^2t_r^2}}{\partial x}\right)^{-1}+\frac{\partial }{\partial x}\frac{q_2ct_r}{b^2+c^2t_r^2}\\
-    E&=-\frac{1}{4\pi\varepsilon_0}\int\left(\frac{\dot J}{c^2\sqrt{b^2+c^2t_r^2}}\right)\dif\tau'+\frac{q_2}{4\pi\varepsilon_0}\frac{1}{b^2+c^2t_r^2}+\frac{q_2}{4\pi\varepsilon_0}\frac{c^2t_r^2-b^2}{\left(b^2+c^2t_r^2\right)^2}\\
-    E&=-\frac{1}{4\pi\varepsilon_0}\int\left(\frac{\dot J}{c^2\sqrt{b^2+c^2t_r^2}}\right)\dif\tau'+\frac{q_2}{2\pi\varepsilon_0}\frac{c^2t_r^2}{\left(b^2+c^2t_r^2\right)^2}\\
-    E&=\frac{q_2}{2\pi\varepsilon_0}\frac{c^2t_r^2}{\left(b^2+c^2t_r^2\right)^2}
-    -\frac{q_2}{4\pi\varepsilon_0}\int\left(\frac{\delta\left(x-\sqrt{b^2+c^2t_r^2}\right) \frac{b^2}{\sqrt{b^2+c^2t_r^2}}
-    -c^2t_r^2\frac{\partial}{\partial x}\delta\left(x-\sqrt{b^2+c^2t_r^2}\right)}{\left(b^2+c^2t_r^2\right)\sqrt{b^2+c^2t_r^2}}\right)\dif\tau'\\
-    E&=\frac{q_2}{2\pi\varepsilon_0}\frac{c^2t_r^2}{\left(b^2+c^2t_r^2\right)^2}
-    -\frac{q_2}{4\pi\varepsilon_0}\frac{b^2
-    }{\left(b^2+c^2t_r^2\right)^2}
-    -\frac{q_2}{4\pi\varepsilon_0}\frac{\partial}{\partial x}\frac{c^2t_r^2}{\left(b^2+c^2t_r^2\right)^\frac{3}{2}}\\
-    E&=\frac{q_2}{4\pi\varepsilon_0}\frac{2c^2t_r^2-b^2
-    }{\left(b^2+c^2t_r^2\right)^2}
-    -\frac{q_2}{4\pi\varepsilon_0}\frac{2ct_r(b^2+c^2t_r^2)-3c^3t_r^3}{\left(b^2+c^2t_r^2\right)^\frac{5}{2}}\\
-    E&=\frac{q_2}{4\pi\varepsilon_0}\frac{2c^2t_r^2-b^2
-    }{\left(b^2+c^2t_r^2\right)^2}
-    -\frac{q_2}{4\pi\varepsilon_0}\frac{2ct_rb^2-c^3t_r^3}{\left(b^2+c^2t_r^2\right)^\frac{5}{2}}\\
-    E&=\frac{q_2}{4\pi\varepsilon_0}\frac{\left(\frac{c^2t^2-b^2}{2ct}\right)^2
-    }{\left[b^2+\left(\frac{c^2t^2-b^2}{2ct}\right)^2\right]^2}\\
-    E&=\frac{q_2}{\pi\varepsilon_0}\frac{c^2t^2\left(c^2t^2-b^2\right)^2
-    }{\left(c^2t^2+b^2\right)^4}
+    \vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}&=c(t-t_r)\\
+    \vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}&=\frac{c^2t^2+b^2}{2ct}\\
+    \boldsymbol{u}&=c\boldsymbol{e}_x-\frac{c^2t}{\sqrt{b^2+c^2t^2}}\boldsymbol e_x\\
+    \boldsymbol{E}&=\frac{qc\left|\boldsymbol{r}-\boldsymbol{r}_s\right|}{4\pi\varepsilon_0} \frac{\left(c^2-v^2\right)\boldsymbol{v}+\left(\boldsymbol{r}-\boldsymbol{r}_s\right)\times\left(\boldsymbol{u}\times\boldsymbol{a}\right)}{\left[(\boldsymbol{r}-\boldsymbol{r}_s)\cdot\boldsymbol{u}\right]^3}\\
+    \boldsymbol{E}&=\frac{qc\sqrt{b^2+c^2t_r^2}}{4\pi\varepsilon_0} \frac{\left(c^2-\frac{c^4t_r^2}{b^2+c^2t_r^2}\right)\frac{c^2t_r}{\sqrt{b^2+c^2t_r^2}}}{\left(-\sqrt{b^2+c^2t_r^2}c+c^2t_r\right)^3}\\
+    \boldsymbol{E}&=\frac{qt_r}{4\pi\varepsilon_0} \frac{c^2-\frac{c^4t_r^2}{b^2+c^2t_r^2}}{\left(-\sqrt{b^2+c^2t_r^2}+ct_r\right)^3}\\
+    \boldsymbol{E}&=\frac{qt_r}{4\pi\varepsilon_0} \frac{c^2b^2}{\left(-\sqrt{b^2+c^2t_r^2}+ct_r\right)^3\left(b^2+c^2t_r^2\right)}\\
+    \boldsymbol{E}&=\frac{q\frac{c^2t^2-b^2}{2c^2t}}{4\pi\varepsilon_0} \frac{c^2b^2}{\left(-\frac{c^2t^2+b^2}{2ct}+\frac{c^2t^2-b^2}{2ct}\right)^3\left(\frac{c^2t^2+b^2}{2ct}\right)^2}\\
+    \boldsymbol{E}&=\frac{q\frac{c^2t^2-b^2}{2c^2t}}{4\pi\varepsilon_0} \frac{c^2b^2}{\left(-\frac{b^2}{ct}\right)^3\left(\frac{c^2t^2+b^2}{2ct}\right)^2}\\
+    \boldsymbol{E}&=-\frac{q\frac{c^2t^2-b^2}{}}{2\pi\varepsilon_0} \frac{c^5t^4}{b^4\left(c^2t^2+b^2\right)^2}\\
 \end{align*}
 (d)
