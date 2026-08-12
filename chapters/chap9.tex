@@ -414,7 +414,7 @@ $$\boldsymbol{\nabla}(\boldsymbol{r}-\boldsymbol{r}_s)\cdot\boldsymbol{v}(t_r)
 \end{align*}
 \begin{align}
     \boldsymbol{E}&=-\boldsymbol{\nabla}U-\frac{\partial\boldsymbol{A}}{\partial t}\nonumber\\
-    \boldsymbol{E}&=\frac{qc\left|\boldsymbol{r}-\boldsymbol{r}_s\right|}{4\pi\varepsilon_0} \frac{\left(c^2-v^2\right)\boldsymbol{v}+\left(\boldsymbol{r}-\boldsymbol{r}_s\right)\times\left(\boldsymbol{u}\times\boldsymbol{a}\right)}{\left[(\boldsymbol{r}-\boldsymbol{r}_s)\cdot\boldsymbol{u}\right]^3}
+    \boldsymbol{E}&=\frac{q\left|\boldsymbol{r}-\boldsymbol{r}_s\right|}{4\pi\varepsilon_0} \frac{\left(c^2-v^2\right)\boldsymbol{u}+\left(\boldsymbol{r}-\boldsymbol{r}_s\right)\times\left(\boldsymbol{u}\times\boldsymbol{a}\right)}{\left[(\boldsymbol{r}-\boldsymbol{r}_s)\cdot\boldsymbol{u}\right]^3}
 \end{align}
 \begin{align}
     \boldsymbol{\nabla}\times\boldsymbol{A}&=\frac{1}{c^2}\boldsymbol{\nabla}\times(U\boldsymbol{v})\nonumber\\
@@ -508,17 +508,23 @@ $x=\sqrt{b^2+c^2t^2}$
     c^2t^2-2c^2tt_r&=b^2\\
     t_r&=\frac{c^2t^2-b^2}{2c^2t}\\
     \boldsymbol x&=\sqrt{b^2+c^2t^2}\boldsymbol e_x\\
-    \boldsymbol v&=\frac{c^2t}{\sqrt{b^2+c^2t^2}}\boldsymbol e_x\\
-    a&=\frac{b^2c^2}{\sqrt{b^2+c^2t^2}^3}\\
+    \boldsymbol v&=\frac{c^2t}{\sqrt{b^2+c^2t^2}}\boldsymbol e_x
+\end{align*}
+\begin{align*}
     \vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}&=c(t-t_r)\\
     \vert{}\boldsymbol{r} - \boldsymbol{r}'\vert{}&=\frac{c^2t^2+b^2}{2ct}\\
-    \boldsymbol{u}&=c\boldsymbol{e}_x-\frac{c^2t}{\sqrt{b^2+c^2t^2}}\boldsymbol e_x\\
-    \boldsymbol{E}&=\frac{qc\left|\boldsymbol{r}-\boldsymbol{r}_s\right|}{4\pi\varepsilon_0} \frac{\left(c^2-v^2\right)\boldsymbol{v}+\left(\boldsymbol{r}-\boldsymbol{r}_s\right)\times\left(\boldsymbol{u}\times\boldsymbol{a}\right)}{\left[(\boldsymbol{r}-\boldsymbol{r}_s)\cdot\boldsymbol{u}\right]^3}\\
-    \boldsymbol{E}&=\frac{qc\sqrt{b^2+c^2t_r^2}}{4\pi\varepsilon_0} \frac{\left(c^2-\frac{c^4t_r^2}{b^2+c^2t_r^2}\right)\frac{c^2t_r}{\sqrt{b^2+c^2t_r^2}}}{\left(-\sqrt{b^2+c^2t_r^2}c+c^2t_r\right)^3}\\
-    \boldsymbol{E}&=\frac{qt_r}{4\pi\varepsilon_0} \frac{c^2-\frac{c^4t_r^2}{b^2+c^2t_r^2}}{\left(-\sqrt{b^2+c^2t_r^2}+ct_r\right)^3}\\
-    \boldsymbol{E}&=\frac{qt_r}{4\pi\varepsilon_0} \frac{c^2b^2}{\left(-\sqrt{b^2+c^2t_r^2}+ct_r\right)^3\left(b^2+c^2t_r^2\right)}\\
-    \boldsymbol{E}&=\frac{q\frac{c^2t^2-b^2}{2c^2t}}{4\pi\varepsilon_0} \frac{c^2b^2}{\left(-\frac{c^2t^2+b^2}{2ct}+\frac{c^2t^2-b^2}{2ct}\right)^3\left(\frac{c^2t^2+b^2}{2ct}\right)^2}\\
-    \boldsymbol{E}&=\frac{q\frac{c^2t^2-b^2}{2c^2t}}{4\pi\varepsilon_0} \frac{c^2b^2}{\left(-\frac{b^2}{ct}\right)^3\left(\frac{c^2t^2+b^2}{2ct}\right)^2}\\
-    \boldsymbol{E}&=-\frac{q\frac{c^2t^2-b^2}{}}{2\pi\varepsilon_0} \frac{c^5t^4}{b^4\left(c^2t^2+b^2\right)^2}\\
+    \boldsymbol{u}&=-c\boldsymbol{e}_x-\frac{c^2t}{\sqrt{b^2+c^2t^2}}\boldsymbol e_x\\
+    \boldsymbol{E}&=\frac{q\left|\boldsymbol{r}-\boldsymbol{r}_s\right|}{4\pi\varepsilon_0} \frac{\left(c^2-v^2\right)\boldsymbol{u}+\left(\boldsymbol{r}-\boldsymbol{r}_s\right)\times\left(\boldsymbol{u}\times\boldsymbol{a}\right)}{\left[(\boldsymbol{r}-\boldsymbol{r}_s)\cdot\boldsymbol{u}\right]^3}\\
+    E&=\frac{q_2}{4\pi\varepsilon_0} \frac{c^2-\frac{c^4t_r^2}{b^2+c^2t_r^2}}{\left(\sqrt{b^2+c^2t_r^2}c+c^2t_r\right)^2}\\
+    E&=\frac{q_2}{4\pi\varepsilon_0} \frac{b^2}{\left(\sqrt{b^2+c^2t_r^2}+ct_r\right)^2\left(b^2+c^2t_r^2\right)}\\
+    E&=\frac{q_2}{4\pi\varepsilon_0} \frac{b^2}{\left(\frac{c^2t^2+b^2}{2ct}+\frac{c^2t^2-b^2}{2ct}\right)^2\left(\frac{c^2t^2+b^2}{2ct}\right)^2}\\
+    E&=\frac{q_2}{4\pi\varepsilon_0} \frac{4b^2c^2t^2}{\left(ct\right)^2\left(c^2t^2+b^2\right)^2}\\
+    E&=\frac{q_2}{\pi\varepsilon_0} \frac{b^2}{\left(c^2t^2+b^2\right)^2}\\
+    F&=\frac{q_1q_2}{\pi\varepsilon_0} \frac{b^2}{\left(c^2t^2+b^2\right)^2}
 \end{align*}
 (d)
+\begin{align*}
+    \int_{0}^{\infty}\frac{q_2}{\pi\varepsilon_0} \frac{b^2}{\left(c^2t^2+b^2\right)^2}\dif t&\xlongequal{t=\frac{b}{c}\tan\theta}\int_{0}^{\frac{\pi}{2}}\frac{q_2}{\pi\varepsilon_0} \frac{b^2}{\left(b^2\tan\theta^2+b^2\right)^2}\dif \frac{b}{c}\tan\theta\\
+    \int_{0}^{\infty}\frac{q_2}{\pi\varepsilon_0} \frac{b^2}{\left(c^2t^2+b^2\right)^2}\dif t&=\int_{0}^{\frac{\pi}{2}}\frac{q_2}{\pi\varepsilon_0bc} \cos^2\theta\dif \theta\\
+    \int_{0}^{\infty}\frac{q_2}{\pi\varepsilon_0} \frac{b^2}{\left(c^2t^2+b^2\right)^2}\dif t&=\frac{q_2}{4\pi\varepsilon_0bc} \\
+\end{align*}
