@@ -441,8 +441,9 @@ $$\boldsymbol{\nabla}(\boldsymbol{r}-\boldsymbol{r}_s)\cdot\boldsymbol{v}(t_r)
     -\boldsymbol\nabla U&=- \frac{q}{4\pi\varepsilon_0} \boldsymbol\nabla\frac{c}{\sqrt{(c^2t-xv)^2+(c^2-v^2)(r^2-c^2t^2)}}\\
     -\boldsymbol\nabla U&= \frac{q}{4\pi\varepsilon_0} \frac{c[-v(c^2t-xv)\boldsymbol{e}_x+(c^2-v^2)r\boldsymbol{e}_r]}{\sqrt{(c^2t-xv)^2+(c^2-v^2)(r^2-c^2t^2)}^3}\\
     \boldsymbol{E} &= -\boldsymbol\nabla U - \frac{\partial \boldsymbol{A}}{\partial t}\\
-    \boldsymbol{E} &= -\frac{q}{4\pi\varepsilon_0} \frac{c[-v(c^2t-xv)\boldsymbol{e}_x+(c^2-v^2)r\boldsymbol{e}_r]}{\sqrt{(c^2t-xv)^2+(c^2-v^2)(r^2-c^2t^2)}^3}- \frac{q}{4\pi\varepsilon_0}\frac{cv^2\boldsymbol{e}_x(tv-x)}{\sqrt{(c^2t-xv)^2+(c^2-v^2)(r^2-c^2t^2)}^3}\\
-    \boldsymbol{E} &= -\frac{q}{4\pi\varepsilon_0} \frac{c[-vc^2t\boldsymbol{e}_x+(c^2-v^2)r\boldsymbol{e}_r+v^3\boldsymbol{e}_xt]}{\sqrt{(c^2t-xv)^2+(c^2-v^2)(r^2-c^2t^2)}^3}
+    \boldsymbol{E} &= \frac{q}{4\pi\varepsilon_0} \frac{c[-v(c^2t-xv)\boldsymbol{e}_x+(c^2-v^2)r\boldsymbol{e}_r]}{\sqrt{(c^2t-xv)^2+(c^2-v^2)(r^2-c^2t^2)}^3}
+    + \frac{q}{4\pi\varepsilon_0}\frac{cv^2\boldsymbol{e}_x(tv-x)}{\sqrt{(c^2t-xv)^2+(c^2-v^2)(r^2-c^2t^2)}^3}\\
+    \boldsymbol{E} &= \frac{q}{4\pi\varepsilon_0} \frac{c[-vc^2t\boldsymbol{e}_x+(c^2-v^2)r\boldsymbol{e}_r+v^3\boldsymbol{e}_xt]}{\sqrt{(c^2t-xv)^2+(c^2-v^2)(r^2-c^2t^2)}^3}
 \end{align*}
 \mysssec{一个电荷为$q$的粒子以角速度$\omega$作半径为$a$的匀速圆周运动。（假设圆处在$xy$平面，圆心在原点，在$t=0$时刻，粒子位于$(a,0)0$处。）求出轴上各点处的势和场。}
 \begin{align*}
@@ -526,5 +527,28 @@ $x=\sqrt{b^2+c^2t^2}$
 \begin{align*}
     \int_{0}^{\infty}\frac{q_2}{\pi\varepsilon_0} \frac{b^2}{\left(c^2t^2+b^2\right)^2}\dif t&\xlongequal{t=\frac{b}{c}\tan\theta}\int_{0}^{\frac{\pi}{2}}\frac{q_2}{\pi\varepsilon_0} \frac{b^2}{\left(b^2\tan\theta^2+b^2\right)^2}\dif \frac{b}{c}\tan\theta\\
     \int_{0}^{\infty}\frac{q_2}{\pi\varepsilon_0} \frac{b^2}{\left(c^2t^2+b^2\right)^2}\dif t&=\int_{0}^{\frac{\pi}{2}}\frac{q_2}{\pi\varepsilon_0bc} \cos^2\theta\dif \theta\\
-    \int_{0}^{\infty}\frac{q_2}{\pi\varepsilon_0} \frac{b^2}{\left(c^2t^2+b^2\right)^2}\dif t&=\frac{q_2}{4\pi\varepsilon_0bc} \\
+    \int_{0}^{\infty}\frac{q_2}{\pi\varepsilon_0} \frac{b^2}{\left(c^2t^2+b^2\right)^2}\dif t&=\frac{q_2}{4\pi\varepsilon_0bc}
 \end{align*}
+\mysssec{一个电荷为$q$的粒子以恒定速度$v$沿$x$轴运动。计算粒子在原点时，通过平面$x=a$的总功率。}
+\begin{align*}
+    \boldsymbol{S}&=\frac{1}{\mu_0}\boldsymbol{E}\times\boldsymbol{B}\\
+    \boldsymbol{S}&=\frac{1}{\mu_0}\boldsymbol{E}\times \frac{1}{c^2} (\boldsymbol{v} \times \boldsymbol{E})\\
+    \boldsymbol{S} &= \varepsilon_0 \left[ \boldsymbol{v}(\boldsymbol{E} \cdot \boldsymbol{E}) - \boldsymbol{E}(\boldsymbol{E} \cdot \boldsymbol{v}) \right]\\
+    S_x&= \varepsilon_0 \left( vE^2 - E_x^2 v \right)\\
+    S_x&= \varepsilon_0 v\left( E^2 - E_x^2  \right)
+\end{align*}
+\begin{align*}
+    \boldsymbol{E} &= \frac{q}{4\pi\varepsilon_0} \frac{c[-vc^2t\boldsymbol{e}_x+(c^2-v^2)r\boldsymbol{e}_r+v^3\boldsymbol{e}_xt]}{\sqrt{(c^2t-xv)^2+(c^2-v^2)(r^2-c^2t^2)}^3}\\
+    \boldsymbol{E} &= \frac{q}{4\pi\varepsilon_0} \frac{c(c^2-v^2)r\boldsymbol{e}_r}{\sqrt{(av)^2+(c^2-v^2)(a^2+\rho^2)}^3}\\
+    E_\rho^2&=\frac{q^2}{16\pi^2\varepsilon_0^2} \frac{c^2(c^2-v^2)^2(a^2+\rho^2)}{\left[(av)^2+(c^2-v^2)\rho^2\right]^3}\\
+    \int_{0}^{\infty}S_x\dif\sigma&=
+    \int_{0}^{\infty}\varepsilon_0 v\frac{q^2}{16\pi^2\varepsilon_0^2} \frac{c^2(c^2-v^2)^2\rho^2}{\left[(av)^2+(c^2-v^2)(a^2+\rho^2)\right]^3}2\pi\rho\dif\rho\\
+    \int_{0}^{\infty}S_x\dif\sigma&=
+    \int_{0}^{\infty}\varepsilon_0 v\frac{q^2}{8\pi\varepsilon_0^2} \frac{c^2(c^2-v^2)^2\rho^3}{\left[(av)^2+(c^2-v^2)(a^2+\rho^2)\right]^3}\dif\rho\\
+    \int_{0}^{\infty}S_x\dif\sigma&=
+    \frac{\varepsilon_0 vq^2}{16\pi\varepsilon_0^2}\int_{0}^{\infty} \frac{c^2(c^2-v^2)^2\rho^2}{\left[(av)^2+(c^2-v^2)(a^2+\rho^2)\right]^3}\dif\rho^2\\
+    \int_{0}^{\infty}S_x\dif\sigma&\xlongequal{u=a^2+\rho^2}
+    \frac{\varepsilon_0 vq^2}{16\pi\varepsilon_0^2}\int_{a^2}^{\infty} \frac{c^2(c^2-v^2)^2\left(u-a^2\right)}{\left[(av)^2+(c^2-v^2)u\right]^3}\dif u\\
+    P &= \frac{q^2 v}{32 \pi \varepsilon_0 a^2}
+\end{align*}
+\newpage
