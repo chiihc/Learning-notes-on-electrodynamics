@@ -1,4 +1,72 @@
 \cleardoublepage
 \section{辐射}
 \subsection{偶极辐射}
-\subsubsection{辐射定义}
+\subsubsection{电偶极子辐射}
+假设两个小金属球相距为$d$并用一个细导线相连。在时刻$t$，上面的小球带电$q(t)$，下面的为$-q(t)$。假设以角频率$\omega$驱动电荷通过导线在两端的小球上来回振荡，$q(t)=q_0\cos(\omega t)$这样产生一个振荡的电偶极子：
+\begin{equation}
+    p(t)=p_0\cos(\omega t)\boldsymbol{e}_z
+\end{equation}
+推迟势为
+\begin{equation}
+    U=\frac{1}{4\pi\varepsilon_0}\left\{\frac{q_0\cos\left[\omega\left(t-n_+/c\right)\right]}{n_+}
+    -\frac{q_0\cos\left[\omega\left(t-n_-/c\right)\right]}{n_-}\right\}
+\end{equation}
+式中:
+$$n_\pm =\sqrt{r^2\mp rd\cos\theta+\left(d/2\right)^2}$$
+现在把物理上的电偶极子变成理想的电偶极子，使正负电荷相距非常小$d<<r$：
+\begin{align*}
+    n_\pm &\cong   r\left(1\mp\frac{d}{2r}\cos\theta\right)\\
+    \cos\left[\omega\left(t-n_\pm/c\right)\right]&=
+    \cos\left[\omega\left(t-\frac{r}{c}\mp\frac{d}{2c}\cos\theta\right)\right]\\
+    \cos\left[\omega\left(t-n_\pm/c\right)\right]&=
+    \cos\left[\omega\left(t-\frac{r}{c}\right)\right]\cos\left(\frac{\omega d}{2c}\cos\theta\right)\mp
+    \sin\left[\omega\left(t-\frac{r}{c}\right)\right]\sin\left(\frac{\omega d}{2c}\cos\theta\right)
+\end{align*}
+假设$d<<\dfrac{c}{\omega}$
+\begin{align*}
+    \cos\left[\omega\left(t-n_\pm/c\right)\right]&\cong
+    \cos\left[\omega\left(t-\frac{r}{c}\right)\right]\mp
+    \sin\left[\omega\left(t-\frac{r}{c}\right)\right]\frac{\omega d}{2c}\cos\theta\\
+    U&=\frac{q_0\cos\left[\omega\left(t-\frac{r}{c}\right)\right]}{4\pi\varepsilon_0}\left\{\frac{1-
+    \frac{\omega d}{2c}\cos\theta\tan\left[\omega\left(t-\frac{r}{c}\right)\right]}{r-\frac{d}{2}\cos\theta}
+    -\frac{1+
+    \frac{\omega d}{2c}\cos\theta\tan\left[\omega\left(t-\frac{r}{c}\right)\right]}{r+\frac{d}{2}\cos\theta}\right\}\\
+    U&=\frac{q_0\cos\left[\omega\left(t-\frac{r}{c}\right)\right]\cos\theta}{4\pi\varepsilon_0}\left\{\frac{
+    4d-4\frac{r\omega d}{c}\tan\left[\omega\left(t-\frac{r}{c}\right)\right]}{4r^2-d^2\cos^2\theta}
+    \right\}\\
+    U&=\frac{q_0d\cos\left[\omega\left(t-\frac{r}{c}\right)\right]\cos\theta}{4\pi\varepsilon_0}\left\{\frac{
+    4c-4r\omega\tan\left[\omega\left(t-\frac{r}{c}\right)\right] }{4r^2c}
+    \right\}\\
+\end{align*}
+假设$r>>\dfrac{c}{\omega}$
+\begin{equation}
+    U=-\frac{q_0d\sin\left[\omega\left(t-\frac{r}{c}\right)\right]}{4\pi\varepsilon_0}\frac{
+    \omega \cos\theta}{rc}
+\end{equation}
+\begin{align}
+    \boldsymbol{I}&=\frac{\dif q}{\dif t}\boldsymbol{e}_z\nonumber\\
+    \boldsymbol{I}&=-q_0\omega\sin(\omega t)\boldsymbol{e}_z\nonumber\\
+    \boldsymbol{A}&=\frac{\mu_0}{4\pi}\int_{\frac{d}{2}}^{\frac{d}{2}}\frac{-q_0\omega\sin\left(t\omega-\frac{r\omega}{c}\right)}{r}\boldsymbol{e}_z\dif z\nonumber\\
+    \boldsymbol{A}&=\frac{\mu_0}{4\pi}\frac{-p_0\omega\sin\left(t\omega-\frac{r\omega}{c}\right)}{r}\boldsymbol{e}_z
+\end{align}
+\begin{align}
+    \boldsymbol{\nabla}U&=\frac{\partial U}{\partial r}\boldsymbol{e}_r+\frac{\partial U}{r\partial \theta}\boldsymbol{e}_\theta\nonumber\\
+    \frac{\partial U}{\partial r}&=-\frac{\partial \frac{p_0\sin\left[\omega\left(t-\frac{r}{c}\right)\right]}{4\pi\varepsilon_0}\frac{
+    \omega \cos\theta}{rc}}{\partial r}\nonumber\\
+    \frac{\partial U}{\partial r}&=\frac{p_0\sin\left[\omega\left(t-\frac{r}{c}\right)\right]}{4\pi\varepsilon_0}\frac{
+    \omega \cos\theta}{r^2c}
+    +\frac{\omega^2 \cos\theta}{rc^2}\frac{p_0\cos\left[\omega\left(t-\frac{r}{c}\right)\right]}{4\pi\varepsilon_0}\nonumber\\
+    \frac{\partial U}{\partial r}&\cong\frac{\omega^2 \cos\theta}{rc^2}\frac{p_0\cos\left[\omega\left(t-\frac{r}{c}\right)\right]}{4\pi\varepsilon_0}\nonumber\\
+    \frac{\partial U}{r\partial \theta}&=-\frac{\partial \frac{q_0d\sin\left[\omega\left(t-\frac{r}{c}\right)\right]}{4\pi\varepsilon_0}\frac{
+    \omega \cos\theta}{rc}}{r\partial \theta}\nonumber\\
+    \frac{\partial U}{r\partial \theta}&=\frac{q_0d\sin\left[\omega\left(t-\frac{r}{c}\right)\right]}{4\pi\varepsilon_0}\frac{
+    \omega \sin\theta}{r^2c}\nonumber\\
+    \boldsymbol{\nabla}U&\cong\frac{\omega^2 \cos\theta}{rc^2}\frac{p_0\cos\left[\omega\left(t-\frac{r}{c}\right)\right]}{4\pi\varepsilon_0}\boldsymbol{e}_r\\
+    \frac{\partial \boldsymbol{A}}{\partial t}&=\frac{\partial \frac{\mu_0}{4\pi}\frac{-p_0\omega\sin\left(t\omega-\frac{r\omega}{c}\right)}{r}\boldsymbol{e}_z}{\partial t}\nonumber\\
+    \frac{\partial \boldsymbol{A}}{\partial t}&=-\frac{\mu_0}{4\pi}\frac{p_0\omega^2\cos\left(t\omega-\frac{r\omega}{c}\right)}{r}\boldsymbol{e}_z\nonumber\\
+    \frac{\partial \boldsymbol{A}}{\partial t}&=-\frac{p_0\omega^2\cos\left(t\omega-\frac{r\omega}{c}\right)}{4\pi\varepsilon_0 rc^2}\left(\cos\theta\boldsymbol{e}_r-\sin\theta\boldsymbol{e}_\theta\right)\nonumber\\
+    \boldsymbol{E}&=-\boldsymbol{\nabla}U-\frac{\partial \boldsymbol{A}}{\partial t}\nonumber\\
+    \boldsymbol{E}&=-\frac{p_0\omega^2\cos\left(t\omega-\frac{r\omega}{c}\right)}{4\pi\varepsilon_0 rc^2}\sin\theta\boldsymbol{e}_\theta\\
+    \boldsymbol{B}&=\boldsymbol{\nabla}\times\boldsymbol{A}\nonumber\\
+    \boldsymbol{B}&=\boldsymbol{\nabla}\times\frac{\mu_0}{4\pi}\frac{-p_0\omega\sin\left(t\omega-\frac{r\omega}{c}\right)}{r}\left(\cos\theta\boldsymbol{e}_r-\sin\theta\boldsymbol{e}_\theta\right)\nonumber\\
+\end{align}

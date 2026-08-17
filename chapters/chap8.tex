@@ -497,32 +497,32 @@ w&=\frac{\varepsilon}{4} E_0^2e^{-2\kappa z}+\frac{\varepsilon}{4}\sqrt{1+\left(
 \end{align*}
 \mysssec{对于单个共振角频率$\omega_0$，求反常色散区域的宽度。设$\gamma<<\omega_0$，证明折射率呈现最大和最小值处，吸收系数是最大值的一半。}
 \begin{align*}
-    n&\approx1+\frac{Nq^2}{2m\varepsilon_0}\sum_j\frac{f_j\left(\omega_j^2-\omega^2\right)}{\left(\omega_j^2-\omega^2\right)^2+\gamma_j^2\omega^2}\\
-    \dif n&\approx\dif \frac{Nq^2}{2m\varepsilon_0}\sum_j\frac{2f_j\omega_0\left(\omega_0-\omega\right)}{4\omega_0^2\left(\omega_0-\omega\right)^2+\gamma_j^2\omega^2}\\
-    0&\approx\dif \frac{2\omega_0\left(\omega_0-\omega\right)}{4\omega_0^2\left(\omega_0-\omega\right)^2+\gamma_j^2\omega^2}\\
-    0&\approx\frac{-\left[4\omega_0^2\left(\omega_0-\omega\right)^2+\gamma_j^2\omega^2\right]
+    n&\cong 1+\frac{Nq^2}{2m\varepsilon_0}\sum_j\frac{f_j\left(\omega_j^2-\omega^2\right)}{\left(\omega_j^2-\omega^2\right)^2+\gamma_j^2\omega^2}\\
+    \dif n&=\dif \frac{Nq^2}{2m\varepsilon_0}\sum_j\frac{2f_j\omega_0\left(\omega_0-\omega\right)}{4\omega_0^2\left(\omega_0-\omega\right)^2+\gamma_j^2\omega^2}\\
+    0&=\dif \frac{2\omega_0\left(\omega_0-\omega\right)}{4\omega_0^2\left(\omega_0-\omega\right)^2+\gamma_j^2\omega^2}\\
+    0&=\frac{-\left[4\omega_0^2\left(\omega_0-\omega\right)^2+\gamma_j^2\omega^2\right]
     +8\omega_0^2\left(\omega_0-\omega\right)^2}{4\omega_0^2\left(\omega_0-\omega\right)^2+\gamma_j^2\omega^2}\\
-    0&\approx
+    0&=
     4\omega_0^2\left(\omega_0-\omega\right)^2-\gamma_j^2\omega^2\\
-    0&\approx
+    0&=
     4\left(\omega_0-\omega\right)^2-\gamma_j^2\\
-    \omega&\approx\omega_0\pm\frac{\gamma}{2}\\
-    \alpha&\approx\frac{Nq^2\omega^2}{m\varepsilon_0c}\sum_j\frac{f_j\gamma_j}{4\omega_0^2\left(\omega_0-\omega\right)^2+\gamma_j^2\omega^2}\\
-    \alpha&\approx \frac{K}{4\left(\omega_0-\omega\right)^2+\gamma_j^2}\\
-    \alpha\left(\omega\pm\frac{\gamma}{2}\right)&\approx \frac{1}{2}\alpha_{MAX}
+    \omega&=\omega_0\pm\frac{\gamma}{2}\\
+    \alpha&=\frac{Nq^2\omega^2}{m\varepsilon_0c}\sum_j\frac{f_j\gamma_j}{4\omega_0^2\left(\omega_0-\omega\right)^2+\gamma_j^2\omega^2}\\
+    \alpha&=\frac{K}{4\left(\omega_0-\omega\right)^2+\gamma_j^2}\\
+    \alpha\left(\omega\pm\frac{\gamma}{2}\right)&=\frac{1}{2}\alpha_{MAX}
 \end{align*}
 
 \mysssec{如果忽略阻尼，计算由式\ref{复波数}描述的波的群速度。证明即使$v>c$，仍有$v_g<c$。}
 \begin{align*}
-    k&\approx\frac{\omega}{c}\left(1+\frac{Nq^2}{2m\varepsilon_0}\sum_j\frac{f_j}{\omega_j^2-\omega^2}\right)\\
-    \dif k&\approx\dif \frac{\omega}{c}\left(1+\frac{Nq^2}{2m\varepsilon_0}\sum_j\frac{f_j}{\omega_j^2-\omega^2}\right)\\
-    \dif k&\approx\frac{\omega}{c}\dif \left(1+\frac{Nq^2}{2m\varepsilon_0}\sum_j\frac{f_j}{\omega_j^2-\omega^2}\right)
+    k&\cong \frac{\omega}{c}\left(1+\frac{Nq^2}{2m\varepsilon_0}\sum_j\frac{f_j}{\omega_j^2-\omega^2}\right)\\
+    \dif k&=\dif \frac{\omega}{c}\left(1+\frac{Nq^2}{2m\varepsilon_0}\sum_j\frac{f_j}{\omega_j^2-\omega^2}\right)\\
+    \dif k&=\frac{\omega}{c}\dif \left(1+\frac{Nq^2}{2m\varepsilon_0}\sum_j\frac{f_j}{\omega_j^2-\omega^2}\right)
     +\frac{1}{c}\left(1+\frac{Nq^2}{2m\varepsilon_0}\sum_j\frac{f_j}{\omega_j^2-\omega^2}\right)\dif\omega \\
-    \dif k&\approx\frac{\omega Nq^2}{2m\varepsilon_0c}\sum_j \frac{2\omega f_j}{\left(\omega_j^2-\omega^2\right)^2}\dif\omega
+    \dif k&=\frac{\omega Nq^2}{2m\varepsilon_0c}\sum_j \frac{2\omega f_j}{\left(\omega_j^2-\omega^2\right)^2}\dif\omega
     +\frac{1}{c}\left(1+\frac{Nq^2}{2m\varepsilon_0}\sum_j\frac{f_j}{\omega_j^2-\omega^2}\right)\dif\omega \\
-    \frac{1}{v_g}&\approx\frac{\omega^2 Nq^2}{2m\varepsilon_0c}\sum_j \frac{2f_j}{\left(\omega_j^2-\omega^2\right)^2}
+    \frac{1}{v_g}&=\frac{\omega^2 Nq^2}{2m\varepsilon_0c}\sum_j \frac{2f_j}{\left(\omega_j^2-\omega^2\right)^2}
     +\frac{1}{c}\left(1+\frac{Nq^2}{2m\varepsilon_0}\sum_j\frac{f_j}{\omega_j^2-\omega^2}\right)\\
-    \frac{1}{v_g}&\approx\frac{ Nq^2}{2m\varepsilon_0c}\sum_j \frac{f_j\omega^2+f_j\omega_j^2}{\left(\omega_j^2-\omega^2\right)^2}
+    \frac{1}{v_g}&=\frac{ Nq^2}{2m\varepsilon_0c}\sum_j \frac{f_j\omega^2+f_j\omega_j^2}{\left(\omega_j^2-\omega^2\right)^2}
     +\frac{1}{c}>\frac{1}{c}
 \end{align*}
 
