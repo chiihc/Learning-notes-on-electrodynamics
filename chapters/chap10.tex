@@ -44,8 +44,8 @@ $$n_\pm =\sqrt{r^2\mp rd\cos\theta+\left(d/2\right)^2}$$
     \omega \cos\theta}{rc}
 \end{equation}
 \begin{align}
-    \boldsymbol{I}&=\frac{\dif q}{\dif t}\boldsymbol{e}_z\nonumber\\
-    \boldsymbol{I}&=-q_0\omega\sin(\omega t)\boldsymbol{e}_z\nonumber\\
+    I&=\frac{\dif q}{\dif t}\nonumber\\
+    I&=-q_0\omega\sin(\omega t)\nonumber\\
     \boldsymbol{A}&=\frac{\mu_0}{4\pi}\int_{\frac{d}{2}}^{\frac{d}{2}}\frac{-q_0\omega\sin\left(t\omega-\frac{r\omega}{c}\right)}{r}\boldsymbol{e}_z\dif z\nonumber\\
     \boldsymbol{A}&=\frac{\mu_0}{4\pi}\frac{-p_0\omega\sin\left(t\omega-\frac{r\omega}{c}\right)}{r}\boldsymbol{e}_z
 \end{align}
@@ -69,4 +69,114 @@ $$n_\pm =\sqrt{r^2\mp rd\cos\theta+\left(d/2\right)^2}$$
     \boldsymbol{E}&=-\frac{p_0\omega^2\cos\left(t\omega-\frac{r\omega}{c}\right)}{4\pi\varepsilon_0 rc^2}\sin\theta\boldsymbol{e}_\theta\\
     \boldsymbol{B}&=\boldsymbol{\nabla}\times\boldsymbol{A}\nonumber\\
     \boldsymbol{B}&=\boldsymbol{\nabla}\times\frac{\mu_0}{4\pi}\frac{-p_0\omega\sin\left(t\omega-\frac{r\omega}{c}\right)}{r}\left(\cos\theta\boldsymbol{e}_r-\sin\theta\boldsymbol{e}_\theta\right)\nonumber\\
+    \boldsymbol{B}&=\frac{1}{r}\left(\frac{\partial ra_\theta}{\partial r}
+    -\frac{\partial a_r}{\partial \theta}\right)\boldsymbol{e}_\phi\nonumber\\
+    \boldsymbol{B}&=\frac{\mu_0p_0\omega}{4\pi r}\left[\frac{\partial \sin\left(t\omega-\frac{r\omega}{c}\right)\sin\theta}{\partial r}
+    +\frac{\partial \sin\left(t\omega-\frac{r\omega}{c}\right)\cos\theta}{r\partial \theta}\right]\boldsymbol{e}_\phi\nonumber\\
+    \boldsymbol{B}&=-\frac{\mu_0p_0\omega}{4\pi r}\left[\frac{\omega \cos\left(t\omega-\frac{r\omega}{c}\right)\sin\theta}{c}
+    +\frac{\sin\left(t\omega-\frac{r\omega}{c}\right)\sin\theta}{r}\right]\boldsymbol{e}_\phi\nonumber\\
+    \boldsymbol{B}&\cong-\frac{\mu_0p_0\omega^2}{4\pi rc}\cos\left(t\omega-\frac{r\omega}{c}\right)\sin\theta\boldsymbol{e}_\phi\\
+    \boldsymbol{S}&=\frac{1}{\mu_0}\boldsymbol{E}\times\boldsymbol{B}\nonumber\\
+    \boldsymbol{S}&=\frac{1}{\mu_0}\frac{p_0\omega^2\cos\left(t\omega-\frac{r\omega}{c}\right)}{4\pi\varepsilon_0 rc^2}\sin\theta\boldsymbol{e}_\theta\times\frac{\mu_0p_0\omega^2}{4\pi rc}\cos\left(t\omega-\frac{r\omega}{c}\right)\sin\theta\boldsymbol{e}_\phi\nonumber\\
+    \boldsymbol{S}&=\frac{p_0^2\omega^4}{16\pi^2\varepsilon_0 r^2c^3}\sin^2\theta\cos^2\left(t\omega-\frac{r\omega}{c}\right)\boldsymbol{e}_r\\
+    \langle\boldsymbol{S} \rangle&=\frac{p_0^2\omega^4}{32\pi^2\varepsilon_0 r^2c^3}\sin^2\theta\boldsymbol{e}_r\\
+    \langle P\rangle&=\int\boldsymbol{S}\cdot\dif\boldsymbol{a}\nonumber\\
+    \langle P\rangle&=\frac{p_0^2\omega^4}{12\pi\varepsilon_0c^3}
 \end{align}
+\subsubsection{磁偶极子辐射}
+假设有一个由导线构成的半径为$b$的环，它通有一个交变电流$I=I_0\cos\omega t$，这就是一个振动的磁偶极子模型$\boldsymbol{m}=\pi b^2I\boldsymbol{e}_z$
+\begin{align}
+    \boldsymbol{A}&=\frac{\mu_0}{4\pi}\int\frac{I_0\cos\left(t\omega-\frac{n\omega}{c}\right)}{n}\dif \boldsymbol{l}\nonumber
+\end{align}
+对于一个在$x$轴上方的点$r$，$\boldsymbol{A}$必定指向$y$方向，因为对称分布在$x$轴两边的$x$分量彼此抵消，故
+\begin{align}
+    \boldsymbol{A}&=\frac{\mu_0b}{4\pi}\int_0^{2\pi}\frac{I_0\cos\left(t\omega-\frac{n\omega}{c}\right)}{n}\cos\phi\boldsymbol{e}_y\dif \phi\nonumber
+\end{align}
+假设1:$b<<r$：
+\begin{align*}
+    n&\cong r\left(1-\frac{b}{r}\sin\theta\cos\phi\right)\\
+    \cos\left(t\omega-\frac{n\omega}{c}\right)&\cong\cos\left[t\omega-\frac{r\left(1-\frac{b}{r}\sin\theta\cos\phi\right)\omega}{c}\right]\\
+    \cos\left(t\omega-\frac{n\omega}{c}\right)&=\cos\left(t\omega-\frac{r\omega}{c}\right)\cos\left(\frac{b\sin\theta\cos\phi\omega}{c}\right)
+    -\sin\left(t\omega-\frac{r\omega}{c}\right)\sin\left(\frac{b\sin\theta\cos\phi\omega}{c}\right)
+\end{align*}
+假设2:$b<<\dfrac{c}{\omega}$
+\begin{align*}
+    \cos\left(t\omega-\frac{n\omega}{c}\right)&=\cos\left(t\omega-\frac{r\omega}{c}\right)
+    -\sin\left(t\omega-\frac{r\omega}{c}\right)\frac{b\sin\theta\cos\phi\omega}{c}\\
+    \boldsymbol{A}&\cong\frac{\mu_0I_0}{4\pi}\int_0^{2\pi}\frac{\cos\left(t\omega-\frac{r\omega}{c}\right)
+    -\sin\left(t\omega-\frac{r\omega}{c}\right)\frac{b\sin\theta\cos\phi\omega}{c}}{r\left(1-\frac{b}{r}\sin\theta\cos\phi\right)}\cos\phi\boldsymbol{e}_y\dif \phi\\
+    A&=\frac{\mu_0I_0b}{4\pi }\int_0^{2\pi}\frac{
+    c\cos\left(t\omega-\frac{r\omega}{c}\right)-\sin\left(t\omega-\frac{r\omega}{c}\right)b\sin\theta\cos\phi\omega}{cr^2}\left(r+b\sin\theta\cos\phi\right)\cos\phi\dif \phi\\
+    A&\cong\frac{\mu_0I_0b}{4\pi }\int_0^{2\pi}\frac{
+    c\cos\left(t\omega-\frac{r\omega}{c}\right)b\sin\theta\cos\phi-\sin\left(t\omega-\frac{r\omega}{c}\right)b\sin\theta\cos\phi\omega r}{cr^2}\cos\phi\dif \phi\\
+    A&=\frac{\mu_0I_0b^2}{4}\frac{
+    c\cos\left(t\omega-\frac{r\omega}{c}\right)-\sin\left(t\omega-\frac{r\omega}{c}\right)\omega r}{cr^2}\sin\theta
+\end{align*}
+假设3:$r>>\dfrac{c}{\omega}$
+\begin{align}
+    \boldsymbol{A}&=-\frac{\mu_0m_0}{4\pi}\frac{
+    \sin\left(t\omega-\frac{r\omega}{c}\right)\omega }{cr}\sin\theta\boldsymbol{e}_\phi\\
+    \boldsymbol{E}&=\frac{\mu_0m_0}{4\pi}\frac{
+    \cos\left(t\omega-\frac{r\omega}{c}\right)\omega^2 }{cr}\sin\theta\boldsymbol{e}_\phi\\
+    \boldsymbol{B}&=-\frac{\mu_0m_0}{4\pi}\frac{
+    \cos\left(t\omega-\frac{r\omega}{c^2}\right)\omega^2 }{cr}\sin\theta\boldsymbol{e}_\theta\\
+    \boldsymbol{S}&=\frac{\mu_0}{c}\left[\frac{m_0}{4\pi}\frac{
+    \cos\left(t\omega-\frac{r\omega}{c}\right)\omega^2 }{cr}\sin\theta\right]^2\boldsymbol{e}_r\\
+    \langle\boldsymbol{S} \rangle&=\frac{\mu_0}{c}\frac{m_0^2}{32\pi^2}\frac{\omega^4 }{c^2r^2}\sin^2\theta\boldsymbol{e}_r\\
+    \langle P\rangle&=\frac{\mu_0m_0^2\omega^4}{12\pi c^3}
+\end{align}
+\subsubsection{任意源的辐射}
+假设1:$r'<<r$：
+\begin{align*}
+    n&\cong r\left(1-\frac{\boldsymbol{r}\cdot\boldsymbol{r}'}{r^2}\right)\\
+    \rho\left(\boldsymbol{r}',t-\frac{n}{c}\right)&\cong\rho\left(\boldsymbol{r}',t-\frac{r}{c}+\frac{\boldsymbol{r}\cdot\boldsymbol{r}'}{rc }\right)
+\end{align*}
+\mysssec{求在偶极子中连接两端导线的“辐射电阻”}
+\begin{align*}
+    R&=\frac{\langle P\rangle}{\langle I^2\rangle}\\
+    R&=\frac{\frac{p_0^2\omega^4}{12\pi\varepsilon_0c^3}}{\frac{1}{2}q_0^2\omega^2}\\
+    R&=\frac{d^2\omega^2}{6\pi\varepsilon_0c^3}
+\end{align*}
+\mysssec{不利用假设3，计算振荡磁偶极子的电磁场。求出坡印廷矢量，证明辐射强度与利用近似3时所得到的结果相同。}
+\begin{align*}
+    \boldsymbol{A}&=\frac{\mu_0I_0b^2}{4}\frac{
+    c\cos\left(t\omega-\frac{r\omega}{c}\right)-\sin\left(t\omega-\frac{r\omega}{c}\right)\omega r}{cr^2}\sin\theta\boldsymbol{e}_\phi\\
+    \boldsymbol{E}&=\frac{\mu_0m_0\omega}{4\pi}\frac{
+    \cos\left(t\omega-\frac{r\omega}{c}\right)\omega r-c\sin\left(t\omega-\frac{r\omega}{c}\right)}{cr^2}\sin\theta\boldsymbol{e}_\phi\\
+    \boldsymbol{B}&=\boldsymbol{\nabla}\times\boldsymbol{A}\\
+    \boldsymbol{B}&=\frac{1}{r\sin\theta}\left(\frac{\partial\sin\theta  A}{\partial \theta}\right)\boldsymbol{e}_r
+    +\frac{1}{r\sin\theta }\left(
+    -\sin\theta\frac{\partial r A}{\partial r}
+    \right)\boldsymbol{e}_\theta\\
+    \boldsymbol{B}&=\frac{A}{r\tan\theta}\boldsymbol{e}_r
+    +\frac{1}{r\sin\theta }\left[
+    -\sin\theta\frac{\partial r \dfrac{\mu_0I_0b^2}{4}\dfrac{
+    c\cos\left(t\omega-\frac{r\omega}{c}\right)-\sin\left(t\omega-\frac{r\omega}{c}\right)\omega r}{cr^2}\sin\theta}{\partial r}
+    \right]\boldsymbol{e}_\theta\\
+    \boldsymbol{B}&=\frac{A}{r\tan\theta}\boldsymbol{e}_r
+    -\frac{1}{r}\left[
+    \frac{\partial \dfrac{\mu_0I_0b^2}{4}\dfrac{
+    c\cos\left(t\omega-\frac{r\omega}{c}\right)-\sin\left(t\omega-\frac{r\omega}{c}\right)\omega r}{cr}\sin\theta}{\partial r}
+    \right]\boldsymbol{e}_\theta\\
+    \boldsymbol{B}&=\frac{A}{r\tan\theta}\boldsymbol{e}_r
+    -\frac{\sin\theta}{r}\frac{\mu_0I_0b^2}{4}\left[
+    \dfrac{\sin\left(t\omega-\frac{r\omega}{c}\right)\omega r-c\cos\left(t\omega-\frac{r\omega}{c}\right)}{cr^2}
+    +\dfrac{\omega^2\cos\left(t\omega-\frac{r\omega}{c}\right)}{c^2}
+    \right]\boldsymbol{e}_\theta\\
+    S_\phi&=\frac{1}{\mu_0}\frac{\mu_0m_0\omega}{4\pi}\frac{
+    \cos\left(t\omega-\frac{r\omega}{c}\right)\omega r-c\sin\left(t\omega-\frac{r\omega}{c}\right)}{cr^2}\sin\theta\frac{A}{r\tan\theta}\\
+    S_\phi&=\frac{\mu_0m_0^2\omega}{16\pi^2}\frac{
+    \cos\left(t\omega-\frac{r\omega}{c}\right)\omega r-c\sin\left(t\omega-\frac{r\omega}{c}\right)}{cr^2}\frac{
+    c\cos\left(t\omega-\frac{r\omega}{c}\right)-\sin\left(t\omega-\frac{r\omega}{c}\right)\omega r}{cr^2}\sin\theta\cos\theta\\
+    \langle S_\phi\rangle&=0\\
+    S_r&=\frac{\mu_0m_0^2\omega}{16\pi^2}\frac{
+    \cos\Phi\omega r-c\sin\Phi}{cr^2}\frac{\sin^2\theta}{r}
+    \dfrac{\sin\Phi\omega rc-c^2\cos\Phi
+    +\omega^2r^2\cos\Phi}{c^2r^2}\\
+    \langle S_r\rangle&=\langle\frac{\mu_0m_0^2\omega}{16\pi^2}\frac{\sin^2\theta}{r}
+    \frac{\cos^2\Phi\omega r(-c^2
+    +\omega^2r^2)
+    -\sin^2\Phi\omega rc^2}
+    {c^3r^4}\rangle\\
+    \langle P\rangle&=\frac{\mu_0m_0^2\omega^4}{12\pi c^3}
+\end{align*}
