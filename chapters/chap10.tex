@@ -129,8 +129,57 @@ $$n_\pm =\sqrt{r^2\mp rd\cos\theta+\left(d/2\right)^2}$$
 假设1:$r'<<r$：
 \begin{align*}
     n&\cong r\left(1-\frac{\boldsymbol{r}\cdot\boldsymbol{r}'}{r^2}\right)\\
+    \frac{1}{n}&\cong \frac{1}{r}\left(1+\frac{\boldsymbol{r}\cdot\boldsymbol{r}'}{r^2}\right)\\
     \rho\left(\boldsymbol{r}',t-\frac{n}{c}\right)&\cong\rho\left(\boldsymbol{r}',t-\frac{r}{c}+\frac{\boldsymbol{r}\cdot\boldsymbol{r}'}{rc }\right)
 \end{align*}
+定义$t_0\equiv t-\frac{n}{c}$泰勒展开得
+\begin{align*}
+    \rho\left(\boldsymbol{r}',t-\frac{n}{c}\right)=\rho\left(\boldsymbol{r}',t_0\right)
+    +\dot\rho\left(\boldsymbol{r}',t_0\right)\frac{\boldsymbol{r}\cdot\boldsymbol{r}'}{rc }+...
+\end{align*}
+假设2:泰勒展开的高阶项可略去：
+\begin{align*}
+    U&=\frac{1}{4\pi\varepsilon_0}\int\frac{\rho}{n}\dif\tau\\
+    U&\cong\frac{1}{4\pi\varepsilon_0}\int\frac{\rho\left(\boldsymbol{r}',t_0\right)
+    +\dot\rho\left(\boldsymbol{r}',t_0\right)\frac{\boldsymbol{r}\cdot\boldsymbol{r}'}{rc }}{r}\left(1+\frac{\boldsymbol{r}\cdot\boldsymbol{r}'}{r^2}\right)\dif\tau\\
+    U&\cong\frac{1}{4\pi\varepsilon_0r}\left(\int \rho\dif\tau
+    +\frac{\boldsymbol{r}}{r^2}\cdot\int\boldsymbol{r'} \rho\dif\tau
+    +\frac{\boldsymbol{r}}{r c}\cdot\frac{\dif}{\dif t}\int \boldsymbol{r}'\rho\dif\tau\right)\\
+    U&\cong\frac{1}{4\pi\varepsilon_0r}\left[Q
+    +\frac{\boldsymbol{r}\cdot\boldsymbol{d}(t_0)}{r^2}\cdot
+    +\frac{\boldsymbol{r}\cdot\dot{\boldsymbol{d}}(t_0)}{r c}\right]
+\end{align*}
+\begin{align*}
+    \boldsymbol{A}&=\frac{\mu_0}{4\pi}\int\frac{\boldsymbol{J}(\boldsymbol{r}',t_0)}{n}\dif\tau\\
+    \boldsymbol{A}&\cong\frac{\mu_0}{4\pi}\int\frac{\boldsymbol{J}(\boldsymbol{r}',t_0)}{r}\dif\tau\\
+    \boldsymbol{A}&\cong\frac{\mu_0}{4\pi}\frac{\dot{\boldsymbol{d}}(t_0)}{r}\\
+    \boldsymbol{\nabla}t_0&=-\frac{1}{c}\boldsymbol{\nabla}r\\
+    \boldsymbol{\nabla}t_0&=-\frac{\boldsymbol{e}_r}{c}
+\end{align*}
+因为求的是辐射，所以不对变量$t_0$求导的项对辐射没有贡献
+\begin{align*}
+    \boldsymbol{\nabla}U&\cong\boldsymbol{\nabla}\left[\frac{1}{4\pi\varepsilon_0r}\frac{\boldsymbol{r}\cdot\dot{\boldsymbol{d}}(t_0)}{r c}\right]\\
+    \boldsymbol{\nabla}U&\cong\frac{1}{4\pi\varepsilon_0}\frac{\boldsymbol{r}\cdot\ddot{\boldsymbol{d}}(t_0)}{r^2 c}\boldsymbol{\nabla}t_0\\
+    \boldsymbol{\nabla}U&\cong-\frac{1}{4\pi\varepsilon_0}\frac{\boldsymbol{r}\cdot\ddot{\boldsymbol{d}}(t_0)}{r^2 c^2}\boldsymbol{e}_r\\
+    \boldsymbol{\nabla}\times\boldsymbol{A}&\cong\frac{\mu_0}{4\pi r}\boldsymbol{\nabla}\times\dot{\boldsymbol{d}}(t_0)\\
+    \boldsymbol{\nabla}\times\boldsymbol{A}&\cong\frac{\mu_0}{4\pi r}\left(\boldsymbol{\nabla}t_0\right)\times\ddot{\boldsymbol{d}}(t_0)\\
+    \boldsymbol{\nabla}\times\boldsymbol{A}&\cong-\frac{\mu_0}{4\pi rc}\boldsymbol{e}_r\times\ddot{\boldsymbol{d}}(t_0)\\
+    \frac{\partial \boldsymbol{A}}{\partial t}&\cong\frac{\mu_0}{4\pi r}\ddot{\boldsymbol{d}}(t_0)
+\end{align*}
+\begin{align}
+    \boldsymbol{E}(\boldsymbol{r},t)&\cong-\boldsymbol{\nabla}U-\frac{\partial \boldsymbol{A}}{\partial t}\nonumber\\
+    \boldsymbol{E}(\boldsymbol{r},t)&\cong\frac{\mu_0}{4\pi r}\left\{\left[\boldsymbol{e}_r\cdot\ddot{\boldsymbol{d}(t_0)}\right]\boldsymbol{e}_r-\ddot{\boldsymbol{d}}(t_0)\right\}\nonumber\\
+    \boldsymbol{E}(\boldsymbol{r},t)&\cong\frac{\mu_0}{4\pi r}\left\{\boldsymbol{e}_r\times\left[\boldsymbol{e}_r\times\ddot{\boldsymbol{d}(t_0)}\right]\right\}\\
+    \boldsymbol{B}&=\boldsymbol{\nabla}\times\boldsymbol{A}\nonumber\\
+    \boldsymbol{B}&\cong-\frac{\mu_0}{4\pi rc}\boldsymbol{e}_r\times\ddot{\boldsymbol{d}}(t_0)
+\end{align}
+如果使用球坐标，令$z$轴指向$\ddot{\boldsymbol{d}}(t_0)$方向
+\begin{align}
+    \boldsymbol{E}&\cong\frac{\mu_0\sin\theta}{4\pi r}\ddot{\boldsymbol{d}}(t_0)\boldsymbol{e}_\theta\\
+    \boldsymbol{B}&\cong\frac{\mu_0\sin\theta}{4\pi rc}\ddot{\boldsymbol{d}}(t_0)\boldsymbol{e}_\phi\\
+    \boldsymbol{S}&\cong\frac{\mu_0\sin^2\theta}{16\pi^2 r^2c}\ddot{\boldsymbol{d}}^2(t_0)\boldsymbol{e}_r\\
+    P&\cong\frac{\mu_0\ddot{\boldsymbol{d}}^2(t_0)}{6\pi c}
+\end{align}
 \mysssec{求在偶极子中连接两端导线的“辐射电阻”}
 \begin{align*}
     R&=\frac{\langle P\rangle}{\langle I^2\rangle}\\
@@ -179,4 +228,10 @@ $$n_\pm =\sqrt{r^2\mp rd\cos\theta+\left(d/2\right)^2}$$
     -\sin^2\Phi\omega rc^2}
     {c^3r^4}\rangle\\
     \langle P\rangle&=\frac{\mu_0m_0^2\omega^4}{12\pi c^3}
+\end{align*}
+\mysssec{一个半径为$b$的绝缘的圆形环位于$xy$平面, 中心在原点. 它的电荷线密度为$\lambda=\lambda_0\sin\phi$. 现在线圈以角速度$\omega$绕$z$轴旋转. 计算辐射功率}
+\begin{align*}
+    \boldsymbol{d}&=\int_{0}^{2\pi}\lambda_0\sin\left(\phi+\omega t\right) \left(x\boldsymbol{e}_x+y\boldsymbol{e}_y\right)\dif\phi\\
+    \boldsymbol{d}&=\int_{0}^{2\pi}\lambda_0\sin\phi \left(r\cos\phi\boldsymbol{e}_x+r\sin\phi\boldsymbol{e}_y\right)\dif\phi\\
+    P&=\frac{\mu_0\ddot{\boldsymbol{d}}^2(t_0)}{6\pi c}
 \end{align*}

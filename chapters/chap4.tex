@@ -38,6 +38,19 @@
 (a):$K=\sigma v=\sigma \omega r$
 
 (b):$J=\rho v=\frac{4Q}{3\pi R^3}r\sin\phi\omega$
+\mysssec{对空间体积$V$内的电荷和电流分布证明$\int_V\boldsymbol{J}\dif\tau=\dif\boldsymbol{d}/\dif t$}
+\begin{align*}
+    \int_V\boldsymbol{\nabla}\cdot\left(x\boldsymbol{J}\right)\dif\tau&=
+    \int_V\left(\boldsymbol{\nabla} x\cdot\boldsymbol{J}
+    +x\boldsymbol{\nabla}\cdot \boldsymbol{J}\right)\dif\tau\\
+    \int_{\dfrac{\partial V}{\partial n}}\left(x\boldsymbol{J}\right)\cdot\dif\boldsymbol{a}&=
+    \int_V\left(J_x
+    +x\boldsymbol{\nabla}\cdot \boldsymbol{J}\right)\dif\tau\\
+    0&=
+    \int_V\left(J_x
+    -x \frac{\partial \rho}{\partial t}\right)\dif\tau\\
+    \int_V\boldsymbol{J}\dif\tau&=\dif\boldsymbol{d}/\dif t
+\end{align*}
 \subsection{比奥萨伐尔定律}
 \subsubsection{稳恒电流}
 \begin{equation}
