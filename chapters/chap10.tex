@@ -191,7 +191,9 @@ $$n_\pm =\sqrt{r^2\mp rd\cos\theta+\left(d/2\right)^2}$$
     \boldsymbol{A}&=\frac{\mu_0I_0b^2}{4}\frac{
     c\cos\left(t\omega-\frac{r\omega}{c}\right)-\sin\left(t\omega-\frac{r\omega}{c}\right)\omega r}{cr^2}\sin\theta\boldsymbol{e}_\phi\\
     \boldsymbol{E}&=\frac{\mu_0m_0\omega}{4\pi}\frac{
-    \cos\left(t\omega-\frac{r\omega}{c}\right)\omega r-c\sin\left(t\omega-\frac{r\omega}{c}\right)}{cr^2}\sin\theta\boldsymbol{e}_\phi\\
+    \cos\left(t\omega-\frac{r\omega}{c}\right)\omega r-c\sin\left(t\omega-\frac{r\omega}{c}\right)}{cr^2}\sin\theta\boldsymbol{e}_\phi
+    \end{align*}
+    \begin{align*}
     \boldsymbol{B}&=\boldsymbol{\nabla}\times\boldsymbol{A}\\
     \boldsymbol{B}&=\frac{1}{r\sin\theta}\left(\frac{\partial\sin\theta  A}{\partial \theta}\right)\boldsymbol{e}_r
     +\frac{1}{r\sin\theta }\left(
@@ -232,6 +234,16 @@ $$n_\pm =\sqrt{r^2\mp rd\cos\theta+\left(d/2\right)^2}$$
 \mysssec{一个半径为$b$的绝缘的圆形环位于$xy$平面, 中心在原点. 它的电荷线密度为$\lambda=\lambda_0\sin\phi$. 现在线圈以角速度$\omega$绕$z$轴旋转. 计算辐射功率}
 \begin{align*}
     \boldsymbol{d}&=\int_{0}^{2\pi}\lambda_0\sin\left(\phi+\omega t\right) \left(x\boldsymbol{e}_x+y\boldsymbol{e}_y\right)\dif\phi\\
-    \boldsymbol{d}&=\int_{0}^{2\pi}\lambda_0\sin\phi \left(r\cos\phi\boldsymbol{e}_x+r\sin\phi\boldsymbol{e}_y\right)\dif\phi\\
-    P&=\frac{\mu_0\ddot{\boldsymbol{d}}^2(t_0)}{6\pi c}
+    \boldsymbol{d}&=\int_{0}^{2\pi}\lambda_0\sin\left(\phi+\omega t\right)\left(r\cos\phi\boldsymbol{e}_x+r\sin\phi\boldsymbol{e}_y\right)\dif\phi\\
+    \boldsymbol{d}&=\int_{0}^{2\pi}\lambda_0\left(\sin\phi\cos\omega t+\cos\phi\sin\omega t\right)\left(r\cos\phi\boldsymbol{e}_x+r\sin\phi\boldsymbol{e}_y\right)\dif\phi\\
+    \boldsymbol{d}&=\int_{0}^{2\pi}\lambda_0r\left(\sin^2\phi\cos\omega t\boldsymbol{e}_y+\cos^2\phi\sin\omega t\boldsymbol{e}_x\right)\dif\phi\\
+    \boldsymbol{d}&=\lambda_0r\pi\left(\cos\omega t\boldsymbol{e}_y+\sin\omega t\boldsymbol{e}_x\right)\\
+    \ddot{\boldsymbol{d}}&=-\lambda_0r\omega^2\pi\left(\cos\omega t\boldsymbol{e}_y+\sin\omega t\boldsymbol{e}_x\right)\\
+    \ddot{\boldsymbol{d}}^2&=\lambda_0^2r^2\omega^4\pi^2\\
+    P&=\frac{\mu_0\ddot{\boldsymbol{d}}^2(t_0)}{6\pi c}\\
+    P&=\frac{\mu_0\lambda_0^2r^2\omega^4\pi}{6c}
 \end{align*}
+\mysssec{作为一个电四极矩辐射模型，考虑两个相反方向振动的电偶极子，相距为d：\\
+（a）求标势和矢势。\\
+（b）求电场和磁场。\\
+（c）求坡印廷矢量和辐射功率。}
