@@ -244,9 +244,9 @@ $$n_\pm =\sqrt{r^2\mp rd\cos\theta+\left(d/2\right)^2}$$
     P&=\frac{\mu_0\lambda_0^2r^2\omega^4\pi}{6c}
 \end{align*}
 \mysssec{作为一个电四极矩辐射模型，考虑两个相反方向振动的电偶极子，相距为$d$：\\
-（a）求标势和矢势。\\
-（b）求电场和磁场。\\
-（c）求坡印廷矢量和辐射功率。}
+(a）求标势和矢势。\\
+(b）求电场和磁场。\\
+(c）求坡印廷矢量和辐射功率。}
 (a)
 \begin{align*}
     U&\cong-\frac{d_0\sin\left[\omega\left(t-\frac{r_{+}}{c}\right)\right]}{4\pi\varepsilon_0}\frac{
@@ -276,18 +276,544 @@ $$n_\pm =\sqrt{r^2\mp rd\cos\theta+\left(d/2\right)^2}$$
     \cos\left(\omega t_0\right)\\
     \boldsymbol{A}&\cong-\frac{\mu_0}{4\pi}\frac{d_0\omega\sin\left(t\omega-\frac{r_+\omega}{c}\right)}{r_+}\boldsymbol{e}_z
     +\frac{\mu_0}{4\pi}\frac{d_0\omega\sin\left(t\omega-\frac{r_-\omega}{c}\right)}{r_-}\boldsymbol{e}_z\\
-    \boldsymbol{A}&\cong-\frac{d_0\mu_0\omega^2\cos\theta d}{4\pi rc^2}
-    \cos\left(\omega t_0\right)
+    \boldsymbol{A}&\cong-\frac{d_0\mu_0\omega^2\cos\theta d}{4\pi rc}
+    \cos\left(\omega t_0\right)\boldsymbol{e}_z
 \end{align*}
 
 (b)
 \begin{align*}
     \boldsymbol{E}&=-\boldsymbol{\nabla}U-\frac{\partial \boldsymbol{A}}{\partial t}\\
     \boldsymbol{E}&=\boldsymbol{\nabla}\frac{d_0\omega^2\cos^2\theta d}{4\pi\varepsilon_0rc^2}
-    \cos\left(\omega t_0\right)+\frac{\partial \frac{d_0\mu_0\omega^2\cos\theta d}{4\pi rc^2}
-    \cos\left(\omega t_0\right)}{\partial t}\\
-    \boldsymbol{E}&=\frac{d_0\omega^2d}{4\pi c^2}\left[\boldsymbol{\nabla}\frac{\cos^2\theta }{\varepsilon_0r}
+    \cos\left(\omega t_0\right)+\frac{\partial \frac{d_0\mu_0\omega^2\cos\theta d}{4\pi rc}
+    \cos\left(\omega t_0\right)}{\partial t}\boldsymbol{e}_z\\
+    \boldsymbol{E}&=\frac{d_0\omega^2d}{4\pi c}\left[\boldsymbol{\nabla}\frac{\cos^2\theta }{\varepsilon_0rc}
     \cos\left(\omega t_0\right)
     -\frac{\mu_0\omega\cos\theta
-    \sin\left(\omega t_0\right)}{r}\right]\\
+    \sin\left(\omega t_0\right)}{r}\boldsymbol{e}_z\right]\\
+    \boldsymbol{\nabla}\frac{\cos^2\theta }{\varepsilon_0r}
+    \cos\left(\omega t_0\right)
+    &=\dfrac{\cos^2\theta\partial \dfrac{\cos\left(\omega t_0\right)}{r}
+    }{\varepsilon_0\partial r}\boldsymbol{e}_r
+    +\frac{\cos\left(\omega t_0\right)}{\varepsilon_0r^2}\dfrac{\partial \cos^2\theta 
+    }{\partial \theta}\boldsymbol{e}_\theta\\
+    \boldsymbol{\nabla}\frac{\cos^2\theta }{\varepsilon_0r}
+    \cos\left(\omega t_0\right)
+    &=\dfrac{\cos^2\theta\cos\left(\omega t_0\right)\partial \dfrac{1}{r}
+    }{\varepsilon_0\partial r}\boldsymbol{e}_r
+    +\dfrac{\cos^2\theta\dfrac{1}{r}\partial \cos\left(\omega t_0\right)
+    }{\varepsilon_0\partial r}\boldsymbol{e}_r
+    -\frac{2\cos\left(\omega t_0\right)\sin\theta\cos\theta}{\varepsilon_0r^2}\boldsymbol{e}_\theta\\
+    \boldsymbol{\nabla}\frac{\cos^2\theta }{\varepsilon_0r}
+    \cos\left(\omega t_0\right)
+    &=-\dfrac{\cos^2\theta\cos\left(\omega t_0\right)
+    }{\varepsilon_0r^2}\boldsymbol{e}_r
+    +\dfrac{\cos^2\theta\omega\sin\left(\omega t_0\right)
+    }{rc\varepsilon_0}\boldsymbol{e}_r
+    -\frac{2\cos\left(\omega t_0\right)\sin\theta\cos\theta}{\varepsilon_0r^2}\boldsymbol{e}_\theta\\
+    \boldsymbol{\nabla}\frac{\cos^2\theta }{\varepsilon_0r}
+    \cos\left(\omega t_0\right)
+    &=\dfrac{\cos^2\theta\omega\sin\left(\omega t_0\right)
+    }{rc\varepsilon_0}\boldsymbol{e}_r\\
+    \boldsymbol{E}&=\frac{d_0\omega^2d}{4\pi c}\left[\dfrac{\cos^2\theta\omega\sin\left(\omega t_0\right)
+    }{rc^2\varepsilon_0}\boldsymbol{e}_r
+    -\frac{\mu_0\omega\cos\theta
+    \sin\left(\omega t_0\right)}{r}\boldsymbol{e}_z\right]\\
+    \boldsymbol{E}&=\frac{d_0\omega^2d\sin\left(\omega t_0\right)\cos\theta\omega}{4\pi rc}\left[\mu_0\cos\theta
+    \boldsymbol{e}_r
+    -\mu_0 \left(\cos\theta{\boldsymbol{e}_r} -\sin\theta{\boldsymbol{e}_\theta} \right)\right]\\
+    \boldsymbol{E}&=\frac{d_0\omega^3d\sin\left(\omega t_0\right)\cos\theta}{4\pi rc}\mu_0\sin\theta{\boldsymbol{e}_\theta}
+\end{align*}
+\begin{align*}
+    \boldsymbol{B}&=\boldsymbol{\nabla}\times\boldsymbol{A}\\
+    \boldsymbol{B}&=\boldsymbol{\nabla}\times\frac{d_0\mu_0\omega^2\cos\theta d}{4\pi rc}
+    \cos\left(\omega t_0\right)\left(\cos\theta{\boldsymbol{e}_r} -\sin\theta{\boldsymbol{e}_\theta} \right)\\
+    \boldsymbol{B}&=\frac{d_0\mu_0\omega^2d}{4\pi c}\boldsymbol{\nabla}\times\frac{\cos\theta }{r}
+    \cos\left(\omega t_0\right)\left(-\cos\theta{\boldsymbol{e}_r} +\sin\theta{\boldsymbol{e}_\theta} \right)\\
+    \boldsymbol{B}&=\frac{1}{r}\left(\frac{\partial rA_\theta}{\partial r}
+    -\frac{\partial A_r}{\partial \theta}\right)\boldsymbol{e}_\phi\\
+    \boldsymbol{B}&=\frac{d_0\mu_0\omega^2d}{4\pi rc}\left[\frac{\partial r\frac{\cos\theta }{r}
+    \cos\left(\omega t_0\right)\sin\theta}{\partial r}
+    +\frac{\partial \frac{\cos^2\theta }{r}
+    \cos\left(\omega t_0\right)}{\partial \theta}\right]\boldsymbol{e}_\phi\\
+    \boldsymbol{B}&=\frac{d_0\mu_0\omega^2d}{4\pi rc}\left[\frac{\cos\theta
+    \sin\left(\omega t_0\right)\omega\sin\theta}{c}
+    -\frac{2\sin\theta\cos\theta }{r}
+    \cos\left(\omega t_0\right)\right]\boldsymbol{e}_\phi\\
+    \boldsymbol{B}&=\frac{d_0\mu_0\omega^3d}{4\pi rc^2}\cos\theta
+    \sin\left(\omega t_0\right)\sin\theta
+    \boldsymbol{e}_\phi
+\end{align*}
+
+(c)\begin{align*}
+    \boldsymbol{S}&=\frac{1}{\mu_0}\boldsymbol{E}\times\boldsymbol{B}\\
+    \boldsymbol{S}&=\frac{1}{\mu_0}\frac{d_0\omega^3d\sin\left(\omega t_0\right)\cos\theta}{4\pi rc}\mu_0\sin\theta{\boldsymbol{e}_\theta}\times\frac{d_0\mu_0\omega^3d}{4\pi rc^2}\cos\theta
+    \sin\left(\omega t_0\right)\sin\theta
+    \boldsymbol{e}_\phi\\
+    \boldsymbol{S}&=\frac{d_0^2\omega^6d^2\sin^2\left(\omega t_0\right)\cos^2\theta\mu_0}{16\pi^2 r^2c^3}\sin^2\theta
+    \boldsymbol{e}_r\\
+    \langle \boldsymbol{S}\rangle&=\frac{d_0^2\omega^6d^2\cos^2\theta\mu_0}{32\pi^2 r^2c^3}\sin^2\theta
+    \boldsymbol{e}_r\\
+    \langle P\rangle&=\int_{0}^{\pi}\frac{d_0^2\omega^6d^2\cos^2\theta\mu_0}{32\pi^2 r^2c^3}\sin^3\theta 4\pi r^2\dif \theta\\
+    \langle P\rangle&=-\int_{0}^{\pi}\frac{d_0^2\omega^6d^2\cos^2\theta\mu_0}{8\pi c^3}\left(1-\cos^2\theta\right)\dif \cos\theta\\
+    \langle P\rangle&=\frac{d_0^2\omega^6d^2\mu_0}{30\pi c^3}
+\end{align*}
+\subsection{点电荷}
+\subsubsection{点电荷的辐射功率}
+
+考虑电荷 $q$ 在任意时刻的位置为 $\boldsymbol{w}(t)$，
+速度和加速度分别为
+\begin{align*}
+    \boldsymbol{v}=\dot{\boldsymbol{w}},
+    \qquad
+    \boldsymbol{a}=\dot{\boldsymbol{v}}.
+\end{align*}
+
+我们已经得到任意运动点电荷的Liénard--Wiechert 场。式 \ref{eq:LW_E_radiation} 中的第一项称为
+\textbf{速度场}，第二项称为
+\textbf{加速场}。
+
+\begin{align*}
+    \boldsymbol S
+    &=
+    \frac{1}{\mu_0}
+    \boldsymbol E\times\boldsymbol B\\
+    \boldsymbol B
+    &=
+    \frac{1}{c}{\boldsymbol{e}_r}\times\boldsymbol E\\
+    \boldsymbol S
+    &=
+    \frac{1}{\mu_0c}
+    \boldsymbol E\times
+    \left(
+        \boldsymbol{e}_r\times\boldsymbol E
+    \right)
+    \\
+    &=
+    \frac{1}{\mu_0c}
+    \left[
+        E^2\boldsymbol{e}_r
+        -
+        (\boldsymbol{e}_r\cdot\boldsymbol E)\boldsymbol E
+    \right]
+\end{align*}
+
+
+在远区 $r\rightarrow\infty$ 时，
+速度场中的电场满足
+\begin{equation}
+    E_{\mathrm{vel}}\sim\frac{1}{r^2},
+\end{equation}
+而加速场满足
+\begin{equation}
+    E_{\mathrm{acc}}\sim\frac{1}{r}.
+\end{equation}
+
+由于坡印廷矢量满足
+\begin{equation}
+    S\sim E^2,
+\end{equation}
+因此只有加速场产生
+\begin{equation}
+    S_{\mathrm{rad}}\sim\frac{1}{r^2}
+\end{equation}
+的能流。
+
+这是辐射场的重要特征：
+虽然辐射场本身随 $1/r$ 衰减，
+但通过半径为 $r$ 的球面的总功率在 $r\rightarrow\infty$ 时保持有限。
+
+因此只需保留式 \ref{eq:LW_E_radiation}
+中的加速场：
+\begin{equation}
+    \boxed{
+    \boldsymbol E_{\mathrm{rad}}
+    =
+    \frac{q}{4\pi\epsilon_0}
+    \frac{
+        \boldsymbol r\times
+        (\boldsymbol u\times\boldsymbol a)
+    }
+    {(\boldsymbol r\cdot\boldsymbol u)^3}
+    }
+    \label{eq:Erad_general}
+\end{equation}
+
+在辐射区中，
+\begin{equation}
+    \boldsymbol E_{\mathrm{rad}}
+    \perp\boldsymbol{e}_r,
+\end{equation}
+因此
+\begin{equation}
+    \boldsymbol S_{\mathrm{rad}}
+    =
+    \frac{1}{\mu_0c}
+    E_{\mathrm{rad}}^2\boldsymbol{e}_r.
+    \label{eq:Srad_general}
+\end{equation}
+
+首先考虑
+\begin{equation}
+    v\ll c.
+\end{equation}
+
+此时可以近似取
+\begin{equation}
+    \boldsymbol u\simeq c\boldsymbol{e}_r.
+\end{equation}
+
+代入式 \eqref{eq:Erad_general}，
+得到
+\begin{align}
+    \boldsymbol E_{\mathrm{rad}}
+    &\simeq
+    \frac{q}{4\pi\epsilon_0}
+    \frac{
+        c\boldsymbol{e}_r
+        \times
+        \left[
+            c\boldsymbol{e}_r\times\boldsymbol a
+        \right]
+    }
+    {(cr)^3}
+    \\
+    &=
+    \frac{q}{4\pi\epsilon_0c^2r}
+    \left[
+        \boldsymbol{e}_r
+        \times
+        \left(
+            \boldsymbol{e}_r\times\boldsymbol a
+        \right)
+    \right].
+\end{align}
+
+利用向量三重积
+\begin{equation}
+    \boldsymbol A\times
+    (\boldsymbol B\times\boldsymbol C)
+    =
+    \boldsymbol B(\boldsymbol A\cdot\boldsymbol C)
+    -
+    \boldsymbol C(\boldsymbol A\cdot\boldsymbol B),
+\end{equation}
+可以写成
+\begin{equation}
+    \boxed{
+    \boldsymbol E_{\mathrm{rad}}
+    =
+    \frac{q}{4\pi\epsilon_0c^2r}
+    \left[
+        (\boldsymbol{e}_r\cdot\boldsymbol a)\boldsymbol{e}_r
+        -
+        \boldsymbol a
+    \right]
+    }.
+\end{equation}
+
+设 $\theta$ 为观察方向 $\boldsymbol{e}_r$
+与加速度 $\boldsymbol a$ 之间的夹角，则
+\begin{equation}
+    E_{\mathrm{rad}}
+    =
+    \frac{qa\sin\theta}
+    {4\pi\epsilon_0c^2r}.
+\end{equation}
+
+因此
+\begin{equation}
+    S_{\mathrm{rad}}
+    =
+    \frac{1}{\mu_0c}
+    E_{\mathrm{rad}}^2
+    =
+    \frac{\mu_0q^2a^2}
+    {16\pi^2cr^2}
+    \sin^2\theta.
+\end{equation}
+
+于是单位立体角内的辐射功率为
+\begin{equation}
+    \boxed{
+    \frac{dP}{d\Omega}
+    =
+    r^2S_{\mathrm{rad}}
+    =
+    \frac{\mu_0q^2a^2}
+    {16\pi^2c}
+    \sin^2\theta
+    }.
+    \label{eq:Larmor_angular}
+\end{equation}
+
+这说明点电荷的辐射具有偶极辐射的角分布。
+
+在加速度方向
+\begin{equation}
+    \theta=0,\pi
+\end{equation}
+处没有辐射，而在垂直于加速度的方向
+\begin{equation}
+    \theta=\frac{\pi}{2}
+\end{equation}
+处辐射最强。
+
+对所有方向积分：
+\begin{equation}
+    P
+    =
+    \int
+    \frac{dP}{d\Omega}\,d\Omega.
+\end{equation}
+
+代入式 \eqref{eq:Larmor_angular}，
+\begin{align}
+    P
+    &=
+    \frac{\mu_0q^2a^2}{16\pi^2c}
+    \int_0^{2\pi}d\phi
+    \int_0^\pi
+    \sin^3\theta\,d\theta
+    \\
+    &=
+    \frac{\mu_0q^2a^2}{16\pi^2c}
+    (2\pi)
+    \left(\frac{4}{3}\right).
+\end{align}
+
+因此得到
+\begin{equation}
+    \boxed{
+    P
+    =
+    \frac{\mu_0q^2a^2}{6\pi c}
+    }.
+    \label{eq:Larmor}
+\end{equation}
+
+利用
+\begin{equation}
+    \mu_0\epsilon_0c^2=1,
+\end{equation}
+也可以写成
+\begin{equation}
+    \boxed{
+    P
+    =
+    \frac{q^2a^2}
+    {6\pi\epsilon_0c^3}
+    }.
+\end{equation}
+
+这就是
+\textbf{Larmor 公式}。
+
+由几何关系可以得到
+\begin{equation}
+    \frac{dt}{dt_r}
+    =
+    \frac{\boldsymbol{e}_r\cdot\boldsymbol u}{c},
+\end{equation}
+因此
+\begin{equation}
+    \frac{dW}{dt_r}
+    =
+    \frac{\boldsymbol{e}_r\cdot\boldsymbol u}{c}
+    \frac{dW}{dt}.
+\end{equation}
+
+另一方面，辐射场给出的单位立体角辐射功率为
+\begin{equation}
+    \boxed{
+    \frac{dP}{d\Omega}
+    =
+    \frac{q^2}{16\pi^2\epsilon_0}
+    \frac{
+        \left|
+        \boldsymbol{e}_r
+        \times
+        (\boldsymbol u\times\boldsymbol a)
+        \right|^2
+    }
+    {(\boldsymbol{e}_r\cdot\boldsymbol u)^5}
+    }.
+    \label{eq:Lienard_angular}
+\end{equation}
+
+这就是相对论情况下的辐射角分布。
+
+与非相对论结果相比，
+这里最重要的变化是分母中出现了
+\begin{equation}
+    (\boldsymbol{e}_r\cdot\boldsymbol u)^5,
+\end{equation}
+使得辐射在高速运动时产生强烈的方向性。
+
+对式 \eqref{eq:Lienard_angular}
+在整个立体角上积分，可以得到一般速度下的总辐射功率：
+\begin{equation}
+    \boxed{
+    P
+    =
+    \frac{\mu_0q^2\gamma^6}{6\pi c}
+    \left(
+        a^2
+        -
+        \frac{
+            |\boldsymbol v\times\boldsymbol a|^2
+        }{c^2}
+    \right)
+    }
+    \label{eq:Lienard}
+\end{equation}
+其中
+\begin{equation}
+    \gamma
+    =
+    \frac{1}
+    {\sqrt{1-v^2/c^2}}.
+\end{equation}
+
+这就是
+\textbf{Liénard 公式}。
+
+利用
+\begin{equation}
+    |\boldsymbol v\times\boldsymbol a|^2
+    =
+    v^2a^2-(\boldsymbol v\cdot\boldsymbol a)^2,
+\end{equation}
+还可以将其写成
+\begin{equation}
+    \boxed{
+    P
+    =
+    \frac{\mu_0q^2\gamma^4}{6\pi c}
+    \left[
+        a^2
+        +
+        \frac{\gamma^2}{c^2}
+        (\boldsymbol v\cdot\boldsymbol a)^2
+    \right]
+    }.
+\end{equation}
+
+若
+\begin{equation}
+    \boldsymbol v\perp\boldsymbol a,
+\end{equation}
+则
+\begin{equation}
+    \boldsymbol v\cdot\boldsymbol a=0,
+\end{equation}
+并且
+\begin{equation}
+    |\boldsymbol v\times\boldsymbol a|^2=v^2a^2.
+\end{equation}
+
+因此
+\begin{align}
+    P
+    &=
+    \frac{\mu_0q^2\gamma^6}{6\pi c}
+    a^2
+    \left(
+        1-\frac{v^2}{c^2}
+    \right)
+    \\
+    &=
+    \boxed{
+    \frac{\mu_0q^2\gamma^4a^2}
+    {6\pi c}
+    }.
+\end{align}
+
+例如带电粒子在磁场中做圆周运动时，
+加速度始终垂直于速度，因此其辐射功率具有上述形式。
+
+若
+\begin{equation}
+    \boldsymbol v\parallel\boldsymbol a,
+\end{equation}
+则
+\begin{equation}
+    \boldsymbol v\times\boldsymbol a=0.
+\end{equation}
+
+因此
+\begin{equation}
+    \boxed{
+    P=\frac{\mu_0q^2\gamma^6a^2}{6\pi c}
+    }.
+\end{equation}
+
+可以看到，在相同的加速度 $a$ 下，
+纵向加速的辐射功率随 $\gamma^6$ 增长，
+而横向加速仅随 $\gamma^4$ 增长。
+
+点电荷的辐射来自加速度场：
+\begin{equation}
+    E_{\mathrm{rad}}\propto\frac{1}{r}.
+\end{equation}
+
+因此
+\begin{equation}
+    S_{\mathrm{rad}}
+    \propto\frac{1}{r^2},
+\end{equation}
+从而可以在 $r\rightarrow\infty$ 时得到有限的总辐射功率。
+
+对于非相对论运动，
+\begin{equation}
+    \frac{dP}{d\Omega}
+    \propto\sin^2\theta,
+\end{equation}
+所以辐射呈典型的偶极辐射角分布。
+
+而当
+\begin{equation}
+    v\rightarrow c,
+\end{equation}
+Liénard 公式中的 $\gamma$ 因子使辐射功率迅速增加，
+同时辐射角分布也变得越来越集中在粒子运动方向附近。
+
+\subsubsection{辐射反作用}
+假设在周期运动下
+\begin{align}
+    \int_{0}^{T}\boldsymbol{F}\cdot\boldsymbol{v}\dif t&=-\frac{\mu_0q^2}{6\pi c}\int_{0}^{T}a^2\dif t\\
+    \int_{0}^{T}\boldsymbol{F}\cdot\boldsymbol{v}\dif t&=-\frac{\mu_0q^2}{6\pi c}\int_{0}^{T}\frac{\dif\boldsymbol{v}}{\dif t}\cdot\frac{\dif\boldsymbol{v}}{\dif t}\dif t\nonumber\\
+    \int_{0}^{T}\boldsymbol{F}\cdot\boldsymbol{v}\dif t&=-\frac{\mu_0q^2}{6\pi c}\left.\boldsymbol{v}\cdot\frac{\dif\boldsymbol{v}}{\dif t}\right|_{0}^{T}
+    +\frac{\mu_0q^2}{6\pi c}\int_{0}^{T}\boldsymbol{v}\cdot\frac{\dif^2\boldsymbol{v}}{\dif t^2}\dif t\nonumber\\
+    \int_{0}^{T}\boldsymbol{F}\cdot\boldsymbol{v}\dif t&=\int_{0}^{T}\boldsymbol{v}\cdot\dif t\nonumber\\
+    \int_{0}^{T}\left(\boldsymbol{F}-\frac{\mu_0q^2}{6\pi c}\frac{\dif^2\boldsymbol{v}}{\dif t^2}\right)\cdot\boldsymbol{v}\dif t&=0
+\end{align}
+当然，上式仅为猜测。关于$\boldsymbol{F}$垂直于的分量，它得不出任何结论，它仅
+告诉你平行分量的时间平均——在一个特别的时间间隔内的平均。
+\mysssec{假设一个初速度为$v_0$的电子以恒定加速度减速至速度为零。它辐射损失的能量占它初始动能的比值是多少？(其余的能量被为保持它以一个恒定减速运动的其他机制吸收掉了。）假设$v_0<<c$，所以拉莫尔公式适用。}
+\begin{align*}
+    t&=\frac{v_0}{a}\\
+    W&=Pt\\
+    W&=\frac{q^2a^2}
+    {6\pi\epsilon_0c^3}\frac{v_0}{a}\\
+    \frac{2W}{mv_0^2}&=\frac{q^2a}
+    {3\pi\epsilon_0c^3mv_0}
+\end{align*}
+\mysssec{(a)带电荷为$q$的粒子，以速度$v$沿半径为$R$的圆周作匀速圆周运动。为了保持这个运动，当然需要
+提供一个向心力。为了抵消辐射反作用，必须施加的附加力$F$是多少？这个附加力传递的功率$P_e$是多少？\\
+(b)对作简谐振动的粒子重复(a)的计算。\\
+(c)考虑一个粒子自由下落的情况（加速度为常数$g$）。辐射反作用力是多少？}
+(a)\begin{align*}
+    \boldsymbol F&=\frac{\mu_0q^2}{6\pi c}\frac{\dif^2\boldsymbol{v}}{\dif t^2}\\
+    \boldsymbol F&=-\frac{\mu_0q^2}{6\pi c}\frac{v^2}{r^2}\boldsymbol{v}\\
+    P_e&=\frac{\mu_0q^2}{6\pi c}\frac{v^4}{r^2}
+\end{align*}
+
+(b)\begin{align*}
+    \boldsymbol F&=\frac{\mu_0q^2}{6\pi c}\frac{\dif^2\boldsymbol{v}}{\dif t^2}\\
+    \boldsymbol F&=-\frac{\mu_0q^2}{6\pi c}\frac{v^2}{r^2}\boldsymbol{v}\\
+    P_e&=\frac{\mu_0q^2}{6\pi c}\frac{v^4}{r^2}
+\end{align*}
+
+(c)\begin{align*}
+    1
 \end{align*}
