@@ -420,9 +420,7 @@ $$n_\pm =\sqrt{r^2\mp rd\cos\theta+\left(d/2\right)^2}$$
 
 这是辐射场的重要特征：
 虽然辐射场本身随 $1/r$ 衰减，
-但通过半径为 $r$ 的球面的总功率在 $r\rightarrow\infty$ 时保持有限。
-
-因此只需保留式 \ref{eq:LW_E_radiation}
+但通过半径为 $r$ 的球面的总功率在 $r\rightarrow\infty$ 时保持有限。因此只需保留式 \ref{eq:LW_E_radiation}
 中的加速场：
 \begin{equation}
     \boxed{
@@ -703,15 +701,6 @@ $$n_\pm =\sqrt{r^2\mp rd\cos\theta+\left(d/2\right)^2}$$
     \boldsymbol v\perp\boldsymbol a,
 \end{equation}
 则
-\begin{equation}
-    \boldsymbol v\cdot\boldsymbol a=0,
-\end{equation}
-并且
-\begin{equation}
-    |\boldsymbol v\times\boldsymbol a|^2=v^2a^2.
-\end{equation}
-
-因此
 \begin{align}
     P
     &=
@@ -737,45 +726,10 @@ $$n_\pm =\sqrt{r^2\mp rd\cos\theta+\left(d/2\right)^2}$$
 \end{equation}
 则
 \begin{equation}
-    \boldsymbol v\times\boldsymbol a=0.
-\end{equation}
-
-因此
-\begin{equation}
     \boxed{
     P=\frac{\mu_0q^2\gamma^6a^2}{6\pi c}
     }.
 \end{equation}
-
-可以看到，在相同的加速度 $a$ 下，
-纵向加速的辐射功率随 $\gamma^6$ 增长，
-而横向加速仅随 $\gamma^4$ 增长。
-
-点电荷的辐射来自加速度场：
-\begin{equation}
-    E_{\mathrm{rad}}\propto\frac{1}{r}.
-\end{equation}
-
-因此
-\begin{equation}
-    S_{\mathrm{rad}}
-    \propto\frac{1}{r^2},
-\end{equation}
-从而可以在 $r\rightarrow\infty$ 时得到有限的总辐射功率。
-
-对于非相对论运动，
-\begin{equation}
-    \frac{dP}{d\Omega}
-    \propto\sin^2\theta,
-\end{equation}
-所以辐射呈典型的偶极辐射角分布。
-
-而当
-\begin{equation}
-    v\rightarrow c,
-\end{equation}
-Liénard 公式中的 $\gamma$ 因子使辐射功率迅速增加，
-同时辐射角分布也变得越来越集中在粒子运动方向附近。
 
 \subsubsection{辐射反作用}
 假设在周期运动下
@@ -787,8 +741,14 @@ Liénard 公式中的 $\gamma$ 因子使辐射功率迅速增加，
     \int_{0}^{T}\boldsymbol{F}\cdot\boldsymbol{v}\dif t&=\int_{0}^{T}\boldsymbol{v}\cdot\dif t\nonumber\\
     \int_{0}^{T}\left(\boldsymbol{F}-\frac{\mu_0q^2}{6\pi c}\frac{\dif^2\boldsymbol{v}}{\dif t^2}\right)\cdot\boldsymbol{v}\dif t&=0
 \end{align}
-当然，上式仅为猜测。关于$\boldsymbol{F}$垂直于的分量，它得不出任何结论，它仅
-告诉你平行分量的时间平均——在一个特别的时间间隔内的平均。
+上式仅为猜测。关于$\boldsymbol{F}$垂直于的分量得不出任何结论，仅告诉你平行分量在一个特别的时间间隔内的平均。
+\subsubsection{辐射反作用的物理基础}
+点电荷的场在粒子所在的地方为无限大，很难明白如何计算它们施加的力。为避免这个问题，让我们考虑扩展电荷分布的情形，这种情形下场在任何地方都是有限值，最后我们考虑电荷的尺寸趋于零时的极限。一般地，一部分（A）对另一部分（B）的电磁力与B作用在A上的力大小不同，方向不相反。如果把分布分为无限小，则每一对都存在着这种不平衡力，对所有的不平衡力求和，结果是电荷作用在自身上的一个净的作用力。正是这种自作用力导致在粒子内部牛顿第三定律被打破，这是辐射反作用的作用。
+
+模型：一个带总电荷为$2q$的“哑铃”，电荷平均分布在两个相距为$d$的球上。
+
+假设哑铃沿$x$方向运动，在推迟时刻（瞬时）静止。（A）在（B）处产生的电场是
+$$E_{AB}=\frac{q}{4\pi\varepsilon_0}$$
 \mysssec{假设一个初速度为$v_0$的电子以恒定加速度减速至速度为零。它辐射损失的能量占它初始动能的比值是多少？(其余的能量被为保持它以一个恒定减速运动的其他机制吸收掉了。）假设$v_0<<c$，所以拉莫尔公式适用。}
 \begin{align*}
     t&=\frac{v_0}{a}\\
@@ -813,7 +773,30 @@ Liénard 公式中的 $\gamma$ 因子使辐射功率迅速增加，
     \boldsymbol F&=-\frac{\mu_0q^2}{6\pi c}\frac{v^2}{r^2}\boldsymbol{v}\\
     P_e&=\frac{\mu_0q^2}{6\pi c}\frac{v^4}{r^2}
 \end{align*}
-
-(c)\begin{align*}
-    1
+\mysssec{考虑辐射反作用力，带电粒子的牛顿第二定律变为
+$$a=\tau\dot{a}+\frac{F}{m}$$
+（a）与不带电粒子不同（$a=F/m$），加速度必须是时间的连续函数，即使力突然变化。（从物理上看，辐射反作用阻碍a的快速变化。）通过对上面运动方程从（$t-\varepsilon$）到（$t+\varepsilon$）积分并取极
+限$\varepsilon\to 0$，证明a在任何时刻都是连续的。\\
+（b）一个粒子在$t=0$受到一恒定的力$F$，持续时间为$T$。求在下面三个时间内最一般的运动方程的解：
+(i)$t<0$;(ii) $0<t<T$;(iii)$t>T$。}
+(a)
+\begin{align*}
+    \lim_{\varepsilon\to 0}\int_{t-\varepsilon}^{t+\varepsilon}a\dif t&=\lim_{\varepsilon\to 0}\int_{t-\varepsilon}^{t+\varepsilon}\tau\dot{a}+\frac{F}{m}\dif t\\
+    a_{t+\varepsilon}-a_{t-\varepsilon}&=0
 \end{align*}
+
+(b)$t<0$\begin{align*}
+    a&=\tau\frac{\dif a}{\dif t}\\
+    \dif t&=\tau\frac{\dif a}{a}\\
+    t&=\tau\ln a+C_0\\
+    a&=a_0e^{t/\tau}
+\end{align*}
+
+$0<t<T$\begin{align*}
+    a-\frac{F}{m}&=\tau\frac{\dif a}{\dif t}\\
+    \dif t&=\tau\frac{\dif a}{a-\frac{F}{m}}\\
+    t&=\tau\ln \left(a-\frac{F}{m}\right)+C\\
+    a&=\left(a_0-\frac{F}{m}\right)e^{t/\tau}+\frac{F}{m}
+\end{align*}
+
+$t>T:a=\left[\left(a_0-\frac{F}{m}\right)e^{T/\tau}+\frac{F}{m}\right]e^{t/\tau}$
