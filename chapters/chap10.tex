@@ -747,8 +747,13 @@ $$n_\pm =\sqrt{r^2\mp rd\cos\theta+\left(d/2\right)^2}$$
 
 模型：一个带总电荷为$2q$的“哑铃”，电荷平均分布在两个相距为$d$的球上。
 
-假设哑铃沿$x$方向运动，在推迟时刻（瞬时）静止。（A）在（B）处产生的电场是
-$$E_{AB}=\frac{q}{4\pi\varepsilon_0}$$
+假设哑铃沿$x$方向运动，在推迟时刻（瞬时）静止,推迟位置$x(t_r)$距离
+当前位置$x(t)$为$l$。（A）在（B）处产生的电场是
+\begin{align}
+    E_{AB}&=\frac{q\left|\boldsymbol{r}-\boldsymbol{r}_s\right|}{4\pi\varepsilon_0} \frac{c^2\boldsymbol{u}+\left(\boldsymbol{r}-\boldsymbol{r}_s\right)\times\left(\boldsymbol{u}\times\boldsymbol{a}\right)}{\left[(\boldsymbol{r}-\boldsymbol{r}_s)\cdot\boldsymbol{u}\right]^3}\nonumber\\
+    E_{AB}&=\frac{q\left|\boldsymbol{r}-\boldsymbol{r}_s\right|}{4\pi\varepsilon_0} \frac{c^2\boldsymbol{u}+\left(\boldsymbol{r}-\boldsymbol{r}_s\right)\times\left(\boldsymbol{u}\times\boldsymbol{a}\right)}{\left[c\left|\boldsymbol{r}-\boldsymbol{r}_s\right|\right]^3}\nonumber\\
+    F_{\text{自}}&=\frac{q(lc^2-ad^2)}{8\pi\varepsilon_0c^2\left(l^2+d^2\right)^\frac{3}{2}}\boldsymbol{e}_x\\
+\end{align}
 \mysssec{假设一个初速度为$v_0$的电子以恒定加速度减速至速度为零。它辐射损失的能量占它初始动能的比值是多少？(其余的能量被为保持它以一个恒定减速运动的其他机制吸收掉了。）假设$v_0<<c$，所以拉莫尔公式适用。}
 \begin{align*}
     t&=\frac{v_0}{a}\\
@@ -760,8 +765,7 @@ $$E_{AB}=\frac{q}{4\pi\varepsilon_0}$$
 \end{align*}
 \mysssec{(a)带电荷为$q$的粒子，以速度$v$沿半径为$R$的圆周作匀速圆周运动。为了保持这个运动，当然需要
 提供一个向心力。为了抵消辐射反作用，必须施加的附加力$F$是多少？这个附加力传递的功率$P_e$是多少？\\
-(b)对作简谐振动的粒子重复(a)的计算。\\
-(c)考虑一个粒子自由下落的情况（加速度为常数$g$）。辐射反作用力是多少？}
+(b)对作简谐振动的粒子重复(a)的计算。}
 (a)\begin{align*}
     \boldsymbol F&=\frac{\mu_0q^2}{6\pi c}\frac{\dif^2\boldsymbol{v}}{\dif t^2}\\
     \boldsymbol F&=-\frac{\mu_0q^2}{6\pi c}\frac{v^2}{r^2}\boldsymbol{v}\\
